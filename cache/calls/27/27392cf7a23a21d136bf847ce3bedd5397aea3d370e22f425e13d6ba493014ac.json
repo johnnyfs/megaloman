@@ -1,0 +1,77 @@
+{
+ "request": {
+  "model": "anthropic/claude-sonnet-5.5",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a Capcom NES animator (Mega Man 2-3). The image shows the 2 frames available for an enemy,\nleft to right (enlarged; the grey-blue background is not part of the sprite). Frame 1 is the still.\n\nThe enemy: A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\nIts behaviour in the game: moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\n\nIts states: \"float\" shows the still (frame 1) with no animation; how long it floats is decided by the behaviour,\nnot by you. You are timing the \"swim\" state, a oneshot action: one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still\n\nDesign the action as a sequence of frames to show, each with how long it is held in game frames at 60 fps (whole\nnumbers). The action plays once; afterwards the enemy is back on the still (frame 1), so do not include the float\nhold. Capcom NES enemies hold action frames for roughly 4-16 game frames; tells (a pose that warns the player) are\nheld long enough to read.\n\nReturn ONLY a JSON object: {\"sequence\": [{\"frame\": n, \"duration\": n}, ...], \"rationale\": \"one or two sentences\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "412b559b7b6c59db73341b28b75cfd65a151279ad8c75ad7a59f792d8de683c8"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792635211-bY4vrRTcwm4idBcez3oC",
+  "object": "chat.completion",
+  "created": 1792635211,
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "Frame 1 is the still, with the tentacles together. Frame 2 has the tentacles flared wide.\n\nThe pulse is about 40 game frames long, and the oneshot swim action should cover the gather, the stroke, and the start of the glide. The glide itself is the still, so it falls outside the action.\n\nSequence:\n- Frame 2 (flared) for 14 frames. This is the gather tell, held long enough to read.\n- Frame 1 (together) for 10 frames. This is the thrust snap as it shoots forward.\n\nAfterward it returns to the still, which covers the long glide.\n\nAdding a second flare would muddy the pulse, so I kept it to one flare and one snap. The first frame of the action is the flare rather than the still, so the tell starts immediately when the action begins.\n\n```json\n{\"sequence\": [{\"frame\": 2, \"duration\": 14}, {\"frame\": 1, \"duration\": 10}], \"rationale\": \"The flared tentacles are held 14 frames as a readable gather tell, then snap together for 10 frames as the thrust stroke. The enemy then returns to the still for the long glide.\"}\n```",
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 655,
+   "completion_tokens": 366,
+   "total_tokens": 1021,
+   "cost": 0.00497,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00497,
+    "upstream_inference_prompt_cost": 0.00131,
+    "upstream_inference_completions_cost": 0.00366
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.00497,
+ "secs": 3.4
+}

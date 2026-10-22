@@ -1,0 +1,12 @@
+{
+ "pipeline": "swim2",
+ "version": "v5",
+ "created": "2026-10-22T02:12:09+00:00",
+ "author": "coding-agent",
+ "parent": "v4",
+ "change": {
+  "what": "the draw step opts into general guidance (scope pixel-art/animation, role animation_frame): complementary-extremes and still-parts-stay-still; the request (brief) and everything else unchanged",
+  "why": "human: try general rules for how to create animations before changing the request or the pipeline topology; the units restate the human's rules without mentioning swimming, to see if they generalize. Targets in v4 s1: outline pop (top/middle bands changed 2%/15%), symmetric stroke (symmetry 0.72)",
+  "prompted_by": "games/megaman/classes/small_enemy/animation/pipelines/swim2/versions/v3/runs/squid/s1/feedback.jsonl"
+ }
+}

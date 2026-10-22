@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and animator for Mega Man 2-3. You are shown the frames of ONE enemy\nanimation for one state, at 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral\ngrey-blue background that is not part of the sprite. Frame 1 is the enemy's still pose.\n\nBelow the frames is a DIFFERENCE row, computed exactly from the pixels: one panel per step (frame 1 -> 2, ...,\nlast -> 1). Pixels that change are MAGENTA; unchanged pixels are dimmed grey. If a panel has no magenta, nothing\nmoves in that step. Do not claim changes the difference row does not show.\n\nBelow that is a TIMELINE row: the preview sampled every 4 game frames (1/15 s) at 60 fps, so each frame repeats in\nproportion to how long it is shown. For a one-off action the preview shows the still for half a second, then the\naction at its real timing, then a half-second pause on the still; judge the action's timing, not the padding.\n\nThe enemy: \"A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\"\nIts behaviour in the game: \"moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\"\nThis state: \"swim\". Its motion: \"one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still\"\nTiming: one-off action, played once and then back to the still (frame 1): frame 2 for 16 game frames (267 ms), frame 1 for 10 game frames (167 ms); action length 26 game frames (433 ms).\nGame: Mega Man 2-3 (NES).\n\nJudge whether this is a convincing authentic NES Mega Man enemy animation for this state. Be calibrated: authentic\nCapcom enemy animations score about 90-95; competent fan work about 60-70; amateur or AI-looking work about 30-45.\nDo not reward or punish an animation for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- motion_readability: the intended motion reads clearly\n- consistency: the same character in every frame (same size, palette, proportions); only the moving parts change; nothing jitters or drifts\n- economy: Capcom-style economical change between frames (small, deliberate pixel changes; cheap NES tricks are good)\n- pixel_craft: clean Capcom outlines and clusters in every frame, no noise, orphans or smearing\n- timing: how long each frame is shown suits the action and the behaviour, the way Capcom times NES enemies\n- appeal: the motion adds character and charm in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"motion_readability\": n, \"consistency\": n, \"economy\": n, \"pixel_craft\": n, \"timing\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems (name the frame)\"],\n \"fixes\": [\"specific pixel-level fixes (name the frame)\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "f6d94884051631e4b4d8bde94485712a86420bb2e6969391a0d59709a1615da8"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792635220-Jvu7Bj3csQIwDPCz4lIg",
+  "object": "chat.completion",
+  "created": 1792635220,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"motion_readability\":8,\"consistency\":9,\"economy\":8,\"pixel_craft\":8,\"timing\":5,\"appeal\":7},\"score\":75,\"verdict\":\"not_convincing\",\"issues\":[\"Frame 2 clearly reads as a wide tentacle gather, and the unchanged head keeps the character stable.\",\"Frame 2 is held for 16 game frames, making the gather feel prolonged rather than like a brief tell.\",\"Frame 1 receives only 10 game frames after the snap, so the together-tentacle glide is shorter than the gather despite the described long-glide behavior.\",\"Frame 2's curled outer tentacle tips are busier and more decorative than typical economical Mega Man 2-3 enemy articulation.\",\"The instantaneous frame 2-to-frame 1 snap is readable, but without a longer post-stroke hold the pulse lacks a strong thrust-and-glide rhythm.\"],\"fixes\":[\"Shorten frame 2 to roughly 6-8 game frames and hold frame 1 for roughly 18-20 game frames after the snap while preserving the 26-frame action length.\",\"In frame 2, simplify each curled outer tip by removing one or two interior pixels and using a cleaner hooked silhouette.\",\"Keep the head exactly fixed as it is; the difference row correctly confines the animation to the lower body and tentacles.\",\"Retain the direct frame 2-to-frame 1 snap, since that economical two-frame change suits NES enemy animation once the timing is rebalanced.\"]}",
+     "refusal": null,
+     "reasoning": "**Inspecting sequences and timing**\n\nI need to inspect two frames and compare them. It looks like in frame one, the tentacles are compacted down, while frame two shows them flared and curled. There seems to be an inconsistency in the timing: frame two at 16, and frame one at 10. This suggests a short gather and then a quick stroke followed by a long glide. However, the specified timing of frame actions might be conflicting. The sprite size also seems larger than typical NES dimensions.**Evaluating sprite details and timing**\n\nI'm looking at the visible colors in the sprites: black, white, cyan/light blue, and vivid blue\u2014maybe around four opaque colors. Mega Man enemies often use composite sprite palettes, and at their true size, they\u2019re about 24x24. The heads in frames one and two look identical, but the appendages differ, with frame two showing wider curled tips. \n\nIt seems the timing is inconsistent, particularly with how the movements feel sluggish. The overall motion looks appealing, earning an average score around 75. I'll need to refine the timing and make adjustments based on my detailed breakdown!**Analyzing sprite authenticity and details**\n\nI'm assessing the authenticity threshold, which seems to be above 80. The pixel crafting might be around 7; the outlines are blocky, fitting with the Mega Man style. However, frame two's curled appendages look a bit noisy, especially when enlarged, with busy details like tiny black and white interiors. The frame one appendages appear symmetrical while frame two's are broader and have a cleaner outline. I just need specific issues in a JSON format and must avoid claiming any unseen changes.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Inspecting sequences and timing**\n\nI need to inspect two frames and compare them. It looks like in frame one, the tentacles are compacted down, while frame two shows them flared and curled. There seems to be an inconsistency in the timing: frame two at 16, and frame one at 10. This suggests a short gather and then a quick stroke followed by a long glide. However, the specified timing of frame actions might be conflicting. The sprite size also seems larger than typical NES dimensions.**Evaluating sprite details and timing**\n\nI'm looking at the visible colors in the sprites: black, white, cyan/light blue, and vivid blue\u2014maybe around four opaque colors. Mega Man enemies often use composite sprite palettes, and at their true size, they\u2019re about 24x24. The heads in frames one and two look identical, but the appendages differ, with frame two showing wider curled tips. \n\nIt seems the timing is inconsistent, particularly with how the movements feel sluggish. The overall motion looks appealing, earning an average score around 75. I'll need to refine the timing and make adjustments based on my detailed breakdown!**Analyzing sprite authenticity and details**\n\nI'm assessing the authenticity threshold, which seems to be above 80. The pixel crafting might be around 7; the outlines are blocky, fitting with the Mega Man style. However, frame two's curled appendages look a bit noisy, especially when enlarged, with busy details like tiny black and white interiors. The frame one appendages appear symmetrical while frame two's are broader and have a cleaner outline. I just need specific issues in a JSON format and must avoid claiming any unseen changes.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2XFg-LLVN2E_dAGoNjE9ZrJG5Pr8JQYcqS00luiVJBUs36YEh_8dbJUM-zvDHcfyGDmAebMO7_NKPQdUJ999aOzzVgX0cy9DnaKymGDc9Fz-BPKJC00bbtdaA_2nNRf5RsqyrXMfH6q7NhHVAv__3YfaLd4EGBDB2ql0F9KNXcODmMvRDeqVnQ1HY5h-OXrChx0ZcE7e-zQCqtP4Ud3wWH44rcOTml1I4GW31Dn49wzD0aMWD6XU0OtqCiyFfYJba_CqYfb46Y48LqfpYlbM9AegxfyPTUfODyqT28cSi9SVa51kaD90BNvC_a8unRRjIii13hykzKZaVDgsM7b9UbrczwLDCrFCii_Wr-tJyHeEDaLHTjJBEagFiVLWGph1XvT8mVF44O0d-3-jRGX6upUj1QXhcJLAUfCKIjkNxMleRJjVx-PnhyJR9BPf3e5CduupwJnjepFnZrYRuf66ORIBh_-XlHirJ2ega_H7ZUrGlVgw6lLTCw4IAgW9B8wKaX3_j6KBg79Tfw9ULekvb5GlooyGyc_o8Zbl4BbhlgPXPap06Hg4bFuESXPXZvQB8ENK8QC3cuCtUPZOw7QcR04NnfvBvpn5vzB9HjzuEVf_P3JbT5eBGKiGtimMA0jU8btcQNb-ykFdboEtWgxsVVDFddaAAW53j2IPoO0pjqOhOkNBFtBiT63-QsLherMAioXr1rl_N-ItcyCVUtAgvRNa_XmsVWwAMiui-Is-ziLzR3Ef2u8XpkqvHtCZ46wXLmN3ZqJCiEGdo0Z5U_5aV0B5XfXkAMUePimhf56Ou8xB9xHKszD0LUAG5b6Cgut-etcP8T_5IqnIepeRSgp5K01OHBZsck6vHvrjI5ZBtimrNtQbrtnwWNlkbzig94KJ0-ddvfBWwmXppDR_XZIXNm8VG2WRb0I2aQS0ReXwKpzv178vDaAc1POxQk1lGjx3c_PeT4wyfyCQTweUvqWcHQVHqPr3uWP7vrezGzxijZXfrVHIqLR1S3d0iqS4VsxHlTStSQOYMGf2GAXAxeuNoJBrofyefnE2kt7BKJr4Y2xL7adS9gyRQqzq6CIc5Ab4DckqnlcQ756YxU93LjVG08NbOS-d0OKGqlzxzWvAeg9xELcmZlHrXSeQvo_kQYniy-YUNKp4TGvao84c5ElAWakLKMRYbs1DO3myh4zqJhSNYFBuNctVx8eX0Gz24DGgmgLV8mPlxkF2S30lwd-7dhi7vNPBIQ-3dIXCFtJvbIDB6ZUOxqnvgneKimMjyJy0JoeUpLN9KZk32oYIdc7s3vOWkhtp_w5Mdc7X8hQlRaOJbfUEyj7y4AwM2UrMbe7koP2VaXxU00ZuwnupzErsf90CFaxovO5qOCk7J02Jqfor1t8Hd8okn16j_0radU-3TJ9aa9Ng8ousnLf-Y98I5Fx_lYTgj1rqUVpOLBQTVjw2Ayv0j_GQq0F5Z3ODmJq7jywShaUBEAM0AS18vIo3cYGu4-mFzPzsXOqOcj5ETdIvJsCav2bzSLSmJt4ZgsEbJQ78hNUpd2h2M5CDUFS2rLLTNgdxFjDGG4kufDW_f7qprx-2OPq0McjplgG9s_-vB3OZJlKDjTx_v7IiXKtFvU3U3G3HNkbf-UMeBlvjI0fcELLwct2PMy9egoGLimtBO4h4sAW2SPVTnSULrun_Eq7hzAYqhEaaZEz6toiUe2c-l6DSBEHM6K6blNXIkfwMCsEnEvTmhsH5exwxmfP0oAGb6WywfNoPt6GkAKYQ8tkz5ReHLXJ-HwE5NNoywXZeWHb4HSnudo8ZOTHohfUGs6wRNanXQGZCZYXc19tdpgvoP8Xpmq0pX_WeIh8SuW9x3iuGFx3qyRTb7k0dcXdy-u0sUPPa7OQNF7Y1ZyWd7L1irNc8Ve08DdR4q58SZeLMDXwBi7aCvF530FLlMFnCFAuUSYf4hlopJA8uuwlo1cIN_8UMGYGREIuEpn4ENlWaYZdL9Fy_MxFtQmXiUMxCmM18on1r80kxvkBnRgNIn_OoembgnVbyawMkdqP5N5CMYzBdWvWE55Oq6T06p5C6_uUc1v71f9Fhu8BbsWOlLOU8rg7IjDDhbKWm_24iPrrO0PpWEtGYnL2FS1m13t3lUAnqRplqZI0iyvg1wZy3SEd4iXTIlg9B5mEbJHptC_fSp-dakB5Nge7k0bJ-97-RNo9_b3ddk1g-on7ULAU-V9WEj4aqYsfb0bvSYtYN7dkX4u1x8_VW9RDrLr0OFzq6_RqopkU8cyvlZ0Srk54hFue047w6fuXhURh2I_nYjhumDrEeW6sxQNXwoowhhHV9e_oY9uM3MyMd-mwbffnIPe8lp_4vNpURA8LmIKeEBth-iEblauPtP88PMuvA8UXdv1mNEzyvfy5mCioebs6HBPwYExVQR3_uvOIWF8J76F0SqTGwrteeT2IIKVDCGCpUnRtMhCu5YamMxG30-qtO7wTPc4cznSzcvs6allrci4I5sXUeCxWkxfcHaLh3tAE6gkmY2FIzZI6rulwiNUeZuIPvxMZ9LzSaASaShdUe2SAQX13pXiXaqlGfbek8SyZIvL-DLU5t9SPjEHSa_hQ4HYXRddoVdYf7jFChSOSYaaUHUFqvftxxl4bf1bdxWRABV4iNjLQc24wNGhTs3GMvCYYeUVvqGuOHmHOkuZD_BO0pAVTR4JfKOEf5UKjqT84xHhI7pdvoVabiWqkFm5CKaRE-STponke_GOFnwTtPsV6wGlBLgr2G7YOl8AmOYt2EQ80zz8HxBvBvv6uBzzu_18dvd353Tbu50fAAvRy5wLCSj62ay9NOkZz4DB9CtqQMr6AIDmqDH79VI_HPDDk2F5K6d9hJouYrmRhvEdvOFZIHGKu9XyqBmCwjsPae74IN8pHqO3iK129OXEznkc9HDUVFOHh4M8I6B5R8yt5856uCEyDxQvHxwKcLjQmnSJm94jztk8FhXQ_EcGgXzPr7TJP2hJrGjrTj5xq8cPcIYXbaa2pHyAQDZGqSGfjL2eE9XZ8nIhidHw5rUq2MQrnAb9qkute6uKLCfXLI49yImjGw7fdvvGrJuJrzZUGfIM1WLmg7v0jsf34amqbh8nXPSPlYRKUL-dT7p856yATAostYhl-pZ-P15y5IAD-sb4ViXrJ-GFX9a89ssG74WU0EVhAyNTf8tDaUTKK6IEfT1gj-uRhBKUIkSkhJGKQUSdeWxeZxa95XBEsLCQyuCYXL4GhjmI-9sdchEet2HlK7gj_Q-s0mhHOBogcX4OlRap30YefQ3qEd6VeruKIaXiPBqfB_s9AWEVtS8j3x8qeSd5ZdoFo_Xe9eFC6z26jiPSK0xklHhdSliY1mVPdRu_G_H82P9p9PikxFog4gjkI39MGgZcUujLbNJbvgwWVablV7c2ETA8hYkDNSFneWwfAerF4rDwkvkBi_mcp7ELzsuJuc0sMnhQWUxd_oB-xR5ZCXkXiQox8l2PlPhXXUYuEDnkdA7BeLRzqJ4pHM8CFeMOTERs5rul1rOEQ9MMXSvKUIxNx6e1fx6rMR1teNCRTyZ64nE5kYVD6-yqHlAy1c6jbiJrtwS-pN4CORZiNkcHCMHsAkoqbWqZ7Gx1Lcotl4DGCJYDRrxB2C5jiEFgATvzttVcsn1dAe8vStHlEf_fKCpjXTo3p9S_t3CkwwolzZo6qoznhP5rDkbB9qEvKWP0_Re9q1uWkURQTvx_csVaIfaUpsmaUgAcMwDJCf-9J4mRO7m2XdkyAEjLJq6SFwskxXuNVJDsq40Qd8ATeX9aobNHXO7stI96nAG2TwzXgIcLXDy92UxYCE_pBdNGZuCGR2qfoq6q4zHH603o77kgw9kYj0nKzvScUstaqpSJiZWQrx3tl0wNrlZU3sgox2SNhjYOgRFUbtqx-hHytLwvx-cfAqYW5qiK3JKb90ii6fdnYAFP7vLMOnhgXcbLqH51Hg_sizActm2k0fCTVsdZFIVwMC_L4IkDGjkPMt00raeKRi9Mk0rHmaZ2x3oRNBEsAWoODCiNBZhdENYP8HFEPIZCArbhVe-cadg-wbICMxg9USV7btr_vvkC8ggF0SnCz8rDUybk8q7k9LHLKcAiK8EUdaNUrn9nDpBzzDA-J7onQbAJ1tZdJShPpxdlpd-vHgK3d0OM2rMxMnvjtbDE7n_LFVtRKccb_9fkEMGe4T8mi0W4t8ojXiCXxdF8KGb0tiso6jJoIBbu3BeyubghDiJCO_aZ4EB2uGE0R19LQftB8ZW_XAuEaScDjODcuaAqRejpT02q9spGn3ZbiWoe6d0PbC4C7Jt84UMt9ld3x28IoxcbjXYU2DC4HfSke2AhSxTnDKaEVLAsW6dlGRbVEY04BV692eClCPPyfIZyUdCjVsIOcqMxVCr-oPF-84IUm6PfYYOwYi-bnDJoE_OzO7XDcvqJWEwsbtqovyZTgFDrHluasljTxp0itpneC6aceVjhkzsvn-hGj7Jd54ctf63fZjTm6XLaZJN-CuLg4k7P-nri46JbOQq9KfIZhf8ZWfKj9zGFR7nHu6IT5PVGMEpb6y29DmIHqBGwiEMrUGMXlxwv8Xo-DmnQR0eonzeWAHRpa46qXUyP-NU_z4vEMfyhMhZGSbzsU_McrSc4Cv_WbcncjcX8rj7ijwYagAV1A5JZVRlHiB8hOYsE5O1AJVAqudiZTQrioLvKxl1D9dw9s0k6lHqjy22vlywV_tZnPa2_RYKG5YdYORAYEBVZ4XyTYqyEkpf3wpPebnlPTMew7ygYCW_vLOApPBYZoqg-40nYPI67Q9zLR_p6OkS07dOpAGoMUmcGeTMfsxdDqQPZVNQCVa0ArOkjtQapNXcC48iIEwKBh29Iaya6pHbZdfRAcudr-EHfPiMOZCBmFFO3nPUltBxqLG5giwMrvS36Iofkv6Kr5CpaCqByKRWkImg3a040N5lof_kozXnKKT_kpM4h0MTk4RrDhfnxd2SmzsPeBnoa7oVVDvPLfGE4RiEbfwUxUJ2ZZkdaan4ksDAYoO0_Day3FAHZAzNiM8VtCKK-1CwE6w4IwBRJDxpbbBnK3wLIKhsKsLkt9_edurrhtgQobMCiyHrVZFA5lY9Rj0ZHm0biu1jcR_kv2v8EFlBFCtw0TERlwvbT0nCY1wC5cb01t0ds0aV8k0nWssGQtxXlzWp9qFjLIZw-gzLcJ7lpYnp2wRZaRIFA_UBhCiZYioSYMhNbjM__jS52pFuFQGyRvv1AL_GzssK5gPuuID-zqFRwfJhG5GEGNODg9KZ2N_z8FMmiOeZq9eJo8TuZ_uy7JOL4M3XQHtTXp6UK_pTrfrTS7A5XS3PLJbhDRzBWjn_k2k1GTydklsg8hLWeSRN7NFqoF1rALAIFkn-JLLweVZzYHjQVHLpqVFCjg1NGZejY5Dl6SiZeW43BFKiAwFi7B2YN28fMkbm4nENvZmoRH7ow2s4p_tll3lsAEvPi8QEvdCNFbWQAHLy5QHYnxet37xSHUxmm2n5tNgkVN0DDIZ3_3zSY91ZsfvGAZGjhrUT35oOYTHM11DqcBUsNXMTgje1vaCNvpuPJQKxW2MD3gfFSGBG90FJzF56eLnxTpQbro_Bgjn8ZbreOH9xN8IEQkkF2Im4v9pJqmK4Gf2HakZcNNKOMl-VGiuGJ5ZfJgtv8DbvAlzTs-XnBG0Bu3egoEqjBk29iQVK6yB638HSwETTr6gdoRHjwugVZ0crOeXXJ0Mq86lKo5loNX4UXzALH9RRgPeCOjme9HtIekVbDv7I38l7XoYUnwssv5ThXgTXVXTLOXPdEjVaPfxHwHUmsgp0f-B2NxzSbyrs6wBlAw_JUzerxFK6bOGoqoKJSJXthUdKHq1hHHs9dPdi3VqqQy0xXrfY8Uyo-IqQKScwNbJCYHqJB4-57109gYwW3jWPYwi6DMvngzqU6a302Fm3Bu-e9sLyoXJCMVhHKfVAz6IGu4j5HhtF64VuQagXRoAjLcyIQKmV6FTF8YOlZUZ_Cf0hIESqlb0uto3WzYPA3GEvRKJEjJMqdkTJOBjqtr3YYLfH2X_xuPxnYS6GdZc9ned_ADnkQjdK94oBp_21twK5BTB_Jn1H0qDK5joQ68BgaqXGFeyimSKMHwBJJ3FRdY8SUeTljsMGvk0BycK_ho9YTMObjjH-2_iWXo0-8c5vxK8SkOPR-uAP-hZoccIbCMsVczk4nol03G7_wuwVE5iC4aK5psZfp-MGHFYtenEd_E2OA8GCRMSdevtiPOP37pjhQEhHPeMGKmndeJCCvMgM6rnPEVMLkSRyatq0z4IuzqLCsi-yYJYrgQ-rFHfb1tCOGihnSVXR6xS5y7eCjJOpJFj1hSO-f-R798Nuw33xRUgONxyrCz5pjNNJ2j7_qlbm4eVLq4i2cty_dEpFD_Fq-_5ImIx1vfA37rgjuSsk6SsXIXpgQENGHUK7Tc7wCOhqYzY03NFSnlnKsTPj9JCVpv9_aVC-M7s1a7XdbTbevMImjCtPJRVzT-5MlzIV0RqDxc1ksd2XV4r6UXg51e4sI7yB8wNTXprOt2ucYcFw0VFbBGOu9AbDLJo72FWwNtla31eGLO9vw9cP_Iovg83VeZBJGJ_RnjRi0mO0M-FzJBsndPgbKezXQ1QHBTSYiyKv6GD0RwBIW_cHBUx5TmPg5fcQgpkSBqHMpqppVmGabMeSNQ_MBQN7Pf7oubiolUCCLxvHBM8csY2gxD1qn49EDG-8ol_7jKXSsjRtYg4Xy3W-uNFtkZUUre_8_dBQ9EMnS6Cb_8KBLHXbWR95C_oe6Ansd4TXQsuYTIMj7iIu4SdSFckRBxEsCVXGUDjGLLXSXfmlMR2grvp8PWBtuWAMmDCMydORkyfyBDlldGTf87ArcY0YzE9nDlHZS2LWq7LlK82j2vZ1fNPz5cQvfPq_NEt9UAvviqGVsK7mB25za6LoS5zSzUoKEgVpf8AW0eY_HYXkXWYf5ejzdMxEy2IE32-o0nTeI0Q6U3lqgfKaZ6XVDRYPaQ12ilngZclIcAx7mahyRnMjyLiMf_pUVnHe67m0_UUPuQVtgZ6v91q9A37tSJyb69OdAGxG-wNlYH6uodzJ752vIkq6ZR3WKO_M3gFwkfEE7SWVS2niJjOVlislAviOEqFYjDfOXs_SEG_FckjjG60g6NgHrLbPo0mErEZR2niW2wbwhgEQDMp5fDtFhgVHtt5f-H3MnNl98G6Y1RdQRo6K72Nzq0Kwf2XA-a3QvyiApE2KAu3i9YClxRWYSxqneCxIL3M8PBYect0wHsyAg6raGh_Ucz4pvfqt4t8J05AeVxTbcWpJ3jfhB4AKMyc2wla3rGZXaXxffIa-7KivMNW1QGc8nSi4bLBqxK5bTqhO5UQJgHVEqgAC-qIuUyWAQfjaWnXSE6sXkxpwBWqJh7DwfRV3W0SuupQiGzfJR6mzEKmFAkBuaaTKM9Ngg-DI91IVnhL_HX8liEbi_W-4fg6eRdAAg1frqKMu1V5snQR3xTsfkZL2X4fRQ0O0xdBPUgRPnYJXXV0n4JRPU1U0KlVABh4Q6qooyEM2cX8ZWL6l0-xxTnQOZzrpkXiDn-OoSWCQeaz1fO8dIEhtbrJIT8l55gPH6TugMAnSBun7ijXxiHdlRUcGt_zy-8WUWQnP4hu5GVZIljfUu50d7DNPgG1iuJoUWKkQY_UMeB5StN66AAGvQI-qB6V0rGks3PUy8jSToKox4RKMiRj_tgozOfnzfH-GDZMZxwzsm5m6D23jr8yHEBjFWFZsFHre2zOZ3ravQYk7rv2GlHiADGlqyEvbeYedSIkcIfDtyrENvo2ptDBG-eUN7ve7Ojq3JJ2Ns2GQSu3j83m4cPYgxlMuVM2Hx_FyL7PEhjMquI-EUQ6H7M8A86p057E_RnN_oIvUZSPb7lVpMCVDKFi5-Wmd_XTaScF6Z5IPCFZAk8wuiuklA1qfkaEgwe14NIrS96jipg-U6GaLXs77HU1FG3NZtABZU3nlv_CmfXf-4PWbnIZUZYOko9Wfcdz5QpsU1AU8gR2KmUL1isHPYbguyF3_1v4IjxuEKjhXvb3Aw-upzyCOyzECVQ4-e39LXnQqy0f6M9_npZ9z39x_Csj.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_01c827d4613b2393016ad9715685a487d1bc5d4ce41699c7b0",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 2313,
+   "completion_tokens": 833,
+   "total_tokens": 3146,
+   "cost": 0.017596,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 2310,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.017596,
+    "upstream_inference_prompt_cost": 0.000936,
+    "upstream_inference_completions_cost": 0.01666
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 516,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.017596,
+ "secs": 15.5
+}

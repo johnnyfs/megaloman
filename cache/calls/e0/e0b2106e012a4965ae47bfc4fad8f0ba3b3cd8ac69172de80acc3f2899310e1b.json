@@ -1,0 +1,77 @@
+{
+ "request": {
+  "model": "anthropic/claude-sonnet-5.5",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a Capcom NES animator (Mega Man 2-3). The image shows the 2 frames available for an enemy,\nleft to right (enlarged; the grey-blue background is not part of the sprite). Frame 1 is the still.\n\nThe enemy: A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\nIts behaviour in the game: moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\n\nIts states: \"float\" shows the still (frame 1) with no animation; how long it floats is decided by the behaviour,\nnot by you. You are timing the \"swim\" state, a oneshot action: one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still\n\nDesign the action as a sequence of frames to show, each with how long it is held in game frames at 60 fps (whole\nnumbers). The action plays once; afterwards the enemy is back on the still (frame 1), so do not include the float\nhold. Capcom NES enemies hold action frames for roughly 4-16 game frames; tells (a pose that warns the player) are\nheld long enough to read.\n\nReturn ONLY a JSON object: {\"sequence\": [{\"frame\": n, \"duration\": n}, ...], \"rationale\": \"one or two sentences\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "eea8b09cde8746c3aaf3d1b5156ff32ef6b9c3cbbd76c4fb1ec23696eab7aa4a"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792635214-NA8mL7PZdWfFaMOGruTB",
+  "object": "chat.completion",
+  "created": 1792635214,
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "Frame 1 is the still, with the tentacles together in a streamlined pose. Frame 2 has the tentacles flared wide, which is the gather and tell.\n\nThe pulse is about 40 game frames long, so the swim action should cover the gather and the stroke, then return to the still for the glide. The glide is the float state, and the behaviour sets its length.\n\nSequence:\n- Frame 2 (flare/gather tell) for 14 frames, long enough to read as a warning.\n- Frame 1 (tentacles snapped together, thrust) for 8 frames as the stroke shoots it forward.\n- Frame 2 again for 6 frames as a small secondary flare, giving a pulsing feel.\n- Frame 1 for 6 frames to settle.\n\nI'm skipping the second flare. It would muddy the tell, and the action should end on the still anyway. A simpler sequence works better: gather 16 frames, then thrust on frame 1 for 10 frames. Since the action returns to frame 1 afterward, the thrust hold is effectively part of the glide, so a short hold of 8 is enough to mark the snap.\n\nFinal: frame 2 for 16, frame 1 for 8.\n\n```json\n{\"sequence\": [{\"frame\": 2, \"duration\": 16}, {\"frame\": 1, \"duration\": 8}], \"rationale\": \"The flared tentacle pose is held 16 frames as a readable gather tell, then it snaps to the streamlined still for 8 frames as the thrust, after which the behaviour's glide continues on the still.\"}\n```",
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 655,
+   "completion_tokens": 505,
+   "total_tokens": 1160,
+   "cost": 0.00636,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00636,
+    "upstream_inference_prompt_cost": 0.00131,
+    "upstream_inference_completions_cost": 0.00505
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.00636,
+ "secs": 5.5
+}

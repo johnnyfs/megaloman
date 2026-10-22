@@ -1,0 +1,86 @@
+{
+ "request": {
+  "model": "anthropic/claude-sonnet-5.5",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a Capcom NES animator (Mega Man 2-3). The image shows the 2 frames available for an enemy,\nleft to right (enlarged; the grey-blue background is not part of the sprite). Frame 1 is the still.\n\nThe enemy: A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\nIts behaviour in the game: moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\n\nIts states: \"float\" shows the still (frame 1) with no animation; how long it floats is decided by the behaviour,\nnot by you. You are timing the \"swim\" state, a oneshot action: one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still\n\nDesign the action as a sequence of frames to show, each with how long it is held in game frames at 60 fps (whole\nnumbers). The action plays once; afterwards the enemy is back on the still (frame 1), so do not include the float\nhold. Capcom NES enemies hold action frames for roughly 4-16 game frames; tells (a pose that warns the player) are\nheld long enough to read.\n\nReturn ONLY a JSON object: {\"sequence\": [{\"frame\": n, \"duration\": n}, ...], \"rationale\": \"one or two sentences\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "ee1d893efda554eacb1a46256d7e39bd0c6f3b6df67e55eba2e15570a558d5a5"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792635199-2X44ho50pzNcsEuq1ZWR",
+  "object": "chat.completion",
+  "created": 1792635199,
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "{\"sequence\":[{\"frame\":2,\"duration\":16},{\"frame\":1,\"duration\":8}],\"rationale\":\"Frame 2 (tentacles flared) is the gather, held 16 game frames so the player can read the tell. It then snaps to frame 1 (tentacles together) for the 8-frame thrust, and the behaviour's glide continues on that same still pose.\"}",
+     "refusal": null,
+     "reasoning": "I see two frames for the swim cycle: frame 1 has tentacles trailing together, frame 2 has them flared wide as a gathering tell before snapping back to frame 1 for the forward stroke. The pulse cycle repeats roughly every 40 frames, combining the gather and stroke phases.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I see two frames for the swim cycle: frame 1 has tentacles trailing together, frame 2 has them flared wide as a gathering tell before snapping back to frame 1 for the forward stroke. The pulse cycle repeats roughly every 40 frames, combining the gather and stroke phases.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "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.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1zb25uZXQtNS41LTIwMjYwOTI4fGNsYXVkZS1vbi1hd3MifQ"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 700,
+   "completion_tokens": 499,
+   "total_tokens": 1199,
+   "cost": 0.00639,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00639,
+    "upstream_inference_prompt_cost": 0.0014,
+    "upstream_inference_completions_cost": 0.00499
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 374,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.00639,
+ "secs": 7.6
+}

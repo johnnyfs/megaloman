@@ -1,0 +1,86 @@
+{
+ "request": {
+  "model": "anthropic/claude-sonnet-5.5",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a Capcom NES animator (Mega Man 2-3). The image shows the 2 frames available for an enemy,\nleft to right (enlarged; the grey-blue background is not part of the sprite). Frame 1 is the still.\n\nThe enemy: A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\nIts behaviour in the game: moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\n\nIts states: \"float\" shows the still (frame 1) with no animation; how long it floats is decided by the behaviour,\nnot by you. You are timing the \"swim\" state, a oneshot action: one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still\n\nDesign the action as a sequence of frames to show, each with how long it is held in game frames at 60 fps (whole\nnumbers). The action plays once; afterwards the enemy is back on the still (frame 1), so do not include the float\nhold. Capcom NES enemies hold action frames for roughly 4-16 game frames; tells (a pose that warns the player) are\nheld long enough to read.\n\nReturn ONLY a JSON object: {\"sequence\": [{\"frame\": n, \"duration\": n}, ...], \"rationale\": \"one or two sentences\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "6c90df5113c6289b2938b8468146295633dfe65f158fb7b3096343f8144c1ae0"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792635184-hP2x2Q9DfCbXShprxrig",
+  "object": "chat.completion",
+  "created": 1792635184,
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "{\"sequence\":[{\"frame\":2,\"duration\":16},{\"frame\":1,\"duration\":10}],\"rationale\":\"Frame 2 (tentacles flared) is held for 16 frames so the gather reads as a clear tell. Then it snaps to frame 1 (tentacles together) for 10 frames during the forward thrust, and the glide continues on the float still.\"}",
+     "refusal": null,
+     "reasoning": "I'm planning two key frames for the swim animation: tentacles gathered (still) versus flared wide, with the flare held briefly as a tell before snapping back into a forward thrust, then settling back to the float pose over roughly a 40-frame pulse cycle.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I'm planning two key frames for the swim animation: tentacles gathered (still) versus flared wide, with the flare held briefly as a tell before snapping back into a forward thrust, then settling back to the float pose over roughly a 40-frame pulse cycle.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "CAQSswoKEAgTGAI4AUIIdGhpbmtpbmcSDEUp8ZZ/b6YuGlXYwBoMkOgSlpvyuTsehy9ZIjCoa2oVPMFSpapz8fLVbHLvQoRYhxIBSzlztaPxJpBRVpWF617LBAaurN0zdehRuCUq0AnG1e8oIwCLsQ6WZCkxVnKS53FCi0TPgcWn+GxNJ0s2iNwg4WNWbhmvOKi0XXvzU7ue9se1GDIicwNntBnyxNbt02Nas5loNl4QLdax8lSQQv4zMjRZ5Nkr//WE6McZscl2Spc/ZDW9baZpCmQb9Avafy/vRZVsKPEfAQxro07t0kv98No1x20QnhYklO5q7uewy3uLG42upmzwj860UruABhU7eDvZ55MskZ5u/3yV/3DVxqNdmVLYlETb66enO/Vv8bgCKilwE/H7cbxC9o4F56LsAo6LfM6tPsuygekBU6xLX0scjkwF3m4/hBER/3Qduy1tcePovBkVRCMRbLQoxxTdeBJdRdN5PCjZuNyt1URWM0xjascqMF+O9SIYp5fpz0ObMOOk4crKls0RWeCkKQ/qedDVnfSQiUn1AxBkqMmH/XwQWNNXaADOJyNcWFbn+3SkxkBMn6LGkHOICp/lJUebKjZy/ZYr5ASJBRqHtQ3IlsNBWQuXI+pX1oAYAyltMi74fyQfUN+RDwgIewhFHJUVD1orLduf+axVnEc1JnByV+hk6cohdOSxK1lGTZKEAuXRwJDMlKk6zFCeoQ4geH4G5iHEw4KBojVGlKMcEPJrEaB8zTkfmwifF3e1uLaO0BZ1ZnzikNhlPKGEJ9IrvMCNpXL6dUsCmHHZxaqVMP5yrK6aD/lxPZW0xC/Daymhovxn7vnXcnD8RukWhL12tn+rZmzOOdWzBJsVweSkj+Ubbbr6LIksomE8CJV08myggxyRiwlhk+Gu+G32/lb5Kp8Ho3aWTYfXbgjQo75E0Hiu0RvzOKGDlwaKUwuJK31X/E/oqXtILxeIp+x7EP2aKX0ibsWcJQWJZwb+pu1fikM5PhWYn0H+Er5gycQ7h9lNSnP/LD5AbNygXwyU/WoNdSuen9yw/ARY+uKzBVMgHggZO0EfyUcuEi9wSZIaGWNy4qd5JoSD+qxezTzBh/BIdKFJ4+lsDIO7w5bH7k2Li4W+cU3Avmt5CDAzaE6gRhm1kbrVXJEN7woltwJ615lk4gR2jyDWT5F0Lng9wy5poi0fqe0/zDuvffW43FNPo//P844wR9It0IGSiVPkIBZ3FjZFrA+WZA86CXQRpRRLPKc21GEVXiVFAlUS2xzR0sLnJlZ+K58fimPVYTgCxwEwkT5H3JRZ9Z/gAAPQStcrhtS3PKsxIjqKruzCWpRKdoMAXPJYUcsD4RCq7pwTrjbI+v2Nth+3vLvD2F3VyNmhUmjToY9mqbuFaPPckNPLGIxRaHGD9/NoNiN0c6Bp69htYnimp3XFnNMzjoLNZJQ8gUE1DJMH7PcwlK8a/FiyCcXtfTgbrMaDQYgF4X9n2HVq/q6liQyfs5mbjfmy3axlcU4E9naO7muTFj4IJOHOmx2xfs+9twhzwD38LLwHo2hJ0wwisGXK/quWzA7VJeh2icSjjhs6vXUEC33Urv8bSiWPM2Bj5nPa6FG3cJA5ec6TciKT+CCHouow6O7SB6RnjJjjbNFMfs0OoEwNStK5KTSye+XFImFfb1BIahsY36IKB9HRgkWnUbNX2QIV6823r8pN+xsR0mXz9TIBG/3r33P0p+TVvEc/RFfwet42MZhsKI+iytBK/6Wc8zG5ajD8LBgB.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1zb25uZXQtNS41LTIwMjYwOTI4fGNsYXVkZS1vbi1hd3MifQ"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 700,
+   "completion_tokens": 424,
+   "total_tokens": 1124,
+   "cost": 0.00564,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00564,
+    "upstream_inference_prompt_cost": 0.0014,
+    "upstream_inference_completions_cost": 0.00424
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 302,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.00564,
+ "secs": 6.7
+}
