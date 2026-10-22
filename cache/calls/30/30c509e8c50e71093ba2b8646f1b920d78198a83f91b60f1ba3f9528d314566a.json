@@ -1,0 +1,77 @@
+{
+ "request": {
+  "model": "anthropic/claude-sonnet-5.5",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a Capcom NES animator (Mega Man 2-3). The image shows the 2 frames of a looping enemy\nanimation, left to right (enlarged; the grey-blue background is not part of the sprite). Frame 1 is the approved\nstill.\n\nThe enemy: A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\nThe motion: swim in pulses: frame 1 (the approved still) is the glide, tentacles together; frame 2 is the stroke, tentacles flared out wide as it pushes; looping\nIts behaviour in the game: moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together\n\nDecide how long each frame is held, in game frames at 60 fps (whole numbers). Capcom NES enemies hold frames for\nroughly 4-16 game frames in steady cycles, and hold poses longer where the behaviour pauses or glides. Make the\nrhythm express the behaviour.\n\nReturn ONLY a JSON object: {\"durations\": [frame 1, frame 2, ...], \"rationale\": \"one or two sentences\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "7425584b2cc002dd6ecb6d544c7f956228cdbf876f0cceac469192f86972de16"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792634083-T62oaH5iSGcnbRXA6ugB",
+  "object": "chat.completion",
+  "created": 1792634083,
+  "model": "anthropic/claude-sonnet-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "{\"durations\": [28, 10], \"rationale\": \"The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift.\", \"note\": \"28+10=38 frames, close to the 40-frame behavior cycle.\"}",
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 637,
+   "completion_tokens": 164,
+   "total_tokens": 801,
+   "cost": 0.002914,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.002914,
+    "upstream_inference_prompt_cost": 0.001274,
+    "upstream_inference_completions_cost": 0.00164
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.002914,
+ "secs": 2.0
+}

@@ -1,0 +1,5 @@
+name: telly_recolor
+kind: control
+control: recolor   # same pixels, channel-rotated palette: measures how much the score rewards recognition
+subject: subject.png
+brief: brief.yaml

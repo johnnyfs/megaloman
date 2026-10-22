@@ -1,0 +1,12 @@
+{
+ "pipeline": "one_shot",
+ "version": "v1",
+ "created": "2026-10-22T01:30:51+00:00",
+ "author": "coding-agent",
+ "parent": null,
+ "change": {
+  "what": "initial version: one image-model call per seed (rules-first prompt, Telly + Pipi as enlarged style references), grid snap, palette lock to 4 colours, deterministic gates, 3-sample judge, pick best",
+  "why": "baseline pipeline: the simplest thing that could produce a usable sprite; every later version is measured against it",
+  "prompted_by": null
+ }
+}

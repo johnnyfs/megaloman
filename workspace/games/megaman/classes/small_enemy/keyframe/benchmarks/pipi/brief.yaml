@@ -1,0 +1,6 @@
+id: pipi
+description: >
+  A small robot bird enemy: a magenta-and-white bird with a big eye, a short beak and a raised wing.
+  It flies across the screen and drops eggs on Mega Man.
+size: about 18x16 px
+game: Mega Man 2-3 (NES)

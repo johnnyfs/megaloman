@@ -1,0 +1,1466 @@
+{
+ "pipeline": {
+  "name": "swim2",
+  "version": "v3",
+  "hash": "5f044473ac"
+ },
+ "asset": "squid",
+ "game": "megaman",
+ "class": "small_enemy",
+ "asset_type": "animation",
+ "seed": 1,
+ "created": "2026-10-22T01:54:39+00:00",
+ "steps": [
+  {
+   "id": "src",
+   "step": "source.blessed",
+   "input": null,
+   "params": {
+    "track": "primary",
+    "top": 2
+   },
+   "items": [
+    {
+     "id": "src.0",
+     "parent": null,
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "blessed_rank": 1,
+      "upstream": {
+       "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+       "candidate": "lock.3",
+       "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17"
+      }
+     },
+     "file": "steps/src/0.png"
+    },
+    {
+     "id": "src.1",
+     "parent": null,
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "blessed_rank": 2,
+      "upstream": {
+       "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+       "candidate": "lock.1",
+       "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30"
+      }
+     },
+     "file": "steps/src/1.png"
+    }
+   ]
+  },
+  {
+   "id": "draw",
+   "step": "gen.image",
+   "input": "$src",
+   "params": {
+    "input_scale": 16,
+    "model": "google/gemini-3.1-flash-image",
+    "prompt": "prompts/frame2.md",
+    "fanout": 3
+   },
+   "items": [
+    {
+     "id": "draw.0",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "f85ca292e92cc079ee2b8418b8fd5e4c90620422aa6967cd9a7e77b77409ab78",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 100,
+      "call": "d730d9478f4c68197bb17d5c2e3f58b35d75e2374b9144458990d77a3dc784ad",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/0.png"
+    },
+    {
+     "id": "draw.1",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "617a2c0c2312c1a4a32171e2a6ad07c84cbd2bba611f1a8ab08f0b3ee35ba769",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 101,
+      "call": "a2391b974ffe2febe76615c08079b6dca7e656d9cf07bc9c92eeb00455e20c5c",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/1.png"
+    },
+    {
+     "id": "draw.2",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "0885e79ad3292ff4aa84762bc4debab5e54e89ddd904133f5e914d2000425e46",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 102,
+      "call": "5fcbae833464bc86c9c6056ead16648a466a6357f6156505024da57ba4744671",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/2.png"
+    },
+    {
+     "id": "draw.3",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "4096a26c1ac5af8b2eba74a3dc86e41de62c7114bd6f362944f84e568766c1fd",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 100,
+      "call": "176b58d6d36fe618f4d9291a6eccd13be84880c62031b9069bf09e3359256479",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/3.png"
+    },
+    {
+     "id": "draw.4",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "4b4bb1ca16857c41ebd8547dbf3537c7fef8727d6ca4ce80ed32f1552e558f0e",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 101,
+      "call": "24b07746978315d1b41df148b77ace50c18717d67f9a7f162851019d865ccf5e",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/4.png"
+    },
+    {
+     "id": "draw.5",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "264f589421e2a2339b876c8f696f8ea93be2684f4feff2e1f02e5fe23841fa24",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 102,
+      "call": "16a2dc0034c0bcc26d550aa033c917cda571756a473994aac47e09b145641fb5",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/5.png"
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "step": "gridsnap",
+   "input": "$draw",
+   "params": {},
+   "items": [
+    {
+     "id": "snap.0",
+     "parent": "draw.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       34.79,
+       34.79
+      ],
+      "size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/snap/0.png"
+    },
+    {
+     "id": "snap.1",
+     "parent": "draw.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "4008fef0af7c48b1612a81380864551a226021b4f9ddd0aa31552c2ebdb8edbb",
+     "size": [
+      56,
+      58
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       17.39,
+       17.39
+      ],
+      "size": [
+       56,
+       58
+      ]
+     },
+     "file": "steps/snap/1.png"
+    },
+    {
+     "id": "snap.2",
+     "parent": "draw.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       34.79,
+       34.79
+      ],
+      "size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/snap/2.png"
+    },
+    {
+     "id": "snap.3",
+     "parent": "draw.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "c54481eff5543288670d53b0def88614604e1de572e122fc2a2d0e67a3432aa4",
+     "size": [
+      40,
+      56
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       20.98,
+       20.98
+      ],
+      "size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/snap/3.png"
+    },
+    {
+     "id": "snap.4",
+     "parent": "draw.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "3b0c6eaa155cedfe95d5300ef250fba850913a16f9044ceb2c4af61014415cc6",
+     "size": [
+      20,
+      27
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       41.92,
+       41.92
+      ],
+      "size": [
+       20,
+       27
+      ]
+     },
+     "file": "steps/snap/4.png"
+    },
+    {
+     "id": "snap.5",
+     "parent": "draw.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "f3bdf0720f926b3a7581b70286ec8cfa3998a9c5390858d98b103d2eb1325a52",
+     "size": [
+      40,
+      56
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       20.96,
+       20.96
+      ],
+      "size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/snap/5.png"
+    }
+   ]
+  },
+  {
+   "id": "align",
+   "step": "align",
+   "input": "$snap",
+   "params": {
+    "max_shift": 8
+   },
+   "items": [
+    {
+     "id": "align.0",
+     "parent": "snap.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.241,
+      "source_size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/align/0.png"
+    },
+    {
+     "id": "align.1",
+     "parent": "snap.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d09ceb9904ba8436a269d69dffdd920b4d98fc07a7b50af9fb8b29920f39e1",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -18,
+       -6
+      ],
+      "clipped": 0.58,
+      "changed": 0.648,
+      "source_size": [
+       56,
+       58
+      ]
+     },
+     "file": "steps/align/1.png"
+    },
+    {
+     "id": "align.2",
+     "parent": "snap.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.249,
+      "source_size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/align/2.png"
+    },
+    {
+     "id": "align.3",
+     "parent": "snap.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "602f140fd5ea29b09b2bac2510dbe83ad1b8f6258c08928208773770a50c9988",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -10,
+       -2
+      ],
+      "clipped": 0.636,
+      "changed": 0.719,
+      "source_size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/align/3.png"
+    },
+    {
+     "id": "align.4",
+     "parent": "snap.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "7e3e9fde5fdfef0788b911cc7681d20694aacfead8f0b8e8b74272633f5a0a3e",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       1
+      ],
+      "clipped": 0.0,
+      "changed": 0.537,
+      "source_size": [
+       20,
+       27
+      ]
+     },
+     "file": "steps/align/4.png"
+    },
+    {
+     "id": "align.5",
+     "parent": "snap.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "6fd69b6423d0c0ac68f222809a922e17dbd63d00937105896025114c728e82cc",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -9,
+       -2
+      ],
+      "clipped": 0.619,
+      "changed": 0.682,
+      "source_size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/align/5.png"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "step": "anim_checks",
+   "input": "$align",
+   "params": {
+    "changed": {
+     "min": 0.03,
+     "max": 0.5
+    },
+    "max_clipped": 0.05,
+    "checks": {
+     "orphans": {},
+     "outline": {
+      "min_dark": 0.75
+     }
+    }
+   },
+   "items": [
+    {
+     "id": "gate.0",
+     "parent": "align.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.241,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "24% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      }
+     },
+     "file": "steps/gate/0.png"
+    },
+    {
+     "id": "gate.1",
+     "parent": "align.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d09ceb9904ba8436a269d69dffdd920b4d98fc07a7b50af9fb8b29920f39e1",
+     "size": [
+      28,
+      29
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -18,
+       -6
+      ],
+      "clipped": 0.58,
+      "changed": 0.648,
+      "source_size": [
+       56,
+       58
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": false,
+        "detail": "42% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "65% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "58% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: outline, changed, clipped"
+     },
+     "file": "steps/gate/1.png"
+    },
+    {
+     "id": "gate.2",
+     "parent": "align.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.249,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "25% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      }
+     },
+     "file": "steps/gate/2.png"
+    },
+    {
+     "id": "gate.3",
+     "parent": "align.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "602f140fd5ea29b09b2bac2510dbe83ad1b8f6258c08928208773770a50c9988",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -10,
+       -2
+      ],
+      "clipped": 0.636,
+      "changed": 0.719,
+      "source_size": [
+       40,
+       56
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "81% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "72% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "64% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed, clipped"
+     },
+     "file": "steps/gate/3.png"
+    },
+    {
+     "id": "gate.4",
+     "parent": "align.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "7e3e9fde5fdfef0788b911cc7681d20694aacfead8f0b8e8b74272633f5a0a3e",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       0,
+       1
+      ],
+      "clipped": 0.0,
+      "changed": 0.537,
+      "source_size": [
+       20,
+       27
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "54% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed"
+     },
+     "file": "steps/gate/4.png"
+    },
+    {
+     "id": "gate.5",
+     "parent": "align.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "6fd69b6423d0c0ac68f222809a922e17dbd63d00937105896025114c728e82cc",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -9,
+       -2
+      ],
+      "clipped": 0.619,
+      "changed": 0.682,
+      "source_size": [
+       40,
+       56
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "81% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "68% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "62% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed, clipped"
+     },
+     "file": "steps/gate/5.png"
+    }
+   ]
+  },
+  {
+   "id": "timing",
+   "step": "timing.design",
+   "input": "$gate",
+   "params": {
+    "model": "anthropic/claude-sonnet-5.5",
+    "prompt": "prompts/timing.md"
+   },
+   "items": [
+    {
+     "id": "timing.0",
+     "parent": "gate.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.241,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "24% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      },
+      "timing": {
+       "durations": [
+        28,
+        10
+       ],
+       "rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift.",
+       "call": "30c509e8c50e71093ba2b8646f1b920d78198a83f91b60f1ba3f9528d314566a",
+       "cost": 0.002914,
+       "model": "anthropic/claude-sonnet-5.5"
+      }
+     },
+     "file": "steps/timing/0.png"
+    },
+    {
+     "id": "timing.1",
+     "parent": "gate.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.249,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "25% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      },
+      "timing": {
+       "durations": [
+        28,
+        12
+       ],
+       "rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+       "call": "fc1cfe356f5e90575a33ca616ee1312bea1b172d4df75ec7b0d3e11acdfebaf9",
+       "cost": 0.002664,
+       "model": "anthropic/claude-sonnet-5.5"
+      }
+     },
+     "file": "steps/timing/1.png"
+    }
+   ]
+  },
+  {
+   "id": "anim",
+   "step": "assemble",
+   "input": "$timing",
+   "params": {},
+   "items": [
+    {
+     "id": "anim.0",
+     "parent": "timing.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b"
+      ],
+      "durations": [
+       28,
+       10
+      ],
+      "timing": "designed",
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift."
+     },
+     "file": "steps/anim/0.png",
+     "gif": "steps/anim/0.gif"
+    },
+    {
+     "id": "anim.1",
+     "parent": "timing.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "durations": [
+       28,
+       12
+      ],
+      "timing": "designed",
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour."
+     },
+     "file": "steps/anim/1.png",
+     "gif": "steps/anim/1.gif"
+    }
+   ]
+  },
+  {
+   "id": "score",
+   "step": "judge",
+   "input": "$anim",
+   "params": {
+    "eval": "evals/convincing_anim_timed.yaml",
+    "samples": 3
+   },
+   "items": [
+    {
+     "id": "score.0",
+     "parent": "anim.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b"
+      ],
+      "durations": [
+       28,
+       10
+      ],
+      "timing": "designed",
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift.",
+      "judge": {
+       "eval": {
+        "name": "convincing_anim_timed",
+        "path": "evals/convincing_anim_timed.yaml",
+        "hash": "561e641e45",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+       "presentation_blob": "42766e3f3980983b55519c99009b2eab1df6c3af84a71399a36f6032a6a8f4c4",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "7dbe0f9fe8bd8fcbeedc84a48261911e9c60936185c3f31914656de165b82542",
+         "cached": false,
+         "cost": 0.0136684,
+         "subscores": {
+          "motion_readability": 7,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 7,
+          "timing": 8,
+          "appeal": 7
+         },
+         "score": 71,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 communicates a flare, but its many small curls and alternating black/blue/white clusters make the stroke silhouette busy rather than forceful.",
+          "Frame 2 changes large portions of both lower sides as well as every tentacle, making the transition less economical than a typical Capcom two-frame enemy cycle.",
+          "Frame 2's screen-right curled limb rises into the body edge and reads partly as a shifting body contour rather than a clearly hinged tentacle.",
+          "Frame 2's lower central tentacles create narrow single-pixel notches and crowded high-contrast gaps that look fussier than frame 1's clean clusters.",
+          "The 28/10 hold gives a suitable long-glide/short-stroke rhythm, but the instantaneous full flare lacks a strong directional thrust cue."
+         ],
+         "fixes": [
+          "In frame 2, simplify each outer curl into one clean hooked silhouette, removing the smallest interior black/white notches.",
+          "Keep frame 2's torso-side outline identical to frame 1 down to the tentacle roots; begin the flare one or two pixels lower so only the limbs appear to move.",
+          "In frame 2, spread the main tentacles outward with fewer bends and align their tips into a clearer backward push shape.",
+          "Preserve more of frame 1's central tentacle pixels in frame 2 and change primarily the outer halves, reducing the difference footprint.",
+          "In frame 2, consolidate the lower blue and white areas into larger clusters and eliminate isolated one-pixel accents between the central limbs."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "cdf1ed1132041bd23264d3a3048393b6f0ccd1432407470588a5a56ce1030af2",
+         "cached": false,
+         "cost": 0.051667,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 7,
+          "pixel_craft": 7,
+          "timing": 9,
+          "appeal": 7
+         },
+         "score": 78,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 reads as a flare, but its numerous curled tips make the stroke silhouette busier than a typical Capcom two-frame action pose.",
+          "In frame 2, the raised left tentacle crowds the cheek while the right curl tangles with the mantle edge, producing weak silhouette separation at true size.",
+          "Frame 2 redraws much of the lower mass; although the head remains stable, the changing interior gaps and white patches create more visual boil than an economical NES stroke needs.",
+          "The 28/10-frame rhythm gives a strong long-glide/short-flare pattern, but holding the fully flared pose for 10 game frames makes the actual thrust feel slightly sustained rather than snappy."
+         ],
+         "fixes": [
+          "Keep frame 1 unchanged and simplify frame 2 to one clean outward curve on each side, removing the innermost hooks and isolated-looking tip clusters.",
+          "In frame 2, move the left raised tentacle one pixel away from the cheek and open a one-pixel background channel between the right curl and mantle edge.",
+          "Preserve more of frame 1's central tentacle-root pixels in frame 2; animate primarily the outer halves and tips so the body base does not appear to boil.",
+          "Consolidate frame 2's small white gaps near the lower tentacles into larger intentional openings, using continuous black outlines and compact blue clusters."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "a047bf993bb79fd20593a29e26c89732330b6cee7048df1cfe86ea419c626d94",
+         "cached": false,
+         "cost": 0.042867,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 8,
+          "pixel_craft": 8,
+          "timing": 9,
+          "appeal": 8
+         },
+         "score": 84,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 2 reads as a strong flare, but the two curled outer tentacles and central legs create a slightly busy lower silhouette at true size.",
+          "Frame 1's long right-trailing tentacle makes the 'tentacles together' glide pose less compact than it could be.",
+          "The broad redraw at the lower body-to-tentacle junction in frame 2 slightly weakens the otherwise excellent stability of the unchanged head."
+         ],
+         "fixes": [
+          "In frame 2, remove one inward black notch from each outer curl and consolidate the blue clusters so the flared silhouette reads immediately without interior chatter.",
+          "In frame 1, shorten the rightmost trailing tip by one pixel and tuck its white interior inward to make the gathered glide pose more compact.",
+          "Keep the uppermost row of the lower-body blue mass identical between frames, beginning the frame-2 flare one pixel lower so the fixed body and animated tentacles separate more cleanly."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 77.67,
+        "sd": 6.51,
+        "min": 71,
+        "max": 84,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 7.67,
+         "consistency": 8.67,
+         "economy": 7,
+         "pixel_craft": 7.33,
+         "timing": 8.67,
+         "appeal": 7.33
+        },
+        "convincing_rate": 0.33,
+        "cost": 0.1082
+       }
+      }
+     },
+     "file": "steps/score/0.png",
+     "gif": "steps/score/0.gif"
+    },
+    {
+     "id": "score.1",
+     "parent": "anim.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "durations": [
+       28,
+       12
+      ],
+      "timing": "designed",
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+      "judge": {
+       "eval": {
+        "name": "convincing_anim_timed",
+        "path": "evals/convincing_anim_timed.yaml",
+        "hash": "561e641e45",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+       "presentation_blob": "ecb3ec8ad60d628dad117e737aa2c823e69fe278cd3be8acc6b45393a54023a2",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "de2b64a798e4264db088eddfb3a871473d517f55efac0af4df7966b7f160ee70",
+         "cached": false,
+         "cost": 0.0334916,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 8,
+          "pixel_craft": 8,
+          "timing": 7,
+          "appeal": 8
+         },
+         "score": 81,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacle silhouette, but its 12-game-frame hold makes the supposedly quick stroke feel slightly sustained rather than sharp.",
+          "Frame 1's long rightward trailing tentacle weakens the otherwise gathered silhouette and can initially read as a partial flare.",
+          "Frame 2's central lower tentacles form a busy cluster of short black, white, and blue steps, making the thrust pose less clean at true size.",
+          "Frame 2's outer curled tentacles terminate in thin vertical hooks that look somewhat rigid compared with the rounded body."
+         ],
+         "fixes": [
+          "In frame 1, retract the rightmost tentacle tip by 2 pixels and tuck its final blue cluster one row closer to the body to strengthen the gathered pose.",
+          "In frame 2, remove one black step from each inner lower-tentacle edge and preserve a one-pixel background notch between the two central tips.",
+          "In frame 2, shorten each outer vertical hook by 1 pixel and move that pixel into the adjacent bend, producing broader, rounder curls.",
+          "In frame 2, add one blue pixel to the outside of each central tentacle bend while removing one from the inside edge, making the flare read as an outward sweep without changing the stable head."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "ff16f2d56cbd11e5a53d0642e83b2f3b01bb5403fe0ef69a30d8b96828911d93",
+         "cached": false,
+         "cost": 0.049437,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 9,
+          "pixel_craft": 8,
+          "timing": 8,
+          "appeal": 8
+         },
+         "score": 84,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 1's gathered tentacles lean strongly toward character-right, so the glide can momentarily read as a sideways drag rather than a compact gathered pose.",
+          "Frame 1's long rightmost tentacle and dense central leg cluster make the lower silhouette slightly busier than typical Capcom clustering.",
+          "Frame 2's flared pose is held for 12 game frames, making the thrust feel a little more sustained than quick."
+         ],
+         "fixes": [
+          "Frame 1: retract the far-right tentacle tip by 2 pixels and move its lowest black run 1 pixel inward to make the gathered silhouette more compact.",
+          "Frame 1: simplify one stair-step on each inner tentacle edge so the central cluster separates into two cleaner masses at 1x.",
+          "Frame 2: shorten the hold from 12 to 8 game frames and add those 4 frames to frame 1, preserving the 40-frame loop while sharpening the thrust."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "50b825bde8fb60f0f682e3bd527fa469bfe557b5b5796593c549484debc0c3f0",
+         "cached": false,
+         "cost": 0.0307316,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 10,
+          "economy": 9,
+          "pixel_craft": 8,
+          "timing": 9,
+          "appeal": 8
+         },
+         "score": 86,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 1's far-right tentacle remains extended horizontally, weakening the intended fully gathered glide silhouette.",
+          "Frame 2's three lower central tentacles form a slightly busy, uneven cluster compared with the cleaner outer curls.",
+          "The flare-to-gather snap reads clearly at the loop boundary, but the propulsion is implied rather than strongly accented by body compression."
+         ],
+         "fixes": [
+          "In frame 1, retract the far-right tentacle tip inward by 1-2 pixels and shorten its black underside so all tentacles read as gathered beneath the body.",
+          "In frame 2, remove one protruding pixel from the inner edge of each central tentacle and regularize the black gaps between them into cleaner one-pixel channels.",
+          "In frame 2, raise the central blue body edge by one pixel above the tentacle roots to create a subtle compressed-body pose and strengthen the snap back into frame 1."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 83.67,
+        "sd": 2.52,
+        "min": 81,
+        "max": 86,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 8,
+         "consistency": 9.33,
+         "economy": 8.67,
+         "pixel_craft": 8,
+         "timing": 8,
+         "appeal": 8
+        },
+        "convincing_rate": 1.0,
+        "cost": 0.1137
+       }
+      }
+     },
+     "file": "steps/score/1.png",
+     "gif": "steps/score/1.gif"
+    }
+   ]
+  },
+  {
+   "id": "best",
+   "step": "select",
+   "input": "$score",
+   "params": {
+    "by": "judge.mean",
+    "group_by": "root"
+   },
+   "items": [
+    {
+     "id": "best.0",
+     "parent": "score.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "durations": [
+       28,
+       12
+      ],
+      "timing": "designed",
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+      "judge": {
+       "eval": {
+        "name": "convincing_anim_timed",
+        "path": "evals/convincing_anim_timed.yaml",
+        "hash": "561e641e45",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+       "presentation_blob": "ecb3ec8ad60d628dad117e737aa2c823e69fe278cd3be8acc6b45393a54023a2",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "de2b64a798e4264db088eddfb3a871473d517f55efac0af4df7966b7f160ee70",
+         "cached": false,
+         "cost": 0.0334916,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 8,
+          "pixel_craft": 8,
+          "timing": 7,
+          "appeal": 8
+         },
+         "score": 81,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacle silhouette, but its 12-game-frame hold makes the supposedly quick stroke feel slightly sustained rather than sharp.",
+          "Frame 1's long rightward trailing tentacle weakens the otherwise gathered silhouette and can initially read as a partial flare.",
+          "Frame 2's central lower tentacles form a busy cluster of short black, white, and blue steps, making the thrust pose less clean at true size.",
+          "Frame 2's outer curled tentacles terminate in thin vertical hooks that look somewhat rigid compared with the rounded body."
+         ],
+         "fixes": [
+          "In frame 1, retract the rightmost tentacle tip by 2 pixels and tuck its final blue cluster one row closer to the body to strengthen the gathered pose.",
+          "In frame 2, remove one black step from each inner lower-tentacle edge and preserve a one-pixel background notch between the two central tips.",
+          "In frame 2, shorten each outer vertical hook by 1 pixel and move that pixel into the adjacent bend, producing broader, rounder curls.",
+          "In frame 2, add one blue pixel to the outside of each central tentacle bend while removing one from the inside edge, making the flare read as an outward sweep without changing the stable head."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "ff16f2d56cbd11e5a53d0642e83b2f3b01bb5403fe0ef69a30d8b96828911d93",
+         "cached": false,
+         "cost": 0.049437,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 9,
+          "pixel_craft": 8,
+          "timing": 8,
+          "appeal": 8
+         },
+         "score": 84,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 1's gathered tentacles lean strongly toward character-right, so the glide can momentarily read as a sideways drag rather than a compact gathered pose.",
+          "Frame 1's long rightmost tentacle and dense central leg cluster make the lower silhouette slightly busier than typical Capcom clustering.",
+          "Frame 2's flared pose is held for 12 game frames, making the thrust feel a little more sustained than quick."
+         ],
+         "fixes": [
+          "Frame 1: retract the far-right tentacle tip by 2 pixels and move its lowest black run 1 pixel inward to make the gathered silhouette more compact.",
+          "Frame 1: simplify one stair-step on each inner tentacle edge so the central cluster separates into two cleaner masses at 1x.",
+          "Frame 2: shorten the hold from 12 to 8 game frames and add those 4 frames to frame 1, preserving the 40-frame loop while sharpening the thrust."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "50b825bde8fb60f0f682e3bd527fa469bfe557b5b5796593c549484debc0c3f0",
+         "cached": false,
+         "cost": 0.0307316,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 10,
+          "economy": 9,
+          "pixel_craft": 8,
+          "timing": 9,
+          "appeal": 8
+         },
+         "score": 86,
+         "verdict": "convincing",
+         "issues": [
+          "Frame 1's far-right tentacle remains extended horizontally, weakening the intended fully gathered glide silhouette.",
+          "Frame 2's three lower central tentacles form a slightly busy, uneven cluster compared with the cleaner outer curls.",
+          "The flare-to-gather snap reads clearly at the loop boundary, but the propulsion is implied rather than strongly accented by body compression."
+         ],
+         "fixes": [
+          "In frame 1, retract the far-right tentacle tip inward by 1-2 pixels and shorten its black underside so all tentacles read as gathered beneath the body.",
+          "In frame 2, remove one protruding pixel from the inner edge of each central tentacle and regularize the black gaps between them into cleaner one-pixel channels.",
+          "In frame 2, raise the central blue body edge by one pixel above the tentacle roots to create a subtle compressed-body pose and strengthen the snap back into frame 1."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 83.67,
+        "sd": 2.52,
+        "min": 81,
+        "max": 86,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 8,
+         "consistency": 9.33,
+         "economy": 8.67,
+         "pixel_craft": 8,
+         "timing": 8,
+         "appeal": 8
+        },
+        "convincing_rate": 1.0,
+        "cost": 0.1137
+       }
+      },
+      "rank": 1,
+      "score": 83.67,
+      "group": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17"
+     },
+     "file": "steps/best/0.png",
+     "gif": "steps/best/0.gif"
+    }
+   ]
+  }
+ ],
+ "status": "ok",
+ "depends_on": {
+  "track": "primary",
+  "select": {
+   "blessed": true,
+   "top": 2
+  }
+ },
+ "upstream": [
+  {
+   "track": "primary",
+   "blessed_file": "games/megaman/assets/squid/tracks/primary/blessed.json",
+   "items": [
+    {
+     "rank": 1,
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+     "candidate": "lock.3"
+    },
+    {
+     "rank": 2,
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+     "candidate": "lock.1"
+    }
+   ]
+  }
+ ],
+ "best": "best.0",
+ "cost": {
+  "spent": 0.2274,
+  "calls": 8,
+  "cached": 6
+ }
+}

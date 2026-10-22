@@ -1,0 +1,186 @@
+{
+ "eval": {
+  "name": "convincing_action",
+  "path": "evals/convincing_action.yaml",
+  "hash": "0bc6690002",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "abcc64a6520eef2b9697ea4f668aa0f5b077257b8e87b4f87d2ec6c71ef8481e",
+ "presentation_blob": "2dda8aa459440def2ca14429ca0c298be59740578e4554f0fa35c90773450031",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "bb7f75eebff3ee8c64e2a741e763cd765087a4bd610a72f4ce683ece935f7f44",
+   "cached": false,
+   "cost": 0.048308,
+   "subscores": {
+    "motion_readability": 9.4,
+    "consistency": 9.8,
+    "economy": 9.5,
+    "pixel_craft": 9.5,
+    "timing": 9.2,
+    "appeal": 9.0
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "The frame 6 -> frame 1 wrap is slightly busier than the other steps, so the second eye appears a little abruptly at the loop seam."
+   ],
+   "fixes": [
+    "In frame 6, expose a 1-pixel-wide white sliver of the incoming left eye at the left edge of the black band, replacing the adjacent black pixel, to soften the wrap into frame 1."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "067255aeb317468d2f8368464f4e7a4790cf5809f022ae8c47024a3dee1f5fdc",
+   "cached": false,
+   "cost": 0.056448,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 9,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's fully transparent middle makes the upper and lower barrel halves briefly look disconnected; the partial side fragments in frames 3 and 5 only narrowly preserve the rotating-band read."
+   ],
+   "fixes": [
+    "In frame 4, add a one-pixel-wide black or dark-blue central axle connecting the barrel halves; retain that same axle behind the partial eye-band fragments in frames 3 and 5."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "0cd036d35b125dd2c5f165686a843f88a700df833450d7258f8567ce6eb21179",
+   "cached": false,
+   "cost": 0.038308,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "The frame 6 to frame 1 wrap is the busiest band transition and produces a slightly sharper pop than the other rotation steps.",
+    "In frame 6, the small left-side eye fragment is somewhat ambiguous when viewed alone, though it reads correctly in motion."
+   ],
+   "fixes": [
+    "In frame 6, expose one additional white pixel on the emerging left eye or reduce its black occlusion by one pixel to soften the return to frame 1.",
+    "Keep the outer shell and stripe pixels unchanged; their stable silhouette and sparse one-pixel phase changes are already appropriately economical."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "19d52fc304339b610b57fd2ad385979e1021199026d0a0576d0f0e40625a92ee",
+   "cached": false,
+   "cost": 0.053048,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely empty eye band is a slightly low-information midpoint, making the rotation momentarily read flatter than the surrounding poses.",
+    "The narrow eye-edge accents in frames 3 and 5 are subtle enough to nearly disappear at 1x."
+   ],
+   "fixes": [
+    "Extend the visible white eye-edge cluster in frame 3 one pixel inward, then mirror that adjustment in frame 5; keep frame 4 and the outer barrel silhouette unchanged."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "aa0935ee3c15b6c498e7726061b4a55ab723ff39a91d5282be2be6d5a3836e6b",
+   "cached": false,
+   "cost": 0.064108,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely empty eye band briefly makes the body read as two disconnected caps rather than a rotating barrel.",
+    "The frame 6 -> frame 1 transition changes a comparatively broad area of the eye band, making the loop seam slightly sharper than the intermediate rotational steps."
+   ],
+   "fixes": [
+    "In frame 4, retain a 1-pixel black or blue side sliver at one edge of the middle band to preserve the barrel connection without weakening the rear-facing pose.",
+    "In frame 6, add a 1- to 2-pixel white edge sliver for the incoming second eye, or shift the visible eye cluster one pixel closer to its frame 1 placement, reducing the final pop."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 92.8,
+  "sd": 0.45,
+  "min": 92,
+  "max": 93,
+  "n": 5,
+  "subscores_mean": {
+   "motion_readability": 9.08,
+   "consistency": 9.76,
+   "economy": 9.9,
+   "pixel_craft": 9.1,
+   "timing": 9.04,
+   "appeal": 9.0
+  },
+  "convincing_rate": 1.0,
+  "cost": 0.2602
+ },
+ "motion": {
+  "changed_pixels": 140,
+  "frames": 6
+ },
+ "benchmark": "telly_spin",
+ "kind": "authentic",
+ "control": null,
+ "type": "animation",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": false,
+   "detail": "106x16 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T02:01:13+00:00"
+}

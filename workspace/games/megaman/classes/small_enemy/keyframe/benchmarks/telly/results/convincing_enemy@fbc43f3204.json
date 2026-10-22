@@ -1,0 +1,218 @@
+{
+ "eval": {
+  "name": "convincing_enemy",
+  "path": "evals/convincing_enemy.yaml",
+  "hash": "fbc43f3204",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "e0e0e68ec3ced48147b514fc46aaccd538872a1457b1bf6fdba417fbdee9ee6a",
+ "presentation_blob": "366422184fe9321831484506f6b0129702765044924b395b932a64476e2e1220",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "c61c974521a753de99fd83f8eab419ecc3e97419a26d3462cc6ba4adec9d81c1",
+   "cached": true,
+   "cost": 0.038684,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 8,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 4,
+    "appeal": 6
+   },
+   "score": 62,
+   "verdict": "not_convincing",
+   "issues": [
+    "The upper and lower 8x8 regions appear to use black, white, dark blue, and cyan together, exceeding the usual three opaque colours per NES sprite palette.",
+    "Both eyes are square white blocks with square pupils rather than convincingly round mechanical eyes.",
+    "The broad black middle band and heavy horizontal rims flatten the body into stacked rectangles instead of a squat barrel.",
+    "Perfect bilateral symmetry and identical vertical colour strips make the design feel static and fan-made rather than characterful Capcom work.",
+    "At 1x the face reads clearly, but the blue-and-cyan body details merge into narrow stripes with little useful volume."
+   ],
+   "fixes": [
+    "Remove either cyan or dark blue so each 8x8 sprite region uses black plus only two body colours.",
+    "Clip one pixel from each corner of both white eye shapes to make compact round eyes; keep each pupil as a clean 1-2 pixel cluster.",
+    "Narrow the black bands above and below the eyes by one row and use that space to round the outer barrel silhouette.",
+    "Widen the body at its middle and taper the top and bottom corners by one pixel to create a clearer barrel shape.",
+    "Replace the mirrored cyan strips with one controlled highlight on the upper-left and a single blue shadow mass on the lower-right.",
+    "Offset both pupils one pixel toward the travel direction to add intent and Capcom-style personality."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "518bb826b47e5dec53b5508c2ad22e89196942e08e3e58597270a1a552105699",
+   "cached": true,
+   "cost": 0.029264,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 9,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 5,
+    "appeal": 6
+   },
+   "score": 65,
+   "verdict": "not_convincing",
+   "issues": [
+    "Black, white, bright blue, and dark navy coexist in the upper and lower 8x8 regions, exceeding the usual three visible colours per NES sprite palette unless wastefully layered.",
+    "The middle is dominated by a thick rectangular black band, making the eyes feel pasted onto the body rather than embedded in a rounded barrel shell.",
+    "The eye shapes and centered pupils are very rigid and square, giving the drone less of Capcom's lively mechanical character.",
+    "The perfectly mirrored blue-and-white striping feels decorative and modern rather than function-driven Mega Man enemy detailing.",
+    "The top and bottom contours are clean but overly box-like; the barrel volume is not strongly expressed at 1x."
+   ],
+   "fixes": [
+    "Reduce the sprite to black, white, and one blue plus transparency; replace the dark-navy pixels with either black outline or the main blue.",
+    "Thin or interrupt the black eye band near its outer ends so the white shell remains visibly continuous around the face.",
+    "Cut one pixel from selected eye corners to make each eye rounder, and offset the pupils by one pixel to imply drifting toward Mega Man.",
+    "Widen the middle shell by one pixel per side while tapering the top and bottom corners more deliberately to strengthen the barrel silhouette.",
+    "Replace one pair of mirrored blue stripes with a compact vent, seam, or single highlight cluster using clean 2-3 pixel shapes."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "16ea48433bcd12e4cd53dec52f8155616f00ce828b2aa03434382c56c0ac1a2e",
+   "cached": true,
+   "cost": 0.047724,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 8,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 9,
+    "appeal": 6
+   },
+   "score": 73,
+   "verdict": "not_convincing",
+   "issues": [
+    "The middle black band is too massive and rectangular, making the face read like a modern icon rather than a lightly outlined Capcom sprite.",
+    "Both eyes are square white blocks with square pupils; they do not convincingly read as big round eyes at 1x.",
+    "The upper and lower body sections are nearly mirrored, producing a stiff, generic barrel instead of a characterful mechanical form.",
+    "The blue vertical stripes do not establish a consistent light direction or curved barrel volume.",
+    "The silhouette is clean but overly boxy through the sides and lacks the small contour accents typical of Mega Man enemies."
+   ],
+   "fixes": [
+    "Reduce the central band to 1-pixel eye outlines and a thinner connecting bridge so black does not dominate the face.",
+    "Notch the outer corner pixels of each white eye and offset or reshape the pupils to imply roundness and expression.",
+    "Taper the lower body by one pixel per side or add a one-pixel side step to strengthen the barrel silhouette.",
+    "Consolidate the blue shading along one side, with a single small opposite-side highlight rather than matching vertical stripes.",
+    "Break the top-bottom symmetry with a one-pixel vent, seam, or underside propulsion detail while retaining the black-white-blue NES palette."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "ce6842a09f6a8e24715565c889e09689c7ca4200661a1cbcead138f05399405f",
+   "cached": true,
+   "cost": 0.037164,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 8,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 5,
+    "appeal": 6
+   },
+   "score": 65,
+   "verdict": "not_convincing",
+   "issues": [
+    "The eye band is a heavy rectangular black slab, making the body look like three stacked boxes rather than one rounded barrel.",
+    "Both eyes read as square white blocks with square pupils rather than large round mechanical eyes.",
+    "The upper and lower panels are almost perfectly mirrored, giving the sprite a generic icon-like construction instead of Capcom-style characterful asymmetry.",
+    "Black, white, dark blue, and bright blue appear together within the same 8x8 regions, exceeding the normal three-visible-colour NES sprite palette.",
+    "The broad horizontal outlines above and below the eyes are visually heavier than the one-pixel contour work typical of Mega Man 2-3 enemies."
+   ],
+   "fixes": [
+    "Merge the two blues into one NES blue so each 8x8 sprite region uses black, white, and blue plus transparency.",
+    "Remove the four corner pixels from each eye white and adjust the surrounding black by one pixel to suggest round eyes at 1x.",
+    "Reduce the eye band by one row and let the white barrel contour continue beside it, avoiding the stacked-box appearance.",
+    "Inset the upper and lower outer corners by one pixel and use stepped 1-2-1 curves to strengthen the barrel silhouette.",
+    "Offset one pupil by one pixel or vary a small side detail to add the lively, slightly asymmetrical expression common to Capcom enemies."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "a82cf5f4513edb149861aee29a5d5e2d0f1b855cf45f4569124ac8b8e2f08a83",
+   "cached": true,
+   "cost": 0.037444,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 9,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 4,
+    "appeal": 7
+   },
+   "score": 65,
+   "verdict": "not_convincing",
+   "issues": [
+    "The enlarged sprite appears 16x18 rather than the intended 16x16.",
+    "Black, white, bright blue, and cyan occur together within the same 8x8 regions, exceeding the normal NES limit of three opaque sprite colours plus transparency.",
+    "The perfectly mirrored construction and broad rectangular eye band feel more like polished fan art than an MM2/MM3 production sprite.",
+    "The middle band forms a heavy black box, weakening the barrel curvature and making the body read as three stacked slabs.",
+    "The cyan vertical strips create extra internal segmentation that becomes busy at 1x."
+   ],
+   "fixes": [
+    "Remove two vertical rows, preferably one from the upper cap and one from the lower cap, to reach 16x16 without compressing the eyes.",
+    "Reduce the palette to black, white, and one blue; replace the cyan strips with white or blue so every 8x8 hardware cell is legal.",
+    "Cut back the eye-band corners by one pixel and let the white shell remain visible there to reinforce a rounded barrel silhouette.",
+    "Simplify each cap to one solid blue cluster with a small white highlight rather than alternating blue and cyan columns.",
+    "Introduce a subtle one-pixel asymmetry or directional flight detail while retaining the strong two-eye read."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 66,
+  "sd": 4.12,
+  "min": 62,
+  "max": 73,
+  "n": 5,
+  "subscores_mean": {
+   "authenticity": 5.6,
+   "description_fidelity": 8.4,
+   "readability_1x": 8,
+   "pixel_craft": 7,
+   "palette_discipline": 5.4,
+   "appeal": 6.2
+  },
+  "convincing_rate": 0.0,
+  "cost": 0.1903
+ },
+ "benchmark": "telly",
+ "kind": "authentic",
+ "control": null,
+ "type": "still",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": true,
+   "detail": "16x16 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T01:45:41+00:00"
+}

@@ -1,0 +1,8 @@
+name: telly_spin
+type: animation
+kind: authentic
+source: "MM2 ripped telly1..6 (fusion-man telly_spin anim, rate 6)"
+frames: [f0.png, f1.png, f2.png, f3.png, f4.png, f5.png]
+rate: 6
+brief: brief.yaml
+rate_provenance: fusion-man telly_spin anim rate (game-feel choice by fusion-man agents; not verified against the MM2 ROM)

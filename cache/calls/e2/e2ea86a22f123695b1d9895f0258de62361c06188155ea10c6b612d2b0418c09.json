@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and animator for Mega Man 2-3. You are shown the 2 frames of ONE\nlooping enemy animation, left to right, at 1x (true size, left) and enlarged with nearest-neighbour scaling (right),\non a neutral grey-blue background that is not part of the sprite. The animation loops: after the last frame comes\nthe first again.\n\nThe enemy: \"A small hard-hat robot enemy: a big orange construction helmet over a small round body with two eyes. It peeks out from under the helmet and walks on stubby feet to shoot at Mega Man.\"\nThe intended motion: \"walk: the feet alternate as it steps forward under its helmet, looping\"\nGame: Mega Man 2-3 (NES).\n\nJudge whether this is a convincing authentic NES Mega Man enemy animation showing the intended motion. Be\ncalibrated: authentic Capcom enemy animations score about 90-95; competent fan work about 60-70; amateur or\nAI-looking work about 30-45. Do not reward or punish an animation for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- motion_readability: the intended motion reads clearly when the frames loop\n- consistency: the same character in every frame (same size, palette, proportions); only the moving parts change; nothing jitters or drifts\n- economy: Capcom-style economical change between frames (small, deliberate pixel changes; cheap NES tricks are good)\n- pixel_craft: clean Capcom outlines and clusters in every frame, no noise, orphans or smearing\n- appeal: the motion adds character and charm in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"motion_readability\": n, \"consistency\": n, \"economy\": n, \"pixel_craft\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems (name the frame)\"],\n \"fixes\": [\"specific pixel-level fixes (name the frame)\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "466a6cc4096343b91a9a525cdef9145106349ec1b76e9c1063499a6e6d09269f"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792633566-b213LRMEZCo1FkIhi3Sg",
+  "object": "chat.completion",
+  "created": 1792633566,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"motion_readability\":7,\"consistency\":8,\"economy\":8,\"pixel_craft\":6,\"appeal\":6},\"score\":69,\"verdict\":\"not_convincing\",\"issues\":[\"Frame 1's forward foot connects to the body through a thick diagonal orange staircase, making the leg look smeared rather than articulated.\",\"Frame 2's rear foot has a stray light-grey/white edge that reads as an orphaned highlight and breaks the otherwise black-and-orange leg treatment.\",\"In both frames, the broad white facial clusters resemble teeth or fingers more than two eyes, weakening the classic hard-hat robot silhouette.\",\"The feet alternate clearly, but their large shape change makes the gait feel like lateral stretching rather than a compact Capcom step.\"],\"fixes\":[\"In frame 1, shorten the left foot by 1-2 pixels and separate it from the body with a cleaner one-pixel black joint instead of the long orange diagonal.\",\"In frame 2, remove the light-grey/white pixels around the left rear foot and define it using the same orange-and-black clusters as frame 1.\",\"In both frames, divide the white face area into two compact, clearly separated eye clusters with stable placement beneath the brim.\",\"Reduce each extended foot's outer reach by 1-2 pixels and keep the central body cluster identical so only the two small foot clusters alternate.\"]}",
+     "refusal": null,
+     "reasoning": "**Inspecting character frames**\n\nI need to take a closer look at the frames. There are two: one is smaller and the other enlarged. I need to score them, focusing on a character that resembles someone wearing a hardhat. The animation shows that the feet alternate. The first frame shows a black outline helmet with orange, while the body has white blocks that might represent eyes. In the second frame, the left foot looks tiny, but the sprite appears much larger overall. I'll carefully consider the details and colors for clarity.**Assessing animation frames**\n\nIn Frame 2, I note some relative similarities, though the brim changes. I need a score for the animation, perhaps around 60 for competency. It seems like an NES Mega Man style, with the feet moving while the body stays fixed. The motion is clean but has some awkward pixel clusters. I think a score of around 65 could be fair, with criteria summing to maybe 70 overall, but considering specific pixel issues and how the eyes read as white shapes. I'll focus on getting this into JSON format too.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Inspecting character frames**\n\nI need to take a closer look at the frames. There are two: one is smaller and the other enlarged. I need to score them, focusing on a character that resembles someone wearing a hardhat. The animation shows that the feet alternate. The first frame shows a black outline helmet with orange, while the body has white blocks that might represent eyes. In the second frame, the left foot looks tiny, but the sprite appears much larger overall. I'll carefully consider the details and colors for clarity.**Assessing animation frames**\n\nIn Frame 2, I note some relative similarities, though the brim changes. I need a score for the animation, perhaps around 60 for competency. It seems like an NES Mega Man style, with the feet moving while the body stays fixed. The motion is clean but has some awkward pixel clusters. I think a score of around 65 could be fair, with criteria summing to maybe 70 overall, but considering specific pixel issues and how the eyes read as white shapes. I'll focus on getting this into JSON format too.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2Wro1uvqbK9m5ioOa2OIiNBnc-Af_ZAjcKXGwiWkcD_t57Hcavl8ledcNEclU09RZx5oBVxmfK379a93TZIAuBsMCcDHYui_hAshoBXKrpS2vlUfo_8x3Zxwjs8SfPE6hwO0Tb8yaRhmFScaPnDMjnUjS8hKCd6stI_RRPbrhu1YIvozmfPDN0PJY6QxAwIXKG2C3GqcNMpsSKtaZLrVI-PJpFnYLV9jR2Kt0HDHnVJ987Gi_nw-QG_MDJ256tbJPtcj5gmAoLKnAuNHWnv3unzWsCB4g6gj2ZqLRBinoIziKqvbKO7bwJim1MzYPDE0zz8QKO2t6-UycQYyFCPmiUeYslEyX6h9RaLHP17tSbYp2pOh_CNdQ7egGlj-610jceD61-R0t-K-7affAhfzHMbHU393WwHwNhKCBjtn4O9alWQdoctHLcWtw1VRBRboyDT0uGUxGY9otzfBraby2rvfUL9CsYObNd5MI3tYTSfdESX0b6sWW3E4p3s-ypLQ4yuCZ0Dabn0lX3E7dIhV9aaXa9r0JjzB2YsscVgo2blx2Z12MBGaCV0C5v_Vq_jwyxFylUrOiI0ed5j2-pP59-_jT4lPmTO18l2Ec3z3sO3VV_Kqmo73V5w4rBrPVo0zwBAaSM2ECZYE_dK9w4OeXos2MJAmuwF_lqB3tOoUulAzPz9mP45n1XT3ZoIR695IDZ0cgr5NhkTUUNeTvE5Or2ULTC1qgM8Gpoe-K0WU8PLzs5cuNrLhJqI2fMg-IZCdr-wr_OxqpuiTXCM-2z-bSNaFWs4mD6CNpoKCxZ9aMjMMY0MH3aitJrcHoH5HmIUEz-c4-0lh6xJNWZTMlDjgDwxoAlB-kGChZ4yD-VZvLaVw9d_kjlYCRQuevwUlF0YU3TNl9LyOCOnj4IoAKK_m_d7OQelxL9ekb0UQ5w6ltclbGe9NBtxUenDjmSwlUz7B9LXE7XkSWeBwISaSsrE7fdshDiixnAKbK1UGfuUDObSaEjbH81HL7K9S7zI_5PqqtQTN58MXEwpT7LCcL18y4LLNw7tkfeAPXjAu4E95bLuldjKLuXw8vyDML8TyGFKIThlPgMDRwVbiwysddVvO2Z8RYI3RvzJJNTafUBhpjpoJv_gZhElChN3bjL3wfrtJgDdgqe9c6-_710nfkvmVz9D3kP_DetF0HYJXBiDZ9PFx4phps9BP30wBhPROAlOpDU39Xshnn1XpOoC_rT0bPXRM42dRI6myWyx2iTeXrAJclwTKJ7oqld4csrtob4lqGlfWVruI9gRxpsGbicq8Ye_wd5qRtwyuxebird0BbWq30bRbZORTwgkzZf8V87U3HE3a2K1i5zrZu7hgOplBWhUeotflK4kHLu6ih0R7zG6v8mSEUk3Zn0_jwTr52ZGNuoAYPdQcTn9r8uIJBTb13lXOnoxei0XW6AGz5i0SQtDBe971zZrVIQyOrYYMp7VodgzTB6ww1E0GEWohQIYekZsTgEHGrTelRKk6Qw-gI031t8WAqR3NZaMiSC4Ia3yKE_E0e2mU9qiFwy1d8E2bElkOVR_K6jyzGm_53EPV_eI8foWHXgWaRYQpRlHe1Ab6B_f9kVn_JIImMf5VIfzCkP8KiJi5MacsmrDBTuNH3i08a0zEmLMcTfAWJ4I_h3kBYlP4EBd7sfTJbkZDOO2VjXAfXNJgYM_MnfZHGx8W5zE3mqlRobpp5kp0P3RMnEuSjXOhS89w3jG3pZ4R8KtBOah4yEqyW9XWcksDZt83N7k7-Gm7RvmszHOtY7yKPi-UFLiBfhfFEupz0gMJB7EG1yE3V1Ch0cRrpjWZjDeNAZ6fKUqpChqZuO9Ptl_TPG8cMglgHvzCPOfSP2IeHxfCkF1chAIZmj6whV5z5_qdvVWhYl-D199DKgNcGRtV5Ighop5LxoIslgItDcsljeWgLhxVVTUaw6YaoDzDDownoztGUBO_f-kUvDPKARhWoErBHEPSBWMpwZkntLNsG__KAmICtR1Vq9RrAY9fsXOp5CDmfqzXNj4fl2OcFfsyuNvmW2dO3bmyp7GyW4rBQdc7--5m1_fM90xrL6p4PbUkyHs9ug0p3AG3DwXKZNZ0HBCT3HE6MG7dZeLzjNKKMBWNhwvHPG3swd1xdoogrx_HAcO4rvwwoAbLQR1ZEkbmqh-fxRAU8W2bJ8TBH34l4pxDSBi1XoygZGJGvAl3XX7dkgWqaP_CkuhNQNm6cwFgTv50xAytxSa09dbfY4dip-kqrjT0AqzYJdvVkYdDMkxXKKO_e-445v_4reQzWxRAYcmj7xuvB25KFhjgKLnF3lBjqCSsSKSMdxOXy7_baifW1XDM1-BQ8_wcekqzYHaZ0aHgSqDHAT69MWpaPQELs-1_NQURpQ2btltsysELkRLHDuyga-UyhCXGPyVk-pR-Fz9hThWwd_d4P8OfOTLtWGC3ez2JlfunOhRm_7gHUDlfwCt294ZS0j-fLPFoVhqlhOOtB-O5Of07s2tlafqLYc7C_hgHkMxtour7FK3JC8PBqgMr7rtpV9xee4KT5-Sk0DrAudINT2vs3LTylIWIN5tu46MhNWyHSUZttRBdW6_2xqAt5By41kIc1_deMSp2VPJCQCSTiEfVx2h6zxMuImZVwwRG9QUdm_1ae3bjocIcy7vE7hcmdkhhrBuI5uoN0mO38m8nNWUURCi-32Te78P6Um0DLmBfezVLFgDm-4EilvY2QKMWbrmu_dQ6BRDmELew4MMxa_yh3HZz2IwJNNlPtrHYSZ4F1nNOhXKwcdpggvkHAPpWrUeNioyD6odEcorOUxnJgLKRFsOZJ0TJjBxMHkhsluWTe8u67GxeP1VwUJJ0fsX-20tW2TtJcWIof6BxzmQsjcswWZRREzWuyrwPz6mtdL9avWg7wY1bcEGk_XL0bSDQPMDYDjLN-7be3zCdn9L8xkOXGZ-kEkcw6ZHDHDRDwYZyeIG-sCRDyxA1JCgR2WIjBi9kdB1VxiMjjGIvJtdaXzft3njKTXz_Ib8l5nVKwvPreLs4DJUzhJ767smFrRJ_UhkbejOwS3hzdxMmzSD8fessrtFWBHfmm_05BCXmWIdMgZHRzMA73-oYUZdABfTivZYla_AP0DRlacVFwTREmZhiaFXlSB5BskT6-jkeS7fvpPo-LRIa8DOciH7AeD_CUcy7oHobOeygtWecEux2UiKV41Qmictq1m7_oxdKh1em54y1tqJ4VnD3RM6XGL62l1Vsf4pkvgZAFZBGV8YBUFPaK54IujTl2KU7APvLFkePy9kYirXS_LkMZewFDtcVltW2sq4eolo2kBxbHWip4GMnbxQC6kTrDaGY2szGnyLZ6IPxnU18z22p7uKz7uAnMvEqrLyp3u7xcAOmxi1uAGeaB0O7LYMLatueY6pFFS0qsez_8RyydDLhN_rwasgAE_PmpEdhTbXjS-_lxxht8ZJ9pusgctIenmk_YbB5ZUZCGSFnjF9xLgDfQCx-VyG2a7XXfZ41FgvNNNhwToUmgSbnA_0WEEB35h2ZavOoJQo6Jj40AZjDN_7YX2XcqtokimaV-fDRgCVyGHGwUCXQphz_OaSZo7WvLDxq5nJfj--dZrFaKnnk9RROHux2VGI84JBcNz9kJglHd37jCY3ejdW9GppEWg4CfXVI8O_-1AzzWe7I8Q_qrkP7w9ylSWRJ_10tCrHbxvItwICxjHcoCQAXBmzgcub_QJf-DmFv3HttOsl54FD52SMGfrikqD20AGBaAcNfj7T59O2IxLyFo5bsPgy2reXmadyS3XfEEcWU4rAFw6P4xA-TUP4K-WD3iacfWPd6DY9zosNTsmofznCwNxWc017jjj_jGd0F2g7PNXkg2yvLveoBjIXNggsibRQ0xoKJaOOJ24N6a-GkdYR_uAqSqWboEndNPeOG53QcApGw7F2ycenJxyduqzhq_rkQJcCkO0yYGokJnHMFxCqMvUynOTJsftMD1UpiJL7PSxnBCZc6ZWX3pWCzyDnBw6RZzbyb-I_egVoHOvfSYCufVcILU6Un_1PL_9CA2TG7z-0DznUMIV4M-bWcmY3R-nC8QBSxYNsKMX9YoiX7zgpXat9CN_MpA44Za9WHS0-lWVngMCPHdVfuPN9E1vabvTDBy3Sdri5plEIMHnZro0Zsd6uSvwPGRzFGrBlIon5txWF7KAXaPh8MPb5AH4isImcErpV00LueauGxU71p-3aBDGM47E_wHrE281SbAj_VSxg2dMZpHpQM99PNzkaIGYRc8aSpdF4jZtE_d9auE5kll17slhhz7_DrOYJ7TU9-Z5Np_dKTLr8Ede8gbRU0_IAC-0Pl-61FThvVs4TxLff_ckhQZCvrCVQN_CoUbAFyTF97Q9SSA0L3I9OQT4ITcrjWZOUYwCCluTWhoGv2nJf6K6xekW1pK5wl9JmV5JUUrn21KNxSU8_zZ6FMpwk2b4JcrWllvPNwd4LyF4tTazHZwTnfmNfW2zrxCeofxfMJ2fTK9A3havxKUbzhjcarr5XIVIy_PPqtHyisiTSzke6duHW6CmhVy13pelngcQWE32gmVBUFpt0WmDZInvFxgY2YdaMDYZsT83lpca29RPakziksRFpsbz5DyDbhCSdhmM9d9QUKY_GfxDBNFTrcmxn44zjxj2WK7QFQ9_sDy5rpc-qfIz_CpvCEm_UasPR51B_YcKxhjS77WfePNieAXr6sIcy8giO5cEcIR2feVSy-pLBsoSsdKcpiZhcHPEOoWsaZZ1tlYdIn95s5y1L6_c7YtOhO-23YRn0aCpmWnUop_xwFPWCG5OKxoIuT68UV5crUWWDEYf58VJavYmTDe53nudlk6aIhJ6m3ZxdvbXsrhbQFKdAVa8Vib2QR0n1NS8-F-aZlrdd6gjPjt6qXI_97Dn7NxE3dzMx8OShT7vexNa-bWlxp5rkYzMMuj__TUtltcoG1dwCnySnfZzqYJznAc6gXj8ttKp2Dx90u6dQkuBgta0jFFlabp2vi088BbauVfcHNQs-YpqT4YwZUZYud4hrnmjKr7WOi6IXkazvWfKbnQzH63HjS0cawxbEoYKAxcGj7nuiLxLDho_UFvHHlk1153IE7EWN2Bq0ueP-uSkLVg9PQNWhAir_v7URPXv7lFQQh0MU84a9Ak_EMgHY2VLNLPCxy8DejKkQenOD6OPhqmNchN3hCStGd9duDhuD23VQkAoy0xg9g8DpqfEyx_cqS8Ab1xXW_lf6a1r2qsMs8Dgmm6xccQV_YpKoVN9At1CF_qRGKWmquTjknH810N-lqeBVqfwtnHSD9M01W_04o89lxUldj94QUD2QZynweLBjbbnzb040sLrVnjtL32JcnytKVPRWKV4pAEJGuwiviQ8Zn_14OXIKAb9BfhrbmXZJJmmYxWYGrX6t4nsGPBdlk_u-Oj5lkYPloSIEG79SQFavrOb9nRGRV3mu8t4xpcqeMHdETRolvVE3PKAbz-EsxKQqI5XReZ1wJ4Q9D8mHdxblgU2LW8J5HDhOf0eVwMxUTRXtgHuB9Q7TYVxFRhWwieF6uznlMLYPKWGiRnQ7fqCfpnwvooNTyQqdNC85dOP3Esl5usNuHGBJx1SP0oKDId0bk60a39zO8cJ4unFbdhg9kSCnCNzfPG7rvXW5ZIW8ZNCz7e-zR8vjYBkBnZw32KQ9hXVFQQMdbgN97tktUrU5PX_cwfyl5rwzp5QIjz2kexDztHDtzlZ5zvDVI0OLkq2LSC13NdYsDXPSCUPTZ3WL_1btZRE5DEg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_087f2def1f224fa4016ad96ae17a8c87d1b2fbfaa87f3f099d",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 514,
+   "completion_tokens": 631,
+   "total_tokens": 1145,
+   "cost": 0.014676,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.014676,
+    "upstream_inference_prompt_cost": 0.002056,
+    "upstream_inference_completions_cost": 0.01262
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 340,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.014676,
+ "secs": 13.5
+}

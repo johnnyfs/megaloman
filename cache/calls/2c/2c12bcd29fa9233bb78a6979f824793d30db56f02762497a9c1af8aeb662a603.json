@@ -1,0 +1,99 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and art director for Mega Man 2-3. You are shown ONE small enemy sprite,\nat 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral grey-blue background\nthat is not part of the sprite.\n\nThe sprite is supposed to be this enemy:\n\"A small robot bird enemy: a magenta-and-white bird with a big eye, a short beak and a raised wing. It flies across the screen and drops eggs on Mega Man.\"\nIntended size: about 18x16 px. Game: Mega Man 2-3 (NES).\n\nJudge whether it is a convincing authentic NES Mega Man enemy that matches the description. Be calibrated:\nauthentic Capcom enemy sprites score about 90-95; competent fan art about 60-70; amateur or AI-looking pixel art\nabout 30-45. Do not reward or punish a sprite for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- authenticity: could ship unchanged in MM2/MM3 (Capcom conventions, not \"modern pixel art\")\n- description_fidelity: matches the description (body, features, role)\n- readability_1x: the silhouette and features read instantly at true size\n- pixel_craft: 1-px black outlines used the Capcom way, clean clusters, no jaggies, orphans, dithering or noise\n- palette_discipline: NES colours, flat shading with at most one highlight, about 3 colours + transparent per 8x8 tile\n- appeal: charm and character in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"authenticity\": n, \"description_fidelity\": n, \"readability_1x\": n, \"pixel_craft\": n,\n  \"palette_discipline\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems\"],\n \"fixes\": [\"specific pixel-level fixes\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "366422184fe9321831484506f6b0129702765044924b395b932a64476e2e1220"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792633027-IsNbMqg4lI27G5CBoEP5",
+  "object": "chat.completion",
+  "created": 1792633027,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"authenticity\":2,\"description_fidelity\":1,\"readability_1x\":2,\"pixel_craft\":4,\"palette_discipline\":6,\"appeal\":3},\"score\":30,\"verdict\":\"not_convincing\",\"issues\":[\"The enlarged sprite reads as a front-facing square robot head or mask, not a side-view flying bird.\",\"The silhouette lacks a projecting beak, raised wing, tail feathers, and an underside suited to dropping eggs.\",\"Two symmetrical eye-like panels conflict with the described single large profile eye.\",\"The intended magenta is absent; bright blue dominates the sprite.\",\"At true size, the blocky facial details merge and the creature's pose is not immediately readable.\",\"The nearly rectangular, bilaterally symmetrical construction lacks the lively asymmetry and economical contour work typical of Mega Man 2-3 enemies.\",\"Black areas form heavy rectangular bands rather than a controlled one-pixel Capcom-style contour.\"],\"fixes\":[\"Redraw the sprite as an approximately 18x16 side-view silhouette with a rounded body and clear horizontal flight direction.\",\"Project a 2-3 pixel short beak from the head and use one 4-5 pixel white eye with a compact black pupil.\",\"Add a raised triangular wing above the body and a small two-pronged tail at the rear.\",\"Shape the underside with a small opening or claw-like egg-release detail without cluttering the silhouette.\",\"Replace the blue with NES-appropriate magenta, using black, magenta, and white plus transparency within each sprite palette.\",\"Reduce the broad black bands to selective one-pixel outlines and compact shadow clusters.\",\"Break the frontal symmetry and test the result at 1x so the beak, eye, wing, and tail remain distinct.\"]}",
+     "refusal": null,
+     "reasoning": "**Analyzing color constraints**\n\nI'm considering the color constraints and constraints around using magenta, which seems to be missing. The palette looks like it has black, white, and either cyan or blue\u2014so maybe four colors in total? The larger elements might use bright blue and cyan too. I'm thinking about how these colors interact with black and white, plus some transparency. It\u2019s all quite structured and disciplined, which is interesting. Maybe it comes together nicely!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Analyzing color constraints**\n\nI'm considering the color constraints and constraints around using magenta, which seems to be missing. The palette looks like it has black, white, and either cyan or blue\u2014so maybe four colors in total? The larger elements might use bright blue and cyan too. I'm thinking about how these colors interact with black and white, plus some transparency. It\u2019s all quite structured and disciplined, which is interesting. Maybe it comes together nicely!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WjSW9U162kZZJLFSGg9GY140oSYZlNqoB7k1PJKUgogg-BL_lFRw21B5lR9XmiXd3hG8xmCxBIkSACNg2aLr7MUuozRuaMU0xSlghMz74-3e-leCbWVDpbl7uhkxIjDvky0UmZJQ4_OXuQ-SEpn0W0LXEsxaVJX8Sd3sYBcDWydE6Sip3XLAwRFHMKRvG410eG1SULCsyExbJDHYDYUN9go2M0YxSZcHTxkfHIGTYw_JcBcNzBHrzxEcPYxrL8hnRE7RzCyK3yO3TabOVE6g6d4xOnm60p88k5H07M_kTMYPG2flKKtpc5MgCI9WbmpMm5xY1FEmHpJs_PZUxSjDq3rfaHX1Pl5MNaeFmhtYCYiMM2aLvdjihr-btKdyOlIEYGnzj6_N1T9CPp2561NeXcu1UsdtNiujEo8PVrpUo6BKMfHYhLbhXyhr5dQirtX07tm2l6Fa0BJ0hhu0dcV0gRrKgrTNwiNnYQjzNdTt-oEYRNd13hVpsAzFu3RXX_RsTJWagc6u6jq4DXKYy_BEwSNgLR7P9bTnrX0iSZKxG4CO0SpQWlB0Ue3bTJPPPHkxY4BK5HY5ecuFyf5iw2Mdnf8jb7vPFSSY4Qo_8Co4honTEfBIGPAIhQO_WAWrP-TCa948CXHPcsgkXwgPx3dVew5fMpS7TlKa7kE9XdpJwtmtMGTsxMYKAfhxCSnb3FUiU69B-V_Mt3f42xstEMnJUW9NUAcJK7uGPq61fmP4IrnejxeIvxya1kPoU8p1QvonW0qbo_mQskPIVlRdsnFq0SXmeyKt1nCBQVafs6Kz32lHuXFdS1fVB5vjjrWUILxdXq5HsIizma7y-p_zxNgQvYRhvxxvinRZhK0xa_e7txjdZZ2j0JVIpShA2mVG0OigwfewibUKC6-UH8GH3NXAA4L_YGVSk-g0zBczWDQUPFgokwnOFlBRSkFxnz6mRh91fq7rEqEemU5HmG0AAJb4Bupu0TrI7LFdoWkcrDkNM-plBlKj1UinscRDSPEetb-LzbtchZHVvFU-NqFTUTfZmtjfCnURDCg7EnnaIFifZvCk3UzRUsgxCkOKflSOZUvM8tafw7q7YfgV9D2taR3eZ-4MSEjpH_HRXnUiLUzle2pc-TP_veZ-HMBdCVQP0au6wbZGo378x59vvdEQRAZovIRh7Ki_Vk-42cejppV9gYeb5jiJ_Fdh97vhVloC5HCgXZZgavg2kfeluuucgk6879RS3JQqjNout8etbZusoG9fTh8Jzq_T5smAkBNb_Xx94_oyOqGuRjLHM68j5UEkK2IFRX7esqttHqEQKZd-zJMN_D9bfXXGLSUUSy_SIjaDMl1ZAZWHrUeeiN7KlYP2cdjCmVHyJ96p3x2KN_9WY8HEOK3gdmedSDpLxikD7oyBKu7FVUAT15Z3GhiHVOYjNmqG8ks-0tByHaJcvAz7ZjiwCeCfHpdeyBUFiP9wCZbv3wlUov2UhkYLX7L3QphWH6loGXFiwQqKqqZQKl64ez50p9KNlTNc0NqT9LZZRLhYGEv-YAMZafViQjQForDBEuDSXuGMgOt2r3X0sZzOsLaBBOpM2-uSlEt1_lrV_kefsZGnNpB2D7QPe5H_vOC3qkUOdhlFL357zlF3bQAypS6tY6WOKsRuYPS_sDr9me084-dMRFcCq_v4bq14H0Cpx9VsIAmO4SD2FQ4VXeectCp6P07Vvx__5dY3TaiOPd9uBk3YKbonCGSabKetp6TTungJi_fsYTQOU4fjMQRhMke6EKXmWU1VMEWJjmRumt22ufIO85hW7aY7vljfhQy2NgdWYsKlUnql2PpG5_ZNPr2lrDb9sVbGt7eYjJd4cIChPEG8A52-4xqZ4wUqiN5flvFESQNp8KRREI0s7DVF7lH9k6zmdO9tNsZdq5N2kaWd5JShXefgQC5jO2ztvN2GrTxv97rc_bijZBxXTAzo_-3QIKSPenfm2-WBdAH_ZyIYq26jIoAlJh8nn9U0ipALPfEHcjcmPqiLPGtLGZCvU5FaCuVWHA-q2ogtyDUECvvsinIprjWlVA3LP8qyKqHqHInVFZB54I4GrGDtVnghZW6qKy_bKxI8HiYE9TaAJWnX0pZkgC7TFXhNgijWFd61H80I1_wc0jyG97YF7AA7yJyyFBOylwgUvdgiLLVtRi837kusVVnWY_1OnO2BibbIJqTnSbYaB25svWVQkwChS2fRFdljflcSRyRbEAnCuXube8Eu4BjdEVx4rPJ2HgZ9mSKjbwbaCLNmy3upgZINzIcs1avWMiHApVCbvCjNBq0Jx0PnFotQLiOH34ygMnLbUwoXGdXsY1C7aDMQeNgbeQUYuoYrlNiulDv3ScLSjj9dFQUVFnFtDy5rDTe1RQUCXNnfHvsIBjPhYBWkUE4Jgg7kH3hFAtElB8iC9z-ZqDd2WvTY8ilBRrhpGi73hcZYQbxoU1O37Dh_pyYulWUYKqQQ2_nOR0CFDYzMS5-BClxDTXXuiT_AEO8CWQIAjclK1EkH5-PqAewj1G5rD_VJqP6hQHR29-A5h-cYjMvdvKrkHoX32FtAWi8CifylxGewlxTzJgaMIqzrM464DT1mcb89SIj33OM-hd-dFbWlzoFn3bxeckY-JP0sXWY_2bPV5Sv0LuEjJT6Cwl4fe3_03iNa5ALxk_zt6ueyRBSAsWDupLv4N9lDrCjg1iPFmAX0T2XfH2OzsJLNwhOb3TFwVL7ostXnvzC-EbGMKK70nWKdPkd1HIt8PiDDXubO6tAsBuZrpUEQTJZXHCBhsEuUMtV2gZY749BnL_N-s66qxzoe0wIltWu7G4lgm1_EW-lp2VNE-GtTVuNMQMRmG1pGq7J2JwlIJLKDhlyS3DTf2O_fxE9s_apaZGlieZo5NdB3ImG0zGvaqLWh_aYTafn9KDPcANGDHyVMVOxV8YxDXQU2tx50bT8bmloEgSrC2rvLK7MJKhQIOkF-dsQrUBt1NUnRNGPYRT1bfa4L3aoukTAnaYp8_vl-mbkqFDUGcZeJj5aYF-94HchdwZDEkAt_BYVx8uFsEcANWO3EE7CGNzMb664s_st8RrlUZQxdwyOvMSsNA_ects2epZheudbkoVYDSoWfyMNYdqbp-P0S08oPeNxj-5PNGrHWKgERav-1u6BOTbkn1nver-bWLqRwkto9nhmxLp8UQciwshgwNQ0mTcKdQcCev9r_mKeObrcph2lqBDlmLr-XoMifHUJmpr3MV7kmRm3xYWG-yny0ch4XW44H-mLfLg9G8gGPeBJQJcYK4yRZSznC_L2rDYMfZr8cCIWhG_U6zZMIawbPuWvJb8Q0bHQB4JjUahTgJP5y5RI5GwF6RFF_spBKPUCX6ni9ZzzV4X97m5rn6BW_r5HeZ1RkFcKxHo7xsbs8XA5N4GgtUEnZPgFZwObpZh8MIyJGHNkC7qQm7UGL9-RFmOAEtO1dv0pUQcV0cAu1ibCSvExWmFHVKnz1Bugo2JCRLehxdecoUNii6teq8qsab9wLhJ4x8E8ooXk0ocZW7Z0UOVHeHM1WebldVHRMqud_w9bZF8bTJVGzcqQ5DsWlF5mtJImiDiGL73Qw802GTEGxe9Q36TV5SdxkMKLZ5IDE1SskThf-QA0L9oTD1HIdj-8a_bff1RcllL8sGP3WVleNVzKdX6MbooyyGD7TPtOcyvseGc0EAmz7vu6tY1w33-QdSQwiWtoZhc654B1Afxj38TTUJU-VwwG_tl6mpi8JKCUy0Eaho54TcLR14jenSmHgpDSGe9PDZ7WS71s6l0U2BPyXUsuojruzZCqeITVEtlnkMDDMoHwMbWfYomyE-YFv4TWt3NLqeuXu331isH5-gX9Phi9TE5Qlv5xuF6I25H3w3jmXLvwscm3GUzx-srcWCep3bnv0-qen5c5lx7prh15gGcycQQId9evq8PQTFtlE3puHZCyjMFerh5rPjOiitwqin0yDTXGWhajeEUW9c75eZqI1TYfD4kCWzeQfCJslnhqRjVl9vJjlKQzBKNImvVMoibK2OTHuX1jlkGMOJuHWppjbj7t1mKcsdLWL-xKHWjb76M1AlM7hrNunNvq5chu2WPBDKwrV4xLqG0KMzLIZ2RlSS540Ai_RFBWuPrI4_xGn8BPAz-PjzSb2mJ8Vewulcqa0mUofSImi1es_gBEd454LbhlVXS5p9rTF70rck7au9tBC0tSrtqwBFHhaCIpClse4SOcHDBpw5Y4yqSChJI5YuoyDNORyEngfIvfPezqZoNptNDCeZ6m1PBeK3BZtuazCJBSkaFQ4a-pTElNfNLQk0PndchvMfVGfQxuJmhBRUkExBafAH1H_kHJvjjytxYyCulyM1myspZa-pjmQufWw8q5XqkII-8tjWhSLNVkN_MextHB0kPDybjU5xholoyspVBVd02E-d3i0wuhslhrKx90LNTpcHkbeuEsTqu9d5puEK42Cku748OZI4wOENhbmS_eUWwjeJXyTJaL2v6B8PI-EcArWatU7eQCiomCXdIDWY-gWsg95Z9yOQK7pZICap7un5Hw7jWu7H72RQgW90QmdVjZ0ym7-AYaPJMwmWk7QaF7QSVXgfx94T0WaOt7BQQwKzoagiFUummoI-UNYlK9MftgEm4eRbkjwRqLBbgvlX7J-S7f3len_h7M6wIpX-DDi9EXHIQna1y42fkkpdXMK39NnkQ5ujZepDzxTr8UZLyqfPfAMidWPBoFbuzYUKY_Lx4Xn0Dziu8Wj2osIAAE3b_f3PUtg_gWFv2HRKkR6A_HNssUozkpB77SjZ8e-2aDHEyTbkOzZ-ROWGbpaAq4mN-BAa2k2TwztBPLf8Xw6A2ApB48AEMXxrfYBenntsaCU3Hmr-MICAIFfnFIyg2SJuh_LeJ4k5hSFzYOzvhb3gGaHYsIYZ4i4x8PL6gQUyNmggZKj6ALfQ1wcFqVSY3s8gOPxg4As6pP70XKzXDAD6rUDIzVFmpoSRaoIa8aDBCNnZW24b_gm9nPQCxWjzXMlBDiXcfdt2-43fjQzdi0hOflkHKx9VZIOvN70NAOYsp6gyJsiSI5_BZmFVj8V5F3qUen7hcmFc0irSJ3tWt4jhy4UXRvXQRceLFPKkoiNT1dMe0ZehDPbFm0wFjLyY_zbPvtP9I0Kc0QsVdaMVMvkSpq68EdK0IjPChN6xD7GWO5Zp0A4uZeDfysaNWYv7z9Ydzpn0U0Zp7BYsfsZdhDT-6vW3wGEpUcOP5ttp1YGTtEjgtsHhkcqTi3COYZEsIK_t3qtEsvyuovDTK9xl4E8C0HI7ZrnXjiF4tRNpOEn__ya9OsxkHGJEyCN5-8V5hHB1KzLs3bl0GXKqMUAcq3v-spdOni1os8kiXb7zKkHguZpvppEsBKTuqvkyE-r0_mQX3q7JiFlQ6vukTf5o84br2q6Qa38YoVV24I0cIQchNmCGLDs1Vy5A8PLOBIWIc3ACIqbgOuYa9VuYfoksVYVOuNqlbfrAa--z9gS-L4DO6rXagQXJ_dJV6bZ9AZcNPuMJETNswR6__AEMKPnjzoWYyVz5sFfGlKAuqINBMs1lSPuaC_BaYplqFqKB0BKxTcz4Twi8Yf0fz0qX13xxGlskhMQusysuLIqBAzPmcOn5As1xvpW98PcexAz6PfCic59JUMv3SXHuuQOQ_-bDcB6UOoCm7vGKy9IRl2l7Wrom873AfKMH3fsy5gpswNnMJRsL3ko94uLoIyYS91z_8TENJcHjwY0cYkzW_mtzmML91eBpgI9wJPs8EHdVkmbjbHs_V_Z86__1W29nG5vzuUsEgm45ycdSCaA3041bxBY2U_JVCOqMwqKo8zxqz9lRJ0UDIq5ttkERlIvAmZ_rw2NprtcIa_hjIeKDWWpGT7pNZDTybK80Dwra3cx9CaCcQLk_uyLrZuBDD6aZZgszus6pzahoIkWWG8__pW1aLUWK5dpqNn0upC5i_H_twfY4Ov3F1K0xFX7eQ68M0y-P4YiW0J5lIlgs1f-oGwFMiemMVrcqyBBjxaidNIQtyFdfXOjWmdh44PO1_8sip1jr6uP-vgO5codnLJ94qrgsOwv61Gg969asQ9_IaUoSnZm4ctX8DRcrbi49lkvNDQnr4mfWiST5QDRk6Ax_2qGzG9Dz4T37DufcTSaFAurJ0UzK2Y4yCTMfrNmnuN1yCtV9_xsNUE6FHQuZbDksupKmRC7Pv9mss6149yfLerZUX4L6X5FUzB7o-jzOShR9jrBOk_GCTKJL5oCzGhnlUIiQITcgxN6nspOtlhf36f8QHFABT4irIoodGlzs_Qfz861p9tjmVuePOxKG94cZZXESUmjX0IG8XP65Ioir1I_co4NEiJtOVBJS5mkfJht5jHoPUP1fAqsp3JY2cYnhan1nmyvL1tcR7VBp7nsGvspOhffE8iRSyFPeATiDjgl93hKFjqUKzroNJh5BkmDYSL0bw_zxaYH937Tcfxfkj-yIZ_eh5GUxgatF7-AEnrS9k2hQqSJxjV3TQRrIk-h05MvxGUahbcNhQPLfLgaOkfuEM83zmMVCgEt6yLgOhtH6wlYnseEmGlRni8r7zre66tJA8I1cMmYcy9yRw04TOIeNyMZ5A5gx0h7UZc2dWbblToWJDsz69ulOjud67nNfWJi75i7KHiFrpLMJno3qM_pW8lNObFljwe0QAp5mDItM9hqAiY7L1qY7BEt1snJOKoQsX72erDIzaZpTBLLBC6mLoljxpDZG4WA0SPzIdbExSzbD6xcGQ0ACHSsT6ILGIRlCGdbqTZ9DQJdf5AI6OBDHv-F9hTjPKUbmlQ7TGvicI0jwVw2RGcx7Fn8U3PsSGnOh7AlzSaZkZrT8dZZ9KsC8nnui0hRPrOq87qZ7PUh-aEDsZTSltWSFSplCbpTO3-aN7udybpDWboaksjRvXUCHFdK8XblkDrHAGshLtKIXMsYudhab9UGYLMmekY3xOrH288gOyvZ0zyzaKGqTziyN5a4TRY47clKoEKHy-Heih3O1EzB82qugiEl976hzgLTdz8GIbqoYxmk2y6sgS39CJuCk-M099QmaUzu68wiHDNaTSVHyppJQ2AkA97o38y5Y8UWkYmAb8fqgAuwKR7oGt5yGbjx1bvfy-v8FbDfok8QHQ_drVRJ4-_OwPFkmk3y-unT_hWeSWicr2XYMNKyUh2QWhvZGR7Co1hEcTb2J-dauv6f00sdnnHERYm3E9tiTedr0l27_rLEVYHtF5lZUarIXSrzZKOm4sm4fMlu_J9KvxP6luPjhCPu6aJZcVZ7iYMICV69YO_ZEinjENgxN5-QVJECclghsWcK2BsgBJGzAMZ414XyKiwe6Oo247TtjcLuTaeQD-8Z222_h0lFUwhV1sUiUmn00EQd0bciH5sbNLuWfEw8T39pKN0bc3NbA2tp_Lx6HtrGvInztCuxAb1Xc0ttsHzx3DCmppify2J9at4FxSex27n-IVX94Q_GyyaPxjuRYFna1OVMX8DqJ_f6vDK_nfPmkFE2Kk7YSrsWlIw_Kx8xaTHIka0pwoWonl7Xg_hqGTgLdks2_Pv947w6hJ9C4NLbqBlIcSBVCnNQKo-lwOWmY-MkJow-9SjnvXyAggBQdFiTOxcw97S0eYueIyxwNvCjbOwTrUeKh3Oo7siTxhTyKm3qtXIKJccDF96YjiUrt_Ge13xlBTIluqRZylpVLIS7W4CQE6vn8ZjbEcEvW8LUwSO32etI7R5_Ydq-vwmky2C3fZvNymH2WxGtwBIF_LfIJ4z2cwfn5f2EEJnGYgM5akC3ysqBshf_92krMVP84iZ8bmzkQKq-UotyJSMHqFLBnjdRz-aTyUCOYn8L-GJBnIOUpUgMfgspZZy08iWjvmFNPNcVIn4NKOtvZdNgJUIXjh1KQrFznI=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0fe2ec13135a3181016ad968c9324487d1b3fc38edae7bb681",
+       "index": 1
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WjVfORhqHOEA_p4Qt8EWNxMwqVrhzdQgLkZw9pB6X2VB6aEyrsUIf-65wCk0lNFL6rU4u8mqos0lpCog6rqRBNzHywRDaAmn_DfUPOW0IxxOM_K30HKfbGHv6WhY0nOyMCaWDStes44u10OszVIIRSfDsRtDCuAec-GTrxX58WLNvT1g8ATJ47EULcqDBT0zTIxzrMOgmYSdh6SHmPTP1xPexWh0xwWdGW4UDCCrqbv_s-bkdi1RyEkDm0IcUSYwG6dPf5ZiyHpoKUm_DYC3mr1xrfa4V5v0FUSAW9vg23D7Q_OO5AZAJzu9QXRUbqOoY_or6BNKG8D2S7DSOrJGGmAxyxdt_1fkHG_QRVnDCmUOhR_784E4KWS90Gn37ddL4I2vIR5oOJU_cj8uTI1FHAsEd_cfkRZGEOdw9sPTkKsZlY4dYUHoewMajYDlgAjRdo2tLqh1kSWi1hqbEw3US2sWRFWqUacZsUqdZ3_5y51xhQkzO-rtK8CmvZRUD0srKhIOTCa6YLbLDzf_SpcJCEps61EMzFjOjMP7WmIxxTiKlFqNby_FrPUvqNjTCSG44UXTq3LPYs0H1oBmuKG5tH-O1jmBGJUBppKXf31_dP31Swtybyg0itN2atdEy-kxua4ZDHQOiSvI-UNolmI8kmOnk6U_pJwrdKZsBRgxweKTtVz04jfMx1kKSnQNe2cvHPfxj9pW9n2tRYXVqxp4KEueaoR73YelmKNBdoLydsnQGZEztD21yGPsCc8Kh4F9gnhySUs9Unf9QAa0lupm0kKm0SJ0-V_ZWwejlqfPH7koMSr4xX4scXW0DN8TnjH-aE-7_eGCuVEFbleb4EWuFIXy25tPfca6gGSCwXNwCutQSnASlDm2bqgkIZBRLvhHo0IQwVxmRCQmxDwcdSYAPVEACT60ZzueMFqGA5GxsAYeJMEmwJoEx7neOXSkZnBEWnNA4s9LAaUroEqBA8EQHm1bM_vED4D3EMhiCxw2GqHKaF-H03quttLIJGbOhtnc2yuZFecLEBfOG-QPtoXvjvKMwdXAsOyxtH-etgTZdAEnHKbHuWWOt0gWTKGU3JsU5V__J3wQ9-0G_8gLRBXFCW4fpamFnFHy_1UUswwmFjvkl0-gzCQGxOLoF04t0fMgrlsdeHMGMqHQ59sBK9t6Sf2uo2PcvKc_1S-o_moQbJKIepQWv9uYX2rPZZbfP6wXJY0N5FeFDavxO2at5z2VPpzh1tj7I3ggQmIKpVknRa2lktEQ-ZQX2M8NMUL-msaHTKQTayeX_THyAl22c99iecx1oZePnViIV-_fQ6eNwYWlSXG17zSPnv9g_G6fMTSrPGVnGq4QhuLpj1RiGPaYoa4mfEPpj7Ba7Osv6ncK94GvJtuMsz4JcwYTCx6rBYK75Wz8dmC1ZPj6ui0duOr2W-WlSrMQPR-D6VQsAiryAqrD16Ynl2AWWZWh84ElhdGwtALT35O77mfjzOxuICJh1HFmk6nApwxULYhgb3lLbu7MSRLWPNC2r8yG4SHhkQG-BEBFIWScAVqUC00Dct7ozxRqBt4VnF7ijARsAJWyJnnaEQKU-BcgJIFQ1zNZ0XycTO_sYZ-n3g7hG_cZh4FxTBjjIBSa5gWuCPUjSfUYUhSR2ayfxGMHKtrjqO5M5zP4MJt-HD_GhlwGf2yg8Eevo1uxEQdeJEbySLlzOPITJDrBIe1BTjG2WZL1brXLWaOg45kkuvlqOeB9ctNnWzJeAwQi53n5mrpwVyAF0yZXtm-9D92hD_8nEIKDLLkIvRSXNIhgzpjYsvgVm75QapaGAKYLONKGQsQTnRucFZS6gqNQP7PCdt0FdNZDXlX4Za-wmEndkIzIY_eBSdmyWC6qK_BOsjKx0f3MEK5cmQ1XfEDhIYa0Z4Dnu18oAKmM9BxT38i3WxEIdj3cAo6PzY_grUM7ovF0DQ_Besh1dBOjYBlcjiOiNy0wOrzDgaqT8vvaSqKuLb5E35JQBTgk7U4cuG5iCblR7sngzDcf3T7JNsoas2HscBkMC87aJ7C-_2AzHE5ESKc8UtB-pqj9_5FJKZSHWUQUlXd5Xve6Ued7Bi91jW0HgP1O4TRFIEBnfC9hr2BB3op662KSJV7blzXglGd2R5kpCGHvKCpgXmAmrxzFRBJ1_x2I7_BBhBJpaF_ch7ueGOSaSnkdWy03Aloyj2E2bgX16G2ZwC2_rhj-n6nHa6bT0YiPMa_k0VyLxmi-fso3eO-1GadivX9P7dbCgPKN0xE-x7wVxiXaUUNDTEoaa5h2shM0m1HHjjC3buL5-JHD0fLgQtobzy7QFr-pWi-TF4PS8rJybgvvDSz0AgD3qHvF_rK6IcL5K6qXDtci5n3w5emSVimVzJMg-OJOqCYIqyJtS8g5WumD1hCf-MBw3D9NpjNgmQpMaoSIiARxOZ2O5ULbbI2ArFHKNSoSW9i-CshldPSdJEv69KEMdG0FJPHu1SRIB35I3HoPtqbc6_lwVuQmi2h9aIVeCrMLY9RncD704NxzrFV8yzF4kTKn_nRpllO5PuTLJ5IBetrGMLOC4wPqyoL5mE2MkzBUcmmkrUSGygx99Hmse_jMANr7sln5Z6ZakKdVvzvtigFHKK6BRygUQKXn-J2HW2rExK-UQ_ii5E9otJqifyfqOTKer-ILB5twK4INThCj89EX9vXClRV6jMRdcvMMQ9yslJrIWmt3T_XOwjp7b0aHnMMsDGtOGA3p_wQdA8GT4wsXKrmxEBDof7j_blAFVTgh3dnrprDsgUE_-vLiYWF5MytgzGK4jXjcqSCWZXER-xycj0EFriE7Bw7h_Eeu15WOtc46lrLVw9JjpieDIPmzYOFuydGWLn3zi0bNattWYoceMcz11IQiknKnC52OGaIKvZsUEkx0qP9It6OH3YwQqzk0MLhsOwO6v21PiHBBrPLwSTSL38xWADTnqkwik8490SEBIqp9Fr27YJv5jxEbPqGr3jbjhta8dPffNx22RRhn1AijY7EzEEjzWvc_-QdOpMV4af4gX0igsDsYLH6VDdGQOlrpi9SUmfOkuJZ2u-B7NoIpN_KRleZ9uGg6B7dapu-iiaABCvNcK9Z-N4Wk89PNv4Ldl687X64lWbmgB7UHmS5pKvXY0z-81GTu3c7TiQ2rhmH77UPKKTa-4d0cO6_M1jAZ4xYt9ro9TsjaCKdc6IE_OZCLaALsm_IL9Uh6DTmxQUtPkcv8I8LUrfOj2hJVWIdlT9-tRyMTDA3pFgn-zFHAWJfeA0KTkYUPhRcIFfJgELiTLBw-tc-Fy8iDP6UfV1INZF029Ktn3sS94qVForNac-7H7QzjByS2T54n3MS1OEKmcbzWz4rYUSYHsV4epzUfv8UvI0BnzA1pJzvg7t0iajWr-tYWSyEIp35khWI4iZmUK0x2nnJkrLnGYJLiE-3evydX8z0gj-H8sc2CcKo1R5ikUpvaUrFf0wseUFmXichbez0p6sNSPWAiKTQckq2uX1ROzckwp7z_75IBxm1mdHGFtQReyPq89lbWDu8FKwVNQTbx9i-HULExOLkSdk9_Gi_rplZWqTWQHrF5ZhktoNzbRIHJ8FDvOxcOCgBYRWDeMW9cLUZ-70_jEu07B-Zb7jM2n8hjhkGCISBlOyipYSvU-h-s6ou31dne_hmiooVcmydoaTHQzn8_cCwuEtTaf9TEtVe5ubIQg0tmPrn.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0fe2ec13135a3181016ad968d2b21087d197ac07637ae8477d",
+       "index": 2
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 466,
+   "completion_tokens": 1060,
+   "total_tokens": 1526,
+   "cost": 0.023064,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.023064,
+    "upstream_inference_prompt_cost": 0.001864,
+    "upstream_inference_completions_cost": 0.0212
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 696,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.023064,
+ "secs": 22.3
+}

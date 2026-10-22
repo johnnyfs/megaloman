@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and art director for Mega Man 2-3. You are shown ONE small enemy sprite,\nat 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral grey-blue background\nthat is not part of the sprite.\n\nThe sprite is supposed to be this enemy:\n\"A small robot bird enemy: a magenta-and-white bird with a big eye, a short beak and a raised wing. It flies across the screen and drops eggs on Mega Man.\"\nIntended size: about 18x16 px. Game: Mega Man 2-3 (NES).\n\nJudge whether it is a convincing authentic NES Mega Man enemy that matches the description. Be calibrated:\nauthentic Capcom enemy sprites score about 90-95; competent fan art about 60-70; amateur or AI-looking pixel art\nabout 30-45. Do not reward or punish a sprite for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- authenticity: could ship unchanged in MM2/MM3 (Capcom conventions, not \"modern pixel art\")\n- description_fidelity: matches the description (body, features, role)\n- readability_1x: the silhouette and features read instantly at true size\n- pixel_craft: 1-px black outlines used the Capcom way, clean clusters, no jaggies, orphans, dithering or noise\n- palette_discipline: NES colours, flat shading with at most one highlight, about 3 colours + transparent per 8x8 tile\n- appeal: charm and character in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"authenticity\": n, \"description_fidelity\": n, \"readability_1x\": n, \"pixel_craft\": n,\n  \"palette_discipline\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems\"],\n \"fixes\": [\"specific pixel-level fixes\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "18ea2280f1e6f774bd73963147d724b17b826293f160ff2582007a2fdb33f1fd"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792632759-cpPYFudVJO6f34ExxQKi",
+  "object": "chat.completion",
+  "created": 1792632759,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"authenticity\":6,\"description_fidelity\":8,\"readability_1x\":7,\"pixel_craft\":6,\"palette_discipline\":8,\"appeal\":6},\"score\":68,\"verdict\":\"not_convincing\",\"issues\":[\"The raised wing dominates the sprite as a broad white stepped slab, making the silhouette feel less lively than a Capcom MM2/MM3 flying enemy.\",\"The eye and beak compress into a noisy cluster at the far-left head, so the advertised big eye is not immediately clear at 1x.\",\"The lower body has a heavy, boxy black contour with an awkward rectangular notch near the center.\",\"Single magenta accents at the wing tip and underside feel disconnected rather than forming deliberate highlight clusters.\",\"The red beak introduces a near-redundant extra accent color alongside magenta.\"],\"fixes\":[\"Enlarge the eye to a clean 2x2 white cluster with one black pupil pixel, separated clearly from the beak.\",\"Reduce the raised wing by one pixel along its right edge and reshape the outer contour into two or three decisive staircase steps.\",\"Round the belly by moving the lower-left and lower-right outline pixels inward, removing the central rectangular notch.\",\"Connect the underside magenta pixels into one compact 2-3-pixel shadow cluster or remove them.\",\"Use the main magenta for the beak, or reserve the second red only if tile palette limits and sprite layering support it.\",\"Add a one-pixel tail or rear-body break to distinguish wing, body, and tail more clearly at true size.\"]}",
+     "refusal": null,
+     "reasoning": "**Evaluating sprite image**\n\nI need to assess the sprite image. It looks like the sprite is about 18x16 pixels on the left and is enlarged on the right. I need to check both sizes and inspect the actual design, which seems to have large dimensions. The sprite appears to be a bird, and I'm guessing the colors include black, white, magenta, and red. I'll need to determine if it's an authentic Mega Man Pipi or an approximation. There are some unusual pixel arrangements I want to evaluate as well.**Assessing sprite quality**\n\nWhen viewing the sprite at 1x, it appears as a tiny bird, but the eye and head details are muddled. The raised wing is noticeable, but the eye seems smaller than it should be. The egg-dropping role isn't shown but can be inferred. For authenticity, I'm thinking about a score of 5 and pixel craft at 6. The overall appeal seems like a 6, which might put it around 62 for fan art. I should fix pixel-level issues, and after recalculating my scores, I\u2019ll end up around 68.3, although it feels a bit amateurish. The enlarged outline seems too heavy, but it does resemble a Capcom sprite. However, the giant wing with its blocky shape raises questions about its authenticity. I\u2019ll need to precisely analyze the pixels.**Analyzing sprite details**\n\nThe sprite has a raised wing that curves to the right, outlined in black, with a white body and a magenta back. The eye appears to be a black dot, and the beak is just one pixel in red. At its original small size, it looks somewhat recognizable, so I could score it around 67. However, it doesn't convincingly reach the cutoff score of 80 for authenticity. I\u2019ll record my findings in JSON format since that's the requirement.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Evaluating sprite image**\n\nI need to assess the sprite image. It looks like the sprite is about 18x16 pixels on the left and is enlarged on the right. I need to check both sizes and inspect the actual design, which seems to have large dimensions. The sprite appears to be a bird, and I'm guessing the colors include black, white, magenta, and red. I'll need to determine if it's an authentic Mega Man Pipi or an approximation. There are some unusual pixel arrangements I want to evaluate as well.**Assessing sprite quality**\n\nWhen viewing the sprite at 1x, it appears as a tiny bird, but the eye and head details are muddled. The raised wing is noticeable, but the eye seems smaller than it should be. The egg-dropping role isn't shown but can be inferred. For authenticity, I'm thinking about a score of 5 and pixel craft at 6. The overall appeal seems like a 6, which might put it around 62 for fan art. I should fix pixel-level issues, and after recalculating my scores, I\u2019ll end up around 68.3, although it feels a bit amateurish. The enlarged outline seems too heavy, but it does resemble a Capcom sprite. However, the giant wing with its blocky shape raises questions about its authenticity. I\u2019ll need to precisely analyze the pixels.**Analyzing sprite details**\n\nThe sprite has a raised wing that curves to the right, outlined in black, with a white body and a magenta back. The eye appears to be a black dot, and the beak is just one pixel in red. At its original small size, it looks somewhat recognizable, so I could score it around 67. However, it doesn't convincingly reach the cutoff score of 80 for authenticity. I\u2019ll record my findings in JSON format since that's the requirement.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WfCQF3MGEB1PQQ_WNwgVIjk5gp7EdWhfvZuwwPK8PaiACFBU4l1cY8a6To9y0OUVx32MBM2gfj85Lnr0QINxPLd-Qmeu5swHhFs5gxJTy4LhKoQSMYNw4isEdUY5Pj_75ZGBor0N_jBbifPEccbl8NJaSKNE0B7jbHga18UQgZ6f37JSRru7svB5AwIbW7s0pCq6d8Fkmr09Syy7gNx5ZN-StBw3JsRau3V8a0EOk50oXS1WP0QxixP9Fh8BgxbatW_uQGyJsOk_OYtz_xmql_gtMJqVDkWPrma7nqb4qEt99fynzL447XE8DD8VMKLavBKzFB2uKL486cfltQYP7hgy0BhtRDWY2mSOPw-QQhxg-Wzzf4N7BYYyXPYTylbIC-AChEj4vmJJ9MhNzyfKbVxUu-8LDB6X8xBpdTcf65F-BLD7vq7wAG6Es7N-4dqFdtAPBCua5CO-EIFvJm8ker-QFEmuPqcZVK7h23uOqkblNquDXJVPob2bBHZs-D5qX4dISfSLO4x-CrcyUT99cJNGHAlw_m158ySJD3HV9meY1p-Ffn3iwSD56UdPsfS4KAC-qXvkjUMJ4qFx5MaUdfbr8WDnLHmDBEP_yUsQ33KWxucwoSjzs5Ws9PC9RgfQlCmxGkMZHrG28b4X_3ONAWvD_auLcesjBdiboe1tbxPjTKk5SoZr-hdHvKtKJn5Ke8N6iLaSc99_buJu3i3h5n3J1MZU1Ha_JFLIB33DMzMHHr81THJmn5rne-XonbbDsHh1iYKiuEEoSKgWalzRkVc_hM1_Ws9L-AXNhGkXi96y_REMty0Ua5Ib50yzciC3bV-3ct6HeeiuYrIerW9KA-VdsId0J-Wrv9C-QUqOrwCweLaB0qG3PdpXVrxEF3s0RAXkRsIFwYjuRs8mERZuZNCVnHKfTKZs2cwDVm7cd3nIq6mXw3e_JYo6K7CI0MWNnLZfKJ2KUd3KMuSZ9_sxFOXxhyK61TBl5Wd4IfUM4aiyR6lPePzZdtuyc69t7EzJ74pNrjCnK0L1LQZThE5A4JUWlsgBIX4Lnp4TCzwj7fRyQ351SJs6EMlmAbl6vhu2KEWnbzGa-_OQLYEAWSX8GEUEZuWcebFNvvg2eXxAz0yaWqSw56X6T5DpTdnOxwex6mVx6RoakGbUHF6hh1Esz_oQbyWRUPTNNaT4qAWu9qvDL7reFd_CF7BVi5pYHLy3HklOyxogFIlwgSML3tWRXBxI73qFmx9TTq5WRXwIfABKhzxS1HRCZTTzfb5Xamhp4NT6bEOfPTYegmSZKVConmWoUt9x1HccL604vTulQNzKh7L-g34YTDdcUtc3eGRk8-z20puX-YedJsJB3jt2FC0qhfUEjaAdD1JYGPI1RkqIyF1iG5Cd2tmKp7ZAxc4VJ6ZpT0_9WwbHNhsR6LYBlvLk3BxJjGY6JgE_y4_zWTqAE36M7tG8LNU32yC5r-2UOVvwCMxUQ0nlrau8gMKAo-JhtPh0b1ZhCVd6IbofCKhDctxLFaEHPOF9AxiGHBzMuQfYvN2BqvUq2t8ri9YUyC64gAZRPjNGuVzh3PL0oRgkQP3KW4XLwUHobKRd4AqG7mNv-L5rS2jTJ_0Y8dhr43f5XHeTT9HOYV8G5giE1IW849T2coktxI8i00FcRLvyIPAoqZx4pqig83LHK77BNcXoGIcnZcNvqry4b8q7Z03LMEHASpjmyLsStn_RpcVYvHQUx3C3TauVHz4MtACwCbSjvaAKhhZG0qR75XCrIKYgJishnkJyefbNU2RpbSOWdDsN6MpupWk3VWOjvR0bWy0PKzfzKg0qitIyPCld69FUemvkpeHhsr-r2g8aaWTrBPp8syKGzOpdWV9X2pVtI5jmVebyHu1OwMmokl1ho1zgJ8VpqGKt8HfaNZOq60eSanZq_IGg5HNn_jK-U4VUd3wjrrDORvvS-OwJ7TuOIpd7AnovzvFv8Qxe5qjIqBBTIVtWNXB2Owh3S_hdr1IMbcqr9ijrq8xfZ3r3NsgpHBc9OnW_qbWn_sC1ZIxhs-ezU5CESfrtky4IQBrlNwliHmyegYf1-dz40mCMvvYCDiKjDVydWJlQWYJ_E9S7IYuG1XVCsjnfx8IcrQS6niIsEwfkX1xKeXKV7Ua3JraWcufMeS2OOInx4_I6j0YYiAYaoOBIUOC2i6MhOAjOGRzu9g5-wl23ys7JQl6rTba5bNz6s1p5OslfKCfJl5HkhoE22hFOV9iJCepoITIlkVA2VTOL5dqDrm4IVPuxZ9Qp3KKVs_RdVrk0vtn1arGfxhtcvmJs9VHFJAAjgiI5XbKimct0XlQgcZuFWaXi3l4APgYoic0NkoUwB9pApiXcT-6vlsbxewdWOO9S5Ys0BgUm4LFjbE02b7DRfb5QN3fKEkm1YXA90UffnnK7_STTCiCls23qkclvBlNmuyBWsC8jOVGsw0x1LSi6huwGSKMBaoVtmR3buuXq_dgBgvRz4xfVePTb5dp1jU7b6mkHlw8htuCnIqUCP0RZfkwfYTRMhwW51SDPUyrUIMDVXeCaJnBSn8Puq6m871lSQXaUITRHfNGj3dpqCCVClESGhvJMS0bArB7MAmTL8QCQVvqJo9ma8ql5p34jEPNH38cJPlKBKtPfrFYhfk_N2Y0hwsM8Q8dnYH7osyQdifTvb5ZglABV0CWmkAeCXzz1FbK-WUvprCej5sia_rcHeq6PAFP3uapZGZeadjyCDVWnvcGr2XcraAcsOZPReRHsfHYt8ZP9OQXL1IZ8Tb9L8AKnoRJJystPrOBADCxgG5ZlsFiyIwCqF_yQEcs5Qe6TA8pYqNi-ZQHEsE5wOuBM1QWjpDflE9hswhkI4Ucrly7XIRzE9Z1sX056zg9na_bsaMwPR60vZkam75urKNnCL3kHaFoVScGsIff1fbJDB4bMxa5Zd-RGuM81DWEGyPwgYwLrHyQzFt0p8W8sLR-OEocA-uyLX-CpCO95QHeTyIOl3wZRo1BKs3mTCxGgu0pe22ev5m6_lLgHsgby839vbu7PBsdcZgE0VavHZp5WEVPqjf9-_RjEkT3927yJBQAz86c5EWqHZWM8X75kPqMk9qUAc7KXzXHYnTj8HJTMk61pozJJkUWaOLTNH78dRABIciQjIAdNrCNiuXYjQS62uh6l1g_TLNDQ7mpe5AfjEbFJMI8k_vPGpYcUKwP33GbAFm9vEBQKZTfFSmCakRZmLKtbHzReFNdfW0IX8_95TgWkdyw10CNsacmD-ymk5X-ogcr_hbyOHGTe8qoQd_Hz27C2QH8E2rPU4godBMbhlsSoj8efd8oxbd73wvg1v-ea2yxx6cknsnTFu0L_1MnPX_YqqQnrkWDNJsnK6KYxyP194Bw4Ow89Oga5OEl856iGVD4zcZTM23URQRPbOIN21ZLUvogDMagMyMql_zKE62i0ArarjjxdjvET9FSWoU8QGGAlIWb8hlANDI2UD_m8U4Cp7pddT24iKeF-QWEeuvxHGB-tqBCTlDmDMkCi1tvZxdNgOqIn9TsowQpvSGvRxEoKfnzJLv8KQGvxpqIiJ4qMhnRq_xbALeaZdElb30yThtN8NTBFDUpYrRvGqh6Hi7o9mQZn-xy3J26xC_oygvuh_qfP8vF4uDULgvNpRQmHyEQdsDfXhnwCIX780-MR9s4r7bcVkASRFmINNyv-StPL0LsPbAkAWgSozK7ne7_sfU2MAp7msDKtRYh2LnBIQ1i733rBqy-mdNYKjb-33cZLVhNiZmVdQ9CFBAOq_3B_j2DlvlGzxd7FLYyXXipLG_v94_eoiORY2h5ZgufYkdozpcA0rJ_AA5MiAYOYyLgEaKNaPAo2XcmtsgODMR1FyXd5DgTJWj62vxs2DAW9BU25_ShcZAVA24Y3ao_8ljgru4bwPKO8ASeBsXRJChCND4FSEhZOiV9awlf7DIYIKSPRUYGiWxAyqzvjOKSxBp4xDq_vrgUw6LM0pzLWSrSnJPjrbx6vUoa6-gN78JdirK2u3dk7qThXifLkeEaE06DklBOAirJV9ZbWZySZbV_k-K-Ek9Y70qyTIDFFPaPbDLUlZN9983yWXK6qwBH8xJYyZ7GkJllG06NbFi-mO9ixdeFtrmfcbEbzxtXT_HkTZeOLA_4HwItYrpTCdsjNk1znfu3x1sXQjYyjsiANFEjyksQ9kZlCcs8t-rcJxa3bt0VRIZcz2JVOMgyC4UjYhyuq5C0W5dKzTEdT3mTBxDUMyVbR28WjW5ZNNM5YHyszuIurLqWIQ1qITGIsyk07B82WcCru2Rfbv_Nn4_cIzktNlWgxkK4v2UsW6rYkym4B1gnWNBtDI3bbZ3zNqJMQ1M6XTc5zHaXGJNiG5Ubkr9hP5vQLfJVGmqiQ4hejqtc6HzO6pFmb-UvH0NcGksgtYMBdiHB4an0i-cZ4wlTUOZqxOG33GJPUqmIfaeKfNh2YWFJ0iOXnt-bcMor6kbnbXGmW1S9ADrlz45U4iz7oiDIsIvjB-KBaHLg8xRrEhZZiWcQKtCvY8Nic0f41F70EY9TzbMNehmk_eAPnnEvlCB7CS584xQN1T-PFEhLv6mSjUE2uamHejVFKl0BYqabcCok-n-qcqwz7tt1YJJcoortFJ-FfOADPXEUvvQrZ1iyLhoKlHVWu-tHPMYljirqu3fSEpa_zck0MbCzCIacW0o6ZIVtbYe-fpkdOQxO-ahLKgN_Wlv4c0o3THz-FHas4elPSqXN72zSWUlbJcL6CQsEQKfW-1wCy6k2lXrl95YVK5rm-MGTIeWKb2_LrNZEN-GLv3BbtOtsZAdFmzhkA0jtPNiC9_Ftc2WyoXi75CedpP_KkQLu-X3-MuV0tEyNiklS9meVu8ZRIMd_re_J9a5i8UvrVQLWvzgb94-0eHMCMxYZDKNdAKPijQbMReVcxRCysFg8NELv2mBBbey600McuDeUQWOMAe-sn415_hLK1QxGhNjBJn0oZH5ttaNfQmYXrAhIc48NEqtyXOKJho8YlffnIsyThbeUbdHriuD40Q8CeMkWltwIW_u20tBxmPJiAlvead3844FuvVwXmGBTFKvpu__aX4DC7lphIvNr8vF64xUtZi9Rqz3QJuETKiHJGGzM3Yzu2zXbSGLBpnXOPgVY1Lr7QusuNskZAmfElUY00zYxsA2cpTqMC1cqsFbBNBNzCT0ll_luk5XRMGuGx6R_6-SqOTCenrRNDRCUwRV0_B4fFxq0xFZgUZVn0XMxQv9mvlKdQETa8BUfrSmp5Sks80SpUvIzUT1SI0rHeSn7UJrkixIOPlyQBiSaHSvhaWCjBPcNUuADaYWA3EokxadJCFftnK2EE1Hwr-5DXY521iKTILc3hj1889BRwmQyQ9dfaEea6-c5ThwTTFeKX5W_m7VU6504wu4vo4hXSZ-N9q29qTUBu4tMsK9nIxNI3jJHqS0FsOSQjI3gnqXDu8UOtTGO3V5P2skye231oG38MM-3tog9eFMouWMEUUa7AqfsPPDt4Qqdi4jlOmFPqdWYAZoJn1eKCnadP7c_4FriP0sH7iow9eDS38vF78Ztl-_MB1_ggmzd556YjJiNshDjZN5m5KRYJWzMoYdCPAyHrf40s5RnbUXvCLbUQ6ksQYF-r5PdEsEyA9RFVOS_aXd-1h_F6zGoRMKG2fO1-d7AaMrOzM1DrfszetFIAVGOyDVpZDyLM4prLYOkJySEbFPGHaGZBhB4wKopvrsZt7TUj4h1HRJOl4pSCqHxq7lS0rxUE-HTqm9v9S88-gWPRrDG8_AFjRftd0og78hKa0-l9rwPtdChoi2Xrx3aHapjigiqdmSIcvBke_5Qs445N3YLb-z290mFFjmRcjYR9bRFqtUgY-Z9_V4poEw9dXxwKHo-ZbJs-YQw-4Q_OHw3QUJvbbqYZrsQdkLBvxEbtZqVIAocA1YPgJerEQP0U8lxcaFJ1-kw_ddDXjMBFdhvSYxKwkdyg-SPZX5VlWEU2-yjzfh3SutViTgeA_Bm4VlBorKyigQo96MPgH-WQEWbriDLgN84Sut4KDOVGyHLkjOQonviOxvad8KVXbQt9Tvl3bWunp5oAx1PjHEhk6U3Sr6n8OfXKkCx_kV9it4mb5LrWCK0n-1Yn2RF3wW-Cm1Lrvb9pkm_NyQ5HKGDNAwn8kmyllknTl1UWThopEJIJdGRfCc-yr9doh0IrrlgTdt2n0wLzn232ACtNQr4xGBT_SSz-aKKOBs1OLwD5RVMxhbT8PbJpHryVEWi7v1G8rELgsfl5XmSWw7ZorsUbsUierJQ_36ermyZypoanQJ-Gk3BvD-uOeOtuon3GcoWuMn-g-F6cIc-TgbBlin_xuktK0DMH7cBrrzVRfgoZoUwO_OEeEVGdD8IS_hJP5n4men9TqnJNH1eocbLlGHkfDlDkPqUT2GgIgin59u1hsAQSGkSC-uzsQ2mnxyiCdajR31tNfrSUaviF0YAMaAkmzir7_WgrnywHMJFIyNSPB5Urwn9rFatDK_9RCKFxT9ksnQNVTDUa7bAH5oB3cAjPefGxzPTuclMK-ISBgUpRSWzxf6CdK72o8BKsr0PMsYsH9fJjh-PZkY5JA5O-GRBnj-nYgvZApr7SDRczbY06fO_MD2_TfMAnarckPQaANyuZnWRjq3x1IsTo1NlKT0XVJYznRgTpATvqiGX7I7PiBBq5FX31G2lLzw--KWw41U-4zcyvOCYxKgwi6x4cz4cdPVoihFfHK95-ZG02F_mcNQBiZBvZ9_4IZkK8zx8J8Cz6RAiX2_1PmcYzgvpPaSt3vA0BKBC4CXioEbtclLEVxUy2LILrWOd4OCsNjOKlSS_immwTU_SPtrW2gWGJ4HS3os0-k29qE6wC0SHiVflDmSGyZjF6G6rMC1DQPTGE2F0sd0KBWOsU5qFkam0N57X2igR18I7abxrz088w4mXxDKKQE0G4qGmn287JSnUjJ7fYnq9OV3p4X9mcNdoUuO7Q-KWUfA1klXheHHxfIDVCXhY4YaFtmytNdYel4Tw7En4WpNlVDUVioWYkUQKojMa4_qsDJdlowF-2WosK4v-0gD-o3M3zepnAJDoP4R2_eyiWJifmsIme5312ex6-gXSS9o1qPm6KX6pFe7DoJ1loAHqihjd23Xux-DDhXM1bEXNGqqyPWe0xzN3s7N_NKvukLcL22VH99nQWlSzOBGykyu4pQO-DM9nmDiE1nwUPQhCDnKoP9fhokAA0-h0SFTnyrOuC3rWSUETcD1cP6ebmrioijL-UrH88PoNc5_UO7f34rEv3Sy6KhZmzqgyUBmDZKLFeyq19tYIkWBHzTAqLu6tAqen23IJ2gNqWxQ0ZqnymlNpe6KvznZmg-9wBo0vhuuAGR6U6qMYt7uiXcaYtzqKundruwisaoxyKvy8QAw3KuNZFPc9TIIzJbI7XfaFKlDeBkT_P1LLeDIcXcE=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0c493048e5ea0c1a016ad967b8ab8c87d1a1f3d5e6336bd9b6",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 466,
+   "completion_tokens": 820,
+   "total_tokens": 1286,
+   "cost": 0.018264,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.018264,
+    "upstream_inference_prompt_cost": 0.001864,
+    "upstream_inference_completions_cost": 0.0164
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 491,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.018264,
+ "secs": 15.2
+}

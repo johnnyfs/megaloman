@@ -1,0 +1,226 @@
+{
+ "eval": {
+  "name": "convincing_enemy",
+  "path": "evals/convincing_enemy.yaml",
+  "hash": "fbc43f3204",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "e21bc9a14b873132f97c7a6299232e0470bb85ed5aef95e2dd1bd4a2c9647cd6",
+ "presentation_blob": "75785706ca7b6ba4ba1f9f46414eba9200192f8d15e7aa9a722cf02ac4435fe5",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "754d92d8ff16f332cac377182dd4f15b0be71def6bb46c8e96fcb39217d3fb4e",
+   "cached": true,
+   "cost": 0.014764,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 6,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 8,
+    "appeal": 6
+   },
+   "score": 67,
+   "verdict": "not_convincing",
+   "issues": [
+    "The body uses bright lime green instead of the described Mega Man-style blue, changing the enemy's identity.",
+    "The middle black band is disproportionately heavy and visually splits the drone into two disconnected caps.",
+    "Both eyes are boxy white blocks with tiny square pupils rather than two clearly round mechanical eyes.",
+    "The top and bottom white-and-green stripes are rigid and symmetrical, giving the body a tiled pattern instead of convincing barrel curvature.",
+    "The stepped black corners and small bottom protrusions make the silhouette slightly lumpy at 1x.",
+    "The design is readable and palette-efficient, but lacks the distinctive asymmetry or expressive detail typical of a shippable MM2/MM3 enemy."
+   ],
+   "fixes": [
+    "Replace the lime pixels with one medium NES blue; optionally use a lighter blue only for a compact highlight cluster.",
+    "Reduce the black eye band by one pixel vertically where possible and let the blue-white shell frame it more clearly.",
+    "Round each eye by cutting the four corner pixels from its white cluster, then place compact dark pupils consistently toward the travel direction.",
+    "Rework the upper and lower shell into broader curved white clusters with blue confined to side shading or a central panel, rather than alternating stripes.",
+    "Clean the lower silhouette by removing the isolated-looking black feet/protrusions and using a continuous stepped barrel curve.",
+    "Add one small Capcom-style character cue, such as offset pupils or a tiny underside thruster, without introducing extra colors or noise."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "b2e1b409e86f80722c8fac892b7238621dfa4ab3e125426e0c552ee977c30c8b",
+   "cached": true,
+   "cost": 0.029364,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 6,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 8,
+    "appeal": 6
+   },
+   "score": 64,
+   "verdict": "not_convincing",
+   "issues": [
+    "The bright lime-green top and bottom panels do not match the specified white-and-blue body.",
+    "The silhouette has nearly straight sides and broad flat caps, reading more like a striped box than a barrel-shaped drone.",
+    "The central black band is excessively heavy and visually divides the sprite into three disconnected slabs.",
+    "Both eyes are square white blocks; their pupils merge into the surrounding black band, weakening the intended big round-eye character.",
+    "Perfectly repeated vertical stripes and rigid symmetry make the design feel like a modern pixel icon rather than an MM2/MM3 enemy.",
+    "The lower corner black clusters are bulky and make the outline look thicker than Capcom's usual controlled 1-pixel contour."
+   ],
+   "fixes": [
+    "Replace the lime pixels with an NES medium blue, using white as the main shell color and black or very dark blue for the outline.",
+    "Inset the top and bottom corner pixels by one pixel while widening the middle row to create a clear barrel silhouette.",
+    "Reduce the middle band to a cleaner 3-pixel-high strip and preserve a 1-pixel outline around it.",
+    "Build each eye as a rounded 3x3 white cluster with clipped corner pixels and a single 1-pixel dark pupil.",
+    "Simplify the top and bottom interiors into larger white and blue clusters instead of repeated vertical striping.",
+    "Trim one pixel from each heavy lower-corner black cluster and add a single top-left white highlight to give the shell Capcom-style volume."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "d616a509bd1fa2f6db830970bfb914a97ccfd7d0e0750bc5e56e61eed15c7501",
+   "cached": true,
+   "cost": 0.032944,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 7,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 8,
+    "appeal": 6
+   },
+   "score": 67,
+   "verdict": "not_convincing",
+   "issues": [
+    "The side panels are bright chartreuse rather than the described Mega Man-style blue or cyan.",
+    "The eyes read as square white windows with square pupils, not two big round robotic eyes.",
+    "The full-width black middle band is visually heavy and divides the body into three rigid strips at 1x.",
+    "The perfectly mirrored panels and uniform barrel silhouette feel icon-like and static rather than like a Capcom mechanical character.",
+    "There is no small underside, nozzle, or other mechanical cue suggesting that the barrel is a floating drone."
+   ],
+   "fixes": [
+    "Replace the chartreuse with one NES blue or cyan while retaining black, white, and transparency.",
+    "Rebuild each eye as a clipped-corner 3x3 or 4x4 white cluster and offset each 1px pupil toward Mega Man.",
+    "Reduce the eye band to a 1px black separator around the eyes instead of a dominant solid stripe.",
+    "Narrow the top and bottom by one pixel at each corner to create cleaner stepped barrel curvature.",
+    "Convert one or two bottom-edge pixels into a tiny central hover nozzle or paired vents without adding another colour.",
+    "Break the strict symmetry with a one-pixel panel, seam, or highlight adjustment in the Capcom style."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "64dd6410fa167b38abbf434ae6f2e41244cbbe61615e9635ba1f39d9a1ccb98a",
+   "cached": true,
+   "cost": 0.036484,
+   "subscores": {
+    "authenticity": 4,
+    "description_fidelity": 6,
+    "readability_1x": 7,
+    "pixel_craft": 6,
+    "palette_discipline": 3,
+    "appeal": 5
+   },
+   "score": 52,
+   "verdict": "not_convincing",
+   "issues": [
+    "The crown and base use bright lime-green vertical bars instead of the described blue, making the drone resemble a striped capsule.",
+    "White, lime, black, and a separate near-black navy appear together within the 8x8 regions, exceeding normal NES sprite-palette discipline.",
+    "The eyes are blunt square blocks rather than large round mechanical eyes with carefully clipped corners.",
+    "The alternating vertical stripes create a modern icon-like pattern instead of Capcom's usual single-shadow, single-highlight volume treatment.",
+    "The lower corner steps read as small feet or tabs, weakening the floating barrel silhouette.",
+    "At 1x the face reads, but the dark middle band merges heavily with the contour and flattens the body."
+   ],
+   "fixes": [
+    "Replace all lime pixels with a medium NES blue and use only transparent, near-black, white, and that blue per sprite palette.",
+    "Use one dark outline color consistently; remove the second nearly identical black/navy tone.",
+    "Clip one pixel from each eye corner to suggest roundness, keeping compact one-pixel pupils centered or slightly inward.",
+    "Replace the repeated top and bottom stripes with one blue shadow column and one small white highlight cluster.",
+    "Make the left and right barrel contours symmetrical and remove the bottom corner tabs so the body forms a clean stepped oval.",
+    "Thin or interrupt the central dark band near the outer edges so the eyes remain framed without merging into the silhouette."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "4e22c3197e4bce7fedeae69c8c0bcbecb5d2dc3768f4333648d31cc997f0cfad",
+   "cached": true,
+   "cost": 0.027264,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 6,
+    "readability_1x": 8,
+    "pixel_craft": 7,
+    "palette_discipline": 9,
+    "appeal": 5
+   },
+   "score": 59,
+   "verdict": "not_convincing",
+   "issues": [
+    "The body is lime green rather than the specified blue-and-white.",
+    "The occupied silhouette is taller than it is wide, so it reads more like a capsule than a squat barrel.",
+    "The eye whites and pupils are rigid squares rather than large round mechanical eyes.",
+    "The perfectly mirrored top and bottom bands feel generic and lack the small asymmetries typical of Mega Man 2-3 enemy designs.",
+    "The thick black middle band visually separates the eyes from the body instead of integrating them into a barrel-like shell.",
+    "The clean three-colour palette is NES-compatible, but the bright green-and-white combination does not strongly evoke the intended enemy."
+   ],
+   "fixes": [
+    "Replace the lime-green pixels with a medium NES blue and reserve white for the shell highlights and eye whites.",
+    "Widen the body by 1 pixel on each side through the middle while trimming 1 pixel from the top and bottom to create a squatter barrel silhouette.",
+    "Round each eye by removing the four corner pixels of its white block; keep compact 1-2 pixel black pupils.",
+    "Reduce the middle black band by one row and let blue shell pixels frame the eyes at the upper and lower edges.",
+    "Add a small one-pixel side nub, seam, or lower thruster break to give the silhouette Capcom-style mechanical character without adding another colour.",
+    "Keep the current flat palette and avoid dithering, but simplify the repeated top and bottom stripe pattern into larger, more deliberate clusters."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 61.8,
+  "sd": 6.38,
+  "min": 52,
+  "max": 67,
+  "n": 5,
+  "subscores_mean": {
+   "authenticity": 5,
+   "description_fidelity": 6.2,
+   "readability_1x": 7.8,
+   "pixel_craft": 6.8,
+   "palette_discipline": 7.2,
+   "appeal": 5.6
+  },
+  "convincing_rate": 0.0,
+  "cost": 0.1408
+ },
+ "benchmark": "telly_recolor",
+ "kind": "control",
+ "control": "recolor",
+ "type": "still",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": true,
+   "detail": "16x16 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T01:45:41+00:00"
+}

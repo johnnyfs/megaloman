@@ -1,0 +1,10 @@
+name: met_peek
+type: animation
+mode: oneshot
+kind: authentic
+source: "MM3 ripped met_hide, met_peek (fusion-man); hide is frame 1"
+frames: [f0.png, f1.png]
+sequence: [[2, 36]]   # [frame, game frames]; peek 12 f tell + 24 f open, per fusion-man ENEMIES.md
+sequence_provenance: "fusion-man engine behaviour (12 f peek + 24 f open); not verified against the MM3 ROM"
+applies_to_evals: [convincing_action]
+brief: brief.yaml

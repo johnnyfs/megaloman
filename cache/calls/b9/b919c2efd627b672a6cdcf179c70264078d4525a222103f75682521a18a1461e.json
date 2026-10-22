@@ -1,0 +1,99 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and art director for Mega Man 2-3. You are shown ONE small enemy sprite,\nat 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral grey-blue background\nthat is not part of the sprite.\n\nThe sprite is supposed to be this enemy:\n\"A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\"\nIntended size: about 16x16 to 20x20 px. Game: Mega Man 2-3 (NES).\n\nJudge whether it is a convincing authentic NES Mega Man enemy that matches the description. Be calibrated:\nauthentic Capcom enemy sprites score about 90-95; competent fan art about 60-70; amateur or AI-looking pixel art\nabout 30-45. Do not reward or punish a sprite for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- authenticity: could ship unchanged in MM2/MM3 (Capcom conventions, not \"modern pixel art\")\n- description_fidelity: matches the description (body, features, role)\n- readability_1x: the silhouette and features read instantly at true size\n- pixel_craft: 1-px black outlines used the Capcom way, clean clusters, no jaggies, orphans, dithering or noise\n- palette_discipline: NES colours, flat shading with at most one highlight, about 3 colours + transparent per 8x8 tile\n- appeal: charm and character in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"authenticity\": n, \"description_fidelity\": n, \"readability_1x\": n, \"pixel_craft\": n,\n  \"palette_discipline\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems\"],\n \"fixes\": [\"specific pixel-level fixes\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "5f8f588a65af4308bc1df5f905d84f1cbc31e557c4e1e193efa36f0e312078c4"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792633047-s5tciPNIb2JjKyrlUGMD",
+  "object": "chat.completion",
+  "created": 1792633047,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\n  \"subscores\": {\n    \"authenticity\": 5,\n    \"description_fidelity\": 7,\n    \"readability_1x\": 7,\n    \"pixel_craft\": 6,\n    \"palette_discipline\": 7,\n    \"appeal\": 6\n  },\n  \"score\": 63,\n  \"verdict\": \"not_convincing\",\n  \"issues\": [\n    \"The oversized joined white eye mass dominates the center and feels more like modern cartoon pixel art than an MM2/MM3 robot face.\",\n    \"The lower-right tentacles merge into a broad diagonal shape that reads as a leg or tail rather than gathered squid arms.\",\n    \"The lower-left appendage has an uneven staircase contour and a cramped white tip, weakening the silhouette at 1x.\",\n    \"The body lacks a clear mechanical feature such as a casing seam, rivet, intake, or mine-like trigger.\",\n    \"Black, white, cyan, and dark blue occur close together across the head, making NES sprite-palette separation awkward.\",\n    \"Nothing in this frame suggests the red warning-eye state described for the enemy.\"\n  ],\n  \"fixes\": [\n    \"Reduce each eye by 1 pixel and separate them with a continuous 1-pixel black bridge; square the eye corners into cleaner Capcom-style clusters.\",\n    \"Narrow the lower-right cyan mass and split its tip into two distinct 2- to 3-pixel tentacles with black negative space between them.\",\n    \"Redraw the lower-left tentacle with a simpler two-step contour and remove the cramped white end pixel.\",\n    \"Add one economical mechanical cue on the upper shell, such as a 2-pixel highlight slit or a black casing seam.\",\n    \"Keep each 8x8 region to black plus two active colors where possible; reserve white primarily for the eyes and use cyan or dark blue for the shell.\",\n    \"Create a warning frame that replaces the white eye interiors with a single NES red while preserving the same black eye outlines.\"\n  ]\n}",
+     "refusal": null,
+     "reasoning": "**Analyzing sprite dimensions and palettes**\n\nI'm figuring out the scaling of sprites. It seems like the right one is scaled to 8x and has a width of 20 pixels. The left might be around 26, but there\u2019s some uncertainty there. The colors are transparent backgrounds with blacks, whites, bright cyans, and dark blues; that's four opaque colors, but according to tile limits, it should only be three plus transparency. I find myself recalling how NES sprites typically stick to three colors.**Examining upper body sprite design**\n\nI'm analyzing the upper body design, which likely features black, cyan, blue, and white colors, all separated by 8x8 tiles. There might still be a split design possible. I notice specific issues, like the eye assembly, which dominates the visual and fuses into a large white binocular shape instead of having a red flash, which I had expected. The top dome is broad and rectangular but lacks the mechanical seams I would anticipate.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Analyzing sprite dimensions and palettes**\n\nI'm figuring out the scaling of sprites. It seems like the right one is scaled to 8x and has a width of 20 pixels. The left might be around 26, but there\u2019s some uncertainty there. The colors are transparent backgrounds with blacks, whites, bright cyans, and dark blues; that's four opaque colors, but according to tile limits, it should only be three plus transparency. I find myself recalling how NES sprites typically stick to three colors.**Examining upper body sprite design**\n\nI'm analyzing the upper body design, which likely features black, cyan, blue, and white colors, all separated by 8x8 tiles. There might still be a split design possible. I notice specific issues, like the eye assembly, which dominates the visual and fuses into a large white binocular shape instead of having a red flash, which I had expected. The top dome is broad and rectangular but lacks the mechanical seams I would anticipate.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WjiqqGJLh6QQ94fCo21Bf6wZaqJ6GXfA7jGCqkozuAzGAZ4jCMmXMHW61P7GJ3CknG6gNClos9zqkTlKrreAKV51MUTfk716wqJxuWrKnIc8uTHMWOmvjm4fuyBh33eTcE7QmykIzpF9uCelLCLrKJmsanaCXMbX4bhBRVX2Gp89uGITBy3DpA-m6qTcpuaJnI1dpci_TIDI6wUNMFRew_tdAhZcH29aXwEYt9ESKORw-LkrdijxiSLRmWvbuwBQGIGBAsQAckdXjcmDatfBf3WH4sYo8WKMV1hbfa36xV8j4ZPs61lS6mHNSNP1Kl4fucoxJbJA_DEZm9RcR2yH8apRwkwkX9qeZbgfwrA7Bx1BP_gEeT9xj_tM8vf3-H13JuZu6KKs7QhFjpi_wuej69y9Ej5XGwYnVkXlGkTxpMO07CJRaHUD0xiyK0xu0bShqCOAfItz7Cq2ayU4JlwyKbHbYQIbSLC4X_aBaNeihpz4-TIPs3rmIzQSacCVJ4L-L6v2TeHZcCuMuOPBzpPf5IcRvlvtdEmlCe5yP1ONP-2JkDq6wFS2dfK5G7IQASxP0dxivgsNskrxzMbSHUlYizLzPSvqhyPwm3ridHh6dNK2qEucNLdn9mrcCIkYrUod7UKSgZxvFO5kkAOSkuSh7E03YERgKsGe-RSzyCohftZtU9-7_d_669gKM8lYxedNdDclybCAAIKNqsWjPMqFblWwM5OUdV0uqomXgpzuSQdUBjPYw0ef7HTmFIvFcxJ-VZJLqWDJtI9Rl8VyI70J-NYXnJmS4KyavEeh5PH0ykPgFk758ycWQD9aBC_29LKwPcOx2dRF5veYRZDuwHHkKHKIB7-LF5ND3G5NKxoDJAfpXTBCo_70JqYGvNiSsRVIC5xHjZSmiyVRsj5i2jqvYaCznF3DGTaHIb-yHBbOLP57BJCqYFMWMaKSkmrH-nc8OwwzORILnHx-1PAX_FkEEpeKwIwno9CJO1fd-5XTi9LGvl6f0eXL4rK18Yp188eUxPMKxU0RQRhQPOdv8JngyY_LyPtqvtFi2YN3yNJLu85kDq8ApyfhLWvocTssBZvDMARU6_Iv2MftciHnxxGQforDo2hwJYZFBwg3l1PEYcfB3ZpBTaFI1nPxkDiYAUE9exfgw5Jak8L-YZNZjNbCdaAiSQNnfsg62CaHkdnaKjLU8jJDBA5BnBKvFGFyJmKNE6aUCgSZPmQWXMt-kmAHd3q4R3SZV0DCt7B_F2mfOJzcCqRTHPLGDC8JxxmESNT62OAU-8KzOVH-41zDwoECmXpZUY9AJxp3rIPxVikhzk6H6D7-dJJ5chEHN-Q-DLHAl2P6Ao9JUZnO_CTIzVRiKimR9goXgiQi-LNHJgxYK3tILi1mR9vQNhWi-KS5Af6Cb9bgQwsPhUaJX-Qhuaau-3SXu0yg5RMl-bAvO5aQQHXbsGB8k64nMyLTEtRNdDaCiUiiXRYql1Ak1NRGSZdjVsnzoBR0LTfG2kLWuESq3vvP3Wjd4SlGgk1aXmArXpEYpL7F1dxfWf9LB8ZM9wy6_-KaiHlAB1D0EVc3q9QSYV12hgVCRt_SN4Rb6ZKz5Kva1tmOHJ6kR0v9omb2lTGRhqL_pzRgJoV0FURauuACyxejPcP9jHoSVcfeP64R6ngmKTx2iVz4iPTH05DlnMUKVlbGVIcOdajKXOA3uZhJM_yk3whkyZ8G5hWMWv0F2P6--6mCHBLrcoNtQe7HURsxjLJdLXGz6DqFxJpxz6Da5E_VaRRX-YBhSyDnvAon8QQpryd9qAJwo1vCP8-5irvdSp6SXV9Qtp7pk0jYA1y7xpW0nr2fbgBLq0eNFXtUMSv2BMLY6yXnT3MxTp-149ra1LaLqwXCE23Ed1dNnPSS7zQdQcMEjzSrIrFgStVxQdHLhyV_oKEe2wfd95_H7_w7J07uK3qRIvEyWaKj0bGK48eZUQ7z3jeiZcW6a05xHKn9jDkkZnXxbqNbz1g838VJb_PA0WrsKrFDJghVyV7emHf9DTeYqxT3RN9970nMzq7wNXUiEoXdWmWP1ofg0Ep99w0qpRShiNpQidB4rZpJYmHosto0egRsy-E9fMVyn9zngVAc739rfKa0KyzzjumfWtHRJfCh1DLFbsrNus6nwDEGYQTIM5irncFOp1L5VTZQZBFDP0FMr-6U68xep2ZC639yxGqfNCvzWqbkdFiCKOYLfKzcc1D_ge-u1F2T7FCjWK1n1lLi1MzExZWC4O4e6-RVMWvrKryIhHUV2gXlrKWcNhijynDtZWYWQwfhAzumUwoiJD5rFmVJDrqpLIkXE-PckhxhDcHgh6WCINr8lNo8QwdXH1NaJqZSPTIvVpN_Fu2LRgEEBiYTfa_1mJKDLbsZzUXqkmf-cwU-D9VO1sThvxsKHDJ_G33CaUff6xrw6f3SKoEUdHS8SRjYSfrb5lQe6D97vPu-dx7NZF2KTz6DcyIsqN_DAqWGtrb3Sguryc3547VcE5xaa_bS2hJKKBr8gCJzJJs1ppgajxetjZ7tts6DfLIDFMnMU5DLFk_vbXGVf_Rp3YBr6Ccad0-iA1Lfvx0TgfAKFUz2PG5mZQCRwxCoykDFSN_N-TTqOA2FFC8H0vAPwlYrA8rrW2_EOA2Z3oXZHzhxmifz4Smj0bLEkTSe9LdZNdmorPIPMOonE5En42n13SjLY01NtnIv3rLrL10KkH9B1ob_Vf4R7od-5EC_uqaO013LkCrCqsF2t0NkzUTPxRyIVi-78IMyaM746s3mDpKooLR2F1DQ_Gig7c-r-4lIn-BBjZbZ5z2f7U6btp4fKoLDWKzjPq3HniIfav8jPJBuT7K1bKPdOdDPQV71qnOlgj4uXUYZb_tMAMyrTVSHaqB2P97tyukgt_A8KpKSDOVztSct6Ieqn1N2Wa8pKvNloG0Iv_1NE0QeZhREpNUhfGsDnNVQ01i9AOS7tU6MoOfq1F_soazJXZS_DVanxwySNxDXGhLSujHBjwCrn6wXhqlvpeW_RKxJstVjRdUpGlyl7kLkv0DOhpw2ukVdZzN1fYU9S0gb1rNlWQUenPonI-5Nxm1XeY6aPTpeFicVYdUM5S2q0dbuWSvnOt0CE4YpRCoL-mRVegcaKMy1ffORd6v9rsWALeA9PMzL_OfT1RnrvdOMC4sUncl61eH35Po6mTh8ispkQFUyaYo2Y2n0KOC9bO45AJXIHzRTOuVvxvH0ZBgpGMl5rynXWiCqZDUtlfa6ZvRqwuzcvxPGD_ORi0hnZY13w_svBrMmrcNTPNQUkYZU0eyoEse8ssU9ArC4Rl0uXUWw3bJ7ukFWK3zLCLgacG9E_cVlkC2hnPatWBUdjis3wyLqLQq55YbYfkHVjxhnIinl8NcvN78yWJxkWsVOoe3yfUpHyQLo92thqvyuSx0-2YZESBHFn78QrmwzbSzIKTyWR3yklcXIVMNzZuHslzqHILuAazBQvd0r6H_qrW7vopsnBPQhmoSZA1MZPiKdF9UbMfoT51Frbkr9PuZCvP5cFA0rC7l3G5wMJTAG318BWlK93YItI7K9-wJcobXxhaXE_l2u6I6CGzyQU5_1Nmi9yDe__0RD5gwJ2Z31W15Qykuo_WPzck1lKhifAiTSJoYQAmK0uXYDgUOwrkimRr6U9xUrnqBCQJgeRao7U-cRyUWPBr2pWQ4rYwoc0rx5peDlwByjyxNxZUwzkl8y2C18TMrfV2G_r1NdYeSCACZZB9fjSHJutBcv7YiOalNfLzGNCxmYDKdLXHc3x0lTiADDyoTWouKjlF9z4u19AHVr0Z2RBxxqKVhctoBm2qqDTl43qOkFMxfejZBt3jJ5zdran2FbK1FYZEHdkUtS4XtjW96euaUDhx7GKdHDTUgPUbfYo5JAAp6CiwqtirderUX98qxf6aRya9lLs85MFcu9Wr-25eeUNysk2SBEt_TggoMyKol7CSjazRAENdVgar6AX0o9qRymTNZu7CUuhJjy85U0MwE3fc9DuGfQuQ8b25DJYTYKkBDGTuwbRT9ap61q1MusBQRMOAN9eUJ9-BEiJ5PTl1Am40O-WWYkmFPRNmbsd4CiJ7nXIVXsbl14oG51Z0QCYDyUPLB4v6_P5FLlXVGyWLyEKVVa165Xy9G5MEgylhXqy79JRweQL8Upe0sHUXP0dbhuF0hS7wRNydLs7WKYEeNh9-Tz9qKAGdIDrtRVaiXtzemKbohj3wqPKFqLfQCwHxg8vUCuU8gyN4d_MvnZNSc2zYbqtXuAuhz-iDWXT2C_YqiW-4PavyC5muo_0Jh3mdFJ6xuhUSNdJzLESnWPJpReO-h9ad2h5Dg-TXqbltVXM75cwCDUB4woHcAMy3OS0Uki8KsPGkoupzxgQEhbcjdPs2TClhtLn4G7jMQiTP8wy3DIeAvBIVBr9hEG9ZK4xqXpFKgH1O786RZbajwsqiKfPaeCazaco90xqYLb2-RElioCw6KdxONwV2iA3-HvJwrCkRpg12UXvT6-zUX-vA0is_rdKUjanxWtHDY7G488p2Uwh-shgXSlwTBnUzNzIrFjJuGO3yL-MDGwPEI5XNESHuekK-xZwWhPMg4tHlgSzuyi4PqwBQ7qnaANtAJeyS0XMua8W5VE-4a3UJbNj0Y7gOk5ElFaw5YSdeqbnmn_0ekHyfD5nDGMVEwgiX96FFkK-o_95t0JIMCuEn1QQN2HlrsgK5VcnDvVCeN8HWDwPokdvQacFFvzvU4WvfoPsLTiLxHPGbV7juDa2_j3s-J-AHR6w27bfNsaXylZUhj0kXCMISKTdYwp4Dq7HWa9y0YeEaYoFlOFAzTanKnIof30e7JukA__0r44ChXKuLImlLf-MxocKXVV5QyI2myYaJ5OakGYUBhPdel0WE1b7MPENHO_eE9aQVjmc1R9TBSY-yIvZ7w2EQkgVCp-FIHp6voi4Xwu1AiIIWEDKEvi7LtSd2V1lnvvx7plsZsJHdVHNaG-UpQ2QJHVTEHTk_lPjb5_o8jDSuc1b2riAbsNI7ERs02j_qgA3KvHMEfiRvn4NjKyItnKBXMs8taPYmpSYV9kjmifQ-nUsX7-wzdGiyFjIsGCge1op8v65lhfBZzmBiQxWsUlGbnTfgnnMmRwB0dUpDngParK74HrpFJ74Hwxpk959cX_42a6BDkvQkCKNgta-afBddqrmT53JdnLkKpEURU624dF3zN24671TL1wzGLiePrnS0Tjj82aMtY-w2butUfg-nPZLYH6ZHHFmBii3IVvwCOGWBB6zhPaTcvNIbAsuU1P_KqydhaZKHwY1HElWbM-eBU7fy3-TRuhE1iePyNrV7kap9FH5zXkkJE8j-euFPjUeu-PNZbNdx8EW8UdcoxSObi6bu4VUIkTwDQV7PRQ5Qhx1ngUV7JD3xDPsPvQukGNnOjvtEQddf0Bmh-v4pe1WSrarK7v7CzyjVWweWuDWNQ5TRQDblwEhnlgcCx9qWKebsKmCVefK9U_Q1UqNsCMndPeWB-4uZfRpXX2UG11baWHASZEhPnsjkEgtz_10njJpyPpeOWoK-dzr9wxEYjPLSX_yNq79xTTt59N7ugFYsE-dCLqnwk4ozmjVeCox3ChKaH0j4XVek3pxuQwNIc2Sxm07iTM9P4pxBKHShSWPf-btHwoMlg0Tlrxw48feZ5KHhC0Z2v-UZNXk_a_cqL5_Luk_RdUTEra-GC5l0Rq_GyAFDm1dbuaTx6-BmeTq_dWMl36792Y3F7R2lmvQd-3_n12fOTQLsA8kIY68bsGkuF5KcTrjMeYC8sytuwmcIU6EWAo82YB2KmNbP_Y57_IQIjPBwBl4z_RvwdqOwKaNrZgnRWaHmd1oHOZaIGVe0fRUJCOHq8q2QNeJVEjAejnhPbBOUje9605ysEcyA3fKCJNVaM43F1KgBvuVNVMLB94jiOMKnsoBt6QYWQTU9TpNjS1nFIScRXM6gPKdf8_wNjQ3pmiYlHBt8AE2XywnC0tkPDNtGiP_HKvYj0tag32IgRK15vVvQlr8cOYIMkjQK0U49hWugQqdk33Dqte5cj3ahg4-00nv2da5Xvh6mklgPstfK8J9z10BDCJPF0VTl0-bU191ADMYbmY6A7WtRxZicKPk3lrPaSWtggO_ZVbm-KeDnCYbRKOY1OoEVwJDO2Fsgh3fUgAGnztSmSxHPzD3_O0xkGGUurT440sHfknPmlooU5pn9N6k96HQT31k-7ogW1VsXxYJ-XWdCLUwx3pSUIWRL0UPXzTbSiy6aehV4U9buM5XiAPsHh1sewm0JJPk68kk-JnnTr6rnYq7iYJExpOtdsE0KUre70HTBCn2vBT5qYMzgi76PUkJ9wetCkISvHr2wVW9tHUcrAcMIvjjH7sxcDj1Dm-WFYMx7r_1h3WpfyD304XbpreOrvfMzVg08DeCAWWTmDXiPBdJcLX8SCZ2gGWNDVgOvIRS66BT-Ko94n6dSv0UYPU8bwrVFtoX4Zhyoz2uAWgPOLXlOM3vtLZfCv502tia1zgwac76jUCkEHgVgX7vmWqaAtW8U8rONzpKj3QCn-kzkX3H5mjcWVu_Na4Mqdp5ZWoSj00Tut6lOZ75xeq07-09OXcvp0b_682WbxXk6yReI93q4VPPQWX4PdP2jaFCuWoFeNg1HBWmfCeiv7aFpR5vkf9uOx4VLXJ90wNtkfMOr0Ea0Tv-WU9rFsgxZdQOkVkEWM_It5uiTS1weMkbnzd7PeZxyAl1GliPTyo06YxUa7HZztcZhgPxxyi2pDDRGzq0w88PqJRSxds0ICI05bMMyOhdytRfEFZtw9VJRXpaLaY8txjD0izK57FkT-bKU6eeVtc42aWtwtpx1T_cNszEBQASH6th8D6DVjIS1d03zZaRSKU8J3dJNIj_JQZhaVzsKA-1CaCrdkY-yOqebuChrwaNKlJfMgZ_kdYhhGnjSObZ063xASQ7jhRHHNX2UEIJSx8wueSstXSnla-0KfJpfuLa4c4PjDr5TmihDOPv-GiRo7QCQmoS2QM3cDrC-jr_RlW2xKaYrK5GD2XwMU3oqEYZARsVdKwDnZeslaB1kshdPlJBkVDAnEfte4VGppi4WxkNSxhZwqk1s_2W8Tjop0KIW7wPeZanb-sDKRnLqhJqZLin1cFwD-l8I9vE2BjUA5_ggmYxgbBNAoAmrM2w4LiqeryYvXJ8WTxdcPvXX_kfxSaXUt9vDTgJ1ZeZS9ZBhTo6LnSsVDY2jtJJVthX0xG2dcFR5VAd_6b23kf2dZKcSqpDQr1RCBHs5oQFkqo5if0iLMlY_b8WTdM73KRzLCiGeVwdG8lXxhYQHpTsv68H9S1Xy6lmN7lqGqXDtu0bgAUE21krRWL_Gr0H_kA9UL9Tep44KtW2rkgCtkEHFk-4XYH28lOkXMSIpebg8VMyIaD1JPYsGaBNRoE9f6-BsqbWhitlLp1SBICy1mjHsdKf2xx9CIatLkmzoAJS3BtDjIyZsvDZ1nzpH635O9_OB2Vo2SSf0xFSLlpM6lFxKPzEQw1Lg-XuJQdoD51dxfDSiyZHs1fiI5_PO8RYpgmVakcxbdC-d4b2ekMel9Rb-iN0Ijot_B7m0Mb1aq9v7uC6XQvg8EISr1Zet_oVbIHftKCYd70o2lc4B7wetn5PVTfmHrJ8vnUNbt2WINJcylPHzTfHatiChmf0IXE1-RKMeKoxazwZ19wZ8GAhTGETF0g_ZlPecDYeKYcWf4886csjJxZjM4ldoPNJx_erVLzYWwejfOzf-PVHYAqcGRkTxS6Q1BImddgJIzl9ApdREf_A6DdWCH2R66nh911yMEOwYcwFGeqhor2Y9MQ5te8wi9ncDkyO1R7g8IemqRRuiyknOL8A_AFiivpU912ygpyz6Za6rdWutZelK5aYmpYM8=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0cac2958d2d302db016ad968d9583087d1afd2c63769708865",
+       "index": 1
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2Wji6HTyK1_BnlYZe0xzDiV5Lu2qiuHw1OEzVTwvWi2kuMXkdj3AmFKxhtz7mTwR8cspyc6FQLA9ARL6zJmClCMmeReIE2FLKbkzUsyoHVP_HaDRV1oRQ7T-0UUnmYHkbC7zIdrQl4Ft3rAr0rtcfKVfi-FyXWUx9-a_iRyfQDzCaX9846KQcjtUFaff0SiRYO2H8FNVPCSTKOFhTEqKrrqjqA7iPlZQ3_nZRNR9SsqDyXM1lr6YeYKzX6sGNrfw6WJIdhyBGOCqyWd3m7k_-yZGJpO1HQthe552BqwpkKgce5vojciT-u-G-khOJSqSWefOZ4kJXqA7yO9_FDcZsHFKA2EXdA6O183pRgu0uc7Hj32uvQDkbpXhSkMBha02S-O_Ps552HV8B1Q84kHgoMY8CRLxE-oERfApg1v_am48vw7uEHXvK50GWDs-SzBkwy8Bm_M14vZPXnEVmFrPn1Xy_u50EwR3youegY7JVTTM1M2aA5gljGmt7zbajNPgnq_QAmoZ_LlyAQszWJVZrkcq0va5Rqt5uV4UuflPc6j5tI4s35f6l8WXslXNyMZfbxWO7f5mEm1mG_YADoNC2cyZOzzR8GsiWdL5CUttNtB5QIkexBZAlomv8etg6OiH0s1Q0_KHbvvZ7kLbefm1s0RvZEK9CJC4x-763LYZltuHVeC9x6EIuZn-ek3uP_v3krugCFVIdqFjuObEUq0go6EcTLYVRXhltMlOzt5yuGYRwhzfbCMLRVyzoJ3pd-JVniA5WyD-SOoi1fKmxqi8-1CiUxja7tHYJRYZkkvRHbB1XdTzw7_YfxOg243gZwu9uO--ESQLx6dWQi8YzpqlHe9RK3oTlz4vSMV40WpQldU4S03x0y4V4HmyLXCxm49UXuC5gldNJiowX6sSmk6oIfrVjGZrJ1WTQ5_lOqfqu69YEUsoWb_XEdIdx5iQAYW_G9eZzMWuKQXdwKzmcSzVuuE5uHvyTHmMKZ7sTRijQ33nyxxW8NWUS-Cfdc3TTeyYeJiDsxP5ELWXJCUxC-hweKE9aEl2n3wNJVmSg8zS_JKIJ-ZCEIRZMXfYyLCxlIvPb4vtOQr28EpAbRjJN7MrATiewIRTdMyNoQloEDCt04ZkRlLfg2p8NkPASnIPjYuCm9D2XYBLuQtPJlNbaXwFpb5fKdgD6Idxvp7Kl8HPSl4Cg6iBQuoZQWPyHVS5pFTX0MxjObUtXZMs2QblwSbgMftV6K0hWmNrKXet9Hs9zCwYpHTiU7QoR-VQToYpnwYtM-B-7GsvWXb6IBm-uPKc7U1vQncJmzDKQNEIwSGB7fkaaGHFrqRB-vkK5bkOVC70aJpjOIj9R5zgdXPYz5Spr-jbujCCUDZD2CMZHk51LEfHUPZTU3zZVv9cVaPqpzBDUFfqsgdiHlXE1R-ucqoScFBL5C8CBXD2rtsRDXGSrKalY2_1Sz3aAPzboAEZtCCQFQTXc2eOlXwZmj8cgvzh8bcSE9JTQtiSxGfOhr7x_FWrHarDaL_x34nj3TsTi7cEbhU8UNWDRqz3sEzbWQ54e_aApoCfO5D8Z4LUkmP0jCQS4U8w4EJFGbm5s5f-r3eaQdV3yE2wspllyXCmXkh7rtSHCKMzcZm28ezGlSqdxYGdlV52H3COe-LGvxqlj2eMWXFpcIsldSz68J1lKE4lKcA6HQNlQuDDK1tsT4crLf66iEMOlPj_B78m8mSfvosfAMDBZdlCldKXDSrwm0gHYJ6oZVr81I8QkHrxfbTVMpXYdFF-LtZhHljWFO0SZgtovi1N_okTKNTX30Z5ywsnbdykbayzLY9Fju5w8AdjQr9JoNJVlLfp5DnZCufasBPgzxC5IjS8MVgjabY-mkjxCeFi_OpssKgvSL_DmNMgqzQu6obJdrUtIcV8CCGfVqwf-LUSy5H0P0KArrofW4rluhQ12LU8PYR1EYzoRVRzAvW2s4owJ8efn3NDW4bQfAN86ljNsmiJLYdlmyB84h0o1vOIoSvKRo3NKMBa3rQl1qSRiKFhxM-Vrojn2IhhBwud1IPoOfgI5aCuqWniZgQMSftZ5xz6kNCI-Gj38wvW01dcP-CHQAjxKm5alK05NWEzSCj97AGHccmk9Tn_0Y-O4q0SkdI6Wvpq38Bqd0hrLWdDLjGbYa9smNwBnZs9aAKI7eP4PvBJ_Ta0oADL46OZTpkCZTwieUI2p3aVcIr7G3zLYYPW4XS9mw7SJPdZ5oAQx6Vsu02YFGQ3txTe71jjeKmnpJ_EQU-abTX2qlx5KBRi7QNNCR3l3Ez29tvhZPdq7muwBa21k12KA6ywICZ0n-pj2z8-hU6AKgpYpuB5K0gDlskKmxajN7H8ezud5xrhI8XAMeJBqN2n8N9EG3NgarEU18rgreZ7PZDIYIn-42EehHaSLswlgITzFWR60jAdsQGHD7i3mv1zDIZG-_Mj8xIRFlXF0PyV2vygytNGalSLjWEjq5_zpApSlMUVsQ92CEfHHe0m-OabYsz0l2S7Bj_vfK45oQc5r7TRMz5f0scfRjSP5RXUDSVLQgdTMri8_XoeFB2cVmV5oNS0wxreeLbW55t1epFr0Oq8HhmaHzCwshbyO-yxyrpt8HyBhOcLIVIHo9DDseXWD2fPQA5_urD_SEGUes73XI-1b2AhaoBHSNywIyd0nxC_0WHy48y1V8eGbbSgyGEFL2tUfPBjzVINurX7XMFdQ5Kr1-8-AG0J-0B7cS_vUi3EM2_mAzBH9ncHHGu2VCMel0HDKT5X2GGrdptOCxA0xjXYBelB_Itts4K1WMBfIOGvQUwpC_0WhMZbpSrw-4UPoHqJGg2cJUiWn-m_nIX3RFTQX1o6mZRKcSg=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0cac2958d2d302db016ad968e29bcc87d1809a89b69722aef1",
+       "index": 2
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 507,
+   "completion_tokens": 1055,
+   "total_tokens": 1562,
+   "cost": 0.023128,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.023128,
+    "upstream_inference_prompt_cost": 0.002028,
+    "upstream_inference_completions_cost": 0.0211
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 625,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.023128,
+ "secs": 17.3
+}

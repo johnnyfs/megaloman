@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and animator for Mega Man 2-3. You are shown the 2 frames of ONE\nlooping enemy animation, left to right, at 1x (true size, left) and enlarged with nearest-neighbour scaling (right),\non a neutral grey-blue background that is not part of the sprite. The animation loops: after the last frame comes\nthe first again.\n\nBelow the frames is a DIFFERENCE row, computed exactly from the pixels: one panel per loop step (frame 1 -> 2,\n2 -> 3, ..., last -> 1). Pixels that change in that step are MAGENTA; unchanged pixels are dimmed grey. Use it to\nsee the motion precisely: if a panel has no magenta, nothing moves in that step. Do not claim changes the\ndifference row does not show.\n\nThe enemy: \"A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\"\nThe intended motion: \"swim in pulses: frame 1 (the approved still) is the glide, tentacles together; frame 2 is the stroke, tentacles flared out wide as it pushes; looping\"\nGame: Mega Man 2-3 (NES).\n\nJudge whether this is a convincing authentic NES Mega Man enemy animation showing the intended motion. Be\ncalibrated: authentic Capcom enemy animations score about 90-95; competent fan work about 60-70; amateur or\nAI-looking work about 30-45. Do not reward or punish an animation for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- motion_readability: the intended motion reads clearly when the frames loop\n- consistency: the same character in every frame (same size, palette, proportions); only the moving parts change; nothing jitters or drifts\n- economy: Capcom-style economical change between frames (small, deliberate pixel changes; cheap NES tricks are good)\n- pixel_craft: clean Capcom outlines and clusters in every frame, no noise, orphans or smearing\n- appeal: the motion adds character and charm in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"motion_readability\": n, \"consistency\": n, \"economy\": n, \"pixel_craft\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems (name the frame)\"],\n \"fixes\": [\"specific pixel-level fixes (name the frame)\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "292140e8b76e4426c9eac3a48758520115471e3cb75dc66f9fe00c830b0e0363"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792633837-SZdwFCbKCspybUsGVk8a",
+  "object": "chat.completion",
+  "created": 1792633837,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"motion_readability\":8,\"consistency\":9,\"economy\":6,\"pixel_craft\":7,\"appeal\":7},\"score\":73,\"verdict\":\"not_convincing\",\"issues\":[\"Frame 2 clearly widens the tentacles, but the tall hooked side limbs read more like raised arms than a compact backward swimming stroke.\",\"The frame 1-to-2 change redraws most of the lower silhouette at once; this is less economical than typical Capcom two-frame enemy motion.\",\"Frame 2 has busy, angular clusters where the lower central tentacles meet the body, weakening separation between individual limbs.\",\"Frame 2's far-right hook is disproportionately large and square compared with the softer tentacle shapes in frame 1.\",\"The head, face, shell, palette, and position remain stable across both frames, with no visible jitter or drift.\"],\"fixes\":[\"In frame 2, shorten each raised side hook by 1-2 pixels and angle its tip outward or backward so the pose reads as a thrust rather than a shrug.\",\"Preserve more of frame 1's central underside in frame 2, changing mainly the outer tentacles to reduce the amount of redrawn sprite area.\",\"In frame 2, remove one or two cyan pixels from the crowded lower-center junction and restore black gaps between the three tentacle forms.\",\"Reduce the frame 2 far-right hook's square top and match its thickness to the left hook.\",\"Keep the upper body exactly as shown; its complete stability provides a strong anchor for the pulse.\"]}",
+     "refusal": null,
+     "reasoning": "**Evaluating animation quality**\n\nI'm analyzing the animation and noticing that in frame 2, the side tentacles make the body look broader, resembling a shrug instead of swimming. The pulse is clear due to the loop alternation. I\u2019m considering subscores of 8, 9, 6, 7, and 7 for an overall score of 74. The user thinks authenticity should be around 90-95, while fans rate it 60-70. It's important to pinpoint exact issues, like the stationary head versus the moving bottom. Overall, I could rate it around 70.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Evaluating animation quality**\n\nI'm analyzing the animation and noticing that in frame 2, the side tentacles make the body look broader, resembling a shrug instead of swimming. The pulse is clear due to the loop alternation. I\u2019m considering subscores of 8, 9, 6, 7, and 7 for an overall score of 74. The user thinks authenticity should be around 90-95, while fans rate it 60-70. It's important to pinpoint exact issues, like the stationary head versus the moving bottom. Overall, I could rate it around 70.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2Wv6EyhUT0RG-KMNrFnKF5LdaGLYcAcZWEg-TRRiY_3_JfnNem1FdqfkJxdY2Aqjn8nQ9y1WiWccgiCO7HuCor4z0aFn5prpc5V__McNeVqbrqEEgsETDB0tMp8u7pOLovSOWx--PkDbVOy6Jfx8WUBw5f3bIJMRapnYJJbgRcFMfXY--MNXBT1fZyM2QLLtmnTb9wXbhvv6XgTeIobgVchNH4AmrNQJ3w5AD2mpLhlzccwTNW_b0ax1asJcAxPybgaEpkXS9c8GC-m1CeEhaswFHUOoaKp7T0kI4wQop8ZhpFQGzevqUuq53uyObt03BHULZNXoFzwyePlfRCLSZUnzI2x9VOQzyXyrO8ZW5tgYP0cRbQrLkenWt7nKG5Oo4eNIhOaZJFlgWesY-hgzEgfYR_YEYxxPlaNpW2929AZvBWX_l6Cg5stqxLH_9tbvjkRnF9b9X7ADc6yTImMDIxUR581ILqh1cQIxZzP2NjveBhSd-GupfXJhpEOqsBAGwXA4ZSQQgJNYy9Iro3kHzO_F12RAhFGz7qmIGEg1MRO_BbLs4_fJ12rlEZsK3EzlA9mY4HMt6PcB3k5lAtNCkmYYeg2p8oyDYyFcrz706v6Nx7FxQ7K8yyyj8slBWnObkw2dpk12mP6qA2yN30HQ90iaGnmhuBTx0xJwsX0D4MPLCeuljJUC2Zwks7UCPzd3u03dKQDsHVBglbvJV9gX1PLel0S57WvDLh6ArfyIODZXn3aL-sqmGU5_PYM-ADpNwu5dSZadsziWTGA_mi248A4KKpAtqQgJBKHyluRpyll5Z7HnMluhlMsKa2BTeF14YrmPd9hemClKbKKsXIzmGxd1wqjX6ltqr347rucs9ZjdEvTTmwrpPbJMwjv4HFQRQ-GDveJ1UVK1vJfy4MijJRYxMYj-zoaxemff86gjGrhzscVcdaFmGCn5sbhwQ7lrcak0Eu7YaRBRHvi8eYf4F3rf_TZwtFuzVuqx8cTxDI3mlcS0Zz8ukBkkYB4ya84Jc5L7IkMlkTZ_XC_HxLXp9S6pW2QUEgzW05omEAsCXap_5buWyO5sgsQuRPRq-yro6bBAShMhdQfgqEyalGGs6r9XY6hSI9NkTQ4Gi45IV37CoMClMw9ucP6x9PsQyxg10nEIZaR2j4Z_zi9NT9nIFPTWgE10fw-OuUh7AQoO2AlXIpSmdugr_oq3QXtLobbl85IiOBqB5-dWy548_UPPyD1V1rXxtW1JD2Zo1UkdbsvSRbmPz12LyNeiFFWxQIJwmOy6irVc1o7lNPYGBAsraJ4sQkLxQfNNfHhy2qVdo6CnFYuzxb-BHrKpIzhm_oP-KoFOZQfCQuIPYeVcvTn-OzSFyXTXULhQWL2909ZK7Eou3R7OtSAmQbrUoHNDeOyGY7DQTDsXv6fWee03C_GWdZg-QNTgxz-Aignw0jN7K8gUBSS0H3fxstnklwB1U9-zhgX1hhqjACh4A0rImIJChCl0et6cGCuRC_gSUFD2Ae2qigPf6cLwbA2WH2kld-eZrpTrj87XiHqt6GX-g-W89tBwDFqpt1rX_L33D4gCZk9zrdok4NcIb2uH-TGv7EgPBTQdJUG-TYfG7-dxK0VN8S7ySr46svB44oy4eXTWdEC70dY2rKd8pJHPEsG71RXeV9ZyATGJgLA-VNeHDXUXhJzud_xgjCrqC4nZC_4hhpunQC3R6JdEls226AGDw04gBpKUybN91KvAncm_Sr4kCqGjWSWt_bU7bZBKJSlJAibO73rbpp9B7GvAl9ZOMcvsVnym4nWP8-KPasEoV9WhphRI2-eiUZJhCtZ2Iiwfqq7ohb3GmPK_rWW8LyBUn9C89ea26sKc35s-Cej1L-A62mlBNJKBlu9bGmJqx4kJlQMDNg1vKd4FnA2pwuEtzHZFEEhGKqW3zYSgehyDAu3xntTA5hH8_yVaM_97lYwwVzoYOeXP3vUz80xoh_ZVRu7b40hLb73TA2RcNOSu2RwklINvsjsp7g4I8kA74N-VqySSbFc7VmLaFTnwfj-E7MuEJbiSCi0wweRc_bQit8X1S070IJwNhoZwldmHjcdxu21y7hFzq_uJ7pQ1B4o-Mpten50-lu6UbKWekw4bTJQy-hayRkCn_yhd71QCXgb9CSNpCfyoIVwxf_NNlNest9e-_JWgzSdgWyBtibkQSiyPk0xlqguJY_RSFoKZJRUg4G99JCjACoal2c0qaDqWB8mvvC7z9kfIzIHmFgdYMWDiYRCLJf8x3hPXD-YizZVN8AB4btzZ1wxK2BiwjuayNzkh_m1KXMw8YaluvxRDOi_MbKDbZkakSn6ThUKMVDxrDsgLSZobRlfbeBvH0Slmor5wTBUovcc59DEPij82zLRpaWeltoJSxSWHXbCTXT13QmcSVUIeYR6_mkVW0Dmo2kJ06m0Iv7J6xD7Ppd6zQtfmaWabLPQjocA-M9p4OJJAMCIfImR0xdrBe76SqwRTeJRyrAF_6KaGK8AcxVDB4FjNHxTpevQlv4Ge9UeZyI7o5Hn6lnYsPWa50Qma7WeO7nD-VtzxL0wj9QDbf1ZJuY0K0fKwhWTE8a9F9pRdjCyasjhXFdNYO1-N8SqGOcT5R3IXsM7Zo_4RmY6-g9lHLYiWdyXeJQWuVA6oHbTjJNcM57LM7R_v4nVbE6pb_3XQH5sa5HNrjXhLI1q1LrN0ULRNztiJZzOFVkx592gSaNGF8AN45w6ocfQK7IvNgBffxlMcHONlSRWqE_YL-V4Fxt4xc1Z3H8f9WTpbZCwP34XNs8B8R2fLwAo9HK9XDdklpf7TmPk3TNE2CyrC5Y-AjwWTWX__RHJ16IDG6oC_JI66G-LuGVazHZT1KwCfHQnSyGo25N2KZ-48ZZlPm5YdhUrFm8iJB4g7Uf6yiDKz-I17gFNln53NnROzEM7w_-0r93fLBWVXcRaIOfSlelbTUJFJOWH_NO5Xupzntnv68X79WcYp05NfEZ3ydURZLXSDeSTEmivJB2VQEZ1qMYrvvbP3zG1abgTNssyPDId5aqV7dHfwgHq9uuJP6rWnd-Ku4nPl5kFxmcU5wobQFqkwZ8d0cPmJyr_ZSmi62eekbQH23qpgEwCnNWFn5wfjBU_ktVsZvXlxvOeksVwawrn9PGMUqIaXtgyaNawzb4Qv-IwKo4SVhf0q6atl9bQ-mr7HRqU-mGd0PKsiCUYZRpIDxQun7bH0sDQbNsGtRkcVsEbe9Opwbkg2avbLByV7EQODBU5cCVdulHQgu7qQCEwFBoBa68Lb6HQ7PdSZRkswuG3mN-vD4SAKMJOvkGuosOViykkITVZT7dTaX8-ORIyIFWHtRWUM5Ilmx6PNE5kRyTOBZbQ1RxeRjTZJkWZb8GatucN4Plx2AnRl1AX4ApWE0KiBvEYuksblyjJ0ulZFEFKGHMtBRPDIqXS0uPuPhQEgi7Kge6RnThBrYe4DnZCc4jAy1k-QGCWd0h64tD7QaUo_Q1urQph58qhodgeppM9pH1S_-SRFkghtStI9xD-d66RaHMnusjygL3vClsb38naD4PnCfNrZ6yLP3VBpbCECnCPeQidsgfF-y8MMvoG7mM52gxwfpLF_pUFE1EhP5p7PU_gh0aTIzXY2CeNq83WbQNDDgwulGEa9NnVTdwhDKn7Q2Lkn84bG0mTfdvJ1ZzvMxca_41FjaA3LDcsMoLgsnjIdt50ijQa_0MNlmm6qNnXY61gevVgVgEW4eur2rcCT9DQcbYnRPZE1b5f8Pr3hZznJGkK2Ypc0DpPhDCBK-Ey-JU6aqLYrVuxwjvL1yh7h8Ff42FRRabUZP4C1fo0YLeHWxErEp7ruZhvPIxeOqPVCx6boXaHXdKC6JaMOOpLuhHGXlY5GOuOJefxY70npt2rfKQ6nDuVnX2idjIAy1zYYOj3wCuUMWv-ydbvHGcFDuyRAXJqyDJxsPn6yMb2UCA35wRoB36QDfKgJegM9NhHZ96oCknY9-vBQHAhJuu-N9RWgaT5NGdw8ihjFzt-z_KMpgFRJ8fha_tFQfYclVnLxrZM52Yr1BOafUVYeXcqski4QBPlWkUm1MEIxb5CYH9ZfjWDbcFqOARYNXHz5e4EfNLc3a_xG8Qs7F3VFQr0hzl75Iyxf612S3IwQRcXt5E-RUp72yfDrWHONi-rmODcp-U7WbxPgLWNR8TMrB6_xH6ElJBpICfOlhJYOLsJMKqukEfynGh33yPA9OU3TT_G4DgXP-A8hDwHVt7mwqKsmJOiIIyHCE4LaMKGJqB_KhaEJwy3A1nwr9gwHFxUlsi7Ub6egFyolAAb_FNOgy4ue2HYZ5-dsnJ8FiGNlsV1Rl3lEHMawcbomLVRRlonA9w68IEMud-H2sB656CFzZrIcXeIXPSJ-K4AQgLF-2kppUoxbG7I2aFMv0DoLzXDEIsllC3jGlox3dIHGADRPIanCfpY9T1a4bxJJ3lEZq25He6amPol6dbeoGyz0Y0iVQ4qpiw7S-1Y67As3se3vVojE6-mVtlmNwHXuof3KUiGeYgFrDJsc3icu4MO7bqgxn60QPo-YXxhDTTNpjgPreA1E2lVosTOzhXu6fbPaZ0x-8Xr6-y5fHHwqtof8N65CCHr1ot-n7nc97rgTLZakB0Ss4mS9rfqGgxp6NKrJZ2ljDpEB8Flr9GDQIcq0Q1YimvY-utKmgHtIM9DfbiQpyNSOAIebM0FV6PNxGOisxfn5e4d499XYjiZ-8SsA1LAT8CTqyzFGmu7AM1YvBMdxVRp6jQkTq2ilo26KGrEb0zDwxSdiGSdiHci_lRilwrU8G2O46YJepHEq9K2yOEM-KDiuLWp83iA8YAQWJMosIki-yU0e2uNSrGyhq3IIqT6XA7vqLNHlbBmGmTM3KvXE1BPj1GU901HDFk0VgjceT0xiFbI8crM4HEcfTnI6Tfpc3ZZVZApiEM9wzFI-ORLtliGGt3w4DOFXWNDbp7hm3ohJI3eLBSwrlk-2vPUIoxBiRlm7tRFmDSudBMgl95nLpRanfb2gBgj1F-5CahuicboSVKvL-uOiKPc6hBfsgN6JWPIrQyt1D6rv5v_qkGEjWgqeGSL-aCjBVMeo9QmJI4KTDfWxnK_6-IoLGsizOcc0vVJS2acHz7TuU6-zoEt9llghC97LoGtjD4MfX6TKH5Z4nbnSqIeuD_JSiBHfgIj1luC8HIUEnfl20BPKEtJWv2yVw1wFrMgPJ-drJEnyHA_2C6KEFJ6wb14i3mIUBhMf04RprzRj1vbF6vSkUnovYcW13CuBiQtaEXam_YPg_-vsTcmWmayfRgN5B63-RzjnuAG6LZB7o-n5quEcykidxBF-BAJ6_rDFEL7q1_yj3MV9BrsSvJL3hHMPJCzGFBUW_2yPi9hzAS9dDv8Vmbs8edkXYSWGgcPG-3t0ZKtFU5rRDd2nNii-TYNDfkA-bW1SGngSAR_P1l1X_yZJBwCsK1RFPtj4XrCVhOOJjf_b_xyG1sM5cZxSIqqlkGpBtPtJ-snLEmghwRlPnP7WrGgxfXGDXm58-jMV-6o7Z8bmhw6U89oY1FPUww21L34QqSuvxNxpOQjCU8uA3-7-2zMVpwN_EZ8Iulkwycmf0DiROQg3mc3lSiyHIrFsnqKDMez-xjOGTtsb_OPSGXGoOLEB0kn1wNEC5jhAgsaWuM5958v9aBbPlp8RPz5SrdWSgmqVNenw1RUWGy4VLIUmQ3kx1VyBH6Zi7AlZacrhbS9TMdK8kf8t8Yj6W9ZXfrgpnO9dQ0M9A6ErCDFg7NTLyinUNfmSNvb6l8y07G8VLo8WjAcnq4rw-xpoh4hafkvlam3VThNbndNr-BIfFdNk37StpLTNXYfke90oGwhjmOrqM9N_nJbH-IqQhg01o97XsVE4V6cOyViT4CAzC8Tenr1Sa00TpyJfrPXGWcgXrWR36iNXm9-81sNU_536Fl7n5gfnsR58dvHCykC62CNHzB5mAW-DkqSEhqzyl4Bkl7i6ouwtfymN4-ls2UCvFwTvzfaEqTSmwC8P_Bys3DRuOO5Klral7L2yezN-fHlfse3QamtabZGRWxOv4tl0k8Fj3qa0kQy7nEt2DpjVUdZk9tRr1KHX91Aqo8azz55OCrTAlkqX6BMNBnhL_U-y2fQCo6CrmpnXI58CJ4KK-opRUtfkgHKV4UpCfduqYYNYe6teQp3X7w7nyxtCwf1qRivAMmJ48HvFXx4P9UMcpg9qLNn6r_W8CnH5Ehu2s7VXwlJi5dd2WcilzwPjGgY6jhYacbuloHJJksDXKewCIp0kfrRa3kAVEsU71ghZIuXxwFFmND5c2W89K1l4bB9Pyhj_VWjhiohBvvju-l4Fu4_AbnidKqP0YsNbvEWdJ_7yiK5EX_1qRWgqI7rJWDehU2XjNirv0Df3GB2x2VbsttDpHWvtQcPEFS74wIxZB6w02y97OjokCfG5eWrqtxA8bufIqyozyVtiPKZlB1qnCviDkv85zo-7R7BUsvZkDXNmcb2lOQp1hjNSIMCuaY5z_0uvY7x1coYtiuL9zU9pNvFHiPSyDyYAwnVzaR-JT0qiYatLpS8HhZGpeInMD4LsdmyBSRRhU2MZohr-aiGnm7-vQA7pkTCtCVfjToBhwxbDIvIOuuJowBBIxg2qQvBnLPKBi_Lfip7fW--iNgqKP9QMDYXkPF2JFRMy_ylExPEkci_H-5FT50SdMw4nSRHng1MGrxmHNseOKGXqv3XHyltnPhGfNg-R6YYnpUxsQOExbzHqq041ttlhRtJeAL-iVEp0JUPqn35tJLzcmcftO-nKqZ_cg6uJSJFxkXki7Qe7hoPi7JmLm5PbfE7RaJITGS1YwEGHEFMHcX0PEUqV-TINgnuiHDKsUzRt2mnqFBEb0cFV-0Cit9OSkBEtGkWeBr3xFKlxAm07PYzRtQY9X3Jkmf3ywZVotT0R2r0FkdS8AJgfS8MtCTbgPvy6A7ga-G3FsjBWwV6aI8Lh9zrLi9ePeroootUPkTeweu6_jhRekCc3gBJgpYu5rDdo6PtSYNpE7bRqWu17RkFI-5BWIymAxnycDrDygaYaLT7aMzLwqxo_4KfYH7CFLQLuuDWQGDXXi1hU5-TFzGSEapLRbVSgNpkVayPbhaJRCIeysmpMJgzzGcdXFhVhWoxL7CeKV9WqUO68DLBZaWCB_J8fBOvY-ZcImdJ0bnFQLS3RE8mgm0bAxgZkMU-VkD5uo61EYrIgCwRhw08pB9qGDMZ_qcGwr0A9fp8bsbekdHdVZJpgtAsWfsXKmhSMBnN2wX_3xzgkRHp4wLLre6AC7Rx2f5ivEpMWMT_EqOpy1cXWw1QankmUpBScakjFY_3Nov0lytjRvZyA9Xx9Pml6w5kR2qvpSaJ0g-m9SFRmH7_hFBuEcPhCFCFPmQ1uKUQzKWwvELTbeirazq9qkgCWH3f3VzeY0ASY3Q61oeU79Y0Eq2uCnSGTrmHdHggtvLPigxpEfs03qXZurm0XyoSxVLFp32qB2H2t6fErSTQj07cNDrN7ff-XgL64XmYNZXRuZIX6Zcyudu1lY3HeRr1QLVkSCE26GYb9qcSfM7DdM2mfQ4jXjPpqK3-2kzlvvEZtyNQYPUhxzJQ4CZ9q3W5yWU76w6Fsi0BNKxsrzERuC8Zb90rUQWZJhW_Jefx7JvQxJiypTCcI3i2nae5Gkblii7QHzAwlg_9GfzV8rkeRg1jSXkSuPIAENvz4_-pQZQGTyVsY8yBx9nk31eEuDcLIzdhpjbZgkMZZZtS5InsMII8cV333GCFv0OUxUlY7XvDOPCnxp0zIN3uN9XhbeulfHLcf0enTNtkoWM0OHU_m4FaAg3oY_sWXlvPU05cZGMi0fCK46PMx2SByuSl8qVN1MV3HkJ4m4AwcRvGyyJhJApY6NDFmyvOD9Nfp-rRy2XghBIoU7YSfjkgI1VIqqn0jeUhmtf_dSbeNwJ3HgjUlz3jNWmZcuszwEMUD25Drb92SDVs44BUPE2EJFnnO1wrXqU__DxIBZPY-gXjJVZjHbbx_534p8EOb_03CfWbCXuQoYRqCxgBRQGZtwRH0xykXw5uhfqiB7fl_ysNj-FFZfh28qi5zhXFjy2ijpip6wei3p7ZMZnuyFpFjjS2-VaytwtEvfH1zcH3H1uv4ZeVtK84VT95DOKz1KpG7IcWMeC0NYhiCFEJ2XbGNlN4knU77M2nkggRvZtsRy7lXQlyXPnY=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_086492fe0b760e5e016ad96bf1011487d1bc04f5ae751956dc",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 794,
+   "completion_tokens": 840,
+   "total_tokens": 1634,
+   "cost": 0.019976,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.019976,
+    "upstream_inference_prompt_cost": 0.003176,
+    "upstream_inference_completions_cost": 0.0168
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 516,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.019976,
+ "secs": 16.3
+}

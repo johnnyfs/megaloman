@@ -1,0 +1,86 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and art director for Mega Man 2-3. You are shown ONE small enemy sprite,\nat 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral grey-blue background\nthat is not part of the sprite.\n\nThe sprite is supposed to be this enemy:\n\"A small robot bird enemy: a magenta-and-white bird with a big eye, a short beak and a raised wing. It flies across the screen and drops eggs on Mega Man.\"\nIntended size: about 18x16 px. Game: Mega Man 2-3 (NES).\n\nJudge whether it is a convincing authentic NES Mega Man enemy that matches the description. Be calibrated:\nauthentic Capcom enemy sprites score about 90-95; competent fan art about 60-70; amateur or AI-looking pixel art\nabout 30-45. Do not reward or punish a sprite for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- authenticity: could ship unchanged in MM2/MM3 (Capcom conventions, not \"modern pixel art\")\n- description_fidelity: matches the description (body, features, role)\n- readability_1x: the silhouette and features read instantly at true size\n- pixel_craft: 1-px black outlines used the Capcom way, clean clusters, no jaggies, orphans, dithering or noise\n- palette_discipline: NES colours, flat shading with at most one highlight, about 3 colours + transparent per 8x8 tile\n- appeal: charm and character in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"authenticity\": n, \"description_fidelity\": n, \"readability_1x\": n, \"pixel_craft\": n,\n  \"palette_discipline\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems\"],\n \"fixes\": [\"specific pixel-level fixes\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "366422184fe9321831484506f6b0129702765044924b395b932a64476e2e1220"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792632964-hFZbPpzM5ojOT1sJcJDC",
+  "object": "chat.completion",
+  "created": 1792632964,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"authenticity\":4,\"description_fidelity\":2,\"readability_1x\":4,\"pixel_craft\":5,\"palette_discipline\":7,\"appeal\":4},\"score\":39,\"verdict\":\"not_convincing\",\"issues\":[\"The sprite uses cyan/blue rather than the specified magenta-and-white bird palette.\",\"The enlarged silhouette is a nearly rectangular, symmetrical mask; it does not read as a flying bird at 1x.\",\"No clear short beak is visible between the eyes.\",\"There is no identifiable raised wing or directional flying pose.\",\"The two oversized square eyes dominate the design and make it resemble a stationary robot face or owl block.\",\"Heavy horizontal black bands divide the sprite into rigid sections unlike Capcom's more economical contouring.\",\"Several white and blue areas form stripe-like blocks rather than descriptive feather, body, and wing clusters.\"],\"fixes\":[\"Replace the cyan/blue with a single NES magenta and reserve white for the face, eye highlight, and belly.\",\"Break the rectangular silhouette by extending a 2\u20133 px beak forward and raising one wing above or behind the body.\",\"Reduce the eyes and make one dominant side-view eye with a compact black pupil and 1 px white highlight.\",\"Remove the thick central horizontal band and use a continuous 1 px black contour around a rounded body.\",\"Shift the feet or tail backward to establish a clear flight direction and asymmetrical pose.\",\"Consolidate the interior stripes into larger magenta and white clusters, keeping each 8x8 region to black plus roughly two active colors.\"]}",
+     "refusal": null,
+     "reasoning": null,
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WiMDORmFIL8qZ-qKxnvoff5MWEZBp0qqjMd1Rk05VSSrat31g9w3PdStgOXWmINb5ggT1VxIpZS6dl5wf5DDqyciWVavOaR26wDmUTDlry6pwmKyx7-aR83yasXuFMHXnx-dMbFDrd0-oJUALtW6pJmqvxSD9fe_yW5SGmBSt0I2lmkjS6tPLYiWdHcwB8GfpSBXcDpVD1NwdBf8p-TM88XOe6N440fiijgZhHYC-jCB4t1YQrjNp6FGWSQqVeUhayaJX-Eu1CVwhhlhwYy-3s37zU_tp_3F0HnaU_rViVY09P0JKmrAr5Q2D9Y_4kCKqh2VI72m_uptkW6atkRxHJjN0ap6l0ubPIQnbMlED3g-E5gJP_qEn16ppsimTQc9N5R19lRLFwy5pWOROKm7PL3fjEsCsbXrfcgD_fODnjF9By9-uJhd7RPzpTd6SyjiiTvg1mxEnSgHrBwKd0L2lRq62c3T5Sbf5oSqFnO2558ucXOuKDUVRrt0L87db0sjQjEdsGIC_eIVEKH2bP3VOSJxm0j83v1OmbmE7IJVG99v1gxhMBSHa6XfW8BAyJNQQ_yKtagXfPT1sH5O2WrOzqNEf1KKBc3a6BXg1m_vS3AlvXvxHnREo4SoMTceD2kpRHD3S0eTVH1mRFNAhtX2Jlq7vAibHGPjHROH_ylMSDT0t_-ulkt7JYPqn5_88VNYQh2yaVBE_QWkUSJ_U8HgdQ7PrqioG4TMbMcg8FCfShDO29gNfMsc0idfWDSR4C3mickYuJB0ubQ3hKrnabCGkQrVl-O2SkJ_CC1NT-swrKtPQnIzwLQ_A3bqeS61m50_2GywTVYwU6kN9I47fWKt8yfd7PG2eYiOD-U2yH9xRX3hSKHNLjH84SToCF_DYkE8XhO9dOK3vRo-zPOK8RMb_WGxGBQkabM9dBDXvJ93HbleyDFFUXpgZmcBXZtiBdPPqq1QXP4LgMdtUh4SaDEhfFwKL2VHlg1FOO9aJAPGaMAZoAvxxxZi21fp4jyKRjXNCTOgMGXKQGVMTo2U_9pbVvpja29IkaNi4T0lUMBY_ltGOXEUV_1DMe4QjMIyJDFJ263R2AoMs5vXk0JvtBbx4h-Enr3AuIEaXrZPqd7IfvXsloKRRtAS4PeeUObtqhkO38c4aOvpUCXuQE5zDhWjASlA7JTbex01D7u19yEkoAle3XfVvTju5vs8IOaZlQ8r39rgymRoYW708gWjT6DxG3s7TqvsJ8Hg-cDJrmlV-apCNyP3VWb2Oosr-s-YtIgH-tXgfqjxrMoZskdMBA8fKIvaGlCuUlSSClZ6WFkWxXxztezxFfXJ3zZqh_lwO8yJC8JMT-JAnlQMO9E-5nWoLM0xg3I91A4JZe0q11Dbz5gx5xHJb0wuI57rtsHGDhRQlHT2LIrQxWKyBvNWGQJQl85YxYh7PieK7dusqYozRoyUjZhRxnMBCz1WGaphSkLnikmXgVuhDnJNlyTtGUYm9kEbxW4UAUabGpAJRBoOSKIa-JcGcWnQl65kxH-dhc_NsP1d6x_a9A6TWRzqccU4vz7m6uKK36cjffITI0ZNfK3YXG_-U7_IHITRvVaQR8GjnzBQ3nvTjJ3lgG80-dauWU52MiPqfARgpkwUdpuNIBk3h-mekGRbJ5vGcOtZ-ABq8l7gDcRdAZMSxKr5_wVa2cWE_ZrdiKGW6DWe5FiZwrCVTgVnig_Sl04rwpATZ1yo4Eq57-QRTzZT_bAebx-G-L8YisCp4gwt76r7lI95aWk2CgqC2GdBzBDb917nTcFLclJTInx7jjHiCs9oq4VZ3AHw7cYPtDBTvmc1tp6Zt3a-p7U7NfsuHlVM0osd0_NHKeyQ0CSx7DLJl50C5UBUGQBzmD07jzwalt6Ceac9FPanDeO-J-suX2c8HizDGd8rAgHDwz3fvPScLxoiwEAAJFGpg0UcVA43bWr59P3amR-dxRc-FKip9sW7HtinsOMbWm4a4aaMg179s06Gl85_rBuB4kuSsIn75Jg3koH6pF38tg8IuHKIvAQCzlLqqIw3BsElsdQply3NAG_dCxx7-9iCUOmDhznziSk8oly3um4E7EbrcUdQkl-QlpgbhBss_I7DQ5Qx1efNYsHlBp1zezt2KKv_EGBlALgBXUEtpltIA9M66t6KW_bnlHGMISPSJnX_eXKQzZdgtNJJIpQ9XwKJ5Bx8AkCIPAYViELoEeiprOOiMSBCcZxqPQlmTJdE9qDo7kfj69leTG7pq69qoWaZw6ReOL7i3GrddC50d4YSNVEWtInzlNwJZOvWe0gD9_nbJwsbYnp_6_ntcKts4VAVoY-ARDlxVYr_son43Ulynu9WnGwBaJqSxseU5HXNV-mXS1XYgTwmKU2mnLTeGscmSmbOMFG-1DQ5QQuPIH9Uea8cR-Nuf7scg7dCQISTbX4m4cXlwLb4MX28JAqyUELxj9dHVgA-ktJQxgx5cB2BSsxrqN-MUzCDgdiWmuO7jeftI9VT3gH4F_C-vzUyTvs2NY8hhrUyaDXBLhk5_ud8rebojUu3bX6uzzSj8Sy0huY9L2YrADRLcapuG127s4_U1q_KSNPHZarcgxFS5UIk0CszLG6Uf1-wTRPBgLQ7z-xREx5iGn4ZrbkETLHHBHvZYmjC1VdIhxIsl-lODN7k4GE4jUICMIKmJePnMRAgskVJ1KIy8b-8OLY7MCYRSgwQONNm-qXQoVl2Zg8J-ChCrK-AfOlha9PmRvTO6fOz6IMXqnKFZdrLWwT9cGz59qTNpgrKpVMo801TeWa9y_rTGe2JOMLX6cIIgBapoBQMfpH7obNjfDxi4m68Fw6iueVfE4A90QDeX_Eyk0XbYaEGr7g4TCTt3YX44My8qoKejvIAKMTmfzw31P4eTlFBmbFLZsdNPOl8RIECZDpaUrautD_0g9WlLBxbZIKBnax6wRz0GEZjMtkauyA0vhQIJv1KCt2l6M2T_4NIHR1nuyipa9LDK98OqyAlRnnmp5VNlBZrSRWp9HSAn0ZjcqDGbgNTwcIHW24JIYsBvnruLQZ96zwIFJmHH9lfF8_au_r1jjScOoXYxgPFvEmmpYWfxyuIRwsmCjMcvresJfYRUVoKuPLgnXJCes1hJogR0vcnRfiFIcioxMMnApe0ucvn4p6He1WpoPxE_VBqoq6BQZ0WXbipP3W7dfh10laMotoHSzapVC0p5EdCrmldfT_kY2u8e8g2LHNtRtzkRCtzsw4DZt554psfcBTnupmWnqPDu4tn8e3302TAzee2eBigM9busRELrIUdiBAHtjW1d_ns1zZo4l9dgGi4ZmCDubfoZzXdJH0SEUHJZDjk3FKZ5GVOdfOpU4MEF-iLNnqVSlhxUZa05EZqwK97kIpkVLRoyETIlee2eZt85esBDA2Kow40ljPWAnTKuSDSgbW-3UqrNKKTPuYuYEjKyFixSMZSWZpDAHg2asVUZCvV93ZUj6DgWJL5WaRISZVRW7ZICmV4E56GSdBcFiIWh2SEHoUzXOO0rXhvZA08qAYyNf8rzEiiH6pVwMmJWa-URsQaAJKv0XreSJ6Gvt7O-YcXMMgWKC5kXNXbqkg6wodY0ZUaiBVFGyR78lVWVNB_O_xi4TCxl3nL7QejNRFHWnFD74hUsSDwLbV3subYtRzMf_eGC9HNJC-OEvUNioEdmxvcKaRj2zsl_NYkZvJA9lNxZaCIaKkX9QiyQOwZR2I2Xe2VcmZ0Kq5-ij3YWVlzci8_JeYZn25A8WLQr9BGaU1khBO9SyXXR2_vLuVM1osfEI2LpHMzZqMMjTMVbBNT3kppsJZrdm_vqlRFaCWtfY0lHeixOfmdHl49dhMvlcf9zWEbIbV80_LT_19yDTobiOBhkaSvU3ogsoDU-r_NVu4Fdeq015yVXyXM-XeBmKDg0xjF1-oorWvqHOjVXbAowF4Xg_W_0_IPaBitP-VMYJNicyrO_D6u8WpDSpVSVMsvx4Sw2bi4Dfe_Mf7eR34tDdfb5b6v_J2fSXxiNQPrL2aNct8MkxpcHyGwI8nyH9dIi15MVaskvZU9i1-jIwlwsRozKW5KAwpp2DJfh36B68-FUolSv8AnOA9yI5X0j5471OfWG-akd08tyt1EJheJpZN59-3Q97arfDAv-SXbDE2Q1cuy6aZlFQxmRPkJC-DCVMqxilZed7kBRdIvi7FN2VfV1HjQ_vld6lcZFsBkbZYH9Wr78g2OUK0yi8Jp1LeoldIvbOZIMN1IsndJnS31WuGcWk0eM-jMIz3S_UX-WAU7btmBDXd7z44qbv-gPRjYVP_aVWOSc23b2yimyLA9n-iyMPY6wQDzTQIHTYZNhcjG45Y5FxKdA-zSuLk-rZ_carN3k8PkcC4TEgA8Djq7Z6C12O-3PIBEc4uIWVyJ1VWDE2C09bD38E2eh2i6Gum0eItor-ENnlLSUjn7Lsoh5RWUEL4DWOXbSHwT8hJPV6ge8wp11ZixvG1CiY0iaAzdxGzK4RRL3sb6HfVRkHM8RAWAUJKj2z61_zIjb-eHbZRzoSOHo7SMUYoCSx5HFPhO6zpREK3z1TmZxgUUFJJ0UPGLFuyJ9eUzDtAtuMnfwswgkZvBLfZTcaBRyiZEvA0SNcEuZDxIjcQ2LmbNbjwGgNgmA4ti2Pf70ysA3t6uJE4Mrn3ZUG66ZKeXJU6RatltyIRTdeq1OhAGulQhaESzpBgM_P-baJwbpu-tsAtyNEfJ_wn8hUMeJ9dnPCNru0-__7NLob5BRRXIky_YP5vWQ_jMgE3BM5DFDyKxNHl9i9oB8J3CKMadFasIHF_L-GW9NWk-l5rY9MMPC2rLtQQBIjGz4YoWmWJEsgtitYSNkEynbsmOG-_JmLcj_GtCWMNMx333SS_NRMcifGyCjxAByWSO1OU_sEEcMKKwjbUN17DJZ2Cr5QJbhnUV4njtCy9_r58DU3isrVHP16NERj-7TcS8bAlV4rlzUIULMGXJBOlGCKm7wv4eiJvdKt46tY9L5jrskEuJTNmitE31Cs4P1C9rVUK5UVVKzVddSkwFoXmO7sKNYygK9bap4y8SS_nWItYwLFL6WR025cOJQwmiIkAkyTzPqe6cRm0NoW0pz2t27sPMh7BbaVv_P2anKzf7vQLAYEOnVZJWnjHzG4oOVyk0bs5YsqYnJweWkeOGclAlRmUJ0iXqwAnjAosV8spLykUwiM0XS4vDsZQ-FDI6jAXvGabO3vZyr7Np55nR-OYXZlmIzpPf6hcY3x5gRqeSg_a4XgCVEh5ol2fMYyDT4fDh4VJmQoV4pXFYUsV-DCdpUh1eMsOz25XJfjxi5tN5AnBhqjlTjZW66_9jCFWG2zBSrhu9sx6tq4O1Gcg5txxXJ3yxNm5oGnfgrMEJFJKsg62-pcaeYc8-90bV4u_0lY6aI-CWAHfConOneTop8JSyBg7Z-dzzAjE5vjHlrfHMDz7sDqpcJxBwUBOROuh_8WJ6WnQnlV7KFgYpnjMI4STls89nJlDrol1QsY73a40ZPKJ8C0y-Es5H99gy2gHCimPx1IX2MZt2BF3e4E_Mp8Pkqm71TREUeyKjwobRQd0rshxaOuP78QrnUQXGswqCysWBtRWNxDk8iRbBlD0hiMDgtKdWMpXF8P-1lcMUdR8GEZShhy5fKoeHpq4qKBJz54WbDPXFmMhZT6ZhTt9D0GkC5x0ZXl1eAlFiaeq86lwqEGUNwNuwkjikekM60tzdjpuJHkrlMmw3sx6nILOD4YWswRGpjnj4cWDrUNjmw7AHNHjE3lV7rQmkY30efHYITm7kgeh9MApJlFVmcZjt2ZuV-CFvrSy9Qt2okIRkuOzl-oIE6kEAvmfgMKmkJLv6VZEKLVN3YRqBhFsEl2l1AbEyh8Adm8wn5mIltWMttVK2xhTWHF5EgCe0hkh8flPSQUqwl2beDaqN6fjHgpzoUg_1cNqujElb0W2X2N9WO9XpE4Q9ivQLDWiceIJM2RT3fsByd2KrWBGZtDCUkmqJ338KaT2mcxQoIFFy4GedaT8q7v5SEg25l4yn83vubkhcswn-8X3w3lwwSz6xuC-6xcXJfy4ELINSBsoZSfipQsKRtXfuriHMSDa7xxNs3PCPQL6qkR85tLguJgvsl4EIPY6cYRh-nU-Fh_EEzd7y0xidSU-7w3ZAz0nrvwV4QYUbGNNapULaR8=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0e130f8392292975016ad968865d5c87d1ae68679b0ed8e919",
+       "index": 0
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 466,
+   "completion_tokens": 717,
+   "total_tokens": 1183,
+   "cost": 0.016204,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.016204,
+    "upstream_inference_prompt_cost": 0.001864,
+    "upstream_inference_completions_cost": 0.01434
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 388,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.016204,
+ "secs": 13.3
+}

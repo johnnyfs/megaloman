@@ -1,0 +1,12 @@
+{
+ "pipeline": "swim2",
+ "version": "v2",
+ "created": "2026-10-22T01:53:18+00:00",
+ "author": "coding-agent",
+ "parent": "v1",
+ "change": {
+  "what": "assemble fans out over per-frame timings (game frames at 60 fps, [glide, stroke]): even8 [8,8] (v1's rate), even16 [16,16], pulse [24,10], slow_pulse [36,12], lazy [48,16]; frames and judging unchanged",
+  "why": "human on v1: 'did the pipeline just produce frames or frames + timing? ... this is quite fast' - v1's rate 8 (133 ms/frame) was copied from the Met walk; a pulse-swimmer wants a long glide and a short stroke, and the judge cannot see timing, so the human picks",
+  "prompted_by": "human chat 2026-10-22: frames vs timing; too fast"
+ }
+}

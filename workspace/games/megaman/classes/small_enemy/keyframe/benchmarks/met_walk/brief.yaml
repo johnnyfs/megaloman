@@ -1,0 +1,6 @@
+id: met_walk
+description: >
+  A small hard-hat robot enemy: a big orange construction helmet over a small round body with two eyes.
+  It peeks out from under the helmet and walks on stubby feet to shoot at Mega Man.
+size: about 20x19 px
+game: Mega Man 2-3 (NES)

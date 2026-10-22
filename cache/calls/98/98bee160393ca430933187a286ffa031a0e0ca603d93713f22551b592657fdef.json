@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are a veteran Capcom NES pixel artist and art director for Mega Man 2-3. You are shown ONE small enemy sprite,\nat 1x (true size, left) and enlarged with nearest-neighbour scaling (right), on a neutral grey-blue background\nthat is not part of the sprite.\n\nThe sprite is supposed to be this enemy:\n\"A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.\"\nIntended size: about 16x16 to 20x20 px. Game: Mega Man 2-3 (NES).\n\nJudge whether it is a convincing authentic NES Mega Man enemy that matches the description. Be calibrated:\nauthentic Capcom enemy sprites score about 90-95; competent fan art about 60-70; amateur or AI-looking pixel art\nabout 30-45. Do not reward or punish a sprite for being recognisable; judge what you see.\n\nCriteria, 0-10 each:\n- authenticity: could ship unchanged in MM2/MM3 (Capcom conventions, not \"modern pixel art\")\n- description_fidelity: matches the description (body, features, role)\n- readability_1x: the silhouette and features read instantly at true size\n- pixel_craft: 1-px black outlines used the Capcom way, clean clusters, no jaggies, orphans, dithering or noise\n- palette_discipline: NES colours, flat shading with at most one highlight, about 3 colours + transparent per 8x8 tile\n- appeal: charm and character in the Capcom manner\n\nReturn ONLY a JSON object:\n{\"subscores\": {\"authenticity\": n, \"description_fidelity\": n, \"readability_1x\": n, \"pixel_craft\": n,\n  \"palette_discipline\": n, \"appeal\": n},\n \"score\": 0-100 overall,\n \"verdict\": \"convincing\" or \"not_convincing\",\n \"issues\": [\"specific, located problems\"],\n \"fixes\": [\"specific pixel-level fixes\"]}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "2eb91f033386f45e053236ad54c4903b73fbeb4e8589ad1aaed06bcf280b95d3"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792633241-JD415NPTeeQ69CuGD0Yy",
+  "object": "chat.completion",
+  "created": 1792633241,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"subscores\":{\"authenticity\":4,\"description_fidelity\":4,\"readability_1x\":6,\"pixel_craft\":6,\"palette_discipline\":5,\"appeal\":5},\"score\":49,\"verdict\":\"not_convincing\",\"issues\":[\"The roughly 28x17 silhouette is substantially wider than the intended 16-20 px footprint.\",\"At 1x it reads primarily as a horizontal fish, missile, or submarine; the long rear prongs do not clearly read as squid tentacles.\",\"The face has one central black mark and a separate yellow block at the left, so the eye arrangement and intended direction are ambiguous.\",\"The cyan-and-blue rear appendages form several thin, similarly weighted bars, creating a busy silhouette unlike the compact clusters typical of MM2/MM3 enemies.\",\"White, cyan, blue, yellow, and black meet within the body region, making the palette organization feel less disciplined than a typical NES sprite-palette construction.\",\"The broad white interior and large cyan lower mass look flat and generic, with little mechanical segmentation or characteristic Capcom facial charm.\",\"The sprite does not visually communicate its mine behavior; there is no obvious paired-eye area that could cleanly switch to red before detonation.\"],\"fixes\":[\"Compress the sprite to about 18-20 px wide by shortening the white body and removing 6-8 px from the rear appendages.\",\"Build a compact rounded or bell-shaped squid body, then place three or four short tentacle clusters beneath or behind it rather than using long horizontal spikes.\",\"Replace the central black mark and yellow block with a clearly paired two-eye visor; reserve a red alternate-frame color for the warning flash.\",\"Use two animation frames: gathered tentacles close to the body and a thrust frame with the tentacles extending by 2-3 px.\",\"Simplify the rear clusters into larger stepped shapes with fewer one-pixel tips and cleaner negative-space gaps.\",\"Keep each hardware-sprite region to black plus two main colors, using white as the face/highlight and one blue body tone; remove the isolated yellow unless it serves a clearly defined mechanical detail.\",\"Add one compact mechanical cue, such as a dark seam, rivet pair, or lower nozzle, while preserving a clean one-pixel outer contour.\"]}",
+     "refusal": null,
+     "reasoning": "**Evaluating visual cues**\n\nI'm trying to make sense of a potentially confusing visual scene involving an orphan blue row and its components. There's a mention of a static display but no flashing red, which creates uncertainty about the interpretation. The orientation seems tricky, especially with elements like the eye, the black central dot, and the yellow rear. I ponder how the movement of tentacles might connect with the overall positioning and how that affects perception of the scene.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Evaluating visual cues**\n\nI'm trying to make sense of a potentially confusing visual scene involving an orphan blue row and its components. There's a mention of a static display but no flashing red, which creates uncertainty about the interpretation. The orientation seems tricky, especially with elements like the eye, the black central dot, and the yellow rear. I ponder how the movement of tentacles might connect with the overall positioning and how that affects perception of the scene.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq2WmkxuBUWQZ6u3cD104tEmaimG9tFJEHqeAUzoO1IzNnL2eqtkbYD7OIhaynnupvevZwTFtL7nqp_sJ54idtyNe2Y6lF9gtRQJJ95i43ixmTefuuBRYxoWuFwrVvxtahlaETx7RrIxEIFWYRThgzCOffNrD2WJTOkwXPI0Su6sp7UburA8acRbN3xtFLekthvs-_m2Z7SMHSDZq12mQsRnRxhDqfnLGHeIyxFqNdVUyQsG3-vPpUHGKEf-2uOSP6jWGyaEfxyGvBHNIwhp-Omus_R1ZpAaD-HGqQ8eEiRkdZNK1VHxyb21d1WtkcXfLWGSv1XDPnoKe4nfu3XRxZbqGU-1DC69O6niapUepDjDhngk_nuDtIN-oexYtqwzkIm0yaMUTjIJvkhtBYKu6OSJXiFwlsrdqsq-7Dm4NfqeIH2Kf2dsV1bt6DpKEDt6BOJL6KtOhJQVrHekp-4gKy2q5UlSBtZ5vNq48b65Iog6QSL5ZSbdF3WEUGqQXXY3MTn75cqWsSTj6GcAnIm7btJsGFyHSPgBlS_tZq63o9xDmT3fe9Mkm3IzMHyN--2egT7CzvUSjcqsp1lgYH-MHYBTlnoAKmi-krjU1VxqOHIlUJo7KCqGX-hEIHc1VhfyxDpwYJbIAPieQNaTuD5zH9Fan4BmxyEwIHRehDrP99hkZd7XA-Ah6MpYzLorECvj5UJgtXyqjcwDBKdvyQlA7PrYbRHGC5-2b9eFQeBvGQ-Hv6ppvPdbdicSCIHpVDhFyAGGfKLJXSrLa1MQfYhOoj-Qie42tXjjfa9JCWw7Mzs2WcgLzRbxEp9qwRgjmyR8hc6tMeOk6Ht77xR5OKb9sMEh2wlO48O9KwspF-31edbsNhAHz8_2eij0kvlxPJYwAQ0svoIQswpplCkuGcQmkqDCqPlH9SgI-33YLVUfX9UHdvLnvY7iX9Gi4fmjcwgElecw6wBpP5FO_UsxtEW94suMZNfVIKsuomW-vYmDhHOnz6_byP4GXhK4Sv1AelxI2Y9sUYJbDhblNtd9rlW3ybpgiOSlIulN8hd9RHqDFBhsGkLX5ZRipjUkkJG_Em6eCUIfnh0BkQ6KF65J3fE2uMrYhOiebDIJmvYhOpbqao28Ex4gJAt0V8LlwPYlsuxY09k86-yJV5ffmO9Nr5XRYAs7SviI--Xu_2cdU5hJDG5dmmq_eh8D8JXWfPSF8PemZHz2RcdYhgMOssKe38vMF-ofDJMy0vrk7ELwWAnZ0AZhX3ZtGS65BngW73oXHWpxod80UeEcu2zSDE4HuVn7wOk65HP0WrTBULT_AQTFAhpHDw2W_k0CllJe-1gOIzs6IyYUtjdCNm8EBYM10tCvUOZHYAOFljvHXaY-t1n-Do9B10UEaq_02PHdj1UJQWJi6wa_jyiv46gFDt7CATEqLXud9I4xnb6rR05s3agOpnQHUTRHwZNzidRdBQw1bqGnr4cLiiOnppwSTwGm8uoK-ofJlUshwNT3wypCKK8eHLixApK_BWM6AoVTqKRJcjWsxdyLd6b8RZ0Wg6KpQ6k_UeSpklgKXzBMcM5BMJUnfP1kcP78JU7ipcLqrgRpzvvg6k3vqGlk41EKwNq5of3OTTG5KNrLZhPFoUsgQkNdHM_dSGsBxRkkQjOsnuU0-rpyhEQYSe0i5Dtghn4z3M1ObXMDojAfSbi8ZdTbkMWEoStc6qhegw5R5fPv163bjGh_te9PmJKn2QPr9eGgnKlTsEn5L19zxnKeT1LDnPRv-SNt_pLza_brQsbsvjoHxjgGfUjLzY0HuXpGEEd_Grckr0TLx7QCnbO8MOdxf2GFoAtiDlFCeRnUxujB_KWwejTiLPcinnoypczLj9wa90UkVoGArrcnoGT9fdKnAFW-W_Ime6NDR1SDvxoIu9VpGC1x33BG6NgLB8r1gGWrGW0myWhOnA5tFGb2RLpCviSiOT357-Xi12lz-taMrpWHPmuW8PBnNvtSc9eTasc1wLhNqaNdU1vGZAXSkk3tlLJ71y39d6HDP2593_NfkonVlzFPGe0ZcO0yTRGkqOJeASyMtg0f6uJhy78k5ZSFq5rcyUir-uldQKgphU651pBtXzK5hKgA5y8poi6v6Ugz6X4f3o6xDmLHITZs_Vta7rTfsaL74kBmTEI2J4yk-xDkaZzKNBtiXNUGKaS5u5JKzPdMUV8lYMQFlSgqByVYm-bWBdx3bJ7pXODX5JZDcL2aEjUnkATPV_XXcV85ta62AAGWobUVh5nCwKGAghI4DXGy0AWGt_1gD5G2ZPUmIGhvhbvtlYMzHGZmoeoXFl_zUM2isBCNZjF1RMka55vGFamG2gL83iKFR6PRGUE7kmEtbddEZRRL3fmTqQoWfYzQMNeZ5g49XMRA2bUD_CN4Ppz3oomVDa2LBZYU7cZZRuNKUJXvc3KC-5ayTgsmNWFzvMEL7W582dkmuOOF0wgrMF4ofwrD28dh1KBmxjci8Wkw_GhXPXI2k0Q1Ciue3RTxH-7yTdw9y7lMb7xDtJ9d5ghaKObIgDR3cdDITGG7DqMcZuriSOoBzO36Iy5eqghSM47YI4-fK5gG2fs5dnNgOFwNMydWAQ96W45Q5HtR2qrQL95vIVQj1ry6a9WcGhTzV_wYRQFO7Ufj_ndwTiTEPBiWUWjmrDiKmmWVEYApRyPValY36ELPYA_hXcF3ytUL11D5yxpOfwpetPsQkicThNGW7MDRRYdHFPX4P8sy63nqHk_Q4s2MLJiGGF3jhL87bwkJmC5aE_ENEYcrlm8geDUwzhG4AXzPHLzZjiD0zimwpUYANsEA6LDwdF4u_5-6tsgCsMK_ahyVHIQ_-RVp5cICpU8qwrtI28nzF7TIYQICIEyMqr_4xqfhxcCkSxxttzlsxDgK39wFGjn9J1tKt4Pl4xIDrw2k3edpx0pgxVt_koY55NGrqkRB0JWWP9QXQ1goCxLub0L9S30Iv2CbmW4gqlaYxplglMS9DST6SW_NFT-7z-ritzklbVnxQGpJ4ItdeEhE7JbxWfB9N49B3-HkwhpGhz3DMJZEdv2fiiZoRUdxaKEAjNzdg5mF7blaOfx7QY8uDHss7kHd287JOtR2k_zB4HM1Jq4W_I7r-xeVngwwDIMIBN64Pw7jnVSq_vDK407JPaHABqeC_MIxLR6BDxvNYWKOtPofH4RrW1gYyG392Kb87_m_uK1iv-5_Xe8Fn0n5JHl75-SM_FC2DPgAFK1i2Tduj6TOZT77V31RtJP0BeRIqteeRHjr3fGRhAMZbxIysHNb3t7HoZB5pClAqJS0mBGTNcTSvT1VbsFzD3QPstBWyC7zaezu-e10-7XanuIU3_d42R1meBxCyWE0Xd2l1vX76SxZ8zDsoXdR3KDjptSzxcUv53X6qHZPI8lIDJQ55vRMCzIX2J-bjQoENsktwgWXMFb47rPvso3TbRsY4zhMFQvHvotpHLM4ELeIfACkIwXJ3v_KBzpLJYkjWEk-CnMNTnfgOBHrA-MQIpBNlXg96szMPH3cNek3qdIQWfuf1qrsoV4ANERtYYDeeDftloRfLh_-vv3BpfxtCG1-h0xp9QoI0dL0VCGNUE1gChkuvHy7IqRAJcrTp1xDeASzgZ8Row7wagzfbub4Ku_NDFJBxZqbJZZNe-DnvQnCDYWed1AZkaWay10Ecm7MZFmOkjhcDG30D1DLpTqmmdGBypX-2eR0XdRDgHQu_OaZHmMopEAKh44ylMthxED4x7YuIT7aIj98YFMI4D5NylUlretcKeDFzTWq7oQxXmbt0uMDs3L23z80wQugjj8wJJdUxGT7EFG92rztf0OQm6TY-9dWRqykvTrXjee1-zRDEu-Vs3ZaGSxcS0mmqHQXyKR5pVgBOI-JL4Gp8qBJFrq1Lzb3tepGv2R5wznasxfkdeyMeJAZ5Fs-jHoFJmyIKNwupR7gfP69MkaJraPqwmr5Q4bZpUm6bWuwKj4WO9VkS8tPZYxiqLizTbWqUFsM1V_5B_kjNXFdIATAUmxFEDnL7UvzOO7zhgn_0o1sgZlf3uPg9il3S67quR317sDy-PfjI42pWAnhlBY4sZQILXloGf9OOnb1U_fc22r2aOYvp4PIYJtnYPOBHtVMwp82-exR4f8Stnv79rnw-YtJcgXeJJaTaw36DxFmKs9P9KJQeKqUXzItDqDXNBa_olXMCiFUF5XFnxeZTLs9KNrhew9psSufieFqwSNYZSF8foqZkzwFB2vc4SgEKi86wEMR3PuUiLDVQUYYcvzuGbsFeFrhAi-5usaCxtmUyBWqqagwUtn4sBzV0mO1HXuwgWRghzyyQvwvR4feMxZWU0B5k7KAOCmeMZQjdZkR6JVOlhvvb9H4ZvyRnz7uwLCTBoESQHJf1nYnEcaflKveS2nGmkR0hurX763qdMScKfPr9RYP_ZV_OFOcjKfBPgD3fg0d9eA_2-GvQxtQ44TDJwntH5H8zkQEs8FNKOnjX1aFVHN98tXqlW_mHeUflE8Ae8bHCZdgOyfHFe3PYxl0nu4N9RvlpoWay-Zm5wS5iue-4uIkK9cmMUFwPx1pXuGIamWztUBnn-7NmbQ3p7p9hwATrg-sUCHmSpsDZgQPlcNznWTofcwCm2RiUjLEOK_gNhPINgwrAuWoOzaedj2v746p7OBaz1n8bIMMUqlRHnpglhyOYXvfiK90TxkUNl-_wHXf0IoN8Ya19CKPtu6bOhi_IC_5WYnCj9U_sqJZ0L4ClXzzRv1sj5pWiKo7Afb4nxds130AjcfWyYMWtZtNSeibZgtESonME_dJ1g70WGb5cSlFQexdSxVgqDUOGB74CGxVYzve_mqdupe3EjVF-OGdbziDc1kSM_UyA1HA9zzWgl1GDU6Q5gmcayFxND-mZLaQ-oS5I9tQTgsF-ALRrIYzSvGJ6pgJP1cCyV3YtjxyrShDkUar2ufagMs4altljkluLVlAs3agQksdiomWaqRRLfF9YqEhVd_tjFY2opmp-vJKJMe56cYgV2U45WIuH7b5shiKlK049Nke3zdzpAXxF_Vv8sHVyAh0LgF1ac8IHluZjt6qPiEcAcMselqaPdCbuCouR9Q_U8u55-S-GXyDrkmPtCKHvkp3m4_vrAhi6WJcR3kFU5qjAyZmxJqEdPs16P0TTH9bpzXVV2KObhbiJnsBrlEBrjc8Bse5G9EBbE-ykhTAAUX8WGcg5uqZ_Gm9Ju9rtnZkyGbb6HBNnK6Rf2nBMws54GTgaEyRlT8_QerbwnREUGQl_IvewzFpEz0S1QJDoAwI0G3RFI7gK8wPabDupYdMwD3Qv4b7TpyjFST_8CUrf1oLWF4y72T8P83sf0jLU7ku_jmtzN9ABrQMHI4ae_N-q-vIXZ5sz61-ivwQbA7g5QdQmu7o1nGaCo3I_B2-FgZcWIHk8-Zu_iNNUdIEY2dLvAJmvlJ8WO4bwu4oZhCdaCmhbPhYxcanDsC59bl6KSpYXDrlBnNpxur-_9NmJJXVKJ6uJQUCPiiXYEMKJVVEISWQaFnMD3iawLTQaBlAvMIBijJeg0n5hGK2eYGwlVqZRb0a81Zheb_e9rR1vo_xZ63Ywu6j09GG_1cizubsiBFg7CfOnK2Yfvf8KC1T4PRk45cpFJ-tf6dal1jbrrkNI2Ulu0UO5nrlZSoRO2PTeTfMHCrpaBKpjaYlKtiUuFHGUh8eHlN_1eDl2cHmW3Fht776Gy0N2eA1__wWd-eEgokjfKcmb8N0vP6qzd0fnJNCUFiY0e3UCp90e1OIKO0NqpQUA0v7I16EtF47YygRB7RGofrV6OedB1WdT5Q5t6VAOJ8GhgH2X2oVT_NTgphXvZ5vM2mn9bxVVYUaQOQ-EgwWuBl9CxtLLNiJaGolBmjepTZuRfEjB0lDsuvOpafNKRWEJaD-Z18GHZKX_sgx5tXvlTOHNOfj4hagy19t1sPQkEj-3f4Tny6XEGJvgotjBosYdpu1savJ3OVsc7koVyuSAWYGNFkZ18mBCJmQOGc0vaxEjm9FhKQ4qetdZnMGlwhOH4PuPqa9Gs4n1Sz6r8q_ZZur4vUXu8OmnTceag-inQlmODqDX3olbHomHXBW_m2eWK-qugt9auk8ner3m-mawSXRAJ2uxxFiMfW4pdw4tjh-fQHNKbcKr4eHn6cs9w6FY15XH9cmEO1ClZ8Uy1nRP7XQDUvoSqzX2Vhn3r7_CZ6f-lLPrazXMTZlfgW0nFHbt52pE00qPyftrbRETgJfOx1W03ng0svryHF31tD0k1VAYkTWAP7nteo8BcyiETHXOYnT2WpvkQsbQqKe_1jNY2dgq5Ig395pL3bOHihWcD4sd7lrofwFHE1WSDOgi9icasEHT_cgdeHuz2QZUAW08EapA9LDb7B1KXU7Z-6Yb4Ta5n6OVxkHCMuXI5PSoaFN-lfnofuDINlYx8TwY_h4DrKwwYO9SqSl6GE_tIA3xbZzs-mIjorqbkpiXBTjROeobdRa3mPGXZOuxYFf90-qJHIC2rwhA6uGg54WKxFMTdwThjECnhi6frvLY_QNVUWsab4ERINWWv8gtuqtbVuGmaFpWeZxKSJ5R6g7tW5hH4Pcpy33wGUK5qUJReAUL6Sv54zmFljJKGN42ydua8zHj8Xwv50TQZUKEsjqO4L5F1_UOXtaomg49i5zgmqYLBy9l1AqQwTKi7fbwW4EmcCIDUtqvci10eBCvpVhrAT7wJrcVACnEOv3fYg0LQZhMG1ERBHoxVHUb9F8_6XQZ-6dpRglCBYOuRAiTezf1SwGwTXNM_k-al9jgUQ9apEKAtM4juJDdOBhWKXNGgSUle3G6dhh5OJ9D3Upko6cXqVfbkhZjgVGgWB4p_H1XqVBTDuB_Zxd1kES_q9EAK_E0TAsMnoeT4qcSrmKHaVxP-h_NwSEJ_sVM3qsUe-pGe6AGZbbOiFaOQOoeCMf4teb53V_H4ZRqRQUyIMk--kTN4_eFNg_YuBgLRqUrh5wBhcFOdWil1JIgRm1fEtTiXDs0RcdlRjVoFtwUA8jAEEh9O4cAv1S77xxBNM33vid1VvUbmLgWwbou1RCfWrV46GowCoT1-JiK6oWd64kULYr_A6uoadUWcTefK8mlAl-nLt6233PPA0m_u3A7ENU14ycV4M8yOaDZordiqyDI_AUQFlKHB0diGpnPrFaZJ6ZyIrpc_uF1cB8dUIWtNVgKcW3g4SsrNwa9Cmxc_-wHkN0ULJ1-f4AlzFQ9G4iTcq7M-F6gmqfSCSdpQT1qYWD0GYWVtv5i-2TP4CRvY7F9Iyop3F3M_BgkH_iZcx6la0Ok5Bn_x0hLFdHoCJ1JyNnZ1FRsgdylyLMEWWW6fntCGuXuEWuxK8B3IwWS7kU36KEUMtZevfbjkv_FQQlNnTT4nhd0IjxdEriJOupCDjCd2_m4oqvO_mYEmVQcHFOAtbJ-hgZT6ORhqKgeblacEVcOEX5gOmXiW-c7ZcBnJdakFkDS6-1exT3Dn6R29ytUbQOsEKvsW_9BIJdKSrnIGuuublMXEfuTYF599E5shLMijWEii-qrmP_2R3y72PyoV_jSddh6OdytG-X16cvS5zCf3OpqPdEpcLwjSCZ8LjOVO1kpcIPVxgGuZTg_x-XivXV2VLyD8ur0vQBB28C8nqPBurmuJoBELn5DvuEB4QkjjlqNNP_uEqmhi2VJUQRht2W3bvlVVMnBxx3TW_lb8OzYxOZRme5AvosPkkCFAEIJvBCXELD3qtWTa48nK2dbshoGJBxGn67fhqc4ZwsxoepHPNG7FCu5vicBqDwFtL0ST2F0x0uWnw7G61m1p2jQs304NaHRWdPcv7kR5q2KUNdZa7vLJALaTXVvXyH79DkybGQspQcNlJR6vLxHkCF__VrEFTnazQWmPVjmnJ9gdhwyRgXQFTX_BO2TCFLYk1mV1gZnr5bP-Fg0STFJpum5qZXOLgESJ-Fk1kod2DmU8QcxaPXkbSIVcwSopHwHICyzzf7xJpgz6jIqtWVRI2SGBjOCbmqG-0LIr4Z8r9GOxe6MUCQb0GgA0yZL-kNHdw9Li_o_njO9ii_bl8J72285rBOVhYhchAgT0A0TVaoKUPBvGIIZt72mGJFsa9Py6rgopjIh0rBRQ.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_0c77bb373adf080c016ad9699a34c487d182042db38dc1e487",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 505,
+   "completion_tokens": 983,
+   "total_tokens": 1488,
+   "cost": 0.02168,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.02168,
+    "upstream_inference_prompt_cost": 0.00202,
+    "upstream_inference_completions_cost": 0.01966
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 516,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.02168,
+ "secs": 18.9
+}

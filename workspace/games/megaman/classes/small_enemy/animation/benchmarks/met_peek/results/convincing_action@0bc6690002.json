@@ -1,0 +1,199 @@
+{
+ "eval": {
+  "name": "convincing_action",
+  "path": "evals/convincing_action.yaml",
+  "hash": "0bc6690002",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "002011a04d16620dc4bd6ddd211579c12366bff071c6af956057c814c78ea93e",
+ "presentation_blob": "f1aa0ea8cd0d4e9aa1604c18f904a86ecf4bf7c678c74d604b02b4323ca1461b",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "ce596df572579246dc61bce75d9f3c0a484add0af4fc241a81a778d799edece0",
+   "cached": false,
+   "cost": 0.0383372,
+   "subscores": {
+    "motion_readability": 10,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 2: at 1x, the tightly packed white eye/underside clusters can momentarily read as a toothed helmet rim rather than a clearly exposed face."
+   ],
+   "fixes": [
+    "Frame 2: clarify the two-eye read by reducing or separating the central white pixels while retaining a solid 1-pixel black boundary beneath the helmet brim."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "a631f8ef7015cfe2278090d8096cc3bbb657ecea05e79a6bbf8c6da717e03f98",
+   "cached": false,
+   "cost": 0.0482772,
+   "subscores": {
+    "motion_readability": 8,
+    "consistency": 6,
+    "economy": 8,
+    "pixel_craft": 6,
+    "timing": 8,
+    "appeal": 6
+   },
+   "score": 68,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 2 clearly reads as a raised helmet, but the rigid helmet's interior markings shift and change shape relative to frame 1 rather than moving upward as one coherent piece.",
+    "Frame 2's three separated white clusters under the brim read more like teeth or dangling tabs than a clean pair of eyes.",
+    "Frame 2's exposed black body has an irregular lower contour around the orange feet, weakening the compact Capcom-style silhouette.",
+    "The single 600 ms open pose is serviceable NES timing, but it supplies no small firing accent or character beat during the long hold."
+   ],
+   "fixes": [
+    "In frame 2, translate frame 1's helmet dome, highlight, black marking, and brim upward without redrawing their relative pixel positions; only add the newly exposed underside.",
+    "In frame 2, replace the three white under-brim clusters with two compact, evenly spaced eye clusters separated by a solid black column.",
+    "In frame 2, simplify the black body into a cleaner centered mass and make the two orange feet similarly sized with deliberate one-pixel separations.",
+    "If sprite budget permits, add a brief one- or two-pixel eye/body recoil frame during the frame-2 hold, while keeping the helmet fixed, then return to the existing open pose before hiding."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "bafef9359f53d3c43f03bb03bb70af7d6f46d1e45ac5950ad52fb71985837acb",
+   "cached": false,
+   "cost": 0.0357772,
+   "subscores": {
+    "motion_readability": 9.5,
+    "consistency": 9.5,
+    "economy": 9.5,
+    "pixel_craft": 9.0,
+    "timing": 9.0,
+    "appeal": 9.0
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 1\u21922 is a very large single-step silhouette change, so the helmet lift reads as an abrupt pop rather than a physical rise.",
+    "In frame 2, the white eye clusters crowd the helmet underside slightly, giving that band a mildly tooth-like read when enlarged."
+   ],
+   "fixes": [
+    "Frame 2: preserve a clearer one-pixel black separation between the helmet underside and the upper edges of the white eyes without changing the outer silhouette.",
+    "If an extra animation cel is affordable, insert a brief 2\u20134-game-frame halfway lift between frames 1 and 2, subtracting that time from frame 2's hold; otherwise retain the current economical snap."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "0d825c13e54a8a2ce8abfda9fedf8c77368dda2f9d82ca526078bb42bc9da233",
+   "cached": false,
+   "cost": 0.0580972,
+   "subscores": {
+    "motion_readability": 8,
+    "consistency": 9,
+    "economy": 9,
+    "pixel_craft": 7,
+    "timing": 7,
+    "appeal": 7
+   },
+   "score": 76,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 2's lifted helmet and exposed body make the peek readable, but the three pale downward clusters beneath the brim resemble teeth or supports rather than a clear pair of eyes.",
+    "The frame 1-to-2 change raises the helmet by the full body height in one step, making the opening read as a hard pop rather than a particularly charming lift.",
+    "Frame 2 remains completely static for all 36 game frames; the exposure timing is plausible, but without a separate firing accent the action feels flatter than a polished Capcom attack."
+   ],
+   "fixes": [
+    "In frame 2, consolidate the white face pixels into two compact eye clusters, give each a definite black pupil, and remove the central downward white cluster that creates the tooth-like reading.",
+    "In frame 2, simplify the white pixels touching the underside of the brim and preserve a continuous black face band between the brim and eyes for a cleaner Mega Man-style facial read.",
+    "Add a very brief intermediate lift frame by moving frame 1's helmet upward about 3-4 pixels while revealing only the upper eye pixels, then keep the existing frame 2 as the long firing hold."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "6ffca2e97cd18502ff3be974178ab576ebf3e5da7326c69f0e86a00d30a6a9b3",
+   "cached": false,
+   "cost": 0.037337,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 8,
+    "economy": 8,
+    "pixel_craft": 8,
+    "timing": 8,
+    "appeal": 8
+   },
+   "score": 82,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 2 reads clearly as a peek, but the broad white eye clusters resemble teeth at a glance because they hang directly from the helmet rim.",
+    "The transition from frame 1 to frame 2 replaces nearly the entire occupied silhouette, making the helmet lift feel more like a hard swap than a mechanically connected movement.",
+    "Frame 2 holds effectively for the firing window, but the single-frame opening and closing are slightly abrupt even by NES standards.",
+    "Frame 2's black facial mass is visually heavy and reduces separation between the eyes, body, and inner helmet shadow."
+   ],
+   "fixes": [
+    "In frame 2, reduce or reshape the lower edges of the white eye clusters by one pixel so they read as two compact eyes rather than hanging teeth.",
+    "In frame 2, preserve the helmet dome and brim geometry from frame 1 exactly, translated upward, changing only pixels required to reveal the face and feet.",
+    "In frame 2, add a small orange or background-colored separation pixel within the central black facial mass to clarify the two-eyed face without introducing another color.",
+    "If sprite budget permits, add one brief intermediate lift frame for 3-4 game frames using the frame 1 helmet raised only a few pixels; retain the existing frame 2 as the long firing hold."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 82.2,
+  "sd": 10.64,
+  "min": 68,
+  "max": 93,
+  "n": 5,
+  "subscores_mean": {
+   "motion_readability": 8.9,
+   "consistency": 8.5,
+   "economy": 8.9,
+   "pixel_craft": 7.8,
+   "timing": 8.2,
+   "appeal": 7.8
+  },
+  "convincing_rate": 0.6,
+  "cost": 0.2178
+ },
+ "motion": {
+  "changed_pixels": 430,
+  "frames": 2
+ },
+ "benchmark": "met_peek",
+ "kind": "authentic",
+ "control": null,
+ "type": "animation",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": false,
+   "detail": "38x19 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T01:58:35+00:00"
+}

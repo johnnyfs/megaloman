@@ -1,0 +1,5 @@
+name: telly_as_pipi
+kind: control
+control: wrong_description   # right art, wrong description: description_fidelity should collapse
+subject: subject.png
+brief: brief.yaml

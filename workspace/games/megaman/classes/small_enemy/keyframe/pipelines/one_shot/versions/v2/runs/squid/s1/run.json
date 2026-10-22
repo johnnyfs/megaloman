@@ -1,0 +1,1425 @@
+{
+ "pipeline": {
+  "name": "one_shot",
+  "version": "v2",
+  "hash": "454da5d92a"
+ },
+ "asset": "squid",
+ "game": "megaman",
+ "class": "small_enemy",
+ "asset_type": "keyframe",
+ "seed": 1,
+ "created": "2026-10-22T01:53:00+00:00",
+ "steps": [
+  {
+   "id": "draw",
+   "step": "gen.image",
+   "input": null,
+   "params": {
+    "model": "google/gemini-3.1-flash-image",
+    "prompt": "prompts/sprite.md",
+    "images": [
+     "bench:telly",
+     "bench:pipi"
+    ],
+    "fanout": 4
+   },
+   "items": [
+    {
+     "id": "draw.0",
+     "parent": null,
+     "root": null,
+     "kind": "image",
+     "blob": "c44ba6a4a7797421e461b1bdbbb42e49fa5678bf66d9406f995643d56230ec03",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 100,
+      "call": "01756c2c1c0613ac54c0f6bd69300cdf18c19391616f100a52cf499fd43fe478",
+      "cost": 0.0684735,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/0.png"
+    },
+    {
+     "id": "draw.1",
+     "parent": null,
+     "root": null,
+     "kind": "image",
+     "blob": "6ce785e352066a8a2a47bf9c5106992fafcd9dbc9463c7885e99965fc4511a6a",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 101,
+      "call": "f274b61563a3a8ca6fb7a1b29703e77a0b46767501bfd2d7f996428deccd3e72",
+      "cost": 0.0684735,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/1.png"
+    },
+    {
+     "id": "draw.2",
+     "parent": null,
+     "root": null,
+     "kind": "image",
+     "blob": "fa165a39a18aefba38321df83b794e77e7635cc7abe9548dbf34ccecaa085473",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 102,
+      "call": "900e66269cda03cc1dae272e0bf28fe594bf46a6c4d56452be49502a419b2fdb",
+      "cost": 0.0684735,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/2.png"
+    },
+    {
+     "id": "draw.3",
+     "parent": null,
+     "root": null,
+     "kind": "image",
+     "blob": "e18cec6f470b990bd1e35a2d6d90359431f2799eaf65ac3e3ebd73aadb096f83",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 103,
+      "call": "26a41b0f9ae7c87d8aefe9b990475ee1163ab59b6602ce98ee239f4840353901",
+      "cost": 0.0684735,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/3.png"
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "step": "gridsnap",
+   "input": "$draw",
+   "params": {},
+   "items": [
+    {
+     "id": "snap.0",
+     "parent": "draw.0",
+     "root": null,
+     "kind": "sprite",
+     "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
+     "size": [
+      36,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       36,
+       24
+      ]
+     },
+     "file": "steps/snap/0.png"
+    },
+    {
+     "id": "snap.1",
+     "parent": "draw.1",
+     "root": null,
+     "kind": "sprite",
+     "blob": "605687eaaa0e3b7f67e37efd37a896cccd0c684893dada60e4a5cd2f6b0132be",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       20,
+       28
+      ]
+     },
+     "file": "steps/snap/1.png"
+    },
+    {
+     "id": "snap.2",
+     "parent": "draw.2",
+     "root": null,
+     "kind": "sprite",
+     "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
+     "size": [
+      32,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       32,
+       24
+      ]
+     },
+     "file": "steps/snap/2.png"
+    },
+    {
+     "id": "snap.3",
+     "parent": "draw.3",
+     "root": null,
+     "kind": "sprite",
+     "blob": "32052652b24d000e258330e5a799b8c7ce7c22dfddbf6136e6a1eb12951fc309",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/snap/3.png"
+    }
+   ]
+  },
+  {
+   "id": "lock",
+   "step": "palette_lock",
+   "input": "$snap",
+   "params": {
+    "max_colors": 4
+   },
+   "items": [
+    {
+     "id": "lock.0",
+     "parent": "snap.0",
+     "root": null,
+     "kind": "sprite",
+     "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
+     "size": [
+      36,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 4,
+      "colors_after": 4
+     },
+     "file": "steps/lock/0.png"
+    },
+    {
+     "id": "lock.1",
+     "parent": "snap.1",
+     "root": null,
+     "kind": "sprite",
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 6,
+      "colors_after": 4
+     },
+     "file": "steps/lock/1.png"
+    },
+    {
+     "id": "lock.2",
+     "parent": "snap.2",
+     "root": null,
+     "kind": "sprite",
+     "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
+     "size": [
+      32,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 3,
+      "colors_after": 3
+     },
+     "file": "steps/lock/2.png"
+    },
+    {
+     "id": "lock.3",
+     "parent": "snap.3",
+     "root": null,
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 6,
+      "colors_after": 4
+     },
+     "file": "steps/lock/3.png"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "step": "checks",
+   "input": "$lock",
+   "params": {
+    "checks": {
+     "size": {
+      "min_px": 10,
+      "max_px": 24,
+      "gate": false
+     },
+     "colors": {
+      "max_total": 4
+     },
+     "tile_colors": {
+      "max_per_tile": 3,
+      "gate": false
+     },
+     "orphans": {},
+     "holes": {
+      "gate": false
+     },
+     "outline": {
+      "min_dark": 0.75
+     }
+    }
+   },
+   "items": [
+    {
+     "id": "gate.0",
+     "parent": "lock.0",
+     "root": null,
+     "kind": "sprite",
+     "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
+     "size": [
+      36,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "36x24 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      }
+     },
+     "file": "steps/gate/0.png"
+    },
+    {
+     "id": "gate.1",
+     "parent": "lock.1",
+     "root": null,
+     "kind": "sprite",
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "20x28 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (3,6) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      }
+     },
+     "file": "steps/gate/1.png"
+    },
+    {
+     "id": "gate.2",
+     "parent": "lock.2",
+     "root": null,
+     "kind": "sprite",
+     "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
+     "size": [
+      32,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "32x24 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "3 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      }
+     },
+     "file": "steps/gate/2.png"
+    },
+    {
+     "id": "gate.3",
+     "parent": "lock.3",
+     "root": null,
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "28x29 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "99% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      }
+     },
+     "file": "steps/gate/3.png"
+    }
+   ]
+  },
+  {
+   "id": "score",
+   "step": "judge",
+   "input": "$gate",
+   "params": {
+    "eval": "evals/convincing_enemy.yaml",
+    "samples": 3
+   },
+   "items": [
+    {
+     "id": "score.0",
+     "parent": "gate.0",
+     "root": null,
+     "kind": "sprite",
+     "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
+     "size": [
+      36,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "36x24 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
+       "presentation_blob": "4e14c35f5715488be817f46038176a72a967156cb3f3e908731b8ca0d2a7e111",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "6c21dfbcee9365be6e0450815bd91cfb1ddfe80e11bba304970aeb3fa82d5874",
+         "cached": true,
+         "cost": 0.028624,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 5,
+          "readability_1x": 6,
+          "pixel_craft": 6,
+          "palette_discipline": 7,
+          "appeal": 6
+         },
+         "score": 58,
+         "verdict": "not_convincing",
+         "issues": [
+          "At 1x the silhouette reads more as a tiny fish or bug with a trailing tail than as a squid with a distinct mantle and tentacles.",
+          "The oversized adjacent eyes dominate the left half, leaving little room for a recognizable robotic body or mine-like casing.",
+          "The right-side tentacles merge into a noisy, horizontally striped cluster; the long black tips resemble fins or speed lines.",
+          "Several cyan and black pixels around the tentacle roots form awkward one-pixel notches and weakly connected clusters.",
+          "The broad white area and pale-blue shading use more interior modeling than typical MM2/MM3 small-enemy sprites, while the mechanical construction remains vague.",
+          "The sprite is wider than the intended compact 16\u201320 px footprint and lacks a clear gathered-versus-thrust tentacle pose.",
+          "No visible eye-light housing or other cue supports the red-warning and explosive-mine behavior."
+         ],
+         "fixes": [
+          "Compress the sprite to roughly 18x18 px and build it around a clear domed or triangular squid mantle.",
+          "Place two smaller eyes inside one black-outlined faceplate rather than using two large separate eye circles.",
+          "Replace the right-side striped mass with three or four individually readable tentacles, each made from clean 2\u20133 px clusters.",
+          "Create two animation poses: tentacles tucked tightly beneath or behind the body, then extended in a broad thrust fan.",
+          "Use a consistent one-pixel outer contour and remove isolated cyan notches at the tentacle roots.",
+          "Limit each hardware sprite region to black plus two body colors and transparency; reserve white or red for the eye modules through palette swapping.",
+          "Add a small central seam, rivet, or underside nozzle to make the creature unmistakably robotic and mine-like.",
+          "Prepare a warning frame that swaps the eye whites or pupils to red immediately before the explosion."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "267a419b6cf626a510f317c2465bce88b0c69bc291918aa0d71fcdde00c35bcf",
+         "cached": true,
+         "cost": 0.022344,
+         "subscores": {
+          "authenticity": 3,
+          "description_fidelity": 4,
+          "readability_1x": 4,
+          "pixel_craft": 4,
+          "palette_discipline": 4,
+          "appeal": 4
+         },
+         "score": 39,
+         "verdict": "not_convincing",
+         "issues": [
+          "The large rounded upper body and two square lower pods read more like a submarine or wheeled machine than a compact robot squid.",
+          "The right-side appendages are rigid horizontal bars and angular fins; they do not read as flexible tentacles gathering and thrusting.",
+          "At 1x, the eyes, body opening, and appendages merge into an unclear cyan-black cluster.",
+          "The silhouette is too wide and mechanically scattered for the intended roughly 16x16 to 20x20 compact enemy.",
+          "Black outlining is inconsistent: the dome has a heavy top edge, blue areas lose their contour, and the rightmost bars end in blunt black blocks.",
+          "Several narrow one-pixel projections and abrupt stair-steps on the right create noisy, weak clusters rather than deliberate Capcom shapes.",
+          "White, pale cyan, bright cyan, dark blue, and black appear together in small regions, exceeding the disciplined tile-level palette treatment typical of Mega Man 2-3.",
+          "There is no clearly readable eye pair or alternate visual cue suggesting the red warning-flash behavior."
+         ],
+         "fixes": [
+          "Compress the design into a compact 16x18 silhouette with one rounded mantle above and three or four tentacles below.",
+          "Replace the long right-facing bars with short, thick two- or three-pixel tentacle clusters; make a gathered frame and a separate splayed thrust frame.",
+          "Place two simple one-pixel eyes together on the front of the mantle, with a palette-swap frame changing them to red before detonation.",
+          "Remove the two square lower pods, which resemble wheels or goggles, and use that space for a single clear face and tentacle root.",
+          "Use a consistent one-pixel dark outline around the outer silhouette while reserving interior black for the eyes and one or two structural separations.",
+          "Reduce each 8x8 region to black plus two body colors and transparency; use white only as a tightly controlled highlight if the tile palette permits it.",
+          "Eliminate isolated tips and long one-pixel lines, rebuilding the appendages as chunky 2x2 and L-shaped clusters.",
+          "Give the mantle a simpler Capcom-style highlight: one compact light patch on the upper-left rather than multiple stepped cyan bands."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "ab88d58bb1d9e057a1f8ac44742b117af3c348f75a2aff101ebe869ff6ff1a92",
+         "cached": true,
+         "cost": 0.034844,
+         "subscores": {
+          "authenticity": 3,
+          "description_fidelity": 4,
+          "readability_1x": 4,
+          "pixel_craft": 5,
+          "palette_discipline": 3,
+          "appeal": 5
+         },
+         "score": 41,
+         "verdict": "not_convincing",
+         "issues": [
+          "The true-size footprint is roughly 36x23 pixels, substantially larger and wider than the intended 16x16 to 20x20 enemy.",
+          "At 1x the horizontal silhouette reads more like a small fish or rocket than a Blooper-like robot squid; the right-side tentacles resemble speed lines or exhaust.",
+          "The two oversized square-ring eyes dominate the body and leave the mantle, mine casing, and tentacle anatomy poorly separated.",
+          "The right-side appendages contain long parallel black bars, isolated blue steps, and awkward white blocks that look assembled rather than deliberately clustered.",
+          "The mantle uses black, white, pale cyan, bright cyan, and blue across nearby regions, exceeding the simple NES sprite-palette discipline unless built from conspicuous overlay sprites.",
+          "The pale diagonal streaks on the mantle create modern glossy rendering rather than the compact, symbolic highlight treatment typical of Mega Man 2-3.",
+          "There is no clear visual provision for the warning state: the eye areas are too large and structurally busy for a clean red flash."
+         ],
+         "fixes": [
+          "Reduce the design to about 18x18 pixels and make the mantle a compact rounded trapezoid occupying the upper 9-10 rows.",
+          "Place two small 2x2 or 2x3 eyes beneath the mantle, with one shared dark brow line; reserve a single eye color slot that can swap to red during the warning frame.",
+          "Move the appendages below the body and build three distinct tentacles from clean 2-pixel-wide clusters instead of long horizontal bars.",
+          "Create two animation poses: a gathered pose with tentacles tucked into a compact lower cluster and a thrust pose with them extending 2-3 pixels downward or backward.",
+          "Use one black outline color, one main body color, and one light color per hardware-sprite region; remove either the pale cyan or bright cyan tier.",
+          "Replace the mantle's multiple diagonal streaks with one short 2-3-pixel highlight cluster near the upper-left edge.",
+          "Close outline gaps and eliminate the isolated steps around the right and lower-right extremities so every pixel reinforces a readable mass."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 46,
+        "sd": 10.44,
+        "min": 39,
+        "max": 58,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 3.67,
+         "description_fidelity": 4.33,
+         "readability_1x": 4.67,
+         "pixel_craft": 5,
+         "palette_discipline": 4.67,
+         "appeal": 5
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0858
+       }
+      }
+     },
+     "file": "steps/score/0.png"
+    },
+    {
+     "id": "score.1",
+     "parent": "gate.1",
+     "root": null,
+     "kind": "sprite",
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "20x28 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (3,6) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+       "presentation_blob": "33b11d8da9cabf34650ee6200fd6bbe7656865188391c4133f227fb553fd42c4",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "5fd96c8d912117f5f57e4ba281b247b344f26be29bf2c5ab658fd15d6a31cef2",
+         "cached": true,
+         "cost": 0.03224,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 6,
+          "readability_1x": 5,
+          "pixel_craft": 5,
+          "palette_discipline": 4,
+          "appeal": 5
+         },
+         "score": 48,
+         "verdict": "not_convincing",
+         "issues": [
+          "The roughly 20x28 px bounding box is too tall for the intended 16x16 to 20x20 enemy scale.",
+          "The diagonal silhouette reads more like a rocket, fish, or comet than a Blooper-like squid; the tentacles merge into one pointed striped tail.",
+          "The top black projection resembles an antenna and does not clarify the mantle or swimming motion.",
+          "The face presents one large rectangular eye or opening rather than a clear pair of eyes that could flash red.",
+          "The cyan-and-white checker pattern through the lower-left tail is visually noisy at 1x and lacks the compact cluster control typical of Mega Man 2-3 sprites.",
+          "Several areas appear to require black, white, cyan, and dark blue within the same 8x8 region, exceeding a normal NES sprite palette's three opaque colors.",
+          "The thick stair-stepped black mass along the lower-right contour makes the outline uneven and visually heavy.",
+          "There is no clearly articulated gathered-versus-thrust tentacle pose, so the pulsing swim behavior is not communicated by the design."
+         ],
+         "fixes": [
+          "Compress the complete silhouette into a maximum 20x20 box, with a broader rounded mantle and shorter underside tentacles.",
+          "Replace the single tapered tail with two or three separated tentacle tips, leaving one-pixel negative-space cuts between them.",
+          "Create two animation frames: tentacles tucked tightly under the body, then extended downward or backward for the thrust.",
+          "Redesign the face as two compact one-pixel eyes or two 1x2 eye clusters; use a palette-swap frame that changes them to red before detonation.",
+          "Limit each 8x8 sprite region to black plus two body colors, removing either white or one blue where all four currently overlap.",
+          "Replace the lower checkerboard striping with one solid shadow cluster and one small highlight cluster.",
+          "Regularize the right and lower outlines to a consistent one-pixel contour, removing the bulky black staircase near the tail junction.",
+          "Remove or reshape the top antenna into a small mantle point or side fin so the silhouette reads immediately as a squid."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "9fd120ace2207129c8e35c65d3105f7b1ab1020369c4aaac3295e1d0cc9e0b6f",
+         "cached": true,
+         "cost": 0.01836,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 5,
+          "readability_1x": 6,
+          "pixel_craft": 5,
+          "palette_discipline": 7,
+          "appeal": 6
+         },
+         "score": 53,
+         "verdict": "not_convincing",
+         "issues": [
+          "The lower-left appendages merge into one striped, pointed mass, reading more like a rocket exhaust or fish tail than gathering squid tentacles.",
+          "The body has only one clearly readable eye; the large white facial patch and black square do not establish the described paired flashing eyes.",
+          "The black contour becomes 2-4 pixels thick along the right and underside of the body, unlike the controlled one-pixel outlines typical of Mega Man 2-3 enemies.",
+          "The diagonal outline and tentacle area contain heavy stair-stepping and cramped cyan-white-blue clusters that become muddy at 1x.",
+          "The sprite uses black, white, cyan, and dark blue together in small tile regions, making the NES sprite-palette construction questionable.",
+          "The silhouette lacks a clean separation between bulbous head and multiple tentacles, weakening both animation potential and mine-like character."
+         ],
+         "fixes": [
+          "Replace the fused pointed tail with three short, individually separated tentacles using one-pixel gaps; create distinct gathered and thrust animation frames.",
+          "Use two compact eyes, each one or two pixels wide, and reserve a red palette swap or separate frame for the proximity warning.",
+          "Reduce the right and lower black masses to a mostly one-pixel contour, keeping thicker black only at deliberate interior separations.",
+          "Simplify the head into a rounder, more symmetrical 10-12 pixel bulb with fewer diagonal staircase changes.",
+          "Remove either white or dark blue from crowded 8x8 regions, using black plus two body colours per hardware sprite layer.",
+          "Open the negative space around the tentacles and eliminate the alternating diagonal stripe pattern so the appendages remain legible at true size."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "2860633e481a215038d56e31a7b100d52819c2bdcbfe2f5d17b0408e247bce03",
+         "cached": true,
+         "cost": 0.01926,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 5,
+          "readability_1x": 5,
+          "pixel_craft": 6,
+          "palette_discipline": 9,
+          "appeal": 6
+         },
+         "score": 57,
+         "verdict": "not_convincing",
+         "issues": [
+          "At 1x the diagonal silhouette reads more like a tiny rocket, drill, or comet than a floating squid.",
+          "The face lacks two clearly separated eyes, so the red-warning behavior has no obvious visual anchor.",
+          "The long upper black stalk feels like an antenna and weakens the squid-like mantle silhouette.",
+          "The lower-left appendages merge into one narrow, noisy mass instead of reading as tentacles gathering for a thrust.",
+          "The outline varies from one to several pixels thick around the right and lower body, unlike the controlled Capcom contouring of MM2/MM3.",
+          "Large white and cyan interior shapes form awkward stair-steps and make the body look hollow rather than mechanically constructed.",
+          "The sprite is taller than the intended compact 16-20 px footprint and has weak visual balance around its diagonal axis."
+         ],
+         "fixes": [
+          "Compress the silhouette into a roughly 18x18 body-and-tentacle footprint.",
+          "Remove or shorten the top stalk and shape the upper body as a broad, rounded squid mantle with small side fins.",
+          "Place two distinct 1-2 px eyes across the front of the body; reserve a red alternate-frame color for the warning flash.",
+          "Separate the lower appendage into three bold tentacles with clean 2-3 px-wide clusters and two animation poses: gathered and thrust outward.",
+          "Reduce the heavy right-side and underside black masses to a mostly 1 px contour, using thicker black only at deliberate shadow joins.",
+          "Replace the checker-like white/cyan interior with one simple white face plane and one cyan shadow band.",
+          "Keep the strong black, cyan, and white palette, but arrange each color into larger, cleaner NES-style clusters."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 52.67,
+        "sd": 4.51,
+        "min": 48,
+        "max": 57,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4,
+         "description_fidelity": 5.33,
+         "readability_1x": 5.33,
+         "pixel_craft": 5.33,
+         "palette_discipline": 6.67,
+         "appeal": 5.67
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0699
+       }
+      }
+     },
+     "file": "steps/score/1.png"
+    },
+    {
+     "id": "score.2",
+     "parent": "gate.2",
+     "root": null,
+     "kind": "sprite",
+     "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
+     "size": [
+      32,
+      24
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "32x24 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "3 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
+       "presentation_blob": "e966a38490fb5d483141b8b22565e59ab3f33a4fe3cdb7cb1fb04ecfda94b4a5",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "199f1e2935183e664b5ed0a8372001ef1cd8af43f2ef2ed242be49d23fb818f8",
+         "cached": true,
+         "cost": 0.01864,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 4,
+          "readability_1x": 5,
+          "pixel_craft": 4,
+          "palette_discipline": 8,
+          "appeal": 5
+         },
+         "score": 48,
+         "verdict": "not_convincing",
+         "issues": [
+          "The large rectangular white eye panel makes the body read more like a helmet or ghost than a floating squid.",
+          "The lower cyan mass forms one blunt block instead of distinct tentacles gathered for a swimming thrust.",
+          "The right-side appendage is visually detached and resembles an arm or tail rather than part of a radial tentacle arrangement.",
+          "The bottom and right contours use heavy, square black masses inconsistent with Mega Man 2-3's economical 1-pixel outlining.",
+          "Several staircase transitions around the dome, eye panel, and lower body are lumpy rather than deliberately clustered.",
+          "Both eyes are featureless black slots; the described red warning flash is not represented in the shown state.",
+          "At 1x, the eye panel remains visible, but the propulsion anatomy and mine-like function are unclear.",
+          "The palette is suitably limited, but the broad white area dominates and leaves little room for Capcom-style cyan volume accents."
+         ],
+         "fixes": [
+          "Reduce the white eye panel by one pixel around its perimeter and separate the eyes with a cleaner central bridge.",
+          "Round the dome with deliberate 2-1 or 2-2 pixel stair steps and keep the exterior outline predominantly one pixel thick.",
+          "Split the lower cyan block into three short tentacle tips with one-pixel black gaps; angle the outer tips inward for the gathered pose.",
+          "Attach the right-side form directly to the body or replace it with a symmetric side tentacle so it does not appear to float separately.",
+          "Remove the solid black bottom-right blocks and restore cyan interior pixels bounded by a clean one-pixel contour.",
+          "Give each eye a compact pupil cluster and create an alternate warning frame that swaps the eye interiors to a single NES red.",
+          "Add one small cyan highlight cluster near the upper-left dome while keeping each tile within the existing limited palette.",
+          "Design a second thrust frame with the tentacles extended downward or backward to make the pulsing swim action readable."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "8b7c68fd40c2a57ff58bc34fee768d314d457fdb8be02672e67e84f83d8420c7",
+         "cached": true,
+         "cost": 0.03684,
+         "subscores": {
+          "authenticity": 6,
+          "description_fidelity": 5,
+          "readability_1x": 6,
+          "pixel_craft": 6,
+          "palette_discipline": 9,
+          "appeal": 6
+         },
+         "score": 62,
+         "verdict": "not_convincing",
+         "issues": [
+          "The right-side appendage reads as a fish tail or exhaust plume rather than squid tentacles.",
+          "The lower cyan body is a nearly solid block, so the gather-and-thrust tentacle anatomy is not visible.",
+          "At 1x the silhouette reads more like a small fish or flying face than a Blooper-like swimming mine.",
+          "The white face plate dominates the body and gives it a mask-like, modern mascot appearance rather than a mechanical Capcom construction.",
+          "Heavy black clusters at the lower-left edge and around the right appendage make the outline uneven and obscure the body connection.",
+          "The limited black, white, and cyan palette is disciplined and NES-plausible, but the sprite lacks a visible mechanical or explosive cue."
+         ],
+         "fixes": [
+          "Remove the rear tail shape and place two or three short tentacles beneath the body, separated by 1px black notches.",
+          "Create two animation poses: tentacles tucked inward for gathering and extended downward/backward for thrust.",
+          "Trim 1px from each side of the white face plate and restore a consistent 1px black shell border around it.",
+          "Reduce the lower-left black mass by 1px and simplify the right body contour into cleaner stair-step clusters.",
+          "Add one small mechanical seam, fuse, or central mine detail using the existing black and cyan colors.",
+          "Make a warning frame that palette-swaps the eye pixels to a bright NES red immediately before detonation."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "6ea2e21eda61cf2d0e6855f7a75ef6c4828770be3d054cea261adc299e216ea1",
+         "cached": true,
+         "cost": 0.02728,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 3,
+          "readability_1x": 5,
+          "pixel_craft": 5,
+          "palette_discipline": 8,
+          "appeal": 4
+         },
+         "score": 46,
+         "verdict": "not_convincing",
+         "issues": [
+          "The right-side appendage reads as a fish tail or cannon rather than gathered squid tentacles.",
+          "The lower body is a broad rectangular cyan mass, so the silhouette lacks distinct thrusting tentacle tips.",
+          "The oversized white face panel and large square black eyes make the enemy resemble a ghost or mask more than a robotic swimming mine.",
+          "The right appendage has bulky stair-steps and a narrow attachment point that feel assembled rather than cleanly articulated.",
+          "At 1x, the eye and face contrast survives, but the body action and squid identity collapse into an indistinct dark shape.",
+          "There is no visible mine cue or red warning-eye state in the presented design.",
+          "The palette is disciplined and NES-plausible, but the nearly equal visual weight of black, white, and cyan produces a harsher, less nuanced Capcom look."
+         ],
+         "fixes": [
+          "Replace the right-side tail shape with two or three separated 1-pixel-wide tentacle tips beneath the body.",
+          "Narrow the lower cyan mass by 1-2 pixels and carve black gaps between tentacles to establish a squid silhouette at 1x.",
+          "Reduce the white face panel by one pixel along its sides and bottom, leaving more cyan shell around it.",
+          "Change the square eye holes into smaller mechanical eyes with white resting pixels and a red flash frame for the warning animation.",
+          "Clean the right contour into deliberate 1-pixel stair-steps and widen its body connection so it does not look pasted on.",
+          "Create two animation poses: tentacles tucked tightly under the shell, then splayed downward/backward for the thrust pulse.",
+          "Add one compact mine-like mechanical cue, such as a single top rivet, seam, or side fuse nub, without introducing extra palette noise."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 52,
+        "sd": 8.72,
+        "min": 46,
+        "max": 62,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4.67,
+         "description_fidelity": 4,
+         "readability_1x": 5.33,
+         "pixel_craft": 5,
+         "palette_discipline": 8.33,
+         "appeal": 5
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0828
+       }
+      }
+     },
+     "file": "steps/score/2.png"
+    },
+    {
+     "id": "score.3",
+     "parent": "gate.3",
+     "root": null,
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "28x29 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "99% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "presentation_blob": "5f8f588a65af4308bc1df5f905d84f1cbc31e557c4e1e193efa36f0e312078c4",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "b919c2efd627b672a6cdcf179c70264078d4525a222103f75682521a18a1461e",
+         "cached": true,
+         "cost": 0.023128,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 7,
+          "readability_1x": 7,
+          "pixel_craft": 6,
+          "palette_discipline": 7,
+          "appeal": 6
+         },
+         "score": 63,
+         "verdict": "not_convincing",
+         "issues": [
+          "The oversized joined white eye mass dominates the center and feels more like modern cartoon pixel art than an MM2/MM3 robot face.",
+          "The lower-right tentacles merge into a broad diagonal shape that reads as a leg or tail rather than gathered squid arms.",
+          "The lower-left appendage has an uneven staircase contour and a cramped white tip, weakening the silhouette at 1x.",
+          "The body lacks a clear mechanical feature such as a casing seam, rivet, intake, or mine-like trigger.",
+          "Black, white, cyan, and dark blue occur close together across the head, making NES sprite-palette separation awkward.",
+          "Nothing in this frame suggests the red warning-eye state described for the enemy."
+         ],
+         "fixes": [
+          "Reduce each eye by 1 pixel and separate them with a continuous 1-pixel black bridge; square the eye corners into cleaner Capcom-style clusters.",
+          "Narrow the lower-right cyan mass and split its tip into two distinct 2- to 3-pixel tentacles with black negative space between them.",
+          "Redraw the lower-left tentacle with a simpler two-step contour and remove the cramped white end pixel.",
+          "Add one economical mechanical cue on the upper shell, such as a 2-pixel highlight slit or a black casing seam.",
+          "Keep each 8x8 region to black plus two active colors where possible; reserve white primarily for the eyes and use cyan or dark blue for the shell.",
+          "Create a warning frame that replaces the white eye interiors with a single NES red while preserving the same black eye outlines."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "0b5f4f3de368fbc902ae25eeefa768f3b4e8a20c22d3e60425ee7e449fffaac6",
+         "cached": true,
+         "cost": 0.032428,
+         "subscores": {
+          "authenticity": 4.8,
+          "description_fidelity": 7.4,
+          "readability_1x": 6.8,
+          "pixel_craft": 5.0,
+          "palette_discipline": 5.2,
+          "appeal": 6.1
+         },
+         "score": 56,
+         "verdict": "not_convincing",
+         "issues": [
+          "The squid silhouette reads at 1x, but the long, uneven lower-right appendages make the pose look tangled rather than like gathered or thrusting tentacles.",
+          "The two eyes are treated inconsistently: the left has a clear pupil while the large right eye appears blank, weakening expression and instant facial readability.",
+          "The upper dome and right edge contain heavy black masses instead of the controlled one-pixel contour and compact shadow clusters typical of Mega Man 2-3 enemies.",
+          "Several contour stair-steps around the lower-left body and rightmost tentacles are lumpy, with awkward single-pixel turns and near-orphaned tips.",
+          "Black, white, cyan, and multiple blues appear together across crowded regions, exceeding the simple three-opaque-color logic expected within many NES sprite tiles.",
+          "The design reads more as an organic Blooper than a Capcom robot or swimming mine; it lacks a seam, rivet, casing panel, fuse, or other mechanical cue.",
+          "The trailing white appendage merges visually with the eye whites and competes with the face, reducing hierarchy at true size."
+         ],
+         "fixes": [
+          "Give both eyes matching one-pixel pupils and reserve a clean alternate red-eye frame for the warning animation.",
+          "Shorten the lower-right extensions and organize them into two or three distinct tentacles with clear gathered and thrust animation poses.",
+          "Replace the thick top and right black masses with a mostly one-pixel outline, using only small two-pixel black clusters at deep overlaps.",
+          "Redraw the lower contour with deliberate 1-1 or 2-1 stair-step rhythms; remove isolated tip pixels and flatten the long horizontal foot-like ending.",
+          "Limit each 8x8 region to black plus two body colors, or black, white, and one body color; use separate tiles or palettes only where clearly justified.",
+          "Add one compact mechanical identifier, such as a forehead seam, side rivet, or small mine arming light, without increasing the palette.",
+          "Keep tentacles blue and reserve white primarily for the eyes so the face remains the strongest focal point."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "2579b984a38431fb28691fc1030a99740a48921ed1516016d551e11de58c7e19",
+         "cached": true,
+         "cost": 0.023768,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 8,
+          "readability_1x": 8,
+          "pixel_craft": 6,
+          "palette_discipline": 7,
+          "appeal": 7
+         },
+         "score": 67,
+         "verdict": "not_convincing",
+         "issues": [
+          "The oversized white eye masses dominate the body; the right eye lacks a clearly readable pupil, making the expression look unfinished at 1x.",
+          "The lower-right tentacle forms a long, irregular white-and-black hook that reads more like a tail or loose debris than a squid tentacle.",
+          "The tentacle area has several awkward one-pixel stair-steps and narrow gaps, especially beneath the center and along the right thrusting limb.",
+          "The broad black cap across the top and heavy black mass on the right make the outline thicker and less economical than typical MM2/MM3 enemy work.",
+          "Black, white, dark blue, and cyan appear together across crowded regions, creating a four-color sprite treatment that would require careful hardware-sprite layering.",
+          "The design communicates a squid, but not the mine behavior: there is no visible warning-eye state, explosive cue, or especially mechanical detail."
+         ],
+         "fixes": [
+          "Give both eyes matching 2x2 or compact L-shaped black pupils and reserve red for a separate warning-flash frame.",
+          "Shorten the lower-right appendage by 2-3 pixels and divide the bottom into three clearly spaced, rounded tentacle tips.",
+          "Remove isolated staircase pixels beneath the body and rebuild each tentacle from clean 2-pixel-wide clusters.",
+          "Reduce the top black band by one pixel in its center and trim the right-side black mass to a consistent one-pixel contour.",
+          "Consolidate each 8x8 region to black plus two shared colors; use either white and cyan or white and dark blue, adding the fourth color only through intentional sprite overlap.",
+          "Add one compact mechanical cue, such as a blue forehead seam, side rivet, or square casing break, without adding noise."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 62,
+        "sd": 5.57,
+        "min": 56,
+        "max": 67,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4.93,
+         "description_fidelity": 7.47,
+         "readability_1x": 7.27,
+         "pixel_craft": 5.67,
+         "palette_discipline": 6.4,
+         "appeal": 6.37
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0793
+       }
+      }
+     },
+     "file": "steps/score/3.png"
+    }
+   ]
+  },
+  {
+   "id": "best",
+   "step": "select",
+   "input": "$score",
+   "params": {
+    "by": "judge.mean"
+   },
+   "items": [
+    {
+     "id": "best.0",
+     "parent": "score.3",
+     "root": null,
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "28x29 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "99% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "presentation_blob": "5f8f588a65af4308bc1df5f905d84f1cbc31e557c4e1e193efa36f0e312078c4",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "b919c2efd627b672a6cdcf179c70264078d4525a222103f75682521a18a1461e",
+         "cached": true,
+         "cost": 0.023128,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 7,
+          "readability_1x": 7,
+          "pixel_craft": 6,
+          "palette_discipline": 7,
+          "appeal": 6
+         },
+         "score": 63,
+         "verdict": "not_convincing",
+         "issues": [
+          "The oversized joined white eye mass dominates the center and feels more like modern cartoon pixel art than an MM2/MM3 robot face.",
+          "The lower-right tentacles merge into a broad diagonal shape that reads as a leg or tail rather than gathered squid arms.",
+          "The lower-left appendage has an uneven staircase contour and a cramped white tip, weakening the silhouette at 1x.",
+          "The body lacks a clear mechanical feature such as a casing seam, rivet, intake, or mine-like trigger.",
+          "Black, white, cyan, and dark blue occur close together across the head, making NES sprite-palette separation awkward.",
+          "Nothing in this frame suggests the red warning-eye state described for the enemy."
+         ],
+         "fixes": [
+          "Reduce each eye by 1 pixel and separate them with a continuous 1-pixel black bridge; square the eye corners into cleaner Capcom-style clusters.",
+          "Narrow the lower-right cyan mass and split its tip into two distinct 2- to 3-pixel tentacles with black negative space between them.",
+          "Redraw the lower-left tentacle with a simpler two-step contour and remove the cramped white end pixel.",
+          "Add one economical mechanical cue on the upper shell, such as a 2-pixel highlight slit or a black casing seam.",
+          "Keep each 8x8 region to black plus two active colors where possible; reserve white primarily for the eyes and use cyan or dark blue for the shell.",
+          "Create a warning frame that replaces the white eye interiors with a single NES red while preserving the same black eye outlines."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "0b5f4f3de368fbc902ae25eeefa768f3b4e8a20c22d3e60425ee7e449fffaac6",
+         "cached": true,
+         "cost": 0.032428,
+         "subscores": {
+          "authenticity": 4.8,
+          "description_fidelity": 7.4,
+          "readability_1x": 6.8,
+          "pixel_craft": 5.0,
+          "palette_discipline": 5.2,
+          "appeal": 6.1
+         },
+         "score": 56,
+         "verdict": "not_convincing",
+         "issues": [
+          "The squid silhouette reads at 1x, but the long, uneven lower-right appendages make the pose look tangled rather than like gathered or thrusting tentacles.",
+          "The two eyes are treated inconsistently: the left has a clear pupil while the large right eye appears blank, weakening expression and instant facial readability.",
+          "The upper dome and right edge contain heavy black masses instead of the controlled one-pixel contour and compact shadow clusters typical of Mega Man 2-3 enemies.",
+          "Several contour stair-steps around the lower-left body and rightmost tentacles are lumpy, with awkward single-pixel turns and near-orphaned tips.",
+          "Black, white, cyan, and multiple blues appear together across crowded regions, exceeding the simple three-opaque-color logic expected within many NES sprite tiles.",
+          "The design reads more as an organic Blooper than a Capcom robot or swimming mine; it lacks a seam, rivet, casing panel, fuse, or other mechanical cue.",
+          "The trailing white appendage merges visually with the eye whites and competes with the face, reducing hierarchy at true size."
+         ],
+         "fixes": [
+          "Give both eyes matching one-pixel pupils and reserve a clean alternate red-eye frame for the warning animation.",
+          "Shorten the lower-right extensions and organize them into two or three distinct tentacles with clear gathered and thrust animation poses.",
+          "Replace the thick top and right black masses with a mostly one-pixel outline, using only small two-pixel black clusters at deep overlaps.",
+          "Redraw the lower contour with deliberate 1-1 or 2-1 stair-step rhythms; remove isolated tip pixels and flatten the long horizontal foot-like ending.",
+          "Limit each 8x8 region to black plus two body colors, or black, white, and one body color; use separate tiles or palettes only where clearly justified.",
+          "Add one compact mechanical identifier, such as a forehead seam, side rivet, or small mine arming light, without increasing the palette.",
+          "Keep tentacles blue and reserve white primarily for the eyes so the face remains the strongest focal point."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "2579b984a38431fb28691fc1030a99740a48921ed1516016d551e11de58c7e19",
+         "cached": true,
+         "cost": 0.023768,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 8,
+          "readability_1x": 8,
+          "pixel_craft": 6,
+          "palette_discipline": 7,
+          "appeal": 7
+         },
+         "score": 67,
+         "verdict": "not_convincing",
+         "issues": [
+          "The oversized white eye masses dominate the body; the right eye lacks a clearly readable pupil, making the expression look unfinished at 1x.",
+          "The lower-right tentacle forms a long, irregular white-and-black hook that reads more like a tail or loose debris than a squid tentacle.",
+          "The tentacle area has several awkward one-pixel stair-steps and narrow gaps, especially beneath the center and along the right thrusting limb.",
+          "The broad black cap across the top and heavy black mass on the right make the outline thicker and less economical than typical MM2/MM3 enemy work.",
+          "Black, white, dark blue, and cyan appear together across crowded regions, creating a four-color sprite treatment that would require careful hardware-sprite layering.",
+          "The design communicates a squid, but not the mine behavior: there is no visible warning-eye state, explosive cue, or especially mechanical detail."
+         ],
+         "fixes": [
+          "Give both eyes matching 2x2 or compact L-shaped black pupils and reserve red for a separate warning-flash frame.",
+          "Shorten the lower-right appendage by 2-3 pixels and divide the bottom into three clearly spaced, rounded tentacle tips.",
+          "Remove isolated staircase pixels beneath the body and rebuild each tentacle from clean 2-pixel-wide clusters.",
+          "Reduce the top black band by one pixel in its center and trim the right-side black mass to a consistent one-pixel contour.",
+          "Consolidate each 8x8 region to black plus two shared colors; use either white and cyan or white and dark blue, adding the fourth color only through intentional sprite overlap.",
+          "Add one compact mechanical cue, such as a blue forehead seam, side rivet, or square casing break, without adding noise."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 62,
+        "sd": 5.57,
+        "min": 56,
+        "max": 67,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4.93,
+         "description_fidelity": 7.47,
+         "readability_1x": 7.27,
+         "pixel_craft": 5.67,
+         "palette_discipline": 6.4,
+         "appeal": 6.37
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0793
+       }
+      },
+      "rank": 1,
+      "score": 62,
+      "group": null
+     },
+     "file": "steps/best/0.png"
+    }
+   ]
+  }
+ ],
+ "status": "ok",
+ "depends_on": null,
+ "upstream": null,
+ "best": "best.0",
+ "cost": {
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 16
+ }
+}

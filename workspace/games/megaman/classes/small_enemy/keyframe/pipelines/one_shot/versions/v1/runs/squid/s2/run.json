@@ -1,0 +1,518 @@
+{
+ "pipeline": {
+  "name": "one_shot",
+  "version": "v1",
+  "hash": "5c352ea598"
+ },
+ "asset": "squid",
+ "game": "megaman",
+ "class": "small_enemy",
+ "seed": 2,
+ "created": "2026-10-22T01:33:39+00:00",
+ "steps": [
+  {
+   "id": "draw",
+   "step": "gen.image",
+   "input": null,
+   "params": {
+    "model": "google/gemini-3.1-flash-image",
+    "prompt": "prompts/sprite.md",
+    "images": [
+     "bench:telly",
+     "bench:pipi"
+    ],
+    "fanout": 4
+   },
+   "items": [
+    {
+     "id": "draw.0",
+     "parent": null,
+     "kind": "image",
+     "blob": "7681961c870187ab4ac2e8caca12d163d3494155bc573ff72dcd543e69b567e1",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 200,
+      "call": "0049e0435be2f5132a4a168bb20f7b59d722ae9a697e411092068cd417c29c05",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/0.png"
+    },
+    {
+     "id": "draw.1",
+     "parent": null,
+     "kind": "image",
+     "blob": "4abefb9b271addb0b673bd8382337aacf6c6c0a01f90b3443874976df6729341",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 201,
+      "call": "e61b69230352857d28afae165f0e10311634a3a072903de78b8bbf134d6a4552",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/1.png"
+    },
+    {
+     "id": "draw.2",
+     "parent": null,
+     "kind": "image",
+     "blob": "09b14c1a9d36cc01476768c83a2709706c2c09aae60f312078bfc49174c619b1",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 202,
+      "call": "55dfe2d38bdfd9d1a9e11c9a24d2ea1c007c41a16cb221569b9885163905187c",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/2.png"
+    },
+    {
+     "id": "draw.3",
+     "parent": null,
+     "kind": "image",
+     "blob": "17f0fcd2f6cfed40b596257953e4c3183e764e81dec54a56141dd8be52aeb4bb",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 203,
+      "call": "d7ec6a3ff8573b020ab02b0e92539332e54c4f6b5657e212b3e4aaca01d36852",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/3.png"
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "step": "gridsnap",
+   "input": "$draw",
+   "params": {},
+   "items": [
+    {
+     "id": "snap.0",
+     "parent": "draw.0",
+     "kind": "sprite",
+     "blob": "2d25856eee9f5239ed9c11c452f470f3369bc5e4ffcf53f631ef9940a587e211",
+     "size": [
+      34,
+      22
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       34,
+       22
+      ]
+     },
+     "file": "steps/snap/0.png"
+    },
+    {
+     "id": "snap.1",
+     "parent": "draw.1",
+     "kind": "sprite",
+     "blob": "c1eace7fdc8760d2a32d48249dcb54195183202f5da41c6fc1780e9f95e9781a",
+     "size": [
+      26,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.13,
+       27.13
+      ],
+      "size": [
+       26,
+       28
+      ]
+     },
+     "file": "steps/snap/1.png"
+    },
+    {
+     "id": "snap.2",
+     "parent": "draw.2",
+     "kind": "sprite",
+     "blob": "55d6b11a9f78ce4410a2da1f4dfdd9663c5e6162be60b7ebf2c2f23d4e728aae",
+     "size": [
+      30,
+      20
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       30,
+       20
+      ]
+     },
+     "file": "steps/snap/2.png"
+    },
+    {
+     "id": "snap.3",
+     "parent": "draw.3",
+     "kind": "sprite",
+     "blob": "481fdb217c4ddb6af8eab3a973b74f32f363f0dd9fcbb2d3a81e779f54e41b71",
+     "size": [
+      32,
+      20
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       32,
+       20
+      ]
+     },
+     "file": "steps/snap/3.png"
+    }
+   ]
+  },
+  {
+   "id": "lock",
+   "step": "palette_lock",
+   "input": "$snap",
+   "params": {
+    "max_colors": 4
+   },
+   "items": [
+    {
+     "id": "lock.0",
+     "parent": "snap.0",
+     "kind": "sprite",
+     "blob": "136527ac7b9c086b7b5db9c5eec8630b9651aa28841570c452b258a1f4a7c8aa",
+     "size": [
+      34,
+      22
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 8,
+      "colors_after": 4
+     },
+     "file": "steps/lock/0.png"
+    },
+    {
+     "id": "lock.1",
+     "parent": "snap.1",
+     "kind": "sprite",
+     "blob": "f887352b0d8e1b8244f095b8d574b6727a77351535733c103e105ebbe191dabc",
+     "size": [
+      26,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 9,
+      "colors_after": 4
+     },
+     "file": "steps/lock/1.png"
+    },
+    {
+     "id": "lock.2",
+     "parent": "snap.2",
+     "kind": "sprite",
+     "blob": "0a21b762e65f09e2719703adc744682bdf97b4dee445ebdfb4c6fa0358921189",
+     "size": [
+      30,
+      20
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 5,
+      "colors_after": 4
+     },
+     "file": "steps/lock/2.png"
+    },
+    {
+     "id": "lock.3",
+     "parent": "snap.3",
+     "kind": "sprite",
+     "blob": "481fdb217c4ddb6af8eab3a973b74f32f363f0dd9fcbb2d3a81e779f54e41b71",
+     "size": [
+      32,
+      20
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 4,
+      "colors_after": 4
+     },
+     "file": "steps/lock/3.png"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "step": "checks",
+   "input": "$lock",
+   "params": {
+    "checks": {
+     "size": {
+      "min_px": 10,
+      "max_px": 28
+     },
+     "colors": {
+      "max_total": 4
+     },
+     "tile_colors": {
+      "max_per_tile": 3
+     },
+     "orphans": {},
+     "holes": {
+      "gate": false
+     },
+     "outline": {
+      "min_dark": 0.75
+     }
+    }
+   },
+   "items": [
+    {
+     "id": "gate.0",
+     "parent": "lock.0",
+     "kind": "sprite",
+     "blob": "136527ac7b9c086b7b5db9c5eec8630b9651aa28841570c452b258a1f4a7c8aa",
+     "size": [
+      34,
+      22
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "34x22 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size, tile_colors"
+     },
+     "file": "steps/gate/0.png"
+    },
+    {
+     "id": "gate.1",
+     "parent": "lock.1",
+     "kind": "sprite",
+     "blob": "f887352b0d8e1b8244f095b8d574b6727a77351535733c103e105ebbe191dabc",
+     "size": [
+      26,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "26x28 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: tile_colors"
+     },
+     "file": "steps/gate/1.png"
+    },
+    {
+     "id": "gate.2",
+     "parent": "lock.2",
+     "kind": "sprite",
+     "blob": "0a21b762e65f09e2719703adc744682bdf97b4dee445ebdfb4c6fa0358921189",
+     "size": [
+      30,
+      20
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "30x20 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (4,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size"
+     },
+     "file": "steps/gate/2.png"
+    },
+    {
+     "id": "gate.3",
+     "parent": "lock.3",
+     "kind": "sprite",
+     "blob": "481fdb217c4ddb6af8eab3a973b74f32f363f0dd9fcbb2d3a81e779f54e41b71",
+     "size": [
+      32,
+      20
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "32x20 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size, tile_colors"
+     },
+     "file": "steps/gate/3.png"
+    }
+   ]
+  },
+  {
+   "id": "score",
+   "step": "judge",
+   "input": "$gate",
+   "params": {
+    "eval": "evals/convincing_enemy.yaml",
+    "samples": 3
+   },
+   "items": []
+  },
+  {
+   "id": "best",
+   "step": "select",
+   "input": "$score",
+   "params": {
+    "by": "judge.mean"
+   },
+   "items": []
+  }
+ ],
+ "status": "ok",
+ "best": null,
+ "cost": {
+  "spent": 0.2739,
+  "calls": 4,
+  "cached": 0
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "pipeline": "swim2",
+ "version": "v3",
+ "created": "2026-10-22T01:54:31+00:00",
+ "author": "coding-agent",
+ "parent": "v2",
+ "change": {
+  "what": "timing becomes a designed output: new timing.design step (claude-sonnet-5.5 sees the two frames + the brief's motion and behaviour, returns per-frame durations in game frames with a rationale); assemble uses it; judged with the new convincing_anim_timed eval (adds a timeline row, the durations in text, the behaviour, and a timing criterion)",
+  "why": "human: 'the animation timing should be part of what the pipeline produces' - v2 only offered a menu of timings for a human to pick, and no judge could see timing",
+  "prompted_by": "human chat 2026-10-22: timing should be part of what the pipeline produces"
+ }
+}

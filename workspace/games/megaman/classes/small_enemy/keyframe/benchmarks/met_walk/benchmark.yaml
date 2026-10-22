@@ -1,0 +1,5 @@
+name: met_walk
+kind: authentic
+source: MM3 ripped sprite met_walk (fusion-man src/enemy_frames.json)
+subject: subject.png
+brief: brief.yaml

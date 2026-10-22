@@ -1,0 +1,12 @@
+{
+ "pipeline": "swim2",
+ "version": "v1",
+ "created": "2026-10-22T01:49:21+00:00",
+ "author": "coding-agent",
+ "parent": null,
+ "change": {
+  "what": "initial version: from the top-2 blessed primary frames, one image-edit call per seed draws frame 2 (tentacle stroke) from the enlarged still; snap; align onto the still's canvas in its exact colours; gates (must change 3-50% of pixels, nothing clipped, outline, no orphans); assemble [still, frame 2] at rate 8; animation judge with difference row; best per source",
+  "why": "human: get from the blessed winners to a usable two-frame swimming animation; derive the frame from the approved still (fusion-man: 'same sprite, only X changed' + transplant) rather than redrawing, so frame 1 stays the blessed pixels",
+  "prompted_by": null
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "pipeline": "one_shot",
+ "version": "v2",
+ "created": "2026-10-22T01:36:23+00:00",
+ "author": "coding-agent",
+ "parent": "v1",
+ "change": {
+  "what": "size and tile_colors checks become report-only (gate: false); every candidate that passes the remaining gates (colors, orphans, outline) is judged",
+  "why": "human feedback on v1 squid s1: the gates rejected the three best drafts (28-36 px, one tile with 4 colours) before the judge saw them, so the system picked the weakest; the human rated lock.3 (28x29) far and away the best. Image models draw at ~24-36 px, so size should be judged, not gated, until a step can shrink sprites.",
+  "prompted_by": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/feedback.jsonl"
+ }
+}

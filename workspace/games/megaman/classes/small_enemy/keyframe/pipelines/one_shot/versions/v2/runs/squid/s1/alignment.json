@@ -1,0 +1,38 @@
+{
+ "created": "2026-10-22T01:38:07+00:00",
+ "author": "coding-agent",
+ "human_source": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/feedback.jsonl",
+ "note": "same drafts (cached): v1 lock.N == v2 gate.N",
+ "human_ranking": [
+  "lock.3",
+  "lock.1"
+ ],
+ "judge_ranking": [
+  [
+   "gate.3",
+   62.0
+  ],
+  [
+   "gate.1",
+   52.67
+  ],
+  [
+   "gate.2",
+   52.0
+  ],
+  [
+   "gate.0",
+   46.0
+  ]
+ ],
+ "top_agrees": true,
+ "runner_up_agrees": "weakly: gate.1 52.67 vs gate.2 52.0 is inside the noise (sd 4.5-8.7)",
+ "trait_conflicts": [
+  {
+   "trait": "big eyes",
+   "human": "positive: the big-eyed goofy Mega Man look",
+   "judge": "negative: \"oversized joined white eye mass ... modern cartoon pixel art\" (2 of 3 samples)"
+  }
+ ],
+ "absolute_level": "judge calls all four not_convincing (mean 62 best); compare to the authentic benchmarks once calibration lands"
+}

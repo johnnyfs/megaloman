@@ -1,0 +1,12 @@
+{
+ "pipeline": "swim2",
+ "version": "v4",
+ "created": "2026-10-22T01:58:05+00:00",
+ "author": "coding-agent",
+ "parent": "v3",
+ "change": {
+  "what": "state-aware: animations are per state (brief.states). float = no animation (the still); swim = a one-off action. timing.design now times only the swim action (a sequence of [frame, game frames], then back to the still), not the float hold; previews of one-offs show still 0.5 s, the action at real timing, 0.5 s pause; judged with the new convincing_action eval (calibrated on the MM3 Met peek)",
+  "why": "human: two decisions, (1) which states (ignored for now, hand-given) and (2) which animation per state, some none: swim is a pulse, float is a timeout; one-off actions should be previewed stationary, then the action at its real timing, then a pause. v3 folded the float hold (28 f) into a looping 'animation'.",
+  "prompted_by": "human chat 2026-10-22: states vs per-state animations; one-off preview convention"
+ }
+}

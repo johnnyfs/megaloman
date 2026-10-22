@@ -1,0 +1,8 @@
+name: met_walk_anim
+type: animation
+kind: authentic
+source: "MM3 ripped met_walk, met_walk2 (fusion-man met_walk anim, rate 8)"
+frames: [f0.png, f1.png]
+rate: 8
+brief: brief.yaml
+rate_provenance: fusion-man met_walk anim rate (not verified against the MM3 ROM)

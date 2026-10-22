@@ -1,0 +1,14 @@
+id: squid
+description: >
+  A small floating robot squid, Blooper-like, that swims along at and after Mega Man in pulses
+  (tentacles gather, then thrust). It is a swimming mine: when it gets close its eyes flash red, then it explodes.
+deliver: the primary frame (glide pose, tentacles together), facing left
+size: about 16x16 to 20x20 px
+game: Mega Man 2-3 (NES)
+motion: "swim in pulses: frame 1 (the approved still) is the glide, tentacles together; frame 2 is the stroke, tentacles flared out wide as it pushes; looping"
+motion_frame2: "the stroke pose: the tentacles flare out wide (spread apart, tips curling outward) as it pushes; the mantle and eyes stay the same, at most 1 pixel higher"
+behavior: "moves toward Mega Man in pulses about every 40 game frames: a short gather (tentacles flare, a brief tell), then a quick stroke that shoots it forward and a long glide that slows down with the tentacles together"
+# Decision 1 (which states) is hand-given for now; decision 2 (which animation per state) is below.
+states:
+  float: {animation: none, shows: primary, note: "between pulses: holds the still; how long is a behaviour timeout, not animation timing"}
+  swim: {animation: oneshot, motion: "one pulse: the tentacles flare out wide (the gather), then snap back together as it shoots forward, returning to the still"}

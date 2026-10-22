@@ -1,0 +1,36 @@
+name: one_shot
+description: One rules-first image-model call per seed, then deterministic pixel recovery, gates, judge, select.
+steps:
+  - id: draw
+    step: gen.image
+    model: google/gemini-3.1-flash-image
+    prompt: prompts/sprite.md
+    images: [bench:telly, bench:pipi]      # style references, shown enlarged on the neutral background
+    fanout: 4
+  - id: snap
+    step: gridsnap                          # recover the true 1x grid, exact NES colours, transparent background
+    input: $draw
+  - id: lock
+    step: palette_lock
+    input: $snap
+    max_colors: 4
+  - id: gate
+    step: checks
+    input: $lock
+    checks:
+      size: {min_px: 10, max_px: 24, gate: false}   # report-only: judged, not gated (v2)
+      colors: {max_total: 4}
+      tile_colors: {max_per_tile: 3, gate: false}   # report-only (v2)
+      orphans: {}
+      holes: {gate: false}                   # reported, not gating
+      outline: {min_dark: 0.75}
+  - id: score
+    step: judge
+    input: $gate
+    eval: evals/convincing_enemy.yaml
+    samples: 3
+  - id: best
+    step: select
+    input: $score
+    by: judge.mean
+output: $best

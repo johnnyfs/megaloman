@@ -1,0 +1,6 @@
+id: telly
+description: >
+  A small floating robot enemy: a squat white-and-blue barrel-shaped drone with a band of two big round
+  eyes across its middle. It drifts slowly toward Mega Man, flying straight through walls.
+size: 16x16 px
+game: Mega Man 2-3 (NES)

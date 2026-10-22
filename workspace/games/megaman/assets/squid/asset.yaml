@@ -1,0 +1,8 @@
+name: squid
+class: small_enemy
+theme: water
+brief: brief.yaml
+benchmark: telly   # closest comparable authentic enemy
+tracks:
+  primary: {asset_type: keyframe}
+  swim: {asset_type: animation, depends_on: primary}

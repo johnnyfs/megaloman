@@ -1,0 +1,674 @@
+{
+ "pipeline": {
+  "name": "one_shot",
+  "version": "v1",
+  "hash": "5c352ea598"
+ },
+ "asset": "squid",
+ "game": "megaman",
+ "class": "small_enemy",
+ "seed": 3,
+ "created": "2026-10-22T01:34:17+00:00",
+ "steps": [
+  {
+   "id": "draw",
+   "step": "gen.image",
+   "input": null,
+   "params": {
+    "model": "google/gemini-3.1-flash-image",
+    "prompt": "prompts/sprite.md",
+    "images": [
+     "bench:telly",
+     "bench:pipi"
+    ],
+    "fanout": 4
+   },
+   "items": [
+    {
+     "id": "draw.0",
+     "parent": null,
+     "kind": "image",
+     "blob": "16141bad3a301090a2997c6e13dc3519941a61b170626cc7fd9acfbafebed7b3",
+     "size": [
+      1408,
+      768
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 300,
+      "call": "b709b5abf75bf97f879bc2e11fbad33d7265cc423faf4f7f19cee0d9aa112fe3",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/0.png"
+    },
+    {
+     "id": "draw.1",
+     "parent": null,
+     "kind": "image",
+     "blob": "8e248b7e1b7ec1aa6673c56d7a734cc61beb9be400db5c28e695e1eb651fe6df",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 301,
+      "call": "2eff99af941280a04407cad051e8f6aed9f1504c4713524e82afbc5d92abec31",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/1.png"
+    },
+    {
+     "id": "draw.2",
+     "parent": null,
+     "kind": "image",
+     "blob": "06d7b15464c535763885ca74d6f0288e65caca5dc4479dc43a104b7c5e2a54a8",
+     "size": [
+      1024,
+      1024
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 302,
+      "call": "bcf8bc4cc21d126c8d60ddf2f6c6d6f4b1074f1e3f3495ebf77dd28464bb8ac9",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/2.png"
+    },
+    {
+     "id": "draw.3",
+     "parent": null,
+     "kind": "image",
+     "blob": "9fd86e158734123aeedad50adbbffd8ee5dce7792d07569d002ab8f639bfebf8",
+     "size": [
+      1084,
+      976
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 303,
+      "call": "111290cd8fdbd4eb685ade2497028532e03a14541756a488dc1d1584c382d36c",
+      "cost": 0.0684735,
+      "cached": false,
+      "text": ""
+     },
+     "file": "steps/draw/3.png"
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "step": "gridsnap",
+   "input": "$draw",
+   "params": {},
+   "items": [
+    {
+     "id": "snap.0",
+     "parent": "draw.0",
+     "kind": "sprite",
+     "blob": "580dabb4fab719fbcc0ad8080ca7c9076dbf818d85463fbadad30c7d930c0e2f",
+     "size": [
+      30,
+      39
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       11.72,
+       11.72
+      ],
+      "size": [
+       30,
+       39
+      ]
+     },
+     "file": "steps/snap/0.png"
+    },
+    {
+     "id": "snap.1",
+     "parent": "draw.1",
+     "kind": "sprite",
+     "blob": "c718587dae6ebae711d80e9fb490addc6f7c4ee6973c8ab3e74586cf0a0673aa",
+     "size": [
+      36,
+      30
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       27.14,
+       27.14
+      ],
+      "size": [
+       36,
+       30
+      ]
+     },
+     "file": "steps/snap/1.png"
+    },
+    {
+     "id": "snap.2",
+     "parent": "draw.2",
+     "kind": "sprite",
+     "blob": "c942706b8aee597e560d68f02f6c286a0f5758ec32c17f30e51bd5a481e218c9",
+     "size": [
+      23,
+      30
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       28.44,
+       28.44
+      ],
+      "size": [
+       23,
+       30
+      ]
+     },
+     "file": "steps/snap/2.png"
+    },
+    {
+     "id": "snap.3",
+     "parent": "draw.3",
+     "kind": "sprite",
+     "blob": "8213a6532a1643578a3db9f1224f3ade9d7d49e32b7f3ec2149effa23548bff4",
+     "size": [
+      10,
+      16
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       54.19,
+       54.19
+      ],
+      "size": [
+       10,
+       16
+      ]
+     },
+     "file": "steps/snap/3.png"
+    }
+   ]
+  },
+  {
+   "id": "lock",
+   "step": "palette_lock",
+   "input": "$snap",
+   "params": {
+    "max_colors": 4
+   },
+   "items": [
+    {
+     "id": "lock.0",
+     "parent": "snap.0",
+     "kind": "sprite",
+     "blob": "2baabd844929a5a402eaad7eec0a6ce14e7c64db7e7624525113a111c8336ccd",
+     "size": [
+      30,
+      39
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 5,
+      "colors_after": 4
+     },
+     "file": "steps/lock/0.png"
+    },
+    {
+     "id": "lock.1",
+     "parent": "snap.1",
+     "kind": "sprite",
+     "blob": "c718587dae6ebae711d80e9fb490addc6f7c4ee6973c8ab3e74586cf0a0673aa",
+     "size": [
+      36,
+      30
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 4,
+      "colors_after": 4
+     },
+     "file": "steps/lock/1.png"
+    },
+    {
+     "id": "lock.2",
+     "parent": "snap.2",
+     "kind": "sprite",
+     "blob": "8e5f0b51070c5ed4bd528ae1a933f6bcfa43e847ff52588f1dbb477c4f18099a",
+     "size": [
+      23,
+      30
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 5,
+      "colors_after": 4
+     },
+     "file": "steps/lock/2.png"
+    },
+    {
+     "id": "lock.3",
+     "parent": "snap.3",
+     "kind": "sprite",
+     "blob": "5585c1e943619ad05a181e4945e5fd0f1d2a1505f1e9284eb59529c6e08c12c2",
+     "size": [
+      10,
+      16
+     ],
+     "status": "ok",
+     "meta": {
+      "colors_before": 6,
+      "colors_after": 4
+     },
+     "file": "steps/lock/3.png"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "step": "checks",
+   "input": "$lock",
+   "params": {
+    "checks": {
+     "size": {
+      "min_px": 10,
+      "max_px": 28
+     },
+     "colors": {
+      "max_total": 4
+     },
+     "tile_colors": {
+      "max_per_tile": 3
+     },
+     "orphans": {},
+     "holes": {
+      "gate": false
+     },
+     "outline": {
+      "min_dark": 0.75
+     }
+    }
+   },
+   "items": [
+    {
+     "id": "gate.0",
+     "parent": "lock.0",
+     "kind": "sprite",
+     "blob": "2baabd844929a5a402eaad7eec0a6ce14e7c64db7e7624525113a111c8336ccd",
+     "size": [
+      30,
+      39
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "30x39 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size, tile_colors"
+     },
+     "file": "steps/gate/0.png"
+    },
+    {
+     "id": "gate.1",
+     "parent": "lock.1",
+     "kind": "sprite",
+     "blob": "c718587dae6ebae711d80e9fb490addc6f7c4ee6973c8ab3e74586cf0a0673aa",
+     "size": [
+      36,
+      30
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "36x30 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size, tile_colors"
+     },
+     "file": "steps/gate/1.png"
+    },
+    {
+     "id": "gate.2",
+     "parent": "lock.2",
+     "kind": "sprite",
+     "blob": "8e5f0b51070c5ed4bd528ae1a933f6bcfa43e847ff52588f1dbb477c4f18099a",
+     "size": [
+      23,
+      30
+     ],
+     "status": "rejected",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "23x30 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,4) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "reason": "failed gates: size"
+     },
+     "file": "steps/gate/2.png"
+    },
+    {
+     "id": "gate.3",
+     "parent": "lock.3",
+     "kind": "sprite",
+     "blob": "5585c1e943619ad05a181e4945e5fd0f1d2a1505f1e9284eb59529c6e08c12c2",
+     "size": [
+      10,
+      16
+     ],
+     "status": "ok",
+     "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "10x16 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,3) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "94% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      }
+     },
+     "file": "steps/gate/3.png"
+    }
+   ]
+  },
+  {
+   "id": "score",
+   "step": "judge",
+   "input": "$gate",
+   "params": {
+    "eval": "evals/convincing_enemy.yaml",
+    "samples": 3
+   },
+   "items": [
+    {
+     "id": "score.0",
+     "parent": "gate.3",
+     "kind": "sprite",
+     "blob": "5585c1e943619ad05a181e4945e5fd0f1d2a1505f1e9284eb59529c6e08c12c2",
+     "size": [
+      10,
+      16
+     ],
+     "status": "ok",
+     "meta": {
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "path": "evals/convincing_enemy.yaml",
+        "hash": "fbc43f3204",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "5585c1e943619ad05a181e4945e5fd0f1d2a1505f1e9284eb59529c6e08c12c2",
+       "presentation_blob": "2e9bc0e5f98d29caefd356ac4ce8faccc79c13e167939af62d07920fd7635746",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "f8aefe6c6918974db05a0902d65a03477039aa828bcdd8301b60a80843feb4b8",
+         "cached": false,
+         "cost": 0.020584,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 6,
+          "readability_1x": 6,
+          "pixel_craft": 6,
+          "palette_discipline": 9,
+          "appeal": 6
+         },
+         "score": 61,
+         "verdict": "not_convincing",
+         "issues": [
+          "The white lower body has weak or missing outline coverage along both sides, so its silhouette dissolves at 1x instead of reading like a firm Capcom mechanical shell.",
+          "The face uses several similarly sized black marks without a clear eye hierarchy; at true size they read more like scattered holes than expressive warning eyes.",
+          "The narrow blue, white, and black tentacle columns become busy vertical striping at 1x and do not clearly show a gathered or thrust pose.",
+          "The smooth dome and plain white face read as a generic Blooper rather than a robot or swimming mine; there is no seam, rivet, fuse, intake, or armored component.",
+          "The lower silhouette is too thin and uneven compared with the broad head, making the sprite look fragile rather than like a compact MM2/MM3 enemy.",
+          "Some contour steps around the dome shoulders and lower-right body create awkward notches rather than deliberate Capcom-style clusters."
+         ],
+         "fixes": [
+          "Add a continuous 1-pixel black contour around the white body sides and clean the dome into deliberate 1-2-2 staircase transitions.",
+          "Replace the scattered facial marks with two clearly paired 2x2 eyes; reserve a red alternate-frame color for the warning flash.",
+          "Simplify the tentacles into two or three chunky outlined appendages, each at least 2 pixels wide, and create separate gathered and thrust animation frames.",
+          "Add one economical mechanical cue, such as a black shell seam with a blue rivet, a small underside nozzle, or paired side vents.",
+          "Widen and shorten the lower assembly by 1-2 pixels so the silhouette remains legible at 1x and feels like a compact explosive unit.",
+          "Keep the strong black-white-blue palette, but consolidate isolated black and blue pixels into larger, cleaner clusters."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "dba3dd932e96c92751e971beb2f837c343573eb924b7f7f21e5cb5a741b881e5",
+         "cached": false,
+         "cost": 0.017944,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 7,
+          "readability_1x": 6,
+          "pixel_craft": 6,
+          "palette_discipline": 4,
+          "appeal": 7
+         },
+         "score": 58,
+         "verdict": "not_convincing",
+         "issues": [
+          "Four opaque colors\u2014black, white, cyan, and dark blue\u2014appear within the compact body, exceeding the usual NES sprite-palette discipline unless awkwardly layered.",
+          "The face has scattered black marks rather than a clearly paired set of eyes; at 1x they read as holes or noise, so the red-flash warning behavior is not visually established.",
+          "The lower-right outline and tentacle junction form a dense black-blue knot that obscures the thrusting anatomy.",
+          "The tentacles are thin and uneven, with isolated one-pixel turns that feel more like modern freehand pixeling than deliberate Capcom clusters.",
+          "The broad white face and cyan cap make the enemy read more as a jellyfish or ghost than a mechanical swimming mine.",
+          "Outline thickness is inconsistent around the dome, especially at the upper-left shoulder and right edge."
+         ],
+         "fixes": [
+          "Reduce the sprite to black plus two body colors; replace either cyan or white with the remaining light color throughout each hardware sprite region.",
+          "Make two symmetrical 2x2 eyes with clean black normal frames and a red alternate warning frame; remove the extra central facial speck.",
+          "Simplify the dome into smoother stepped contours with a consistent one-pixel black perimeter and cleaner 2-1 stair patterns.",
+          "Separate the three tentacles with one-pixel negative-space gaps and use chunkier 2-pixel-wide bases so they remain readable at 1x.",
+          "Create two animation poses: tentacles gathered directly beneath the body, then spread backward in a strong thrust silhouette.",
+          "Add a compact mechanical cue\u2014such as a central seam, rivet pair, or dark lower chassis\u2014without introducing another color."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "be00a8235ce5585728631163708dfa1f9e70325f7061be8795430cc08de8219d",
+         "cached": false,
+         "cost": 0.019344,
+         "subscores": {
+          "authenticity": 3,
+          "description_fidelity": 5,
+          "readability_1x": 7,
+          "pixel_craft": 5,
+          "palette_discipline": 4,
+          "appeal": 5
+         },
+         "score": 46,
+         "verdict": "not_convincing",
+         "issues": [
+          "The rounded white dome and dangling legs read more like a simplified Mario Blooper than a mechanical Mega Man enemy.",
+          "The face uses three isolated black blocks with no clear red-flashing eye design or mine-like threat cue.",
+          "The lower tentacles are thin, uneven, and visually tangled at 1x; the center-right black pixels merge into an unclear mass.",
+          "The upper-right body edge loses a consistent dark outline, while the lower edge alternates abruptly between blue and black.",
+          "Black, white, light blue, and dark blue create four opaque colors, exceeding a normal NES sprite palette unless built from overlapping hardware sprites.",
+          "The body has little Capcom-style mechanical construction: no seam, casing division, rivet, intake, or weapon component."
+         ],
+         "fixes": [
+          "Replace the three facial dots with a symmetrical two-eye unit, reserving one palette color for the normal/red-alert eye state.",
+          "Square off the dome slightly and add a 1-pixel casing seam or central metal plate to make it robotic rather than organic.",
+          "Redraw the bottom as two or three bold 2-pixel-wide tentacle clusters with clean negative-space gaps and distinct gathered/thrust animation poses.",
+          "Use a continuous dark contour around the upper shell and remove the ambiguous black clump at the lower right.",
+          "Reduce the sprite to black plus two body colors and transparency per hardware sprite, or deliberately separate the eye layer as an overlapping sprite palette.",
+          "Broaden the silhouette near the lower body and add one compact mine-like detail, such as a blinking core or armored side pods."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 55,
+        "sd": 7.94,
+        "min": 46,
+        "max": 61,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4.33,
+         "description_fidelity": 6,
+         "readability_1x": 6.33,
+         "pixel_craft": 5.67,
+         "palette_discipline": 5.67,
+         "appeal": 6
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0579
+       }
+      }
+     },
+     "file": "steps/score/0.png"
+    }
+   ]
+  },
+  {
+   "id": "best",
+   "step": "select",
+   "input": "$score",
+   "params": {
+    "by": "judge.mean"
+   },
+   "items": [
+    {
+     "id": "best.0",
+     "parent": "score.0",
+     "kind": "sprite",
+     "blob": "5585c1e943619ad05a181e4945e5fd0f1d2a1505f1e9284eb59529c6e08c12c2",
+     "size": [
+      10,
+      16
+     ],
+     "status": "ok",
+     "meta": {
+      "rank": 1,
+      "score": 55
+     },
+     "file": "steps/best/0.png"
+    }
+   ]
+  }
+ ],
+ "status": "ok",
+ "best": "best.0",
+ "cost": {
+  "spent": 0.3318,
+  "calls": 7,
+  "cached": 0
+ }
+}

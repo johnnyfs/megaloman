@@ -1,0 +1,91 @@
+{
+ "pipeline": {
+  "name": "one_shot",
+  "version": "v1",
+  "hash": "5c352ea598"
+ },
+ "asset": "squid",
+ "created": "2026-10-22T01:37:31+00:00",
+ "benchmark_ref": {
+  "pass_bar": null,
+  "authentic_mean": null,
+  "noise_sd": null,
+  "eval": null
+ },
+ "seeds": [
+  {
+   "seed": 1,
+   "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+   "status": "ok",
+   "generated": 4,
+   "gate_pass": 1,
+   "gated": 4,
+   "best": "best.0",
+   "best_mean": 52.67,
+   "best_convincing_rate": 0.0,
+   "passes_bar": false,
+   "cost": 0.0
+  },
+  {
+   "seed": 2,
+   "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s2/run.json",
+   "status": "ok",
+   "generated": 4,
+   "gate_pass": 0,
+   "gated": 4,
+   "best": null,
+   "best_mean": null,
+   "best_convincing_rate": null,
+   "passes_bar": false,
+   "cost": 0.2739
+  },
+  {
+   "seed": 3,
+   "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s3/run.json",
+   "status": "ok",
+   "generated": 4,
+   "gate_pass": 1,
+   "gated": 4,
+   "best": "best.0",
+   "best_mean": 55,
+   "best_convincing_rate": 0.0,
+   "passes_bar": false,
+   "cost": 0.3318
+  },
+  {
+   "seed": 4,
+   "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s4/run.json",
+   "status": "ok",
+   "generated": 4,
+   "gate_pass": 1,
+   "gated": 4,
+   "best": "best.0",
+   "best_mean": 64.67,
+   "best_convincing_rate": 0.0,
+   "passes_bar": false,
+   "cost": 0.3438
+  }
+ ],
+ "candidates": {
+  "judged": 3,
+  "mean": 57.45,
+  "sd": 6.36
+ },
+ "best_per_seed": {
+  "mean": 57.45,
+  "min": 52.67,
+  "max": 64.67
+ },
+ "pass_rate": 0.0,
+ "gate_pass_rate": 0.19,
+ "top_candidate": {
+  "seed": 4,
+  "id": "score.0",
+  "mean": 64.67,
+  "sd": 1.53,
+  "convincing_rate": 0.0,
+  "blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29"
+ },
+ "cost": 0.9494,
+ "cost_per_passing_seed": 0.949
+}

@@ -1,0 +1,1330 @@
+{
+ "pipeline": {
+  "name": "swim2",
+  "version": "v1",
+  "hash": "8a25ba8a2e"
+ },
+ "asset": "squid",
+ "game": "megaman",
+ "class": "small_enemy",
+ "asset_type": "animation",
+ "seed": 1,
+ "created": "2026-10-22T01:52:56+00:00",
+ "steps": [
+  {
+   "id": "src",
+   "step": "source.blessed",
+   "input": null,
+   "params": {
+    "track": "primary",
+    "top": 2
+   },
+   "items": [
+    {
+     "id": "src.0",
+     "parent": null,
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "blessed_rank": 1,
+      "upstream": {
+       "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+       "candidate": "lock.3",
+       "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17"
+      }
+     },
+     "file": "steps/src/0.png"
+    },
+    {
+     "id": "src.1",
+     "parent": null,
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "blessed_rank": 2,
+      "upstream": {
+       "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+       "candidate": "lock.1",
+       "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30"
+      }
+     },
+     "file": "steps/src/1.png"
+    }
+   ]
+  },
+  {
+   "id": "draw",
+   "step": "gen.image",
+   "input": "$src",
+   "params": {
+    "input_scale": 16,
+    "model": "google/gemini-3.1-flash-image",
+    "prompt": "prompts/frame2.md",
+    "fanout": 3
+   },
+   "items": [
+    {
+     "id": "draw.0",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "f85ca292e92cc079ee2b8418b8fd5e4c90620422aa6967cd9a7e77b77409ab78",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 100,
+      "call": "d730d9478f4c68197bb17d5c2e3f58b35d75e2374b9144458990d77a3dc784ad",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/0.png"
+    },
+    {
+     "id": "draw.1",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "617a2c0c2312c1a4a32171e2a6ad07c84cbd2bba611f1a8ab08f0b3ee35ba769",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 101,
+      "call": "a2391b974ffe2febe76615c08079b6dca7e656d9cf07bc9c92eeb00455e20c5c",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/1.png"
+    },
+    {
+     "id": "draw.2",
+     "parent": "src.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "image",
+     "blob": "0885e79ad3292ff4aa84762bc4debab5e54e89ddd904133f5e914d2000425e46",
+     "size": [
+      1008,
+      1043
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 102,
+      "call": "5fcbae833464bc86c9c6056ead16648a466a6357f6156505024da57ba4744671",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/2.png"
+    },
+    {
+     "id": "draw.3",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "4096a26c1ac5af8b2eba74a3dc86e41de62c7114bd6f362944f84e568766c1fd",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 100,
+      "call": "176b58d6d36fe618f4d9291a6eccd13be84880c62031b9069bf09e3359256479",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/3.png"
+    },
+    {
+     "id": "draw.4",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "4b4bb1ca16857c41ebd8547dbf3537c7fef8727d6ca4ce80ed32f1552e558f0e",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 101,
+      "call": "24b07746978315d1b41df148b77ace50c18717d67f9a7f162851019d865ccf5e",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/4.png"
+    },
+    {
+     "id": "draw.5",
+     "parent": "src.1",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "image",
+     "blob": "264f589421e2a2339b876c8f696f8ea93be2684f4feff2e1f02e5fe23841fa24",
+     "size": [
+      880,
+      1215
+     ],
+     "status": "ok",
+     "meta": {
+      "seed": 102,
+      "call": "16a2dc0034c0bcc26d550aa033c917cda571756a473994aac47e09b145641fb5",
+      "cost": 0.0678915,
+      "cached": true,
+      "text": ""
+     },
+     "file": "steps/draw/5.png"
+    }
+   ]
+  },
+  {
+   "id": "snap",
+   "step": "gridsnap",
+   "input": "$draw",
+   "params": {},
+   "items": [
+    {
+     "id": "snap.0",
+     "parent": "draw.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       34.79,
+       34.79
+      ],
+      "size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/snap/0.png"
+    },
+    {
+     "id": "snap.1",
+     "parent": "draw.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "4008fef0af7c48b1612a81380864551a226021b4f9ddd0aa31552c2ebdb8edbb",
+     "size": [
+      56,
+      58
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       17.39,
+       17.39
+      ],
+      "size": [
+       56,
+       58
+      ]
+     },
+     "file": "steps/snap/1.png"
+    },
+    {
+     "id": "snap.2",
+     "parent": "draw.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       34.79,
+       34.79
+      ],
+      "size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/snap/2.png"
+    },
+    {
+     "id": "snap.3",
+     "parent": "draw.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "c54481eff5543288670d53b0def88614604e1de572e122fc2a2d0e67a3432aa4",
+     "size": [
+      40,
+      56
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       20.98,
+       20.98
+      ],
+      "size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/snap/3.png"
+    },
+    {
+     "id": "snap.4",
+     "parent": "draw.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "3b0c6eaa155cedfe95d5300ef250fba850913a16f9044ceb2c4af61014415cc6",
+     "size": [
+      20,
+      27
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       41.92,
+       41.92
+      ],
+      "size": [
+       20,
+       27
+      ]
+     },
+     "file": "steps/snap/4.png"
+    },
+    {
+     "id": "snap.5",
+     "parent": "draw.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "f3bdf0720f926b3a7581b70286ec8cfa3998a9c5390858d98b103d2eb1325a52",
+     "size": [
+      40,
+      56
+     ],
+     "status": "ok",
+     "meta": {
+      "pitch": [
+       20.96,
+       20.96
+      ],
+      "size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/snap/5.png"
+    }
+   ]
+  },
+  {
+   "id": "align",
+   "step": "align",
+   "input": "$snap",
+   "params": {
+    "max_shift": 8
+   },
+   "items": [
+    {
+     "id": "align.0",
+     "parent": "snap.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.241,
+      "source_size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/align/0.png"
+    },
+    {
+     "id": "align.1",
+     "parent": "snap.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d09ceb9904ba8436a269d69dffdd920b4d98fc07a7b50af9fb8b29920f39e1",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -18,
+       -6
+      ],
+      "clipped": 0.58,
+      "changed": 0.648,
+      "source_size": [
+       56,
+       58
+      ]
+     },
+     "file": "steps/align/1.png"
+    },
+    {
+     "id": "align.2",
+     "parent": "snap.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.249,
+      "source_size": [
+       28,
+       29
+      ]
+     },
+     "file": "steps/align/2.png"
+    },
+    {
+     "id": "align.3",
+     "parent": "snap.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "602f140fd5ea29b09b2bac2510dbe83ad1b8f6258c08928208773770a50c9988",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -10,
+       -2
+      ],
+      "clipped": 0.636,
+      "changed": 0.719,
+      "source_size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/align/3.png"
+    },
+    {
+     "id": "align.4",
+     "parent": "snap.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "7e3e9fde5fdfef0788b911cc7681d20694aacfead8f0b8e8b74272633f5a0a3e",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       1
+      ],
+      "clipped": 0.0,
+      "changed": 0.537,
+      "source_size": [
+       20,
+       27
+      ]
+     },
+     "file": "steps/align/4.png"
+    },
+    {
+     "id": "align.5",
+     "parent": "snap.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "6fd69b6423d0c0ac68f222809a922e17dbd63d00937105896025114c728e82cc",
+     "size": [
+      20,
+      28
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       -9,
+       -2
+      ],
+      "clipped": 0.619,
+      "changed": 0.682,
+      "source_size": [
+       40,
+       56
+      ]
+     },
+     "file": "steps/align/5.png"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "step": "anim_checks",
+   "input": "$align",
+   "params": {
+    "changed": {
+     "min": 0.03,
+     "max": 0.5
+    },
+    "max_clipped": 0.05,
+    "checks": {
+     "orphans": {},
+     "outline": {
+      "min_dark": 0.75
+     }
+    }
+   },
+   "items": [
+    {
+     "id": "gate.0",
+     "parent": "align.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.241,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "24% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      }
+     },
+     "file": "steps/gate/0.png"
+    },
+    {
+     "id": "gate.1",
+     "parent": "align.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "38d09ceb9904ba8436a269d69dffdd920b4d98fc07a7b50af9fb8b29920f39e1",
+     "size": [
+      28,
+      29
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -18,
+       -6
+      ],
+      "clipped": 0.58,
+      "changed": 0.648,
+      "source_size": [
+       56,
+       58
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": false,
+        "detail": "42% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "65% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "58% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: outline, changed, clipped"
+     },
+     "file": "steps/gate/1.png"
+    },
+    {
+     "id": "gate.2",
+     "parent": "align.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "sprite",
+     "blob": "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de",
+     "size": [
+      28,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "offset": [
+       0,
+       0
+      ],
+      "clipped": 0.0,
+      "changed": 0.249,
+      "source_size": [
+       28,
+       29
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": true,
+        "gate": true,
+        "detail": "25% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      }
+     },
+     "file": "steps/gate/2.png"
+    },
+    {
+     "id": "gate.3",
+     "parent": "align.3",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "602f140fd5ea29b09b2bac2510dbe83ad1b8f6258c08928208773770a50c9988",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -10,
+       -2
+      ],
+      "clipped": 0.636,
+      "changed": 0.719,
+      "source_size": [
+       40,
+       56
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "81% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "72% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "64% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed, clipped"
+     },
+     "file": "steps/gate/3.png"
+    },
+    {
+     "id": "gate.4",
+     "parent": "align.4",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "7e3e9fde5fdfef0788b911cc7681d20694aacfead8f0b8e8b74272633f5a0a3e",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       0,
+       1
+      ],
+      "clipped": 0.0,
+      "changed": 0.537,
+      "source_size": [
+       20,
+       27
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "54% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "True",
+        "gate": true,
+        "detail": "0% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed"
+     },
+     "file": "steps/gate/4.png"
+    },
+    {
+     "id": "gate.5",
+     "parent": "align.5",
+     "root": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "kind": "sprite",
+     "blob": "6fd69b6423d0c0ac68f222809a922e17dbd63d00937105896025114c728e82cc",
+     "size": [
+      20,
+      28
+     ],
+     "status": "rejected",
+     "meta": {
+      "offset": [
+       -9,
+       -2
+      ],
+      "clipped": 0.619,
+      "changed": 0.682,
+      "source_size": [
+       40,
+       56
+      ],
+      "checks": {
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "outline": {
+        "pass": true,
+        "detail": "81% of silhouette edge is dark (min 75%)",
+        "gate": true
+       },
+       "changed": {
+        "pass": false,
+        "gate": true,
+        "detail": "68% of pixels changed (3%-50%)"
+       },
+       "clipped": {
+        "pass": "False",
+        "gate": true,
+        "detail": "62% of the new frame fell outside the canvas"
+       }
+      },
+      "reason": "failed gates: changed, clipped"
+     },
+     "file": "steps/gate/5.png"
+    }
+   ]
+  },
+  {
+   "id": "anim",
+   "step": "assemble",
+   "input": "$gate",
+   "params": {
+    "rate": 8
+   },
+   "items": [
+    {
+     "id": "anim.0",
+     "parent": "gate.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b"
+      ],
+      "rate": 8
+     },
+     "file": "steps/anim/0.png",
+     "gif": "steps/anim/0.gif"
+    },
+    {
+     "id": "anim.1",
+     "parent": "gate.2",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "rate": 8
+     },
+     "file": "steps/anim/1.png",
+     "gif": "steps/anim/1.gif"
+    }
+   ]
+  },
+  {
+   "id": "score",
+   "step": "judge",
+   "input": "$anim",
+   "params": {
+    "eval": "evals/convincing_anim.yaml",
+    "samples": 3
+   },
+   "items": [
+    {
+     "id": "score.0",
+     "parent": "anim.0",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "569a64e24602cba294180cd90c89a49799e81119b2129ef404472ad1dd12c35b"
+      ],
+      "rate": 8,
+      "judge": {
+       "eval": {
+        "name": "convincing_anim",
+        "path": "evals/convincing_anim.yaml",
+        "hash": "6e6fe09fe3",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
+       "presentation_blob": "2eabd92fd6543ac026832873aac20219b429c3400b0de7d714d81a6f9a2286ab",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "4763e18af17ac6787d655841bc8224a353cdadc9034c3fbe46835bb6b329a01e",
+         "cached": true,
+         "cost": 0.019756,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 6,
+          "appeal": 7
+         },
+         "score": 69,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacles, but the lower silhouette becomes crowded and difficult to parse at 1x.",
+          "Frame 2 has tangled black clusters between the center and right tentacles, making the stroke look busier than typical Capcom NES animation.",
+          "Frame 2's small curled side appendages read like detached fists or hooks rather than squid tentacles.",
+          "Frame 1's long lower-right white appendage projects too horizontally, weakening the compact 'tentacles together' glide pose.",
+          "The large lower-body redraw communicates motion but is less economical and controlled than an authentic two-frame Capcom pulse."
+         ],
+         "fixes": [
+          "In frame 2, merge or remove several black pixels between the center and right tentacles to create two or three clean negative-space gaps.",
+          "In frame 2, simplify each outer curled appendage into one continuous outlined taper, eliminating the tiny hook-like tips.",
+          "In frame 2, reduce the flare by one or two pixels on each side while preserving the broad stroke silhouette.",
+          "In frame 1, shorten and turn the lower-right white tentacle inward by two to three pixels so the gathered glide pose reads immediately.",
+          "Keep the unchanged head exactly as-is and concentrate the animation into a few clean tentacle-tip swaps rather than redrawing most of the lower mass."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "7270016230c2b61f03d81c0e01349979293d9df58cae3b562185bf348ff2c4ac",
+         "cached": true,
+         "cost": 0.020276,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 7,
+          "appeal": 8
+         },
+         "score": 73,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly opens the tentacles, but the lower silhouette becomes crowded and harder to parse at 1x than frame 1.",
+          "Frame 2 has noisy blue, white, and black clustering around the lower-right curled tentacle, weakening the clean Capcom-style outline.",
+          "Frame 2's lower-left tentacle contains cramped single-pixel turns that look more tangled than deliberately flared.",
+          "Too much of the entire lower body is redrawn between frames; the pulse reads, but the change is less economical than a typical Mega Man 2-3 two-frame enemy animation.",
+          "The tentacles flare mainly downward and curl unevenly, so the backward pushing stroke is less directional than it could be."
+         ],
+         "fixes": [
+          "In frame 2, simplify the lower-right curl into one continuous black contour with a single compact blue interior cluster; remove isolated one-pixel notches.",
+          "In frame 2, widen and straighten the lower-left tentacle by one pixel in key rows so it reads as a clean outward stroke rather than a tangle.",
+          "Keep the central underside of frame 2 closer to frame 1 and concentrate changes in the outer tentacle tips for a cheaper, clearer animation.",
+          "In frame 2, angle the outer tentacles farther sideways and slightly backward while preserving the stable shell and face.",
+          "Reduce competing white gaps between frame 2's central tentacles so each limb has a distinct silhouette at true size."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "6ae44e321a34e86656ba8d2602bb097a2b27e5d5d1d54c44667af4e6dd472a97",
+         "cached": true,
+         "cost": 0.017356,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 6,
+          "appeal": 7
+         },
+         "score": 70,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacles, but the lower silhouette becomes crowded and difficult to parse, especially where the center and right tentacles overlap.",
+          "Frame 2's far-right flared appendage forms a bulky hooked mass that competes with the body instead of reading as a clean thrust pose.",
+          "Frame 1's long lower-right appendage and Frame 2's curled replacement differ so extensively that the transition feels more like a redraw than an economical jointed stroke.",
+          "Frame 2 contains several small, jagged black-and-white pockets between the tentacles, giving the clusters a busier fan-sprite appearance than typical Capcom work.",
+          "The unchanged upper body anchors the loop well, but the lower-body change is too visually noisy to achieve authentic Mega Man 2-3 clarity."
+         ],
+         "fixes": [
+          "In Frame 2, simplify the center tentacles into two or three clearly separated flared shapes and remove the smallest interior black-and-white notches.",
+          "In Frame 2, shorten and narrow the far-right hook by several pixels so it reads as one tentacle rather than a second body mass.",
+          "Preserve more of Frame 1's tentacle roots in Frame 2, changing mainly the outer tips to create a cheaper and more mechanically coherent stroke.",
+          "In Frame 1, shorten the long lower-right appendage and connect it more clearly to the same root used by its Frame 2 counterpart.",
+          "Regularize Frame 2's lower outline into cleaner stepped curves and consolidate isolated one-pixel clusters into larger blue, white, or black shapes."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 70.67,
+        "sd": 2.08,
+        "min": 69,
+        "max": 73,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 8,
+         "consistency": 8,
+         "economy": 6,
+         "pixel_craft": 6.33,
+         "appeal": 7.33
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0574
+       }
+      }
+     },
+     "file": "steps/score/0.png",
+     "gif": "steps/score/0.gif"
+    },
+    {
+     "id": "score.1",
+     "parent": "anim.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "rate": 8,
+      "judge": {
+       "eval": {
+        "name": "convincing_anim",
+        "path": "evals/convincing_anim.yaml",
+        "hash": "6e6fe09fe3",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+       "presentation_blob": "292140e8b76e4426c9eac3a48758520115471e3cb75dc66f9fe00c830b0e0363",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "b5af8f5174ca9883b8b735e410ad92f1bd408cd307090fd4bb7183575fa05aae",
+         "cached": true,
+         "cost": 0.020916,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 7,
+          "appeal": 7
+         },
+         "score": 71,
+         "verdict": "not_convincing",
+         "issues": [
+          "The two-frame gather-to-flare cycle reads clearly, and the head remains stable between frames.",
+          "Frame 1's long rightward appendage already looks extended, weakening the intended compact, tentacles-together glide pose.",
+          "Frame 2 changes a very large, dense region of the lower silhouette; the stroke reads, but it is less economical than a typical Capcom two-frame enemy cycle.",
+          "Frame 2's lower-center tentacles form crowded black-and-blue clusters with weak separation between individual limbs.",
+          "Frame 2's curled side tentacles have blocky, uneven bends, especially the tall right curl, making the silhouette feel more fan-made than production Capcom.",
+          "The perfectly static face preserves consistency, but the stroke adds limited secondary character beyond widening the limbs."
+         ],
+         "fixes": [
+          "In frame 1, shorten and tuck the rightward appendage under the body so both lower tentacles form a compact, clearly gathered silhouette.",
+          "In frame 2, preserve more of the tentacle roots from frame 1 and move only the outer tips, reducing the total changed-pixel area while retaining the wide thrust.",
+          "In frame 2, separate the lower-center limbs with one-pixel background gaps and simplify the black outline to remove crowded stair-step clusters.",
+          "In frame 2, smooth each side curl into cleaner one- and two-pixel stair steps; shorten the tall right vertical segment and match the visual weight of the left curl.",
+          "Give the two flared tips a more deliberate near-symmetry while keeping a small asymmetry for character, producing a cleaner Mega Man-style stroke silhouette."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "81a27aceb6b4c60906ed8afe1aaeabfd0ad1abc13cad16ddee4babd7d584e688",
+         "cached": true,
+         "cost": 0.019976,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 6,
+          "pixel_craft": 7,
+          "appeal": 7
+         },
+         "score": 73,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacles, but the tall hooked side limbs read more like raised arms than a compact backward swimming stroke.",
+          "The frame 1-to-2 change redraws most of the lower silhouette at once; this is less economical than typical Capcom two-frame enemy motion.",
+          "Frame 2 has busy, angular clusters where the lower central tentacles meet the body, weakening separation between individual limbs.",
+          "Frame 2's far-right hook is disproportionately large and square compared with the softer tentacle shapes in frame 1.",
+          "The head, face, shell, palette, and position remain stable across both frames, with no visible jitter or drift."
+         ],
+         "fixes": [
+          "In frame 2, shorten each raised side hook by 1-2 pixels and angle its tip outward or backward so the pose reads as a thrust rather than a shrug.",
+          "Preserve more of frame 1's central underside in frame 2, changing mainly the outer tentacles to reduce the amount of redrawn sprite area.",
+          "In frame 2, remove one or two cyan pixels from the crowded lower-center junction and restore black gaps between the three tentacle forms.",
+          "Reduce the frame 2 far-right hook's square top and match its thickness to the left hook.",
+          "Keep the upper body exactly as shown; its complete stability provides a strong anchor for the pulse."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "ac288061f42cc6421c88f70ea023b5db6d084f5e6132aa5564b59f6b957b0d88",
+         "cached": true,
+         "cost": 0.019316,
+         "subscores": {
+          "motion_readability": 9,
+          "consistency": 8,
+          "economy": 7,
+          "pixel_craft": 8,
+          "appeal": 8
+         },
+         "score": 80,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly reads as a wide thrust, but the extreme side tentacles are long and angular, making the stroke feel more like an abrupt pose swap than a compact Mega Man pulse.",
+          "Frame 1's lower-right tentacle mass forms a large horizontal wedge; at 1x it can read as a tail or foot rather than gathered squid tentacles.",
+          "The extensive redraw across the entire lower half is less economical than typical Capcom two-frame enemy motion.",
+          "Frame 2's central downward tentacles have busy black-and-white notches that weaken their silhouettes at true size."
+         ],
+         "fixes": [
+          "In frame 2, shorten each outer tentacle by one or two pixels and preserve more of frame 1's body-to-tentacle roots so the flare feels hinged rather than replaced.",
+          "In frame 1, split or notch the lower-right wedge near its tip to clarify that it consists of gathered tentacles.",
+          "In frame 2, simplify the central downward tentacles into cleaner two- or three-pixel-wide clusters and remove one interior white notch.",
+          "Keep the unchanged head exactly as drawn; concentrate any revision only in the lower tentacle region shown changing by the difference panels."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 74.67,
+        "sd": 4.73,
+        "min": 71,
+        "max": 80,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 8.33,
+         "consistency": 8.33,
+         "economy": 6.33,
+         "pixel_craft": 7.33,
+         "appeal": 7.33
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0602
+       }
+      }
+     },
+     "file": "steps/score/1.png",
+     "gif": "steps/score/1.gif"
+    }
+   ]
+  },
+  {
+   "id": "best",
+   "step": "select",
+   "input": "$score",
+   "params": {
+    "by": "judge.mean",
+    "group_by": "root"
+   },
+   "items": [
+    {
+     "id": "best.0",
+     "parent": "score.1",
+     "root": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "kind": "anim",
+     "blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+     "size": [
+      58,
+      29
+     ],
+     "status": "ok",
+     "meta": {
+      "frames": [
+       "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+       "9d33ad11bed9fce77fc73bd42e8a921a458498f4afcfd55f72621aa74d6ab2de"
+      ],
+      "rate": 8,
+      "judge": {
+       "eval": {
+        "name": "convincing_anim",
+        "path": "evals/convincing_anim.yaml",
+        "hash": "6e6fe09fe3",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
+       "presentation_blob": "292140e8b76e4426c9eac3a48758520115471e3cb75dc66f9fe00c830b0e0363",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "b5af8f5174ca9883b8b735e410ad92f1bd408cd307090fd4bb7183575fa05aae",
+         "cached": true,
+         "cost": 0.020916,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 8,
+          "economy": 6,
+          "pixel_craft": 7,
+          "appeal": 7
+         },
+         "score": 71,
+         "verdict": "not_convincing",
+         "issues": [
+          "The two-frame gather-to-flare cycle reads clearly, and the head remains stable between frames.",
+          "Frame 1's long rightward appendage already looks extended, weakening the intended compact, tentacles-together glide pose.",
+          "Frame 2 changes a very large, dense region of the lower silhouette; the stroke reads, but it is less economical than a typical Capcom two-frame enemy cycle.",
+          "Frame 2's lower-center tentacles form crowded black-and-blue clusters with weak separation between individual limbs.",
+          "Frame 2's curled side tentacles have blocky, uneven bends, especially the tall right curl, making the silhouette feel more fan-made than production Capcom.",
+          "The perfectly static face preserves consistency, but the stroke adds limited secondary character beyond widening the limbs."
+         ],
+         "fixes": [
+          "In frame 1, shorten and tuck the rightward appendage under the body so both lower tentacles form a compact, clearly gathered silhouette.",
+          "In frame 2, preserve more of the tentacle roots from frame 1 and move only the outer tips, reducing the total changed-pixel area while retaining the wide thrust.",
+          "In frame 2, separate the lower-center limbs with one-pixel background gaps and simplify the black outline to remove crowded stair-step clusters.",
+          "In frame 2, smooth each side curl into cleaner one- and two-pixel stair steps; shorten the tall right vertical segment and match the visual weight of the left curl.",
+          "Give the two flared tips a more deliberate near-symmetry while keeping a small asymmetry for character, producing a cleaner Mega Man-style stroke silhouette."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "81a27aceb6b4c60906ed8afe1aaeabfd0ad1abc13cad16ddee4babd7d584e688",
+         "cached": true,
+         "cost": 0.019976,
+         "subscores": {
+          "motion_readability": 8,
+          "consistency": 9,
+          "economy": 6,
+          "pixel_craft": 7,
+          "appeal": 7
+         },
+         "score": 73,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly widens the tentacles, but the tall hooked side limbs read more like raised arms than a compact backward swimming stroke.",
+          "The frame 1-to-2 change redraws most of the lower silhouette at once; this is less economical than typical Capcom two-frame enemy motion.",
+          "Frame 2 has busy, angular clusters where the lower central tentacles meet the body, weakening separation between individual limbs.",
+          "Frame 2's far-right hook is disproportionately large and square compared with the softer tentacle shapes in frame 1.",
+          "The head, face, shell, palette, and position remain stable across both frames, with no visible jitter or drift."
+         ],
+         "fixes": [
+          "In frame 2, shorten each raised side hook by 1-2 pixels and angle its tip outward or backward so the pose reads as a thrust rather than a shrug.",
+          "Preserve more of frame 1's central underside in frame 2, changing mainly the outer tentacles to reduce the amount of redrawn sprite area.",
+          "In frame 2, remove one or two cyan pixels from the crowded lower-center junction and restore black gaps between the three tentacle forms.",
+          "Reduce the frame 2 far-right hook's square top and match its thickness to the left hook.",
+          "Keep the upper body exactly as shown; its complete stability provides a strong anchor for the pulse."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "ac288061f42cc6421c88f70ea023b5db6d084f5e6132aa5564b59f6b957b0d88",
+         "cached": true,
+         "cost": 0.019316,
+         "subscores": {
+          "motion_readability": 9,
+          "consistency": 8,
+          "economy": 7,
+          "pixel_craft": 8,
+          "appeal": 8
+         },
+         "score": 80,
+         "verdict": "not_convincing",
+         "issues": [
+          "Frame 2 clearly reads as a wide thrust, but the extreme side tentacles are long and angular, making the stroke feel more like an abrupt pose swap than a compact Mega Man pulse.",
+          "Frame 1's lower-right tentacle mass forms a large horizontal wedge; at 1x it can read as a tail or foot rather than gathered squid tentacles.",
+          "The extensive redraw across the entire lower half is less economical than typical Capcom two-frame enemy motion.",
+          "Frame 2's central downward tentacles have busy black-and-white notches that weaken their silhouettes at true size."
+         ],
+         "fixes": [
+          "In frame 2, shorten each outer tentacle by one or two pixels and preserve more of frame 1's body-to-tentacle roots so the flare feels hinged rather than replaced.",
+          "In frame 1, split or notch the lower-right wedge near its tip to clarify that it consists of gathered tentacles.",
+          "In frame 2, simplify the central downward tentacles into cleaner two- or three-pixel-wide clusters and remove one interior white notch.",
+          "Keep the unchanged head exactly as drawn; concentrate any revision only in the lower tentacle region shown changing by the difference panels."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 74.67,
+        "sd": 4.73,
+        "min": 71,
+        "max": 80,
+        "n": 3,
+        "subscores_mean": {
+         "motion_readability": 8.33,
+         "consistency": 8.33,
+         "economy": 6.33,
+         "pixel_craft": 7.33,
+         "appeal": 7.33
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0602
+       }
+      },
+      "rank": 1,
+      "score": 74.67,
+      "group": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17"
+     },
+     "file": "steps/best/0.png",
+     "gif": "steps/best/0.gif"
+    }
+   ]
+  }
+ ],
+ "status": "ok",
+ "depends_on": {
+  "track": "primary",
+  "select": {
+   "blessed": true,
+   "top": 2
+  }
+ },
+ "upstream": [
+  {
+   "track": "primary",
+   "blessed_file": "games/megaman/assets/squid/tracks/primary/blessed.json",
+   "items": [
+    {
+     "rank": 1,
+     "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
+     "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+     "candidate": "lock.3"
+    },
+    {
+     "rank": 2,
+     "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+     "run": "games/megaman/classes/small_enemy/keyframe/pipelines/one_shot/versions/v1/runs/squid/s1/run.json",
+     "candidate": "lock.1"
+    }
+   ]
+  }
+ ],
+ "best": "best.0",
+ "cost": {
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 12
+ }
+}

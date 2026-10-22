@@ -1,0 +1,48 @@
+name: swim2
+description: Two-frame swim animation derived from blessed primary frames.
+produces: animation
+depends_on:                      # upstream: re-run when the asset's blessed primary frames change (not automated yet)
+  track: primary
+  select: {blessed: true, top: 2}
+steps:
+  - id: src
+    step: source.blessed
+    track: primary
+    top: 2
+  - id: draw
+    step: gen.image
+    input: $src
+    input_scale: 16              # the still is shown enlarged (16 px per sprite pixel) on the neutral background
+    model: google/gemini-3.1-flash-image
+    prompt: prompts/frame2.md
+    fanout: 3
+  - id: snap
+    step: gridsnap
+    input: $draw
+  - id: align
+    step: align                  # exact colours of the still, best (dx, dy) onto the still's canvas
+    input: $snap
+    max_shift: 8
+  - id: gate
+    step: anim_checks
+    input: $align
+    changed: {min: 0.03, max: 0.5}
+    max_clipped: 0.05
+    checks:
+      orphans: {}
+      outline: {min_dark: 0.75}
+  - id: anim
+    step: assemble               # [blessed still, new frame]
+    input: $gate
+    rate: 8
+  - id: score
+    step: judge
+    input: $anim
+    eval: evals/convincing_anim.yaml
+    samples: 3
+  - id: best
+    step: select
+    input: $score
+    by: judge.mean
+    group_by: root               # best animation per blessed source
+output: $best

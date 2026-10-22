@@ -1,0 +1,5 @@
+name: telly
+kind: authentic
+source: MM2 ripped sprite telly1 (fusion-man src/enemy_frames.json)
+subject: subject.png
+brief: brief.yaml
