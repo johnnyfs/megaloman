@@ -328,6 +328,8 @@ def step_assemble(ctx, st, inputs):
         for tname, durs in timings.items():
             extra = ({'timing_rationale': tm.get('rationale'), 'mode': tm.get('mode', 'loop'), 'state': tm.get('state'),
                       'sequence': tm.get('sequence')} if designed else {})
+            if it['meta'].get('measures'):
+                extra['measures'] = it['meta']['measures']   # carry the frame's motion measures to the animation
             out.append(_item(st['id'], len(out), strip, 'anim', it['id'], it.get('root'), frames=frames,
                              durations=list(durs), timing=tname, **extra))
     return out
