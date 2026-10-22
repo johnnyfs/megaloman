@@ -1,0 +1,46 @@
+{
+ "created": "2026-10-22T02:41:34+00:00",
+ "code": {
+  "commit": "40d271cbcd924a13c77fd06629c7c736187f5f8f",
+  "dirty": true
+ },
+ "factors": [
+  1.3,
+  1.4,
+  1.5,
+  1.6,
+  1.7,
+  1.8
+ ],
+ "question": "compiler v2 parameter sweep on realistic (non-integer, painted) enlargements; (pixel_acc, ink_iou)",
+ "results": {
+  "{\"ink_th\": 0.5, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"skeleton\"}": {
+   "pixel_acc": 0.955,
+   "ink_iou": 0.913
+  },
+  "{\"ink_th\": 0.4, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"skeleton\"}": {
+   "pixel_acc": 0.954,
+   "ink_iou": 0.909
+  },
+  "{\"ink_th\": 0.5, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"outer\"}": {
+   "pixel_acc": 0.953,
+   "ink_iou": 0.905
+  },
+  "{\"ink_th\": 0.4, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"outer\"}": {
+   "pixel_acc": 0.952,
+   "ink_iou": 0.903
+  },
+  "{\"ink_th\": 0.6, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"skeleton\"}": {
+   "pixel_acc": 0.952,
+   "ink_iou": 0.903
+  },
+  "{\"ink_th\": 0.6, \"fill_ink_scale\": 0.5, \"coverage\": 0.4, \"thin\": \"outer\"}": {
+   "pixel_acc": 0.948,
+   "ink_iou": 0.894
+  },
+  "nearest": {
+   "pixel_acc": 0.756,
+   "ink_iou": 0.603
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "created": "2026-10-22T02:39:58+00:00",
+ "code": {
+  "commit": "40d271cbcd924a13c77fd06629c7c736187f5f8f",
+  "dirty": false
+ },
+ "question": "downscale blessed squid stills to true pixel art at 16/18/20 px",
+ "results": {
+  "rank1 nearest 15x16": {
+   "two_by_two": 0.15,
+   "one_px_ink": 0.77,
+   "orphans": "0 orphan pixels"
+  },
+  "rank1 compiler 15x16": {
+   "two_by_two": 0.13,
+   "one_px_ink": 0.69,
+   "orphans": "0 orphan pixels"
+  },
+  "rank1 nearest 17x18": {
+   "two_by_two": 0.18,
+   "one_px_ink": 0.65,
+   "orphans": "0 orphan pixels"
+  },
+  "rank1 compiler 17x18": {
+   "two_by_two": 0.19,
+   "one_px_ink": 0.64,
+   "orphans": "0 orphan pixels"
+  },
+  "rank1 nearest 19x20": {
+   "two_by_two": 0.2,
+   "one_px_ink": 0.64,
+   "orphans": "0 orphan pixels"
+  },
+  "rank1 compiler 19x20": {
+   "two_by_two": 0.19,
+   "one_px_ink": 0.68,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 nearest 11x16": {
+   "two_by_two": 0.1,
+   "one_px_ink": 0.74,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 compiler 11x16": {
+   "two_by_two": 0.14,
+   "one_px_ink": 0.68,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 nearest 13x18": {
+   "two_by_two": 0.19,
+   "one_px_ink": 0.69,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 compiler 13x18": {
+   "two_by_two": 0.14,
+   "one_px_ink": 0.58,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 nearest 14x20": {
+   "two_by_two": 0.13,
+   "one_px_ink": 0.56,
+   "orphans": "0 orphan pixels"
+  },
+  "rank2 compiler 14x20": {
+   "two_by_two": 0.15,
+   "one_px_ink": 0.63,
+   "orphans": "0 orphan pixels"
+  }
+ }
+}

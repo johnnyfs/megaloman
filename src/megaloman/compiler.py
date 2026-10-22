@@ -201,6 +201,18 @@ def _render_v2(a, tw, th, ox, oy, o):
     r = max(1, int(np.ceil(s * o['fill_ink_scale'])))
     fill_ink = binary_opening(ink, structure=np.ones((2 * r + 1, 2 * r + 1), bool)) if ink.any() else ink
     line_ink = ink & ~fill_ink
+    # dot features (pupils, bolts): small ink blobs that do not touch the outline network -> never thinned
+    dots = np.zeros_like(ink)
+    if o.get('dots', True) and ink.any():
+        from scipy.ndimage import label, binary_dilation
+        edge_ink = ink & binary_dilation(~op, structure=np.ones((3, 3), bool))       # ink on the silhouette edge
+        lab, n = label(ink, structure=np.ones((3, 3), int))
+        for c in range(1, n + 1):
+            comp = lab == c
+            if not (comp & edge_ink).any() and comp.sum() <= o.get('dot_max_area', 16) * max(1.0, s) ** 2:
+                dots |= comp
+        line_ink &= ~dots
+        fill_ink &= ~dots
     key = a[..., 0].astype(np.int64) * 65536 + a[..., 1].astype(np.int64) * 256 + a[..., 2]
     key = np.where(op & ~line_ink, key, -1)        # fills incl. fill-ink; transparent and line ink excluded
     Y, X, valid = _offset_samples(sw, sh, tw, th, ox, oy)
@@ -216,7 +228,28 @@ def _render_v2(a, tw, th, ox, oy, o):
             vals, cnt = np.unique(v, return_counts=True)
             fill[y, x] = vals[cnt.argmax()]
     # thin the line mask to 1 px (never thinning away the silhouette edge: keep border ink)
-    if lines.any():
+    if lines.any() and o.get('thin', 'skeleton') == 'outer':
+        # Capcom outline rule: the outer outline is exactly 1 px; interior ink (pupils, mouths) is left alone.
+        # Peel ink cells that sit just inside the border ink and whose fill neighbour would take their place.
+        pad = np.pad(sil, 1)
+        border = sil & ~(pad[:-2, 1:-1] & pad[2:, 1:-1] & pad[1:-1, :-2] & pad[1:-1, 2:])
+        inner_ring = sil & ~border & np.pad(border, 1)[1:-1, 1:-1]
+        nb_border = np.zeros_like(sil)
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nb_border |= np.roll(np.roll(border & lines, dy, 0), dx, 1)
+        peel = lines & ~border & nb_border
+        # only peel ink that has a non-ink fill neighbour to inherit (otherwise it's a real interior line)
+        has_fill = np.zeros_like(sil)
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            has_fill |= np.roll(np.roll(sil & ~lines & (fill >= 0), dy, 0), dx, 1)
+        peel &= has_fill
+        for y, x in zip(*np.nonzero(peel)):
+            cand = [(y + dy, x + dx) for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                    if 0 <= y + dy < th and 0 <= x + dx < tw and sil[y + dy, x + dx] and not lines[y + dy, x + dx] and fill[y + dy, x + dx] >= 0]
+            if cand:
+                fill[y, x] = fill[cand[0]]
+        lines = lines & ~peel
+    elif lines.any():
         thin = zhang_suen(lines.astype(np.uint8)).astype(bool)
         pad = np.pad(sil, 1)
         border = sil & ~(pad[:-2, 1:-1] & pad[2:, 1:-1] & pad[1:-1, :-2] & pad[1:-1, 2:])
@@ -231,11 +264,26 @@ def _render_v2(a, tw, th, ox, oy, o):
         if len(cand):
             d = ((cand - [y, x]) ** 2).sum(1)
             fill[y, x] = fill[tuple(cand[d.argmin()])]
+    # place dots: each blob covers its scaled footprint, at least one cell
+    dot_cells = np.zeros((th, tw), bool)
+    if dots.any():
+        from scipy.ndimage import label
+        lab, n = label(dots, structure=np.ones((3, 3), int))
+        dcov = np.zeros((th, tw))
+        for c in range(1, n + 1):
+            comp = lab == c
+            ccov = (comp[Y, X] & valid).sum(-1) / valid.shape[-1]
+            cells = sil & (ccov >= 0.35)
+            if not cells.any():
+                cells = np.zeros_like(sil); cells.flat[int(np.argmax(ccov))] = True
+            dot_cells |= cells
+        lines = lines | dot_cells
     return sil, lines, fill, key
 
 
 def compile_v2(im, tw, th, opts=None):
-    o = {'coverage': 0.4, 'ink_th': 0.5, 'fill_ink_scale': 0.5, 'phase_search': True, 'features': True}   # tuned: experiments/compiler/v2d_sweep2
+    o = {'coverage': 0.4, 'ink_th': 0.5, 'fill_ink_scale': 0.5, 'phase_search': True, 'features': True,
+         'thin': 'outer', 'dots': True}   # tuned: experiments/compiler/v2d_sweep2, v6_thin_sweep, v6_outer_thin
     o.update(opts or {})
     a = _arr(im)
     sh, sw = a.shape[:2]
