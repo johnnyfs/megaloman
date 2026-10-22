@@ -1,0 +1,12 @@
+{
+ "eval": "convincing_action",
+ "version": "v1",
+ "created": "2026-10-22T02:09:18+00:00",
+ "author": "coding-agent",
+ "parent": null,
+ "change": {
+  "what": "one state animation, one-off actions previewed still 0.5 s / action / 0.5 s pause; diff + timeline rows; 6 subscores incl. timing",
+  "why": "human: per-state animations; one-off actions (swim is a pulse, float is a timeout) previewed with a still, the action, a pause"
+ },
+ "note": "migrated from flat evals/*.yaml on 2026-10-22"
+}

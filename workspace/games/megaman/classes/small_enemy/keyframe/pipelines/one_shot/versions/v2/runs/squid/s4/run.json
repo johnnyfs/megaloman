@@ -7,8 +7,13 @@
  "asset": "squid",
  "game": "megaman",
  "class": "small_enemy",
+ "asset_type": "keyframe",
  "seed": 4,
- "created": "2026-10-22T01:43:20+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "created": "2026-10-22T02:10:40+00:00",
  "steps": [
   {
    "id": "draw",
@@ -27,6 +32,7 @@
     {
      "id": "draw.0",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "388d69565c7fb50fd2478111d5113dbe8f65c72949e140abd9f7ac5a5f75957a",
      "size": [
@@ -46,6 +52,7 @@
     {
      "id": "draw.1",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "c39af7a8d0b33148fbd0be056219ce9817889565bd3af756171a7a12fa94cb12",
      "size": [
@@ -65,6 +72,7 @@
     {
      "id": "draw.2",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "30d05bc6f96d51fd240852b650e49b4331fef1b009bb4388de0a26e74f1869f6",
      "size": [
@@ -84,6 +92,7 @@
     {
      "id": "draw.3",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "ba4ea153b11ee089b39438a77054801f548475f3ca55e32d15cc0dc5f984a0c5",
      "size": [
@@ -111,6 +120,7 @@
     {
      "id": "snap.0",
      "parent": "draw.0",
+     "root": null,
      "kind": "sprite",
      "blob": "44584f0aec29cc389b8eed799c5c0ca906e6b8a253285a57c9d9ecd9b09124b6",
      "size": [
@@ -133,6 +143,7 @@
     {
      "id": "snap.1",
      "parent": "draw.1",
+     "root": null,
      "kind": "sprite",
      "blob": "1042da1915d899112e7cb9b83c1582ab35e03333a46de8c7fd0e914cbcfe37b6",
      "size": [
@@ -155,6 +166,7 @@
     {
      "id": "snap.2",
      "parent": "draw.2",
+     "root": null,
      "kind": "sprite",
      "blob": "cc9eb65c79563f7f7942b8a606343082a5afc84f4b89f8c652e92f706b0f9040",
      "size": [
@@ -177,6 +189,7 @@
     {
      "id": "snap.3",
      "parent": "draw.3",
+     "root": null,
      "kind": "sprite",
      "blob": "c0ea0b67d7654480da3126a6d264dd74cdf41cebac50c5d069f4e7c0fb5cdd45",
      "size": [
@@ -209,6 +222,7 @@
     {
      "id": "lock.0",
      "parent": "snap.0",
+     "root": null,
      "kind": "sprite",
      "blob": "ffeb8478b98abaa0613f57769e2882857b8f5274a5aed396bd202a4df6cae4d4",
      "size": [
@@ -225,6 +239,7 @@
     {
      "id": "lock.1",
      "parent": "snap.1",
+     "root": null,
      "kind": "sprite",
      "blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
      "size": [
@@ -241,6 +256,7 @@
     {
      "id": "lock.2",
      "parent": "snap.2",
+     "root": null,
      "kind": "sprite",
      "blob": "0666f58e200c5e8cb3ac8ba68a2cf25baad7587def32d4bba9516793f78d3c81",
      "size": [
@@ -257,6 +273,7 @@
     {
      "id": "lock.3",
      "parent": "snap.3",
+     "root": null,
      "kind": "sprite",
      "blob": "b7fbf0a6225d35e433c07f54d5cfdabf89dbd1e48b3fbe6a25ffe0e1f7253647",
      "size": [
@@ -303,6 +320,7 @@
     {
      "id": "gate.0",
      "parent": "lock.0",
+     "root": null,
      "kind": "sprite",
      "blob": "ffeb8478b98abaa0613f57769e2882857b8f5274a5aed396bd202a4df6cae4d4",
      "size": [
@@ -349,6 +367,7 @@
     {
      "id": "gate.1",
      "parent": "lock.1",
+     "root": null,
      "kind": "sprite",
      "blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
      "size": [
@@ -395,6 +414,7 @@
     {
      "id": "gate.2",
      "parent": "lock.2",
+     "root": null,
      "kind": "sprite",
      "blob": "0666f58e200c5e8cb3ac8ba68a2cf25baad7587def32d4bba9516793f78d3c81",
      "size": [
@@ -441,6 +461,7 @@
     {
      "id": "gate.3",
      "parent": "lock.3",
+     "root": null,
      "kind": "sprite",
      "blob": "b7fbf0a6225d35e433c07f54d5cfdabf89dbd1e48b3fbe6a25ffe0e1f7253647",
      "size": [
@@ -498,6 +519,7 @@
     {
      "id": "score.0",
      "parent": "gate.0",
+     "root": null,
      "kind": "sprite",
      "blob": "ffeb8478b98abaa0613f57769e2882857b8f5274a5aed396bd202a4df6cae4d4",
      "size": [
@@ -506,11 +528,45 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": false,
+        "detail": "24x30 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
       "judge": {
        "eval": {
         "name": "convincing_enemy",
-        "path": "evals/convincing_enemy.yaml",
-        "hash": "fbc43f3204",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "ffeb8478b98abaa0613f57769e2882857b8f5274a5aed396bd202a4df6cae4d4",
@@ -519,7 +575,7 @@
         {
          "sample": 0,
          "call": "646cf1c35852b1bebae4de28df6ec2b4b234be8c1191aa0ce053ccb340a308fd",
-         "cached": false,
+         "cached": true,
          "cost": 0.045108,
          "subscores": {
           "authenticity": 6,
@@ -553,7 +609,7 @@
         {
          "sample": 1,
          "call": "8dc0aa9c9396f9ab8c637bc9d2a3390f8a5c4da28bb17546ed42508c10e3ff6d",
-         "cached": false,
+         "cached": true,
          "cost": 0.019968,
          "subscores": {
           "authenticity": 4,
@@ -586,7 +642,7 @@
         {
          "sample": 2,
          "call": "35dfb9af39b59e3538f9853c4f1d13d951a3eda915dc31b8dfcc0e872c6f6459",
-         "cached": false,
+         "cached": true,
          "cost": 0.018368,
          "subscores": {
           "authenticity": 4,
@@ -642,6 +698,7 @@
     {
      "id": "score.1",
      "parent": "gate.1",
+     "root": null,
      "kind": "sprite",
      "blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
      "size": [
@@ -650,11 +707,45 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "17x17 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
       "judge": {
        "eval": {
         "name": "convincing_enemy",
-        "path": "evals/convincing_enemy.yaml",
-        "hash": "fbc43f3204",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
@@ -780,6 +871,7 @@
     {
      "id": "score.2",
      "parent": "gate.2",
+     "root": null,
      "kind": "sprite",
      "blob": "0666f58e200c5e8cb3ac8ba68a2cf25baad7587def32d4bba9516793f78d3c81",
      "size": [
@@ -788,11 +880,45 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "24x23 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "99% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
       "judge": {
        "eval": {
         "name": "convincing_enemy",
-        "path": "evals/convincing_enemy.yaml",
-        "hash": "fbc43f3204",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "0666f58e200c5e8cb3ac8ba68a2cf25baad7587def32d4bba9516793f78d3c81",
@@ -801,7 +927,7 @@
         {
          "sample": 0,
          "call": "9259a6085ccbbca11b584a2f8c41513cff948396c851b9dc25d2d2439de0ac24",
-         "cached": false,
+         "cached": true,
          "cost": 0.019952,
          "subscores": {
           "authenticity": 4,
@@ -837,7 +963,7 @@
         {
          "sample": 1,
          "call": "33ee9f6fb8c31055413d09af4d96e4e124b1c9941cc783756ec7c37c7c0b4f4a",
-         "cached": false,
+         "cached": true,
          "cost": 0.031712,
          "subscores": {
           "authenticity": 4,
@@ -871,7 +997,7 @@
         {
          "sample": 2,
          "call": "7059a55dd4b0bbcd9c2103bd2a7ae6b432a28f8be01e7ad940e03eb1c98a7d6c",
-         "cached": false,
+         "cached": true,
          "cost": 0.020292,
          "subscores": {
           "authenticity": 4,
@@ -929,6 +1055,7 @@
     {
      "id": "score.3",
      "parent": "gate.3",
+     "root": null,
      "kind": "sprite",
      "blob": "b7fbf0a6225d35e433c07f54d5cfdabf89dbd1e48b3fbe6a25ffe0e1f7253647",
      "size": [
@@ -937,11 +1064,45 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "24x24 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": false,
+        "detail": "max 4 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
       "judge": {
        "eval": {
         "name": "convincing_enemy",
-        "path": "evals/convincing_enemy.yaml",
-        "hash": "fbc43f3204",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "b7fbf0a6225d35e433c07f54d5cfdabf89dbd1e48b3fbe6a25ffe0e1f7253647",
@@ -950,7 +1111,7 @@
         {
          "sample": 0,
          "call": "0ee7c343ef8d4d1efc27a77771fed391afe7c47ad1c6f74c01df6369cb2e8c3d",
-         "cached": false,
+         "cached": true,
          "cost": 0.019572,
          "subscores": {
           "authenticity": 5,
@@ -982,7 +1143,7 @@
         {
          "sample": 1,
          "call": "41cfa7dddbab261b1ab5109099b1afebed686cc7b2f2d625be376596219038f4",
-         "cached": false,
+         "cached": true,
          "cost": 0.024312,
          "subscores": {
           "authenticity": 3,
@@ -1014,7 +1175,7 @@
         {
          "sample": 2,
          "call": "f97b6548231d0b29145058e86d30ec7fd5e852215b15cbb6304d009feec9686c",
-         "cached": false,
+         "cached": true,
          "cost": 0.017052,
          "subscores": {
           "authenticity": 5,
@@ -1079,6 +1240,7 @@
     {
      "id": "best.0",
      "parent": "score.1",
+     "root": null,
      "kind": "sprite",
      "blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
      "size": [
@@ -1087,8 +1249,167 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "17x17 (allowed 10-24)",
+        "gate": false
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+        "gate": false
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "5941aa202fdc380d4813cc3dc63622ae06af3843dc5e766b6ed3d24a8f230c29",
+       "presentation_blob": "94578d3ff5123e2643ea5a706ed17a322b2c335900d92d207c6cbf5a0193fe03",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "6ee004f38979d9b85d6711719d2977e785f980343d4d398a2b0b6440483dfbe4",
+         "cached": true,
+         "cost": 0.025384,
+         "subscores": {
+          "authenticity": 5,
+          "description_fidelity": 6,
+          "readability_1x": 7,
+          "pixel_craft": 6,
+          "palette_discipline": 8,
+          "appeal": 6
+         },
+         "score": 63,
+         "verdict": "not_convincing",
+         "issues": [
+          "The broad cyan dome and dangling legs read as a generic jellyfish more than a mechanical squid or swimming mine.",
+          "No clear eyes are visible; the white patch on the upper-left reads as a large highlight rather than an eye or flashing warning feature.",
+          "The lower-center tentacle clusters form cramped blue-and-black cavities that become ambiguous at 1x.",
+          "The body is unusually plain for a Mega Man 2-3 enemy, lacking the face, panel break, seam, or hardware cue Capcom typically used.",
+          "The squared dome top and abrupt side steps make the silhouette feel constructed from simple blocks rather than deliberately rounded pixel clusters.",
+          "Four opaque colors appear across the sprite; although compositing could support this, the color placement does not clearly follow NES hardware-sprite boundaries."
+         ],
+         "fixes": [
+          "Replace the large white patch with two compact 1-2 px eyes under the dome, with alternate red-eye tiles for the warning flash.",
+          "Add a black 1 px face or shell seam across the lower body to separate the robotic head from the tentacle assembly.",
+          "Simplify the underside into three clearly separated tentacles, removing the enclosed blue cavities and retaining at least 1 px of background between limbs.",
+          "Round the dome with cleaner stepped contours: shorten the flat top and use consistent 1 px stair steps on both shoulders.",
+          "Use white or light cyan only as a small top-left highlight, keeping each hardware-sprite region to black plus two body colors.",
+          "Create a second animation frame with tentacles gathered inward and a thrust frame with them spread downward or backward."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "6c377ff8a17e3df611c4bafd41aba78371b58db60b4a0374528bddc7fde10468",
+         "cached": true,
+         "cost": 0.017144,
+         "subscores": {
+          "authenticity": 6,
+          "description_fidelity": 7,
+          "readability_1x": 7,
+          "pixel_craft": 6,
+          "palette_discipline": 8,
+          "appeal": 7
+         },
+         "score": 66,
+         "verdict": "not_convincing",
+         "issues": [
+          "The cyan domed body and dangling legs read as a small floating squid, but the eyes are not clearly identifiable at 1x.",
+          "The lower-center face and tentacle area contains cramped black-and-blue clusters that merge into visual noise.",
+          "The large white patch on the body's left side reads more like a missing chunk than controlled metallic highlighting.",
+          "The tentacles have similar lengths and heavy black gaps, making the gathered-versus-thrust motion difficult to infer.",
+          "Nothing in the normal pose strongly communicates the mine function or provides an obvious pair of pixels that could flash red.",
+          "The body is cleanly outlined, but the lower silhouette lacks the economical, strongly patterned construction typical of MM2/MM3 enemies."
+         ],
+         "fixes": [
+          "Replace the lower-center blue maze with two clearly separated eye pixels or eye blocks, leaving black spacing around each.",
+          "Reserve those eye pixels for a red warning frame so the flashing state is immediately legible.",
+          "Reduce the white body highlight to a compact 2x2 or stepped cluster and restore cyan around it.",
+          "Simplify the underside into three distinct tentacle groups with clean one-pixel gaps and fewer internal black notches.",
+          "Create at least two animation poses: tentacles tucked inward beneath the body, then extended downward and outward for thrust.",
+          "Regularize the lower outline into deliberate one-pixel stair-steps and remove isolated blue pixels trapped inside the black structure."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "2f6150d077882f01c3c7e92830862ab4021db10af1fafc26e539184a2b9853e5",
+         "cached": true,
+         "cost": 0.027364,
+         "subscores": {
+          "authenticity": 6,
+          "description_fidelity": 7,
+          "readability_1x": 6,
+          "pixel_craft": 7,
+          "palette_discipline": 9,
+          "appeal": 6
+         },
+         "score": 65,
+         "verdict": "not_convincing",
+         "issues": [
+          "The lower third becomes a dense black-and-cyan knot at 1x; individual tentacles and their thrust direction are unclear.",
+          "The eyes are not immediately identifiable as a paired facial feature, weakening both character and the red-warning mine behavior.",
+          "The broad smooth dome reads more as a generic jellyfish than a Blooper-like mechanical squid.",
+          "Several underside cyan pockets are too small and enclosed, creating visual noise rather than purposeful Capcom-style clusters.",
+          "The silhouette lacks a strong mechanical or explosive cue, so the swimming-mine role is not evident from the static design."
+         ],
+         "fixes": [
+          "Open 1-pixel background gaps between three or four tentacles and simplify each tentacle to one solid cyan cluster with a black outer edge.",
+          "Create a clear central face band with two separated 1-pixel eyes; use a red palette swap for the warning frame.",
+          "Remove the tiny enclosed cyan pockets in the lower center and replace them with larger contiguous clusters.",
+          "Narrow or taper the upper mantle by 1 pixel on each lower side so it reads as a squid body rather than a jellyfish cap.",
+          "Add one compact mechanical detail, such as a central black seam or single light-colored mine fuse/port, without increasing the palette.",
+          "Prepare two sharply different animation poses: tentacles gathered tightly under the body, then splayed backward for the thrust frame."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 64.67,
+        "sd": 1.53,
+        "min": 63,
+        "max": 66,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 5.67,
+         "description_fidelity": 6.67,
+         "readability_1x": 6.67,
+         "pixel_craft": 6.33,
+         "palette_discipline": 8.33,
+         "appeal": 6.33
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0699
+       }
+      },
       "rank": 1,
-      "score": 64.67
+      "score": 64.67,
+      "group": null
      },
      "file": "steps/best/0.png"
     }
@@ -1096,10 +1417,12 @@
   }
  ],
  "status": "ok",
+ "depends_on": null,
+ "upstream": null,
  "best": "best.0",
  "cost": {
-  "spent": 0.2163,
-  "calls": 9,
-  "cached": 7
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 16
  }
 }

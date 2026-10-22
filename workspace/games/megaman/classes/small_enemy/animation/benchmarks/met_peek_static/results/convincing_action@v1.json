@@ -1,0 +1,215 @@
+{
+ "eval": {
+  "name": "convincing_action",
+  "version": "v1",
+  "ref": "convincing_action@v1",
+  "path": "evals/convincing_action/versions/v1",
+  "hash": "4744049bfe",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "c8cf56ab0766aa66765631369763e1b74ad27cd965f1292177a2144bf0d3431b",
+ "presentation_blob": "9fdaad24254d452ebe6ba35a0ac2254865312994bc57eb0844cd75782a4d55a6",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "b4518e115f6ec7e768196235cc56b1541b7fcbb8cb3aaf75696c3bd10e3de663",
+   "cached": true,
+   "cost": 0.052017,
+   "subscores": {
+    "motion_readability": 1,
+    "consistency": 10,
+    "economy": 3,
+    "pixel_craft": 7,
+    "timing": 4,
+    "appeal": 1
+   },
+   "score": 39,
+   "verdict": "not_convincing",
+   "issues": [
+    "Both difference panels contain no magenta, so frame 1 -> 2 and frame 2 -> 1 show no verified pixel changes.",
+    "Frame 2 does not visibly lift the helmet or expose a readable pair of eyes; the intended peek-and-fire tell therefore reads as a frozen still.",
+    "In the timeline, the 600 ms attack interval simply holds the same silhouette, so there is no visual attack beat despite the otherwise plausible duration.",
+    "The static helmet has a reasonably clean outline and highlight, but without an open pose the animation adds no character or firing attitude."
+   ],
+   "fixes": [
+    "Redraw frame 2 with the helmet crown and brim raised by about 1-2 source pixels while keeping the lower body and feet anchored.",
+    "In frame 2, use the opened gap beneath the brim for two clearly separated 1-pixel black eye clusters; avoid merging them into a central cross or undifferentiated dark mark.",
+    "Keep all frame-2 changes confined to the raised helmet, newly exposed face, and any necessary outline cleanup; the body baseline and side extents should remain identical to frame 1.",
+    "Make the frame 2 -> 1 transition the exact inverse of the lift so the 600 ms hold ends with a crisp helmet drop and no stray pixels."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "f330795de44ad3ecdfddf69046753419fb71077ab1e937efb526bea2ab9bb096",
+   "cached": true,
+   "cost": 0.0336572,
+   "subscores": {
+    "motion_readability": 0,
+    "consistency": 10,
+    "economy": 2,
+    "pixel_craft": 8,
+    "timing": 3,
+    "appeal": 1
+   },
+   "score": 35,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 2 is pixel-identical to frame 1; both difference panels contain no magenta pixels.",
+    "Frame 2 shows no helmet lift, exposed eyes, or other readable attack tell.",
+    "The 36-game-frame action hold therefore reads as 600 ms of frozen still art rather than a peek-and-fire pose."
+   ],
+   "fixes": [
+    "In frame 2, move the helmet dome and brim upward by 1-2 pixels while leaving the lower body anchored.",
+    "In frame 2, redraw only the newly exposed strip beneath the brim with a clean black face outline and two compact eye pixels.",
+    "Keep frame 1 unchanged so the frame 1-to-2 and frame 2-to-1 difference panels clearly show the same localized helmet-and-face changes."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "5fa02b1c89ccdf85edf182570d82d907e1ef7b6fbf4baf40af5984471b2326eb",
+   "cached": true,
+   "cost": 0.0374572,
+   "subscores": {
+    "motion_readability": 0,
+    "consistency": 10,
+    "economy": 1,
+    "pixel_craft": 8,
+    "timing": 2,
+    "appeal": 1
+   },
+   "score": 32,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 2 is pixel-identical to frame 1; both frame 1 -> 2 and frame 2 -> 1 difference panels contain no magenta pixels.",
+    "Frame 2 does not expose the eyes or create any readable helmet lift, so the attack tell and firing pose are absent.",
+    "The 36-game-frame action hold displays an unchanged hiding pose, making the entire 600 ms action read as a static pause.",
+    "Although the base sprite is clean and consistent, the attack adds no motion, expression, or Capcom-style character beat."
+   ],
+   "fixes": [
+    "In frame 2, move the helmet dome and brim upward by roughly 2 true-size pixels while keeping the lower body or feet anchored.",
+    "In frame 2, use the newly exposed strip beneath the brim for two compact eye clusters, with clean black separation and the existing light color for the eye faces.",
+    "Keep all nonmoving outer-body and foot pixels identical between frames so the difference panels isolate only the raised helmet and exposed face.",
+    "Ensure frame 2 -> 1 reverses those exact changed clusters cleanly, producing a crisp drop back into the original frame 1 hiding pose."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "b58ad5b1ad294a18df5b34019389064aa391a2b88883663f3c94750d276963dd",
+   "cached": true,
+   "cost": 0.0324572,
+   "subscores": {
+    "motion_readability": 0,
+    "consistency": 10,
+    "economy": 1,
+    "pixel_craft": 8,
+    "timing": 1,
+    "appeal": 1
+   },
+   "score": 35,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 1 -> frame 2 has no magenta pixels in the difference panel, so the supposed helmet lift and eye reveal do not occur.",
+    "Frame 2 -> frame 1 also has no changed pixels, leaving no readable drop back into hiding.",
+    "Frame 2 is held for 36 game frames despite being visually identical to frame 1, making the entire 600 ms attack read as a static pause.",
+    "The static sprite is clean and stable, but the attack adds no tell, firing pose, or characterful motion."
+   ],
+   "fixes": [
+    "Redraw frame 2 so the helmet crown and brim move upward by 1-2 pixels while the feet or lower body remain anchored.",
+    "In frame 2, expose a compact black eye band beneath the raised brim, using two clearly separated light eye pixels and clean black clusters.",
+    "Keep the frame 2 edits localized to the helmet and revealed face; preserve the outer width, palette, feet, and ground contact from frame 1.",
+    "Retain the 36-frame hold only after frame 2 has a clear peek/firing silhouette; the return to frame 1 can then provide the helmet-drop closure."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "f5fc44db28ed7c388e2ac1fa3461fb87e7b85e74b6b5fc15b674b5c201b16843",
+   "cached": true,
+   "cost": 0.0575372,
+   "subscores": {
+    "motion_readability": 0,
+    "consistency": 10,
+    "economy": 1,
+    "pixel_craft": 6,
+    "timing": 1,
+    "appeal": 1
+   },
+   "score": 30,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 2 is pixel-identical to frame 1; both difference panels contain no magenta pixels.",
+    "Frame 2 shows no helmet lift and reveals no eyes or body, so the peek-and-fire action has no readable tell or attack pose.",
+    "The timeline remains visually static for the entire 600 ms action hold.",
+    "The still sprite is reasonably clean, but its interior black cluster is too ambiguous to communicate a face or mechanism."
+   ],
+   "fixes": [
+    "Redraw frame 2 so the helmet crown and brim move upward by 2-3 pixels while the body remains anchored to the ground.",
+    "In frame 2, expose a compact one- or two-row face beneath the raised brim, using two clearly separated eye clusters and a clean black outline.",
+    "Keep the helmet's palette and major highlight clusters unchanged when moving it; only repair pixels exposed or covered by the lift.",
+    "Use the existing 36-frame hold for the firing pose, then let the return to frame 1 provide the helmet drop."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 34.2,
+  "sd": 3.42,
+  "min": 30,
+  "max": 39,
+  "n": 5,
+  "subscores_mean": {
+   "motion_readability": 0.2,
+   "consistency": 10,
+   "economy": 1.6,
+   "pixel_craft": 7.4,
+   "timing": 2.2,
+   "appeal": 1
+  },
+  "convincing_rate": 0.0,
+  "cost": 0.2131
+ },
+ "motion": {
+  "changed_pixels": 0,
+  "frames": 2
+ },
+ "benchmark": "met_peek_static",
+ "kind": "control",
+ "control": "static",
+ "type": "animation",
+ "reference": "met_peek",
+ "checks": {
+  "size": {
+   "pass": false,
+   "detail": "38x19 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T02:10:04+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ }
+}

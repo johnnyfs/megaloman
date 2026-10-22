@@ -6,15 +6,30 @@ import yaml
 from . import imaging, models, store
 
 
-def load_eval(kind_dir, rel):
-    path = os.path.join(kind_dir, rel)
-    with open(path) as f:
+def resolve_ref(tdir, ref):
+    """'name@vN' | 'name' (latest) | a legacy flat path (via evals/legacy.yaml) -> (name, version)."""
+    if ref.endswith('.yaml'):
+        with open(os.path.join(tdir, 'evals', 'legacy.yaml')) as f:
+            ref = yaml.safe_load(f)[ref]
+    name, _, ver = ref.partition('@')
+    if not ver:
+        vs = os.listdir(os.path.join(tdir, 'evals', name, 'versions'))
+        ver = max(vs, key=lambda v: int(v[1:]))
+    return name, ver
+
+
+def load_eval(tdir, ref):
+    name, ver = resolve_ref(tdir, ref)
+    vdir = os.path.join(tdir, 'evals', name, 'versions', ver)
+    with open(os.path.join(vdir, 'eval.yaml')) as f:
         cfg = yaml.safe_load(f)
-    rubric_path = os.path.join(kind_dir, cfg['rubric'])
-    with open(rubric_path) as f:
+    with open(os.path.join(vdir, 'rubric.md')) as f:
         cfg['_rubric_text'] = f.read()
-    cfg['_hash'] = store.key({k: v for k, v in cfg.items() if not k.startswith('_')} | {'rubric': cfg['_rubric_text']})[:10]
-    cfg['_path'] = os.path.relpath(path, kind_dir)
+    cfg['name'] = name
+    cfg.update(_version=ver, _ref=f'{name}@{ver}', _path=os.path.relpath(vdir, tdir))
+    # semantic hash: what the judge sees and how it is asked (not where the files live)
+    cfg['_hash'] = store.key({k: cfg.get(k) for k in ('model', 'samples', 'presentation', 'applies_to')} |
+                             {'rubric': cfg['_rubric_text']})[:10]
     return cfg
 
 
@@ -69,5 +84,6 @@ def judge(sprite, brief, cfg, ledger, samples=None, frames=None, durations=None,
         'convincing_rate': round(sum(r.get('verdict') == 'convincing' for r in recs) / max(1, len(recs)), 2),
         'cost': round(sum(r['cost'] for r in recs), 4),
     }
-    return {'eval': {'name': cfg['name'], 'path': cfg['_path'], 'hash': cfg['_hash'], 'model': cfg['model']},
+    return {'eval': {'name': cfg['name'], 'version': cfg['_version'], 'ref': cfg['_ref'], 'path': cfg['_path'],
+                     'hash': cfg['_hash'], 'model': cfg['model']},
             'sprite_blob': sprite_blob, 'presentation_blob': pres_blob, 'samples': recs, 'summary': summary}

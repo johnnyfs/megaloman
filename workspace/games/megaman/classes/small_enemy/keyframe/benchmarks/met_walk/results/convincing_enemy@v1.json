@@ -1,0 +1,234 @@
+{
+ "eval": {
+  "name": "convincing_enemy",
+  "version": "v1",
+  "ref": "convincing_enemy@v1",
+  "path": "evals/convincing_enemy/versions/v1",
+  "hash": "4aa584a9ac",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "778dfd136b1d50cbb4c7f3d1a02e7cf7270540c898d98b438cbae15130079f5d",
+ "presentation_blob": "f4011cc44bdbb8d719f7cceb6fd1aded726fce287e9ba443275f4d461d4df155",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "b9b5c01e202ae1966ea6dce145f4569d0c4413afec2d49a6edb8adbd15ae1f68",
+   "cached": true,
+   "cost": 0.023388,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 8,
+    "readability_1x": 7,
+    "pixel_craft": 6,
+    "palette_discipline": 8,
+    "appeal": 6
+   },
+   "score": 64,
+   "verdict": "not_convincing",
+   "issues": [
+    "The oversized black band beneath the helmet merges with the face and body, creating a heavy void unlike the compact, clearly separated forms of MM2/MM3 enemies.",
+    "The two white eye clusters are blocky and uneven; at 1x they can read as teeth rather than eyes.",
+    "The lower body lacks a clear round contour and is mostly undefined black space.",
+    "The left foot/leg forms a long diagonal orange staircase, while the right foot is a disconnected rectangular block, making the walking anatomy inconsistent.",
+    "The helmet highlight is large and angular, competing with the face instead of acting as a restrained one-pixel accent.",
+    "Several silhouette transitions, especially the helmet's lower corners and left leg, are jagged rather than deliberately stepped."
+   ],
+   "fixes": [
+    "Reduce the helmet brim to a consistent one-pixel black edge and expose another row of the face beneath it.",
+    "Redraw each eye as a compact matching white cluster with a clear black pupil or separation, keeping both on the same baseline.",
+    "Add a small rounded body contour under the eyes using two- to three-pixel orange clusters instead of leaving one large black cavity.",
+    "Rebuild both feet as similarly sized two- or three-pixel-wide forms, separated from the body by one black pixel.",
+    "Shorten the left diagonal appendage and remove its staircase tail so it reads as a stubby walking foot.",
+    "Shrink the helmet highlight to a compact one-pixel-thick patch and simplify the shell into cleaner Capcom-style stepped curves."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "f6b913849f9214eff83605cb2e9f28b495f57d09d66e271bf0284dafa9a48899",
+   "cached": true,
+   "cost": 0.028148,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 7,
+    "readability_1x": 6,
+    "pixel_craft": 6,
+    "palette_discipline": 6,
+    "appeal": 6
+   },
+   "score": 60,
+   "verdict": "not_convincing",
+   "issues": [
+    "The two white shapes beneath the helmet brim read more like teeth than eyes; they lack clear pupils and eye framing at 1x.",
+    "The exposed black body is angular and hollow-looking rather than a small round robot body.",
+    "The lower-left orange appendage has an unclear silhouette, reading as a bent tail or loose cluster rather than a foot or cannon.",
+    "The helmet's central black plus-shaped detail is visually busy and not a typical Mega Man construction-helmet accent.",
+    "Using black, orange, pale peach, and white creates a four-color sprite treatment; the separate white and peach highlights feel less disciplined than typical MM2/MM3 enemy palettes.",
+    "The feet are unevenly designed: the right foot is a large highlighted wedge while the left side merges into the ambiguous appendage."
+   ],
+   "fixes": [
+    "Redraw each eye as a compact white 2x2 or 3x2 cluster with a clearly placed 1-pixel black pupil, separated by one black pixel.",
+    "Round the body silhouette by adding one pixel at each lower side and removing angular black notches around the torso.",
+    "Replace the lower-left zigzag with a simple 3-4-pixel-wide stubby foot, or shape it into a clearly horizontal cannon muzzle with a black opening.",
+    "Remove the helmet's plus-shaped mark or reduce it to a simple 1-2-pixel seam or highlight cluster.",
+    "Use black, orange, and one light color consistently; make both the eyes and highlights share a legal three-color-per-sprite solution or use an intentional overlay.",
+    "Make both feet similarly sized, with compact orange clusters and one consistent light-color highlight on their upper edges."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "7d368125556cc6b638e644a2f2b99ce7ce5765f64e1af6cbef9dafdc9e8a287a",
+   "cached": true,
+   "cost": 0.026628,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 7,
+    "readability_1x": 7,
+    "pixel_craft": 6,
+    "palette_discipline": 9,
+    "appeal": 7
+   },
+   "score": 68,
+   "verdict": "not_convincing",
+   "issues": [
+    "The three large white blocks beneath the brim read more like teeth than two eyes.",
+    "The black cross and large white patch on the helmet create busy, nonstandard surface detail for a Mega Man 2-3 enemy.",
+    "The long diagonal orange cluster at lower left makes the leg silhouette look like a tail or bent tube rather than a stubby foot.",
+    "The right-side orange vertical cluster is ambiguous and does not clearly read as a limb, body edge, or weapon.",
+    "Several contour steps around the lower body and feet are chunky and irregular compared with Capcom's tightly controlled 1-pixel stair-stepping.",
+    "The helmet reads immediately, but the body anatomy and shooting role are unclear at 1x."
+   ],
+   "fixes": [
+    "Replace the white face pattern with exactly two compact 2x2 or 2x3 eye clusters, separated by at least one black pixel.",
+    "Remove the black helmet cross and reduce the white highlight to one small, coherent 2-4 pixel cluster near the upper-left curve.",
+    "Shorten the lower-left appendage and place two compact feet directly beneath the body with matching one-pixel black soles.",
+    "Either remove the isolated orange cluster on the right or reshape it into a clearly outlined two- or three-pixel muzzle.",
+    "Redraw the lower silhouette using cleaner one-pixel staircase transitions and eliminate the thin diagonal connection into the left foot.",
+    "Keep the strong orange, white, black, and transparent palette; the existing color discipline is appropriately NES-like."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "701ccc755295db9b7fa00bc7ae23f6063c70b8783b2e61bd69d0dde221aeb52c",
+   "cached": true,
+   "cost": 0.033168,
+   "subscores": {
+    "authenticity": 6,
+    "description_fidelity": 8,
+    "readability_1x": 7,
+    "pixel_craft": 7,
+    "palette_discipline": 8,
+    "appeal": 6
+   },
+   "score": 68,
+   "verdict": "not_convincing",
+   "issues": [
+    "The sprite appears roughly 23x22 px, making it broader and heavier than the intended compact 20x19 enemy.",
+    "The black cross-shaped cluster near the helmet's left-center looks accidental rather than like Capcom-style construction or shading.",
+    "The white clusters beneath the brim resemble three teeth or a zigzag mouth instead of two clearly separated eyes on a round body.",
+    "The large black cavity under the helmet obscures the body's shape, especially at 1x.",
+    "The long diagonal orange connection to the left foot is awkward and makes the walking pose look bent or partially melted.",
+    "The right foot's pale inset adds detail where a simpler, stronger cluster would read better."
+   ],
+   "fixes": [
+    "Compress the design by two or three pixels in width and height while retaining the helmet-heavy silhouette.",
+    "Replace the black cross in the helmet with a compact 2x2 or 2x3 light highlight and uninterrupted orange around it.",
+    "Redraw the face as exactly two separated 2x2 light eye clusters inside a small rounded black body.",
+    "Reduce the empty black area beneath the brim and define the body's lower curve with a clean one-pixel contour.",
+    "Shorten the left leg to a one- or two-pixel joint and build each foot as a compact 3-4 pixel orange cluster.",
+    "Remove the pale foot inset and reserve the light color for the eyes and one helmet highlight.",
+    "Keep each contour stair-step deliberate, especially along the brim ends and lower feet, to match MM2/MM3 cluster economy."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "1d0ec453df197e46cbc642c557facbb8caed45ac10d9003e5de73c3991a79ea7",
+   "cached": true,
+   "cost": 0.030448,
+   "subscores": {
+    "authenticity": 5,
+    "description_fidelity": 7,
+    "readability_1x": 6,
+    "pixel_craft": 6,
+    "palette_discipline": 7,
+    "appeal": 6
+   },
+   "score": 62,
+   "verdict": "not_convincing",
+   "issues": [
+    "The black cross-shaped cut and long horizontal black stripe inside the helmet crown read as arbitrary gouges rather than Capcom-style shading or construction detail.",
+    "Under the brim, the repeated white notched clusters resemble teeth; two distinct eyes and a small round body are not immediately clear at 1x.",
+    "The torso collapses into a large black void, weakening the separation between face, body, and legs.",
+    "The lower-left leg has a long, uneven diagonal staircase, while the right foot is a bulky orange block; the walking pose feels unbalanced.",
+    "The pale-orange helmet highlight is large and angular without clearly describing the dome.",
+    "Using black, orange, pale orange, and white within the same small regions risks exceeding normal NES sprite-palette discipline unless built from deliberate overlays."
+   ],
+   "fixes": [
+    "Remove the crown's black cross and horizontal gouge; describe the helmet with one uninterrupted orange mass, a clean black contour, and a compact 1-2-pixel pale-orange highlight.",
+    "Redraw the face as two clearly separated white eye blocks with single black pupils, leaving black spacing around them so they cannot read as teeth.",
+    "Expose a small rounded body beneath the eyes using orange or a contrasting NES color instead of leaving the entire torso black.",
+    "Shorten and regularize the left leg's diagonal into clean 1-pixel steps; make both feet compact, similarly weighted clusters while retaining a walking offset.",
+    "Simplify the brim into a consistent one-pixel black edge with a clean orange band and avoid isolated protruding pixels at its ends.",
+    "Keep each 8x8 region to black plus two opaque colors where possible, or make any extra eye color an intentional sprite-overlay layer."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 64.4,
+  "sd": 3.58,
+  "min": 60,
+  "max": 68,
+  "n": 5,
+  "subscores_mean": {
+   "authenticity": 5.4,
+   "description_fidelity": 7.4,
+   "readability_1x": 6.6,
+   "pixel_craft": 6.2,
+   "palette_discipline": 7.6,
+   "appeal": 6.2
+  },
+  "convincing_rate": 0.0,
+  "cost": 0.1418
+ },
+ "benchmark": "met_walk",
+ "kind": "authentic",
+ "control": null,
+ "type": "still",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": true,
+   "detail": "20x19 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T02:09:49+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ }
+}

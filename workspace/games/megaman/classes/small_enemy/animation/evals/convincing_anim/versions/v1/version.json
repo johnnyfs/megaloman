@@ -1,0 +1,12 @@
+{
+ "eval": "convincing_anim",
+ "version": "v1",
+ "created": "2026-10-22T02:09:18+00:00",
+ "author": "coding-agent",
+ "parent": null,
+ "change": {
+  "what": "initial: looping animation frames as a strip at 1x + 6x; 5 subscores",
+  "why": "judge whether frames are a convincing NES Mega Man enemy animation of the intended motion"
+ },
+ "note": "migrated from flat evals/*.yaml on 2026-10-22"
+}

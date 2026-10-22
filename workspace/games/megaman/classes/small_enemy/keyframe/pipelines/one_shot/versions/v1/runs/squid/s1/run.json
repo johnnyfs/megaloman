@@ -7,8 +7,13 @@
  "asset": "squid",
  "game": "megaman",
  "class": "small_enemy",
+ "asset_type": "keyframe",
  "seed": 1,
- "created": "2026-10-22T01:33:36+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "created": "2026-10-22T02:10:09+00:00",
  "steps": [
   {
    "id": "draw",
@@ -27,6 +32,7 @@
     {
      "id": "draw.0",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "c44ba6a4a7797421e461b1bdbbb42e49fa5678bf66d9406f995643d56230ec03",
      "size": [
@@ -46,6 +52,7 @@
     {
      "id": "draw.1",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "6ce785e352066a8a2a47bf9c5106992fafcd9dbc9463c7885e99965fc4511a6a",
      "size": [
@@ -65,6 +72,7 @@
     {
      "id": "draw.2",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "fa165a39a18aefba38321df83b794e77e7635cc7abe9548dbf34ccecaa085473",
      "size": [
@@ -84,6 +92,7 @@
     {
      "id": "draw.3",
      "parent": null,
+     "root": null,
      "kind": "image",
      "blob": "e18cec6f470b990bd1e35a2d6d90359431f2799eaf65ac3e3ebd73aadb096f83",
      "size": [
@@ -111,6 +120,7 @@
     {
      "id": "snap.0",
      "parent": "draw.0",
+     "root": null,
      "kind": "sprite",
      "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
      "size": [
@@ -133,6 +143,7 @@
     {
      "id": "snap.1",
      "parent": "draw.1",
+     "root": null,
      "kind": "sprite",
      "blob": "605687eaaa0e3b7f67e37efd37a896cccd0c684893dada60e4a5cd2f6b0132be",
      "size": [
@@ -155,6 +166,7 @@
     {
      "id": "snap.2",
      "parent": "draw.2",
+     "root": null,
      "kind": "sprite",
      "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
      "size": [
@@ -177,6 +189,7 @@
     {
      "id": "snap.3",
      "parent": "draw.3",
+     "root": null,
      "kind": "sprite",
      "blob": "32052652b24d000e258330e5a799b8c7ce7c22dfddbf6136e6a1eb12951fc309",
      "size": [
@@ -209,6 +222,7 @@
     {
      "id": "lock.0",
      "parent": "snap.0",
+     "root": null,
      "kind": "sprite",
      "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
      "size": [
@@ -225,6 +239,7 @@
     {
      "id": "lock.1",
      "parent": "snap.1",
+     "root": null,
      "kind": "sprite",
      "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
      "size": [
@@ -241,6 +256,7 @@
     {
      "id": "lock.2",
      "parent": "snap.2",
+     "root": null,
      "kind": "sprite",
      "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
      "size": [
@@ -257,6 +273,7 @@
     {
      "id": "lock.3",
      "parent": "snap.3",
+     "root": null,
      "kind": "sprite",
      "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
      "size": [
@@ -301,6 +318,7 @@
     {
      "id": "gate.0",
      "parent": "lock.0",
+     "root": null,
      "kind": "sprite",
      "blob": "d4819176e6e5ad1cfbb433f14cb15113ad4171a9160bfdd83bc1d2708463f82f",
      "size": [
@@ -348,6 +366,7 @@
     {
      "id": "gate.1",
      "parent": "lock.1",
+     "root": null,
      "kind": "sprite",
      "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
      "size": [
@@ -394,6 +413,7 @@
     {
      "id": "gate.2",
      "parent": "lock.2",
+     "root": null,
      "kind": "sprite",
      "blob": "f5258f638daedad3e53e13fb2634f16fa45c77238af6b7cb17f01df72375295a",
      "size": [
@@ -441,6 +461,7 @@
     {
      "id": "gate.3",
      "parent": "lock.3",
+     "root": null,
      "kind": "sprite",
      "blob": "38d1bc2070e63be455272b796b6aae7d9d3d64bfd8e50f1df642eca407254c17",
      "size": [
@@ -499,6 +520,7 @@
     {
      "id": "score.0",
      "parent": "gate.1",
+     "root": null,
      "kind": "sprite",
      "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
      "size": [
@@ -507,11 +529,45 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "20x28 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (3,6) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
       "judge": {
        "eval": {
         "name": "convincing_enemy",
-        "path": "evals/convincing_enemy.yaml",
-        "hash": "fbc43f3204",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
@@ -654,6 +710,7 @@
     {
      "id": "best.0",
      "parent": "score.0",
+     "root": null,
      "kind": "sprite",
      "blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
      "size": [
@@ -662,8 +719,174 @@
      ],
      "status": "ok",
      "meta": {
+      "checks": {
+       "size": {
+        "pass": true,
+        "detail": "20x28 (allowed 10-28)",
+        "gate": true
+       },
+       "colors": {
+        "pass": true,
+        "detail": "4 opaque colours (max 4)",
+        "gate": true
+       },
+       "tile_colors": {
+        "pass": true,
+        "detail": "max 3 colours/tile at offset (3,6) (max 3)",
+        "gate": true
+       },
+       "orphans": {
+        "pass": true,
+        "detail": "0 orphan pixels",
+        "gate": true
+       },
+       "holes": {
+        "pass": true,
+        "detail": "0 enclosed transparent pixels",
+        "gate": false
+       },
+       "outline": {
+        "pass": true,
+        "detail": "100% of silhouette edge is dark (min 75%)",
+        "gate": true
+       }
+      },
+      "judge": {
+       "eval": {
+        "name": "convincing_enemy",
+        "version": "v1",
+        "ref": "convincing_enemy@v1",
+        "path": "evals/convincing_enemy/versions/v1",
+        "hash": "4aa584a9ac",
+        "model": "openai/gpt-5.6-sol"
+       },
+       "sprite_blob": "a27ef2a8d99a32e39f6e4d2c25a9e5b084112dce903a73e65ad9e9dc5cdb8c30",
+       "presentation_blob": "33b11d8da9cabf34650ee6200fd6bbe7656865188391c4133f227fb553fd42c4",
+       "samples": [
+        {
+         "sample": 0,
+         "call": "5fd96c8d912117f5f57e4ba281b247b344f26be29bf2c5ab658fd15d6a31cef2",
+         "cached": true,
+         "cost": 0.03224,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 6,
+          "readability_1x": 5,
+          "pixel_craft": 5,
+          "palette_discipline": 4,
+          "appeal": 5
+         },
+         "score": 48,
+         "verdict": "not_convincing",
+         "issues": [
+          "The roughly 20x28 px bounding box is too tall for the intended 16x16 to 20x20 enemy scale.",
+          "The diagonal silhouette reads more like a rocket, fish, or comet than a Blooper-like squid; the tentacles merge into one pointed striped tail.",
+          "The top black projection resembles an antenna and does not clarify the mantle or swimming motion.",
+          "The face presents one large rectangular eye or opening rather than a clear pair of eyes that could flash red.",
+          "The cyan-and-white checker pattern through the lower-left tail is visually noisy at 1x and lacks the compact cluster control typical of Mega Man 2-3 sprites.",
+          "Several areas appear to require black, white, cyan, and dark blue within the same 8x8 region, exceeding a normal NES sprite palette's three opaque colors.",
+          "The thick stair-stepped black mass along the lower-right contour makes the outline uneven and visually heavy.",
+          "There is no clearly articulated gathered-versus-thrust tentacle pose, so the pulsing swim behavior is not communicated by the design."
+         ],
+         "fixes": [
+          "Compress the complete silhouette into a maximum 20x20 box, with a broader rounded mantle and shorter underside tentacles.",
+          "Replace the single tapered tail with two or three separated tentacle tips, leaving one-pixel negative-space cuts between them.",
+          "Create two animation frames: tentacles tucked tightly under the body, then extended downward or backward for the thrust.",
+          "Redesign the face as two compact one-pixel eyes or two 1x2 eye clusters; use a palette-swap frame that changes them to red before detonation.",
+          "Limit each 8x8 sprite region to black plus two body colors, removing either white or one blue where all four currently overlap.",
+          "Replace the lower checkerboard striping with one solid shadow cluster and one small highlight cluster.",
+          "Regularize the right and lower outlines to a consistent one-pixel contour, removing the bulky black staircase near the tail junction.",
+          "Remove or reshape the top antenna into a small mantle point or side fin so the silhouette reads immediately as a squid."
+         ]
+        },
+        {
+         "sample": 1,
+         "call": "9fd120ace2207129c8e35c65d3105f7b1ab1020369c4aaac3295e1d0cc9e0b6f",
+         "cached": true,
+         "cost": 0.01836,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 5,
+          "readability_1x": 6,
+          "pixel_craft": 5,
+          "palette_discipline": 7,
+          "appeal": 6
+         },
+         "score": 53,
+         "verdict": "not_convincing",
+         "issues": [
+          "The lower-left appendages merge into one striped, pointed mass, reading more like a rocket exhaust or fish tail than gathering squid tentacles.",
+          "The body has only one clearly readable eye; the large white facial patch and black square do not establish the described paired flashing eyes.",
+          "The black contour becomes 2-4 pixels thick along the right and underside of the body, unlike the controlled one-pixel outlines typical of Mega Man 2-3 enemies.",
+          "The diagonal outline and tentacle area contain heavy stair-stepping and cramped cyan-white-blue clusters that become muddy at 1x.",
+          "The sprite uses black, white, cyan, and dark blue together in small tile regions, making the NES sprite-palette construction questionable.",
+          "The silhouette lacks a clean separation between bulbous head and multiple tentacles, weakening both animation potential and mine-like character."
+         ],
+         "fixes": [
+          "Replace the fused pointed tail with three short, individually separated tentacles using one-pixel gaps; create distinct gathered and thrust animation frames.",
+          "Use two compact eyes, each one or two pixels wide, and reserve a red palette swap or separate frame for the proximity warning.",
+          "Reduce the right and lower black masses to a mostly one-pixel contour, keeping thicker black only at deliberate interior separations.",
+          "Simplify the head into a rounder, more symmetrical 10-12 pixel bulb with fewer diagonal staircase changes.",
+          "Remove either white or dark blue from crowded 8x8 regions, using black plus two body colours per hardware sprite layer.",
+          "Open the negative space around the tentacles and eliminate the alternating diagonal stripe pattern so the appendages remain legible at true size."
+         ]
+        },
+        {
+         "sample": 2,
+         "call": "2860633e481a215038d56e31a7b100d52819c2bdcbfe2f5d17b0408e247bce03",
+         "cached": true,
+         "cost": 0.01926,
+         "subscores": {
+          "authenticity": 4,
+          "description_fidelity": 5,
+          "readability_1x": 5,
+          "pixel_craft": 6,
+          "palette_discipline": 9,
+          "appeal": 6
+         },
+         "score": 57,
+         "verdict": "not_convincing",
+         "issues": [
+          "At 1x the diagonal silhouette reads more like a tiny rocket, drill, or comet than a floating squid.",
+          "The face lacks two clearly separated eyes, so the red-warning behavior has no obvious visual anchor.",
+          "The long upper black stalk feels like an antenna and weakens the squid-like mantle silhouette.",
+          "The lower-left appendages merge into one narrow, noisy mass instead of reading as tentacles gathering for a thrust.",
+          "The outline varies from one to several pixels thick around the right and lower body, unlike the controlled Capcom contouring of MM2/MM3.",
+          "Large white and cyan interior shapes form awkward stair-steps and make the body look hollow rather than mechanically constructed.",
+          "The sprite is taller than the intended compact 16-20 px footprint and has weak visual balance around its diagonal axis."
+         ],
+         "fixes": [
+          "Compress the silhouette into a roughly 18x18 body-and-tentacle footprint.",
+          "Remove or shorten the top stalk and shape the upper body as a broad, rounded squid mantle with small side fins.",
+          "Place two distinct 1-2 px eyes across the front of the body; reserve a red alternate-frame color for the warning flash.",
+          "Separate the lower appendage into three bold tentacles with clean 2-3 px-wide clusters and two animation poses: gathered and thrust outward.",
+          "Reduce the heavy right-side and underside black masses to a mostly 1 px contour, using thicker black only at deliberate shadow joins.",
+          "Replace the checker-like white/cyan interior with one simple white face plane and one cyan shadow band.",
+          "Keep the strong black, cyan, and white palette, but arrange each color into larger, cleaner NES-style clusters."
+         ]
+        }
+       ],
+       "summary": {
+        "mean": 52.67,
+        "sd": 4.51,
+        "min": 48,
+        "max": 57,
+        "n": 3,
+        "subscores_mean": {
+         "authenticity": 4,
+         "description_fidelity": 5.33,
+         "readability_1x": 5.33,
+         "pixel_craft": 5.33,
+         "palette_discipline": 6.67,
+         "appeal": 5.67
+        },
+        "convincing_rate": 0.0,
+        "cost": 0.0699
+       }
+      },
       "rank": 1,
-      "score": 52.67
+      "score": 52.67,
+      "group": null
      },
      "file": "steps/best/0.png"
     }
@@ -671,6 +894,8 @@
   }
  ],
  "status": "ok",
+ "depends_on": null,
+ "upstream": null,
  "best": "best.0",
  "cost": {
   "spent": 0.0,

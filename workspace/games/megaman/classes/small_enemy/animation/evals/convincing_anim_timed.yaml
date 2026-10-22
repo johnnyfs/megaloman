@@ -1,6 +1,0 @@
-name: convincing_anim_timed
-applies_to: animation
-model: openai/gpt-5.6-sol
-rubric: rubrics/convincing_anim_timed.md   # relative to the asset-type dir
-samples: 3
-presentation: {scale: 6, diff: true, timeline: true}   # frames, difference row, timeline row (every 4 game frames)

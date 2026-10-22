@@ -9,7 +9,11 @@
  "class": "small_enemy",
  "asset_type": "animation",
  "seed": 1,
- "created": "2026-10-22T01:53:19+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "created": "2026-10-22T02:10:20+00:00",
  "steps": [
   {
    "id": "src",
@@ -1123,8 +1127,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1263,8 +1269,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1403,8 +1411,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1543,8 +1553,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1683,8 +1695,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1823,8 +1837,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -1962,8 +1978,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -2101,8 +2119,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -2240,8 +2260,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -2379,8 +2401,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -2530,8 +2554,10 @@
       "judge": {
        "eval": {
         "name": "convincing_anim",
-        "path": "evals/convincing_anim.yaml",
-        "hash": "6e6fe09fe3",
+        "version": "v2",
+        "ref": "convincing_anim@v2",
+        "path": "evals/convincing_anim/versions/v2",
+        "hash": "aa2d1dec68",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",

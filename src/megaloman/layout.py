@@ -84,3 +84,16 @@ def feedback(entity_dir, text, author='human', target=None, **kw):
     append_jsonl(os.path.join(entity_dir, 'feedback.jsonl'), rec)
     event('feedback', author=author, entity=rel(entity_dir), text=text)
     return rec
+
+
+def code_version():
+    """The code that produced a record: git commit + whether the working tree had uncommitted code changes."""
+    import subprocess
+    root = os.path.dirname(W)
+    try:
+        commit = subprocess.run(['git', '-C', root, 'rev-parse', 'HEAD'], capture_output=True, text=True, check=True).stdout.strip()
+        dirty = bool(subprocess.run(['git', '-C', root, 'status', '--porcelain', '--', 'src', 'pyproject.toml'],
+                                    capture_output=True, text=True).stdout.strip())
+        return {'commit': commit, 'dirty': dirty}
+    except Exception:
+        return {'commit': None, 'dirty': None}

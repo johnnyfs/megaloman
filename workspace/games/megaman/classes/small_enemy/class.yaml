@@ -3,5 +3,5 @@ game: megaman
 description: Standard small enemy (Telly, Met, Pipi class), about 16-24 px.
 benchmark_samples: 5
 asset_types:
-  keyframe: {default_eval: evals/convincing_enemy.yaml}
-  animation: {default_eval: evals/convincing_anim.yaml}
+  keyframe: {default_eval: convincing_enemy@v1}
+  animation: {default_eval: convincing_anim@v3}

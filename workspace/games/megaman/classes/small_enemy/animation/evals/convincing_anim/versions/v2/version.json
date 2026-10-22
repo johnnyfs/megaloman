@@ -1,0 +1,12 @@
+{
+ "eval": "convincing_anim",
+ "version": "v2",
+ "created": "2026-10-22T02:09:18+00:00",
+ "author": "coding-agent",
+ "parent": "v1",
+ "change": {
+  "what": "add an exact difference row (changed pixels in magenta) under the frames",
+  "why": "v1 hallucinated motion on the static control (identical frames scored 79, only -8.6 vs Telly spin)"
+ },
+ "note": "migrated from flat evals/*.yaml on 2026-10-22"
+}

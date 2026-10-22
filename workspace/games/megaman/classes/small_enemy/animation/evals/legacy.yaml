@@ -1,0 +1,4 @@
+# old flat eval paths -> versioned refs (frozen pipeline versions still use the old form)
+evals/convincing_anim.yaml: convincing_anim@v2
+evals/convincing_anim_timed.yaml: convincing_anim@v3
+evals/convincing_action.yaml: convincing_action@v1

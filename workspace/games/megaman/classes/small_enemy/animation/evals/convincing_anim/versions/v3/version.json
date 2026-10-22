@@ -1,0 +1,12 @@
+{
+ "eval": "convincing_anim",
+ "version": "v3",
+ "created": "2026-10-22T02:09:18+00:00",
+ "author": "coding-agent",
+ "parent": "v2",
+ "change": {
+  "what": "add a timeline row (sampled every 4 game frames), the durations and behaviour in text, and a timing criterion",
+  "why": "human: 'the animation timing should be part of what the pipeline produces'; v2 could not see timing"
+ },
+ "note": "migrated from flat evals/*.yaml on 2026-10-22"
+}

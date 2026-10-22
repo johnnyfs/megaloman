@@ -42,6 +42,9 @@ def main():
     bl.add_argument('--candidates', nargs='+', required=True); bl.add_argument('--note', default='')
     bl.add_argument('--author', default='human'); bl.add_argument('--game', default='megaman')
 
+    st = sub.add_parser('status', help='summary of everything, materialized from the workspace files')
+    st.add_argument('--game', default='megaman')
+
     a = ap.parse_args()
     if a.cmd == 'benchmarks':
         from . import benchmarks
@@ -55,6 +58,9 @@ def main():
     elif a.cmd == 'promote':
         from . import runner
         runner.promote(a.asset, a.from_bench, a.game, a.note)
+    elif a.cmd == 'status':
+        from . import status
+        status.show(a.game)
     elif a.cmd == 'bless':
         from . import runner
         runner.bless(a.game, a.asset, a.track, a.run, a.candidates, a.note, a.author)

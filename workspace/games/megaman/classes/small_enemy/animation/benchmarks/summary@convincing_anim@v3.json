@@ -1,0 +1,88 @@
+{
+ "eval": {
+  "name": "convincing_anim",
+  "version": "v3",
+  "ref": "convincing_anim@v3",
+  "hash": "e39351780f",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "created": "2026-10-22T02:09:50+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "benchmarks": {
+  "met_walk_anim": {
+   "kind": "authentic",
+   "control": null,
+   "mean": 66,
+   "sd": 3.94,
+   "min": 59,
+   "max": 68,
+   "n": 5,
+   "subscores_mean": {
+    "motion_readability": 7.4,
+    "consistency": 6,
+    "economy": 5,
+    "pixel_craft": 7,
+    "timing": 7.8,
+    "appeal": 6.8
+   },
+   "convincing_rate": 0.0,
+   "cost": 0.2358
+  },
+  "telly_spin": {
+   "kind": "authentic",
+   "control": null,
+   "mean": 91,
+   "sd": 2.35,
+   "min": 87,
+   "max": 93,
+   "n": 5,
+   "subscores_mean": {
+    "motion_readability": 9,
+    "consistency": 9.8,
+    "economy": 9.6,
+    "pixel_craft": 8.8,
+    "timing": 9,
+    "appeal": 8.8
+   },
+   "convincing_rate": 1.0,
+   "cost": 0.2548
+  },
+  "telly_static": {
+   "kind": "control",
+   "control": "static",
+   "mean": 69.2,
+   "sd": 26.79,
+   "min": 40,
+   "max": 93,
+   "n": 5,
+   "subscores_mean": {
+    "motion_readability": 5,
+    "consistency": 9.6,
+    "economy": 6.2,
+    "pixel_craft": 8.8,
+    "timing": 6.2,
+    "appeal": 6
+   },
+   "convincing_rate": 0.6,
+   "cost": 0.2662
+  }
+ },
+ "authentic_mean": 78.5,
+ "noise_sd": 3.15,
+ "recognition_bonus": 0.0,
+ "controls": {
+  "telly_static": {
+   "control": "static",
+   "mean": 69.2,
+   "delta_vs_telly": -21.8,
+   "fidelity": null,
+   "fidelity_delta_vs_telly": 0
+  }
+ },
+ "pass_bar": 75.3,
+ "verdict_usable": false,
+ "pass_rule": "mean >= pass_bar AND all gate checks pass (verdict ignored: authentic benchmarks fail it)"
+}

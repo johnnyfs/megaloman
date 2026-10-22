@@ -346,7 +346,8 @@ def run(spec, asset_name, seed, game='megaman', budget=2.0, ledger=None, quiet=F
     ctx = Ctx(kdir, vdir, asset, seed, ledger, run_dir)
     spent0, calls0, cached0 = ledger.spent, ledger.calls, ledger.cached
     record = {'pipeline': {'name': pname, 'version': ver, 'hash': definition_hash(vdir)}, 'asset': asset_name,
-              'game': game, 'class': asset['class'], 'asset_type': os.path.basename(kdir), 'seed': seed, 'created': layout.now(), 'steps': [], 'status': 'ok'}
+              'game': game, 'class': asset['class'], 'asset_type': os.path.basename(kdir), 'seed': seed,
+              'code': layout.code_version(), 'created': layout.now(), 'steps': [], 'status': 'ok'}
     try:
         for st in pipe['steps']:
             src = st.get('input')
@@ -426,8 +427,8 @@ def _materialize(record, run_dir, kdir):
         if s['step'] not in ('select',):
             rows.append((f"{s['id']} ({s['step']})", cells))
     bench_cells = []
-    ev = next((s['params']['eval'] for s in record['steps'] if s['step'] == 'judge'), 'evals/convincing_enemy.yaml')
-    bs = _bench_summary(kdir, os.path.splitext(os.path.basename(ev))[0]) or {'benchmarks': {}}
+    ev = next((s['params']['eval'] for s in record['steps'] if s['step'] == 'judge'), None)
+    bs = (_bench_summary(kdir, ev) if ev else None) or {'benchmarks': {}}
     from .benchmarks import list_benchmarks, subject_image
     bmap = {b['name']: b for b in list_benchmarks(kdir)}
     for name, v in bs['benchmarks'].items():
@@ -442,8 +443,9 @@ def _materialize(record, run_dir, kdir):
 
 # ------------------------------------------------------------------ bench + promote
 
-def _bench_summary(kdir, eval_name='convincing_enemy'):
-    p = os.path.join(kdir, 'benchmarks', f'summary@{eval_name}.json')
+def _bench_summary(kdir, eval_ref):
+    """Calibration summary for an eval ref (any form judge.resolve_ref accepts)."""
+    p = os.path.join(kdir, 'benchmarks', f"summary@{judge.load_eval(kdir, eval_ref)['_ref']}.json")
     return json.load(open(p)) if os.path.exists(p) else {}
 
 
@@ -451,8 +453,8 @@ def bench(spec, asset_name, seeds=4, first_seed=1, game='megaman', budget=6.0):
     asset = load_asset(game, asset_name)
     kdir, vdir, pname, ver = pipeline_dirs(game, asset['class'], spec)
     pipe = _load(os.path.join(vdir, 'pipeline.yaml'))
-    ev = next((s['eval'] for s in pipe['steps'] if s['step'] == 'judge'), 'evals/convincing_enemy.yaml')
-    bs = _bench_summary(kdir, os.path.splitext(os.path.basename(ev))[0])
+    ev = next((s['eval'] for s in pipe['steps'] if s['step'] == 'judge'), None)
+    bs = _bench_summary(kdir, ev) if ev else {}
     bar = bs.get('pass_bar')
     ledger = models.Ledger(budget)
     per_seed, judged = [], []
@@ -484,7 +486,7 @@ def bench(spec, asset_name, seeds=4, first_seed=1, game='megaman', budget=6.0):
     bests = [p['best_mean'] for p in per_seed if p['best_mean'] is not None]
     top = max(judged, key=lambda j: j['mean'] or -1) if judged else None
     out = {'pipeline': {'name': pname, 'version': ver, 'hash': definition_hash(vdir)}, 'asset': asset_name,
-           'created': layout.now(), 'benchmark_ref': {'pass_bar': bar, 'authentic_mean': bs.get('authentic_mean'),
+           'created': layout.now(), 'code': layout.code_version(), 'benchmark_ref': {'pass_bar': bar, 'authentic_mean': bs.get('authentic_mean'),
                                                      'noise_sd': bs.get('noise_sd'), 'eval': bs.get('eval'),
                                                      'verdict_usable': bs.get('verdict_usable')},
            'seeds': per_seed,
@@ -535,7 +537,7 @@ def _bench_contact(o, vdir, asset_name, kdir):
         rows.append((f"seed {p['seed']}", cells or [(Image.new('RGBA', (16, 16)), 'none passed', 'reject')]))
     from .benchmarks import list_benchmarks, subject_image
     bmap = {b['name']: b for b in list_benchmarks(kdir)}
-    bs = _bench_summary(kdir, o['benchmark_ref']['eval']['name'] if o['benchmark_ref'].get('eval') else 'convincing_enemy')
+    bs = _bench_summary(kdir, o['benchmark_ref']['eval']['ref']) if (o['benchmark_ref'].get('eval') or {}).get('ref') else {}
     cells = [(subject_image(bmap[n]), f"{n}\n{v['mean']}±{v['sd']}", None)
              for n, v in bs.get('benchmarks', {}).items() if v.get('kind') == 'authentic']
     if cells:

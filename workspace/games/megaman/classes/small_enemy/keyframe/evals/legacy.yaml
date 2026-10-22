@@ -1,0 +1,2 @@
+# old flat eval paths -> versioned refs (frozen pipeline versions still use the old form)
+evals/convincing_enemy.yaml: convincing_enemy@v1

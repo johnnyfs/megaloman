@@ -9,7 +9,11 @@
  "class": "small_enemy",
  "asset_type": "animation",
  "seed": 1,
- "created": "2026-10-22T01:58:05+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "created": "2026-10-22T02:10:29+00:00",
  "steps": [
   {
    "id": "src",
@@ -1083,8 +1087,10 @@
       "judge": {
        "eval": {
         "name": "convincing_action",
-        "path": "evals/convincing_action.yaml",
-        "hash": "0bc6690002",
+        "version": "v1",
+        "ref": "convincing_action@v1",
+        "path": "evals/convincing_action/versions/v1",
+        "hash": "4744049bfe",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1093,7 +1099,7 @@
         {
          "sample": 0,
          "call": "be0bf2b860b51bc08b6b4490babb3ca6b52a0af08587d2e972b187e4b369d5a4",
-         "cached": false,
+         "cached": true,
          "cost": 0.026256,
          "subscores": {
           "motion_readability": 8,
@@ -1119,7 +1125,7 @@
         {
          "sample": 1,
          "call": "73a09b17d0b80653d8a21c2f4697c628c80c83efdb2a13951c672e3d28eda270",
-         "cached": false,
+         "cached": true,
          "cost": 0.035796,
          "subscores": {
           "motion_readability": 9,
@@ -1143,7 +1149,7 @@
         {
          "sample": 2,
          "call": "a6485583464e7936522fdebd70326a3512fb9e77b5366de052aff16d1de1bb9f",
-         "cached": false,
+         "cached": true,
          "cost": 0.037362,
          "subscores": {
           "motion_readability": 9,
@@ -1226,8 +1232,10 @@
       "judge": {
        "eval": {
         "name": "convincing_action",
-        "path": "evals/convincing_action.yaml",
-        "hash": "0bc6690002",
+        "version": "v1",
+        "ref": "convincing_action@v1",
+        "path": "evals/convincing_action/versions/v1",
+        "hash": "4744049bfe",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -1236,7 +1244,7 @@
         {
          "sample": 0,
          "call": "12ff70b767e7588307f3be738c1c327134b49f6a6a634b59fd1ba820bfc49480",
-         "cached": false,
+         "cached": true,
          "cost": 0.034076,
          "subscores": {
           "motion_readability": 9,
@@ -1262,7 +1270,7 @@
         {
          "sample": 1,
          "call": "bac44a247cab5638b926bab50f2edaaaf2a5dbd55c6ea86bb57ad0bb3ceb0b6a",
-         "cached": false,
+         "cached": true,
          "cost": 0.028076,
          "subscores": {
           "motion_readability": 9,
@@ -1288,7 +1296,7 @@
         {
          "sample": 2,
          "call": "517ac1c423d72082188c151e9cd085552ff05a92b30506004c7856cccd497d14",
-         "cached": false,
+         "cached": true,
          "cost": 0.036902,
          "subscores": {
           "motion_readability": 9,
@@ -1382,8 +1390,10 @@
       "judge": {
        "eval": {
         "name": "convincing_action",
-        "path": "evals/convincing_action.yaml",
-        "hash": "0bc6690002",
+        "version": "v1",
+        "ref": "convincing_action@v1",
+        "path": "evals/convincing_action/versions/v1",
+        "hash": "4744049bfe",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -1392,7 +1402,7 @@
         {
          "sample": 0,
          "call": "12ff70b767e7588307f3be738c1c327134b49f6a6a634b59fd1ba820bfc49480",
-         "cached": false,
+         "cached": true,
          "cost": 0.034076,
          "subscores": {
           "motion_readability": 9,
@@ -1418,7 +1428,7 @@
         {
          "sample": 1,
          "call": "bac44a247cab5638b926bab50f2edaaaf2a5dbd55c6ea86bb57ad0bb3ceb0b6a",
-         "cached": false,
+         "cached": true,
          "cost": 0.028076,
          "subscores": {
           "motion_readability": 9,
@@ -1444,7 +1454,7 @@
         {
          "sample": 2,
          "call": "517ac1c423d72082188c151e9cd085552ff05a92b30506004c7856cccd497d14",
-         "cached": false,
+         "cached": true,
          "cost": 0.036902,
          "subscores": {
           "motion_readability": 9,
@@ -1526,8 +1536,8 @@
  ],
  "best": "best.0",
  "cost": {
-  "spent": 0.2099,
-  "calls": 8,
-  "cached": 6
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 14
  }
 }

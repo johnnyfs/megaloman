@@ -1,0 +1,205 @@
+{
+ "eval": {
+  "name": "convincing_anim",
+  "version": "v3",
+  "ref": "convincing_anim@v3",
+  "path": "evals/convincing_anim/versions/v3",
+  "hash": "e39351780f",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "abcc64a6520eef2b9697ea4f668aa0f5b077257b8e87b4f87d2ec6c71ef8481e",
+ "presentation_blob": "2dda8aa459440def2ca14429ca0c298be59740578e4554f0fa35c90773450031",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "a827b1eba376b408eef5aa46f32acecf131793b4e56c002b314fe76a38a2b4bd",
+   "cached": true,
+   "cost": 0.0485264,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely empty eye band briefly risks reading as a blink rather than the eyes rotating around the rear.",
+    "The clipped eye fragments in frames 3 and 5 are very narrow at true size, so the direction of the wrap is slightly understated."
+   ],
+   "fixes": [
+    "Widen the inward-facing white eye fragment in frames 3 and 5 by one pixel while keeping the two frames mirrored and leaving the silhouette unchanged.",
+    "Keep frame 4's rear-facing blank band, but preserve strong, symmetrical edge transitions into it from frames 3 and 5."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "944046ac19972dbf938f83033155ab4fd1af6375b14e588cd22c7a61c559f82e",
+   "cached": true,
+   "cost": 0.0382264,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 9,
+    "economy": 9,
+    "pixel_craft": 8,
+    "timing": 9,
+    "appeal": 8
+   },
+   "score": 87,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4 leaves the entire eye band blank, briefly weakening the rotational landmark and making the middle of the spin feel visually dead.",
+    "Frame 5's emerging right-side eye is represented by a background-colored cutout rather than the solid white-and-black eye treatment used elsewhere, making it look slightly unfinished or background-dependent.",
+    "The frame 6 -> frame 1 transition changes a comparatively large portion of the eye band, so the second eye appears more abruptly than the otherwise incremental rotation.",
+    "The uniform 100 ms holds create a clean mechanical spin, but give the loop slightly less snap and personality than Capcom's strongest enemy cycles."
+   ],
+   "fixes": [
+    "In frame 4, retain a one- or two-pixel dark-blue or white rim at one edge of the band to carry the eye around the rear without making it fully visible.",
+    "In frame 5, replace the background-colored right-side cutout with a compact dark-blue/white edge cluster using only the established sprite colors.",
+    "In frame 1, move the entering eye's outermost white pixels one pixel nearer the right edge, or add that edge sliver to frame 6, to soften the frame 6 -> frame 1 appearance.",
+    "Consider shortening frames 2 and 5 by one or two game frames and giving those frames to frames 1 and 4, emphasizing the front and rear poses while preserving the 36-frame loop."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "fe4d1ada21c3599bed4eac39b4acb4152fdbe495c033cc1bfe80182ea5780d23",
+   "cached": true,
+   "cost": 0.0550864,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 9,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 91,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely dark eye band is a slightly low-information phase and can momentarily read as a blink rather than the eyes rotating around the rear.",
+    "Frame 5's entering eye fragment is cramped against the right contour, making that edge look mildly notched at 1x.",
+    "The frame 6 -> frame 1 transition introduces the second eye rather abruptly compared with the otherwise incremental rotation."
+   ],
+   "fixes": [
+    "In frame 4, add a single blue or white 1-pixel edge glint inside the band to preserve rotational direction without revealing a full eye.",
+    "In frame 5, regularize the right-side fragment into a clean 1-pixel-wide white sliver enclosed by an unbroken black outer contour.",
+    "In frame 6, shift the visible eye cluster 1 pixel left and add a 1-pixel white onset at the far right of the band, easing the transition into frame 1's two-eye view."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "40071038db693ac4a3f2942413241d6a553759a8ad90f244f76f65f74e158a42",
+   "cached": true,
+   "cost": 0.0559264,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely empty eye band briefly reads as a powered-off face rather than the rear phase of the rotation, although the moving cap stripes preserve the spin.",
+    "Frame 5's returning eye is a small, low-contrast negative-space cluster and is less immediately legible than the departing eye in frame 3.",
+    "The frame 6 -> frame 1 transition reveals much of the second eye at once, producing a slightly stronger pop than the middle rotation steps."
+   ],
+   "fixes": [
+    "In frame 4, add a 1-pixel blue or white edge glint at one side of the middle band to indicate the eye band continuing around the rear without changing the silhouette.",
+    "In frame 5, replace the innermost 1-2 low-contrast pixels of the returning-eye notch with existing white pixels, forming a cleaner vertical crescent that mirrors frame 3.",
+    "In frame 6, introduce a 1-pixel white leading sliver of the second eye so its reveal is divided between frame 5 -> 6 and frame 6 -> 1."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "80001330d1695b21a2ac83cd502d4121a53ae70495c332043d41a65252490173",
+   "cached": true,
+   "cost": 0.057032,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "timing": 9,
+    "appeal": 9
+   },
+   "score": 93,
+   "verdict": "convincing",
+   "issues": [
+    "Frames 3-5 reduce the eyes to edge fragments and then none in frame 4, so the rear-facing phase can briefly resemble blinking rather than rotation when viewed frame-by-frame.",
+    "Across frames 1-6, the cap-stripe rotation is represented by very small single-pixel toggles; at 1x it reads less strongly than the eye-band motion."
+   ],
+   "fixes": [
+    "No essential correction is needed; the stable silhouette and economical eye-band occlusion are authentically NES-like.",
+    "Optionally, in frames 2-5, shift the existing blue-and-white boundary notches on the top and bottom caps one column progressively in the same direction as the eyes, without altering the outline or adding colors."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 91,
+  "sd": 2.35,
+  "min": 87,
+  "max": 93,
+  "n": 5,
+  "subscores_mean": {
+   "motion_readability": 9,
+   "consistency": 9.8,
+   "economy": 9.6,
+   "pixel_craft": 8.8,
+   "timing": 9,
+   "appeal": 8.8
+  },
+  "convincing_rate": 1.0,
+  "cost": 0.2548
+ },
+ "motion": {
+  "changed_pixels": 140,
+  "frames": 6
+ },
+ "benchmark": "telly_spin",
+ "kind": "authentic",
+ "control": null,
+ "type": "animation",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": false,
+   "detail": "106x16 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T02:09:50+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ }
+}

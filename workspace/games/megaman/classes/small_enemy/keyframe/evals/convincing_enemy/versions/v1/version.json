@@ -1,0 +1,12 @@
+{
+ "eval": "convincing_enemy",
+ "version": "v1",
+ "created": "2026-10-22T02:09:18+00:00",
+ "author": "coding-agent",
+ "parent": null,
+ "change": {
+  "what": "initial: one sprite at 1x + 6x on the neutral background vs a description; 6 subscores, overall 0-100, verdict",
+  "why": "judge whether a sprite is a convincing NES Mega Man enemy matching its description; calibrated on Telly, Met, Pipi + 2 controls"
+ },
+ "note": "migrated from flat evals/*.yaml on 2026-10-22"
+}

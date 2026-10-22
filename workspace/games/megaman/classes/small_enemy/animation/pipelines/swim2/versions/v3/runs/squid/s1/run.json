@@ -9,7 +9,11 @@
  "class": "small_enemy",
  "asset_type": "animation",
  "seed": 1,
- "created": "2026-10-22T01:54:39+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ },
+ "created": "2026-10-22T02:10:25+00:00",
  "steps": [
   {
    "id": "src",
@@ -863,6 +867,18 @@
        }
       },
       "timing": {
+       "mode": "loop",
+       "state": null,
+       "sequence": [
+        [
+         1,
+         28
+        ],
+        [
+         2,
+         10
+        ]
+       ],
        "durations": [
         28,
         10
@@ -920,6 +936,18 @@
        }
       },
       "timing": {
+       "mode": "loop",
+       "state": null,
+       "sequence": [
+        [
+         1,
+         28
+        ],
+        [
+         2,
+         12
+        ]
+       ],
        "durations": [
         28,
         12
@@ -961,7 +989,19 @@
        10
       ],
       "timing": "designed",
-      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift."
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift.",
+      "mode": "loop",
+      "state": null,
+      "sequence": [
+       [
+        1,
+        28
+       ],
+       [
+        2,
+        10
+       ]
+      ]
      },
      "file": "steps/anim/0.png",
      "gif": "steps/anim/0.gif"
@@ -987,7 +1027,19 @@
        12
       ],
       "timing": "designed",
-      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour."
+      "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+      "mode": "loop",
+      "state": null,
+      "sequence": [
+       [
+        1,
+        28
+       ],
+       [
+        2,
+        12
+       ]
+      ]
      },
      "file": "steps/anim/1.png",
      "gif": "steps/anim/1.gif"
@@ -1025,11 +1077,25 @@
       ],
       "timing": "designed",
       "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames because the squid spends most of each cycle coasting and slowing down. Frame 2 (stroke, tentacles flared) is a quick 10-frame thrust, so each swim pulse reads as a sharp push followed by a long drift.",
+      "mode": "loop",
+      "state": null,
+      "sequence": [
+       [
+        1,
+        28
+       ],
+       [
+        2,
+        10
+       ]
+      ],
       "judge": {
        "eval": {
-        "name": "convincing_anim_timed",
-        "path": "evals/convincing_anim_timed.yaml",
-        "hash": "561e641e45",
+        "name": "convincing_anim",
+        "version": "v3",
+        "ref": "convincing_anim@v3",
+        "path": "evals/convincing_anim/versions/v3",
+        "hash": "e39351780f",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "4783370afb11358d6a9a43656e87426f76e5be3f633622d91ba596a74340021d",
@@ -1038,7 +1104,7 @@
         {
          "sample": 0,
          "call": "7dbe0f9fe8bd8fcbeedc84a48261911e9c60936185c3f31914656de165b82542",
-         "cached": false,
+         "cached": true,
          "cost": 0.0136684,
          "subscores": {
           "motion_readability": 7,
@@ -1068,7 +1134,7 @@
         {
          "sample": 1,
          "call": "cdf1ed1132041bd23264d3a3048393b6f0ccd1432407470588a5a56ce1030af2",
-         "cached": false,
+         "cached": true,
          "cost": 0.051667,
          "subscores": {
           "motion_readability": 8,
@@ -1096,7 +1162,7 @@
         {
          "sample": 2,
          "call": "a047bf993bb79fd20593a29e26c89732330b6cee7048df1cfe86ea419c626d94",
-         "cached": false,
+         "cached": true,
          "cost": 0.042867,
          "subscores": {
           "motion_readability": 8,
@@ -1164,11 +1230,25 @@
       ],
       "timing": "designed",
       "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+      "mode": "loop",
+      "state": null,
+      "sequence": [
+       [
+        1,
+        28
+       ],
+       [
+        2,
+        12
+       ]
+      ],
       "judge": {
        "eval": {
-        "name": "convincing_anim_timed",
-        "path": "evals/convincing_anim_timed.yaml",
-        "hash": "561e641e45",
+        "name": "convincing_anim",
+        "version": "v3",
+        "ref": "convincing_anim@v3",
+        "path": "evals/convincing_anim/versions/v3",
+        "hash": "e39351780f",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -1177,7 +1257,7 @@
         {
          "sample": 0,
          "call": "de2b64a798e4264db088eddfb3a871473d517f55efac0af4df7966b7f160ee70",
-         "cached": false,
+         "cached": true,
          "cost": 0.0334916,
          "subscores": {
           "motion_readability": 8,
@@ -1205,7 +1285,7 @@
         {
          "sample": 1,
          "call": "ff16f2d56cbd11e5a53d0642e83b2f3b01bb5403fe0ef69a30d8b96828911d93",
-         "cached": false,
+         "cached": true,
          "cost": 0.049437,
          "subscores": {
           "motion_readability": 8,
@@ -1231,7 +1311,7 @@
         {
          "sample": 2,
          "call": "50b825bde8fb60f0f682e3bd527fa469bfe557b5b5796593c549484debc0c3f0",
-         "cached": false,
+         "cached": true,
          "cost": 0.0307316,
          "subscores": {
           "motion_readability": 8,
@@ -1310,11 +1390,25 @@
       ],
       "timing": "designed",
       "timing_rationale": "The pulse cycle is about 40 game frames. Frame 1 (glide, tentacles together) is held for 28 frames as the long, slowing coast. Frame 2 (flared stroke) is held for 12 frames as the short gather-and-thrust burst, so the loop totals 40 and matches the behaviour.",
+      "mode": "loop",
+      "state": null,
+      "sequence": [
+       [
+        1,
+        28
+       ],
+       [
+        2,
+        12
+       ]
+      ],
       "judge": {
        "eval": {
-        "name": "convincing_anim_timed",
-        "path": "evals/convincing_anim_timed.yaml",
-        "hash": "561e641e45",
+        "name": "convincing_anim",
+        "version": "v3",
+        "ref": "convincing_anim@v3",
+        "path": "evals/convincing_anim/versions/v3",
+        "hash": "e39351780f",
         "model": "openai/gpt-5.6-sol"
        },
        "sprite_blob": "7d8611561e6e6361641fb7b7802d9273c853e3585d7bb47795848089480451f7",
@@ -1323,7 +1417,7 @@
         {
          "sample": 0,
          "call": "de2b64a798e4264db088eddfb3a871473d517f55efac0af4df7966b7f160ee70",
-         "cached": false,
+         "cached": true,
          "cost": 0.0334916,
          "subscores": {
           "motion_readability": 8,
@@ -1351,7 +1445,7 @@
         {
          "sample": 1,
          "call": "ff16f2d56cbd11e5a53d0642e83b2f3b01bb5403fe0ef69a30d8b96828911d93",
-         "cached": false,
+         "cached": true,
          "cost": 0.049437,
          "subscores": {
           "motion_readability": 8,
@@ -1377,7 +1471,7 @@
         {
          "sample": 2,
          "call": "50b825bde8fb60f0f682e3bd527fa469bfe557b5b5796593c549484debc0c3f0",
-         "cached": false,
+         "cached": true,
          "cost": 0.0307316,
          "subscores": {
           "motion_readability": 8,
@@ -1459,8 +1553,8 @@
  ],
  "best": "best.0",
  "cost": {
-  "spent": 0.2274,
-  "calls": 8,
-  "cached": 6
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 14
  }
 }

@@ -1,0 +1,205 @@
+{
+ "eval": {
+  "name": "convincing_anim",
+  "version": "v2",
+  "ref": "convincing_anim@v2",
+  "path": "evals/convincing_anim/versions/v2",
+  "hash": "aa2d1dec68",
+  "model": "openai/gpt-5.6-sol"
+ },
+ "sprite_blob": "abcc64a6520eef2b9697ea4f668aa0f5b077257b8e87b4f87d2ec6c71ef8481e",
+ "presentation_blob": "ec4c72d4f7a1acbe0aaf7a18d59fbdf2be471e80a0eedd3f8ca7498a03dda108",
+ "samples": [
+  {
+   "sample": 0,
+   "call": "f07e196d1b1cb020458234f05a3942676a2cff0ed5a9a2ac1d995143d4efe258",
+   "cached": true,
+   "cost": 0.039116,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "appeal": 9
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 4's completely empty eye band makes the midpoint read briefly as the eyes vanishing rather than clearly passing behind the barrel.",
+    "The tiny top and bottom stripe changes across frames 1-6 are so subtle at 1x that they can read as blue-pixel flicker rather than rotation.",
+    "The edge-eye slivers in frames 3 and 5 are slightly less immediately legible than the strong intermediate eye shapes in frames 2 and 6."
+   ],
+   "fixes": [
+    "In frame 3, clarify the departing left-edge eye with one additional contiguous white pixel; mirror that treatment on the right-edge eye in frame 5.",
+    "In frame 4, consider retaining a single white edge pixel on one side of the band to preserve rotational direction through the rear-facing pose.",
+    "Make one blue stripe cluster in frames 2-5 shift as a coherent 2-3-pixel unit rather than relying mainly on isolated single-pixel swaps, while keeping the silhouette fixed."
+   ]
+  },
+  {
+   "sample": 1,
+   "call": "52aafa6ec488d7d0174f714c2baa1f4a879887753751213fd1fba7e3f6e37046",
+   "cached": true,
+   "cost": 0.038096,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 10,
+    "pixel_craft": 9,
+    "appeal": 9
+   },
+   "score": 92,
+   "verdict": "convincing",
+   "issues": [
+    "Frames 3 and 4 have very sparse eye-band changes, so the rotation reads slightly slower through the rear-facing portion than through frames 5, 6, and 1.",
+    "The partially occluded eye at the right side of frame 5 reads somewhat like a background-colored notch before becoming clearly identifiable in frame 6."
+   ],
+   "fixes": [
+    "In frame 4, advance one edge pixel of the rear band or an aligned top/bottom stripe by one pixel to strengthen the rotational phase without changing the silhouette.",
+    "In frame 5, expose a single white leading pixel of the entering eye at the right edge, while retaining its black pupil/occlusion cluster, to make the transition into frame 6 clearer."
+   ]
+  },
+  {
+   "sample": 2,
+   "call": "f1b73e17bfb0264e9d3b6747a3e9c1e7b2e8d0807cf43e686a572f7af678658e",
+   "cached": true,
+   "cost": 0.062156,
+   "subscores": {
+    "motion_readability": 7,
+    "consistency": 9,
+    "economy": 8,
+    "pixel_craft": 7,
+    "appeal": 7
+   },
+   "score": 74,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frame 4 loses the eye band almost completely, making the middle read as an empty white barrel rather than the back phase of a rotating band.",
+    "The edge-on eye fragments in frames 3 and 5 form cramped, hook-like clusters; they read more as broken pieces than clean cylindrical foreshortening.",
+    "Frames 2 and 6 do not make a fully convincing mirrored pair around the front-facing frame 1, so the wraparound path of the eyes feels slightly uneven.",
+    "The top and bottom stripe changes are very small and can read as isolated pixel flicker rather than clearly supporting the same rotation.",
+    "The silhouette remains stable and every loop step contains deliberate changes, but the six-frame sequence is more elaborate than its limited visual payoff warrants."
+   ],
+   "fixes": [
+    "In frame 4, retain a one-pixel dark-blue or black horizontal seam across part of the middle so the rotating eye band remains structurally legible on the back side.",
+    "Redraw the visible band edges in frames 3 and 5 as clean one- or two-pixel vertical slivers attached to the barrel edge; remove the hook-shaped interior cavities.",
+    "Make frames 2 and 6 exact perspective counterparts: match the widths, pupil clipping, and spacing of the eyes while reversing their horizontal placement.",
+    "In frames 2-5, move the top and bottom blue stripe clusters through a consistent one-pixel horizontal progression instead of changing isolated points.",
+    "Preserve the locked outer silhouette, but simplify the middle phases to four stronger rotational poses if cartridge-style animation economy is the priority."
+   ]
+  },
+  {
+   "sample": 3,
+   "call": "5a5c6fc26159b39fff905abffcdeba6d8ef6f36aa4a94842719da0f556e62be2",
+   "cached": true,
+   "cost": 0.066696,
+   "subscores": {
+    "motion_readability": 7,
+    "consistency": 9,
+    "economy": 8,
+    "pixel_craft": 8,
+    "appeal": 7
+   },
+   "score": 76,
+   "verdict": "not_convincing",
+   "issues": [
+    "Frames 3-5 lose the eye-band cue: frame 3 reduces it to a small edge fragment, frame 4 has an entirely blank black band, and frame 5 introduces a low-contrast C-shaped mark. The rotation therefore reads more as eyes vanishing and reappearing than as a continuous wraparound spin.",
+    "The dark C-shaped cluster in frame 5 reads like a dent or stray interior mark rather than a foreshortened eye.",
+    "The eye transition from frame 6 back to frame 1 is comparatively abrupt, snapping from one clear eye plus a dark fragment to two fully presented eyes.",
+    "Several lower-barrel stripe clusters in frames 2-3 are more stepped and irregular than the clean vertical stripe language on the upper barrel, weakening the sense that both sections share one rotation."
+   ],
+   "fixes": [
+    "In frame 3, reshape the retreating eye into a clean one-pixel-wide light crescent at the left edge of the band instead of the ambiguous compact fragment.",
+    "In frame 4, retain a single one-pixel dark-blue or gray edge sliver at the opposite side of the band so the rear-facing phase still communicates continued rotation.",
+    "In frame 5, replace the dark C-shaped cluster with a narrow light crescent entering from the right, then widen that same cluster in frame 6 before reaching the full eye in frame 1.",
+    "Regularize the lower stripes in frames 2-3 into the same one- and two-pixel vertical columns used on the upper barrel, shifting them horizontally one pixel per phase rather than changing their cluster shape."
+   ]
+  },
+  {
+   "sample": 4,
+   "call": "4afa7b33e8067388c794560c16b0c4244525ec8e935d2227e58fd3956e4db556",
+   "cached": true,
+   "cost": 0.055496,
+   "subscores": {
+    "motion_readability": 9,
+    "consistency": 10,
+    "economy": 9,
+    "pixel_craft": 9,
+    "appeal": 9
+   },
+   "score": 91,
+   "verdict": "convincing",
+   "issues": [
+    "Frame 5's narrow side-on eye cluster is slightly abstract at 1x and can momentarily read as a loose dark notch.",
+    "Frames 3 and 4 are both eyeless, so the middle of the rotation depends mainly on the moving blue stripes.",
+    "The frame 6-to-frame 1 transition has a somewhat stronger visual pop as the second eye rotates fully into view."
+   ],
+   "fixes": [
+    "In frame 5, add a one-pixel white glint inside the side-eye cluster while preserving its wrapped profile.",
+    "In frame 4, shift one central stripe edge by one pixel to distinguish its rotational phase more strongly from frame 3.",
+    "In frame 6, expose one additional white pixel at the incoming left eye edge to soften the transition into frame 1."
+   ]
+  }
+ ],
+ "summary": {
+  "mean": 85,
+  "sd": 9.17,
+  "min": 74,
+  "max": 92,
+  "n": 5,
+  "subscores_mean": {
+   "motion_readability": 8.2,
+   "consistency": 9.6,
+   "economy": 9,
+   "pixel_craft": 8.4,
+   "appeal": 8.2
+  },
+  "convincing_rate": 0.6,
+  "cost": 0.2616
+ },
+ "motion": {
+  "changed_pixels": 140,
+  "frames": 6
+ },
+ "benchmark": "telly_spin",
+ "kind": "authentic",
+ "control": null,
+ "type": "animation",
+ "reference": null,
+ "checks": {
+  "size": {
+   "pass": false,
+   "detail": "106x16 (allowed 10-24)",
+   "gate": true
+  },
+  "colors": {
+   "pass": true,
+   "detail": "3 opaque colours (max 4)",
+   "gate": true
+  },
+  "tile_colors": {
+   "pass": true,
+   "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+   "gate": true
+  },
+  "orphans": {
+   "pass": true,
+   "detail": "0 orphan pixels",
+   "gate": true
+  },
+  "holes": {
+   "pass": true,
+   "detail": "0 enclosed transparent pixels",
+   "gate": true
+  },
+  "outline": {
+   "pass": true,
+   "detail": "100% of silhouette edge is dark (min 75%)",
+   "gate": true
+  }
+ },
+ "created": "2026-10-22T02:09:50+00:00",
+ "code": {
+  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "dirty": true
+ }
+}
