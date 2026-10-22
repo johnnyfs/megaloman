@@ -1,0 +1,257 @@
+{
+ "created": "2026-10-22T02:39:39+00:00",
+ "code": {
+  "commit": "2abd179d9cf93aebb54fc0be4ec7fc35257ac2ef",
+  "dirty": true
+ },
+ "question": "recover authentic sprites (ground truth) from painted enlargements",
+ "mode": "painted",
+ "factors": [
+  1.4,
+  1.7
+ ],
+ "summary": {
+  "nearest": {
+   "pixel_acc": 0.765,
+   "ink_iou": 0.611,
+   "silhouette_iou": 0.932,
+   "orphans": 0.0
+  },
+  "pixelize(fusion-man)": {
+   "pixel_acc": 0.723,
+   "ink_iou": 0.571,
+   "silhouette_iou": 0.931,
+   "orphans": 0.0
+  },
+  "compiler v2 tuned": {
+   "pixel_acc": 0.94,
+   "ink_iou": 0.878,
+   "silhouette_iou": 0.99,
+   "orphans": 0.0
+  }
+ },
+ "per_case": {
+  "nearest": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.766,
+    "ink_iou": 0.691,
+    "silhouette_iou": 0.974,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.767,
+    "ink_iou": 0.634,
+    "silhouette_iou": 0.918,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.796,
+    "ink_iou": 0.665,
+    "silhouette_iou": 0.942,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.8,
+    "ink_iou": 0.642,
+    "silhouette_iou": 0.945,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.724,
+    "ink_iou": 0.536,
+    "silhouette_iou": 0.916,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.736,
+    "ink_iou": 0.5,
+    "silhouette_iou": 0.899,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   }
+  ],
+  "pixelize(fusion-man)": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.685,
+    "ink_iou": 0.553,
+    "silhouette_iou": 0.953,
+    "orphans": 0,
+    "shift": [
+     -1,
+     0
+    ]
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.74,
+    "ink_iou": 0.604,
+    "silhouette_iou": 0.959,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.754,
+    "ink_iou": 0.615,
+    "silhouette_iou": 0.919,
+    "orphans": 0,
+    "shift": [
+     -1,
+     -1
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.738,
+    "ink_iou": 0.611,
+    "silhouette_iou": 0.932,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.659,
+    "ink_iou": 0.454,
+    "silhouette_iou": 0.893,
+    "orphans": 0,
+    "shift": [
+     -1,
+     -1
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.759,
+    "ink_iou": 0.59,
+    "silhouette_iou": 0.932,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   }
+  ],
+  "compiler v2 tuned": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.97,
+    "ink_iou": 0.938,
+    "silhouette_iou": 0.996,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.94,
+    "ink_iou": 0.875,
+    "silhouette_iou": 1.0,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.941,
+    "ink_iou": 0.881,
+    "silhouette_iou": 0.99,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.952,
+    "ink_iou": 0.901,
+    "silhouette_iou": 0.997,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.879,
+    "ink_iou": 0.777,
+    "silhouette_iou": 0.956,
+    "orphans": 0,
+    "shift": [
+     0,
+     -1
+    ]
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.956,
+    "ink_iou": 0.897,
+    "silhouette_iou": 1.0,
+    "orphans": 0,
+    "shift": [
+     0,
+     0
+    ]
+   }
+  ]
+ }
+}

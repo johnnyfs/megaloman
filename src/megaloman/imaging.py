@@ -43,6 +43,17 @@ def rows_to_image(rows, pal_codes):
     return im
 
 
+def rows_to_image_hex(rows, pal_hex):
+    """Grid of keys + {key: 'RRGGBB'} -> RGBA."""
+    h, w = len(rows), max(len(r) for r in rows)
+    im = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+    for y, r in enumerate(rows):
+        for x, c in enumerate(r):
+            if c in pal_hex:
+                im.putpixel((x, y), rgb(pal_hex[c]) + (255,))
+    return im
+
+
 # ------------------------------------------------------------------ snap + palette
 
 def snap(png: bytes, lo=4.0, hi=96.0):

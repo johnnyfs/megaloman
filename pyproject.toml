@@ -3,7 +3,12 @@ name = "megaloman"
 version = "0.0.1"
 description = "Repeatable, declarative pipelines for NES Mega Man-style game assets"
 requires-python = ">=3.12"
-dependencies = ["pillow>=11", "numpy>=2", "pyyaml>=6"]
+dependencies = [
+    "pillow>=11",
+    "numpy>=2",
+    "pyyaml>=6",
+    "scipy>=1.18.1",
+]
 
 [project.scripts]
 ml = "megaloman.cli:main"

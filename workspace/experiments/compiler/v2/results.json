@@ -1,0 +1,418 @@
+{
+ "created": "2026-10-22T02:38:23+00:00",
+ "code": {
+  "commit": "2abd179d9cf93aebb54fc0be4ec7fc35257ac2ef",
+  "dirty": true
+ },
+ "question": "recover authentic sprites (ground truth) from painted enlargements",
+ "mode": "painted",
+ "factors": [
+  1.4,
+  1.7,
+  2.0
+ ],
+ "summary": {
+  "nearest": {
+   "pixel_acc": 0.843,
+   "ink_iou": 0.741,
+   "silhouette_iou": 0.955,
+   "orphans": 0.0
+  },
+  "majority": {
+   "pixel_acc": 0.705,
+   "ink_iou": 0.572,
+   "silhouette_iou": 0.915,
+   "orphans": 0.0
+  },
+  "pixelize(fusion-man)": {
+   "pixel_acc": 0.642,
+   "ink_iou": 0.517,
+   "silhouette_iou": 0.921,
+   "orphans": 0.0
+  },
+  "compiler v1": {
+   "pixel_acc": 0.714,
+   "ink_iou": 0.536,
+   "silhouette_iou": 0.928,
+   "orphans": 0.0
+  },
+  "compiler v2": {
+   "pixel_acc": 0.673,
+   "ink_iou": 0.518,
+   "silhouette_iou": 0.931,
+   "orphans": 0.0
+  }
+ },
+ "per_case": {
+  "nearest": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.766,
+    "ink_iou": 0.691,
+    "silhouette_iou": 0.974,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.767,
+    "ink_iou": 0.634,
+    "silhouette_iou": 0.918,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 2.0,
+    "pixel_acc": 1.0,
+    "ink_iou": 1.0,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.796,
+    "ink_iou": 0.665,
+    "silhouette_iou": 0.942,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.8,
+    "ink_iou": 0.642,
+    "silhouette_iou": 0.945,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 2.0,
+    "pixel_acc": 1.0,
+    "ink_iou": 1.0,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.724,
+    "ink_iou": 0.536,
+    "silhouette_iou": 0.916,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.736,
+    "ink_iou": 0.5,
+    "silhouette_iou": 0.899,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 2.0,
+    "pixel_acc": 1.0,
+    "ink_iou": 1.0,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   }
+  ],
+  "majority": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.685,
+    "ink_iou": 0.604,
+    "silhouette_iou": 0.957,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.764,
+    "ink_iou": 0.643,
+    "silhouette_iou": 0.914,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 2.0,
+    "pixel_acc": 0.574,
+    "ink_iou": 0.467,
+    "silhouette_iou": 0.885,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.836,
+    "ink_iou": 0.738,
+    "silhouette_iou": 0.942,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.79,
+    "ink_iou": 0.639,
+    "silhouette_iou": 0.934,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 2.0,
+    "pixel_acc": 0.711,
+    "ink_iou": 0.59,
+    "silhouette_iou": 0.911,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.692,
+    "ink_iou": 0.512,
+    "silhouette_iou": 0.924,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.708,
+    "ink_iou": 0.519,
+    "silhouette_iou": 0.895,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 2.0,
+    "pixel_acc": 0.588,
+    "ink_iou": 0.439,
+    "silhouette_iou": 0.877,
+    "orphans": 0
+   }
+  ],
+  "pixelize(fusion-man)": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.519,
+    "ink_iou": 0.474,
+    "silhouette_iou": 0.925,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.74,
+    "ink_iou": 0.604,
+    "silhouette_iou": 0.959,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 2.0,
+    "pixel_acc": 0.671,
+    "ink_iou": 0.594,
+    "silhouette_iou": 0.951,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.554,
+    "ink_iou": 0.386,
+    "silhouette_iou": 0.892,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.738,
+    "ink_iou": 0.611,
+    "silhouette_iou": 0.932,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 2.0,
+    "pixel_acc": 0.683,
+    "ink_iou": 0.561,
+    "silhouette_iou": 0.918,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.473,
+    "ink_iou": 0.331,
+    "silhouette_iou": 0.877,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.759,
+    "ink_iou": 0.59,
+    "silhouette_iou": 0.932,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 2.0,
+    "pixel_acc": 0.639,
+    "ink_iou": 0.504,
+    "silhouette_iou": 0.904,
+    "orphans": 0
+   }
+  ],
+  "compiler v1": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.779,
+    "ink_iou": 0.696,
+    "silhouette_iou": 0.974,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.685,
+    "ink_iou": 0.511,
+    "silhouette_iou": 0.906,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 2.0,
+    "pixel_acc": 0.733,
+    "ink_iou": 0.603,
+    "silhouette_iou": 0.95,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.751,
+    "ink_iou": 0.573,
+    "silhouette_iou": 0.942,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.763,
+    "ink_iou": 0.591,
+    "silhouette_iou": 0.942,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 2.0,
+    "pixel_acc": 0.707,
+    "ink_iou": 0.506,
+    "silhouette_iou": 0.918,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.679,
+    "ink_iou": 0.441,
+    "silhouette_iou": 0.925,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.664,
+    "ink_iou": 0.45,
+    "silhouette_iou": 0.891,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 2.0,
+    "pixel_acc": 0.664,
+    "ink_iou": 0.455,
+    "silhouette_iou": 0.903,
+    "orphans": 0
+   }
+  ],
+  "compiler v2": [
+   {
+    "sprite": "telly",
+    "factor": 1.4,
+    "pixel_acc": 0.772,
+    "ink_iou": 0.586,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 1.7,
+    "pixel_acc": 0.828,
+    "ink_iou": 0.664,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   },
+   {
+    "sprite": "telly",
+    "factor": 2.0,
+    "pixel_acc": 0.344,
+    "ink_iou": 0.21,
+    "silhouette_iou": 0.851,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.4,
+    "pixel_acc": 0.865,
+    "ink_iou": 0.74,
+    "silhouette_iou": 0.997,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 1.7,
+    "pixel_acc": 0.889,
+    "ink_iou": 0.785,
+    "silhouette_iou": 0.997,
+    "orphans": 0
+   },
+   {
+    "sprite": "met_walk",
+    "factor": 2.0,
+    "pixel_acc": 0.472,
+    "ink_iou": 0.286,
+    "silhouette_iou": 0.843,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.4,
+    "pixel_acc": 0.609,
+    "ink_iou": 0.376,
+    "silhouette_iou": 0.893,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 1.7,
+    "pixel_acc": 0.917,
+    "ink_iou": 0.821,
+    "silhouette_iou": 1.0,
+    "orphans": 0
+   },
+   {
+    "sprite": "pipi",
+    "factor": 2.0,
+    "pixel_acc": 0.357,
+    "ink_iou": 0.194,
+    "silhouette_iou": 0.801,
+    "orphans": 0
+   }
+  ]
+ }
+}

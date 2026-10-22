@@ -1,0 +1,46 @@
+{
+ "created": "2026-10-22T02:39:33+00:00",
+ "code": {
+  "commit": "2abd179d9cf93aebb54fc0be4ec7fc35257ac2ef",
+  "dirty": true
+ },
+ "factors": [
+  1.3,
+  1.4,
+  1.5,
+  1.6,
+  1.7,
+  1.8
+ ],
+ "question": "compiler v2 parameter sweep on realistic (non-integer, painted) enlargements; (pixel_acc, ink_iou)",
+ "results": {
+  "{\"ink_th\": 0.5, \"fill_ink_scale\": 0.25, \"coverage\": 0.4}": {
+   "pixel_acc": 0.935,
+   "ink_iou": 0.871
+  },
+  "{\"ink_th\": 0.5, \"fill_ink_scale\": 0.5, \"coverage\": 0.4}": {
+   "pixel_acc": 0.935,
+   "ink_iou": 0.871
+  },
+  "{\"ink_th\": 0.6, \"fill_ink_scale\": 0.25, \"coverage\": 0.4}": {
+   "pixel_acc": 0.935,
+   "ink_iou": 0.869
+  },
+  "{\"ink_th\": 0.6, \"fill_ink_scale\": 0.5, \"coverage\": 0.4}": {
+   "pixel_acc": 0.935,
+   "ink_iou": 0.869
+  },
+  "{\"ink_th\": 0.4, \"fill_ink_scale\": 0.25, \"coverage\": 0.4}": {
+   "pixel_acc": 0.931,
+   "ink_iou": 0.862
+  },
+  "{\"ink_th\": 0.4, \"fill_ink_scale\": 0.5, \"coverage\": 0.4}": {
+   "pixel_acc": 0.931,
+   "ink_iou": 0.862
+  },
+  "nearest": {
+   "pixel_acc": 0.756,
+   "ink_iou": 0.603
+  }
+ }
+}
