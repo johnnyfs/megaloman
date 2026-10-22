@@ -106,6 +106,8 @@ def step_gen_image(ctx, st, inputs):
             else:
                 lead = [store.get_blob(parent['blob'])]
         prompt = _fill(template, ctx, params)
+        from . import guidance
+        prompt, used_units = guidance.apply(prompt, st.get('guidance'))
         imgs = lead + refs
         for k in range(st.get('fanout', 1)):
             seed = ctx.seed * 100 + k
@@ -128,7 +130,7 @@ def step_gen_image(ctx, st, inputs):
                             'meta': {'reason': 'no image returned', 'seed': seed, 'call': ck, 'cost': cost}})
                 continue
             out.append(_item(st['id'], idx, images[0], 'image', parent and parent['id'], parent and parent.get('root'),
-                             seed=seed, call=ck, cost=cost, cached=cached,
+                             seed=seed, call=ck, cost=cost, cached=cached, guidance=used_units,
                              text=(resp['choices'][0]['message'].get('content') or '')[:300]))
     return out
 
@@ -263,7 +265,9 @@ def step_anim_checks(ctx, st, inputs):
         res['clipped'] = {'pass': m['clipped'] <= st.get('max_clipped', 0.05), 'gate': True,
                           'detail': f"{m['clipped']:.0%} of the new frame fell outside the canvas"}
         failed = [k for k, v in res.items() if v['gate'] and not v['pass']]
-        new = dict(it, id=f"{st['id']}.{i}", parent=it['id'], meta={**m, 'checks': res})
+        facing = 'right' if 'facing right' in str(ctx.brief.get('deliver', '')) else 'left'
+        measures = imaging.motion_measures(imaging.from_png(store.get_blob(it['root'])), _img(it), facing)
+        new = dict(it, id=f"{st['id']}.{i}", parent=it['id'], meta={**m, 'checks': res, 'measures': measures})
         if failed:
             new['status'], new['meta']['reason'] = 'rejected', 'failed gates: ' + ', '.join(failed)
         out.append(new)

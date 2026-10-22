@@ -10,10 +10,10 @@
  "asset_type": "animation",
  "seed": 1,
  "code": {
-  "commit": "aeaf0c12229bf49302ea60973cf0829429f111de",
+  "commit": "c809b30a06fe94e8670d07eeb48e2dd3149d0037",
   "dirty": true
  },
- "created": "2026-10-22T02:10:29+00:00",
+ "created": "2026-10-22T02:11:51+00:00",
  "steps": [
   {
    "id": "src",
@@ -95,6 +95,7 @@
       "call": "d730d9478f4c68197bb17d5c2e3f58b35d75e2374b9144458990d77a3dc784ad",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/0.png"
@@ -115,6 +116,7 @@
       "call": "a2391b974ffe2febe76615c08079b6dca7e656d9cf07bc9c92eeb00455e20c5c",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/1.png"
@@ -135,6 +137,7 @@
       "call": "5fcbae833464bc86c9c6056ead16648a466a6357f6156505024da57ba4744671",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/2.png"
@@ -155,6 +158,7 @@
       "call": "176b58d6d36fe618f4d9291a6eccd13be84880c62031b9069bf09e3359256479",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/3.png"
@@ -175,6 +179,7 @@
       "call": "24b07746978315d1b41df148b77ace50c18717d67f9a7f162851019d865ccf5e",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/4.png"
@@ -195,6 +200,7 @@
       "call": "16a2dc0034c0bcc26d550aa033c917cda571756a473994aac47e09b145641fb5",
       "cost": 0.0678915,
       "cached": true,
+      "guidance": [],
       "text": ""
      },
      "file": "steps/draw/5.png"
@@ -568,6 +574,19 @@
         "gate": true,
         "detail": "0% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.0,
+        "middle": 0.134,
+        "bottom": 0.57
+       },
+       "shift": {
+        "dx": -6.41,
+        "dy": -1.83,
+        "forward": 6.41
+       },
+       "symmetry": 0.687
       }
      },
      "file": "steps/gate/0.png"
@@ -616,6 +635,19 @@
         "detail": "58% of the new frame fell outside the canvas"
        }
       },
+      "measures": {
+       "bands_changed": {
+        "top": 0.656,
+        "middle": 0.483,
+        "bottom": 0.791
+       },
+       "shift": {
+        "dx": -16.52,
+        "dy": -9.89,
+        "forward": 16.52
+       },
+       "symmetry": 0.622
+      },
       "reason": "failed gates: outline, changed, clipped"
      },
      "file": "steps/gate/1.png"
@@ -663,6 +695,19 @@
         "gate": true,
         "detail": "0% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.02,
+        "middle": 0.152,
+        "bottom": 0.555
+       },
+       "shift": {
+        "dx": -4.01,
+        "dy": -1.0,
+        "forward": 4.01
+       },
+       "symmetry": 0.717
       }
      },
      "file": "steps/gate/2.png"
@@ -710,6 +755,19 @@
         "gate": true,
         "detail": "64% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.565,
+        "middle": 0.67,
+        "bottom": 0.837
+       },
+       "shift": {
+        "dx": 6.6,
+        "dy": -1.73,
+        "forward": -6.6
+       },
+       "symmetry": 0.625
       },
       "reason": "failed gates: changed, clipped"
      },
@@ -759,6 +817,19 @@
         "detail": "0% of the new frame fell outside the canvas"
        }
       },
+      "measures": {
+       "bands_changed": {
+        "top": 0.146,
+        "middle": 0.466,
+        "bottom": 0.754
+       },
+       "shift": {
+        "dx": 6.84,
+        "dy": 4.93,
+        "forward": -6.84
+       },
+       "symmetry": 0.488
+      },
       "reason": "failed gates: changed"
      },
      "file": "steps/gate/4.png"
@@ -806,6 +877,19 @@
         "gate": true,
         "detail": "62% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.538,
+        "middle": 0.62,
+        "bottom": 0.818
+       },
+       "shift": {
+        "dx": 7.0,
+        "dy": -1.8,
+        "forward": -7.0
+       },
+       "symmetry": 0.609
       },
       "reason": "failed gates: changed, clipped"
      },
@@ -866,6 +950,19 @@
         "gate": true,
         "detail": "0% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.0,
+        "middle": 0.134,
+        "bottom": 0.57
+       },
+       "shift": {
+        "dx": -6.41,
+        "dy": -1.83,
+        "forward": 6.41
+       },
+       "symmetry": 0.687
       },
       "timing": {
        "mode": "oneshot",
@@ -932,6 +1029,19 @@
         "gate": true,
         "detail": "0% of the new frame fell outside the canvas"
        }
+      },
+      "measures": {
+       "bands_changed": {
+        "top": 0.02,
+        "middle": 0.152,
+        "bottom": 0.555
+       },
+       "shift": {
+        "dx": -4.01,
+        "dy": -1.0,
+        "forward": 4.01
+       },
+       "symmetry": 0.717
       },
       "timing": {
        "mode": "oneshot",

@@ -370,3 +370,37 @@ def timeline_seq(frames, seq, step=4, gap=1):
     for f, d in seq:
         out += [frames[f - 1]] * max(1, round(d / step))
     return strip(out, gap)
+
+
+def motion_measures(f1, f2, facing='left'):
+    """Deterministic measures of a derived frame vs the still (report-only; quantify human critiques).
+    bands: share of each horizontal third's pixels that change (top band ~ head: should stay ~0 if it doesn't move)
+    shift: centroid of added pixels minus centroid of removed pixels (+x right, +y down), and 'forward' along facing
+    symmetry: share of frame 2's changed pixels whose mirror (about the still's centre column) is also changed"""
+    a, b = np.array(f1.convert('RGBA')), np.array(f2.convert('RGBA'))
+    oa, ob = a[..., 3] > 0, b[..., 3] > 0
+    changed = (oa != ob) | (oa & ob & (a[..., :3] != b[..., :3]).any(-1))
+    occ = oa | ob
+    ys = np.where(occ.any(1))[0]
+    y0, y1 = (ys.min(), ys.max() + 1) if len(ys) else (0, a.shape[0])
+    edges = np.linspace(y0, y1, 4).round().astype(int)
+    bands = {}
+    for name, lo, hi in zip(('top', 'middle', 'bottom'), edges[:-1], edges[1:]):
+        region = occ[lo:hi]
+        bands[name] = round(float(changed[lo:hi].sum() / max(1, region.sum())), 3)
+    added, removed = ob & ~oa, oa & ~ob
+    def cen(m):
+        yy, xx = np.nonzero(m)
+        return (float(xx.mean()), float(yy.mean())) if len(xx) else None
+    ca, cr = cen(added), cen(removed)
+    shift = None
+    if ca and cr:
+        dx, dy = ca[0] - cr[0], ca[1] - cr[1]
+        shift = {'dx': round(dx, 2), 'dy': round(dy, 2), 'forward': round(-dx if facing == 'left' else dx, 2)}
+    xs = np.nonzero(oa.any(0))[0]
+    cx = (xs.min() + xs.max()) / 2 if len(xs) else a.shape[1] / 2
+    yy, xx = np.nonzero(changed & ob)
+    mir = np.round(2 * cx - xx).astype(int)
+    ok = (mir >= 0) & (mir < a.shape[1])
+    sym = float((changed & ob)[yy[ok], mir[ok]].sum() / max(1, len(xx)))
+    return {'bands_changed': bands, 'shift': shift, 'symmetry': round(sym, 3)}
