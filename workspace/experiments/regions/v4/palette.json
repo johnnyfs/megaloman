@@ -1,0 +1,294 @@
+{
+ "palette": {
+  "black": {
+   "nes": "0F",
+   "hex": "000000"
+  },
+  "dark": {
+   "nes": "16",
+   "hex": "F83800"
+  },
+  "mid": {
+   "nes": "26",
+   "hex": "F87858"
+  },
+  "light": {
+   "nes": "36",
+   "hex": "F0D0B0"
+  }
+ },
+ "assign": {
+  "cap": {
+   "group": "dark",
+   "hex": "F83800",
+   "why": "the head is the darker colour"
+  },
+  "cap_side_lobes": {
+   "group": "mid",
+   "hex": "F87858",
+   "why": "fins share with nozzle and cups; differ from the head so the jaunty fins read without a line"
+  },
+  "nozzle": {
+   "group": "mid",
+   "hex": "F87858",
+   "why": "fins + nozzle + cups share one colour"
+  },
+  "suction_cups_front": {
+   "group": "mid",
+   "hex": "F87858",
+   "why": "fins + nozzle + cups share one colour; the cups mark each arm's curled tip"
+  },
+  "side_pods": {
+   "group": "mid",
+   "hex": "F87858",
+   "why": "mechanical accent like the nozzle; keeps the cream face ring a clean ring and the pods distinct ear pieces"
+  },
+  "face_housing": {
+   "group": "light",
+   "hex": "F0D0B0",
+   "why": "face ring + tentacles share one colour"
+  },
+  "tentacles_front_outer": {
+   "group": "light",
+   "hex": "F0D0B0",
+   "why": "face ring + tentacles share one colour"
+  },
+  "tentacles_front_inner": {
+   "group": "light",
+   "hex": "F0D0B0",
+   "why": "face ring + tentacles share one colour"
+  },
+  "eyes": {
+   "group": "light",
+   "hex": "F0D0B0",
+   "why": "the concept's pale glowing eyes; stay distinct by the black moat, not by colour"
+  },
+  "visor": {
+   "group": "black",
+   "hex": "000000",
+   "why": "the moat around the eyes (concept: dark glass)"
+  },
+  "undercarriage": {
+   "group": "black",
+   "hex": "000000",
+   "why": "dark mechanical base (concept median L 17)"
+  },
+  "tentacles_back": {
+   "group": "black",
+   "hex": "000000",
+   "why": "occluded instances render black (depth)"
+  }
+ },
+ "groups": {
+  "black": [
+   "visor",
+   "undercarriage",
+   "tentacles_back"
+  ],
+  "dark": [
+   "cap"
+  ],
+  "mid": [
+   "cap_side_lobes",
+   "nozzle",
+   "suction_cups_front",
+   "side_pods"
+  ],
+  "light": [
+   "face_housing",
+   "tentacles_front_outer",
+   "tentacles_front_inner",
+   "eyes"
+  ]
+ },
+ "priority": [
+  {
+   "rank": 1,
+   "part": "eyes",
+   "why": "the face is the character: eyes first"
+  },
+  {
+   "rank": 2,
+   "part": "visor",
+   "why": "the moat that keeps the eyes distinct"
+  },
+  {
+   "rank": 3,
+   "part": "face_housing",
+   "why": "the ring that frames the moat"
+  },
+  {
+   "rank": 4,
+   "part": "nozzle",
+   "why": "floored character feature on the axis"
+  },
+  {
+   "rank": 5,
+   "part": "cap",
+   "why": "the head silhouette"
+  },
+  {
+   "rank": 6,
+   "part": "cap_side_lobes",
+   "why": "the jaunty fins (also protected by significance growth into the background)"
+  },
+  {
+   "rank": 7,
+   "part": "tentacles_front_inner",
+   "why": "front arms; inner arms are in front of the outer ones"
+  },
+  {
+   "rank": 8,
+   "part": "tentacles_front_outer",
+   "why": "front arms, behind the inner ones"
+  },
+  {
+   "rank": 9,
+   "part": "suction_cups_front",
+   "why": "accents on the arms; floored per arm at the tip instead"
+  },
+  {
+   "rank": 10,
+   "part": "side_pods",
+   "why": "minor mechanical detail"
+  },
+  {
+   "rank": 11,
+   "part": "undercarriage",
+   "why": "black base: fills what is left"
+  },
+  {
+   "rank": 12,
+   "part": "tentacles_back",
+   "why": "hidden arms: black depth, lowest"
+  }
+ ],
+ "eye_floor": {
+  "64": [
+   2,
+   3
+  ],
+  "32": [
+   2,
+   3
+  ],
+  "24": [
+   2,
+   3
+  ],
+  "20": [
+   2,
+   2
+  ],
+  "16": [
+   2,
+   2
+  ]
+ },
+ "moat": 1,
+ "ring": 1,
+ "ring_tb_min": 24,
+ "eye_gap_min": 2,
+ "notch_w": {
+  "64": 3,
+  "32": 2,
+  "24": 1,
+  "20": 1,
+  "16": 1
+ },
+ "cup_floor": {
+  "64": 3,
+  "32": 2,
+  "24": 1,
+  "20": 1,
+  "16": 1
+ },
+ "slit_max": 20,
+ "eye_slit": {
+  "20": [
+   1,
+   3
+  ],
+  "16": [
+   1,
+   2
+  ]
+ },
+ "slit_moat": 1,
+ "ring_top": "every size",
+ "ring_bottom_min": 24,
+ "curl_max": 20,
+ "curl_run": {
+  "20": 2,
+  "16": 1
+ },
+ "fin_pay_below": 32,
+ "behind": {
+  "cap|cap_side_lobes": "cap_side_lobes",
+  "cap|face_housing": "cap",
+  "cap|visor": "cap",
+  "cap|eyes": "cap",
+  "cap|side_pods": "cap",
+  "cap|undercarriage": "cap",
+  "cap|tentacles_front_outer": "cap",
+  "cap|tentacles_front_inner": "cap",
+  "cap|suction_cups_front": "cap",
+  "cap|tentacles_back": "tentacles_back",
+  "cap|nozzle": "cap",
+  "cap_side_lobes|face_housing": "cap_side_lobes",
+  "cap_side_lobes|visor": "cap_side_lobes",
+  "cap_side_lobes|eyes": "cap_side_lobes",
+  "cap_side_lobes|side_pods": "cap_side_lobes",
+  "cap_side_lobes|undercarriage": "cap_side_lobes",
+  "cap_side_lobes|tentacles_front_outer": "cap_side_lobes",
+  "cap_side_lobes|tentacles_front_inner": "cap_side_lobes",
+  "cap_side_lobes|suction_cups_front": "cap_side_lobes",
+  "cap_side_lobes|tentacles_back": "tentacles_back",
+  "cap_side_lobes|nozzle": "cap_side_lobes",
+  "face_housing|visor": "visor",
+  "face_housing|eyes": "eyes",
+  "face_housing|side_pods": "side_pods",
+  "face_housing|undercarriage": "undercarriage",
+  "face_housing|tentacles_front_outer": "face_housing",
+  "face_housing|tentacles_front_inner": "face_housing",
+  "face_housing|suction_cups_front": "face_housing",
+  "face_housing|tentacles_back": "tentacles_back",
+  "face_housing|nozzle": "face_housing",
+  "visor|eyes": "visor",
+  "visor|side_pods": "visor",
+  "visor|undercarriage": "visor",
+  "visor|tentacles_front_outer": "visor",
+  "visor|tentacles_front_inner": "visor",
+  "visor|suction_cups_front": "visor",
+  "visor|tentacles_back": "tentacles_back",
+  "visor|nozzle": "visor",
+  "eyes|side_pods": "eyes",
+  "eyes|undercarriage": "eyes",
+  "eyes|tentacles_front_outer": "eyes",
+  "eyes|tentacles_front_inner": "eyes",
+  "eyes|suction_cups_front": "eyes",
+  "eyes|tentacles_back": "tentacles_back",
+  "eyes|nozzle": "eyes",
+  "side_pods|undercarriage": "side_pods",
+  "side_pods|tentacles_front_outer": "side_pods",
+  "side_pods|tentacles_front_inner": "side_pods",
+  "side_pods|suction_cups_front": "side_pods",
+  "side_pods|tentacles_back": "tentacles_back",
+  "side_pods|nozzle": "side_pods",
+  "undercarriage|tentacles_front_outer": "undercarriage",
+  "undercarriage|tentacles_front_inner": "undercarriage",
+  "undercarriage|suction_cups_front": "undercarriage",
+  "undercarriage|tentacles_back": "tentacles_back",
+  "undercarriage|nozzle": "undercarriage",
+  "tentacles_front_outer|tentacles_front_inner": "tentacles_front_outer",
+  "tentacles_front_outer|suction_cups_front": "tentacles_front_outer",
+  "tentacles_front_outer|tentacles_back": "tentacles_back",
+  "tentacles_front_outer|nozzle": "tentacles_front_outer",
+  "tentacles_front_inner|suction_cups_front": "tentacles_front_inner",
+  "tentacles_front_inner|tentacles_back": "tentacles_back",
+  "tentacles_front_inner|nozzle": "tentacles_front_inner",
+  "suction_cups_front|tentacles_back": "tentacles_back",
+  "suction_cups_front|nozzle": "suction_cups_front",
+  "tentacles_back|nozzle": "tentacles_back"
+ }
+}

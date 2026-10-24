@@ -105,7 +105,13 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **finding** (render v1): draw the outline *around* a label map computed at N-2, not
   inset into the rung, or it eats 1–2 px limbs.
 - **finding** (render v1): below 32 px, drop the line between part pairs whose colours
-  already contrast strongly (Lab dE ≥ 30); that line costs a whole row.
+  already contrast strongly (Lab dE ≥ 30); that line costs a whole row. *Superseded by
+  the separation-lines rule below (Johnny, after v3).*
+- **rule** (blessed by Johnny after v3, 2026-10-23): **separation lines are kept at every
+  size.** A 1 px line goes between every pair of distinct regions, down to 16 px (v3 lost
+  fins | head, face ring/eye surround | head, and head | eyes at ≤ 24). The depth rule
+  (the line comes from the region behind) and the region priority decide where the
+  pixels come from. Never merge regions to save space.
 - **finding** (render v1): the NES tile rule (≤ 3 colours per 8×8) forces the palette
   down to black, salmon and cream at 20 and 16 px; minor colours (nozzle cyan, pod grey)
   get dropped.
@@ -165,9 +171,13 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
    Shrinking an image that still has too many colours is confusing.
 2. **No patterning for now** (spots or stripes). Maybe revisit on large areas later.
 3. **Region priority.** Parts have an explicit priority that decides who keeps pixels.
-4. **Eyes:** keep them boxy, filled rectangles (unless the expression demands
-   otherwise), and keep a clear margin around them so they stay distinct from everything
-   else. v1's 32 px won on exactly this.
+4. **Eyes:** filled *rectangles* (unless the expression demands otherwise), with a clear
+   margin around them so they stay distinct from everything else. v1's 32 px won on
+   exactly this. *Updated after v3 (Johnny):* "boxy" was over-applied. Rectangular means
+   not necessarily square and not necessarily more than 1 px wide. At ≤ 20 px use
+   **vertical slits** (1 px wide, 2–3 px tall) with a **smaller surround** (less black
+   moat / visor area than v3's box), so the face reads less like Telly. Keep the eyes
+   distinct.
 5. **Keep like instances distinct as they shrink.** Cut into shapes (gaps, notches,
    little curls) so tentacles don't grow together, and keep a hint of each one's shape.
 6. **Line sacrifice by depth.** Where two regions meet, the separating line comes out of
@@ -214,3 +224,33 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   t = 0), IoU 0.996/0.995 vs GPT's best 0.943 (which needed ~4–6 % scale and a 14 px shift), all 12 parts present
   in both seeds. Parts agree with GPT's map on 86 % of pixels; it differs most on face housing, undercarriage and
   pods. It is cheaper and more faithful than GPT for region painting, so prefer it.
+
+- **finding (v4)** (2026-10-23, `ladder_v4.py`, `render_v4.py`, `workspace/experiments/regions/v4/`): Johnny's
+  review of v3 applied on top of v3. No new paint and $0 spent (no model calls). 64 and 32 are pixel-identical to v3.
+  - **Separation lines at every size**: the v1 contrast exemption is off (`contrast_below = 0`), so fins | head,
+    ring | head, ring | fins, ring | pods and nozzle | arms all get a 1 px line down to 16. A check on the final
+    pixels (no two distinct non-black regions touching) passes at every size. The pixels come from v3's rules:
+    protected template parts (eyes, visor, ring, nozzle) never give; otherwise the region behind gives (so the head
+    gives to the ring and the fins give to the head).
+  - **Making room for the lines**: the face ring keeps its top row at every size (v3 dropped it below 24). That
+    restores head | line | cream ring | black moat | eye, the 32 px structure that separates head from eyes. The
+    face block hangs from the concept's ring-top row and grows down, so the two new rows are paid by the arms (lower
+    priority), not the head. The fins pay for their head line from the background: each fin pixel that becomes line
+    is re-grown one pixel further out (10–14 px a size below 32), so the fins stay ≥ 2 px wide instead of v3
+    alt_finline's 1 px stripes. A fin's 1 px top tip is left to the line (a re-grown pixel there was a detached
+    speck). Below 32, a head or fin pixel left with no 4-neighbour of its own once the lines are in becomes line
+    (2 px at 20: the head's corners beside the ring's top line). The renderer's no-clump clean-up no longer grows
+    template parts (it put a 1 px bump on the ring at 16). The nozzle floor now runs after the face, below the
+    visor, because the taller face covered it at 20.
+  - **Eyes**: 64/32/24 as v3 (3×6, 2×3, 2×3). Vertical slits at 20 (1×3) and 16 (1×2), with a 1 px moat and a
+    2 px gap: the visor is 6 px wide instead of 8 (20: 6×5 vs 8×4, the same black pixel count but narrower;
+    16: 6×4, 20 black px vs 24). A 1×2 slit at 20 was tried. It reads as dots, not slits, so 20 keeps 1×3.
+  - **Inner-arm curl**: v3's 20 px hook is the pattern (a cup run one column in from the arm's outer edge, with arm
+    colour on both sides, ending in a tip row that is all cup). It is now drawn explicitly at ≤ 20, with a 2 px run
+    at 20 and 1 px at 16, so 16 gets `iii / iji / jj` instead of v3's cup on the outer corner. 20 is unchanged.
+  - **Cups vs arms are the one unlined pair below 32** (as in v3). An edge around a 1–3 px cup hook erases it.
+    `v4/alt_cupline/` edges them at every size: noisy at 24, and the curl is gone at 20 and 16.
+  - **Costs**: lines and the ring top take rows. At 20 the arms have 5 rows (v3: 7) and the head 6 (v3: 7). At 16
+    the arms have 4 rows (v3: 5) and the head 4 (v3: 5), and the outer arms are 1 px with a cup tip. Below 32 the
+    pods are 1 px coral slivers between lines at 20 and 24, and absent at 16 (as in v3). Under each fin there is a
+    black block (the 2 px depth line plus the outline) that looks heavy at 16. Awaiting Johnny.
