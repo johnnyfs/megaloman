@@ -344,8 +344,9 @@ EYE_SLIT = {20: (1, 3), 16: (1, 2)}          # blessed: vertical slits at <= 20
 EYE_FLOOR = {64: (2, 3), 32: (2, 3), 24: (2, 3)}  # ladder_v3.EYE_FLOOR above the slit sizes
 
 
-def prepare(src_raw, leg, spec, specs, sizes=(64, 32, 24, 20, 16)) -> dict:
-    """ladder_v2.prepare without the mirror (unless the spec verifies a vertical axis) and with given specs."""
+def prepare(src_raw, leg, spec, specs, sizes=(64, 32, 24, 20, 16), centre=True) -> dict:
+    """ladder_v2.prepare without the mirror (unless the spec verifies a vertical axis) and with given specs.
+    centre=False: src_raw is already the square source (e.g. `tight`), used as is."""
     n = len(leg["parts"])
     mirror = bool(spec and spec["axes"].get("vertical", {}).get("verified"))
     if mirror:
@@ -353,7 +354,7 @@ def prepare(src_raw, leg, spec, specs, sizes=(64, 32, 24, 20, 16)) -> dict:
         src = cands["left"]
         sym["keep"] = "left"
     else:
-        src = LV.square(_centre(src_raw))
+        src = LV.square(_centre(src_raw)) if centre else src_raw
         sym = {"keep": "none", "mirror": False, "why": f"spec type {spec and spec['type']}: no verified mirror axis"}
     inst, base_of, _ = LV.instances(src, leg)
     pair = list(range(len(base_of)))           # no mirror partners without symmetry
@@ -377,6 +378,62 @@ def _centre(lab):
     y0, x0 = (s - h) // 2, (s - w) // 2
     out[y0:y0 + h, x0:x0 + w] = a
     return out
+
+
+def tight(lab, keep=None) -> tuple[np.ndarray, int, int]:
+    """Split variant (Johnny, after the snipe dry run): crop to the bounding box of the `keep` labels (all
+    foreground if None) with no margin, then square it, centred. -> (square map, oy, ox) with
+    out[y, x] == lab[y + oy, x + ox] (labels outside `keep` are dropped)."""
+    m = (lab > 0) if keep is None else np.isin(lab, list(keep))
+    ys, xs = np.nonzero(m)
+    h, w = np.ptp(ys) + 1, np.ptp(xs) + 1
+    s = int(max(h, w))
+    oy, ox = int(ys.min() - (s - h) // 2), int(xs.min() - (s - w) // 2)
+    out = np.zeros((s, s), lab.dtype)
+    src = np.where(m, lab, 0)
+    y0, x0 = max(0, oy), max(0, ox)
+    y1, x1 = min(lab.shape[0], oy + s), min(lab.shape[1], ox + s)
+    out[y0 - oy:y1 - oy, x0 - ox:x1 - ox] = src[y0:y1, x0:x1]
+    return out, oy, ox
+
+
+def piece_cells(lab, part_id, oy, ox, S, M) -> np.ndarray:
+    """Coverage of one part on the BODY's sprite grid (cell = S / M source px, origin (oy, ox)), extended beyond the
+    body square as far as the part reaches. -> (ys, xs, cov) cell arrays with cov >= 0.5, plus the principal-axis
+    stroke if box coverage breaks the part (stroke floor, as `stroke_floor`)."""
+    m = (lab == part_id).astype(np.float64)
+    c = S / M
+    ys, xs = np.nonzero(m)
+    r0, r1 = int(np.floor((ys.min() - oy) / c)), int(np.floor((ys.max() - oy) / c))
+    j0, j1 = int(np.floor((xs.min() - ox) / c)), int(np.floor((xs.max() - ox) / c))
+    ii = np.pad(m, ((1, 0), (1, 0))).cumsum(0).cumsum(1)
+    H, W = m.shape
+    cells = {}
+    for r in range(r0, r1 + 1):
+        for j in range(j0, j1 + 1):
+            a0, a1 = int(np.clip(round(oy + r * c), 0, H)), int(np.clip(round(oy + (r + 1) * c), 0, H))
+            b0, b1 = int(np.clip(round(ox + j * c), 0, W)), int(np.clip(round(ox + (j + 1) * c), 0, W))
+            area = max(1, (a1 - a0) * (b1 - b0))
+            v = (ii[a1, b1] - ii[a0, b1] - ii[a1, b0] + ii[a0, b0]) / area
+            if v >= 0.5:
+                cells[(r, j)] = v
+    grid = np.zeros((r1 - r0 + 1, j1 - j0 + 1), bool)
+    for (r, j) in cells:
+        grid[r - r0, j - j0] = True
+    comps = L.components(grid)
+    stroke = 0
+    if comps != 1:
+        cy, cx = ys.mean(), xs.mean()
+        v = np.linalg.svd(np.stack([ys - cy, xs - cx], 1), full_matrices=False)[2][0]
+        t = (ys - cy) * v[0] + (xs - cx) * v[1]
+        a, b = [((np.array([cy, cx]) + v * tt) - [oy, ox]) / c for tt in (t.min(), t.max())]
+        n = int(max(abs(b - a))) + 1
+        for k in range(n + 1):
+            y, x = (int(np.floor(z)) for z in a + (b - a) * k / max(1, n))
+            if not grid[y - r0, x - j0]:
+                grid[y - r0, x - j0] = True
+                stroke += 1
+    return grid, r0, j0, {"components_box": comps, "stroke_px": stroke, "cells": int(grid.sum())}
 
 
 def rung(ctx, N: int, eyes: list[str], params: dict | None = None) -> dict:

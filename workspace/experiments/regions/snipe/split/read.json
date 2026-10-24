@@ -1,0 +1,38 @@
+{
+ "64": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": true,
+  "legs": true,
+  "verdict": "The bird-sniper concept reads clearly."
+ },
+ "32": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "The bird and gun read, but the eye is gone."
+ },
+ "24": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "It reads as a bird with a long rectangular beak, not a gun."
+ },
+ "20": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "The bird survives, but the sniper idea does not."
+ },
+ "16": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "It is a crude bird silhouette with no readable gun or eye."
+ },
+ "call": "57b1d23f965b64fd27647fc6a3c671df1c394292999644315d34aafd76a7e561"
+}

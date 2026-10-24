@@ -390,6 +390,90 @@ def step_ladder(version="v1") -> dict:
     return res
 
 
+# ------------------------------------------------------------------ 6. split variant (Johnny's idea after the dry run)
+
+PROTRUSIONS = ("cannon_beak",)   # the weapon / protrusion parts rendered as their own sprite piece
+
+
+def step_split(tight_whole=False) -> dict:
+    """Johnny, after seeing the dry run: the rifle-beak eats the resolution and the crop kept too much margin.
+    1. crop tightly (bbox, no margin) and square; 2. render the body WITHOUT the protrusion parts at the target size,
+    so the body gets the whole budget; 3. render the beak as its own small piece on the same pixel grid (same
+    scale), and compose the two at game scale (a metasprite: body over beak, the beak is behind the head).
+    tight_whole=True: the control, the whole figure (beak included) tight-cropped, v3 rules (no split)."""
+    from . import ladder as L, pipeline_gen as G, render as R1, render_v4 as R4
+    V = VERSIONS["v3"]
+    d = OUT / ("v3tight" if tight_whole else "split")
+    for sub in ("ladder", "render", "beak", "composite"):
+        (d / sub).mkdir(parents=True, exist_ok=True)
+    pj = json.loads((OUT / V["plan"] / "plan.json").read_text())
+    leg = json.loads((OUT / V["plan"] / "legend_plan.json").read_text())
+    _, labels, _, _ = load_regions()
+    spec = json.loads((OUT / "symmetry/spec.json").read_text())
+    names = [p["name"] for p in leg["parts"]]
+    prot = [names.index(n) + 1 for n in PROTRUSIONS]
+    body_ids = [k + 1 for k in range(len(names)) if tight_whole or k + 1 not in prot]
+    src, oy, ox = G.tight(labels, body_ids)
+    S = src.shape[0]
+    specs = json.loads(json.dumps(pj["significance"]))
+    if not tight_whole:
+        for q in specs:
+            if q["name"] in PROTRUSIONS:                 # drawn as its own piece: nothing to exaggerate in the body
+                q.update(mode="none", max_exaggeration=1.0)
+    eyes, surround = pj["plan"]["eyes"], pj["plan"]["eye_surround"]
+    ctx = G.prepare(src, leg, spec, specs, SIZES, centre=False)
+    protected = set(eyes) | ({surround} if surround else set())
+    mats = G.materials(leg, protected)
+    light = [tuple(imaging.rgb(pj["plan"]["palette"]["light"]["hex"]))]
+    base_of = list(range(len(names) + 1))
+    res = {"variant": d.name, "protrusions": [] if tight_whole else list(PROTRUSIONS), "source_square": S,
+           "origin": [oy, ox], "body_bbox_fill": [round(float(np.ptp(np.nonzero(src)[1]) + 1) / S, 3),
+                                                 round(float(np.ptp(np.nonzero(src)[0]) + 1) / S, 3)], "rungs": {}}
+    L.colorize(ctx["src"], leg).save(d / "ladder/source.png")
+    for N in SIZES:
+        M = N - 2
+        r = G.rung(ctx, N, eyes, {"eye_surround": surround, "stroke_floor": True, "eye_nudge": True})
+        L.colorize(r["base"], leg).save(d / f"ladder/rung_{N}.png")
+        im, info = G.render(r["ext"], ctx["base_of"], mats, leg, N, "none", RENDER_OPTS)
+        im.save(d / f"render/render_{N}_free.png")
+        rec = {"k": r["k"], "log": r["log"], "eyes": G.eye_check(info["grid"], leg, eyes),
+               "separation": R4.separation_check(info["grid"], leg)["ok"]}
+        body = np.array(im)
+        if tight_whole:
+            comp, off = body, [0, 0]
+        else:
+            grid, r0, j0, binfo = G.piece_cells(labels, prot[0], oy, ox, S, M)
+            Q = max(grid.shape)
+            ext_b = np.zeros((Q, Q), np.int32)
+            ext_b[:grid.shape[0], :grid.shape[1]][grid] = prot[0]
+            bim, binf = G.render(ext_b, base_of, mats, leg, Q + 2, "none", RENDER_OPTS)
+            bim.save(d / f"beak/beak_{N}.png")
+            ba = np.array(bim)
+            # beak render pixel (y, x) -> body render pixel (y + r0, x + j0); body drawn over the beak
+            y0, x0 = min(0, r0), min(0, j0)
+            Hc = max(N, r0 + Q + 2) - y0
+            Wc = max(N, j0 + Q + 2) - x0
+            comp = np.zeros((Hc, Wc, 4), np.uint8)
+            comp[r0 - y0:r0 - y0 + Q + 2, j0 - x0:j0 - x0 + Q + 2] = ba
+            bm = body[..., 3] > 0
+            comp[-y0:-y0 + N, -x0:-x0 + N][bm] = body[bm]
+            off = [-y0, -x0]
+            rec["beak"] = binfo | {"piece_px": [int(grid.shape[1]), int(grid.shape[0])], "at_cell": [r0, j0]}
+            Image.fromarray(body).save(d / f"render/render_{N}_body.png")
+            legal_b, _ = R1.tile_reduce(Image.fromarray(body), salient=light, salient_w=8.0)
+            legal_b.save(d / f"render/render_{N}.png")
+        cim = Image.fromarray(comp)
+        legal, tinfo = R1.tile_reduce(cim, salient=light, salient_w=8.0, symmetric=False)
+        legal.save(d / f"composite/composite_{N}.png")
+        a = np.array(legal)
+        rec.update(tile=tinfo, checks=imaging.run_checks(legal, CHECKS), composite_size=list(legal.size),
+                   body_offset=off, colours=sorted(R1.hexs(c) for c in np.unique(a[a[..., 3] > 0][:, :3], axis=0)),
+                   grid=info["grid"])
+        res["rungs"][str(N)] = rec
+    (d / "results.json").write_text(json.dumps(res, indent=1, default=str))
+    return res
+
+
 # ------------------------------------------------------------------ 5. an honest read per size (one model call)
 
 READ_PROMPT = """Image 1 is the concept art of SNIPE BOT (a robot snipe, marsh wading bird with a very long beak, that is
@@ -406,10 +490,14 @@ def step_read(ledger, version="v3") -> dict:
     concept, _, concept_rgb, _ = concept_inputs()
     c = concept_rgb.copy()
     c.thumbnail((512, 512))
-    strip = Image.new("RGB", (5 * 270 + 10, 280), (255, 255, 255))
+    split = version in ("split", "v3tight")       # composites (wider than N for the split metasprite)
+    strip = Image.new("RGB", (5 * 360 + 10, 280), (255, 255, 255))
     for k, N in enumerate(SIZES):
-        im = Image.open(OUT / version / "render" / f"render_{N}.png").convert("RGBA").resize((260, 260), Image.NEAREST)
-        strip.paste(im, (10 + k * 270, 10), im)
+        p = OUT / version / ("composite" if split else "render") / (f"composite_{N}.png" if split else f"render_{N}.png")
+        im = Image.open(p).convert("RGBA")
+        z = 260 / im.height
+        im = im.resize((int(im.width * z), 260), Image.NEAREST)
+        strip.paste(im, (10 + k * 360, 10), im)
     strip.save(OUT / version / "strip.png")
     imgs = [imaging.to_png(c), imaging.to_png(strip)]
     body = {"model": SOL, "response_format": {"type": "json_object"},
@@ -473,6 +561,15 @@ def main():
             print("  health", [(h["part"], h["status"], h["area"]) for h in g["health"] if h["status"] != "green"])
             if int(N) <= 32:
                 print("\n".join("  " + row for row in i["grid"]))
+    elif a.step in ("split", "v3tight"):
+        r = step_split(tight_whole=a.step == "v3tight")
+        print("S", r["source_square"], "origin", r["origin"], "fill", r["body_bbox_fill"])
+        for N, g in r["rungs"].items():
+            print(N, "size", g["composite_size"], "beak", g.get("beak"), "eyes", {e: v["ok"] for e, v in g["eyes"].items()},
+                  "sep", g["separation"], "tile", g["tile"]["changed_px"], g["colours"],
+                  "gates", all(c["pass"] for c in g["checks"].values()), "nudge", g["log"]["eyes"])
+            if int(N) <= 24:
+                print("\n".join("  " + row for row in g["grid"]))
     elif a.step == "read":
         print(json.dumps(step_read(ledger, a.version), indent=1))
     elif a.step == "spend":

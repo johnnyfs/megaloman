@@ -1,0 +1,741 @@
+{
+ "variant": "split",
+ "protrusions": [
+  "cannon_beak"
+ ],
+ "source_square": 777,
+ "origin": [
+  123,
+  330
+ ],
+ "body_bbox_fill": [
+  0.628,
+  1.0
+ ],
+ "rungs": {
+  "64": {
+   "k": {
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       15,
+       9,
+       3,
+       4
+      ],
+      "had_px": 14,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        3,
+        4
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "beak": {
+    "components_box": 1,
+    "stroke_px": 0,
+    "cells": 113,
+    "piece_px": [
+     36,
+     5
+    ],
+    "at_cell": [
+     9,
+     -22
+    ]
+   },
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     2,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (2,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    86,
+    64
+   ],
+   "body_offset": [
+    0,
+    22
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "...............####...#.........................................",
+    "..............#ffff###f####.....................................",
+    ".............#fffffffffffff#....................................",
+    ".............#fffffffffffff#....................................",
+    ".............#fffffffffffff#....................................",
+    "..............#ff##########.....................................",
+    "...............##bbbbbbbbbb#....................................",
+    "..............#bbbbbbbbbbbbb#...................................",
+    ".............#bbbccbbbbbbbbbb#..................................",
+    "............#bbcccccbbbbbbbbb#..................................",
+    "............#bbcdddccbbbbbbbb#..................................",
+    ".............#ccdddccbbbbbbbbb#.................................",
+    "...............cdddccbbbbbbbbb#.................................",
+    "..............#cdddcbbbbbbbbb#..................................",
+    ".............#bcccccbbbbbbbb#...................................",
+    ".............#bbbbbbbbbbbbbb#...................................",
+    "..............###bbbbgggggg#....................................",
+    ".................##bgggggg......................................",
+    "...................ggggggg##....................................",
+    "...................gggggaaaa####................................",
+    "................##gggaaaaaaaaaaa##..............................",
+    "...............#aaaaaaaa######aaaa##............................",
+    "..............#aaaaaaa##hhhhhh##aaaa#...........#...............",
+    "..............#aaaaaa#hhhhhhhhhh##aaa#........#.iii#............",
+    ".............#aaaaaa#hhhhhhhhhhhhh#aaa#.......iiii..............",
+    "............#aaaaaaa#hhhhhhhhhhhhhh##aa#.....iiiii..............",
+    "............#aaaaaa#hhhhhhhhhhhhhhhhh#a#....iiiiii..............",
+    "............#aaaaaa#hhhhhhhhhhhhhhhhhh##...iiiiiiii#............",
+    "............#aaaaaa#hhhhhhhhhhhhhhhhhhhh#.iiiiiiiii.............",
+    "...........#aaaaaaa#hhhhhhhhhhhhhhhhhhhhh#iiiiiiii..............",
+    "............#aaaaaaa#hhhhhhhhhhhhhhhhhhhhhiiiiiiii..............",
+    "............#aaaaaaa#hhhhhhhhhhhhhhhhhhhhhhiiiiiii..............",
+    "............#aaaaaaaa#hhhhhhhhhhhhhhhhhhhhhhiiiiii#.............",
+    ".............#aaaaaaaa#hhhhhhhhhhhhhhhhhhhhhhiiii...............",
+    ".............#aaaaaaaaa##hhhhhhhhhhhhhhhhhhhhhh#................",
+    "..............#aaaaaaaaaa##hhhhhhhhhhhhhhhhhhhh#................",
+    "...............#aaaaaaaaaaa#hhhhhhhhhhhhhhhhhh#.................",
+    "................##aaaaaaaaa#####hhhhhhhh#hhhh#..................",
+    "..................#aaaaaaaa#jjj#hhhhhh##.####...................",
+    "...................##aaaaaa#jjj#hhhh##..........................",
+    ".....................###aaa#jjjj####............................",
+    "........................##kkkjjjj##.............................",
+    "...........................kkkjjjjj#............................",
+    "............................kkkjjjjj#...........................",
+    "............................kkkkjjjjj#..........................",
+    "............................kkkkjjjjj#..........................",
+    "...........................#kkkkjjjjj#..........................",
+    ".............................kkkjjjj#...........................",
+    "...........................#kkkjjjj#............................",
+    "............................kkkjjjj#............................",
+    "............................kkkjjj#.............................",
+    "..........................#kkkjjjj#.............................",
+    "...........................kkkjjj#..............................",
+    ".........................#kkkjjjj#..............................",
+    "..........................kkkjjjj#..............................",
+    "........................#kkkkjjjj#..............................",
+    ".........................kkkkjjjj#..............................",
+    ".................######kkkkkjjjjj#..............................",
+    "................#jjjjjjjjkkkjjjjj##.............................",
+    "................#jjjjjjjjjjjjjjjjjj#............................",
+    ".................###jjjjjjjjjjjjjjjj#...........................",
+    "....................##jjjjjjjjjj####............................",
+    "......................##jjj#####................................",
+    "........................###....................................."
+   ]
+  },
+  "32": {
+   "k": {
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.25,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       7,
+       4,
+       2,
+       3
+      ],
+      "had_px": 4,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        2,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "beak": {
+    "components_box": 1,
+    "stroke_px": 0,
+    "cells": 27,
+    "piece_px": [
+     18,
+     3
+    ],
+    "at_cell": [
+     4,
+     -11
+    ]
+   },
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     3,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (3,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    43,
+    32
+   ],
+   "body_offset": [
+    0,
+    11
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    ".......######...................",
+    "......#ffffff#..................",
+    "......#fff#f#...................",
+    ".......#f#b#b#..................",
+    ".......ccccbbb#.................",
+    ".......cddcbbbb#................",
+    ".......cddcbbbb#................",
+    ".......cddcbbb#.................",
+    "......#ccccbg#..................",
+    "..........ggg..#................",
+    "........#gga####.#......#.......",
+    ".......#aaa#hhhh#a#.....i.......",
+    "......#aaa#hhhhhh##....ii.......",
+    "......#aa#hhhhhhhhh#..iii.......",
+    "......#aa#hhhhhhhhhh#iiii.......",
+    "......#aa#hhhhhhhhhhhiiii#......",
+    "......#aaa#hhhhhhhhhhhii........",
+    ".......#aaa##hhhhhhhhhh#........",
+    "........#aaaa###hhhhhh#.........",
+    ".........##aa#j#hh####..........",
+    "...........##a#j##..............",
+    ".............#kkjj#.............",
+    "..............kkjj#.............",
+    "..............kkjj#.............",
+    "..............kjj#..............",
+    "..............kjj#..............",
+    ".............kkjj#..............",
+    "...........#.kjjj#..............",
+    ".........##jkkjj##..............",
+    "........#jjjjjjjjj#.............",
+    ".........###jjj###..............",
+    "............###................."
+   ]
+  },
+  "24": {
+   "k": {
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.354,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       5,
+       2,
+       2,
+       3
+      ],
+      "had_px": 2,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        2,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "beak": {
+    "components_box": 1,
+    "stroke_px": 0,
+    "cells": 14,
+    "piece_px": [
+     13,
+     2
+    ],
+    "at_cell": [
+     3,
+     -8
+    ]
+   },
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     1
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    32,
+    24
+   ],
+   "body_offset": [
+    0,
+    8
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "......####..............",
+    ".....#ffff#.............",
+    ".....cccc##.............",
+    ".....cddcbb#............",
+    ".....cddcbb#............",
+    ".....cddcbb#............",
+    ".....ccccb#.............",
+    ".....#aggg#.#...........",
+    ".....#aa#hh##....#......",
+    "....#aa#hhhhh##..ii.....",
+    "....#aa#hhhhhhh#iii.....",
+    "....#aa#hhhhhhhhii......",
+    ".....#aa#hhhhhhhhi......",
+    ".....#aaa#hhhhhhh#......",
+    "......##aa##hh###.......",
+    "........##kj##..........",
+    "...........kjj#.........",
+    "...........kj#..........",
+    ".........#kjj#..........",
+    "..........kj#...........",
+    ".......##kkj#...........",
+    "......#jjjjjj#..........",
+    ".......##jjj#...........",
+    ".........###............"
+   ]
+  },
+  "20": {
+   "k": {
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.42,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {
+     "leg_back": {
+      "components_before": 2,
+      "pieces": 1,
+      "drawn_px": 1,
+      "components_after": 1
+     }
+    },
+    "eyes": {
+     "eye#0": {
+      "box": [
+       4,
+       2,
+       1,
+       3
+      ],
+      "had_px": 2,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        1,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "beak": {
+    "components_box": 1,
+    "stroke_px": 0,
+    "cells": 10,
+    "piece_px": [
+     11,
+     3
+    ],
+    "at_cell": [
+     2,
+     -7
+    ]
+   },
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     2,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (2,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    27,
+    20
+   ],
+   "body_offset": [
+    0,
+    7
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    ".....###............",
+    "....#fff#...........",
+    "....ccc##...........",
+    "....cdcbb#..........",
+    "....cdcbb#..........",
+    "....cdcb#...........",
+    "....cccg##..........",
+    "....###hhh##........",
+    "...#a#hhhhhh#ii.....",
+    "...#aa#hhhhhhii.....",
+    "....#a#hhhhhhhi.....",
+    ".....#####hhhh#.....",
+    "......########......",
+    "........#kj#........",
+    ".........kj#........",
+    "........kjj#........",
+    ".......#kj#.........",
+    "......#jkj#.........",
+    "......#jjj#.........",
+    ".......###.........."
+   ]
+  },
+  "16": {
+   "k": {
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.5,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {
+     "leg_back": {
+      "components_before": 2,
+      "pieces": 1,
+      "drawn_px": 0,
+      "components_after": 2
+     }
+    },
+    "eyes": {
+     "eye#0": {
+      "box": [
+       4,
+       2,
+       1,
+       2
+      ],
+      "had_px": 1,
+      "moat": 1,
+      "nudged": [
+       1,
+       1
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        1,
+        2
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "beak": {
+    "components_box": 1,
+    "stroke_px": 0,
+    "cells": 8,
+    "piece_px": [
+     9,
+     2
+    ],
+    "at_cell": [
+     2,
+     -5
+    ]
+   },
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    21,
+    16
+   ],
+   "body_offset": [
+    0,
+    5
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "F8D878"
+   ],
+   "grid": [
+    "....###.........",
+    "...#fff#........",
+    "....ccc.........",
+    "....cdc.........",
+    "....cdc.........",
+    "....ccc##..#....",
+    "....#hhhh#.i....",
+    "....#hhhhhii....",
+    "...###hhhhhi....",
+    "....####h###....",
+    ".....#.k#.......",
+    ".......kj#......",
+    "......#j#.......",
+    ".....#kj#.......",
+    "....#jjj#.......",
+    ".....###........"
+   ]
+  }
+ }
+}

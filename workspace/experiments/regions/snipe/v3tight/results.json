@@ -1,0 +1,704 @@
+{
+ "variant": "v3tight",
+ "protrusions": [],
+ "source_square": 901,
+ "origin": [
+  61,
+  61
+ ],
+ "body_bbox_fill": [
+  1.0,
+  0.862
+ ],
+ "rungs": {
+  "64": {
+   "k": {
+    "cannon_beak": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    },
+    "scope": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       31,
+       12,
+       3,
+       3
+      ],
+      "had_px": 9,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        3,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     3
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,3) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    64,
+    64
+   ],
+   "body_offset": [
+    0,
+    0
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "................................................................",
+    "................................................................",
+    "................................................................",
+    "................................................................",
+    "...............................####..##.........................",
+    "..............................#ffff##ff###......................",
+    "..............................#fffffffffff#.....................",
+    "..............................#fffffffffff#.....................",
+    "..............................#fffff##ffff#.....................",
+    "..............................#f####bb####......................",
+    "...............................#bbbbbbbbbb#.....................",
+    "..............................#bbbbbbbbbbbb#....................",
+    ".............................#bcccccbbbbbbbb#...................",
+    ".########..###################bcdddcbbbbbbbb#...................",
+    "#eeeeeeee##eeeeeeeeeeeeeeeeeee#cdddccbbbbbbb#...................",
+    "#eeeeeeeeeeeeeeeeeeeeeeeeeeeeeecdddcbbbbbbbb#...................",
+    "#eeeeeeee##eeeeeeeeeeeeeeeeeeeecccccbbbbbbb#....................",
+    ".########..####################bbbbbbbbbbbb#....................",
+    "...............................##bbbbbgggg#.....................",
+    ".................................##gggggg.......................",
+    "...................................gggggg###....................",
+    "...................................gggaaaaaa###.................",
+    "................................##ggaaaa####aaa##...............",
+    "...............................#aaaaaa##hhhh##aaa#..........#...",
+    "..............................#aaaaaa#hhhhhhhh##aa#.........ii..",
+    "..............................#aaaaa#hhhhhhhhhhh#aa#.....#.iii..",
+    ".............................#aaaaa#hhhhhhhhhhhhh#aa#....iiiii..",
+    ".............................#aaaaa#hhhhhhhhhhhhhh##a#.#iiiiiii#",
+    "............................#aaaaaa#hhhhhhhhhhhhhhhh##..iiiiiii.",
+    "............................#aaaaaa#hhhhhhhhhhhhhhhhhh#iiiiiii..",
+    "............................#aaaaaa#hhhhhhhhhhhhhhhhhhhiiiiiii..",
+    ".............................#aaaaaa#hhhhhhhhhhhhhhhhhhiiiiiii..",
+    ".............................#aaaaaaa#hhhhhhhhhhhhhhhhhhhiiiii#.",
+    "..............................#aaaaaaa#hhhhhhhhhhhhhhhhhhhiii...",
+    "..............................#aaaaaaaa##hhhhhhhhhhhhhhhhhh#....",
+    "...............................#aaaaaaaaa#hhhhhhhhhhhhhhhh#.....",
+    "................................##aaaaaaaa####hhhhhhhhhhhh#.....",
+    "..................................#aaaaaaa#jj#hhhhhh######......",
+    "...................................##aaaaa#jj#hhhh##............",
+    ".....................................###aa#jjj####..............",
+    "........................................##kkjjjj##..............",
+    "...........................................kkjjjjj#.............",
+    "...........................................kkkjjjj#.............",
+    "...........................................kkkjjjjj#............",
+    "...........................................kkkjjjj#.............",
+    "...........................................kkkjjj#..............",
+    "...........................................kkkjjj#..............",
+    "...........................................kkjjj#...............",
+    ".........................................#kkkjjj#...............",
+    "..........................................kkjjjj#...............",
+    "........................................#kkkjjj#................",
+    ".........................................kkkjjj#................",
+    "........................................kkkjjjj#................",
+    "...................................####kkkkjjjj#................",
+    ".................................##jjjjjkkkjjjj##...............",
+    "................................#jjjjjjjjjjjjjjjj#..............",
+    ".................................###jjjjjjjjjjjjjj#.............",
+    "....................................#jjjjjjjj#####..............",
+    ".....................................###j####...................",
+    "........................................#.......................",
+    "................................................................",
+    "................................................................",
+    "................................................................",
+    "................................................................"
+   ]
+  },
+  "32": {
+   "k": {
+    "cannon_beak": {
+     "k": 1.0,
+     "k_schedule": 1.4,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    },
+    "scope": {
+     "k": 1.25,
+     "k_schedule": 1.25,
+     "chosen_by": "schedule",
+     "trials": 6
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       15,
+       5,
+       2,
+       3
+      ],
+      "had_px": 2,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        2,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     6,
+     4
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (6,4) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    32,
+    32
+   ],
+   "body_offset": [
+    0,
+    0
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "................................",
+    "................................",
+    "...............######...........",
+    "..............#ffffff#..........",
+    "..............#ffff##...........",
+    "..............#ccccbb#..........",
+    ".####..#######ecddcbbb#.........",
+    "#eeee##eeeeeeeecddcbbb#.........",
+    "#eeeeeeeeeeeeeecddcbb#..........",
+    ".##############ccccb##..........",
+    ".................gggaa##........",
+    "................#ga####a#....#..",
+    "...............#aa#hhhh##....ii.",
+    "..............#aa#hhhhhhh#..iii.",
+    "..............#aa#hhhhhhhh#iiii#",
+    "..............#aa#hhhhhhhhhiii..",
+    "..............#aaa#hhhhhhhhhii..",
+    "...............#aaa##hhhhhhhh#..",
+    "................#aaaa##hhh###...",
+    ".................##aa##h##......",
+    "...................##kj##.......",
+    ".....................kkjj#......",
+    ".....................kkj#.......",
+    ".....................kjj#.......",
+    ".....................kjj#.......",
+    "....................kkj#........",
+    ".................##kkjj#........",
+    "................#jjjjjjj#.......",
+    ".................##jjj##........",
+    "...................###..........",
+    "................................",
+    "................................"
+   ]
+  },
+  "24": {
+   "k": {
+    "cannon_beak": {
+     "k": 1.0,
+     "k_schedule": 1.566,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    },
+    "scope": {
+     "k": 1.4,
+     "k_schedule": 1.354,
+     "chosen_by": "schedule",
+     "trials": 9
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {
+     "cannon_beak": {
+      "components_before": 2,
+      "pieces": 1,
+      "drawn_px": 1,
+      "components_after": 1
+     }
+    },
+    "eyes": {
+     "eye#0": {
+      "box": [
+       11,
+       3,
+       2,
+       3
+      ],
+      "had_px": 1,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        2,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     1,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (1,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    24,
+    24
+   ],
+   "body_offset": [
+    0,
+    0
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "........................",
+    "...........#####........",
+    "..........#fffff#.......",
+    "...........cccc#........",
+    "...........cddcb#.......",
+    ".##########cddcb#.......",
+    "#eeeeeeeeeecddcb#.......",
+    ".##########ccccb#.......",
+    "...........#ag#####...#.",
+    "...........#a#hhhh#...i.",
+    "..........#a#hhhhhh#.ii.",
+    "..........#a#hhhhhhhiii#",
+    "...........#a#hhhhhhhi..",
+    "...........#aa###hhhh#..",
+    "............#####h###...",
+    "..............#.k#......",
+    "................kj#.....",
+    "................kj#.....",
+    "...............kj#......",
+    ".............##kj#......",
+    "............#jjjjj#.....",
+    ".............#####......",
+    "........................",
+    "........................"
+   ]
+  },
+  "20": {
+   "k": {
+    "cannon_beak": {
+     "k": 1.0,
+     "k_schedule": 1.671,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    },
+    "scope": {
+     "k": 1.45,
+     "k_schedule": 1.42,
+     "chosen_by": "schedule",
+     "trials": 10
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       9,
+       2,
+       1,
+       3
+      ],
+      "had_px": 1,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        1,
+        3
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     4,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (4,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    20,
+    20
+   ],
+   "body_offset": [
+    0,
+    0
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "00A844",
+    "F8D878"
+   ],
+   "grid": [
+    "....................",
+    ".........#..#.......",
+    ".........cccf#......",
+    ".........cdc#.......",
+    ".########cdcb#......",
+    "#eeeeeeeecdcb#......",
+    ".########cccg#......",
+    ".........###hh#.....",
+    "........#a#hhhh##ii.",
+    "........#a#hhhhhhii.",
+    ".........###hhhhhh#.",
+    "..........####hh##..",
+    "...........##j##....",
+    ".............kj#....",
+    ".............kj#....",
+    "...........##j#.....",
+    "..........#jjj#.....",
+    "...........#j#......",
+    "............#.......",
+    "...................."
+   ]
+  },
+  "16": {
+   "k": {
+    "cannon_beak": {
+     "k": 1.0,
+     "k_schedule": 1.8,
+     "chosen_by": "frame margin: best",
+     "trials": 2
+    },
+    "scope": {
+     "k": 1.5,
+     "k_schedule": 1.5,
+     "chosen_by": "schedule",
+     "trials": 11
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {
+     "cannon_beak": {
+      "components_before": 2,
+      "pieces": 1,
+      "drawn_px": 1,
+      "components_after": 1
+     }
+    },
+    "eyes": {
+     "eye#0": {
+      "box": [
+       8,
+       3,
+       1,
+       2
+      ],
+      "had_px": 0,
+      "moat": 1,
+      "nudged": [
+       1,
+       1
+      ]
+     }
+    }
+   },
+   "eyes": {
+    "eye": {
+     "components": 1,
+     "eyes": [
+      {
+       "box": [
+        1,
+        2
+       ],
+       "filled": true,
+       "dark_margin": true
+      }
+     ],
+     "ok": true
+    }
+   },
+   "separation": true,
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "composite_size": [
+    16,
+    16
+   ],
+   "body_offset": [
+    0,
+    0
+   ],
+   "colours": [
+    "000000",
+    "005800",
+    "F8D878"
+   ],
+   "grid": [
+    "................",
+    ".......###......",
+    "......#fff#.....",
+    ".#####e#ccc.....",
+    "#eeeeeeecdc.....",
+    ".######ecdc#..#.",
+    ".......#ccch#.i.",
+    "......###hhhhii.",
+    ".......###hhhh#.",
+    "........######..",
+    ".........#kj#...",
+    "..........kj#...",
+    ".........#j#....",
+    "........#jj#....",
+    ".........##.....",
+    "................"
+   ]
+  }
+ }
+}

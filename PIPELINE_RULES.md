@@ -409,3 +409,28 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   - **Biggest open problems for a new enemy**: a non-square canvas; de-exaggeration (shrink a dominant part); a
     palette check at the target size (area share per colour, so the mid colour doesn't vanish under one part);
     and a profile face template (eye, socket and beak root) for side views.
+- **finding (snipe split variant)** (2026-10-23, Johnny's idea after the dry run; `snipe.step_split`,
+  `pipeline_gen.tight` / `piece_cells`, `workspace/experiments/regions/snipe/{split,v3tight}/`): no new paint and
+  no new plan, only the v3 rules, plus one model read ($0.025; dry run total $1.00).
+  - **Recipe.**
+    1. Crop tightly to the bounding box (no margin), then square it.
+    2. Drop the protrusion parts (`PROTRUSIONS = cannon_beak`) from the body. The body now fills the full N×N
+       height: its bbox is 1.0 of the square's height, against 0.76 in v3.
+    3. Draw the beak as its own piece, on the same pixel grid at the same scale (cell coverage ≥ 0.5, with a stroke
+       floor if it breaks). It gets its own outline.
+    4. Compose at game scale as a metasprite: the body sits over the beak, since the beak is behind the head.
+       Composites are 86×64, 43×32, 32×24, 27×20 and 21×16. The beak pieces are 36×5 down to 9×2 cells.
+  - **Control, `v3tight`**: the whole figure, beak included, tight-cropped. The beak still sets the width, so the
+    body only goes from 0.76 to 0.86 of the height. The crop margin was a minor loss; **the beak sharing the N×N
+    canvas was the major one**.
+  - **Read.** The split is visibly better at every size. At 64 and 32 it is good. At 24, 20 and 16 the legs, the
+    wing mass, the tail and a bigger head block survive, and the barrel is 2 px with an outline. All checks pass at
+    every size: eye, separation, tile rule (0 px changed) and gates. Still weak:
+    - the eye in its black moat reads as a lit window. gpt-5.6-sol says "no eye" below 64 in every variant.
+    - the barrel is a plain bar with no muzzle or brake at ≤ 24, so the model says "a long beak, not a gun"
+      at 24 / 20 / 16.
+    - the mid green is lost at 16.
+  - **Rule candidate**: protrusions (weapons, long beaks, antennae) are drawn as separate pieces on the shared grid,
+    and the body gets the N×N budget. The sprite's footprint becomes N × (N + protrusion). Next: give the
+    protrusion piece its own significance (a muzzle block at the tip), and let the plan step name the protrusion
+    parts instead of hard-coding them.
