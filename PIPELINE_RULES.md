@@ -39,6 +39,14 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   three models say vertical. Decision models are good for cheap defect screens. Keep
   gpt-5.6-sol for preference and character judging.
 
+- **trial** (Johnny, snipe dry run, 2026-10-23): **separate protrusions.** Identify
+  parts that are protrusions, weapons or attachments (e.g. the snipe's rifle-beak, which
+  ate most of the resolution) and render them as separate pieces, possibly their own
+  animation layer or sprite, so the body gets the full resolution budget. Compose them
+  back at game time.
+- **rule** (Johnny): concept prep must trim whitespace tightly (to the figure's bounding
+  box, then square). The snipe crop left too much empty space.
+
 ## Regions
 
 - **finding** (M1): `gpt-5.4-image-2` paints clean, distinct flat-colour part maps, but
