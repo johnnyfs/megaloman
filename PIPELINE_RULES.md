@@ -53,6 +53,10 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **rule** (v2 blessed 2026-10-23, Johnny): **preserve symmetry.** If the source is symmetric (e.g. across
   a vertical axis), check left vs right at each rung. When it breaks, build two
   candidates (left half mirrored, right half mirrored) and let a judge pick.
+- **rule** (Johnny): symmetry matters more the smaller the sprite. It's noticeable at
+  64 px, bad at 32, and looks amateur at 16, where every pixel counts and the sprite must
+  read as an icon, not just a likeness. So when the concept is symmetric, every rung must
+  mirror **exactly**, pixel for pixel (v2b), not merely stay within a tolerance.
 - **trial** (v3, Johnny): **preserve significance.** As shapes shrink they lose
   significance; character-carrying parts (e.g. the jaunty side fins) are kept larger
   than their proportional size, with a minimum footprint and an essential shape.

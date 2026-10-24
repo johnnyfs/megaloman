@@ -139,10 +139,10 @@
    "size": 64,
    "mode": "outset",
    "label_size": 62,
-   "ink_px": 353,
+   "ink_px": 360,
    "depth_px": 80,
    "black_fill_px": 335,
-   "clumps": 21,
+   "clumps": 29,
    "grid": [
     "................................#...............................",
     "..............................##M##.............................",
@@ -173,7 +173,7 @@
     "...............#M#fffffVVVVVVVVVVVVVVVVVVfffff#M#...............",
     "..............#p#fffffVVVVVVVVVVVVVVVVVVVVfffff#p##.............",
     "............##pp#ffffVVVVEEVVVVVVVVVVEEVVVVffff#ppp#............",
-    "...........#pppp#f#ffVVVEEEVVVVVVVVVEEEVVVVfff#ppppp#...........",
+    "...........#pppp###ffVVVEEEVVVVVVVVVEEEVVVVfff##pppp#...........",
     "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#ppppp#..........",
     "...........#ppppp#ffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
     "...........#ppppp#fffVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
@@ -184,8 +184,8 @@
     "........#####t#####jjjjjjjjjjjjjjjjjjjjjjjjjjj####t#####........",
     ".......#tttttttttt#ttjjjj#jjjjjjjjjjjj#jjjjttttttttttttt##......",
     "......#tttttttttjjttttjjtttjjjjjjjjjjtttjjjttttjtttttttttt#.....",
-    ".....##tttttttttjjtttjj#tttjjjnnnnjjjttttjjtttjjjtttttttttt#....",
-    "....##tttttttttjjjtttjjttttjj#nnnnnjjttttjjjttjjjtttttttttt#....",
+    ".....##tttttttttjjtttjj#tttjjj####jjjttttjjtttjjjtttttttttt#....",
+    "....##tttttttttjjjtttjjttttjj#nnnn#jjttttjjjttjjjtttttttttt#....",
     "...##ttttttttttjjjttjjjjttt###nnnnj##tttjjjjttjjjtttttttttt##...",
     "...#cttttttttttjjjtjjjjjjtttt#nnnnjttttjjjjjj#jjjttttttttttc#...",
     "..#cccttttttttttttt#jjccjtttt#nnnn#ttttjccjj##tt#tttttttttccc#..",
@@ -210,8 +210,8 @@
     ".....................##..................##....................."
    ],
    "tile": {
-    "changed_px": 70,
-    "damage_dE": 2248.8,
+    "changed_px": 69,
+    "damage_dE": 2208.4,
     "offset": [
      2,
      2
@@ -288,10 +288,10 @@
    "size": 64,
    "mode": "outset",
    "label_size": 62,
-   "ink_px": 353,
+   "ink_px": 360,
    "depth_px": 80,
    "black_fill_px": 335,
-   "clumps": 21,
+   "clumps": 29,
    "grid": [
     "................................#...............................",
     "..............................##M##.............................",
@@ -322,7 +322,7 @@
     "...............#M#fffffVVVVVVVVVVVVVVVVVVfffff#M#...............",
     "..............#p#fffffVVVVVVVVVVVVVVVVVVVVfffff#p##.............",
     "............##pp#ffffVVVVEEVVVVVVVVVVEEVVVVffff#ppp#............",
-    "...........#pppp#f#ffVVVEEEVVVVVVVVVEEEVVVVfff#ppppp#...........",
+    "...........#pppp###ffVVVEEEVVVVVVVVVEEEVVVVfff##pppp#...........",
     "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#ppppp#..........",
     "...........#ppppp#ffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
     "...........#ppppp#fffVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
@@ -333,8 +333,8 @@
     "........#####t#####jjjjjjjjjjjjjjjjjjjjjjjjjjj####t#####........",
     ".......#tttttttttt#ttjjjj#jjjjjjjjjjjj#jjjjttttttttttttt##......",
     "......#tttttttttjjttttjjtttjjjjjjjjjjtttjjjttttjtttttttttt#.....",
-    ".....##tttttttttjjtttjj#tttjjjnnnnjjjttttjjtttjjjtttttttttt#....",
-    "....##tttttttttjjjtttjjttttjj#nnnnnjjttttjjjttjjjtttttttttt#....",
+    ".....##tttttttttjjtttjj#tttjjj####jjjttttjjtttjjjtttttttttt#....",
+    "....##tttttttttjjjtttjjttttjj#nnnn#jjttttjjjttjjjtttttttttt#....",
     "...##ttttttttttjjjttjjjjttt###nnnnj##tttjjjjttjjjtttttttttt##...",
     "...#cttttttttttjjjtjjjjjjtttt#nnnnjttttjjjjjj#jjjttttttttttc#...",
     "..#cccttttttttttttt#jjccjtttt#nnnn#ttttjccjj##tt#tttttttttccc#..",
@@ -359,8 +359,8 @@
     ".....................##..................##....................."
    ],
    "tile": {
-    "changed_px": 70,
-    "damage_dE": 2248.8,
+    "changed_px": 69,
+    "damage_dE": 2208.4,
     "offset": [
      2,
      2
@@ -437,10 +437,10 @@
    "size": 64,
    "mode": "inset",
    "label_size": 64,
-   "ink_px": 372,
+   "ink_px": 374,
    "depth_px": 35,
    "black_fill_px": 361,
-   "clumps": 20,
+   "clumps": 25,
    "grid": [
     "................................#...............................",
     "..............................##M##.............................",
@@ -470,8 +470,8 @@
     "...............#MM#ffffffVVVVVVVVVVVVVVffffff##MM#..............",
     "...............#M#fffffVVVVVVVVVVVVVVVVVVVfffff#M#..............",
     "..............#p#ffffVVVVVVVVVVVVVVVVVVVVVVfffff##..............",
-    ".............#pp#ffffVVVVEEVVVVVVVVVVEEVVVVfff#f#p##............",
-    "............#ppp#fffVVVVEEEVVVVVVVVVEEEEVVVVff#f#ppp#...........",
+    ".............#pp##fffVVVVEEVVVVVVVVVVEEVVVVfff#f#p##............",
+    "............#ppp##ffVVVVEEEVVVVVVVVVEEEEVVVVff#f#ppp#...........",
     "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVff#f#ppp#...........",
     "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
     "...........#pppp#fffVVVVEEEVVVVVVVVVEEEEVVVVfff#pppp#...........",
@@ -508,8 +508,8 @@
     "....................###..................###...................."
    ],
    "tile": {
-    "changed_px": 62,
-    "damage_dE": 1856.5,
+    "changed_px": 60,
+    "damage_dE": 1810.6,
     "offset": [
      5,
      2
@@ -586,10 +586,10 @@
    "size": 32,
    "mode": "outset",
    "label_size": 30,
-   "ink_px": 152,
+   "ink_px": 153,
    "depth_px": 5,
-   "black_fill_px": 83,
-   "clumps": 31,
+   "black_fill_px": 75,
+   "clumps": 33,
    "grid": [
     "...............##...............",
     "..............#MM#..............",
@@ -603,8 +603,8 @@
     ".....#FFFF#MMMMMMMMMMM#FFF#.....",
     "....#FFFF#MMMM####MMMM#FFFF#....",
     ".....#FFF#M###ffff####M#FFF#....",
-    "......#FF##fffVVVVffff##F##.....",
-    ".......##ffVVVVVVVVVVfff#.......",
+    "......#FF##fffffffffff##F##.....",
+    ".......##ffVVVffffVVVff##.......",
     "......#p#ffVEEVVVVEEVVf#p#......",
     ".....#pp#fVVEEVVVVEEVVf#pp#.....",
     ".....#ppp#VVEEVVVVEEVVf#pp#.....",
@@ -625,11 +625,11 @@
     "..........###.......##.........."
    ],
    "tile": {
-    "changed_px": 33,
-    "damage_dE": 1014.8,
+    "changed_px": 15,
+    "damage_dE": 1062.4,
     "offset": [
-     2,
-     1
+     0,
+     5
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -665,7 +665,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,1) (max 3)",
+     "detail": "max 3 colours/tile at offset (0,5) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -691,7 +691,7 @@
    },
    "colours": [
     "000000",
-    "A4E4FC",
+    "BCBCBC",
     "F0D0B0",
     "F87858"
    ]
@@ -700,10 +700,10 @@
    "size": 32,
    "mode": "outset",
    "label_size": 30,
-   "ink_px": 152,
+   "ink_px": 153,
    "depth_px": 5,
-   "black_fill_px": 83,
-   "clumps": 31,
+   "black_fill_px": 75,
+   "clumps": 33,
    "grid": [
     "...............##...............",
     "..............#MM#..............",
@@ -717,8 +717,8 @@
     ".....#FFFF#MMMMMMMMMMM#FFF#.....",
     "....#FFFF#MMMM####MMMM#FFFF#....",
     ".....#FFF#M###ffff####M#FFF#....",
-    "......#FF##fffVVVVffff##F##.....",
-    ".......##ffVVVVVVVVVVfff#.......",
+    "......#FF##fffffffffff##F##.....",
+    ".......##ffVVVffffVVVff##.......",
     "......#p#ffVEEVVVVEEVVf#p#......",
     ".....#pp#fVVEEVVVVEEVVf#pp#.....",
     ".....#ppp#VVEEVVVVEEVVf#pp#.....",
@@ -739,11 +739,11 @@
     "..........###.......##.........."
    ],
    "tile": {
-    "changed_px": 33,
-    "damage_dE": 1014.8,
+    "changed_px": 15,
+    "damage_dE": 1062.4,
     "offset": [
-     2,
-     1
+     0,
+     5
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -779,7 +779,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,1) (max 3)",
+     "detail": "max 3 colours/tile at offset (0,5) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -805,7 +805,7 @@
    },
    "colours": [
     "000000",
-    "A4E4FC",
+    "BCBCBC",
     "F0D0B0",
     "F87858"
    ]
@@ -814,10 +814,10 @@
    "size": 32,
    "mode": "inset",
    "label_size": 32,
-   "ink_px": 163,
+   "ink_px": 167,
    "depth_px": 3,
    "black_fill_px": 94,
-   "clumps": 22,
+   "clumps": 26,
    "grid": [
     "................#...............",
     "..............##M#..............",
@@ -831,15 +831,15 @@
     ".....#FFF#MMMMMMMMMMMM#FFF#.....",
     ".....#FFF#MMM#######MMM#FFF#....",
     ".....####M###fffffff##M####.....",
-    ".......#f#fffVVVVVVfff#f#.......",
-    ".......#fffVVVVVVVVVVfff#.......",
+    ".......#M#fffVVVVVVfff###.......",
+    ".......##ffVVVVVVVVVVfff#.......",
     "......#p#fVVEEVVVVEEVVf#p#......",
     "......#p#fVVEEVVVVEEVVf#pp#.....",
     "......#p#fVVEEVVVVEEVVf#p#......",
     "......#pp#fVVVVVVVVVVf#pp#......",
     ".......#pjjffffffffffjjp#.......",
     "....###.jtjjjjjjjjjjjjtj.####...",
-    "..##tttjjtjjttjnnjjttjtjjtttt#..",
+    "..##tttjjtjjttj##jjttjtjjtttt#..",
     "..#ttttjjtjjtt#nn#ttjjjjjtttt#..",
     ".#cttt##ttjcj##nn#ttcjtt##tttc#.",
     ".#ctt#..#tjjt#.##.#tjjt#..#ttc#.",
@@ -853,8 +853,8 @@
     "..........##........##.........."
    ],
    "tile": {
-    "changed_px": 15,
-    "damage_dE": 778.1,
+    "changed_px": 9,
+    "damage_dE": 762.8,
     "offset": [
      4,
      4
@@ -866,7 +866,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 4 colours/tile at offset (1,5) (max 3)",
+     "detail": "max 5 colours/tile at offset (0,3) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -913,13 +913,12 @@
     },
     "colors": {
      "pass": false,
-     "detail": "6 opaque colours (max 4)",
+     "detail": "5 opaque colours (max 4)",
      "gate": false
     }
    },
    "colours": [
     "000000",
-    "A4E4FC",
     "BCBCBC",
     "F0D0B0",
     "F85898",
@@ -930,10 +929,10 @@
    "size": 24,
    "mode": "outset",
    "label_size": 22,
-   "ink_px": 95,
+   "ink_px": 99,
    "depth_px": 2,
-   "black_fill_px": 43,
-   "clumps": 19,
+   "black_fill_px": 35,
+   "clumps": 20,
    "grid": [
     "...........##...........",
     "..........#MM#..........",
@@ -944,10 +943,10 @@
     "....#FFF#MMMMMM#FFF#....",
     "...#FFF#MMMMMMMM#FFF#...",
     "...#FFF#MMffffMM#FFF#...",
-    "....##F#ffVVVVffM#F#....",
-    ".....#FfVVVVVVVVff#.....",
-    "....#p#fVEEVVEEVf#p#....",
-    "....#pp#VEVVVVEV#pp#....",
+    "....#FF#ffffffffM#F#....",
+    ".....##fVVVVVVVVff#.....",
+    "....#p#f#EEVVEE#f#p#....",
+    "....#pp##EVVVVE##pp#....",
     "...##ppjfVffffVfjp#t#...",
     "..#tttjtjtjjjjtjtjttt#..",
     ".#ttttjtjt#nnjtjtjtttt#.",
@@ -1036,10 +1035,10 @@
    "size": 24,
    "mode": "outset",
    "label_size": 22,
-   "ink_px": 106,
+   "ink_px": 112,
    "depth_px": 1,
-   "black_fill_px": 43,
-   "clumps": 27,
+   "black_fill_px": 35,
+   "clumps": 30,
    "grid": [
     "...........##...........",
     "..........#MM#..........",
@@ -1049,11 +1048,11 @@
     ".....#FFF#MMMMM#FF#.....",
     "....#FFF#MMMMMM#FFF#....",
     "...#FFF#MM####MM#FFF#...",
-    "...#FFFF##ffff###FFF#...",
-    "....#FF#ffVVVVfff#F#....",
+    "...#FFF###ffff###FFF#...",
+    "....#FF#ffffffff##F#....",
     ".....##fVVVVVVVVff#.....",
-    "....#p#fVEEVVEEVf#p#....",
-    "....#pp#VEVVVVEV#pp#....",
+    "....#p#f#EEVVEE#f#p#....",
+    "....#pp##EVVVVE##pp#....",
     "...#t#pjfVffffVfjp#t#...",
     "..#tttjtjtjjjjtjtjttt#..",
     ".#ttttjtjt#nnjtjtjtttt#.",
@@ -1142,9 +1141,9 @@
    "size": 24,
    "mode": "inset",
    "label_size": 24,
-   "ink_px": 97,
+   "ink_px": 101,
    "depth_px": 0,
-   "black_fill_px": 55,
+   "black_fill_px": 51,
    "clumps": 18,
    "grid": [
     "...........##...........",
@@ -1158,8 +1157,8 @@
     "....#F#MMffffffMM#F#....",
     ".....#MffVVVVVVffM#.....",
     ".....#ffVEVVVVEVff#.....",
-    "....#p#VVEVVVEEVV#p#....",
-    "....#p#fVEVVVVEVf#p#....",
+    "....#p#V#EVVVEE#V#p#....",
+    "....#p#f#EVVVVE#f#p#....",
     ".....#pjfVffffVfjp#.....",
     "...##.jtjfjjjjfjtj.##...",
     "..#ttjjtjtjtnjtjjjjtt#..",
@@ -1248,10 +1247,10 @@
    "size": 20,
    "mode": "outset",
    "label_size": 18,
-   "ink_px": 72,
+   "ink_px": 84,
    "depth_px": 0,
-   "black_fill_px": 34,
-   "clumps": 12,
+   "black_fill_px": 25,
+   "clumps": 17,
    "grid": [
     ".........##.........",
     "........#MM#........",
@@ -1261,9 +1260,9 @@
     "...#FFF#MMMMM#FF#...",
     "...#FF#MMMMMM#FF#...",
     "...#FF#ffffff#FF#...",
-    "....#FfVVVVVVfF#....",
-    "...#p#fVEVVEVVpp#...",
-    "...#pp#VEVVEVppp#...",
+    "....##fVVVVVVf##....",
+    "...#p#f#E##E#f#p#...",
+    "...#pp##E##E##pp#...",
     "..##ppjfjffjfjp#t#..",
     ".#tttjtjtjjjjtjttt#.",
     ".#tttjjjtnntjjjttc#.",
@@ -1275,8 +1274,8 @@
     "......##....##......"
    ],
    "tile": {
-    "changed_px": 10,
-    "damage_dE": 444.6,
+    "changed_px": 8,
+    "damage_dE": 398.7,
     "offset": [
      3,
      4
@@ -1288,7 +1287,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 5 colours/tile at offset (0,3) (max 3)",
+     "detail": "max 4 colours/tile at offset (2,3) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1350,10 +1349,10 @@
    "size": 20,
    "mode": "outset",
    "label_size": 18,
-   "ink_px": 80,
+   "ink_px": 92,
    "depth_px": 0,
-   "black_fill_px": 34,
-   "clumps": 18,
+   "black_fill_px": 25,
+   "clumps": 24,
    "grid": [
     ".........##.........",
     "........#MM#........",
@@ -1361,11 +1360,11 @@
     "......#F#MM#F#......",
     "....##F#MMMM#F##....",
     "...#FFF#MMMMM#FF#...",
-    "...#FF#f#####FFF#...",
+    "...#FF########FF#...",
     "...#FF#ffffff#FF#...",
     "....##fVVVVVVf##....",
-    "...#p#fVEVVEVVpp#...",
-    "...#pp#VEVVEVppp#...",
+    "...#p#f#E##E#f#p#...",
+    "...#pp##E##E##pp#...",
     "..#t#pjfjffjfjp#t#..",
     ".#tttjtjtjjjjtjttt#.",
     ".#tttjjj#nn#jjjttc#.",
@@ -1377,113 +1376,11 @@
     "......##....##......"
    ],
    "tile": {
-    "changed_px": 13,
-    "damage_dE": 377.8,
+    "changed_px": 11,
+    "damage_dE": 331.9,
     "offset": [
-     3,
+     1,
      2
-    ],
-    "merged": {
-     "FCE0A8": "F0D0B0"
-    }
-   },
-   "checks_free": {
-    "tile_colors": {
-     "pass": false,
-     "detail": "max 5 colours/tile at offset (0,3) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": false,
-     "detail": "6 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "checks": {
-    "tile_colors": {
-     "pass": true,
-     "detail": "max 3 colours/tile at offset (3,2) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": true,
-     "detail": "4 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "colours": [
-    "000000",
-    "A4E4FC",
-    "F0D0B0",
-    "F87858"
-   ]
-  },
-  "20_inset": {
-   "size": 20,
-   "mode": "inset",
-   "label_size": 20,
-   "ink_px": 81,
-   "depth_px": 0,
-   "black_fill_px": 40,
-   "clumps": 13,
-   "grid": [
-    ".........##.........",
-    "........#MM#........",
-    ".......##MMM#.......",
-    "......#MMMMM##......",
-    "....##F#MMMMMM##....",
-    "...#FF#MMMMMM#FF#...",
-    "...#FF#MMMMMMM#F#...",
-    "....##MfffffffM#....",
-    "....##fVVVVVVfM#....",
-    "....#pVEEVVEEVpp#...",
-    "....#pVVVVVEVVp#....",
-    "....#p#ffffjf#p#....",
-    "..##jjjjjjjjjjjj##..",
-    ".#ttjjjttnnttjjjtt#.",
-    "#ct#.#jjt##tjj#.#tc#",
-    ".#t#.#tt#..#tt#.#t#.",
-    ".#c#.#tt#..#tt#.#c#.",
-    "..#..#ct#..#tc#..#..",
-    ".....#ct#..#tc#.....",
-    "......##....##......"
-   ],
-   "tile": {
-    "changed_px": 2,
-    "damage_dE": 261.0,
-    "offset": [
-     2,
-     3
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -1519,7 +1416,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,3) (max 3)",
+     "detail": "max 3 colours/tile at offset (1,2) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1545,42 +1442,46 @@
    },
    "colours": [
     "000000",
-    "BCBCBC",
+    "A4E4FC",
     "F0D0B0",
     "F87858"
    ]
   },
-  "16": {
-   "size": 16,
-   "mode": "outset",
-   "label_size": 14,
-   "ink_px": 48,
+  "20_inset": {
+   "size": 20,
+   "mode": "inset",
+   "label_size": 20,
+   "ink_px": 83,
    "depth_px": 0,
-   "black_fill_px": 19,
-   "clumps": 8,
+   "black_fill_px": 40,
+   "clumps": 16,
    "grid": [
-    ".......##.......",
-    "......#MM#......",
-    ".....#MMMM#.....",
-    "....#F#MM#F#....",
-    "...#F#MMMM#F#...",
-    "..#FF#ffff#FF#..",
-    "...#FfVVVVff#...",
-    "...#pVEVVEVf#...",
-    "...#ppVVVVVf#...",
-    "..#tjjffffftt#..",
-    ".#ttjjtnntjjtt#.",
-    "#ctt#tt##tttttc#",
-    ".#cttttttttttc#.",
-    "..##cct#ttcc##..",
-    "....#ct##tc#....",
-    ".....##..##....."
+    ".........##.........",
+    "........#MM#........",
+    ".......##MMM#.......",
+    "......#MMMMM##......",
+    "....##F#MMMMMM##....",
+    "...#FF#MMMMMM#FF#...",
+    "...#FF#MMMMMMM#F#...",
+    "....##MfffffffM#....",
+    "....#ffVVVVVVff#....",
+    "....#fVEEVVEEV#p#...",
+    "....##VVVVVEVV##....",
+    "....#p#ffffjf#p#....",
+    "..##jjjjjjjjjjjj##..",
+    ".#ttjjjttnnttjjjtt#.",
+    "#ct#.#jjt##tjj#.#tc#",
+    ".#t#.#tt#..#tt#.#t#.",
+    ".#c#.#tt#..#tt#.#c#.",
+    "..#..#ct#..#tc#..#..",
+    ".....#ct#..#tc#.....",
+    "......##....##......"
    ],
    "tile": {
-    "changed_px": 2,
-    "damage_dE": 261.0,
+    "changed_px": 6,
+    "damage_dE": 217.1,
     "offset": [
-     2,
+     5,
      1
     ],
     "merged": {
@@ -1590,7 +1491,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 4 colours/tile at offset (2,0) (max 3)",
+     "detail": "max 4 colours/tile at offset (2,3) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1617,7 +1518,105 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,1) (max 3)",
+     "detail": "max 3 colours/tile at offset (5,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "A4E4FC",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "16": {
+   "size": 16,
+   "mode": "outset",
+   "label_size": 14,
+   "ink_px": 53,
+   "depth_px": 0,
+   "black_fill_px": 15,
+   "clumps": 14,
+   "grid": [
+    ".......##.......",
+    "......#MM#......",
+    ".....#MMMM#.....",
+    "....#F#MM#F#....",
+    "...#F#MMMM#F#...",
+    "..#FF#ffff#FF#..",
+    "...##fVVVVf##...",
+    "....##EVVE#f#...",
+    "...#p#VVVVff#...",
+    "..#tjfffffftt#..",
+    ".#ttjjtnntjjtt#.",
+    "#ctt#tt##tttttc#",
+    ".#cttttttttttc#.",
+    "..##cct#ttcc##..",
+    "....#ct##tc#....",
+    ".....##..##....."
+   ],
+   "tile": {
+    "changed_px": 2,
+    "damage_dE": 261.0,
+    "offset": [
+     3,
+     0
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 4 colours/tile at offset (1,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (3,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1652,21 +1651,21 @@
    "size": 16,
    "mode": "outset",
    "label_size": 14,
-   "ink_px": 57,
+   "ink_px": 62,
    "depth_px": 0,
-   "black_fill_px": 19,
-   "clumps": 15,
+   "black_fill_px": 15,
+   "clumps": 21,
    "grid": [
     ".......##.......",
     "......#MM#......",
     ".....#MMMM#.....",
     "....#F#MM#F#....",
-    "...#F#f###FF#...",
+    "...#F######F#...",
     "..#FF#ffff#FF#..",
     "...##fVVVVf##...",
-    "...#pVEVVEVf#...",
-    "...#ppVVVVVf#...",
-    "..#tjjf##ff#t#..",
+    "....##EVVE#f#...",
+    "...#p#VVVVff#...",
+    "..#tjff##ff#t#..",
     ".#ttjj#nn#jjtt#.",
     "#ctt#tt##tttttc#",
     ".#cttttttttttc#.",
@@ -1678,8 +1677,8 @@
     "changed_px": 2,
     "damage_dE": 261.0,
     "offset": [
-     2,
-     1
+     3,
+     0
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -1688,7 +1687,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 4 colours/tile at offset (2,0) (max 3)",
+     "detail": "max 4 colours/tile at offset (1,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1715,7 +1714,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,1) (max 3)",
+     "detail": "max 3 colours/tile at offset (3,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1750,20 +1749,20 @@
    "size": 16,
    "mode": "inset",
    "label_size": 16,
-   "ink_px": 58,
+   "ink_px": 67,
    "depth_px": 0,
-   "black_fill_px": 24,
-   "clumps": 19,
+   "black_fill_px": 16,
+   "clumps": 23,
    "grid": [
     ".......##.......",
     "......#MM#......",
     ".....##MM##.....",
     "....#MMMMMM#....",
     "...#F#MMMM#F#...",
-    "..###MffffMfF#..",
+    "..###MffffM#F#..",
     "....#fVVVVff#...",
-    "...#fVEVVEVf#...",
-    "...#fVEVVEVf#...",
+    "...#f#E##E#f#...",
+    "...#f#E##E#f#...",
     "...#jfjffjfj#...",
     ".##jjjtnntjjj##.",
     "#ct#tjt##tjt#tc#",
