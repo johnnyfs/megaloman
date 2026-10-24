@@ -1,0 +1,138 @@
+{
+ "facing": "left",
+ "prompt": "Concept art for a video game enemy: a whimsical robot enemy in the style of the NES Mega Man games\n(a classic Mega Man small enemy design: chunky, friendly, toy-like, rounded armour plates, bold simple shapes, a big\nexpressive eye).\n\nThe character: SNIPE BOT, a robot for a marsh level. A robot snipe (marsh wading bird) that is also a SNIPER: its beak\nis a gun. Reimagine it to fit a single square tile:\n- A round, plump, compact body that fills most of the square: roughly as tall as it is wide.\n- The beak is a SNUB-NOSED gun: a short, thick, stubby barrel with a chunky muzzle at the tip, sticking out only a\n  little from the head. Still clearly a gun, and clearly where a beak would be. No long barrel.\n- The legs are folded up like a frog's: hinged up into the body, the folded legs tucked against the back and lower\n  sides of the body, with the feet just under the body. No long stick legs, no gap under the body.\n- A big bright eye on the head, a tiny stubby tail; optionally a small chunky scope on top of the head.\n\nGeneral guidance:\n- This design will be miniaturized into a tiny sprite (a single square tile, about 16x16 pixels), so it must make\nthe most of every pixel. Design for the tiny version, and be creative about the brief to get there:\n- Fill the square. The whole silhouette should be compact and close to square, occupying most of the frame in\n  both width and height. No long horizontal or vertical extent that leaves the rest of the square empty.\n- No thin protrusions. Long, skinny parts (barrels, beaks, antennae, stick legs, tails) become 1-pixel dashes or\n  vanish. Shorten and thicken them: snub-nosed, stubby, chunky versions that still say what they are.\n- Compress or fold limbs into the body mass: legs folded up and tucked (feet just under the body), arms hugged\n  close, so they add bulk instead of empty gaps.\n- Exaggerate the one or two features that identify the character (make them big and bold), and simplify or drop\n  everything else.\n- Few large color masses: one main body colour, one accent, a bright eye. No fine patterns or small details.\n- Strong outline and value contrast between the big masses, so it reads from its silhouette alone.\n\nComposition and rendering rules:\n- ONE single character only, full body, strict SIDE VIEW (profile) facing LEFT: the gun-beak points left.\n- Shaded 3-D form: soft volumetric shading and highlights on every part (not flat cartoon colours), clean dark\n  outlines.\n- Marsh-themed colours: reed and moss greens, mud browns, a little rusty orange or cattail tan; the eye a bright\n  contrasting colour.\n- Plain pure white background, no ground, no shadow on the ground, no scenery, no text, no labels, no border.\n- The whole character fits in the frame with a small margin on every side.",
+ "candidates": [
+  {
+   "id": "nb-s1",
+   "letter": "A",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 1,
+   "call": "6e944758c15473792e7675b596a14a1316b8f0155ea918352813e3585a00b13f",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.037482,
+    "byok": true,
+    "total": 0.037482
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s1_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s1.png",
+   "raw_size": [
+    1376,
+    768
+   ],
+   "bbox_frac": [
+    0.881,
+    0.788
+   ]
+  },
+  {
+   "id": "nb-s2",
+   "letter": "B",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 2,
+   "call": "4e0a5da5e4de5a7b282af81bf5ad3ed9e6341228650f3ccd35323a0003a0249b",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0387045,
+    "byok": true,
+    "total": 0.0387045
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s2_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s2.png",
+   "raw_size": [
+    1024,
+    1024
+   ],
+   "bbox_frac": [
+    0.854,
+    0.879
+   ]
+  },
+  {
+   "id": "gpt-s1",
+   "letter": "C",
+   "model": "openai/gpt-5.4-image-2",
+   "seed": 1,
+   "call": "6ee8873ec6d5913f276c36db250512719b3c388aff1b9c875e5c79eeffd69391",
+   "error": null,
+   "cost": {
+    "openrouter": 0.238412,
+    "upstream": 0.0,
+    "byok": false,
+    "total": 0.238412
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/gpt-s1_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/gpt-s1.png",
+   "raw_size": [
+    1024,
+    1024
+   ],
+   "bbox_frac": [
+    0.88,
+    0.845
+   ]
+  },
+  {
+   "id": "nb-s3",
+   "letter": "D",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 3,
+   "call": "f2b5700a05589eecb3ecec6c5cfb95078f85e022173a6e8c8bc478b5276fe11a",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0377595,
+    "byok": true,
+    "total": 0.0377595
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s3_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/nb-s3.png",
+   "raw_size": [
+    1024,
+    1024
+   ],
+   "bbox_frac": [
+    0.812,
+    0.88
+   ]
+  }
+ ],
+ "judge": {
+  "ranking": [
+   "A",
+   "C",
+   "D",
+   "B"
+  ],
+  "scores": {
+   "A": 9,
+   "B": 6,
+   "C": 8,
+   "D": 7
+  },
+  "reasons": {
+   "A": "The compact round body, stubby gun-beak, single bright eye, and tightly folded legs create the clearest near-square silhouette with few sprite-critical parts.",
+   "B": "Its gun-beak and eye read well, but the multiple arm-like forms, feet, joints, and small appendages make it too humanoid and busy at NES scale.",
+   "C": "The strongest snipe identity and boldest eye-beak profile are offset by thin tail feathers, surface mottling, and several small mechanical details.",
+   "D": "The chunky gun and large eye remain readable, but overlapping limb segments and extra joints clutter the lower silhouette more than A.",
+   "best_for_sprite": "A"
+  },
+  "call": "3496ed22268499373618129d1180f1d0f4a00f2d458ad8ea6f1770aabd4c56ad",
+  "cached": false
+ },
+ "chosen": "nb-s1",
+ "chosen_by": "judge best_for_sprite",
+ "cost": {
+  "by_step": {
+   "concept": 0.3524,
+   "concept_judge": 0.0147
+  },
+  "total": 0.367
+ }
+}

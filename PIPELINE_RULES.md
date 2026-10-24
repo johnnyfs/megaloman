@@ -434,3 +434,18 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
     and the body gets the N×N budget. The sprite's footprint becomes N × (N + protrusion). Next: give the
     protrusion piece its own significance (a muzzle block at the tip), and let the plan step name the protrusion
     parts instead of hard-coding them.
+- **rule (trial)** (2026-10-24, Johnny): **design the concept for the target size.** When the smallest target is
+  tiny (≤ 32 px, e.g. a 16×16 single tile), the concept prompt carries the guidance unit
+  `workspace/guidance/pixel-art/concept/units/small-target-design.md` (fill the square, no thin protrusions, fold
+  limbs into the body, exaggerate the identifying features, few large colour masses, strong outline). Wired via
+  `guidance.for_concept(prompt, target_px)` (roles `concept_art`, `concept_judge`).
+- **finding (snipe compact retry)** (2026-10-24, `snipe.py --variant compact`, `workspace/experiments/regions/snipe/compact/`):
+  the same steps as the dry run (concept, symmetry, regions, plan v2, ladder v3, read) on a concept with the
+  small-target unit plus snipe specifics (snub-nosed gun, frog-folded legs, feet under the body). $0.97.
+  - Concepts: all 4 came back compact and near-square; the judge picked A (nb-s1, 9/10). Less snipe-like (no long
+    beak), but a bird with a gun for a face. Nano Banana painted its own concept (IoU 0.997, no registration).
+  - Ladder: the read says bird + gun + eye at 64 / 32, bird + eye at 24, nothing at 20 / 16. The design is no longer
+    the bottleneck at 16: the legend's `eye` region (nb-s2 paint, 22k px) took the orange wing patch, so the gold
+    eye floor lands on the wing while the real eye sits inside the black `eye_housing` blob. Next: check that the
+    eye region is on the head (one piece, near the beak) before the ladder; prefer the paint whose eye matches the
+    concept's brightest small blob.

@@ -1,0 +1,106 @@
+{
+ "version": "s1",
+ "concept": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/concept/chosen.png",
+ "size": [
+  1024,
+  1024
+ ],
+ "verify_threshold": 0.9,
+ "type": "none",
+ "order": null,
+ "axes": {
+  "vertical": {
+   "axis_px": 537.5,
+   "axis_frac": 0.5249,
+   "score": 0.8004,
+   "verified": false
+  },
+  "horizontal": {
+   "axis_px": 577.5,
+   "axis_frac": 0.564,
+   "score": 0.7398,
+   "verified": false
+  }
+ },
+ "rotation": {
+  "best_order": 2,
+  "by_order": {
+   "2": {
+    "centre_px": [
+     520.3,
+     522.7
+    ],
+    "score": 0.7846
+   },
+   "3": {
+    "centre_px": [
+     532.3,
+     554.7
+    ],
+    "score": 0.7468
+   },
+   "4": {
+    "centre_px": [
+     528.3,
+     546.7
+    ],
+    "score": 0.7757
+   },
+   "5": {
+    "centre_px": [
+     532.3,
+     554.7
+    ],
+    "score": 0.7743
+   },
+   "6": {
+    "centre_px": [
+     532.3,
+     554.7
+    ],
+    "score": 0.7468
+   },
+   "7": {
+    "centre_px": [
+     532.3,
+     554.7
+    ],
+    "score": 0.7535
+   },
+   "8": {
+    "centre_px": [
+     548.3,
+     554.7
+    ],
+    "score": 0.748
+   }
+  },
+  "enforced": false,
+  "note": "radial/rotational is recorded only; ladder v2 enforces mirror axes"
+ },
+ "model": {
+  "type": "none",
+  "order": null,
+  "probabilities": {
+   "none": 0.97,
+   "vertical": 0.02,
+   "horizontal": 0.01,
+   "both": 0,
+   "radial": 0
+  },
+  "confidence": 0.96,
+  "classifier": "typesafe/jev-1.14",
+  "secs": 0.412,
+  "per_part": {},
+  "call": "39526af44037a586a19eb242fb7c6eb0145d7fb7c8dad7895169f2b364c62576",
+  "cost": 0.000134988,
+  "cached": false
+ },
+ "disagreements": [],
+ "per_part": {},
+ "cost": {
+  "spent": 0.00013,
+  "calls": 1,
+  "cached": 0
+ }
+}

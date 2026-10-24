@@ -1,0 +1,1451 @@
+{
+ "version": "v3",
+ "spec": {
+  "plan": "plan_v2",
+  "eye_moat": true,
+  "stroke_floor": true,
+  "eye_nudge": true
+ },
+ "palette": {
+  "black": {
+   "nes": "0F",
+   "hex": "000000"
+  },
+  "dark": {
+   "nes": "0B",
+   "hex": "005800"
+  },
+  "mid": {
+   "nes": "2A",
+   "hex": "58D854"
+  },
+  "light": {
+   "nes": "28",
+   "hex": "F8B800"
+  }
+ },
+ "sizes": [
+  64,
+  32,
+  24,
+  20,
+  16
+ ],
+ "symmetry": {
+  "keep": "none",
+  "mirror": false,
+  "why": "spec type none: no verified mirror axis"
+ },
+ "protected": [
+  "eye",
+  "eye_housing"
+ ],
+ "opts": {
+  "contrast_below": 0,
+  "speck_below": 32
+ },
+ "instances": {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  "11": 8
+ },
+ "rungs": {
+  "64": {
+   "k": {
+    "upper_beak": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    },
+    "legs": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    },
+    "lower_wing": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "cap: best",
+     "trials": 8
+    },
+    "lower_beak": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "trials": 1
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       23,
+       20,
+       7,
+       7
+      ],
+      "had_px": 88,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     },
+     "eye#1": {
+      "box": [
+       39,
+       33,
+       10,
+       8
+      ],
+      "had_px": 49,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "health_score": 13,
+   "health": [
+    {
+     "part": "body_shell",
+     "status": "amber",
+     "area": 607,
+     "components": 5,
+     "reasons": [
+      "split 1->5",
+      "1px thin",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "eye_housing",
+     "status": "amber",
+     "area": 289,
+     "components": 2,
+     "reasons": [
+      "split 1->2"
+     ]
+    },
+    {
+     "part": "eye",
+     "status": "red",
+     "area": 80,
+     "components": 1,
+     "reasons": [
+      "merged 2->1",
+      "iou 0.39",
+      "lost adj body_shell,upper_wing"
+     ]
+    },
+    {
+     "part": "upper_beak",
+     "status": "green",
+     "area": 130,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "lower_beak",
+     "status": "green",
+     "area": 29,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "scope",
+     "status": "green",
+     "area": 89,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "upper_wing",
+     "status": "amber",
+     "area": 106,
+     "components": 1,
+     "reasons": [
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "lower_wing",
+     "status": "red",
+     "area": 100,
+     "components": 1,
+     "reasons": [
+      "merged 2->1"
+     ]
+    },
+    {
+     "part": "legs",
+     "status": "green",
+     "area": 170,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "tail",
+     "status": "green",
+     "area": 37,
+     "components": 1,
+     "reasons": []
+    }
+   ],
+   "render": {
+    "size": 64,
+    "specks_to_line": 0,
+    "ink_px": 270,
+    "fin_depth_px": 0,
+    "black_fill_px": 318,
+    "clumps": 27,
+    "line_side": {
+     "body_shell|scope": 10,
+     "body_shell|upper_beak": 7,
+     "body_shell|upper_wing": 22,
+     "tail|body_shell": 8,
+     "upper_wing|lower_wing": 4,
+     "body_shell|lower_wing": 5,
+     "body_shell|legs": 25,
+     "legs|lower_wing": 31
+    },
+    "ring_edge": null,
+    "grid": [
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "..........................#######....####.......................",
+     ".........................#fffffff####ffff#......................",
+     ".........................#fffffffffffffff#......................",
+     ".........................#fffffffffffffff#......................",
+     ".........................#fffffffffffffff#......................",
+     ".........................#fffffffffffffff#......................",
+     "..........................#ffffffffffffff#......................",
+     ".......................###a######ffff####.......................",
+     ".....................##aaaaaaaaaa####aaaa##.....................",
+     "...................##aaaaaaaabbbbbbbbaaaaaa#....................",
+     "..................#aaaaaaabbbbbbbbbbbbbbaaaa##..................",
+     ".................#aaaaaabbbbbbbbbbbbbbbbbaaaaa#.................",
+     "................#aaaaaabbbbbbbbbbbbbbbbbbaaaaaa#................",
+     "................#aaaaabbbbbbbbbbbbbbbbbbbaaaaaaa#...............",
+     ".......###.....####aaabbbbbbbbbbbbbbbbbbbaaaaaaaa#..............",
+     "......#ddd#..##dddd#abbbbbbbbbbbbbbbbbbbaaaaaaaaaa#.............",
+     ".....#ddddd##ddddddd#bbbbbbbbbbbbbbbbbbbaaaaaaaaaa#.............",
+     "....#dddddddddddddddbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaa#............",
+     "....#dddddddddddddddbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaa#............",
+     "....#ddddddddddddddddbbbbbbbbbbbbbbbbb#aaaaaaaaaaaaa#...........",
+     "....#ddddddddddddddddbbbbbbbbbbbbbbb#gg###aaaaaaaaaa#...........",
+     "....#ddddddddddddddddbbbbbbbbbbbbb#ggggggg#aaaaaaaaaa#..........",
+     "....#ddddddddddddddddbbbbbbbbbbbbgggggggggg#aaaaaaaaa#..........",
+     "....#dddddddeeeddddddbbbbbbbbbbb#ggggggggggg#aaaaaaaaa#.........",
+     ".....####deeeeeeeeddd#bbbbbbbbb#ggggggggggggg#aaaaaaaa#.........",
+     ".........#eeeeeeeeee#aaaaaaaaaa#gggggggggggggg#aaaaaaa#.##......",
+     ".............eeeeeeaaaaaaaaaaa#ggggggggbbbbbbbbbbbbaaaa#jj#.....",
+     ".............#aaeeaaaaaaaaaaaa#ggggggggbccccccccccbaaa#jjjj#....",
+     ".............#aaaaaaaaaaaaaaaa#ggggggggbccccccccccbaaa#jjjj#....",
+     ".............#aaaaaaaaaaaaaaaa#ggggggggbccccccccccbaaa#jjjj#....",
+     ".............#aaaaaaaaaaaaaaaaa#gggggggbccccccccccbaaa#jjjj#....",
+     ".............#aaaaaaaaaaaaaaaaa#ggggg##bccccccccccbaaa#jjjj#....",
+     ".............#aaaaaaaaaaaaaaaaaa#g###hhbccccccccccbaaa#jjj#.....",
+     ".............#aaaaaaaaaaaaaaaaaaa#hhhhhbccccccccccbaaa#jjj#.....",
+     ".............#aaaaaaaaaaaaaaaaaaaa###hhbccccccccccbaaa#j##......",
+     ".............#aaaaaaaaaaaaaaaaaaa#hhh#hbbbbbbbbbbbbaaaa#........",
+     ".............#aaaaaaaaaaaaaaaaaaa#hhh#hhhhhhhhhhh#aaaa#.........",
+     "..............#aaaaaaaaaaaaaaaaaa#hhh##hhhhhhhhhhh#aa#..........",
+     "..............#aaaaaaaaaaaaaaaaaa#hhh#i#hhhhhhhhhh#aa#..........",
+     "...............#aaaaaaaaaaaaaaaaa#hhh#ii##hhhhhhhhh##...........",
+     "...............#aaaaaaaaaaaaaaaa#i###iiiii#hhhhhhhh#............",
+     "................#aaaaaaaaaaaaaaa#iiiiiiiiii#hhhhhhh#............",
+     ".................#aaaaaaaaaaaaaaa#iiiiiiiiii#hhhhhh#............",
+     "..................#a##aaaaaaaaaaa###iiiiiii#hhhhhh#.............",
+     "...................#ii###aaaaa###iiiiiiiii#hhh####..............",
+     "..................#iiiiii#####iiiiiiiiiiii#hhh##................",
+     ".................#iiiiiiiiiiiiiiiiiiiiiiiii#h#ii#...............",
+     ".................#iiiiiiiiiiiiiiiiiiiiiiiiii#iii#...............",
+     "..................###########iiiiiiiiiiiiiiiiii#................",
+     ".............................##################.................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................",
+     "................................................................"
+    ],
+    "tile": {
+     "changed_px": 0,
+     "damage_dE": 0.0,
+     "offset": [
+      1,
+      6
+     ]
+    },
+    "checks": {
+     "tile_colors": {
+      "pass": true,
+      "detail": "max 3 colours/tile at offset (1,6) (max 3)",
+      "gate": true
+     },
+     "orphans": {
+      "pass": true,
+      "detail": "0 orphan pixels",
+      "gate": true
+     },
+     "holes": {
+      "pass": true,
+      "detail": "0 enclosed transparent pixels",
+      "gate": true
+     },
+     "outline": {
+      "pass": true,
+      "detail": "100% of silhouette edge is dark (min 75%)",
+      "gate": true
+     },
+     "colors": {
+      "pass": true,
+      "detail": "4 opaque colours (max 4)",
+      "gate": true
+     }
+    },
+    "eyes": {
+     "eye": {
+      "components": 1,
+      "eyes": [
+       {
+        "box": [
+         10,
+         8
+        ],
+        "filled": true,
+        "dark_margin": true
+       }
+      ],
+      "ok": true
+     }
+    },
+    "colours": [
+     "000000",
+     "005800",
+     "58D854",
+     "F8B800"
+    ],
+    "separation": {
+     "touching": {},
+     "ok": true,
+     "cup_on_arm_unlined": []
+    }
+   }
+  },
+  "32": {
+   "k": {
+    "upper_beak": {
+     "k": 1.15,
+     "k_schedule": 1.2,
+     "chosen_by": "frame margin: best",
+     "trials": 5
+    },
+    "legs": {
+     "k": 1.25,
+     "k_schedule": 1.25,
+     "chosen_by": "schedule",
+     "trials": 6
+    },
+    "lower_wing": {
+     "k": 1.2,
+     "k_schedule": 1.175,
+     "chosen_by": "cap: best",
+     "trials": 8
+    },
+    "lower_beak": {
+     "k": 1.1,
+     "k_schedule": 1.1,
+     "chosen_by": "schedule",
+     "trials": 3
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       11,
+       10,
+       3,
+       3
+      ],
+      "had_px": 22,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     },
+     "eye#1": {
+      "box": [
+       19,
+       16,
+       5,
+       4
+      ],
+      "had_px": 9,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     }
+    }
+   },
+   "health_score": 7,
+   "health": [
+    {
+     "part": "body_shell",
+     "status": "red",
+     "area": 133,
+     "components": 4,
+     "reasons": [
+      "area 133 < min_px^2 144",
+      "split 1->4",
+      "1px thin",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "eye_housing",
+     "status": "amber",
+     "area": 83,
+     "components": 2,
+     "reasons": [
+      "split 1->2",
+      "area x1.76",
+      "iou 0.59"
+     ]
+    },
+    {
+     "part": "eye",
+     "status": "red",
+     "area": 20,
+     "components": 1,
+     "reasons": [
+      "merged 2->1",
+      "iou 0.39",
+      "lost adj body_shell,upper_wing"
+     ]
+    },
+    {
+     "part": "upper_beak",
+     "status": "green",
+     "area": 37,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "lower_beak",
+     "status": "red",
+     "area": 6,
+     "components": 1,
+     "reasons": [
+      "area 6 < min_px^2 9"
+     ]
+    },
+    {
+     "part": "scope",
+     "status": "green",
+     "area": 22,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "upper_wing",
+     "status": "red",
+     "area": 23,
+     "components": 1,
+     "reasons": [
+      "area 23 < min_px^2 36",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "lower_wing",
+     "status": "red",
+     "area": 21,
+     "components": 2,
+     "reasons": [
+      "area 21 < min_px^2 25",
+      "iou 0.53",
+      "1px thin"
+     ]
+    },
+    {
+     "part": "legs",
+     "status": "green",
+     "area": 57,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "tail",
+     "status": "red",
+     "area": 7,
+     "components": 1,
+     "reasons": [
+      "area 7 < min_px^2 9",
+      "1px thin"
+     ]
+    }
+   ],
+   "render": {
+    "size": 32,
+    "specks_to_line": 0,
+    "ink_px": 125,
+    "fin_depth_px": 0,
+    "black_fill_px": 89,
+    "clumps": 22,
+    "line_side": {
+     "body_shell|scope": 2,
+     "body_shell|upper_beak": 3,
+     "body_shell|upper_wing": 8,
+     "tail|body_shell": 4,
+     "upper_wing|lower_wing": 2,
+     "body_shell|legs": 11,
+     "lower_wing|lower_wing": 1,
+     "legs|lower_wing": 11,
+     "body_shell|lower_wing": 1
+    },
+    "ring_edge": null,
+    "grid": [
+     "................................",
+     "................................",
+     "................................",
+     ".............###...#............",
+     "............#fff###f#...........",
+     "............#fffffff#...........",
+     "............#fffffff#...........",
+     "...........#a#f#fff##...........",
+     ".........##aaabbbbbaa##.........",
+     "........#aaabbbbbbbbaaa#........",
+     "...##..#d#abbbbbbbbbaaaa#.......",
+     "..#dd##ddd#bbbbbbbbbaaaaa#......",
+     ".#ddddddddbbbbbbbbbbaaaaa#......",
+     ".#ddddddddbbbbbbbbb##aaaaa#.....",
+     ".#dddddddddbbbbbbgggg#aaaa#.....",
+     ".#ddddeedddbbbbbgggggg#aaaa#....",
+     "..####eeee#aaaa#gggbbbbbbbaa#...",
+     "......#aaaaaaa#ggggbcccccba#j#..",
+     "......#aaaaaaaa#gggbcccccba#j#..",
+     "......#aaaaaaaa#gg#bcccccba#j#..",
+     "......#aaaaaaaaa##hbcccccba##...",
+     "......#aaaaaaaaa#h#bbbbbbba#....",
+     ".......#aaaaaaaa#h##hhhhh##.....",
+     ".......#aaaaaaa#i#ii#hhhhh#.....",
+     "........#a##aaaa#iiii#hhhh#.....",
+     "........##ii####iiiii#hhh#......",
+     ".......#iiiiiiiiiiiiii####......",
+     ".......#iiiiiiiiiiiiiiiiii#.....",
+     "........##################......",
+     "................................",
+     "................................",
+     "................................"
+    ],
+    "tile": {
+     "changed_px": 0,
+     "damage_dE": 0.0,
+     "offset": [
+      4,
+      0
+     ]
+    },
+    "checks": {
+     "tile_colors": {
+      "pass": true,
+      "detail": "max 3 colours/tile at offset (4,0) (max 3)",
+      "gate": true
+     },
+     "orphans": {
+      "pass": true,
+      "detail": "0 orphan pixels",
+      "gate": true
+     },
+     "holes": {
+      "pass": true,
+      "detail": "0 enclosed transparent pixels",
+      "gate": true
+     },
+     "outline": {
+      "pass": true,
+      "detail": "100% of silhouette edge is dark (min 75%)",
+      "gate": true
+     },
+     "colors": {
+      "pass": true,
+      "detail": "4 opaque colours (max 4)",
+      "gate": true
+     }
+    },
+    "eyes": {
+     "eye": {
+      "components": 1,
+      "eyes": [
+       {
+        "box": [
+         5,
+         4
+        ],
+        "filled": true,
+        "dark_margin": true
+       }
+      ],
+      "ok": true
+     }
+    },
+    "colours": [
+     "000000",
+     "005800",
+     "58D854",
+     "F8B800"
+    ],
+    "separation": {
+     "touching": {},
+     "ok": true,
+     "cup_on_arm_unlined": []
+    }
+   }
+  },
+  "24": {
+   "k": {
+    "upper_beak": {
+     "k": 1.15,
+     "k_schedule": 1.283,
+     "chosen_by": "frame margin: best",
+     "trials": 5
+    },
+    "legs": {
+     "k": 1.4,
+     "k_schedule": 1.354,
+     "chosen_by": "schedule",
+     "trials": 9
+    },
+    "lower_wing": {
+     "k": 1.25,
+     "k_schedule": 1.248,
+     "chosen_by": "cap: best",
+     "trials": 8
+    },
+    "lower_beak": {
+     "k": 1.15,
+     "k_schedule": 1.142,
+     "chosen_by": "schedule",
+     "trials": 4
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       9,
+       7,
+       2,
+       3
+      ],
+      "had_px": 14,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     },
+     "eye#1": {
+      "box": [
+       14,
+       11,
+       4,
+       3
+      ],
+      "had_px": 6,
+      "moat": 1,
+      "nudged": [
+       -1,
+       0
+      ]
+     }
+    }
+   },
+   "health_score": 4,
+   "health": [
+    {
+     "part": "body_shell",
+     "status": "red",
+     "area": 63,
+     "components": 4,
+     "reasons": [
+      "area 63 < min_px^2 144",
+      "split 1->4",
+      "1px thin",
+      "lost adj eye,tail"
+     ]
+    },
+    {
+     "part": "eye_housing",
+     "status": "amber",
+     "area": 53,
+     "components": 1,
+     "reasons": [
+      "area x2.09",
+      "iou 0.49"
+     ]
+    },
+    {
+     "part": "eye",
+     "status": "red",
+     "area": 12,
+     "components": 1,
+     "reasons": [
+      "merged 2->1",
+      "iou 0.38",
+      "lost adj body_shell,upper_wing"
+     ]
+    },
+    {
+     "part": "upper_beak",
+     "status": "red",
+     "area": 22,
+     "components": 1,
+     "reasons": [
+      "area 22 < min_px^2 25"
+     ]
+    },
+    {
+     "part": "lower_beak",
+     "status": "red",
+     "area": 3,
+     "components": 1,
+     "reasons": [
+      "area 3 < min_px^2 9",
+      "iou 0.50"
+     ]
+    },
+    {
+     "part": "scope",
+     "status": "green",
+     "area": 12,
+     "components": 1,
+     "reasons": []
+    },
+    {
+     "part": "upper_wing",
+     "status": "red",
+     "area": 8,
+     "components": 1,
+     "reasons": [
+      "area 8 < min_px^2 36",
+      "area x0.51",
+      "iou 0.47",
+      "1px thin",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "lower_wing",
+     "status": "red",
+     "area": 12,
+     "components": 2,
+     "reasons": [
+      "area 12 < min_px^2 25",
+      "iou 0.59",
+      "1px thin"
+     ]
+    },
+    {
+     "part": "legs",
+     "status": "amber",
+     "area": 36,
+     "components": 1,
+     "reasons": [
+      "area x1.78",
+      "iou 0.53"
+     ]
+    },
+    {
+     "part": "tail",
+     "status": "red",
+     "area": 3,
+     "components": 1,
+     "reasons": [
+      "area 3 < min_px^2 9",
+      "1px thin",
+      "lost adj body_shell"
+     ]
+    }
+   ],
+   "render": {
+    "size": 24,
+    "specks_to_line": 1,
+    "ink_px": 87,
+    "fin_depth_px": 0,
+    "black_fill_px": 56,
+    "clumps": 14,
+    "line_side": {
+     "body_shell|scope": 1,
+     "body_shell|upper_beak": 1,
+     "body_shell|upper_wing": 4,
+     "upper_wing|lower_wing": 1,
+     "body_shell|lower_wing": 3,
+     "legs|lower_wing": 7,
+     "body_shell|legs": 7
+    },
+    "ring_edge": null,
+    "grid": [
+     "........................",
+     "........................",
+     "..........##............",
+     ".........#ff###.........",
+     ".........#fffff#........",
+     "........##fffff#........",
+     ".......#aabbbb#a#.......",
+     "..##.##aabbbbbbaa#......",
+     ".#dd#dd#bbbbbbbaaa#.....",
+     ".#ddddddbbbbbbbaaaa#....",
+     ".#ddddddbbbbbbg#aaa#....",
+     ".#ddddddbbbbbgbbbbbb....",
+     "..###eeeaaa#ggbccccb##..",
+     ".....#aaaaa#ggbccccbjj#.",
+     ".....#aaaaa#g#bccccbj#..",
+     ".....#aaaaaa#hbbbbbb#...",
+     ".....#aaaaa#hh#hhh###...",
+     ".....#aaaaaa##i#hhh#....",
+     "......#######ii#hhh#....",
+     ".....#iiiiiiiiii####....",
+     "....#iiiiiiiiiiiiiii#...",
+     ".....########i######....",
+     ".............#..........",
+     "........................"
+    ],
+    "tile": {
+     "changed_px": 3,
+     "damage_dE": 156.6,
+     "offset": [
+      1,
+      0
+     ]
+    },
+    "checks": {
+     "tile_colors": {
+      "pass": true,
+      "detail": "max 3 colours/tile at offset (1,0) (max 3)",
+      "gate": true
+     },
+     "orphans": {
+      "pass": true,
+      "detail": "0 orphan pixels",
+      "gate": true
+     },
+     "holes": {
+      "pass": true,
+      "detail": "0 enclosed transparent pixels",
+      "gate": true
+     },
+     "outline": {
+      "pass": true,
+      "detail": "100% of silhouette edge is dark (min 75%)",
+      "gate": true
+     },
+     "colors": {
+      "pass": true,
+      "detail": "4 opaque colours (max 4)",
+      "gate": true
+     }
+    },
+    "eyes": {
+     "eye": {
+      "components": 1,
+      "eyes": [
+       {
+        "box": [
+         4,
+         3
+        ],
+        "filled": true,
+        "dark_margin": true
+       }
+      ],
+      "ok": true
+     }
+    },
+    "colours": [
+     "000000",
+     "005800",
+     "58D854",
+     "F8B800"
+    ],
+    "separation": {
+     "touching": {},
+     "ok": true,
+     "cup_on_arm_unlined": []
+    }
+   }
+  },
+  "20": {
+   "k": {
+    "upper_beak": {
+     "k": 1.1,
+     "k_schedule": 1.336,
+     "chosen_by": "frame margin: best",
+     "trials": 4
+    },
+    "legs": {
+     "k": 1.45,
+     "k_schedule": 1.42,
+     "chosen_by": "schedule",
+     "trials": 10
+    },
+    "lower_wing": {
+     "k": 1.3,
+     "k_schedule": 1.294,
+     "chosen_by": "cap: best",
+     "trials": 8
+    },
+    "lower_beak": {
+     "k": 1.2,
+     "k_schedule": 1.168,
+     "chosen_by": "schedule",
+     "trials": 5
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       7,
+       5,
+       1,
+       3
+      ],
+      "had_px": 10,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     },
+     "eye#1": {
+      "box": [
+       13,
+       8,
+       1,
+       3
+      ],
+      "had_px": 3,
+      "moat": 1,
+      "nudged": [
+       -1,
+       1
+      ]
+     }
+    }
+   },
+   "health_score": 3,
+   "health": [
+    {
+     "part": "body_shell",
+     "status": "red",
+     "area": 38,
+     "components": 5,
+     "reasons": [
+      "area 38 < min_px^2 144",
+      "split 1->5",
+      "1px thin",
+      "lost adj eye,scope"
+     ]
+    },
+    {
+     "part": "eye_housing",
+     "status": "amber",
+     "area": 36,
+     "components": 2,
+     "reasons": [
+      "split 1->2",
+      "area x2.12",
+      "iou 0.44"
+     ]
+    },
+    {
+     "part": "eye",
+     "status": "red",
+     "area": 3,
+     "components": 1,
+     "reasons": [
+      "area 3 < min_px^2 4",
+      "merged 2->1",
+      "area x0.44",
+      "iou 0.11",
+      "lost adj body_shell,upper_wing"
+     ]
+    },
+    {
+     "part": "upper_beak",
+     "status": "red",
+     "area": 15,
+     "components": 1,
+     "reasons": [
+      "area 15 < min_px^2 25"
+     ]
+    },
+    {
+     "part": "lower_beak",
+     "status": "red",
+     "area": 2,
+     "components": 1,
+     "reasons": [
+      "area 2 < min_px^2 9",
+      "iou 0.33"
+     ]
+    },
+    {
+     "part": "scope",
+     "status": "amber",
+     "area": 9,
+     "components": 1,
+     "reasons": [
+      "lost adj body_shell"
+     ]
+    },
+    {
+     "part": "upper_wing",
+     "status": "red",
+     "area": 9,
+     "components": 1,
+     "reasons": [
+      "area 9 < min_px^2 36",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "lower_wing",
+     "status": "red",
+     "area": 12,
+     "components": 1,
+     "reasons": [
+      "area 12 < min_px^2 25",
+      "1px thin"
+     ]
+    },
+    {
+     "part": "legs",
+     "status": "amber",
+     "area": 27,
+     "components": 1,
+     "reasons": [
+      "area x2.00",
+      "iou 0.44"
+     ]
+    },
+    {
+     "part": "tail",
+     "status": "red",
+     "area": 4,
+     "components": 1,
+     "reasons": [
+      "area 4 < min_px^2 9",
+      "1px thin"
+     ]
+    }
+   ],
+   "render": {
+    "size": 20,
+    "specks_to_line": 1,
+    "ink_px": 72,
+    "fin_depth_px": 0,
+    "black_fill_px": 38,
+    "clumps": 10,
+    "line_side": {
+     "body_shell|upper_beak": 2,
+     "body_shell|upper_wing": 3,
+     "tail|body_shell": 2,
+     "upper_wing|lower_wing": 2,
+     "body_shell|lower_wing": 3,
+     "lower_wing|lower_wing": 2,
+     "body_shell|legs": 5,
+     "legs|lower_wing": 5
+    },
+    "ring_edge": null,
+    "grid": [
+     "....................",
+     "....................",
+     "........#####.......",
+     ".......#fffff#......",
+     ".......#ffff#.......",
+     ".......bbbbb##......",
+     "..#####bbbbbba#.....",
+     ".#dddddbbbbbaaa#....",
+     ".#dddddbbbbb#bbb#...",
+     ".#dddddbbbgggbcba#..",
+     "..##ee#aa#gggbcba#..",
+     "....#aaaa#gg#bcb#j#.",
+     "....#aaaaa##hbbbj#..",
+     "....#aaaa#hh#hh##...",
+     "....#aaaaa###hhh#...",
+     ".....#####iii#hh#...",
+     "....#iiiiiiiii##i#..",
+     ".....#i##iiiiiiii#..",
+     "......#..########...",
+     "...................."
+    ],
+    "tile": {
+     "changed_px": 1,
+     "damage_dE": 52.2,
+     "offset": [
+      2,
+      4
+     ]
+    },
+    "checks": {
+     "tile_colors": {
+      "pass": true,
+      "detail": "max 3 colours/tile at offset (2,4) (max 3)",
+      "gate": true
+     },
+     "orphans": {
+      "pass": true,
+      "detail": "0 orphan pixels",
+      "gate": true
+     },
+     "holes": {
+      "pass": true,
+      "detail": "0 enclosed transparent pixels",
+      "gate": true
+     },
+     "outline": {
+      "pass": true,
+      "detail": "100% of silhouette edge is dark (min 75%)",
+      "gate": true
+     },
+     "colors": {
+      "pass": true,
+      "detail": "4 opaque colours (max 4)",
+      "gate": true
+     }
+    },
+    "eyes": {
+     "eye": {
+      "components": 1,
+      "eyes": [
+       {
+        "box": [
+         1,
+         3
+        ],
+        "filled": true,
+        "dark_margin": true
+       }
+      ],
+      "ok": true
+     }
+    },
+    "colours": [
+     "000000",
+     "005800",
+     "58D854",
+     "F8B800"
+    ],
+    "separation": {
+     "touching": {},
+     "ok": true,
+     "cup_on_arm_unlined": []
+    }
+   }
+  },
+  "16": {
+   "k": {
+    "upper_beak": {
+     "k": 1.05,
+     "k_schedule": 1.4,
+     "chosen_by": "frame margin: best",
+     "trials": 3
+    },
+    "legs": {
+     "k": 1.5,
+     "k_schedule": 1.5,
+     "chosen_by": "schedule",
+     "trials": 11
+    },
+    "lower_wing": {
+     "k": 1.35,
+     "k_schedule": 1.35,
+     "chosen_by": "cap: best",
+     "trials": 8
+    },
+    "lower_beak": {
+     "k": 1.2,
+     "k_schedule": 1.2,
+     "chosen_by": "cap: best",
+     "trials": 5
+    }
+   },
+   "log": {
+    "floors": {},
+    "strokes": {},
+    "eyes": {
+     "eye#0": {
+      "box": [
+       6,
+       4,
+       1,
+       2
+      ],
+      "had_px": 6,
+      "moat": 1,
+      "nudged": [
+       0,
+       0
+      ]
+     },
+     "eye#1": {
+      "box": [
+       9,
+       6,
+       1,
+       2
+      ],
+      "had_px": 2,
+      "moat": 1,
+      "nudged": [
+       -1,
+       0
+      ]
+     }
+    }
+   },
+   "health_score": 2,
+   "health": [
+    {
+     "part": "body_shell",
+     "status": "red",
+     "area": 25,
+     "components": 4,
+     "reasons": [
+      "area 25 < min_px^2 144",
+      "split 1->4",
+      "1px thin",
+      "lost adj eye,scope"
+     ]
+    },
+    {
+     "part": "eye_housing",
+     "status": "amber",
+     "area": 26,
+     "components": 1,
+     "reasons": [
+      "area x2.53",
+      "iou 0.38"
+     ]
+    },
+    {
+     "part": "eye",
+     "status": "red",
+     "area": 2,
+     "components": 1,
+     "reasons": [
+      "area 2 < min_px^2 4",
+      "area x0.48",
+      "iou 0.00",
+      "lost adj body_shell,upper_wing"
+     ]
+    },
+    {
+     "part": "upper_beak",
+     "status": "red",
+     "area": 7,
+     "components": 1,
+     "reasons": [
+      "area 7 < min_px^2 25"
+     ]
+    },
+    {
+     "part": "lower_beak",
+     "status": "red",
+     "area": 1,
+     "components": 1,
+     "reasons": [
+      "area 1 < min_px^2 9",
+      "iou 0.00"
+     ]
+    },
+    {
+     "part": "scope",
+     "status": "red",
+     "area": 3,
+     "components": 1,
+     "reasons": [
+      "area 3 < min_px^2 9",
+      "lost adj body_shell"
+     ]
+    },
+    {
+     "part": "upper_wing",
+     "status": "red",
+     "area": 2,
+     "components": 1,
+     "reasons": [
+      "area 2 < min_px^2 36",
+      "area x0.32",
+      "iou 0.29",
+      "1px thin",
+      "lost adj eye"
+     ]
+    },
+    {
+     "part": "lower_wing",
+     "status": "red",
+     "area": 7,
+     "components": 1,
+     "reasons": [
+      "area 7 < min_px^2 25",
+      "1px thin"
+     ]
+    },
+    {
+     "part": "legs",
+     "status": "amber",
+     "area": 16,
+     "components": 1,
+     "reasons": [
+      "area x1.96",
+      "iou 0.31"
+     ]
+    },
+    {
+     "part": "tail",
+     "status": "red",
+     "area": 2,
+     "components": 1,
+     "reasons": [
+      "area 2 < min_px^2 9",
+      "1px thin"
+     ]
+    }
+   ],
+   "render": {
+    "size": 16,
+    "specks_to_line": 1,
+    "ink_px": 48,
+    "fin_depth_px": 0,
+    "black_fill_px": 27,
+    "clumps": 5,
+    "line_side": {
+     "body_shell|upper_beak": 1,
+     "body_shell|upper_wing": 2,
+     "tail|body_shell": 2,
+     "upper_wing|lower_wing": 1,
+     "body_shell|lower_wing": 2,
+     "lower_wing|lower_wing": 1,
+     "body_shell|legs": 4,
+     "legs|lower_wing": 5
+    },
+    "ring_edge": null,
+    "grid": [
+     "................",
+     "................",
+     ".......###......",
+     ".....##fff#.....",
+     "....##bbbba#....",
+     "..##d#bbbbaa#...",
+     ".#dddbbbbbbb#...",
+     ".#dddbbbbbcba#..",
+     "..#deaa#gbcba#..",
+     "...#aaaa#bbba#..",
+     "...#aaa#h#hh#...",
+     "...#a#aa#i#hh#..",
+     "....#i##ii#h#...",
+     "...#iiiiiii#i#..",
+     "....#######.#...",
+     "................"
+    ],
+    "tile": {
+     "changed_px": 0,
+     "damage_dE": 0.0,
+     "offset": [
+      6,
+      3
+     ]
+    },
+    "checks": {
+     "tile_colors": {
+      "pass": true,
+      "detail": "max 3 colours/tile at offset (6,3) (max 3)",
+      "gate": true
+     },
+     "orphans": {
+      "pass": true,
+      "detail": "0 orphan pixels",
+      "gate": true
+     },
+     "holes": {
+      "pass": true,
+      "detail": "0 enclosed transparent pixels",
+      "gate": true
+     },
+     "outline": {
+      "pass": true,
+      "detail": "100% of silhouette edge is dark (min 75%)",
+      "gate": true
+     },
+     "colors": {
+      "pass": true,
+      "detail": "4 opaque colours (max 4)",
+      "gate": true
+     }
+    },
+    "eyes": {
+     "eye": {
+      "components": 1,
+      "eyes": [
+       {
+        "box": [
+         1,
+         2
+        ],
+        "filled": true,
+        "dark_margin": true
+       }
+      ],
+      "ok": true
+     }
+    },
+    "colours": [
+     "000000",
+     "005800",
+     "58D854",
+     "F8B800"
+    ],
+    "separation": {
+     "touching": {},
+     "ok": true,
+     "cup_on_arm_unlined": []
+    }
+   }
+  }
+ }
+}

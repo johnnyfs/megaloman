@@ -1,0 +1,38 @@
+{
+ "64": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": true,
+  "legs": true,
+  "verdict": "Readable bird and weapon, though the eye is oversized and the legs are cramped."
+ },
+ "32": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": true,
+  "legs": false,
+  "verdict": "The bird and gun survive, but the legs collapse into a bottom lump."
+ },
+ "24": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": true,
+  "legs": false,
+  "verdict": "It still resembles a bird, but the beak is just a block and the legs are gone."
+ },
+ "20": {
+  "bird": false,
+  "gun_beak": false,
+  "eye": false,
+  "legs": false,
+  "verdict": "This is an unreadable heap of pixels with a yellow stripe."
+ },
+ "16": {
+  "bird": false,
+  "gun_beak": false,
+  "eye": false,
+  "legs": false,
+  "verdict": "Nothing clearly reads beyond a vague creature-shaped blob."
+ },
+ "call": "b908f386c72ed0ead58a5a43285e6038f06035ae1d9882712d1db9c9bb8b1cd7"
+}

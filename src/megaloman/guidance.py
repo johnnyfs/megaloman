@@ -42,3 +42,14 @@ def apply(prompt, spec):
     block = render(units)
     out = prompt.replace('{guidance}', block) if '{guidance}' in prompt else (prompt.rstrip() + '\n\n' + block if block else prompt)
     return out, [u['id'] for u in units]
+
+
+SMALL_TARGET_PX = 32
+
+
+def for_concept(prompt, target_px, role='concept_art'):
+    """Concept prompts for a sprite of target_px (the smallest rung) get the pixel-art/concept units when the
+    target is tiny (<= SMALL_TARGET_PX): fill the square, no thin protrusions, folded limbs, ... -> (prompt, ids)"""
+    if target_px > SMALL_TARGET_PX:
+        return prompt.replace('{guidance}', ''), []
+    return apply(prompt, {'scopes': ['pixel-art/concept'], 'role': role})

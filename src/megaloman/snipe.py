@@ -58,6 +58,33 @@ Composition and rendering rules:
 - Plain pure white background, no ground, no shadow on the ground, no scenery, no text, no labels, no border.
 - The whole character fits in the frame with margin on every side."""
 
+# Johnny, after the dry run (2026-10-24): the 16x16 target needs a design that fills the square. The compact variant
+# gets the generic small-target guidance (workspace/guidance/pixel-art/concept) plus this snipe-specific reimagining.
+COMPACT_PROMPT = """Concept art for a video game enemy: a whimsical robot enemy in the style of the NES Mega Man games
+(a classic Mega Man small enemy design: chunky, friendly, toy-like, rounded armour plates, bold simple shapes, a big
+expressive eye).
+
+The character: SNIPE BOT, a robot for a marsh level. A robot snipe (marsh wading bird) that is also a SNIPER: its beak
+is a gun. Reimagine it to fit a single square tile:
+- A round, plump, compact body that fills most of the square: roughly as tall as it is wide.
+- The beak is a SNUB-NOSED gun: a short, thick, stubby barrel with a chunky muzzle at the tip, sticking out only a
+  little from the head. Still clearly a gun, and clearly where a beak would be. No long barrel.
+- The legs are folded up like a frog's: hinged up into the body, the folded legs tucked against the back and lower
+  sides of the body, with the feet just under the body. No long stick legs, no gap under the body.
+- A big bright eye on the head, a tiny stubby tail; optionally a small chunky scope on top of the head.
+
+{guidance}
+
+Composition and rendering rules:
+- ONE single character only, full body, strict SIDE VIEW (profile) facing LEFT: the gun-beak points left.
+- Shaded 3-D form: soft volumetric shading and highlights on every part (not flat cartoon colours), clean dark
+  outlines.
+- Marsh-themed colours: reed and moss greens, mud browns, a little rusty orange or cattail tan; the eye a bright
+  contrasting colour.
+- Plain pure white background, no ground, no shadow on the ground, no scenery, no text, no labels, no border.
+- The whole character fits in the frame with a small margin on every side."""
+TARGET_PX = 16
+
 
 # ------------------------------------------------------------------ cost (BYOK-aware)
 
@@ -513,15 +540,44 @@ def step_read(ledger, version="v3") -> dict:
 
 # ------------------------------------------------------------------ main
 
+def use_compact():
+    """Point every step at snipe/compact with the compact concept (generic small-target guidance + snipe specifics)."""
+    from . import guidance
+    global OUT, CONCEPT_PROMPT, JUDGE_PROMPT, BRIEF, SIG_NOTES, READ_PROMPT
+    OUT = OUT / "compact"
+    OUT.mkdir(parents=True, exist_ok=True)
+    CONCEPT_PROMPT, ids = guidance.for_concept(COMPACT_PROMPT, TARGET_PX)
+    assert "small-target-design" in ids, ids
+    JUDGE_PROMPT, _ = guidance.for_concept(JUDGE_PROMPT.replace("very long straight beak) that is also a sniper, so its "
+        "beak is recognisably a\nrifle barrel", "compact round body, frog-like folded legs) that is also a sniper, so "
+        "its beak is a snub-nosed gun"), TARGET_PX, role="concept_judge")
+    long_beak = "a very long straight beak"
+    BRIEF = BRIEF.replace("a very long straight beak) that is also a sniper, so its beak is recognisably a gun (a rifle "
+                          "barrel)", "compact round body, frog-like folded legs) that is also a sniper, so its beak is a "
+                          "snub-nosed gun") + " Designed compact to fill a 16x16 square."
+    SIG_NOTES = ("The brief: a robot snipe redesigned compact to fill a 16x16 square: a round body, a snub-nosed gun "
+                 "for a beak, frog-like folded legs with the feet just under the body. Decide which parts carry that "
+                 "identity at 16 px and how much they need to be exaggerated (into the empty background) to keep it.")
+    READ_PROMPT = READ_PROMPT.replace("marsh wading bird with a very long beak, that is\nalso a sniper: its beak is a "
+                                      "rifle barrel", "compact marsh bird whose beak is a snub-nosed gun, legs folded "
+                                      "under the body")
+    assert long_beak not in BRIEF
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("step")
     ap.add_argument("--budget", type=float, default=3.0)
     ap.add_argument("--version", default="v1")
+    ap.add_argument("--variant", default="", help="compact: small-target concept (Johnny 2026-10-24), into snipe/compact")
     a = ap.parse_args()
     ledger = models.Ledger(a.budget)
+    pick = PICK
+    if a.variant == "compact":
+        use_compact()
+        pick = None
     if a.step == "concept":
-        r = step_concept(ledger)
+        r = step_concept(ledger, pick=pick)
         for c in r["candidates"]:
             print(c["id"], c["letter"], c.get("error"), c.get("cost"))
         print(json.dumps(r["judge"], indent=1))

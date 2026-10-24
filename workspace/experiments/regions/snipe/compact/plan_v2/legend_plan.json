@@ -1,0 +1,189 @@
+{
+ "version": "gen1+plan",
+ "model": "openai/gpt-5.6-sol",
+ "parts": [
+  {
+   "name": "body_shell",
+   "role": "body",
+   "priority": 1,
+   "color": "#E6194B",
+   "min_px": 12,
+   "material": "painted_armour",
+   "depth": "front",
+   "occluded_by": [
+    "eye_housing",
+    "upper_beak",
+    "lower_beak",
+    "scope",
+    "upper_wing",
+    "lower_wing",
+    "legs"
+   ],
+   "where": "The large round bird-shaped shell fills the centre, including all green, brown, and orange painted body panels but excluding attached features and limbs.",
+   "priority_legend": 2,
+   "group": "mid",
+   "colour": "58D854"
+  },
+  {
+   "name": "eye_housing",
+   "role": "detail",
+   "priority": 9,
+   "color": "#008A3B",
+   "min_px": 3,
+   "material": "metal_dark",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The thick circular dark-rimmed socket sits on the upper-left face around the glowing eye.",
+   "priority_legend": 9,
+   "group": "black",
+   "colour": "000000"
+  },
+  {
+   "name": "eye",
+   "role": "detail",
+   "priority": 10,
+   "color": "#FFD000",
+   "min_px": 2,
+   "material": "glass_orange",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The single round glowing eye occupies the centre of the eye housing on the left-facing side.",
+   "priority_legend": 10,
+   "group": "light",
+   "colour": "F8B800"
+  },
+  {
+   "name": "upper_beak",
+   "role": "feature",
+   "priority": 8,
+   "color": "#0759D9",
+   "min_px": 5,
+   "material": "metal_olive",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The long cylindrical cannon-like upper beak projects horizontally left from the front of the body, including its broad root collar.",
+   "priority_legend": 8,
+   "group": "dark",
+   "colour": "005800"
+  },
+  {
+   "name": "lower_beak",
+   "role": "feature",
+   "priority": 7,
+   "color": "#66FFFF",
+   "min_px": 3,
+   "material": "metal_brown",
+   "depth": "front",
+   "occluded_by": [
+    "upper_beak"
+   ],
+   "where": "The short curved lower mandible lies beneath the upper beak and hooks back toward the body.",
+   "priority_legend": 7,
+   "group": "black",
+   "colour": "000000"
+  },
+  {
+   "name": "scope",
+   "role": "feature",
+   "priority": 6,
+   "color": "#7B00C8",
+   "min_px": 3,
+   "material": "scope_metal",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The small horizontal telescopic sight and its integral mount sit on top of the body.",
+   "priority_legend": 8,
+   "group": "dark",
+   "colour": "005800"
+  },
+  {
+   "name": "upper_wing",
+   "role": "limb",
+   "priority": 4,
+   "color": "#FF66FF",
+   "min_px": 6,
+   "material": "armour_brown",
+   "depth": "front",
+   "occluded_by": [
+    "lower_wing"
+   ],
+   "where": "The near wing's large rounded shoulder section occupies the middle-right side of the body, including its orange painted panel.",
+   "priority_legend": 5,
+   "group": "dark",
+   "colour": "005800"
+  },
+  {
+   "name": "lower_wing",
+   "role": "limb",
+   "priority": 3,
+   "color": "#68C400",
+   "min_px": 5,
+   "material": "armour_green",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The near wing's green folded outer section curves from the shoulder down and right over the belly, including the small enclosed joint connector.",
+   "priority_legend": 7,
+   "group": "mid",
+   "colour": "58D854"
+  },
+  {
+   "name": "legs",
+   "role": "limb",
+   "priority": 5,
+   "color": "#660000",
+   "min_px": 3,
+   "material": "armour_green",
+   "depth": "front",
+   "occluded_by": [
+    "body_shell",
+    "lower_wing"
+   ],
+   "where": "This part contains both visible leg instances: the mostly exposed right leg and foot beneath the wing and the separate rear foot protruding from under the body's lower-left edge.",
+   "priority_legend": 6,
+   "group": "dark",
+   "colour": "005800"
+  },
+  {
+   "name": "tail",
+   "role": "limb",
+   "priority": 2,
+   "color": "#000066",
+   "min_px": 3,
+   "material": "armour_green",
+   "depth": "front",
+   "occluded_by": [
+    "body_shell"
+   ],
+   "where": "The single short rounded tail projects up and right from behind the body's rear edge.",
+   "priority_legend": 5,
+   "group": "dark",
+   "colour": "005800"
+  }
+ ],
+ "color_fixes": [
+  {
+   "part": "lower_beak",
+   "from": "#FF6A00",
+   "to": "#66FFFF"
+  },
+  {
+   "part": "upper_wing",
+   "from": "#00B8C8",
+   "to": "#FF66FF"
+  },
+  {
+   "part": "legs",
+   "from": "#B000A8",
+   "to": "#660000"
+  },
+  {
+   "part": "tail",
+   "from": "#26358C",
+   "to": "#000066"
+  }
+ ],
+ "call": "5ec95614473882965a5a15ddbe20a9b0eaef22a9d37266a9d700b2f799fc989c",
+ "cost": 0.089587,
+ "cached": false,
+ "prompt": "You are preparing concept art for pixel-art reduction. Split this character into its PARTS: the regions a\npixel artist keeps distinct when drawing it as a tiny 16-32 px sprite. At that size REGIONS matter far more than\ncolouring: each part becomes one solid colour, and the boundaries between parts are what carry the sprite.\n\nReturn JSON only: {\"parts\": [ {\"name\", \"role\", \"priority\", \"color\", \"min_px\", \"material\", \"depth\", \"occluded_by\",\n\"where\"} ... ]}\n\nRules for choosing parts:\n1. OCCLUSION MAKES A SUBCLASS. When one instance of a repeated part hides another instance of the same kind (a leg\n   behind a leg, a wing behind a wing, an arm behind an arm), the hidden instances are their OWN part, named\n   <part>_back with depth \"back\". Do this for every kind of part that has hidden instances. Visible front instances\n   have depth \"front\". depth \"back\" is ONLY for hidden instances of a repeated kind (there must also be front\n   instances of that kind). A part that is merely behind a DIFFERENT part (a tail behind a body, a neck behind a\n   head) keeps depth \"front\" and lists what covers it in occluded_by.\n   Decide who is in front from the outlines: at an overlap, the part whose outline runs unbroken across the overlap\n   is in front; the part whose outline disappears under it is behind.\n2. If front instances of the same kind touch or overlap each other, split them into separate parts so every\n   touching pair has a different region colour. Give them the same \"material\" so they are drawn in the same final\n   colour.\n3. NO pattern-only parts: spots, stripes, panel lines, rivets, vents, two-tone colouring, highlights and decals are\n   paint on the part they sit on, not parts.\n4. Small mechanical connectors, collars, bolts and joints are not separate parts: fold them into the part they\n   belong to. Distinct character features (a weapon, a horn, a scope, a beak) stay their own parts. Small lights,\n   glows and lenses belong to the part they sit on, EXCEPT the eyes.\n5. Eyes, a visor or eye housing, and other face features stay their own parts. 6 to 14 parts in total.\n6. Every visible pixel of the character belongs to exactly one part (no background part; ignore any ground shadow).\n\nFields:\n- name: short snake_case.\n- role: body | feature | limb | detail.\n- priority: integer 1-10; higher wins a contested pixel when shrinking (small important features high, big masses\n  low; a front part higher than the back part it covers).\n- color: \"#RRGGBB\" flat REGION-MAP colour: highly saturated, far apart from every other part's colour, far from\n  white and light grey (the background is white). Do NOT use the part's real colour.\n- min_px: smallest size in pixels this part must keep at a 32 px sprite height to stay readable.\n- material: the part's real-world surface (e.g. \"armour_green\", \"metal_dark\", \"glass\", \"gun_metal\"); parts sharing\n  a material are drawn in the same final colour.\n- depth: \"front\" or \"back\".\n- occluded_by: list of part names that cover parts of this one ([] if none).\n- where: one precise sentence locating the part in this image, enough to paint it (say which instances: near/far,\n  left/right, how many)."
+}

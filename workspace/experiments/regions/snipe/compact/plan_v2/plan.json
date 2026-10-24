@@ -1,0 +1,653 @@
+{
+ "pruned_parts": [],
+ "plan": {
+  "palette": {
+   "black": {
+    "nes": "0F",
+    "hex": "000000"
+   },
+   "dark": {
+    "nes": "0B",
+    "hex": "005800"
+   },
+   "mid": {
+    "nes": "2A",
+    "hex": "58D854"
+   },
+   "light": {
+    "nes": "28",
+    "hex": "F8B800"
+   }
+  },
+  "palette_reason": "Deep marsh green and bright leaf green define the robot, while isolated amber gives the eye maximum contrast.",
+  "assign": {
+   "body_shell": {
+    "group": "mid",
+    "hex": "58D854",
+    "why": "Bright green makes the compact round body the dominant mass."
+   },
+   "eye_housing": {
+    "group": "black",
+    "hex": "000000",
+    "why": "A black socket cleanly isolates and frames the glowing eye."
+   },
+   "eye": {
+    "group": "light",
+    "hex": "F8B800",
+    "why": "Amber is reserved for the focal eye and reads at one pixel."
+   },
+   "upper_beak": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Dark green distinguishes the gun barrel from the body."
+   },
+   "lower_beak": {
+    "group": "black",
+    "hex": "000000",
+    "why": "Shadow treatment preserves the hooked lower silhouette without clutter."
+   },
+   "scope": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "It matches the gun hardware while remaining distinct from the body."
+   },
+   "upper_wing": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "The dark shoulder creates a readable overlapping armour mass."
+   },
+   "lower_wing": {
+    "group": "mid",
+    "hex": "58D854",
+    "why": "Bright green keeps the folded outer wing visible against its dark shoulder."
+   },
+   "legs": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Dark legs anchor the body and preserve the crouched frog-like stance."
+   },
+   "tail": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "A dark rear projection reads clearly without competing with the face."
+   }
+  },
+  "priority": [
+   {
+    "rank": 1,
+    "part": "eye",
+    "why": "The single glowing eye is the primary identity pixel."
+   },
+   {
+    "rank": 2,
+    "part": "eye_housing",
+    "why": "Its black surround must keep the eye isolated."
+   },
+   {
+    "rank": 3,
+    "part": "upper_beak",
+    "why": "The projecting gun barrel carries the sniper concept."
+   },
+   {
+    "rank": 4,
+    "part": "lower_beak",
+    "why": "The underside hook makes the barrel read as a bird beak."
+   },
+   {
+    "rank": 5,
+    "part": "scope",
+    "why": "The top sight reinforces the sniper role."
+   },
+   {
+    "rank": 6,
+    "part": "legs",
+    "why": "The feet and folded stance establish a wading-bird silhouette."
+   },
+   {
+    "rank": 7,
+    "part": "upper_wing",
+    "why": "The shoulder is the main overlapping side feature."
+   },
+   {
+    "rank": 8,
+    "part": "lower_wing",
+    "why": "The folded section conveys the compact crouch."
+   },
+   {
+    "rank": 9,
+    "part": "tail",
+    "why": "The small rear projection is useful but expendable in conflicts."
+   },
+   {
+    "rank": 10,
+    "part": "body_shell",
+    "why": "The large base mass can surrender edge pixels to defining features."
+   }
+  ],
+  "eyes": [
+   "eye"
+  ],
+  "eye_surround": "eye_housing",
+  "summary": "At 16 px, preserve the isolated amber eye, long dark gun-beak, top scope, round green shell, folded wing and squat feet.",
+  "repairs": []
+ },
+ "plan_raw": {
+  "palette": {
+   "dark": "0B",
+   "mid": "2A",
+   "light": "28"
+  },
+  "palette_reason": "Deep marsh green and bright leaf green define the robot, while isolated amber gives the eye maximum contrast.",
+  "assign": {
+   "body_shell": {
+    "group": "mid",
+    "why": "Bright green makes the compact round body the dominant mass."
+   },
+   "eye_housing": {
+    "group": "black",
+    "why": "A black socket cleanly isolates and frames the glowing eye."
+   },
+   "eye": {
+    "group": "light",
+    "why": "Amber is reserved for the focal eye and reads at one pixel."
+   },
+   "upper_beak": {
+    "group": "dark",
+    "why": "Dark green distinguishes the gun barrel from the body."
+   },
+   "lower_beak": {
+    "group": "black",
+    "why": "Shadow treatment preserves the hooked lower silhouette without clutter."
+   },
+   "scope": {
+    "group": "dark",
+    "why": "It matches the gun hardware while remaining distinct from the body."
+   },
+   "upper_wing": {
+    "group": "dark",
+    "why": "The dark shoulder creates a readable overlapping armour mass."
+   },
+   "lower_wing": {
+    "group": "mid",
+    "why": "Bright green keeps the folded outer wing visible against its dark shoulder."
+   },
+   "legs": {
+    "group": "dark",
+    "why": "Dark legs anchor the body and preserve the crouched frog-like stance."
+   },
+   "tail": {
+    "group": "dark",
+    "why": "A dark rear projection reads clearly without competing with the face."
+   }
+  },
+  "priority": [
+   {
+    "part": "eye",
+    "why": "The single glowing eye is the primary identity pixel."
+   },
+   {
+    "part": "eye_housing",
+    "why": "Its black surround must keep the eye isolated."
+   },
+   {
+    "part": "upper_beak",
+    "why": "The projecting gun barrel carries the sniper concept."
+   },
+   {
+    "part": "lower_beak",
+    "why": "The underside hook makes the barrel read as a bird beak."
+   },
+   {
+    "part": "scope",
+    "why": "The top sight reinforces the sniper role."
+   },
+   {
+    "part": "legs",
+    "why": "The feet and folded stance establish a wading-bird silhouette."
+   },
+   {
+    "part": "upper_wing",
+    "why": "The shoulder is the main overlapping side feature."
+   },
+   {
+    "part": "lower_wing",
+    "why": "The folded section conveys the compact crouch."
+   },
+   {
+    "part": "tail",
+    "why": "The small rear projection is useful but expendable in conflicts."
+   },
+   {
+    "part": "body_shell",
+    "why": "The large base mass can surrender edge pixels to defining features."
+   }
+  ],
+  "eyes": [
+   "eye"
+  ],
+  "eye_surround": "eye_housing",
+  "summary": "At 16 px, preserve the isolated amber eye, long dark gun-beak, top scope, round green shell, folded wing and squat feet."
+ },
+ "significance": [
+  {
+   "name": "body_shell",
+   "significance": 0.28,
+   "character": "compact round robotic body",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The shell establishes the round body but is deliberately allowed to surrender pixels to more diagnostic projecting features.",
+   "overrides": null
+  },
+  {
+   "name": "eye_housing",
+   "significance": 0.52,
+   "character": "dark mechanical eye socket",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "body_shell",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "Its proportional rim is enough to frame the eye, and enlarging it would consume valuable face pixels.",
+   "overrides": null
+  },
+  {
+   "name": "eye",
+   "significance": 0.86,
+   "character": "single glowing robotic eye",
+   "essential_shape": "pair_of_rects",
+   "mode": "floor",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "eye_housing",
+   "min_footprint": {
+    "64": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "32": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "24": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "20": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "16": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    }
+   },
+   "reason": "The eye must remain a distinct filled 1-by-2-pixel light but must never be enlarged beyond proportional size.",
+   "overrides": {
+    "from": {
+     "mode": "floor",
+     "max_exaggeration": 1.0,
+     "essential_shape": "rect"
+    },
+    "why": "user: eyes are fine at proportional size; never enlarge, only floor at two separate >= 1x2 rects"
+   }
+  },
+  {
+   "name": "upper_beak",
+   "significance": 0.97,
+   "character": "snub cannon-like gun beak",
+   "essential_shape": "rect",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.4,
+   "anchor": "attach:body_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 5,
+     "h": 3,
+     "area": 12
+    },
+    "24": {
+     "w": 4,
+     "h": 2,
+     "area": 7
+    },
+    "20": {
+     "w": 3,
+     "h": 2,
+     "area": 6
+    },
+    "16": {
+     "w": 3,
+     "h": 2,
+     "area": 6
+    }
+   },
+   "reason": "The forward gun silhouette is the strongest identifier and may grow outward, though its modest cap keeps the muzzle snub rather than long.",
+   "overrides": null
+  },
+  {
+   "name": "lower_beak",
+   "significance": 0.61,
+   "character": "short hooked lower mandible",
+   "essential_shape": "stroke",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.2,
+   "anchor": "attach:body_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    },
+    "20": {
+     "w": 2,
+     "h": 1,
+     "area": 2
+    },
+    "16": {
+     "w": 2,
+     "h": 1,
+     "area": 2
+    }
+   },
+   "reason": "A slight outward boost preserves the two-part bird beak without letting the mandible compete with the gun barrel.",
+   "overrides": null
+  },
+  {
+   "name": "scope",
+   "significance": 0.57,
+   "character": "top-mounted sniper sight",
+   "essential_shape": "rect",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The sight reinforces the sniper theme but already has a clear top silhouette and should not displace the body or eye.",
+   "overrides": null
+  },
+  {
+   "name": "upper_wing",
+   "significance": 0.43,
+   "character": "rounded shoulder hinge",
+   "essential_shape": "blob",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body_shell",
+   "may_claim_background": false,
+   "container": "body_shell",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "This broad internal shoulder is supporting anatomy rather than a key silhouette cue, so it can scale normally and yield pixels.",
+   "overrides": null
+  },
+  {
+   "name": "lower_wing",
+   "significance": 0.82,
+   "character": "thick frog-like folded limb",
+   "essential_shape": "stroke",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.35,
+   "anchor": "attach:upper_wing",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 5,
+     "h": 4,
+     "area": 9
+    },
+    "24": {
+     "w": 4,
+     "h": 3,
+     "area": 7
+    },
+    "20": {
+     "w": 4,
+     "h": 3,
+     "area": 6
+    },
+    "16": {
+     "w": 3,
+     "h": 3,
+     "area": 5
+    }
+   },
+   "reason": "Its bent outer arc creates the characteristic crouched frog-like pose and needs enough thickness and bend to survive at 16 pixels.",
+   "overrides": null
+  },
+  {
+   "name": "legs",
+   "significance": 0.93,
+   "character": "paired feet tucked beneath the body",
+   "essential_shape": "pair_of_rects",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.5,
+   "anchor": "attach:body_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    },
+    "24": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    },
+    "20": {
+     "w": 2,
+     "h": 1,
+     "area": 2
+    },
+    "16": {
+     "w": 2,
+     "h": 1,
+     "area": 2
+    }
+   },
+   "reason": "Each visible leg instance needs a small horizontal foot under the shell, with the pair reading separately as the creature's crouched stance.",
+   "overrides": null
+  },
+  {
+   "name": "tail",
+   "significance": 0.3,
+   "character": "small rear balance nub",
+   "essential_shape": "blob",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The tail adds direction but is expendable at tiny sizes and should not steal silhouette space from the gun or folded legs.",
+   "overrides": null
+  }
+ ],
+ "significance_summary": "At 16 pixels the creature is recognised by a round shell, a bright single eye, a snub projecting gun-beak, and a thick folded limb ending in paired feet beneath the body.",
+ "cost": {
+  "by_step": {
+   "concept": 0.3524,
+   "concept_judge": 0.0147,
+   "symmetry": 0.0001,
+   "legend": 0.0896,
+   "paint": 0.3374,
+   "plan": 0.04,
+   "significance": 0.1106
+  },
+  "total": 0.9448
+ }
+}
