@@ -1,0 +1,540 @@
+{
+ "created": "2026-10-24T04:21:39+00:00",
+ "code": {
+  "commit": "eb2719cc707333e7d11331c6b9def229923e129a",
+  "dirty": true
+ },
+ "candidates": [
+  {
+   "id": "nb2-s1",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 1,
+   "cached": false,
+   "error": null,
+   "model_text": "",
+   "provider": "Google AI Studio",
+   "is_byok": true,
+   "openrouter_cost": 0,
+   "upstream_cost": 0.0415215,
+   "finish": "STOP",
+   "painted_size": [
+    1024,
+    1024
+   ],
+   "iou_raw": 0.9955,
+   "transform": {
+    "sx": 1.0,
+    "sy": 1.0,
+    "tx": 0.0,
+    "ty": 0.0
+   },
+   "iou_registered": 0.9955,
+   "holes_filled_px": 0,
+   "align": {
+    "iou": 0.9955,
+    "iou_ok": true,
+    "parts_present": {
+     "cap": true,
+     "cap_side_lobes": true,
+     "face_housing": true,
+     "visor": true,
+     "eyes": true,
+     "side_pods": true,
+     "undercarriage": true,
+     "tentacles_front_outer": true,
+     "tentacles_front_inner": true,
+     "suction_cups_front": true,
+     "tentacles_back": true,
+     "nozzle": true
+    },
+    "all_present": true,
+    "part_areas": {
+     "cap": 63369,
+     "cap_side_lobes": 20479,
+     "face_housing": 20858,
+     "visor": 20153,
+     "eyes": 3543,
+     "side_pods": 7205,
+     "undercarriage": 11873,
+     "tentacles_front_outer": 35802,
+     "tentacles_front_inner": 37158,
+     "suction_cups_front": 23601,
+     "tentacles_back": 11377,
+     "nozzle": 2632
+    },
+    "outside_silhouette_px": 1103,
+    "missed_silhouette_px": 63,
+    "pass": true
+   },
+   "islands_folded": [
+    {
+     "part": "undercarriage",
+     "px": 292,
+     "to": "face_housing"
+    },
+    {
+     "part": "undercarriage",
+     "px": 1249,
+     "to": "tentacles_front_outer"
+    },
+    {
+     "part": "undercarriage",
+     "px": 1305,
+     "to": "tentacles_front_outer"
+    },
+    {
+     "part": "tentacles_back",
+     "px": 324,
+     "to": "tentacles_front_inner"
+    },
+    {
+     "part": "tentacles_back",
+     "px": 371,
+     "to": "tentacles_front_inner"
+    }
+   ],
+   "occlusion": {
+    "cap": {
+     "area": 63292,
+     "instances": 1,
+     "instance_areas": [
+      63292
+     ],
+     "touches": {
+      "cap_side_lobes": 0.441,
+      "face_housing": 0.559
+     }
+    },
+    "cap_side_lobes": {
+     "area": 20339,
+     "instances": 2,
+     "instance_areas": [
+      10276,
+      10063
+     ],
+     "touches": {
+      "cap": 1.0
+     }
+    },
+    "face_housing": {
+     "area": 21144,
+     "instances": 1,
+     "instance_areas": [
+      21144
+     ],
+     "touches": {
+      "cap": 0.311,
+      "visor": 0.372,
+      "side_pods": 0.128,
+      "undercarriage": 0.19
+     }
+    },
+    "visor": {
+     "area": 20153,
+     "instances": 1,
+     "instance_areas": [
+      20153
+     ],
+     "touches": {
+      "face_housing": 0.67,
+      "eyes": 0.33
+     }
+    },
+    "eyes": {
+     "area": 3543,
+     "instances": 2,
+     "instance_areas": [
+      1772,
+      1771
+     ],
+     "touches": {
+      "visor": 1.0
+     }
+    },
+    "side_pods": {
+     "area": 7139,
+     "instances": 2,
+     "instance_areas": [
+      3650,
+      3489
+     ],
+     "touches": {
+      "face_housing": 1.0
+     }
+    },
+    "undercarriage": {
+     "area": 9023,
+     "instances": 1,
+     "instance_areas": [
+      9023
+     ],
+     "touches": {
+      "face_housing": 0.388,
+      "tentacles_front_outer": 0.149,
+      "tentacles_front_inner": 0.27,
+      "tentacles_back": 0.124,
+      "nozzle": 0.068
+     }
+    },
+    "tentacles_front_outer": {
+     "area": 38000,
+     "instances": 2,
+     "instance_areas": [
+      19269,
+      18731
+     ],
+     "touches": {
+      "undercarriage": 0.107,
+      "tentacles_front_inner": 0.07,
+      "suction_cups_front": 0.823
+     }
+    },
+    "tentacles_front_inner": {
+     "area": 37555,
+     "instances": 2,
+     "instance_areas": [
+      18821,
+      18734
+     ],
+     "touches": {
+      "undercarriage": 0.125,
+      "tentacles_front_outer": 0.044,
+      "suction_cups_front": 0.626,
+      "tentacles_back": 0.205
+     }
+    },
+    "suction_cups_front": {
+     "area": 23601,
+     "instances": 12,
+     "instance_areas": [
+      4636,
+      2894,
+      2217,
+      2144,
+      1876,
+      1863,
+      1856,
+      1834,
+      1794,
+      499,
+      498,
+      477
+     ],
+     "touches": {
+      "tentacles_front_outer": 0.466,
+      "tentacles_front_inner": 0.534
+     }
+    },
+    "tentacles_back": {
+     "area": 10552,
+     "instances": 2,
+     "instance_areas": [
+      5437,
+      5115
+     ],
+     "touches": {
+      "undercarriage": 0.208,
+      "tentacles_front_inner": 0.758,
+      "nozzle": 0.034
+     }
+    },
+    "nozzle": {
+     "area": 2618,
+     "instances": 1,
+     "instance_areas": [
+      2618
+     ],
+     "touches": {
+      "undercarriage": 0.784,
+      "tentacles_back": 0.216
+     }
+    }
+   }
+  },
+  {
+   "id": "nb2-s2",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 2,
+   "cached": false,
+   "error": null,
+   "model_text": "",
+   "provider": "Google AI Studio",
+   "is_byok": true,
+   "openrouter_cost": 0,
+   "upstream_cost": 0.0441015,
+   "finish": "STOP",
+   "painted_size": [
+    1024,
+    1024
+   ],
+   "iou_raw": 0.9931,
+   "transform": {
+    "sx": 1.0,
+    "sy": 1.0,
+    "tx": 0.0,
+    "ty": 0.0
+   },
+   "iou_registered": 0.9931,
+   "holes_filled_px": 532,
+   "align": {
+    "iou": 0.9952,
+    "iou_ok": true,
+    "parts_present": {
+     "cap": true,
+     "cap_side_lobes": true,
+     "face_housing": true,
+     "visor": true,
+     "eyes": true,
+     "side_pods": true,
+     "undercarriage": true,
+     "tentacles_front_outer": true,
+     "tentacles_front_inner": true,
+     "suction_cups_front": true,
+     "tentacles_back": true,
+     "nozzle": true
+    },
+    "all_present": true,
+    "part_areas": {
+     "cap": 55120,
+     "cap_side_lobes": 20528,
+     "face_housing": 25699,
+     "visor": 20244,
+     "eyes": 3609,
+     "side_pods": 10433,
+     "undercarriage": 16088,
+     "tentacles_front_outer": 37186,
+     "tentacles_front_inner": 39337,
+     "suction_cups_front": 16787,
+     "tentacles_back": 10478,
+     "nozzle": 2631
+    },
+    "outside_silhouette_px": 1190,
+    "missed_silhouette_px": 60,
+    "pass": true
+   },
+   "islands_folded": [
+    {
+     "part": "undercarriage",
+     "px": 310,
+     "to": "cap"
+    },
+    {
+     "part": "undercarriage",
+     "px": 1257,
+     "to": "tentacles_front_outer"
+    },
+    {
+     "part": "undercarriage",
+     "px": 1302,
+     "to": "tentacles_front_outer"
+    },
+    {
+     "part": "tentacles_front_outer",
+     "px": 256,
+     "to": "suction_cups_front"
+    },
+    {
+     "part": "tentacles_front_inner",
+     "px": 406,
+     "to": "suction_cups_front"
+    },
+    {
+     "part": "tentacles_front_inner",
+     "px": 404,
+     "to": "suction_cups_front"
+    }
+   ],
+   "occlusion": {
+    "cap": {
+     "area": 55344,
+     "instances": 1,
+     "instance_areas": [
+      55344
+     ],
+     "touches": {
+      "cap_side_lobes": 0.455,
+      "face_housing": 0.545
+     }
+    },
+    "cap_side_lobes": {
+     "area": 20347,
+     "instances": 2,
+     "instance_areas": [
+      10254,
+      10093
+     ],
+     "touches": {
+      "cap": 0.98,
+      "face_housing": 0.02
+     }
+    },
+    "face_housing": {
+     "area": 25690,
+     "instances": 1,
+     "instance_areas": [
+      25690
+     ],
+     "touches": {
+      "cap": 0.297,
+      "cap_side_lobes": 0.004,
+      "visor": 0.379,
+      "side_pods": 0.14,
+      "undercarriage": 0.179
+     }
+    },
+    "visor": {
+     "area": 20244,
+     "instances": 1,
+     "instance_areas": [
+      20244
+     ],
+     "touches": {
+      "face_housing": 0.669,
+      "eyes": 0.331
+     }
+    },
+    "eyes": {
+     "area": 3609,
+     "instances": 2,
+     "instance_areas": [
+      1808,
+      1801
+     ],
+     "touches": {
+      "visor": 1.0
+     }
+    },
+    "side_pods": {
+     "area": 10330,
+     "instances": 2,
+     "instance_areas": [
+      5273,
+      5057
+     ],
+     "touches": {
+      "face_housing": 0.891,
+      "undercarriage": 0.109
+     }
+    },
+    "undercarriage": {
+     "area": 13216,
+     "instances": 3,
+     "instance_areas": [
+      9407,
+      1924,
+      1885
+     ],
+     "touches": {
+      "face_housing": 0.271,
+      "side_pods": 0.025,
+      "tentacles_front_outer": 0.12,
+      "tentacles_front_inner": 0.469,
+      "tentacles_back": 0.063,
+      "nozzle": 0.052
+     }
+    },
+    "tentacles_front_outer": {
+     "area": 39120,
+     "instances": 2,
+     "instance_areas": [
+      19826,
+      19294
+     ],
+     "touches": {
+      "undercarriage": 0.13,
+      "tentacles_front_inner": 0.08,
+      "suction_cups_front": 0.79
+     }
+    },
+    "tentacles_front_inner": {
+     "area": 38253,
+     "instances": 2,
+     "instance_areas": [
+      19208,
+      19045
+     ],
+     "touches": {
+      "undercarriage": 0.313,
+      "tentacles_front_outer": 0.05,
+      "suction_cups_front": 0.404,
+      "tentacles_back": 0.233
+     }
+    },
+    "suction_cups_front": {
+     "area": 17853,
+     "instances": 10,
+     "instance_areas": [
+      2829,
+      2747,
+      2167,
+      2090,
+      1815,
+      1779,
+      1773,
+      1758,
+      451,
+      444
+     ],
+     "touches": {
+      "tentacles_front_outer": 0.562,
+      "tentacles_front_inner": 0.438
+     }
+    },
+    "tentacles_back": {
+     "area": 10337,
+     "instances": 2,
+     "instance_areas": [
+      5326,
+      5011
+     ],
+     "touches": {
+      "undercarriage": 0.15,
+      "tentacles_front_inner": 0.813,
+      "nozzle": 0.037
+     }
+    },
+    "nozzle": {
+     "area": 2611,
+     "instances": 1,
+     "instance_areas": [
+      2611
+     ],
+     "touches": {
+      "undercarriage": 0.784,
+      "tentacles_back": 0.216
+     }
+    }
+   }
+  }
+ ],
+ "best": "nb2-s1",
+ "gpt_best": {
+  "id": "gpt-s2",
+  "iou_raw": 0.8308,
+  "iou_registered": 0.9434,
+  "transform": {
+   "sx": 1.0404,
+   "sy": 1.0612,
+   "tx": -14.2,
+   "ty": -4.9
+  },
+  "iou": 0.9433,
+  "all_present": true
+ },
+ "part_iou_vs_gpt": {
+  "cap": 0.906,
+  "cap_side_lobes": 0.887,
+  "face_housing": 0.444,
+  "visor": 0.796,
+  "eyes": 0.69,
+  "side_pods": 0.529,
+  "undercarriage": 0.477,
+  "tentacles_front_outer": 0.837,
+  "tentacles_front_inner": 0.801,
+  "suction_cups_front": 0.64,
+  "tentacles_back": 0.903,
+  "nozzle": 0.573,
+  "_pixel_agreement": 0.858
+ },
+ "upstream_cost_total": 0.0856
+}

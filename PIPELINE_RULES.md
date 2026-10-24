@@ -207,3 +207,10 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
     every size (`v3/alt_finline/`) makes them striped and noisy at 16. The 32 px arms are busy with cuts. The
     face at 20 and 16 is a big box (visor 8×4 of 14), more Telly than squid. The head red (16) is more saturated
     than the concept's coral. Awaiting Johnny.
+
+- **finding (nano banana, region paint)** (2026-10-23, `regions_nanobanana.py`, `workspace/experiments/regions/nanobanana/`):
+  with Johnny's BYOK Google AI Studio key the 429s are gone (`is_byok`, ~$0.04 per paint billed by Google, $0 by
+  OpenRouter). On the v2 legend and prompt, Nano Banana **traces** the concept: identity registration (sx = sy = 1,
+  t = 0), IoU 0.996/0.995 vs GPT's best 0.943 (which needed ~4–6 % scale and a 14 px shift), all 12 parts present
+  in both seeds. Parts agree with GPT's map on 86 % of pixels; it differs most on face housing, undercarriage and
+  pods. It is cheaper and more faithful than GPT for region painting, so prefer it.
