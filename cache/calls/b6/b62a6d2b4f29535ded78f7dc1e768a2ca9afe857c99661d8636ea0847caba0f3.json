@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "openai/gpt-5.4-image-2",
+  "modalities": [
+   "image",
+   "text"
+  ],
+  "seed": 1,
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Repaint this image as a flat COLOUR-CODED REGION MAP for a segmentation mask.\n\nKeep the exact same creature, pose, size, position and framing: every part must stay exactly where it is, pixel for\npixel. Change only the colours: fill each part completely with its one flat colour from this table:\n\n- #E6194B  cap (front): The large pointed central mushroom hood fills the upper middle, including all of its painted spots and the red brow immediately above the face.\n- #FF66FF  cap_side_lobes (front): The two broad triangular hood lobes flare symmetrically behind the central cap at upper left and upper right.\n- #3CB44B  face_housing (front): The pale rounded head casing surrounds the visor across the center, including its screws, tiny blue side lights, and thick lower rim.\n- #000075  visor (front): The single dark horizontal window occupies the center of the face housing behind both glowing eyes.\n- #FFE119  eyes (front): The two narrow vertical oval eyes sit inside the visor, one left and one right.\n- #46F0F0  side_pods (front): The paired angular mechanical pods project from the lower left and lower right sides of the head, including their cyan-lit edges.\n- #9A6324  undercarriage (front): The dark segmented mechanical base under the face includes the exposed central chassis, limb-root collars, and small round limb-joint hubs.\n- #4363D8  tentacles_front_outer (front): The two thick lateral arms sweep outward from beneath the side pods and curl into the large far-left and far-right bulbous tips.\n- #911EB4  tentacles_front_inner (front): The two thick central arms descend from the inner left and inner right roots into the large lower foreground tips, including their embedded cyan lights.\n- #0000FF  suction_cups_front (front): The separate ringed suction discs cover the visible ends and inner sides of both outer and both inner foreground tentacles, about ten discs in total.\n- #006600  tentacles_back (back): Two narrower curled tentacles descend behind the central foreground pair, visible as segmented pink-and-dark portions on either side of the nozzle; their visible discs are included here.\n- #99FF66  nozzle (front): The single short cyan-glowing jet nozzle hangs vertically from the exact center of the undercarriage between the back tentacles.\n\nOCCLUSION LAYERING (important): paint the parts in depth order, back to front:\n  1. cap_side_lobes (#FF66FF) - behind cap\n  2. cap (#E6194B) - behind face_housing\n  3. visor (#000075) - behind eyes\n  4. eyes (#FFE119)\n  5. side_pods (#46F0F0) - behind face_housing, tentacles_front_outer\n  6. tentacles_back (#006600) - behind undercarriage, tentacles_front_inner, nozzle\n  7. face_housing (#3CB44B)\n  8. undercarriage (#9A6324) - behind face_housing, tentacles_front_outer, tentacles_front_inner, tentacles_back, nozzle\n  9. tentacles_front_outer (#4363D8) - behind tentacles_front_inner, suction_cups_front\n  10. tentacles_front_inner (#911EB4) - behind suction_cups_front\n  11. suction_cups_front (#0000FF)\n  12. nozzle (#99FF66)\n- A part painted later covers the earlier ones where they overlap. Every FRONT part keeps its complete outline,\n  including the curve of each arm where it passes in front of another arm.\n- A BACK part shows only where nothing in front covers it; never extend it over a front part.\n- Where two front parts of the same material touch (an inner arm over an outer arm), the boundary between their two\n  colours must follow the edge of the part in front.\n\nRules:\n- Each part is ONE solid flat colour, exactly the hex value given. No shading, no gradients, no highlights, no\n  texture, no spots or stripes (paint pale spots and stripes with the colour of the part they sit on).\n- Each suction cup is a solid disc of the cup colour on its arm.\n- No outlines, no black lines, no borders between parts: colour regions touch directly.\n- Background (everything that is not the creature, including any ground shadow): pure white #FFFFFF.\n- No text, no labels, no legend, nothing added. Do not move, resize, redraw or restyle anything; only recolour.\n  Nothing inside the creature's outline may stay white."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "1b7028c2fb0f098858a0964c8ba53b074e65d671acb03c82118446f751081926"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792811980-C09LAeixSjevv5WQIKQB",
+  "object": "chat.completion",
+  "created": 1792811980,
+  "model": "openai/gpt-5.4-image-2",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": null,
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3766,
+   "completion_tokens": 7633,
+   "total_tokens": 11399,
+   "cost": 0.249983,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.249983,
+    "upstream_inference_prompt_cost": 0.030128,
+    "upstream_inference_completions_cost": 0.219855
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 7024,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [
+  "6c902609e752221be65f87691522f56e3313d162e89c16f9e8df27fb3e52b848"
+ ],
+ "cost": 0.249983,
+ "secs": 96.9
+}

@@ -1,0 +1,188 @@
+{
+ "version": "v2",
+ "model": "openai/gpt-5.6-sol",
+ "parts": [
+  {
+   "name": "cap",
+   "role": "body",
+   "priority": 3,
+   "color": "#E6194B",
+   "min_px": 4,
+   "material": "cap_shell",
+   "depth": "front",
+   "occluded_by": [
+    "face_housing"
+   ],
+   "where": "The large pointed central mushroom hood fills the upper middle, including all of its painted spots and the red brow immediately above the face."
+  },
+  {
+   "name": "cap_side_lobes",
+   "role": "body",
+   "priority": 2,
+   "color": "#FF66FF",
+   "min_px": 3,
+   "material": "cap_shell",
+   "depth": "front",
+   "occluded_by": [
+    "cap"
+   ],
+   "where": "The two broad triangular hood lobes flare symmetrically behind the central cap at upper left and upper right."
+  },
+  {
+   "name": "face_housing",
+   "role": "body",
+   "priority": 5,
+   "color": "#3CB44B",
+   "min_px": 3,
+   "material": "face_shell",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The pale rounded head casing surrounds the visor across the center, including its screws, tiny blue side lights, and thick lower rim."
+  },
+  {
+   "name": "visor",
+   "role": "feature",
+   "priority": 8,
+   "color": "#000075",
+   "min_px": 3,
+   "material": "glass",
+   "depth": "front",
+   "occluded_by": [
+    "eyes"
+   ],
+   "where": "The single dark horizontal window occupies the center of the face housing behind both glowing eyes."
+  },
+  {
+   "name": "eyes",
+   "role": "feature",
+   "priority": 10,
+   "color": "#FFE119",
+   "min_px": 2,
+   "material": "light",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The two narrow vertical oval eyes sit inside the visor, one left and one right."
+  },
+  {
+   "name": "side_pods",
+   "role": "feature",
+   "priority": 6,
+   "color": "#46F0F0",
+   "min_px": 2,
+   "material": "metal",
+   "depth": "front",
+   "occluded_by": [
+    "face_housing",
+    "tentacles_front_outer"
+   ],
+   "where": "The paired angular mechanical pods project from the lower left and lower right sides of the head, including their cyan-lit edges."
+  },
+  {
+   "name": "undercarriage",
+   "role": "body",
+   "priority": 4,
+   "color": "#9A6324",
+   "min_px": 2,
+   "material": "metal_dark",
+   "depth": "front",
+   "occluded_by": [
+    "face_housing",
+    "tentacles_front_outer",
+    "tentacles_front_inner",
+    "tentacles_back",
+    "nozzle"
+   ],
+   "where": "The dark segmented mechanical base under the face includes the exposed central chassis, limb-root collars, and small round limb-joint hubs."
+  },
+  {
+   "name": "tentacles_front_outer",
+   "role": "limb",
+   "priority": 6,
+   "color": "#4363D8",
+   "min_px": 3,
+   "material": "arm",
+   "depth": "front",
+   "occluded_by": [
+    "tentacles_front_inner",
+    "suction_cups_front"
+   ],
+   "where": "The two thick lateral arms sweep outward from beneath the side pods and curl into the large far-left and far-right bulbous tips."
+  },
+  {
+   "name": "tentacles_front_inner",
+   "role": "limb",
+   "priority": 7,
+   "color": "#911EB4",
+   "min_px": 3,
+   "material": "arm",
+   "depth": "front",
+   "occluded_by": [
+    "suction_cups_front"
+   ],
+   "where": "The two thick central arms descend from the inner left and inner right roots into the large lower foreground tips, including their embedded cyan lights."
+  },
+  {
+   "name": "suction_cups_front",
+   "role": "detail",
+   "priority": 9,
+   "color": "#0000FF",
+   "min_px": 1,
+   "material": "cup",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The separate ringed suction discs cover the visible ends and inner sides of both outer and both inner foreground tentacles, about ten discs in total."
+  },
+  {
+   "name": "tentacles_back",
+   "role": "limb",
+   "priority": 5,
+   "color": "#006600",
+   "min_px": 2,
+   "material": "arm",
+   "depth": "back",
+   "occluded_by": [
+    "undercarriage",
+    "tentacles_front_inner",
+    "nozzle"
+   ],
+   "where": "Two narrower curled tentacles descend behind the central foreground pair, visible as segmented pink-and-dark portions on either side of the nozzle; their visible discs are included here."
+  },
+  {
+   "name": "nozzle",
+   "role": "feature",
+   "priority": 8,
+   "color": "#99FF66",
+   "min_px": 2,
+   "material": "glass_metal",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The single short cyan-glowing jet nozzle hangs vertically from the exact center of the undercarriage between the back tentacles."
+  }
+ ],
+ "color_fixes": [
+  {
+   "part": "cap_side_lobes",
+   "from": "#F58231",
+   "to": "#FF66FF"
+  },
+  {
+   "part": "suction_cups_front",
+   "from": "#BCF60C",
+   "to": "#0000FF"
+  },
+  {
+   "part": "tentacles_back",
+   "from": "#008080",
+   "to": "#006600"
+  },
+  {
+   "part": "nozzle",
+   "from": "#F032E6",
+   "to": "#99FF66"
+  }
+ ],
+ "call": "7ae5e5070c17f481f169f30bbcc35a60b2b2b12d58af55b14dd0ec1bb4a2706d",
+ "cost": 0.084452,
+ "cached": true,
+ "prompt": "You are preparing concept art for pixel-art reduction. Split this creature into its PARTS: the regions a\npixel artist keeps distinct when drawing it as a tiny 16-32 px sprite. At that size REGIONS matter far more than\ncolouring: each part becomes one solid colour, and the boundaries between parts are what carry the sprite.\n\nReturn JSON only: {\"parts\": [ {\"name\", \"role\", \"priority\", \"color\", \"min_px\", \"material\", \"depth\", \"occluded_by\",\n\"where\"} ... ]}\n\nRules for choosing parts:\n1. OCCLUSION MAKES A SUBCLASS. When one instance of a repeated part hides another instance of the same kind (a\n   tentacle behind a tentacle, a leg behind a leg), the hidden instances are their OWN part, named <part>_back with\n   depth \"back\". Do this for every kind of part that has hidden instances. Visible front instances have depth\n   \"front\". depth \"back\" is ONLY for hidden instances of a repeated kind (there must also be front instances of\n   that kind). A part that is merely behind a DIFFERENT part (fins behind a head, a visor behind eyes) keeps depth\n   \"front\" and lists what covers it in occluded_by.\n   Decide who is in front from the outlines: at an overlap, the part whose outline runs unbroken across the overlap\n   is in front; the part whose outline disappears under it is behind.\n2. If front instances of the same kind touch or overlap each other (e.g. an inner arm overlapping the base of an\n   outer arm), split them into separate parts (e.g. arms_front_inner / arms_front_outer) so every touching pair has\n   a different region colour. Give them the same \"material\" so they are drawn in the same final colour.\n3. Suction cups (and similar discs on a limb) are their own part, separate from the limb they sit on. Cups on\n   hidden/back instances belong to that back part.\n4. NO pattern-only parts: spots, stripes, two-tone colouring, highlights and decals are paint on the part they sit\n   on, not parts.\n5. Small mechanical connectors, collars and joints are not separate parts: fold them into one dark \"undercarriage\"\n   part (the dark mechanical base the limbs attach to) or into the part they belong to. Distinct character features\n   (side pods, a nozzle or jet, a horn) stay their own parts. Small lights, glows and lenses belong to the part they\n   sit on (a lens on a pod is the pod; a glow on a joint collar is the undercarriage).\n6. Eyes, a visor or window, and other face features stay their own parts. 6 to 14 parts in total.\n7. Every visible pixel of the creature belongs to exactly one part (no background part; ignore any ground shadow).\n\nFields:\n- name: short snake_case.\n- role: body | feature | limb | detail.\n- priority: integer 1-10; higher wins a contested pixel when shrinking (small important features high, big masses\n  low; a front part higher than the back part it covers).\n- color: \"#RRGGBB\" flat REGION-MAP colour: highly saturated, far apart from every other part's colour, far from\n  white and light grey (the background is white). Do NOT use the part's real colour.\n- min_px: smallest size in pixels this part must keep at a 32 px sprite height to stay readable.\n- material: the part's real-world surface (e.g. \"shell\", \"arm\", \"cup\", \"glass\", \"metal_dark\"); parts sharing a\n  material are drawn in the same final colour.\n- depth: \"front\" or \"back\".\n- occluded_by: list of part names that cover parts of this one ([] if none).\n- where: one precise sentence locating the part in this image, enough to paint it (say which instances: left/right,\n  inner/outer, how many)."
+}
