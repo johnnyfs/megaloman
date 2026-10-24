@@ -118,11 +118,16 @@ All images load from run directories via `/api/file`, at the same zoom, pixel-cr
 Panels update in place as each step finishes, and Alba says one line when a milestone
 lands.
 
-## Open questions for you
+## Decisions (2026-10-23)
 
-- **Target size:** 16, 18 or 20 px tall? The ladder's last rungs depend on it.
-- **Concept style:** "flat cartoon, thick shapes, few parts" will be much easier to
-  region-paint than painterly art. OK to constrain the concept prompt that way?
-- **Same squid?** Keeping the fixed squid brief lets us compare against everything so
-  far. A second, simpler subject (e.g. a Met-like hard-hat bot) would show whether the
-  method generalises.
+- **Target size is a parameter, not a constant.** `regions.ladder` takes `target` (and
+  rungs are derived down to it), so we can sweep 32 → 24 → 20 → 16 and see how far each
+  stage of the method holds up. 16×16 is the goal. The sweep separates "the concept is
+  flawed" from "the agent gets this far and needs more guidance below it".
+- **Concept art keeps its 3-D form and shading.** It should not be flat cartoon art: the
+  shading is signal for how to shade at small sizes. Regions describe *parts*, and the
+  concept's lighting is sampled per region at render time (a light and a dark tone per
+  part where the shading supports it).
+- **Squid only.** Milestone 1 starts from Johnny's existing GPT concept (a three-view
+  robot squid turnaround), cropped to one view. Generating new concepts comes later, as
+  its own comparison.
