@@ -1,0 +1,261 @@
+{
+ "version": "s1",
+ "concept": "/home/johnnyfs/Projects/megaloman/workspace/shared/sources/squid_concept_gpt_front.png",
+ "size": [
+  677,
+  677
+ ],
+ "verify_threshold": 0.9,
+ "type": "vertical",
+ "order": null,
+ "axes": {
+  "vertical": {
+   "axis_px": 339.5,
+   "axis_frac": 0.5015,
+   "score": 0.9768,
+   "verified": true
+  },
+  "horizontal": {
+   "axis_px": 385.0,
+   "axis_frac": 0.5687,
+   "score": 0.637,
+   "verified": false
+  }
+ },
+ "rotation": {
+  "best_order": 3,
+  "by_order": {
+   "2": {
+    "centre_px": [
+     318.3,
+     391.9
+    ],
+    "score": 0.6465
+   },
+   "3": {
+    "centre_px": [
+     342.3,
+     383.9
+    ],
+    "score": 0.6739
+   },
+   "4": {
+    "centre_px": [
+     338.3,
+     391.9
+    ],
+    "score": 0.6351
+   },
+   "5": {
+    "centre_px": [
+     342.3,
+     423.9
+    ],
+    "score": 0.6231
+   },
+   "6": {
+    "centre_px": [
+     338.3,
+     387.9
+    ],
+    "score": 0.6184
+   },
+   "7": {
+    "centre_px": [
+     338.3,
+     375.9
+    ],
+    "score": 0.6226
+   },
+   "8": {
+    "centre_px": [
+     338.3,
+     379.9
+    ],
+    "score": 0.6199
+   }
+  },
+  "enforced": false,
+  "note": "radial/rotational is recorded only; ladder v2 enforces mirror axes"
+ },
+ "model": {
+  "type": "vertical",
+  "order": null,
+  "axis_hint": "vertical centreline through the mantle tip, visor, and central nozzle",
+  "confidence": 0.98,
+  "per_part": {
+   "mantle_shell": {
+    "symmetric": true,
+    "note": "Outline and pale markings form mirrored left-right pairs."
+   },
+   "side_fins": {
+    "symmetric": true,
+    "note": "The left and right fins are mirror counterparts."
+   },
+   "face_frame": {
+    "symmetric": true,
+    "note": "Rounded frame and rivet layout are bilaterally mirrored."
+   },
+   "visor": {
+    "symmetric": true,
+    "note": "Centered rounded window is vertically symmetric."
+   },
+   "eyes": {
+    "symmetric": true,
+    "note": "The two eyes are placed as a mirrored pair."
+   },
+   "side_pods": {
+    "symmetric": true,
+    "note": "Metal housings mirror each other across the centreline."
+   },
+   "tentacles": {
+    "symmetric": true,
+    "note": "The large arms and smaller rear appendages form mirrored left-right sets."
+   },
+   "tentacle_joints": {
+    "symmetric": true,
+    "note": "Collars, pivots, and connectors repeat in mirrored pairs."
+   },
+   "suction_cups": {
+    "symmetric": true,
+    "note": "Openings are distributed in corresponding mirrored positions."
+   },
+   "central_nozzle": {
+    "symmetric": true,
+    "note": "It is centered and itself bilaterally symmetric."
+   }
+  },
+  "reason": "The entire creature is designed around a clear left-right mirror axis, with only minor rendering variations.",
+  "call": "9bc7735f913b3ec6260f9b616286f914a8c83b091399aa3168002f319f9fe347",
+  "cost": 0.023072,
+  "cached": true
+ },
+ "disagreements": [
+  {
+   "what": "part side_fins",
+   "model": true,
+   "measured": false,
+   "resolution": "measurement wins"
+  },
+  {
+   "what": "part eyes",
+   "model": true,
+   "measured": false,
+   "resolution": "measurement wins"
+  },
+  {
+   "what": "part suction_cups",
+   "model": true,
+   "measured": false,
+   "resolution": "measurement wins"
+  }
+ ],
+ "per_part": {
+  "mantle_shell": {
+   "model": {
+    "symmetric": true,
+    "note": "Outline and pale markings form mirrored left-right pairs."
+   },
+   "vertical_iou": 0.9121,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "side_fins": {
+   "model": {
+    "symmetric": true,
+    "note": "The left and right fins are mirror counterparts."
+   },
+   "vertical_iou": 0.829,
+   "measured_symmetric": false,
+   "symmetric": false,
+   "intentionally_asymmetric": false
+  },
+  "face_frame": {
+   "model": {
+    "symmetric": true,
+    "note": "Rounded frame and rivet layout are bilaterally mirrored."
+   },
+   "vertical_iou": 0.9314,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "visor": {
+   "model": {
+    "symmetric": true,
+    "note": "Centered rounded window is vertically symmetric."
+   },
+   "vertical_iou": 0.9339,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "eyes": {
+   "model": {
+    "symmetric": true,
+    "note": "The two eyes are placed as a mirrored pair."
+   },
+   "vertical_iou": 0.7312,
+   "measured_symmetric": false,
+   "symmetric": false,
+   "intentionally_asymmetric": false
+  },
+  "side_pods": {
+   "model": {
+    "symmetric": true,
+    "note": "Metal housings mirror each other across the centreline."
+   },
+   "vertical_iou": 0.9168,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "tentacles": {
+   "model": {
+    "symmetric": true,
+    "note": "The large arms and smaller rear appendages form mirrored left-right sets."
+   },
+   "vertical_iou": 0.9319,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "tentacle_joints": {
+   "model": {
+    "symmetric": true,
+    "note": "Collars, pivots, and connectors repeat in mirrored pairs."
+   },
+   "vertical_iou": 0.9226,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  },
+  "suction_cups": {
+   "model": {
+    "symmetric": true,
+    "note": "Openings are distributed in corresponding mirrored positions."
+   },
+   "vertical_iou": 0.8874,
+   "measured_symmetric": false,
+   "symmetric": false,
+   "intentionally_asymmetric": false
+  },
+  "central_nozzle": {
+   "model": {
+    "symmetric": true,
+    "note": "It is centered and itself bilaterally symmetric."
+   },
+   "vertical_iou": 0.9084,
+   "measured_symmetric": true,
+   "symmetric": true,
+   "intentionally_asymmetric": false
+  }
+ },
+ "regions": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/m1/gpt-s1/regions.png",
+ "cost": {
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 1
+ }
+}

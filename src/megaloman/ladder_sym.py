@@ -6,6 +6,22 @@
    breaks, build two candidates (left->right, right->left mirrored across the rung's axis,
    quantised to a pixel edge or centre) and choose among {original, L, R}: a vision judge
    (N=3, majority, cached, ledger-budgeted) with a deterministic fallback (health score).
+
+Concept-stage spec (symmetry.assess_symmetry): run(spec=...) mirrors only along the axes the spec VERIFIED
+(vertical and/or horizontal; 'both' runs the vertical decision then the horizontal one at each rung, the
+horizontal one on the transposed map). The axis position is the spec's, refined on the region map within +-1% of
+size (the map is a redraw, so its centre can sit a fraction of a pixel off). Radial/rotational symmetry is recorded
+in symmetry.json but NOT enforced yet. No spec = the original behaviour (always search a vertical axis), so
+existing results reproduce.
+
+v2b (exact=True, user rule 2026-10-23): when the spec verifies a mirror axis, every rung's WHOLE region map must
+be exactly mirror-symmetric pixel-for-pixel across the rung's axis, except pixels of parts the spec marks
+intentionally asymmetric. Any rung that is not exact gets the left/right mirror candidates + judge (fallback kept).
+Axis: odd width -> centre pixel column, even width -> centre pixel edge (axis2 == width). If the source axis
+quantises off-centre at a rung, the rung map is shifted one column toward the centre (dropping an all-background
+column on the far side); if that column holds foreground, one background column is padded instead (width s+1).
+A half-pixel error (|axis2 - width| == 1) is snapped to the centre; an odd offset > 1 is padded one column for
+parity first. Recorded as `recentre`. Squid (axis frac 0.5015): at most half-pixel snaps.
 """
 from __future__ import annotations
 
@@ -56,8 +72,11 @@ def best_axis(mask: np.ndarray, lo=0.35, hi=0.65) -> tuple[int, float]:
     return best
 
 
-def source_symmetry(src: np.ndarray, legend: dict) -> dict:
-    a2, g = best_axis(src > 0)
+def source_symmetry(src: np.ndarray, legend: dict, near_frac: float | None = None) -> dict:
+    if near_frac is None:
+        a2, g = best_axis(src > 0)
+    else:   # spec axis, refined within +-1% of width
+        a2, g = best_axis(src > 0, near_frac - 0.01, near_frac + 0.01)
     parts = {}
     for i, p in enumerate(legend["parts"]):
         m = src == i + 1
@@ -103,6 +122,44 @@ def mirror_half(lab: np.ndarray, a2: int, keep: str) -> np.ndarray:
     tgt &= mc >= 0
     out[:, cols[tgt]] = lab[:, mc[tgt]]
     return out
+
+
+def exact_fraction(lab: np.ndarray, a2: int, exempt=()) -> float:
+    """Fraction of foreground pixels (either side) whose mirror has the identical label; exempt labels ignored."""
+    mc = mirror_cols(lab.shape[1], a2)
+    v = mc >= 0
+    A, B = lab[:, v], lab[:, mc[v]]
+    ex = list(exempt)
+    fg = ((A > 0) | (B > 0)) & ~np.isin(A, ex) & ~np.isin(B, ex)
+    out = (lab[:, ~v] > 0).sum()
+    tot = fg.sum() + out
+    return float(((A == B) & fg).sum() / tot) if tot else 1.0
+
+
+def centre_axis(lab: np.ndarray, a2: int) -> tuple[np.ndarray, int, str | None]:
+    """v2b: make the axis the map centre (axis2 == width) by one-column shifts, or pad if a shift would drop fg."""
+    w = lab.shape[1]
+    note = None
+    if abs(a2 - w) == 1:                  # half-pixel quantisation error: snap to the centre (no geometry change)
+        return lab, w, "snap half-pixel"
+    if (a2 - w) % 2:                      # odd offset >1: pad one background column to fix parity, then shift
+        lab = np.hstack([lab, np.zeros((lab.shape[0], 1), lab.dtype)])
+        w += 1
+        note = "pad right (parity);"
+    while a2 != w:
+        d = 1 if a2 < w else -1           # axis left of centre -> shift right
+        drop = lab[:, -1] if d == 1 else lab[:, 0]
+        if not drop.any():
+            lab = np.roll(lab, d, axis=1)
+            a2 += 2 * d
+            note = (note or "") + f"shift {d:+d};"
+        else:
+            pad = np.zeros((lab.shape[0], 1), lab.dtype)
+            lab = np.hstack([pad, lab]) if d == 1 else np.hstack([lab, pad])
+            a2 += 2 if d == 1 else 0
+            w += 1
+            note = (note or "") + f"pad {'left' if d == 1 else 'right'};"
+    return lab, a2, note
 
 
 # ---- choosing --------------------------------------------------------------------------
@@ -185,14 +242,22 @@ def vision_judge(cands: dict, s: int, legend, concept_png: bytes, ledger, rng_se
 
 # ---- run -------------------------------------------------------------------------------
 def run(region_path: Path, legend_path: Path, concept_path: Path, out: Path, targets=(32, 24, 20, 16),
-        budget=1.0, use_judge=True) -> dict:
+        budget=1.0, use_judge=True, spec: dict | None = None, exact: bool = False, version: str = VERSION) -> dict:
     from . import models
     out.mkdir(parents=True, exist_ok=True)
     legend = json.loads(legend_path.read_text())
     src = L.load_labels(region_path, legend)
     n = len(legend["parts"])
     sst = L.source_stats(src, n)
-    sym = source_symmetry(src, legend)
+    if spec is None:
+        if exact:
+            raise ValueError("exact mode needs a verified spec")
+        orients = {"vertical": source_symmetry(src, legend)}
+    else:
+        orients = {k: source_symmetry(src if k == "vertical" else src.T, legend, a["axis_frac"])
+                   for k, a in spec["axes"].items() if a["verified"]}
+    exempt = {i + 1 for i, p in enumerate(legend["parts"])
+              if spec and (spec.get("per_part", {}).get(p["name"]) or {}).get("intentionally_asymmetric")}
     ledger = models.Ledger(budget)
     cim = Image.open(concept_path).convert("RGB")
     cim.thumbnail((256, 256))
@@ -202,21 +267,35 @@ def run(region_path: Path, legend_path: Path, concept_path: Path, out: Path, tar
 
     decisions: dict[int, dict] = {}   # rung size -> decision (source mode: identical across targets)
 
-    def decide(s: int, lab: np.ndarray) -> np.ndarray:
-        if s in decisions:
-            return decisions[s]["_lab"]
+    def decide_one(s, lab, sym, key):
         a2 = rung_axis2(sym, s)
+        note, ex = None, None
+        if exact:
+            lab, a2, note = centre_axis(lab, a2)
+            ex = exact_fraction(lab, a2, exempt)
+            br = [] if ex == 1.0 else ["<whole map>"]
         rs = rung_symmetry(lab, legend, sym, a2)
-        br = broken(rs, sym)
+        if not exact:
+            br = broken(rs, sym)
         rec = {"axis_px": a2 / 2, "axis_on": "pixel centre" if a2 % 2 else "pixel edge", "part_mirror_iou": rs,
                "broken": br, "mirrored": False, "choice": "original"}
+        if exact:
+            rec["exact_fraction"], rec["recentre"] = round(ex, 4), note
         chosen = lab
         if br:
             cands = {"original": lab, "left": mirror_half(lab, a2, "left"), "right": mirror_half(lab, a2, "right")}
-            fb, metrics = fallback(cands, src, legend, sst)
+            if exempt:   # intentionally asymmetric parts keep their own pixels
+                keep = np.isin(lab, list(exempt))
+                for k in ("left", "right"):
+                    cands[k] = np.where(keep, lab, cands[k])
+            view = (lambda x: x) if key == "vertical" else (lambda x: x.T)
+            vc = {k: view(v) for k, v in cands.items()}
+            fb, metrics = fallback(vc, src, legend, sst)
             rec["fallback_choice"], rec["candidate_metrics"] = fb, metrics
             rec["candidate_part_mirror_iou"] = {k: rung_symmetry(v, legend, sym, a2) for k, v in cands.items()}
-            j = vision_judge(cands, s, legend, concept_png, ledger, s) if use_judge else None
+            if exact:
+                rec["candidate_exact_fraction"] = {k: round(exact_fraction(v, a2, exempt), 4) for k, v in cands.items()}
+            j = vision_judge(vc, s, legend, concept_png, ledger, s) if use_judge else None
             rec["judge"] = j
             pick = j["majority"] if j and j["majority"] else fb
             rec["choice"], rec["chosen_by"] = pick, "judge" if j and j["majority"] else "fallback"
@@ -224,13 +303,27 @@ def run(region_path: Path, legend_path: Path, concept_path: Path, out: Path, tar
             chosen = cands[pick]
             cd = out / "candidates"
             cd.mkdir(exist_ok=True)
-            for k, v in cands.items():
-                L.colorize(v, legend).save(cd / f"rung_{s}_{k}.png")
-        rec["_lab"] = chosen
-        decisions[s] = rec
-        return chosen
+            sfx = "" if key == "vertical" else "_h"
+            for k, v in vc.items():
+                L.colorize(v, legend).save(cd / f"rung_{s}{sfx}_{k}.png")
+        return chosen, rec
 
-    res = {"version": VERSION, "base": "ladder.py v1 (source mode)", "source": str(region_path), "legend": str(legend_path),
+    def decide(s: int, lab: np.ndarray) -> np.ndarray:
+        if s in decisions:
+            return decisions[s]["_lab"]
+        recs = {}
+        for key, sym in orients.items():
+            if key == "vertical":
+                lab, recs[key] = decide_one(s, lab, sym, key)
+            else:
+                t_, recs[key] = decide_one(s, lab.T, sym, key)
+                lab = t_.T
+        rec = recs["vertical"] if list(recs) == ["vertical"] else {"by_axis": recs}
+        rec["_lab"] = lab
+        decisions[s] = rec
+        return lab
+
+    res = {"version": version, "base": "ladder.py v1 (source mode)", "source": str(region_path), "legend": str(legend_path),
            "fg_threshold": L.FG_THRESHOLD, "min_share": L.MIN_SHARE,
            "source_components": {p["name"]: sst["parts"][i]["comps"] for i, p in enumerate(legend["parts"])}, "targets": {}}
     for t in targets:
@@ -250,9 +343,12 @@ def run(region_path: Path, legend_path: Path, concept_path: Path, out: Path, tar
                              "first": first, "health": {str(s): h for (s, _), h in zip(rs, hs)}}
     L.legend_strip(legend, out / "legend_strip.png")
     (out / "results.json").write_text(json.dumps(res, indent=1, default=str))
-    symout = {"version": VERSION, "params": {"sym_part": SYM_PART, "tol": TOL, "judge_model": JUDGE_MODEL, "samples": SAMPLES,
+    symout = {"version": version, "params": {"exact": exact, "sym_part": SYM_PART, "tol": TOL, "judge_model": JUDGE_MODEL, "samples": SAMPLES,
                                              "budget": budget},
-              "source": sym,
+              "source": orients["vertical"] if list(orients) == ["vertical"] else orients,
+              "spec": None if spec is None else {"type": spec["type"], "order": spec.get("order"),
+                                                  "axes": spec["axes"], "exempt_parts": sorted(exempt),
+                                                  "radial_note": "radial/rotational recorded, not enforced"},
               "rungs": {str(s): {k: v for k, v in r.items() if k != "_lab"} for s, r in sorted(decisions.items(), reverse=True)},
               "cost": {"spent": round(ledger.spent, 5), "calls": ledger.calls, "cached": ledger.cached}}
     (out / "symmetry.json").write_text(json.dumps(symout, indent=1, default=str))
@@ -262,14 +358,25 @@ def run(region_path: Path, legend_path: Path, concept_path: Path, out: Path, tar
 if __name__ == "__main__":
     import sys
     root = Path(__file__).resolve().parents[2] / "workspace/experiments/regions"
+    kw = {}
+    outd = root / "ladder/v2_symmetry"
+    if "--spec" in sys.argv:
+        kw["spec"] = json.loads(Path(sys.argv[sys.argv.index("--spec") + 1]).read_text())
+    if "--out" in sys.argv:
+        outd = Path(sys.argv[sys.argv.index("--out") + 1])
+    if "--exact" in sys.argv:
+        kw.update(exact=True, version="v2b")
+    if "--budget" in sys.argv:
+        kw["budget"] = float(sys.argv[sys.argv.index("--budget") + 1])
     r = run(root / "m1/gpt-s1/regions.png", root / "m1/legend.json", root / "m1/concept_on_white.png",
-            root / "ladder/v2_symmetry", use_judge="--no-judge" not in sys.argv)
+            outd, use_judge="--no-judge" not in sys.argv, **kw)
     s = r["symmetry"]
     print("source", {k: s["source"][k] for k in ("axis_px", "silhouette_iou", "label_agreement")})
     for k, v in s["source"]["parts"].items():
         print("  ", k, v)
     for sz, d in s["rungs"].items():
-        print(sz, d["axis_px"], d["broken"], d["choice"], d.get("chosen_by"), d.get("fallback_choice"),
+        d = d.get("by_axis", {}).get("vertical", d)
+        print(sz, d.get("exact_fraction"), d["axis_px"], d["broken"], d["choice"], d.get("chosen_by"), d.get("fallback_choice"),
               (d.get("judge") or {}).get("votes"))
     print("cost", s["cost"])
     for t, v in r["results"]["targets"].items():
