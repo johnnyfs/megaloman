@@ -42,8 +42,10 @@ def concept_rgb() -> Image.Image:
 
 
 def palette_png(im: Image.Image, n=N_COLOURS) -> tuple[bytes, list[str]]:
-    q = im.resize((128, 128), Image.LANCZOS).quantize(colors=n, method=Image.Quantize.MEDIANCUT)
-    pal = q.getpalette()[:n * 3]
+    # foreground only (the white background would eat palette slots; remove_bg makes it transparent anyway)
+    px = [c for c in im.resize((128, 128), Image.LANCZOS).getdata() if min(c) < 235]
+    fg = Image.new('RGB', (len(px), 1)); fg.putdata(px)
+    pal = fg.quantize(colors=n, method=Image.Quantize.MEDIANCUT).getpalette()[:n * 3]
     cols = [tuple(pal[i:i + 3]) for i in range(0, len(pal), 3)]
     strip = Image.new('RGB', (len(cols), 1))
     strip.putdata(cols)
