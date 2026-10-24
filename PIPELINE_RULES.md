@@ -32,6 +32,17 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **finding** (M2): a part painted as several pieces (mantle: 3) merges at 64 px; it
   should be one region with markings.
 
+- **rule** (M1): image models redraw rather than trace (gpt-5.4-image-2 drew about 4–5%
+  smaller and shifted 12 px). Always **register** the painted map to the concept outline
+  (fit scale plus shift, refuse corrections over 15%) before snapping. IoU went
+  0.83 → 0.96.
+- **rule** (M1): markings take their part's colour in the paint prompt, or they read as
+  holes.
+- **rule** (M1): vision-model legend colours aren't reliably distinct; enforce minimum
+  colour distance deterministically.
+- **finding** (M1): the Nano Banana 429s were OpenRouter's shared Google quota
+  (`upstream_provider_shared_pool`). Our own Google key (BYOK) would avoid them.
+
 ## Ladder (shrinking)
 
 - **finding** (M2): compute each rung from the source, not from the previous rung
