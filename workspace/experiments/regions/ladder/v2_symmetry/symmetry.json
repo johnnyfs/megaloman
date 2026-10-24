@@ -1,0 +1,540 @@
+{
+ "version": "v2",
+ "params": {
+  "sym_part": 0.9,
+  "tol": 0.06,
+  "judge_model": "openai/gpt-5.6-sol",
+  "samples": 3,
+  "budget": 1.0
+ },
+ "source": {
+  "width": 677,
+  "axis_px": 339.0,
+  "axis_frac": 0.5007,
+  "silhouette_iou": 0.9781,
+  "label_agreement": 0.9406,
+  "parts": {
+   "mantle_shell": {
+    "iou_global_axis": 0.8989,
+    "best_axis_px": 343.0,
+    "iou_own_axis": 0.9679,
+    "symmetric": true
+   },
+   "side_fins": {
+    "iou_global_axis": 0.7978,
+    "best_axis_px": 342.5,
+    "iou_own_axis": 0.909,
+    "symmetric": true
+   },
+   "face_frame": {
+    "iou_global_axis": 0.906,
+    "best_axis_px": 340.5,
+    "iou_own_axis": 0.958,
+    "symmetric": true
+   },
+   "visor": {
+    "iou_global_axis": 0.9423,
+    "best_axis_px": 338.0,
+    "iou_own_axis": 0.944,
+    "symmetric": true
+   },
+   "eyes": {
+    "iou_global_axis": 0.785,
+    "best_axis_px": 337.5,
+    "iou_own_axis": 0.9613,
+    "symmetric": true
+   },
+   "side_pods": {
+    "iou_global_axis": 0.8793,
+    "best_axis_px": 340.5,
+    "iou_own_axis": 0.9796,
+    "symmetric": true
+   },
+   "tentacles": {
+    "iou_global_axis": 0.9425,
+    "best_axis_px": 339.0,
+    "iou_own_axis": 0.9425,
+    "symmetric": true
+   },
+   "tentacle_joints": {
+    "iou_global_axis": 0.8942,
+    "best_axis_px": 339.5,
+    "iou_own_axis": 0.9226,
+    "symmetric": true
+   },
+   "suction_cups": {
+    "iou_global_axis": 0.9104,
+    "best_axis_px": 339.0,
+    "iou_own_axis": 0.9104,
+    "symmetric": true
+   },
+   "central_nozzle": {
+    "iou_global_axis": 0.9545,
+    "best_axis_px": 338.5,
+    "iou_own_axis": 0.9748,
+    "symmetric": true
+   }
+  }
+ },
+ "rungs": {
+  "512": {
+   "axis_px": 256.5,
+   "axis_on": "pixel centre",
+   "part_mirror_iou": {
+    "mantle_shell": 0.9028,
+    "side_fins": 0.8096,
+    "face_frame": 0.9157,
+    "visor": 0.9407,
+    "eyes": 0.7694,
+    "side_pods": 0.8922,
+    "tentacles": 0.9403,
+    "tentacle_joints": 0.9066,
+    "suction_cups": 0.9028,
+    "central_nozzle": 0.9421
+   },
+   "broken": [],
+   "mirrored": false,
+   "choice": "original"
+  },
+  "256": {
+   "axis_px": 128.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.8841,
+    "side_fins": 0.7676,
+    "face_frame": 0.8693,
+    "visor": 0.9377,
+    "eyes": 0.8333,
+    "side_pods": 0.8365,
+    "tentacles": 0.9322,
+    "tentacle_joints": 0.8517,
+    "suction_cups": 0.9139,
+    "central_nozzle": 0.9747
+   },
+   "broken": [],
+   "mirrored": false,
+   "choice": "original"
+  },
+  "128": {
+   "axis_px": 64.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.8818,
+    "side_fins": 0.7708,
+    "face_frame": 0.8568,
+    "visor": 0.9383,
+    "eyes": 0.8846,
+    "side_pods": 0.8571,
+    "tentacles": 0.9269,
+    "tentacle_joints": 0.8349,
+    "suction_cups": 0.917,
+    "central_nozzle": 1.0
+   },
+   "broken": [],
+   "mirrored": false,
+   "choice": "original"
+  },
+  "64": {
+   "axis_px": 32.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.8867,
+    "side_fins": 0.7544,
+    "face_frame": 0.8571,
+    "visor": 0.9394,
+    "eyes": 0.8571,
+    "side_pods": 0.78,
+    "tentacles": 0.9358,
+    "tentacle_joints": 0.837,
+    "suction_cups": 0.9113,
+    "central_nozzle": 1.0
+   },
+   "broken": [
+    "side_pods"
+   ],
+   "mirrored": true,
+   "choice": "right",
+   "fallback_choice": "right",
+   "candidate_metrics": {
+    "original": {
+     "health_score": 13,
+     "mean_iou": 0.8836,
+     "mean_area_err": 0.0823
+    },
+    "left": {
+     "health_score": 10,
+     "mean_iou": 0.8644,
+     "mean_area_err": 0.0846
+    },
+    "right": {
+     "health_score": 14,
+     "mean_iou": 0.8488,
+     "mean_area_err": 0.086
+    }
+   },
+   "candidate_part_mirror_iou": {
+    "original": {
+     "mantle_shell": 0.8867,
+     "side_fins": 0.7544,
+     "face_frame": 0.8571,
+     "visor": 0.9394,
+     "eyes": 0.8571,
+     "side_pods": 0.78,
+     "tentacles": 0.9358,
+     "tentacle_joints": 0.837,
+     "suction_cups": 0.9113,
+     "central_nozzle": 1.0
+    },
+    "left": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    },
+    "right": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    }
+   },
+   "judge": {
+    "order_shown": [
+     "original",
+     "left",
+     "right"
+    ],
+    "panel_blob": "aebcd4d9ca1b1dc5fdaf8e83e417866769af969090f6789a42d8d2169694a6c9",
+    "samples": [
+     {
+      "sample": 0,
+      "choice": "right",
+      "letter": "C",
+      "reason": "C has the clearest balanced silhouette, evenly spaced eyes and pods, and four distinctly readable tentacles.",
+      "cost": 0.018772,
+      "cached": true
+     },
+     {
+      "sample": 1,
+      "choice": "right",
+      "letter": "C",
+      "reason": "C has the clearest paired eyes, balanced side structures, and cleanly separated tentacle parts.",
+      "cost": 0.009412,
+      "cached": true
+     },
+     {
+      "sample": 2,
+      "choice": "left",
+      "letter": "B",
+      "reason": "B has the clearest visor, evenly balanced eyes and pods, and four distinct, readable tentacles.",
+      "cost": 0.018412,
+      "cached": true
+     }
+    ],
+    "votes": {
+     "right": 2,
+     "left": 1
+    },
+    "majority": "right",
+    "cost": 0.0466
+   },
+   "chosen_by": "judge"
+  },
+  "32": {
+   "axis_px": 16.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.9032,
+    "side_fins": 0.7857,
+    "face_frame": 0.9,
+    "visor": 1.0,
+    "eyes": 1.0,
+    "side_pods": 0.9167,
+    "tentacles": 0.9302,
+    "tentacle_joints": 0.84,
+    "suction_cups": 0.9677,
+    "central_nozzle": 1.0
+   },
+   "broken": [],
+   "mirrored": false,
+   "choice": "original"
+  },
+  "24": {
+   "axis_px": 12.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.9394,
+    "side_fins": 0.875,
+    "face_frame": 0.9231,
+    "visor": 0.9286,
+    "eyes": 0.75,
+    "side_pods": 1.0,
+    "tentacles": 0.9348,
+    "tentacle_joints": 0.8667,
+    "suction_cups": 0.9444,
+    "central_nozzle": 0.6667
+   },
+   "broken": [
+    "central_nozzle"
+   ],
+   "mirrored": true,
+   "choice": "right",
+   "fallback_choice": "left",
+   "candidate_metrics": {
+    "original": {
+     "health_score": 12,
+     "mean_iou": 0.7669,
+     "mean_area_err": 0.2156
+    },
+    "left": {
+     "health_score": 12,
+     "mean_iou": 0.8052,
+     "mean_area_err": 0.1489
+    },
+    "right": {
+     "health_score": 11,
+     "mean_iou": 0.7236,
+     "mean_area_err": 0.2839
+    }
+   },
+   "candidate_part_mirror_iou": {
+    "original": {
+     "mantle_shell": 0.9394,
+     "side_fins": 0.875,
+     "face_frame": 0.9231,
+     "visor": 0.9286,
+     "eyes": 0.75,
+     "side_pods": 1.0,
+     "tentacles": 0.9348,
+     "tentacle_joints": 0.8667,
+     "suction_cups": 0.9444,
+     "central_nozzle": 0.6667
+    },
+    "left": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    },
+    "right": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    }
+   },
+   "judge": {
+    "order_shown": [
+     "left",
+     "right",
+     "original"
+    ],
+    "panel_blob": "6ac55188aa47a31530d4ba73d42e87e00e93f83a036b6973fc6248adf430cc07",
+    "samples": [
+     {
+      "sample": 0,
+      "choice": "right",
+      "letter": "B",
+      "reason": "It has the clearest paired eyes, balanced fins and pods, and four cleanly separated articulated tentacles.",
+      "cost": 0.008052,
+      "cached": true
+     },
+     {
+      "sample": 1,
+      "choice": "right",
+      "letter": "B",
+      "reason": "B has the clearest paired eyes, four distinct tentacles, and the most sensible left-right balance.",
+      "cost": 0.007432,
+      "cached": true
+     },
+     {
+      "sample": 2,
+      "choice": "right",
+      "letter": "B",
+      "reason": "B has the clearest separated eyes, four readable tentacles, and the most sensible left-right balance.",
+      "cost": 0.010632,
+      "cached": true
+     }
+    ],
+    "votes": {
+     "right": 3
+    },
+    "majority": "right",
+    "cost": 0.02612
+   },
+   "chosen_by": "judge"
+  },
+  "20": {
+   "axis_px": 10.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 0.8333,
+    "side_fins": 0.75,
+    "face_frame": 0.8889,
+    "visor": 0.8889,
+    "eyes": 0.6667,
+    "side_pods": 0.8333,
+    "tentacles": 0.9643,
+    "tentacle_joints": 0.9167,
+    "suction_cups": 1.0,
+    "central_nozzle": 1.0
+   },
+   "broken": [
+    "mantle_shell",
+    "eyes"
+   ],
+   "mirrored": true,
+   "choice": "right",
+   "fallback_choice": "original",
+   "candidate_metrics": {
+    "original": {
+     "health_score": 8,
+     "mean_iou": 0.6772,
+     "mean_area_err": 0.3049
+    },
+    "left": {
+     "health_score": 8,
+     "mean_iou": 0.6685,
+     "mean_area_err": 0.2904
+    },
+    "right": {
+     "health_score": 8,
+     "mean_iou": 0.674,
+     "mean_area_err": 0.3363
+    }
+   },
+   "candidate_part_mirror_iou": {
+    "original": {
+     "mantle_shell": 0.8333,
+     "side_fins": 0.75,
+     "face_frame": 0.8889,
+     "visor": 0.8889,
+     "eyes": 0.6667,
+     "side_pods": 0.8333,
+     "tentacles": 0.9643,
+     "tentacle_joints": 0.9167,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    },
+    "left": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    },
+    "right": {
+     "mantle_shell": 1.0,
+     "side_fins": 1.0,
+     "face_frame": 1.0,
+     "visor": 1.0,
+     "eyes": 1.0,
+     "side_pods": 1.0,
+     "tentacles": 1.0,
+     "tentacle_joints": 1.0,
+     "suction_cups": 1.0,
+     "central_nozzle": 1.0
+    }
+   },
+   "judge": {
+    "order_shown": [
+     "original",
+     "left",
+     "right"
+    ],
+    "panel_blob": "70a791dbfdce3e8192565f54d591f795c3cbadc73abcbf3b4c8a219eed6b1ca9",
+    "samples": [
+     {
+      "sample": 0,
+      "choice": "left",
+      "letter": "B",
+      "reason": "B has the clearest paired eyes, centered nozzle, distinct parts, and the most sensible left-right balance.",
+      "cost": 0.020872,
+      "cached": true
+     },
+     {
+      "sample": 1,
+      "choice": null,
+      "error": "'NoneType' object has no attribute 'group'"
+     },
+     {
+      "sample": 2,
+      "choice": "right",
+      "letter": "C",
+      "reason": "C has the clearest paired eyes, balanced side parts, and four recognisable articulated tentacles.",
+      "cost": 0.018992,
+      "cached": true
+     },
+     {
+      "sample": 3,
+      "choice": "right",
+      "letter": "C",
+      "reason": "C has the clearest paired eyes, enclosed visor, balanced fins, pods, and four readable tentacles.",
+      "cost": 0.013712,
+      "cached": false
+     }
+    ],
+    "votes": {
+     "left": 1,
+     "right": 2
+    },
+    "majority": "right",
+    "cost": 0.05358
+   },
+   "chosen_by": "judge"
+  },
+  "16": {
+   "axis_px": 8.0,
+   "axis_on": "pixel edge",
+   "part_mirror_iou": {
+    "mantle_shell": 1.0,
+    "side_fins": 0.8571,
+    "face_frame": 1.0,
+    "visor": 1.0,
+    "eyes": 1.0,
+    "side_pods": 1.0,
+    "tentacles": 0.9412,
+    "tentacle_joints": 0.8571,
+    "suction_cups": 1.0,
+    "central_nozzle": 1.0
+   },
+   "broken": [],
+   "mirrored": false,
+   "choice": "original"
+  }
+ },
+ "cost": {
+  "spent": 0.01371,
+  "calls": 1,
+  "cached": 9
+ }
+}
