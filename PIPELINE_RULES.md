@@ -136,6 +136,22 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **finding:** 64 px almost works. 32 lacks region distinction. 16 is "a little triangle
   man".
 
+### Proposed refinements from the v2 pipeline (status: trial, awaiting Johnny)
+
+- Front instances of the same kind that touch (each arm) are separate parts sharing a
+  `material`, and keep their own identity through the ladder so the separating line can
+  be drawn.
+- Colour distinctness is judged at the target size: parts within one pixel of each other
+  at 16 px must differ in colour or get a line.
+- Floors must survive render: floored features (eyes, nozzle) are always ringed in ink
+  and protected in the NES tile reduction.
+- Exaggeration grows into the background only, never over lower-significance parts.
+- Diagonal separating lines may clump; prefer 4-connected 1 px lines, or accept the
+  clumps as depth.
+- **finding** (v2): 64 px good; 32 px clearly better than v1; 16 px still not icon
+  quality. Telly and Met spend most of their area on two huge eyes, and we don't. The
+  missing piece is the face/arm template step.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
