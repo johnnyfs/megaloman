@@ -1,0 +1,36 @@
+{
+ "palette": {
+  "K": "#372d1d",
+  "G": "#83a975",
+  "B": "#81774d",
+  "D": "#5e5134",
+  "E": "#e7fee7"
+ },
+ "grid": [
+  ".......KKKKKKKKK........",
+  ".......KEEGGGGGK........",
+  ".......KKKKKKKKK........",
+  "..........KDK.....KKK...",
+  ".......KKKKKKKKK.KGGK...",
+  ".....KKGGGGGGGGGKBBK....",
+  "....KGGGKKKKKKGGKBBBK...",
+  "...KGGGKEEEEKGKBBBBBK...",
+  ".KKKGGGKEEDEKKBBBBBBK...",
+  "KKKKKGGKEEDEKBBBBBBBBK..",
+  "KDDDKGGKEEEEKBBBBBBBBBK.",
+  "KDDDKGGGKKKKKBBBBBBBBBK.",
+  "KDDDKGGGGGKBBBBBBBBBBBKK",
+  "KKKKKGGGKBBBKKKKKKKBBBDK",
+  ".....KGGKBBKGGGGGGGKBBK.",
+  ".....KGKBBBKGDDGDDGKBBK.",
+  ".....KKBBBBKGDDGDDGKBK..",
+  "......KBBBBKGGGGGGGKBK..",
+  "......KDBBBKKKKKKKKKBK..",
+  ".......KDBBBBBBBKDKK....",
+  "........KKKKKKKKKDK.....",
+  "....KKKKKK.....KKDKKK...",
+  "....KDDDDK.....KDDDDDK..",
+  "....KKKKKK.....KKKKKKK.."
+ ],
+ "notes": "Rebuilt as a compact round ball: green head upper-left split by an outline from the olive body, 4x4 bright eye in a dark ring, chunky 3-px-thick gun nose, a separate scope block on a stem. The long diagonal wing stick was replaced by a small wing nub so it no longer reads as an antenna; kept the side-wing panel, tucked strut, feet, and a stubby tail."
+}

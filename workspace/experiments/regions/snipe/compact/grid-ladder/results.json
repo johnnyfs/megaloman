@@ -1,0 +1,30 @@
+{
+ "model": "anthropic/claude-opus-5.5",
+ "sizes": [
+  64,
+  32,
+  24,
+  20,
+  16
+ ],
+ "64": {
+  "log": [],
+  "cost": 0.932,
+  "kept_round": 1,
+  "iou": 0.788
+ },
+ "32": {
+  "log": [],
+  "cost": 0.39,
+  "kept_round": 1,
+  "iou": 0.755
+ },
+ "24": {
+  "log": [],
+  "cost": 0.185,
+  "kept_round": 2,
+  "iou": 0.763
+ },
+ "stopped": "budget $1.50: spent $1.507 before 20x20",
+ "cost_usd": 1.5074
+}

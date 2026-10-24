@@ -1,0 +1,181 @@
+{
+ "format": "megaloman.pipeline/1",
+ "title": "Snipe grid ladder: Opus 5.5 places pixels 64->32->24->20->16",
+ "run_dir": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder",
+ "verdict": "Opus 5.5 ladder stopped at 24 (budget: 64x64 alone cost $0.93). 64: every part, clean round body, eye/scope/gun-nose/wing/feet/tail. 32: all parts survive, wing+breastplate start to blur, round 2 lost shape (round 1 kept). 24: silhouette goes boxy and lumpy, breastplate becomes an oversized panel, wing nub only a hint; eye/scope/gun-nose/head split survive. 20/16 not run.",
+ "cost_usd": 1.5074,
+ "stages": [
+  {
+   "id": "concept",
+   "title": "1 concept",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/concept.png",
+     "caption": "compact, vestigial wing"
+    }
+   ],
+   "notes": [
+    "concept colours: #5e5134 (13%), #81774d (13%), #372d1d (12%), #83a975 (7%), #cec8a3 (3%), #e7fee7 (1%), #ffff8a (0%)"
+   ],
+   "data": {}
+  },
+  {
+   "id": "regions",
+   "title": "2 regions + priority",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/regions_legend.png"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "refs",
+   "title": "3 style refs",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/style_refs.png",
+     "caption": "Telly (Mega Man 2), Met, walking, Pipi (bird)",
+     "pixel": true
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "guidance",
+   "title": "4 guidance (at 16; eye cap scales)",
+   "kind": "list",
+   "images": [],
+   "notes": [],
+   "data": {
+    "items": [
+     "Fill the square: the silhouette is compact and occupies most of the 16x16 in both width and height.",
+     "Preserve the silhouette and the big shapes and lines of the concept; it must read from its outline alone.",
+     "Head and body are clearly separated by a different colour AND a dark line between them.",
+     "The eye is bright and unmistakable (top priority) but CAPPED: its bright part is about 3x3 px (never more than 4x4), inside its dark ring.",
+     "The snub gun-nose is short and chunky (at least 2 px thick), not a thin dash.",
+     "The scope on top is distinct: its own little block, separated from the head by outline.",
+     "Legs folded/tucked under the body; feet just under it. Tail stubby.",
+     "Breastplate is just a hint (a few pixels or a shade), never a big panel.",
+     "Few large colour masses: one body colour, one accent, a bright eye; no fine patterns, no noise.",
+     "Strong dark outline and value contrast between masses (NES style: <= 5 colours incl. outline).",
+     "Use the CONCEPT's colours (sampled hexes given below), never the region-map legend colours."
+    ]
+   }
+  },
+  {
+   "id": "ladder",
+   "title": "ladder: finals side by side",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s64/final_64.png",
+     "caption": "64x64",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s32/final_32.png",
+     "caption": "32x32",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s24/final_24.png",
+     "caption": "24x24",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/ladder.png",
+     "caption": "same display height + 1x"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "s64",
+   "title": "64x64",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s64/round1_up.png",
+     "caption": "round 1 (8x) IoU 0.788 KEPT",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s64/round2_up.png",
+     "caption": "round 2 (8x) IoU 0.788",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s64/final_64.png",
+     "caption": "final 1x (round 1)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "kept round 1: best silhouette IoU vs concept (r1 0.788, r2 0.788); tie -> earlier round",
+    "$0.932"
+   ],
+   "data": {}
+  },
+  {
+   "id": "s32",
+   "title": "32x32",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s32/round1_up.png",
+     "caption": "round 1 (16x) IoU 0.755 KEPT",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s32/round2_up.png",
+     "caption": "round 2 (16x) IoU 0.741",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s32/final_32.png",
+     "caption": "final 1x (round 1)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "kept round 1: best silhouette IoU vs concept (r1 0.755, r2 0.741)",
+    "$0.390"
+   ],
+   "data": {}
+  },
+  {
+   "id": "s24",
+   "title": "24x24",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s24/round1_up.png",
+     "caption": "round 1 (21x) IoU 0.738",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s24/round2_up.png",
+     "caption": "round 2 (21x) IoU 0.763 KEPT",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid-ladder/s24/final_24.png",
+     "caption": "final 1x (round 2)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "kept round 2: best silhouette IoU vs concept (r1 0.738, r2 0.763)",
+    "$0.185"
+   ],
+   "data": {}
+  }
+ ]
+}
