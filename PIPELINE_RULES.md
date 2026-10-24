@@ -19,6 +19,14 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   and a deterministic mirror check verifies it. The result feeds the ladder's symmetry
   preservation, so that step stays deterministic.
 
+- **finding** (2026-10-23): **decision models** (OpenRouter Decisions API,
+  `POST /api/alpha/decisions`) return typed answers with probabilities: Choice, yes/no,
+  Score, Box. `typesafe/jev-1.14` takes images (each side 256–1568 px, so upscale
+  sprites with nearest-neighbour to ≥ 280 px), takes ~0.2 s and costs ~$0.04 per 1M
+  input tokens. A test sprite came back "vertical symmetry" at p=0.98. Candidate for the
+  symmetry classifier and a cheap pairwise judge; validate against the current judge
+  first. Alternative: `openai/gpt-6-luna-decisions`.
+
 ## Regions
 
 - **finding** (M1): `gpt-5.4-image-2` paints clean, distinct flat-colour part maps, but
