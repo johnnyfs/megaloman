@@ -38,8 +38,10 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   a vertical axis), check left vs right at each rung. When it breaks, build two
   candidates (left half mirrored, right half mirrored) and let a judge pick.
 - **trial** (v3, Johnny): **preserve significance.** As shapes shrink they lose
-  significance; character-carrying parts (eyes, the jaunty side fins) are kept larger
+  significance; character-carrying parts (e.g. the jaunty side fins) are kept larger
   than their proportional size, with a minimum footprint and an essential shape.
+- **rule** (Johnny): eyes are a *floor*, not an exaggeration. They never shrink below
+  two distinct rectangles, but otherwise scale normally.
 - **finding** (M2): at 20/16 px the face (visor and eyes) needs a fixed template, e.g. a
   visor ≥ 5 px wide with two 1×2 eyes.
 - **finding** (M2): tentacles at ≤ 32 px need stroke primitives: a few distinct arms,

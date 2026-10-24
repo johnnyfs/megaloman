@@ -14,6 +14,24 @@ EST = {
 }
 
 
+# Every HTTP error seen (full body + rate-limit headers), for diagnosis; listeners get each record as it happens.
+HTTP_ERRORS, ERROR_LISTENERS = [], []
+
+
+def _record_http_error(model, attempt, e, raw):
+    try:
+        parsed = json.loads(raw)
+    except Exception:
+        parsed = None
+    hdrs = {k: v for k, v in (e.headers or {}).items()
+            if k.lower() in ('retry-after', 'date') or 'ratelimit' in k.lower() or k.lower().startswith('x-')}
+    rec = {'ts': time.strftime('%Y-%m-%dT%H:%M:%S'), 'model': model, 'attempt': attempt, 'code': e.code,
+           'body': parsed if parsed is not None else raw.decode('utf-8', 'replace'), 'headers': hdrs}
+    HTTP_ERRORS.append(rec)
+    for fn in list(ERROR_LISTENERS):
+        fn(rec)
+
+
 class BudgetExceeded(RuntimeError):
     pass
 
@@ -80,7 +98,9 @@ def call(body, ledger: Ledger, cache_key: str):
                 raise RuntimeError(f"{body['model']}: {resp['error']}")
             break
         except urllib.error.HTTPError as e:
-            msg = e.read()[:300]
+            raw = e.read()
+            _record_http_error(body['model'], attempt, e, raw)
+            msg = raw[:300]
             if e.code in (429, 500, 502, 503, 504) and attempt < 5:
                 time.sleep(min(60, 5 * 2 ** attempt))
                 continue
