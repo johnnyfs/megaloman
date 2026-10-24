@@ -152,6 +152,11 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   quality. Telly and Met spend most of their area on two huge eyes, and we don't. The
   missing piece is the face/arm template step.
 
+- **finding** (Johnny on v2, 2026-10-23): much better overall, especially 24/20, and
+  16 has personality. 32 may be marginally better in v1. At 24 and 20 the eyes aren't
+  distinct enough from the surrounding shape. Eye contrast and separation is the open
+  problem (see the face template).
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
