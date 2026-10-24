@@ -157,6 +157,22 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   distinct enough from the surrounding shape. Eye contrast and separation is the open
   problem (see the face template).
 
+### Johnny's distilled rules after v2 (2026-10-23)
+
+1. **Target palette first.** Choose the final small palette at the start, not as a
+   late reduction. Make executive calls on which parts share a colour, e.g. fins, nozzle
+   and cups one colour; face ring and tentacles one colour; head the darker colour.
+   Shrinking an image that still has too many colours is confusing.
+2. **No patterning for now** (spots or stripes). Maybe revisit on large areas later.
+3. **Region priority.** Parts have an explicit priority that decides who keeps pixels.
+4. **Eyes:** keep them boxy, filled rectangles (unless the expression demands
+   otherwise), and keep a clear margin around them so they stay distinct from everything
+   else. v1's 32 px won on exactly this.
+5. **Keep like instances distinct as they shrink.** Cut into shapes (gaps, notches,
+   little curls) so tentacles don't grow together, and keep a hint of each one's shape.
+6. **Line sacrifice by depth.** Where two regions meet, the separating line comes out of
+   the region that's underneath or behind.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
