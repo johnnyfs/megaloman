@@ -118,6 +118,11 @@
    "host": null
   }
  ],
+ "axis": {
+  "axis2_offset": 1,
+  "shift_px": 0,
+  "mirror_iou": 0.9781
+ },
  "lines": {
   "mantle_shell|side_fins": true,
   "mantle_shell|face_frame": true,
@@ -139,81 +144,95 @@
    "size": 64,
    "mode": "outset",
    "label_size": 62,
-   "ink_px": 360,
-   "depth_px": 80,
-   "black_fill_px": 335,
-   "clumps": 29,
+   "ink_px": 362,
+   "depth_px": 82,
+   "black_fill_px": 330,
+   "clumps": 32,
+   "separators": [],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      13,
+      0.877
+     ],
+     "right": [
+      12,
+      0.868
+     ]
+    }
+   },
    "grid": [
-    "................................#...............................",
-    "..............................##M##.............................",
-    ".............................#MMMMM#............................",
-    "............................#MMMMMMM#...........................",
-    "...........................#MMMMMMMMM#..........................",
-    "..........................#MMMMMMMMMMM#.........................",
-    ".........................#MMMMMMMMMMMMM#........................",
-    "........................#MMMMMMMMMMMMMMM#.......................",
-    "......................##F#MMMMMMMMMMMMM#F#......................",
-    ".....................##FF#MMMMMMMMMMMMM#FF##....................",
-    "...................###FF#MMMMMMMMMMMMMMM#FF##...................",
-    "..................##FF##MMMMMMMMMMMMMMMMM#FFF##.................",
-    "................###FFF##MMMMMMMMMMMMMMMMM##FFF##................",
-    "...............##FFFF##MMMMMMMMMMMMMMMMMMM#FFFF##...............",
-    "..............##FFFFF#MMMMMMMMMMMMMMMMMMMM##FFFF##..............",
-    ".............##FFFFF##MMMMMMMMMMMMMMMMMMMMM##FFFFF#.............",
-    "............##FFFFF##MMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#............",
-    "...........##FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#...........",
-    "..........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFF#..........",
-    ".........##FFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF##.........",
-    ".........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFF#.........",
-    ".........#FFFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#.........",
-    ".........#FFFFFF##MMMMMMM##############MMMMMMMM#FFFFFF#.........",
-    "..........#FFFFFF#MMMM###ffffffffffffff####MMMM##FFFF#..........",
-    "...........##FF##MMM##fffffffffffffffffffff##MM##FF##...........",
-    ".............####M##ffffffVVVVVVVVVVVVfffffff#MM###.............",
+    "................................................................",
+    "..............................####..............................",
+    ".............................#MMMM#.............................",
+    "............................#MMMMMM#............................",
+    "...........................#MMMMMMMM#...........................",
+    "..........................#MMMMMMMMMM#..........................",
+    ".........................#MMMMMMMMMMMM#.........................",
+    "........................#MMMMMMMMMMMMMM#........................",
+    "......................##F#MMMMMMMMMMMM#F##......................",
+    ".....................##FF#MMMMMMMMMMMM#FF##.....................",
+    "...................###FF#MMMMMMMMMMMMMM#FF###...................",
+    "..................##FF##MMMMMMMMMMMMMMMM##FF##..................",
+    "................###FFF##MMMMMMMMMMMMMMMM##FFF###................",
+    "...............##FFFF##MMMMMMMMMMMMMMMMMM##FFFF##...............",
+    "..............##FFFFF#MMMMMMMMMMMMMMMMMMMM#FFFFF##..............",
+    ".............##FFFFF##MMMMMMMMMMMMMMMMMMMM##FFFFF##.............",
+    "............##FFFFF##MMMMMMMMMMMMMMMMMMMMMM##FFFFF##............",
+    "...........##FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF##...........",
+    "..........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF##..........",
+    ".........##FFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFF##.........",
+    ".........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF##.........",
+    ".........#FFFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFFF#.........",
+    ".........#FFFFFF##MMMMMMM##############MMMMMMM##FFFFFF#.........",
+    "..........#FFFFFF#MMMM###ffffffffffffff###MMMM#FFFFFF#..........",
+    "...........##FF##MMM##ffffffffffffffffffff##MMM##FF##...........",
+    ".............####M##ffffffVVVVVVVVVVVVffffff##M####.............",
     "...............#M#fffffVVVVVVVVVVVVVVVVVVfffff#M#...............",
-    "..............#p#fffffVVVVVVVVVVVVVVVVVVVVfffff#p##.............",
-    "............##pp#ffffVVVVEEVVVVVVVVVVEEVVVVffff#ppp#............",
-    "...........#pppp###ffVVVEEEVVVVVVVVVEEEVVVVfff##pppp#...........",
-    "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#ppppp#..........",
-    "...........#ppppp#ffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
-    "...........#ppppp#fffVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
+    "..............#p#fffffVVVVVVVVVVVVVVVVVVVVfffff#p#..............",
+    "............##pp#ffffVVVVEEVVVVVVVVVVEEVVVVffff#pp##............",
+    "...........#pppp###ffVVVEEEVVVVVVVVVVEEEVVVff###pppp#...........",
+    "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
+    "...........#ppppp#ffVVVVEEEEVVVVVVVVEEEEVVVVff#ppppp#...........",
+    "...........#ppppp#fffVVVEEEEVVVVVVVVEEEEVVVfff#ppppp#...........",
     "...........#ppppp#fffVVVVEEVVVVVVVVVVEEVVVVfff#ppppp#...........",
-    "............#ppppp#fffVVVVVVVVVVVVVVVVVVVVfff##ppppp#...........",
-    "............#pppppp#fffVVVVVfffffffffVVVVfff#pppppp#............",
+    "............#ppppp#fffVVVVVVVVVVVVVVVVVVVVfff#ppppp#............",
+    "............#pppppp#fffVVVVVffffffffVVVVVfff#pppppp#............",
     ".............#pppppjjfffffffffjjjjfffffffffjjppppp#.............",
-    "........#####t#####jjjjjjjjjjjjjjjjjjjjjjjjjjj####t#####........",
-    ".......#tttttttttt#ttjjjj#jjjjjjjjjjjj#jjjjttttttttttttt##......",
-    "......#tttttttttjjttttjjtttjjjjjjjjjjtttjjjttttjtttttttttt#.....",
-    ".....##tttttttttjjtttjj#tttjjj####jjjttttjjtttjjjtttttttttt#....",
-    "....##tttttttttjjjtttjjttttjj#nnnn#jjttttjjjttjjjtttttttttt#....",
-    "...##ttttttttttjjjttjjjjttt###nnnnj##tttjjjjttjjjtttttttttt##...",
-    "...#cttttttttttjjjtjjjjjjtttt#nnnnjttttjjjjjj#jjjttttttttttc#...",
-    "..#cccttttttttttttt#jjccjtttt#nnnn#ttttjccjj##tt#tttttttttccc#..",
-    ".#ccccctttttt#tt##ttjjccjtttt#nnnn##tttjccjjt###tt#ttttttccccc#.",
-    ".#cccccttttt####t#tttjjjjtttt#nnnn##tttjjjjttt##t###tttttccccc#.",
-    ".#tcccctttttc#..#ttttttttttttt####ttttttttttttt##.#ctttttccccc#.",
-    "..#cccctttttc#.#ttttttttttttt#....#ttttttttttttt#.#ccttttcccc#..",
-    "..#tccttttttc#.#ttttttttttttt#....#ttttttttttttt###cctttttccc#..",
-    "...#tcccttttc##ttttttttttttttt#..#tttttttttttttttt#cttttccct#...",
-    "...#ccccttttc#ttttttttttttcttt#..#tttctttttttttttt##tttccccc#...",
+    "........#####t#####jjjjjjjjjjjjjjjjjjjjjjjjjj#####t#####........",
+    ".......#tttttttttt#ttjjjj#jjjjjjjjjjjj#jjjjtt#tttttttttt#.......",
+    "......#tttttttttjjttttjjtttjjjjjjjjjjtttjjttttjjttttttttt#......",
+    ".....##tttttttttjjtttjj#tttjjj####jjjttt#jjtttjjttttttttt##.....",
+    "....##tttttttttjjjtttjjttttjj#nnnn#jjttttjjtttjjjttttttttt##....",
+    "...##ttttttttttjjjttjjjjttt###nnnn###tttjjjjttjjjtttttttttt##...",
+    "...#cttttttttttjjjtjjjjjjtttt#nnnn#ttttjjjjjjtjjjttttttttttc#...",
+    "..#cccttttttttttttt#jjccjtttt#nnnn#ttttjccjj#tttttttttttttccc#..",
+    ".#ccccctttttt#tt##ttjjccjtttt#nnnn#ttttjccjjtt##tt#ttttttccccc#.",
+    ".#cccccttttt####t#tttjjjjtttt#nnnn#ttttjjjjttt#t####tttttccccc#.",
+    ".#tcccctttttc#..#ttttttttttttt####ttttttttttttt#..#ctttttcccct#.",
+    "..#cccctttttc#.#ttttttttttttt#....#ttttttttttttt#.#ctttttcccc#..",
+    "..#tccttttttc#.#ttttttttttttt#....#ttttttttttttt#.#cttttttcct#..",
+    "...#tcccttttc##ttttttttttttttt#..#ttttttttttttttt##cttttccct#...",
+    "...#ccccttttc#ttttttttttttcttt#..#tttctttttttttttt#cttttcccc#...",
     "...#cccccttt#.#tttttttttttcctt#..#ttccttttttttttt#.#tttccccc#...",
-    "....#ccccttt#.#ttcccctttttcctt#..#ttcctttttccccct#.#tttcccc#....",
+    "....#ccccttt#.#ttcccctttttcctt#..#ttcctttttcccctt#.#tttcccc#....",
     "....#ccccttt#.#tccccctttttcctt#..#ttcctttttccccct#.#tttcccc#....",
-    ".....####tt#..#tcccccctttttttt#..#ttttttttcccccc##.##tt####.....",
-    "........###...#tccccccttttttt#....#tttttttcccccc##..#####.......",
-    "..............##ccccccttttt###....###tttttcccccc#...............",
+    ".....####tt#..#tcccccctttttttt#..#ttttttttcccccct#..#tt####.....",
+    "........###...#tccccccttttttt#....#tttttttcccccct#...###........",
+    "..............##ccccccttttt###....###tttttcccccc##..............",
     "...............#tcccccctttt##......##ttttcccccct#...............",
     "................#ttcccccttt#........#tttccccctt#................",
-    ".................##ccccctt##........##ttccccct#.................",
+    ".................##ccccctt##........##ttccccc##.................",
     "..................#ccccc###..........###ccccc#..................",
     "...................##cc###............###cc##...................",
     ".....................##..................##....................."
    ],
    "tile": {
-    "changed_px": 69,
-    "damage_dE": 2208.4,
+    "changed_px": 70,
+    "damage_dE": 2254.0,
     "offset": [
-     2,
+     4,
      2
     ],
     "merged": {
@@ -223,7 +242,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 5 colours/tile at offset (5,1) (max 3)",
+     "detail": "max 5 colours/tile at offset (3,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -233,7 +252,7 @@
     },
     "holes": {
      "pass": false,
-     "detail": "6 enclosed transparent pixels",
+     "detail": "8 enclosed transparent pixels",
      "gate": true
     },
     "outline": {
@@ -250,7 +269,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (2,2) (max 3)",
+     "detail": "max 3 colours/tile at offset (4,2) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -260,7 +279,7 @@
     },
     "holes": {
      "pass": false,
-     "detail": "6 enclosed transparent pixels",
+     "detail": "8 enclosed transparent pixels",
      "gate": true
     },
     "outline": {
@@ -288,10 +307,182 @@
    "size": 64,
    "mode": "outset",
    "label_size": 62,
+   "ink_px": 362,
+   "depth_px": 82,
+   "black_fill_px": 330,
+   "clumps": 32,
+   "separators": [],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      13,
+      0.877
+     ],
+     "right": [
+      12,
+      0.868
+     ]
+    }
+   },
+   "grid": [
+    "................................................................",
+    "..............................####..............................",
+    ".............................#MMMM#.............................",
+    "............................#MMMMMM#............................",
+    "...........................#MMMMMMMM#...........................",
+    "..........................#MMMMMMMMMM#..........................",
+    ".........................#MMMMMMMMMMMM#.........................",
+    "........................#MMMMMMMMMMMMMM#........................",
+    "......................##F#MMMMMMMMMMMM#F##......................",
+    ".....................##FF#MMMMMMMMMMMM#FF##.....................",
+    "...................###FF#MMMMMMMMMMMMMM#FF###...................",
+    "..................##FF##MMMMMMMMMMMMMMMM##FF##..................",
+    "................###FFF##MMMMMMMMMMMMMMMM##FFF###................",
+    "...............##FFFF##MMMMMMMMMMMMMMMMMM##FFFF##...............",
+    "..............##FFFFF#MMMMMMMMMMMMMMMMMMMM#FFFFF##..............",
+    ".............##FFFFF##MMMMMMMMMMMMMMMMMMMM##FFFFF##.............",
+    "............##FFFFF##MMMMMMMMMMMMMMMMMMMMMM##FFFFF##............",
+    "...........##FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF##...........",
+    "..........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF##..........",
+    ".........##FFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFF##.........",
+    ".........##FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF##.........",
+    ".........#FFFFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFFFF#.........",
+    ".........#FFFFFF##MMMMMMM##############MMMMMMM##FFFFFF#.........",
+    "..........#FFFFFF#MMMM###ffffffffffffff###MMMM#FFFFFF#..........",
+    "...........##FF##MMM##ffffffffffffffffffff##MMM##FF##...........",
+    ".............####M##ffffffVVVVVVVVVVVVffffff##M####.............",
+    "...............#M#fffffVVVVVVVVVVVVVVVVVVfffff#M#...............",
+    "..............#p#fffffVVVVVVVVVVVVVVVVVVVVfffff#p#..............",
+    "............##pp#ffffVVVVEEVVVVVVVVVVEEVVVVffff#pp##............",
+    "...........#pppp###ffVVVEEEVVVVVVVVVVEEEVVVff###pppp#...........",
+    "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
+    "...........#ppppp#ffVVVVEEEEVVVVVVVVEEEEVVVVff#ppppp#...........",
+    "...........#ppppp#fffVVVEEEEVVVVVVVVEEEEVVVfff#ppppp#...........",
+    "...........#ppppp#fffVVVVEEVVVVVVVVVVEEVVVVfff#ppppp#...........",
+    "............#ppppp#fffVVVVVVVVVVVVVVVVVVVVfff#ppppp#............",
+    "............#pppppp#fffVVVVVffffffffVVVVVfff#pppppp#............",
+    ".............#pppppjjfffffffffjjjjfffffffffjjppppp#.............",
+    "........#####t#####jjjjjjjjjjjjjjjjjjjjjjjjjj#####t#####........",
+    ".......#tttttttttt#ttjjjj#jjjjjjjjjjjj#jjjjtt#tttttttttt#.......",
+    "......#tttttttttjjttttjjtttjjjjjjjjjjtttjjttttjjttttttttt#......",
+    ".....##tttttttttjjtttjj#tttjjj####jjjttt#jjtttjjttttttttt##.....",
+    "....##tttttttttjjjtttjjttttjj#nnnn#jjttttjjtttjjjttttttttt##....",
+    "...##ttttttttttjjjttjjjjttt###nnnn###tttjjjjttjjjtttttttttt##...",
+    "...#cttttttttttjjjtjjjjjjtttt#nnnn#ttttjjjjjjtjjjttttttttttc#...",
+    "..#cccttttttttttttt#jjccjtttt#nnnn#ttttjccjj#tttttttttttttccc#..",
+    ".#ccccctttttt#tt##ttjjccjtttt#nnnn#ttttjccjjtt##tt#ttttttccccc#.",
+    ".#cccccttttt####t#tttjjjjtttt#nnnn#ttttjjjjttt#t####tttttccccc#.",
+    ".#tcccctttttc#..#ttttttttttttt####ttttttttttttt#..#ctttttcccct#.",
+    "..#cccctttttc#.#ttttttttttttt#....#ttttttttttttt#.#ctttttcccc#..",
+    "..#tccttttttc#.#ttttttttttttt#....#ttttttttttttt#.#cttttttcct#..",
+    "...#tcccttttc##ttttttttttttttt#..#ttttttttttttttt##cttttccct#...",
+    "...#ccccttttc#ttttttttttttcttt#..#tttctttttttttttt#cttttcccc#...",
+    "...#cccccttt#.#tttttttttttcctt#..#ttccttttttttttt#.#tttccccc#...",
+    "....#ccccttt#.#ttcccctttttcctt#..#ttcctttttcccctt#.#tttcccc#....",
+    "....#ccccttt#.#tccccctttttcctt#..#ttcctttttccccct#.#tttcccc#....",
+    ".....####tt#..#tcccccctttttttt#..#ttttttttcccccct#..#tt####.....",
+    "........###...#tccccccttttttt#....#tttttttcccccct#...###........",
+    "..............##ccccccttttt###....###tttttcccccc##..............",
+    "...............#tcccccctttt##......##ttttcccccct#...............",
+    "................#ttcccccttt#........#tttccccctt#................",
+    ".................##ccccctt##........##ttccccc##.................",
+    "..................#ccccc###..........###ccccc#..................",
+    "...................##cc###............###cc##...................",
+    ".....................##..................##....................."
+   ],
+   "tile": {
+    "changed_px": 70,
+    "damage_dE": 2254.0,
+    "offset": [
+     4,
+     2
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 5 colours/tile at offset (3,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": false,
+     "detail": "8 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "8 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (4,2) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": false,
+     "detail": "8 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "7 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "008888",
+    "7C7C7C",
+    "A4E4FC",
+    "BCBCBC",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "64_asym": {
+   "size": 64,
+   "mode": "outset",
+   "label_size": 62,
    "ink_px": 360,
    "depth_px": 80,
    "black_fill_px": 335,
    "clumps": 29,
+   "separators": [
+    [
+     "t",
+     "p",
+     "j",
+     1
+    ]
+   ],
+   "symmetry": null,
    "grid": [
     "................................#...............................",
     "..............................##M##.............................",
@@ -438,80 +629,94 @@
    "mode": "inset",
    "label_size": 64,
    "ink_px": 374,
-   "depth_px": 35,
-   "black_fill_px": 361,
-   "clumps": 25,
+   "depth_px": 38,
+   "black_fill_px": 362,
+   "clumps": 14,
+   "separators": [],
+   "symmetry": {
+    "keep": "right",
+    "scores": {
+     "left": [
+      10,
+      0.864
+     ],
+     "right": [
+      14,
+      0.849
+     ]
+    }
+   },
    "grid": [
-    "................................#...............................",
-    "..............................##M##.............................",
-    ".............................#MMMMM#............................",
-    "............................#MMMMMMM#...........................",
-    "...........................#MMMMMMMMM#..........................",
-    "..........................#MMMMMMMMMMM#.........................",
-    "..........................#MMMMMMMMMMM#.........................",
-    "........................##MMMMMMMMMMMMM##.......................",
-    "......................##MMMMMMMMMMMMMMMMM#......................",
-    ".....................#FF#MMMMMMMMMMMMMMM#F##....................",
-    "...................##FF#MMMMMMMMMMMMMMMMM#FF#...................",
-    "..................#FFF#MMMMMMMMMMMMMMMMMM##FF##.................",
-    "................##FFF##MMMMMMMMMMMMMMMMMMM##FFF#................",
-    "...............#FFFFF#MMMMMMMMMMMMMMMMMMMMM#FFFF#...............",
-    "..............#FFFFF##MMMMMMMMMMMMMMMMMMMMM##FFFF##.............",
-    ".............#FFFFF##MMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#............",
-    "............#FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#...........",
-    "...........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMM##FFFFF#...........",
-    "..........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#..........",
-    "..........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#.........",
-    ".........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#.........",
-    ".........#FFFFFF##MMMMMMMMMMM######MMMMMMMMMMMM##FFFFF#.........",
-    "..........#FFFFFF#MMMMMM#####ffffff######MMMMMM##FFFFF#.........",
-    "...........##FF##MMMM###fffffffffffffffff##MMMMM#FF###..........",
-    ".............##F#MM##ffffffffffVVffffffffff##MMM###.............",
-    "...............#MM#ffffffVVVVVVVVVVVVVVffffff##MM#..............",
-    "...............#M#fffffVVVVVVVVVVVVVVVVVVVfffff#M#..............",
-    "..............#p#ffffVVVVVVVVVVVVVVVVVVVVVVfffff##..............",
-    ".............#pp##fffVVVVEEVVVVVVVVVVEEVVVVfff#f#p##............",
-    "............#ppp##ffVVVVEEEVVVVVVVVVEEEEVVVVff#f#ppp#...........",
-    "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVff#f#ppp#...........",
+    "...............................##...............................",
+    ".............................##MM##.............................",
+    "............................#MMMMMM#............................",
+    "...........................#MMMMMMMM#...........................",
+    "..........................#MMMMMMMMMM#..........................",
+    ".........................#MMMMMMMMMMMM#.........................",
+    ".........................#MMMMMMMMMMMM#.........................",
+    ".......................##MMMMMMMMMMMMMM##.......................",
+    "......................#MMMMMMMMMMMMMMMMMM#......................",
+    "....................##F#MMMMMMMMMMMMMMMM#F##....................",
+    "...................#FF#MMMMMMMMMMMMMMMMMM#FF#...................",
+    ".................##FF##MMMMMMMMMMMMMMMMMM##FF##.................",
+    "................#FFF##MMMMMMMMMMMMMMMMMMMM##FFF#................",
+    "...............#FFFF#MMMMMMMMMMMMMMMMMMMMMM#FFFF#...............",
+    ".............##FFFF##MMMMMMMMMMMMMMMMMMMMMM##FFFF##.............",
+    "............#FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#............",
+    "...........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#...........",
+    "...........#FFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFF#...........",
+    "..........#FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#..........",
+    ".........#FFFFFF##MMMMMMMMMMMMMMMMMMMMMMMMMMMM##FFFFFF#.........",
+    ".........#FFFFFF#MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM#FFFFFF#.........",
+    ".........#FFFFF##MMMMMMMMMMMM######MMMMMMMMMMMM##FFFFF#.........",
+    ".........#FFFFF##MMMMMM######ffffff######MMMMMM##FFFFF#.........",
+    "..........###FF#MMMMM##ffffffffffffffffff##MMMMM#FF###..........",
+    ".............###MMM##ffffffffffVVffffffffff##MMM###.............",
+    "..............#MM##ffffffVVVVVVVVVVVVVVffffff##MM#..............",
+    "..............#M#fffffVVVVVVVVVVVVVVVVVVVVfffff#M#..............",
+    "..............##fffffVVVVVVVVVVVVVVVVVVVVVVfffff##..............",
+    "............##p#f#fffVVVVEEVVVVVVVVVVEEVVVVfff#f#p##............",
+    "...........#ppp#f#ffVVVVEEEEVVVVVVVVEEEEVVVVff#f#ppp#...........",
+    "...........#ppp#f#ffVVVVEEEEVVVVVVVVEEEEVVVVff#f#ppp#...........",
     "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
-    "...........#pppp#fffVVVVEEEVVVVVVVVVEEEEVVVVfff#pppp#...........",
-    "............#pppp#fffVVVEEEVVVVVVVVVVEEVVVVVfff#pppp#...........",
-    "............#pppp##ffVVVVVVVVVVVVVVVVVVVVVVfff#pppp#............",
-    ".............#ppppp#fffVVVVVffffffffVVVVVVfff#ppppp#............",
-    ".............#####pjjfffffffffffffffffffffffjj#####.............",
+    "...........#pppp#fffVVVVEEEEVVVVVVVVEEEEVVVVfff#pppp#...........",
+    "...........#pppp#fffVVVVVEEVVVVVVVVVVEEVVVVVfff#pppp#...........",
+    "............#pppp#fffVVVVVVVVVVVVVVVVVVVVVVfff#pppp#............",
+    "............#ppppp#fffVVVVVVffffffffVVVVVVfff#ppppp#............",
+    ".............#####jjffffffffffffffffffffffffjj#####.............",
     "..................jjjjjjjjjjjjjjjjjjjjjjjjjjjj..................",
-    "........######...##t#jjjjjjjjjjjjjjjjjjjjjj#tt#...######........",
-    "......##tttttt#jjttttjjjtt#jjjjjjjjjj#tt#jjttttjj#tttttt##......",
-    ".....#tttttttttjjjtttjjttttjjjt##tjjjttttjjttttjjttttttttt#.....",
-    "....#ttttttttttjjjtttjjttttjjt#nn#tjjtttt#jjttjjjjttttttttt#....",
-    "....#tttttttttjjjjttjjttttt###nnnnjt#tttttjjjtjjjjtttttttttt#...",
-    "...#ttttttttttjjjjtjjjjjtttt##nnnnj#ttttjjjjj#tjjjtttttttttt#...",
-    "..#ccttttttttttjj#jjjjcjjttt#.#nn#.#tttjjccj#j##j#tttttttttcc#..",
-    "..#ccctttttt#####.#tjcccjtt##.#nn#.##ttjjccjt#..####ttttttccc#..",
+    "........######...#tt#jjjjjjjjjjjjjjjjjjjjjj#tt#...######........",
+    "......##tttttt#jjttttjj#tt#jjjjjjjjjj#tt#jjttttjj#tttttt##......",
+    ".....#tttttttttjjttttjjttttjjjt##tjjjttttjjttttjjttttttttt#.....",
+    "....#tttttttttjjjjttjj#ttttjjt#nn#tjjtttt#jjttjjjjttttttttt#....",
+    "...#ttttttttttjjjjtjjjttttt#tjnnnnjt#tttttjjjtjjjjtttttttttt#...",
+    "...#ttttttttttjjjt#jjjjjtttt#jnnnnj#ttttjjjjj#tjjjtttttttttt#...",
+    "..#ccttttttttt#j##j#jccjjttt#.#nn#.#tttjjccj#j##j#tttttttttcc#..",
+    "..#ccctttttt####..#tjccjjtt##.#nn#.##ttjjccjt#..####ttttttccc#..",
     ".#ccccttttt#.....#ttjjjjjttt#.#nn#.#tttjjjjjtt#.....#tttttcccc#.",
     ".#ccccttttt#....#ttttjjjtttt#..##..#ttttjjjtttt#....#tttttcccc#.",
-    ".#cccctttttc#...#ttttttttttt#......#ttttttttttt#....#tttttcccc#.",
+    ".#ccccttttt#....#ttttttttttt#......#ttttttttttt#....#tttttcccc#.",
     "..#ccctttttc#..#tttttttttttt#......#tttttttttttt#..#ctttttccc#..",
     "...#cctttttc#..#ttttttttttttt#....#ttttttttttttt#..#ctttttcc#...",
-    "...#cccttttc#..#ttttttttttttt#....#ttttttttttttt#..#ctttcccc#...",
+    "...#cccctttc#..#ttttttttttttt#....#ttttttttttttt#..#ctttcccc#...",
     "...#ccccttt#..#tttttttttttctt#....#ttcttttttttttt#..#tttcccc#...",
     "....#cccttt#..#ttcctttttttcct#....#tcctttttttcctt#..#tttccc#....",
-    "....#cccttt#..#tccccttttttcct#....#tcctttttccccct#..#tttccc#....",
-    ".....##ctt#...#cccccctttttcct#....#tcctttttcccccc#..#tttc##.....",
+    "....#cccttt#..#tccccctttttcct#....#tcctttttccccct#..#tttccc#....",
+    ".....##cttt#..#cccccctttttcct#....#tcctttttcccccc#..#tttc##.....",
     ".......####....#ccccctttttttt#....#ttttttttccccc#....####.......",
-    "...............#cccccctttttt#......#tttttttccccc#...............",
+    "...............#cccccttttttt#......#tttttttccccc#...............",
     "...............#ccccctttttt#........#ttttttccccc#...............",
     "................#ccccccttt#..........#tttcccccc#................",
-    "................##tccccctt#..........#ttccccct#.................",
+    ".................#tccccctt#..........#ttccccct#.................",
     "..................#ccccct#............#tccccc#..................",
     "...................#ccc##..............##ccc#...................",
     "....................###..................###...................."
    ],
    "tile": {
-    "changed_px": 60,
-    "damage_dE": 1810.6,
+    "changed_px": 68,
+    "damage_dE": 2002.0,
     "offset": [
-     5,
+     4,
      2
     ],
     "merged": {
@@ -530,13 +735,13 @@
      "gate": true
     },
     "holes": {
-     "pass": false,
-     "detail": "1 enclosed transparent pixels",
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
      "gate": true
     },
     "outline": {
      "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
+     "detail": "99% of silhouette edge is dark (min 75%)",
      "gate": true
     },
     "colors": {
@@ -548,7 +753,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (5,2) (max 3)",
+     "detail": "max 3 colours/tile at offset (4,2) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -557,13 +762,13 @@
      "gate": true
     },
     "holes": {
-     "pass": false,
-     "detail": "1 enclosed transparent pixels",
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
      "gate": true
     },
     "outline": {
      "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
+     "detail": "99% of silhouette edge is dark (min 75%)",
      "gate": true
     },
     "colors": {
@@ -586,47 +791,68 @@
    "size": 32,
    "mode": "outset",
    "label_size": 30,
-   "ink_px": 153,
-   "depth_px": 5,
-   "black_fill_px": 75,
-   "clumps": 33,
+   "ink_px": 154,
+   "depth_px": 4,
+   "black_fill_px": 82,
+   "clumps": 34,
+   "separators": [
+    [
+     "j",
+     "V",
+     "f",
+     10
+    ]
+   ],
+   "symmetry": {
+    "keep": "right",
+    "scores": {
+     "left": [
+      12,
+      0.723
+     ],
+     "right": [
+      12,
+      0.727
+     ]
+    }
+   },
    "grid": [
     "...............##...............",
     "..............#MM#..............",
     ".............#MMMM#.............",
     "............#MMMMMM#............",
-    "...........#F#MMMMMM##..........",
-    ".........##F#MMMMMM#FF#.........",
-    "........#FFF#MMMMMMM#FF#........",
+    "..........##MMMMMMMM##..........",
+    ".........#FF#MMMMMM#FF#.........",
+    "........#FF#MMMMMMMM#FF#........",
     ".......#FFF#MMMMMMMM#FFF#.......",
     "......#FFF#MMMMMMMMMM#FFF#......",
-    ".....#FFFF#MMMMMMMMMMM#FFF#.....",
+    ".....#FFF#MMMMMMMMMMMM#FFF#.....",
     "....#FFFF#MMMM####MMMM#FFFF#....",
-    ".....#FFF#M###ffff####M#FFF#....",
-    "......#FF##fffffffffff##F##.....",
-    ".......##ffVVVffffVVVff##.......",
-    "......#p#ffVEEVVVVEEVVf#p#......",
+    "....#FFF#M####ffff####M#FFF#....",
+    ".....##F##ffffVVVVffff##F##.....",
+    ".......##ffVVVVVVVVVVff##.......",
+    "......#p#fVVEEVVVVEEVVf#p#......",
     ".....#pp#fVVEEVVVVEEVVf#pp#.....",
-    ".....#ppp#VVEEVVVVEEVVf#pp#.....",
+    ".....#pp#fVVEEVVVVEEVVf#pp#.....",
     "......#pp#fVVVVVVVVVVf#pp#......",
-    "....##t#ppjffffffffffjjp#t##....",
-    "...#ttttjjtj#jjjjjj#jttjtttt#...",
-    "..#tttttjjjjttjnnjttjjtjttttt#..",
-    ".#ctttttj#jjjt#nn#ttjjtjtttttc#.",
+    "....##t#pjjffffffffffjjp#t##....",
+    "...#ttttjttj#jjjjjj#jttjtttt#...",
+    "..#tttttjtjjttjnnjttjjtjttttt#..",
+    ".#ctttttjtjjtt#nn#ttjjtjtttttc#.",
     ".#ccttt##tjcjt#nn#tjcjt##tttcc#.",
-    ".#cctttt#ttjtt####ttjttt#cttcc#.",
+    ".#ccttc#tttjtt####ttjttt#cttcc#.",
     ".#ccttc#tttttttttttttttt#cttcc#.",
     "..#cctt#tttttct##tcttttt#ttcc#..",
     "..#ccttccccttct##tcttccccttcc#..",
     "...#tt##ccctttt##ttttccc##tt#...",
     "....##.#cccttt#..#tttccc#.##....",
-    "........#tcct#...##tcct#........",
+    "........#tcct##..##tcct#........",
     ".........#cc##....##cc#.........",
-    "..........###.......##.........."
+    "..........##........##.........."
    ],
    "tile": {
-    "changed_px": 15,
-    "damage_dE": 1062.4,
+    "changed_px": 12,
+    "damage_dE": 937.8,
     "offset": [
      0,
      5
@@ -700,47 +926,68 @@
    "size": 32,
    "mode": "outset",
    "label_size": 30,
-   "ink_px": 153,
-   "depth_px": 5,
-   "black_fill_px": 75,
-   "clumps": 33,
+   "ink_px": 154,
+   "depth_px": 4,
+   "black_fill_px": 82,
+   "clumps": 34,
+   "separators": [
+    [
+     "j",
+     "V",
+     "f",
+     10
+    ]
+   ],
+   "symmetry": {
+    "keep": "right",
+    "scores": {
+     "left": [
+      12,
+      0.723
+     ],
+     "right": [
+      12,
+      0.727
+     ]
+    }
+   },
    "grid": [
     "...............##...............",
     "..............#MM#..............",
     ".............#MMMM#.............",
     "............#MMMMMM#............",
-    "...........#F#MMMMMM##..........",
-    ".........##F#MMMMMM#FF#.........",
-    "........#FFF#MMMMMMM#FF#........",
+    "..........##MMMMMMMM##..........",
+    ".........#FF#MMMMMM#FF#.........",
+    "........#FF#MMMMMMMM#FF#........",
     ".......#FFF#MMMMMMMM#FFF#.......",
     "......#FFF#MMMMMMMMMM#FFF#......",
-    ".....#FFFF#MMMMMMMMMMM#FFF#.....",
+    ".....#FFF#MMMMMMMMMMMM#FFF#.....",
     "....#FFFF#MMMM####MMMM#FFFF#....",
-    ".....#FFF#M###ffff####M#FFF#....",
-    "......#FF##fffffffffff##F##.....",
-    ".......##ffVVVffffVVVff##.......",
-    "......#p#ffVEEVVVVEEVVf#p#......",
+    "....#FFF#M####ffff####M#FFF#....",
+    ".....##F##ffffVVVVffff##F##.....",
+    ".......##ffVVVVVVVVVVff##.......",
+    "......#p#fVVEEVVVVEEVVf#p#......",
     ".....#pp#fVVEEVVVVEEVVf#pp#.....",
-    ".....#ppp#VVEEVVVVEEVVf#pp#.....",
+    ".....#pp#fVVEEVVVVEEVVf#pp#.....",
     "......#pp#fVVVVVVVVVVf#pp#......",
-    "....##t#ppjffffffffffjjp#t##....",
-    "...#ttttjjtj#jjjjjj#jttjtttt#...",
-    "..#tttttjjjjttjnnjttjjtjttttt#..",
-    ".#ctttttj#jjjt#nn#ttjjtjtttttc#.",
+    "....##t#pjjffffffffffjjp#t##....",
+    "...#ttttjttj#jjjjjj#jttjtttt#...",
+    "..#tttttjtjjttjnnjttjjtjttttt#..",
+    ".#ctttttjtjjtt#nn#ttjjtjtttttc#.",
     ".#ccttt##tjcjt#nn#tjcjt##tttcc#.",
-    ".#cctttt#ttjtt####ttjttt#cttcc#.",
+    ".#ccttc#tttjtt####ttjttt#cttcc#.",
     ".#ccttc#tttttttttttttttt#cttcc#.",
     "..#cctt#tttttct##tcttttt#ttcc#..",
     "..#ccttccccttct##tcttccccttcc#..",
     "...#tt##ccctttt##ttttccc##tt#...",
     "....##.#cccttt#..#tttccc#.##....",
-    "........#tcct#...##tcct#........",
+    "........#tcct##..##tcct#........",
     ".........#cc##....##cc#.........",
-    "..........###.......##.........."
+    "..........##........##.........."
    ],
    "tile": {
-    "changed_px": 15,
-    "damage_dE": 1062.4,
+    "changed_px": 12,
+    "damage_dE": 937.8,
     "offset": [
      0,
      5
@@ -810,41 +1057,203 @@
     "F87858"
    ]
   },
+  "32_asym": {
+   "size": 32,
+   "mode": "outset",
+   "label_size": 30,
+   "ink_px": 153,
+   "depth_px": 5,
+   "black_fill_px": 83,
+   "clumps": 33,
+   "separators": [
+    [
+     "j",
+     "V",
+     "f",
+     10
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     1
+    ]
+   ],
+   "symmetry": null,
+   "grid": [
+    "...............##...............",
+    "..............#MM#..............",
+    ".............#MMMM#.............",
+    "............#MMMMMM#............",
+    "...........#F#MMMMMM##..........",
+    ".........##F#MMMMMM#FF#.........",
+    "........#FFF#MMMMMMM#FF#........",
+    ".......#FFF#MMMMMMMM#FFF#.......",
+    "......#FFF#MMMMMMMMMM#FFF#......",
+    ".....#FFFF#MMMMMMMMMMM#FFF#.....",
+    "....#FFFF#MMMM####MMMM#FFFF#....",
+    ".....#FFF#M###ffff####M#FFF#....",
+    "......#FF##fffVVVVffff##F##.....",
+    ".......##ffVVVVVVVVVVff##.......",
+    "......#p#ffVEEVVVVEEVVf#p#......",
+    ".....#pp#fVVEEVVVVEEVVf#pp#.....",
+    ".....#ppp#VVEEVVVVEEVVf#pp#.....",
+    "......#pp#fVVVVVVVVVVf#pp#......",
+    "....##t#ppjffffffffffjjp#t##....",
+    "...#ttttjjtj#jjjjjj#jttjtttt#...",
+    "..#tttttjjjjttjnnjttjjtjttttt#..",
+    ".#ctttttj#jjjt#nn#ttjjtjtttttc#.",
+    ".#ccttt##tjcjt#nn#tjcjt##tttcc#.",
+    ".#cctttt#ttjtt####ttjttt#cttcc#.",
+    ".#ccttc#tttttttttttttttt#cttcc#.",
+    "..#cctt#tttttct##tcttttt#ttcc#..",
+    "..#ccttccccttct##tcttccccttcc#..",
+    "...#tt##ccctttt##ttttccc##tt#...",
+    "....##.#cccttt#..#tttccc#.##....",
+    "........#tcct#...##tcct#........",
+    ".........#cc##....##cc#.........",
+    "..........###.......##.........."
+   ],
+   "tile": {
+    "changed_px": 33,
+    "damage_dE": 1014.8,
+    "offset": [
+     2,
+     1
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 5 colours/tile at offset (4,4) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "7 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (2,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "A4E4FC",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
   "32_inset": {
    "size": 32,
    "mode": "inset",
    "label_size": 32,
-   "ink_px": 167,
-   "depth_px": 3,
+   "ink_px": 166,
+   "depth_px": 4,
    "black_fill_px": 94,
-   "clumps": 26,
+   "clumps": 28,
+   "separators": [
+    [
+     "t",
+     "f",
+     "j",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     6
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      13,
+      0.884
+     ],
+     "right": [
+      12,
+      0.881
+     ]
+    }
+   },
    "grid": [
-    "................#...............",
-    "..............##M#..............",
+    "................................",
+    "..............####..............",
     ".............#MMMM#.............",
     "............#MMMMMM#............",
-    "...........##MMMMMMM##..........",
-    ".........##MMMMMMMMM#F#.........",
-    "........#FF#MMMMMMMMM#F#........",
-    ".......#FF#MMMMMMMMMM#FF##......",
-    "......#FFF#MMMMMMMMMMM#FF#......",
+    "...........##MMMMMM##...........",
+    ".........##MMMMMMMMMM##.........",
+    "........#FF#MMMMMMMM#FF#........",
+    ".......#FF#MMMMMMMMMM#FF#.......",
+    "......#FFF#MMMMMMMMMM#FFF#......",
     ".....#FFF#MMMMMMMMMMMM#FFF#.....",
-    ".....#FFF#MMM#######MMM#FFF#....",
-    ".....####M###fffffff##M####.....",
-    ".......#M#fffVVVVVVfff###.......",
-    ".......##ffVVVVVVVVVVfff#.......",
+    ".....#FFF#MMM######MMM#FFF#.....",
+    ".....####M###ffffff###M####.....",
+    ".......#M#fffVVVVVVfff#M#.......",
+    ".......##ffVVVVVVVVVVff##.......",
     "......#p#fVVEEVVVVEEVVf#p#......",
-    "......#p#fVVEEVVVVEEVVf#pp#.....",
+    "......#p#fVVEEVVVVEEVVf#p#......",
     "......#p#fVVEEVVVVEEVVf#p#......",
     "......#pp#fVVVVVVVVVVf#pp#......",
     ".......#pjjffffffffffjjp#.......",
-    "....###.jtjjjjjjjjjjjjtj.####...",
-    "..##tttjjtjjttj##jjttjtjjtttt#..",
-    "..#ttttjjtjjtt#nn#ttjjjjjtttt#..",
-    ".#cttt##ttjcj##nn#ttcjtt##tttc#.",
+    "....###.jtjjjjjjjjjjjjtj.###....",
+    "..##tttjjtjjttj##jttjjtjjttt##..",
+    "..#ttttjjtjjtt#nn#ttjjtjjtttt#..",
+    ".#cttt##ttjcj##nn##jcjtt##tttc#.",
     ".#ctt#..#tjjt#.##.#tjjt#..#ttc#.",
     ".#ctt#..#tttt#....#tttt#..#ttc#.",
-    "..#tt#.#tttttt#..#tttttt#.#tc#..",
+    "..#tt#.#tttttt#..#tttttt#.#tt#..",
     "..#ct#.#tttttc#..#cttttt#.#tc#..",
     "..##t#.#cctttc#..#ctttcc#.#t##..",
     "....#..#cccttt#..#tttccc#..#....",
@@ -853,8 +1262,8 @@
     "..........##........##.........."
    ],
    "tile": {
-    "changed_px": 9,
-    "damage_dE": 762.8,
+    "changed_px": 12,
+    "damage_dE": 904.8,
     "offset": [
      4,
      4
@@ -929,10 +1338,327 @@
    "size": 24,
    "mode": "outset",
    "label_size": 22,
-   "ink_px": 99,
+   "ink_px": 98,
    "depth_px": 2,
-   "black_fill_px": 35,
+   "black_fill_px": 42,
+   "clumps": 26,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "f",
+     "E",
+     "V",
+     2
+    ],
+    [
+     "t",
+     "f",
+     "j",
+     0
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      9,
+      0.716
+     ],
+     "right": [
+      8,
+      0.726
+     ]
+    }
+   },
+   "grid": [
+    "...........##...........",
+    "..........#MM#..........",
+    ".........#MMMM#.........",
+    "........#F#MM#F#........",
+    "......##F#MMMM#F##......",
+    ".....#FFF#MMMM#FFF#.....",
+    "....#FFF#MMMMMM#FFF#....",
+    "...#FFF#MMMMMMMM#FFF#...",
+    "...#FFF#MMffffMM#FFF#...",
+    "....#FF#ffVVVVff#FF#....",
+    ".....##fVVVVVVVVf##.....",
+    "....#p#fVEEVVEEVf#p#....",
+    "....#pp#VEVVVVEV#pp#....",
+    "...##ppjfVffffVfjpp##...",
+    "..#tttjtjtjjjjtjtjttt#..",
+    ".#ttttjtjt#nn#tjtjtttt#.",
+    ".#ctttttcjtnntjctttttc#.",
+    "#cctt##tjtt##ttjt##ttcc#",
+    ".#ctttttttt##ttttttttc#.",
+    ".#cct#tcttccccttct#tcc#.",
+    "..####ccctt##ttccc####..",
+    ".....#tcct#..#tcct#.....",
+    "......##ct#..#tc##......",
+    "........##....##........"
+   ],
+   "tile": {
+    "changed_px": 18,
+    "damage_dE": 624.8,
+    "offset": [
+     0,
+     7
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 4 colours/tile at offset (0,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,7) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "A4E4FC",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "24_alllines": {
+   "size": 24,
+   "mode": "outset",
+   "label_size": 22,
+   "ink_px": 110,
+   "depth_px": 0,
+   "black_fill_px": 42,
+   "clumps": 30,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "f",
+     "E",
+     "V",
+     2
+    ],
+    [
+     "t",
+     "f",
+     "j",
+     0
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      9,
+      0.716
+     ],
+     "right": [
+      8,
+      0.726
+     ]
+    }
+   },
+   "grid": [
+    "...........##...........",
+    "..........#MM#..........",
+    ".........#MMMM#.........",
+    "........#F#MM#F#........",
+    "......##F#MMMM#F##......",
+    ".....#FFF#MMMM#FFF#.....",
+    "....#FFF#MMMMMM#FFF#....",
+    "...#FFF#MM####MM#FFF#...",
+    "...#FFF###ffff###FFF#...",
+    "....#FF#ffVVVVff#FF#....",
+    ".....##fVVVVVVVVf##.....",
+    "....#p#fVEEVVEEVf#p#....",
+    "....#pp#VEVVVVEV#pp#....",
+    "...#t#pjfVffffVfjp#t#...",
+    "..#tttjtjtjjjjtjtjttt#..",
+    ".#ttttjtjt#nn#tjtjtttt#.",
+    ".#ctttttcj#nn#jctttttc#.",
+    "#cctt##tjtt##ttjt##ttcc#",
+    ".#ctttttttt##ttttttttc#.",
+    ".#cct#tcttccccttct#tcc#.",
+    "..####ccctt##ttccc####..",
+    ".....#tcct#..#tcct#.....",
+    "......##ct#..#tc##......",
+    "........##....##........"
+   ],
+   "tile": {
+    "changed_px": 14,
+    "damage_dE": 480.1,
+    "offset": [
+     0,
+     7
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 4 colours/tile at offset (0,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,7) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "A4E4FC",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "24_asym": {
+   "size": 24,
+   "mode": "outset",
+   "label_size": 22,
+   "ink_px": 95,
+   "depth_px": 2,
+   "black_fill_px": 43,
    "clumps": 20,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "f",
+     "E",
+     "V",
+     2
+    ],
+    [
+     "t",
+     "f",
+     "j",
+     0
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     2
+    ]
+   ],
+   "symmetry": null,
    "grid": [
     "...........##...........",
     "..........#MM#..........",
@@ -943,10 +1669,10 @@
     "....#FFF#MMMMMM#FFF#....",
     "...#FFF#MMMMMMMM#FFF#...",
     "...#FFF#MMffffMM#FFF#...",
-    "....#FF#ffffffffM#F#....",
+    "....#FF#ffVVVVffM#F#....",
     ".....##fVVVVVVVVff#.....",
-    "....#p#f#EEVVEE#f#p#....",
-    "....#pp##EVVVVE##pp#....",
+    "....#p#fVEEVVEEVf#p#....",
+    "....#pp#VEVVVVEV#pp#....",
     "...##ppjfVffffVfjp#t#...",
     "..#tttjtjtjjjjtjtjttt#..",
     ".#ttttjtjt#nnjtjtjtttt#.",
@@ -1031,120 +1757,47 @@
     "F87858"
    ]
   },
-  "24_alllines": {
-   "size": 24,
-   "mode": "outset",
-   "label_size": 22,
-   "ink_px": 112,
-   "depth_px": 1,
-   "black_fill_px": 35,
-   "clumps": 30,
-   "grid": [
-    "...........##...........",
-    "..........#MM#..........",
-    ".........#MMMM#.........",
-    "........#F#MMMM#........",
-    "......##F#MMMM#F##......",
-    ".....#FFF#MMMMM#FF#.....",
-    "....#FFF#MMMMMM#FFF#....",
-    "...#FFF#MM####MM#FFF#...",
-    "...#FFF###ffff###FFF#...",
-    "....#FF#ffffffff##F#....",
-    ".....##fVVVVVVVVff#.....",
-    "....#p#f#EEVVEE#f#p#....",
-    "....#pp##EVVVVE##pp#....",
-    "...#t#pjfVffffVfjp#t#...",
-    "..#tttjtjtjjjjtjtjttt#..",
-    ".#ttttjtjt#nnjtjtjtttt#.",
-    ".#ctttttcj#nn#jct#tttc#.",
-    "#cctt##tjtt##ttjtt#ttcc#",
-    ".#ctttttttt##ttttt#ttc#.",
-    ".#cct#tcttccccttcc#tcc#.",
-    "..####ccctt##tttcc####..",
-    ".....#tcct#..#tccc#.....",
-    "......##ct#..#tc##......",
-    "........##....##........"
-   ],
-   "tile": {
-    "changed_px": 14,
-    "damage_dE": 480.1,
-    "offset": [
-     0,
-     7
-    ],
-    "merged": {
-     "FCE0A8": "F0D0B0"
-    }
-   },
-   "checks_free": {
-    "tile_colors": {
-     "pass": false,
-     "detail": "max 4 colours/tile at offset (0,1) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": false,
-     "detail": "6 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "checks": {
-    "tile_colors": {
-     "pass": true,
-     "detail": "max 3 colours/tile at offset (0,7) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": true,
-     "detail": "4 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "colours": [
-    "000000",
-    "A4E4FC",
-    "F0D0B0",
-    "F87858"
-   ]
-  },
   "24_inset": {
    "size": 24,
    "mode": "inset",
    "label_size": 24,
-   "ink_px": 101,
+   "ink_px": 98,
    "depth_px": 0,
-   "black_fill_px": 51,
+   "black_fill_px": 54,
    "clumps": 18,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     2
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      12,
+      0.805
+     ],
+     "right": [
+      11,
+      0.724
+     ]
+    }
+   },
    "grid": [
     "...........##...........",
     "..........#MM#..........",
@@ -1153,17 +1806,17 @@
     "......##MMMMMMMM##......",
     ".....#FF#MMMMMM#FF#.....",
     "....#FF#MMMMMMMM#FF#....",
-    "....#FF#MMMMMMMMM#FF#...",
+    "....#FF#MMMMMMMM#FF#....",
     "....#F#MMffffffMM#F#....",
     ".....#MffVVVVVVffM#.....",
     ".....#ffVEVVVVEVff#.....",
-    "....#p#V#EVVVEE#V#p#....",
-    "....#p#f#EVVVVE#f#p#....",
+    "....#p#VVEVVVVEVV#p#....",
+    "....#p#fVEVVVVEVf#p#....",
     ".....#pjfVffffVfjp#.....",
     "...##.jtjfjjjjfjtj.##...",
-    "..#ttjjtjtjtnjtjjjjtt#..",
-    ".#ttt#jjjttnnttjjjjttt#.",
-    ".#tt#.#tjtt##ttjt#.#ttc#",
+    "..#ttjjtjtjttjtjtjjtt#..",
+    ".#ttt#jjjttnnttjjj#ttt#.",
+    ".#tt#.#tjtt##ttjt#.#tt#.",
     ".#tt#.#ttt#..#ttt#.#tt#.",
     ".#ct##tttt#..#tttt##tc#.",
     "..##.#cctt#..#ttcc#.##..",
@@ -1172,11 +1825,11 @@
     ".......##......##......."
    ],
    "tile": {
-    "changed_px": 12,
-    "damage_dE": 434.2,
+    "changed_px": 8,
+    "damage_dE": 398.7,
     "offset": [
-     5,
-     7
+     0,
+     3
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -1185,7 +1838,7 @@
    "checks_free": {
     "tile_colors": {
      "pass": false,
-     "detail": "max 4 colours/tile at offset (0,1) (max 3)",
+     "detail": "max 4 colours/tile at offset (0,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1212,7 +1865,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (5,7) (max 3)",
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1223,6 +1876,262 @@
     "holes": {
      "pass": false,
      "detail": "6 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "20": {
+   "size": 20,
+   "mode": "outset",
+   "label_size": 18,
+   "ink_px": 76,
+   "depth_px": 0,
+   "black_fill_px": 32,
+   "clumps": 20,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      7,
+      0.71
+     ],
+     "right": [
+      7,
+      0.678
+     ]
+    }
+   },
+   "grid": [
+    ".........##.........",
+    "........#MM#........",
+    ".......#MMMM#.......",
+    "......#F#MM#F#......",
+    "....##F#MMMM#F##....",
+    "...#FFF#MMMM#FFF#...",
+    "...#FF#MMMMMM#FF#...",
+    "...#FF#ffffff#FF#...",
+    "....##fVVVVVVf##....",
+    "...#p#fVEVVEVf#p#...",
+    "...#pp#VEVVEV#pp#...",
+    "..##ppjfjffjfjpp##..",
+    ".#tttjtjtjjtjtjttt#.",
+    ".#tttjjjtnntjjjttt#.",
+    "#cctcttjt##tjttctcc#",
+    ".#ct#tttt##tttt#tc#.",
+    ".#ctcccttttttccctc#.",
+    "..###cctt##ttcc###..",
+    ".....#cc#..#cc#.....",
+    "......##....##......"
+   ],
+   "tile": {
+    "changed_px": 12,
+    "damage_dE": 490.5,
+    "offset": [
+     2,
+     0
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 4 colours/tile at offset (2,3) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "20_alllines": {
+   "size": 20,
+   "mode": "outset",
+   "label_size": 18,
+   "ink_px": 84,
+   "depth_px": 0,
+   "black_fill_px": 32,
+   "clumps": 26,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      7,
+      0.71
+     ],
+     "right": [
+      7,
+      0.678
+     ]
+    }
+   },
+   "grid": [
+    ".........##.........",
+    "........#MM#........",
+    ".......#MMMM#.......",
+    "......#F#MM#F#......",
+    "....##F#MMMM#F##....",
+    "...#FFF#MMMM#FFF#...",
+    "...#FF########FF#...",
+    "...#FF#ffffff#FF#...",
+    "....##fVVVVVVf##....",
+    "...#p#fVEVVEVf#p#...",
+    "...#pp#VEVVEV#pp#...",
+    "..#t#pjfjffjfjp#t#..",
+    ".#tttjtjtjjtjtjttt#.",
+    ".#tttjjj#nn#jjjttt#.",
+    "#cctcttjt##tjttctcc#",
+    ".#ct#tttt##tttt#tc#.",
+    ".#ctcccttttttccctc#.",
+    "..###cctt##ttcc###..",
+    ".....#cc#..#cc#.....",
+    "......##....##......"
+   ],
+   "tile": {
+    "changed_px": 12,
+    "damage_dE": 381.3,
+    "offset": [
+     2,
+     2
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 4 colours/tile at offset (2,3) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (2,2) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
      "gate": true
     },
     "outline": {
@@ -1243,14 +2152,29 @@
     "F87858"
    ]
   },
-  "20": {
+  "20_asym": {
    "size": 20,
    "mode": "outset",
    "label_size": 18,
-   "ink_px": 84,
+   "ink_px": 76,
    "depth_px": 0,
-   "black_fill_px": 25,
-   "clumps": 17,
+   "black_fill_px": 34,
+   "clumps": 15,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     1
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ]
+   ],
+   "symmetry": null,
    "grid": [
     ".........##.........",
     "........#MM#........",
@@ -1261,8 +2185,8 @@
     "...#FF#MMMMMM#FF#...",
     "...#FF#ffffff#FF#...",
     "....##fVVVVVVf##....",
-    "...#p#f#E##E#f#p#...",
-    "...#pp##E##E##pp#...",
+    "...#p#fVEVVEVV#p#...",
+    "...#pp#VEVVEV#pp#...",
     "..##ppjfjffjfjp#t#..",
     ".#tttjtjtjjjjtjttt#.",
     ".#tttjjjtnntjjjttc#.",
@@ -1345,129 +2269,60 @@
     "F87858"
    ]
   },
-  "20_alllines": {
-   "size": 20,
-   "mode": "outset",
-   "label_size": 18,
-   "ink_px": 92,
-   "depth_px": 0,
-   "black_fill_px": 25,
-   "clumps": 24,
-   "grid": [
-    ".........##.........",
-    "........#MM#........",
-    ".......#MMMM#.......",
-    "......#F#MM#F#......",
-    "....##F#MMMM#F##....",
-    "...#FFF#MMMMM#FF#...",
-    "...#FF########FF#...",
-    "...#FF#ffffff#FF#...",
-    "....##fVVVVVVf##....",
-    "...#p#f#E##E#f#p#...",
-    "...#pp##E##E##pp#...",
-    "..#t#pjfjffjfjp#t#..",
-    ".#tttjtjtjjjjtjttt#.",
-    ".#tttjjj#nn#jjjttc#.",
-    "#cctcttjt##tjtt#tcc#",
-    ".#ct#tttt#ttttt#tc#.",
-    ".#ctcccttttttccctc#.",
-    "..###cctt##ttcc###..",
-    ".....#cc#..#cc#.....",
-    "......##....##......"
-   ],
-   "tile": {
-    "changed_px": 11,
-    "damage_dE": 331.9,
-    "offset": [
-     1,
-     2
-    ],
-    "merged": {
-     "FCE0A8": "F0D0B0"
-    }
-   },
-   "checks_free": {
-    "tile_colors": {
-     "pass": false,
-     "detail": "max 4 colours/tile at offset (2,3) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": false,
-     "detail": "6 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "checks": {
-    "tile_colors": {
-     "pass": true,
-     "detail": "max 3 colours/tile at offset (1,2) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": true,
-     "detail": "4 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "colours": [
-    "000000",
-    "A4E4FC",
-    "F0D0B0",
-    "F87858"
-   ]
-  },
   "20_inset": {
    "size": 20,
    "mode": "inset",
    "label_size": 20,
-   "ink_px": 83,
+   "ink_px": 82,
    "depth_px": 0,
    "black_fill_px": 40,
-   "clumps": 16,
+   "clumps": 12,
+   "separators": [
+    [
+     "t",
+     "f",
+     "j",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     4
+    ]
+   ],
+   "symmetry": {
+    "keep": "right",
+    "scores": {
+     "left": [
+      8,
+      0.669
+     ],
+     "right": [
+      8,
+      0.674
+     ]
+    }
+   },
    "grid": [
     ".........##.........",
     "........#MM#........",
-    ".......##MMM#.......",
-    "......#MMMMM##......",
-    "....##F#MMMMMM##....",
+    ".......#MMMM#.......",
+    "......##MMMM##......",
+    "....##MMMMMMMM##....",
     "...#FF#MMMMMM#FF#...",
-    "...#FF#MMMMMMM#F#...",
-    "....##MfffffffM#....",
+    "...#F#MMMMMMMM#F#...",
+    "....#MffffffffM#....",
     "....#ffVVVVVVff#....",
-    "....#fVEEVVEEV#p#...",
-    "....##VVVVVEVV##....",
-    "....#p#ffffjf#p#....",
+    "...#p#VEEVVEEV#p#...",
+    "....##VVEVVEVV##....",
+    "....#p#fjffjf#p#....",
     "..##jjjjjjjjjjjj##..",
     ".#ttjjjttnnttjjjtt#.",
     "#ct#.#jjt##tjj#.#tc#",
@@ -1479,10 +2334,10 @@
    ],
    "tile": {
     "changed_px": 6,
-    "damage_dE": 217.1,
+    "damage_dE": 352.8,
     "offset": [
-     5,
-     1
+     6,
+     0
     ],
     "merged": {
      "FCE0A8": "F0D0B0"
@@ -1518,7 +2373,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (5,1) (max 3)",
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1538,13 +2393,12 @@
     },
     "colors": {
      "pass": true,
-     "detail": "4 opaque colours (max 4)",
+     "detail": "3 opaque colours (max 4)",
      "gate": false
     }
    },
    "colours": [
     "000000",
-    "A4E4FC",
     "F0D0B0",
     "F87858"
    ]
@@ -1553,10 +2407,49 @@
    "size": 16,
    "mode": "outset",
    "label_size": 14,
-   "ink_px": 53,
+   "ink_px": 54,
    "depth_px": 0,
-   "black_fill_px": 15,
-   "clumps": 14,
+   "black_fill_px": 20,
+   "clumps": 12,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "F",
+     "f",
+     "M",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      3,
+      0.695
+     ],
+     "right": [
+      2,
+      0.688
+     ]
+    }
+   },
    "grid": [
     ".......##.......",
     "......#MM#......",
@@ -1565,9 +2458,275 @@
     "...#F#MMMM#F#...",
     "..#FF#ffff#FF#..",
     "...##fVVVVf##...",
-    "....##EVVE#f#...",
-    "...#p#VVVVff#...",
-    "..#tjfffffftt#..",
+    "....#VEVVEV#....",
+    "...#p#VVVV#p#...",
+    "..#tjjffffjjt#..",
+    ".#ttjjtnntjjtt#.",
+    "#ctt#tt##tt#ttc#",
+    ".#cttttttttttc#.",
+    "..##cct##tcc##..",
+    "....#ct##tc#....",
+    ".....##..##....."
+   ],
+   "tile": {
+    "changed_px": 4,
+    "damage_dE": 306.9,
+    "offset": [
+     0,
+     0
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 5 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "16_alllines": {
+   "size": 16,
+   "mode": "outset",
+   "label_size": 14,
+   "ink_px": 62,
+   "depth_px": 0,
+   "black_fill_px": 20,
+   "clumps": 18,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "F",
+     "f",
+     "M",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      3,
+      0.695
+     ],
+     "right": [
+      2,
+      0.688
+     ]
+    }
+   },
+   "grid": [
+    ".......##.......",
+    "......#MM#......",
+    ".....#MMMM#.....",
+    "....#F#MM#F#....",
+    "...#F######F#...",
+    "..#FF#ffff#FF#..",
+    "...##fVVVVf##...",
+    "....#VEVVEV#....",
+    "...#p#VVVV#p#...",
+    "..#tjjf##fjjt#..",
+    ".#ttjj#nn#jjtt#.",
+    "#ctt#tt##tt#ttc#",
+    ".#cttttttttttc#.",
+    "..##cct##tcc##..",
+    "....#ct##tc#....",
+    ".....##..##....."
+   ],
+   "tile": {
+    "changed_px": 4,
+    "damage_dE": 306.9,
+    "offset": [
+     0,
+     0
+    ],
+    "merged": {
+     "FCE0A8": "F0D0B0"
+    }
+   },
+   "checks_free": {
+    "tile_colors": {
+     "pass": false,
+     "detail": "max 5 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": false,
+     "detail": "6 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "3 opaque colours (max 4)",
+     "gate": false
+    }
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F87858"
+   ]
+  },
+  "16_asym": {
+   "size": 16,
+   "mode": "outset",
+   "label_size": 14,
+   "ink_px": 51,
+   "depth_px": 0,
+   "black_fill_px": 19,
+   "clumps": 11,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "F",
+     "f",
+     "M",
+     1
+    ],
+    [
+     "p",
+     "V",
+     "f",
+     1
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     5
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     1
+    ]
+   ],
+   "symmetry": null,
+   "grid": [
+    ".......##.......",
+    "......#MM#......",
+    ".....#MMMM#.....",
+    "....#F#MM#F#....",
+    "...#F#MMMM#F#...",
+    "..#FF#ffff#FF#..",
+    "...##fVVVVf##...",
+    "....#VEVVEVf#...",
+    "...#p#VVVVVf#...",
+    "..#tjjffffftt#..",
     ".#ttjjtnntjjtt#.",
     "#ctt#tt##tttttc#",
     ".#cttttttttttc#.",
@@ -1579,7 +2738,7 @@
     "changed_px": 2,
     "damage_dE": 261.0,
     "offset": [
-     3,
+     2,
      0
     ],
     "merged": {
@@ -1616,105 +2775,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (3,0) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": true,
-     "detail": "4 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "colours": [
-    "000000",
-    "BCBCBC",
-    "F0D0B0",
-    "F87858"
-   ]
-  },
-  "16_alllines": {
-   "size": 16,
-   "mode": "outset",
-   "label_size": 14,
-   "ink_px": 62,
-   "depth_px": 0,
-   "black_fill_px": 15,
-   "clumps": 21,
-   "grid": [
-    ".......##.......",
-    "......#MM#......",
-    ".....#MMMM#.....",
-    "....#F#MM#F#....",
-    "...#F######F#...",
-    "..#FF#ffff#FF#..",
-    "...##fVVVVf##...",
-    "....##EVVE#f#...",
-    "...#p#VVVVff#...",
-    "..#tjff##ff#t#..",
-    ".#ttjj#nn#jjtt#.",
-    "#ctt#tt##tttttc#",
-    ".#cttttttttttc#.",
-    "..##cct#ttcc##..",
-    "....#ct##tc#....",
-    ".....##..##....."
-   ],
-   "tile": {
-    "changed_px": 2,
-    "damage_dE": 261.0,
-    "offset": [
-     3,
-     0
-    ],
-    "merged": {
-     "FCE0A8": "F0D0B0"
-    }
-   },
-   "checks_free": {
-    "tile_colors": {
-     "pass": false,
-     "detail": "max 4 colours/tile at offset (1,0) (max 3)",
-     "gate": true
-    },
-    "orphans": {
-     "pass": true,
-     "detail": "0 orphan pixels",
-     "gate": true
-    },
-    "holes": {
-     "pass": true,
-     "detail": "0 enclosed transparent pixels",
-     "gate": true
-    },
-    "outline": {
-     "pass": true,
-     "detail": "100% of silhouette edge is dark (min 75%)",
-     "gate": true
-    },
-    "colors": {
-     "pass": false,
-     "detail": "6 opaque colours (max 4)",
-     "gate": false
-    }
-   },
-   "checks": {
-    "tile_colors": {
-     "pass": true,
-     "detail": "max 3 colours/tile at offset (3,0) (max 3)",
+     "detail": "max 3 colours/tile at offset (2,0) (max 3)",
      "gate": true
     },
     "orphans": {
@@ -1749,20 +2810,59 @@
    "size": 16,
    "mode": "inset",
    "label_size": 16,
-   "ink_px": 67,
+   "ink_px": 60,
    "depth_px": 0,
-   "black_fill_px": 16,
-   "clumps": 23,
+   "black_fill_px": 24,
+   "clumps": 22,
+   "separators": [
+    [
+     "M",
+     "V",
+     "f",
+     2
+    ],
+    [
+     "t",
+     "f",
+     "j",
+     2
+    ],
+    [
+     "j",
+     "V",
+     "f",
+     4
+    ],
+    [
+     "t",
+     "p",
+     "j",
+     2
+    ]
+   ],
+   "symmetry": {
+    "keep": "left",
+    "scores": {
+     "left": [
+      7,
+      0.598
+     ],
+     "right": [
+      7,
+      0.574
+     ]
+    }
+   },
    "grid": [
     ".......##.......",
     "......#MM#......",
     ".....##MM##.....",
     "....#MMMMMM#....",
     "...#F#MMMM#F#...",
-    "..###MffffM#F#..",
-    "....#fVVVVff#...",
-    "...#f#E##E#f#...",
-    "...#f#E##E#f#...",
+    "..###MffffM###..",
+    "....#fVVVVf#....",
+    "...#fVEVVEVf#...",
+    "...#fVEVVEVf#...",
     "...#jfjffjfj#...",
     ".##jjjtnntjjj##.",
     "#ct#tjt##tjt#tc#",
@@ -1775,7 +2875,7 @@
     "changed_px": 0,
     "damage_dE": 0.0,
     "offset": [
-     6,
+     0,
      6
     ],
     "merged": {
@@ -1812,7 +2912,7 @@
    "checks": {
     "tile_colors": {
      "pass": true,
-     "detail": "max 3 colours/tile at offset (6,6) (max 3)",
+     "detail": "max 3 colours/tile at offset (0,6) (max 3)",
      "gate": true
     },
     "orphans": {
