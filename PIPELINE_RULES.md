@@ -187,6 +187,15 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   visor surround) the way a pixel artist would, so boxes read as rounded instead of
   blocky.
 
+- **rule** (Johnny, 2026-10-23): at small sizes, keep the suction cups merged with their
+  tentacle (no cup edging). The curl and the tentacle's shape matter more than the edge.
+- **trial** (Johnny's hand edit of v4 16 px → render_16b.png): treat a coloured
+  surround (the face ring) as an *edge* made of colour, and apply the thin-line rule to
+  it (each pixel touches at most 2 others): clip its corners. Fill the space that opens
+  by growing the neighbouring parts (the fins first). If that leaves a thick black area,
+  grow the head into it and reshape the head/ring line to match. Result: less boxy,
+  more character.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
