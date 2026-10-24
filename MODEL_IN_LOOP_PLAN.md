@@ -216,3 +216,20 @@ random control in his ranking.
 7. Latency: is a pipeline of ~1–3 minutes per sprite fine (offline), or should the critic be
    interactive?
 8. Budget after E1: is ~$5–10 acceptable for E2 (pixel-level critic + NB step-down)?
+
+## Addendum (Johnny, 2026-10-23): decision points are the trade-offs
+
+The best places for a model are the **trade-off choices** the rules keep running into.
+A model proposes a choice, and the judge (and Johnny) decides which worked better:
+- **Priority and size:** which part stays bigger as the sprite shrinks (e.g. fins kept
+  large for character, at the head's or the background's expense).
+- **Which boundary to sacrifice:** e.g. dropping the cup/tentacle edge to keep the
+  volume and the curl.
+- **Region vs edge classification, per size:** a part (e.g. the face ring) is an
+  *object/region* at high resolution but becomes a *line between things* at low
+  resolution, and then follows the line rules (thin, clip corners, neighbours fill the
+  freed space). The model decides, per part and per rung, when that switch happens.
+- Any other binary or ordinal choice the code currently hard-codes.
+
+Fold these into E1 as extra knobs (classification switch rung, which boundary is
+sacrificed, which part gives up its size), alongside the parameter knobs.
