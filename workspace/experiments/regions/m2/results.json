@@ -1,0 +1,7084 @@
+{
+ "source": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/m1/gpt-s1/regions.png",
+ "legend": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/m1/legend.json",
+ "fg_threshold": 0.5,
+ "min_share": 0.3,
+ "source_components": {
+  "mantle_shell": "3",
+  "side_fins": "2",
+  "face_frame": "1",
+  "visor": "1",
+  "eyes": "2",
+  "side_pods": "2",
+  "tentacles": "4",
+  "tentacle_joints": "5",
+  "suction_cups": "14",
+  "central_nozzle": "1"
+ },
+ "targets": {
+  "32": {
+   "source": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32
+    ],
+    "score": 73,
+    "mean_iou": 0.9372,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 64
+     },
+     "side_fins": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "eyes": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 32
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7883,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3118,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.988,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2746,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.944,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2986,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.974,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 583,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1471,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 15,
+       "iou_plain": 0.981,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11748,
+       "expected": 11988.2,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.972,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2298,
+       "expected": 2166.3,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.95,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3334,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.958,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 391,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.99,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1959,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 788,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 687,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.913,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 754,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 147,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.912,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 364,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.963,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2875,
+       "expected": 2997.0,
+       "components": 22,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->22",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 600,
+       "expected": 541.6,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.883,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 855,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 102,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.931,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 483,
+       "expected": 498.7,
+       "components": 2,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 3->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 200,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.97,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.794,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 192,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.909,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 39,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.846,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 89,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 693,
+       "expected": 749.3,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.926,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 169,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.785,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 237,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.793,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 24,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 118,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 50,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.92,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 38,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 50,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.902,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 23,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "side_fins"
+       ],
+       "reasons": [
+        "lost adj side_fins"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 166,
+       "expected": 187.3,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.922,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 46,
+       "expected": 33.8,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.739,
+       "lost_adjacency": [
+        "central_nozzle"
+       ],
+       "reasons": [
+        "merged 5->4",
+        "lost adj central_nozzle"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 61,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.852,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "lost adj tentacle_joints"
+       ]
+      }
+     ]
+    }
+   },
+   "chain": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32
+    ],
+    "score": 77,
+    "mean_iou": 0.8917,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": null
+     },
+     "side_fins": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "eyes": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": null
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7899,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3154,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.977,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2740,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.946,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2987,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.975,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 582,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1499,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 17,
+       "iou_plain": 0.966,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11901,
+       "expected": 11988.2,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2297,
+       "expected": 2166.3,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3326,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 394,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.982,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1955,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.979,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 805,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.964,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 672,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.88,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 760,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.93,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 154,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.87,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 374,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2950,
+       "expected": 2997.0,
+       "components": 12,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.914,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->12",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 621,
+       "expected": 541.6,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 5,
+       "iou_plain": 0.853,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 882,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.907,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 105,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.905,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "amber",
+       "present": true,
+       "area": 475,
+       "expected": 498.7,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.933,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 210,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.924,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.695,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 196,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.873,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 41,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.805,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 95,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.825,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 702,
+       "expected": 749.3,
+       "components": 7,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.866,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->7",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 180,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.757,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 250,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.752,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 30,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.733,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 116,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.927,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 55,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.836,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 36,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.625,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 51,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.885,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 25,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 171,
+       "expected": 187.3,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.791,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 59,
+       "expected": 33.8,
+       "components": 1,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.576,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->1",
+        "area x1.74",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 70,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.743,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.6,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.68"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "24": {
+   "source": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     24
+    ],
+    "score": 85,
+    "mean_iou": 0.9088,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 64
+     },
+     "side_fins": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "eyes": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 32
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7883,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3118,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.988,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2746,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.944,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2986,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.974,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 583,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1471,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 15,
+       "iou_plain": 0.981,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11748,
+       "expected": 11988.2,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.972,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2298,
+       "expected": 2166.3,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.95,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3334,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.958,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 391,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.99,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1959,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 788,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 687,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.913,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 754,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 147,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.912,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 364,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.963,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2875,
+       "expected": 2997.0,
+       "components": 22,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->22",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 600,
+       "expected": 541.6,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.883,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 855,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 102,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.931,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 483,
+       "expected": 498.7,
+       "components": 2,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 3->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 200,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.97,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.794,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 192,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.909,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 39,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.846,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 89,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 693,
+       "expected": 749.3,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.926,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 169,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.785,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 237,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.793,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 24,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 118,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 50,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.92,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 38,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 50,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.902,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 23,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "side_fins"
+       ],
+       "reasons": [
+        "lost adj side_fins"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 166,
+       "expected": 187.3,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.922,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 46,
+       "expected": 33.8,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.739,
+       "lost_adjacency": [
+        "central_nozzle"
+       ],
+       "reasons": [
+        "merged 5->4",
+        "lost adj central_nozzle"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 61,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.852,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "lost adj tentacle_joints"
+       ]
+      }
+     ],
+     "24": [
+      {
+       "part": "mantle_shell",
+       "status": "amber",
+       "present": true,
+       "area": 64,
+       "expected": 70.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 5,
+       "iou_plain": 0.913,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 30,
+       "expected": 27.0,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.867,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 25,
+       "expected": 24.1,
+       "components": 3,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.667,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 1->3"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 27,
+       "expected": 26.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.7,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 7,
+       "expected": 4.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.571,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.57"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 14,
+       "expected": 13.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "mantle_shell"
+       ],
+       "reasons": [
+        "lost adj mantle_shell"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 89,
+       "expected": 105.4,
+       "components": 7,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.837,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->7",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 28,
+       "expected": 19.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.571,
+       "lost_adjacency": [
+        "suction_cups"
+       ],
+       "reasons": [
+        "iou 0.57",
+        "lost adj suction_cups"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 35,
+       "expected": 27.8,
+       "components": 8,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.743,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 5,
+       "expected": 3.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.8,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ]
+    }
+   },
+   "chain": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     24
+    ],
+    "score": 85,
+    "mean_iou": 0.8425,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 24
+     },
+     "side_fins": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "eyes": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 24,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 24
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7899,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3154,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.977,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2740,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.946,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2987,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.975,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 582,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1499,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 17,
+       "iou_plain": 0.966,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11901,
+       "expected": 11988.2,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2297,
+       "expected": 2166.3,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3326,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 394,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.982,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1955,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.979,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 805,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.964,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 672,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.88,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 760,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.93,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 154,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.87,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 374,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2950,
+       "expected": 2997.0,
+       "components": 12,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.914,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->12",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 621,
+       "expected": 541.6,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 5,
+       "iou_plain": 0.853,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 882,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.907,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 105,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.905,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "amber",
+       "present": true,
+       "area": 475,
+       "expected": 498.7,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.933,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 210,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.924,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.695,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 196,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.873,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 41,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.805,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 95,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.825,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 702,
+       "expected": 749.3,
+       "components": 7,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.866,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->7",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 180,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.757,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 250,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.752,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 30,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.733,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 116,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.927,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 55,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.836,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 36,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.625,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 51,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.885,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 25,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 171,
+       "expected": 187.3,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.791,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 59,
+       "expected": 33.8,
+       "components": 1,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.576,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->1",
+        "area x1.74",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 70,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.743,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.6,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.68"
+       ]
+      }
+     ],
+     "24": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 60,
+       "expected": 70.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 5,
+       "iou_plain": 0.882,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "area 60 < min_px^2 64",
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 38,
+       "expected": 27.0,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.684,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "1px thin",
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 21,
+       "expected": 24.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.417,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "iou 0.42",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "amber",
+       "present": true,
+       "area": 31,
+       "expected": 26.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.486,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.49"
+       ]
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 4.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.4,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x2.07",
+        "iou 0.40"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 12,
+       "expected": 13.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.857,
+       "lost_adjacency": [
+        "mantle_shell",
+        "side_fins"
+       ],
+       "reasons": [
+        "lost adj mantle_shell,side_fins"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 92,
+       "expected": 105.4,
+       "components": 3,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.63,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->3",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 36,
+       "expected": 19.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.368,
+       "lost_adjacency": [
+        "face_frame"
+       ],
+       "reasons": [
+        "area x1.89",
+        "iou 0.37",
+        "lost adj face_frame"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 45,
+       "expected": 27.8,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.578,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10",
+        "area x1.62",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 3.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.667,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.79"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "20": {
+   "source": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     20
+    ],
+    "score": 81,
+    "mean_iou": 0.8939,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 64
+     },
+     "side_fins": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": 20,
+      "first_break": 20
+     },
+     "eyes": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 32
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7883,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3118,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.988,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2746,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.944,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2986,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.974,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 583,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1471,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 15,
+       "iou_plain": 0.981,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11748,
+       "expected": 11988.2,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.972,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2298,
+       "expected": 2166.3,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.95,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3334,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.958,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 391,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.99,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1959,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 788,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 687,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.913,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 754,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 147,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.912,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 364,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.963,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2875,
+       "expected": 2997.0,
+       "components": 22,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->22",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 600,
+       "expected": 541.6,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.883,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 855,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 102,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.931,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 483,
+       "expected": 498.7,
+       "components": 2,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 3->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 200,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.97,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.794,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 192,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.909,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 39,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.846,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 89,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 693,
+       "expected": 749.3,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.926,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 169,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.785,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 237,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.793,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 24,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 118,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 50,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.92,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 38,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 50,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.902,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 23,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "side_fins"
+       ],
+       "reasons": [
+        "lost adj side_fins"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 166,
+       "expected": 187.3,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.922,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 46,
+       "expected": 33.8,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.739,
+       "lost_adjacency": [
+        "central_nozzle"
+       ],
+       "reasons": [
+        "merged 5->4",
+        "lost adj central_nozzle"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 61,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.852,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "lost adj tentacle_joints"
+       ]
+      }
+     ],
+     "20": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 44,
+       "expected": 48.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 5,
+       "iou_plain": 0.936,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "area 44 < min_px^2 64",
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 21,
+       "expected": 18.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.857,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 17,
+       "expected": 16.7,
+       "components": 3,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.667,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 1->3"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "red",
+       "present": true,
+       "area": 17,
+       "expected": 18.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.75,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 17 < min_px^2 25"
+       ]
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 5,
+       "expected": 3.4,
+       "components": 2,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.4,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.40"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 11,
+       "expected": 9.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.727,
+       "lost_adjacency": [
+        "mantle_shell"
+       ],
+       "reasons": [
+        "lost adj mantle_shell"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 55,
+       "expected": 73.2,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.809,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 23,
+       "expected": 13.2,
+       "components": 3,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.261,
+       "lost_adjacency": [
+        "suction_cups"
+       ],
+       "reasons": [
+        "split 1->3",
+        "area x1.74",
+        "iou 0.26",
+        "lost adj suction_cups"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 26,
+       "expected": 19.3,
+       "components": 6,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.615,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "split 3->6",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 2.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.75,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.72"
+       ]
+      }
+     ]
+    }
+   },
+   "chain": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     20
+    ],
+    "score": 84,
+    "mean_iou": 0.8303,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 20
+     },
+     "side_fins": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": 20,
+      "first_break": 20
+     },
+     "eyes": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 20,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 20
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7899,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3154,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.977,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2740,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.946,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2987,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.975,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 582,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1499,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 17,
+       "iou_plain": 0.966,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11901,
+       "expected": 11988.2,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2297,
+       "expected": 2166.3,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3326,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 394,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.982,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1955,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.979,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 805,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.964,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 672,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.88,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 760,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.93,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 154,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.87,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 374,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2950,
+       "expected": 2997.0,
+       "components": 12,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.914,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->12",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 621,
+       "expected": 541.6,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 5,
+       "iou_plain": 0.853,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 882,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.907,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 105,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.905,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "amber",
+       "present": true,
+       "area": 475,
+       "expected": 498.7,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.933,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 210,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.924,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.695,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 196,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.873,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 41,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.805,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 95,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.825,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 702,
+       "expected": 749.3,
+       "components": 7,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.866,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->7",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 180,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.757,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 250,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.752,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 30,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.733,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 116,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.927,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 55,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.836,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 36,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.625,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 51,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.885,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 25,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 171,
+       "expected": 187.3,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.791,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 59,
+       "expected": 33.8,
+       "components": 1,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.576,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->1",
+        "area x1.74",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 70,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.743,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.6,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.68"
+       ]
+      }
+     ],
+     "20": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 43,
+       "expected": 48.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.875,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 43 < min_px^2 64"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 28,
+       "expected": 18.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.586,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.59",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 12,
+       "expected": 16.7,
+       "components": 2,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.4,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 1->2",
+        "iou 0.40"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "red",
+       "present": true,
+       "area": 20,
+       "expected": 18.1,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.583,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 20 < min_px^2 25",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 3.4,
+       "components": 2,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.333,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.78",
+        "iou 0.33"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 11,
+       "expected": 9.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.583,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 63,
+       "expected": 73.2,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.541,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "iou 0.54",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 34,
+       "expected": 13.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.176,
+       "lost_adjacency": [
+        "suction_cups"
+       ],
+       "reasons": [
+        "area x2.57",
+        "iou 0.18",
+        "lost adj suction_cups"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 39,
+       "expected": 19.3,
+       "components": 6,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.41,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "split 3->6",
+        "area x2.02",
+        "iou 0.41",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 2.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.75,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.72"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "16": {
+   "source": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     16
+    ],
+    "score": 80,
+    "mean_iou": 0.8786,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 64
+     },
+     "side_fins": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 16,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": 16,
+      "first_break": 16
+     },
+     "eyes": {
+      "first_degrade": 16,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": 32,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 32
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7883,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3118,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.988,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2746,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.944,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2986,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.974,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 583,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1471,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 15,
+       "iou_plain": 0.981,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11748,
+       "expected": 11988.2,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.972,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2298,
+       "expected": 2166.3,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.95,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3334,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.958,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 391,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.99,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1959,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 788,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.985,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 687,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.913,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 754,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 147,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.912,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 364,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.963,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2875,
+       "expected": 2997.0,
+       "components": 22,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->22",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 600,
+       "expected": 541.6,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.883,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->4"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 855,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 102,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.931,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 483,
+       "expected": 498.7,
+       "components": 2,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.96,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 3->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 200,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.97,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.794,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 192,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.909,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 39,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.846,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 89,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.936,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 693,
+       "expected": 749.3,
+       "components": 6,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.926,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->6",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 169,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.785,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 237,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.793,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 24,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 118,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 50,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.92,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 38,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 50,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.902,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 23,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "side_fins"
+       ],
+       "reasons": [
+        "lost adj side_fins"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 166,
+       "expected": 187.3,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.922,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 46,
+       "expected": 33.8,
+       "components": 4,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.739,
+       "lost_adjacency": [
+        "central_nozzle"
+       ],
+       "reasons": [
+        "merged 5->4",
+        "lost adj central_nozzle"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 61,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.852,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 1.0,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "lost adj tentacle_joints"
+       ]
+      }
+     ],
+     "16": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 28,
+       "expected": 31.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.818,
+       "lost_adjacency": [
+        "side_pods"
+       ],
+       "reasons": [
+        "area 28 < min_px^2 64",
+        "lost adj side_pods"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 13,
+       "expected": 12.0,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.769,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 10.7,
+       "components": 3,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.6,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "split 1->3",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "red",
+       "present": true,
+       "area": 12,
+       "expected": 11.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.857,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 12 < min_px^2 25"
+       ]
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 2.2,
+       "components": 2,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.5,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.86",
+        "iou 0.50"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "amber",
+       "present": true,
+       "area": 6,
+       "expected": 5.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.667,
+       "lost_adjacency": [
+        "mantle_shell"
+       ],
+       "reasons": [
+        "lost adj mantle_shell"
+       ]
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 33,
+       "expected": 46.8,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.682,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 13,
+       "expected": 8.5,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.462,
+       "lost_adjacency": [
+        "face_frame",
+        "suction_cups"
+       ],
+       "reasons": [
+        "iou 0.46",
+        "lost adj face_frame,suction_cups"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 18,
+       "expected": 12.4,
+       "components": 4,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.5,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "iou 0.50",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 1.5,
+       "components": 1,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x2.69",
+        "iou 0.00"
+       ]
+      }
+     ]
+    }
+   },
+   "chain": {
+    "rungs": [
+     512,
+     256,
+     128,
+     64,
+     32,
+     16
+    ],
+    "score": 85,
+    "mean_iou": 0.832,
+    "first": {
+     "mantle_shell": {
+      "first_degrade": 64,
+      "first_break": 16
+     },
+     "side_fins": {
+      "first_degrade": 16,
+      "first_break": null
+     },
+     "face_frame": {
+      "first_degrade": 16,
+      "first_break": null
+     },
+     "visor": {
+      "first_degrade": 16,
+      "first_break": 16
+     },
+     "eyes": {
+      "first_degrade": 16,
+      "first_break": null
+     },
+     "side_pods": {
+      "first_degrade": null,
+      "first_break": null
+     },
+     "tentacles": {
+      "first_degrade": 256,
+      "first_break": 16
+     },
+     "tentacle_joints": {
+      "first_degrade": 256,
+      "first_break": 256
+     },
+     "suction_cups": {
+      "first_degrade": 512,
+      "first_break": 512
+     },
+     "central_nozzle": {
+      "first_degrade": 32,
+      "first_break": null
+     }
+    },
+    "health": {
+     "512": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 31838,
+       "expected": 31917.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 11,
+       "iou_plain": 0.993,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 12416,
+       "expected": 12307.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 41,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 10981,
+       "expected": 10971.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 25,
+       "iou_plain": 0.986,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 11907,
+       "expected": 11882.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 71,
+       "iou_plain": 0.995,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 2233,
+       "expected": 2203.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 23,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5966,
+       "expected": 5939.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 33,
+       "iou_plain": 0.992,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "green",
+       "present": true,
+       "area": 47846,
+       "expected": 47952.8,
+       "components": 4,
+       "src_components": 4,
+       "thickness": 49,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "green",
+       "present": true,
+       "area": 8815,
+       "expected": 8665.1,
+       "components": 5,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.998,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 12844,
+       "expected": 12666.0,
+       "components": 13,
+       "src_components": 14,
+       "thickness": 9,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->13"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 1542,
+       "expected": 1524.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 31,
+       "iou_plain": 1.0,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "256": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 7899,
+       "expected": 7979.4,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 5,
+       "iou_plain": 0.987,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 3154,
+       "expected": 3076.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 21,
+       "iou_plain": 0.977,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 2740,
+       "expected": 2742.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 13,
+       "iou_plain": 0.946,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 2987,
+       "expected": 2970.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 35,
+       "iou_plain": 0.975,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 582,
+       "expected": 550.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.954,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 1499,
+       "expected": 1484.9,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 17,
+       "iou_plain": 0.966,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 11901,
+       "expected": 11988.2,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 2297,
+       "expected": 2166.3,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 11,
+       "iou_plain": 0.952,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 3326,
+       "expected": 3166.5,
+       "components": 12,
+       "src_components": 14,
+       "thickness": 5,
+       "iou_plain": 0.961,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->12"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 394,
+       "expected": 381.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 15,
+       "iou_plain": 0.982,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "128": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 1955,
+       "expected": 1994.8,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 3,
+       "iou_plain": 0.979,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 805,
+       "expected": 769.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 11,
+       "iou_plain": 0.964,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 672,
+       "expected": 685.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.88,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 760,
+       "expected": 742.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 17,
+       "iou_plain": 0.93,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 154,
+       "expected": 137.7,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.87,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 374,
+       "expected": 371.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 7,
+       "iou_plain": 0.928,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 2950,
+       "expected": 2997.0,
+       "components": 12,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.914,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->12",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 621,
+       "expected": 541.6,
+       "components": 3,
+       "src_components": 5,
+       "thickness": 5,
+       "iou_plain": 0.853,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->3"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 882,
+       "expected": 791.6,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 3,
+       "iou_plain": 0.907,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 105,
+       "expected": 95.3,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.905,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "64": [
+      {
+       "part": "mantle_shell",
+       "status": "amber",
+       "present": true,
+       "area": 475,
+       "expected": 498.7,
+       "components": 3,
+       "src_components": 3,
+       "thickness": 1,
+       "iou_plain": 0.933,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 210,
+       "expected": 192.3,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 5,
+       "iou_plain": 0.924,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 169,
+       "expected": 171.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.695,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 196,
+       "expected": 185.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.873,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 41,
+       "expected": 34.4,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.805,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 95,
+       "expected": 92.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.825,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 702,
+       "expected": 749.3,
+       "components": 7,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.866,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->7",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 180,
+       "expected": 135.4,
+       "components": 2,
+       "src_components": 5,
+       "thickness": 3,
+       "iou_plain": 0.757,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->2"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "red",
+       "present": true,
+       "area": 250,
+       "expected": 197.9,
+       "components": 10,
+       "src_components": 14,
+       "thickness": 1,
+       "iou_plain": 0.752,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 14->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "green",
+       "present": true,
+       "area": 30,
+       "expected": 23.8,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.733,
+       "lost_adjacency": [],
+       "reasons": []
+      }
+     ],
+     "32": [
+      {
+       "part": "mantle_shell",
+       "status": "green",
+       "present": true,
+       "area": 116,
+       "expected": 124.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 7,
+       "iou_plain": 0.927,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_fins",
+       "status": "green",
+       "present": true,
+       "area": 55,
+       "expected": 48.1,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 3,
+       "iou_plain": 0.836,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "face_frame",
+       "status": "green",
+       "present": true,
+       "area": 36,
+       "expected": 42.9,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.625,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "visor",
+       "status": "green",
+       "present": true,
+       "area": 51,
+       "expected": 46.4,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.885,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "eyes",
+       "status": "green",
+       "present": true,
+       "area": 12,
+       "expected": 8.6,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.917,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 25,
+       "expected": 23.2,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.778,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "amber",
+       "present": true,
+       "area": 171,
+       "expected": 187.3,
+       "components": 5,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.791,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 4->5",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "red",
+       "present": true,
+       "area": 59,
+       "expected": 33.8,
+       "components": 1,
+       "src_components": 5,
+       "thickness": 1,
+       "iou_plain": 0.576,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 5->1",
+        "area x1.74",
+        "iou 0.58"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 70,
+       "expected": 49.5,
+       "components": 10,
+       "src_components": 8,
+       "thickness": 1,
+       "iou_plain": 0.743,
+       "lost_adjacency": [],
+       "reasons": [
+        "split 8->10"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 10,
+       "expected": 6.0,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.6,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.68"
+       ]
+      }
+     ],
+     "16": [
+      {
+       "part": "mantle_shell",
+       "status": "red",
+       "present": true,
+       "area": 26,
+       "expected": 31.2,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 3,
+       "iou_plain": 0.812,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 26 < min_px^2 64"
+       ]
+      },
+      {
+       "part": "side_fins",
+       "status": "amber",
+       "present": true,
+       "area": 16,
+       "expected": 12.0,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.625,
+       "lost_adjacency": [],
+       "reasons": [
+        "1px thin"
+       ]
+      },
+      {
+       "part": "face_frame",
+       "status": "amber",
+       "present": true,
+       "area": 11,
+       "expected": 10.7,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.545,
+       "lost_adjacency": [],
+       "reasons": [
+        "iou 0.55"
+       ]
+      },
+      {
+       "part": "visor",
+       "status": "red",
+       "present": true,
+       "area": 12,
+       "expected": 11.6,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.857,
+       "lost_adjacency": [],
+       "reasons": [
+        "area 12 < min_px^2 25"
+       ]
+      },
+      {
+       "part": "eyes",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 2.2,
+       "components": 2,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.5,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x1.86",
+        "iou 0.50"
+       ]
+      },
+      {
+       "part": "side_pods",
+       "status": "green",
+       "present": true,
+       "area": 5,
+       "expected": 5.8,
+       "components": 2,
+       "src_components": 2,
+       "thickness": 1,
+       "iou_plain": 0.8,
+       "lost_adjacency": [],
+       "reasons": []
+      },
+      {
+       "part": "tentacles",
+       "status": "red",
+       "present": true,
+       "area": 35,
+       "expected": 46.8,
+       "components": 2,
+       "src_components": 4,
+       "thickness": 1,
+       "iou_plain": 0.52,
+       "lost_adjacency": [],
+       "reasons": [
+        "merged 4->2",
+        "iou 0.52",
+        "1px thin"
+       ]
+      },
+      {
+       "part": "tentacle_joints",
+       "status": "amber",
+       "present": true,
+       "area": 18,
+       "expected": 8.5,
+       "components": 1,
+       "src_components": 1,
+       "thickness": 1,
+       "iou_plain": 0.333,
+       "lost_adjacency": [
+        "suction_cups"
+       ],
+       "reasons": [
+        "area x2.13",
+        "iou 0.33",
+        "lost adj suction_cups"
+       ]
+      },
+      {
+       "part": "suction_cups",
+       "status": "amber",
+       "present": true,
+       "area": 26,
+       "expected": 12.4,
+       "components": 2,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.346,
+       "lost_adjacency": [
+        "tentacle_joints"
+       ],
+       "reasons": [
+        "area x2.10",
+        "iou 0.35",
+        "lost adj tentacle_joints"
+       ]
+      },
+      {
+       "part": "central_nozzle",
+       "status": "amber",
+       "present": true,
+       "area": 4,
+       "expected": 1.5,
+       "components": 1,
+       "src_components": 0,
+       "thickness": 1,
+       "iou_plain": 0.0,
+       "lost_adjacency": [],
+       "reasons": [
+        "area x2.69",
+        "iou 0.00"
+       ]
+      }
+     ]
+    }
+   }
+  }
+ }
+}
