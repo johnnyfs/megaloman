@@ -449,3 +449,27 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
     eye floor lands on the wing while the real eye sits inside the black `eye_housing` blob. Next: check that the
     eye region is on the head (one piece, near the beak) before the ladder; prefer the paint whose eye matches the
     concept's brightest small blob.
+- **finding (snipe boxy, transparency)** (2026-10-24, `snipe_boxy.py`, `pipeline_manifest.py`,
+  `workspace/experiments/regions/snipe/compact/boxy/`): Johnny's feedback on compact. $0.36.
+  - **Squid vs snipe.** The squid worked because its silhouette carried it (vertical symmetry, an exact mirror, an
+    eye template on the axis, 12 parts with hand-blessed priorities) and its regions matched the design. The compact
+    snipe's legend had **no head** (head and body were one `body_shell`), 10 model-chosen parts with model-chosen
+    priorities, and the eye floor landed on the wing because the `eye` region (nb-s2) was the orange wing patch.
+    And **whitespace was not trimmed**: `snipe.square_crop` keeps a 6 % margin per side and the render's M = N − 2,
+    so the 16 px sprite was ~13–14 px wide.
+  - **Eye-on-head check** (`snipe_boxy.eye_sanity`): one main blob, < 6 % of the figure, its 6 px ring ≥ 50 % head.
+    On the compact labels it fails (eye in 2 pieces); on the new paint it passes.
+  - **Fixed design legend** (Johnny's priority order): eye > gun nose > scope > head > body > side wing >
+    vestigial wing > legs > tail > breastplate. The compact prompt now asks for a vestigial wing nub up-right; the
+    concept is trimmed tight (margin 0).
+  - **Priority palette**: `imaging.palette_lock` keeps the most frequent colours and dropped the eye/gun/scope colours;
+    `priority_palette` keeps black, the eye, then head vs body, then the gun. `imaging.snap` dropped every black
+    outline pixel and kept the white background on these images; `snap_sprite` samples cell centres instead.
+  - **A (direct 16)**: Nano Banana drew a 32 grid when asked for 16. After the reduce the eye and gun survive; the
+    head|body line and the scope don't. **B (32 boxy, then clean)**: two of three seeds returned no image; the third
+    drew ~100 px detailed art over a 32 grid overlay (it ignores the requested size). The snap locked to its overlay
+    grid and the 16 is mush. Its raw art is the best-looking artifact of the run. The expert pass (gpt-5.6-sol on
+    ambiguous reduce cells, both orders) always picked the right-hand image: position bias, so the default held.
+  - **Transparency**: each run writes `pipeline_sheet.png` and a generic `pipeline.json` (format
+    `megaloman.pipeline/1`, documented in `pipeline_manifest.py`: ordered stages {id, title, kind, images, notes,
+    data}); `pipeline_manifest.to_html` renders any run as a horizontal strip (the cockpit `snipe-v3` panel).

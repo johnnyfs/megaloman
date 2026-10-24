@@ -1,0 +1,177 @@
+{
+ "format": "megaloman.pipeline/1",
+ "title": "Snipe bot, route A (direct 16)",
+ "run_dir": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/A",
+ "verdict": "closer but not there: the model drew 32 px when asked for 16; after the reduce the eye and gun survive, head|body line and scope don't.",
+ "cost_usd": 0.3742,
+ "stages": [
+  {
+   "id": "concept",
+   "title": "1 concept (tight trim)",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/concept.png"
+    }
+   ],
+   "notes": [
+    "bbox [np.float64(1.0), np.float64(0.813)] of square"
+   ],
+   "data": {}
+  },
+  {
+   "id": "regions",
+   "title": "2 regions",
+   "kind": "legend",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/overlay.png"
+    }
+   ],
+   "notes": [
+    "eye check ok"
+   ],
+   "data": {
+    "items": [
+     {
+      "name": "eye",
+      "color": "#FFE600",
+      "area": 0.0408
+     },
+     {
+      "name": "gun_nose",
+      "color": "#0050FF",
+      "area": 0.0685
+     },
+     {
+      "name": "scope",
+      "color": "#A000FF",
+      "area": 0.0551
+     },
+     {
+      "name": "head",
+      "color": "#00C8C8",
+      "area": 0.2197
+     },
+     {
+      "name": "body",
+      "color": "#FF0000",
+      "area": 0.2981
+     },
+     {
+      "name": "side_wing",
+      "color": "#FF80C0",
+      "area": 0.1543
+     },
+     {
+      "name": "vestigial_wing",
+      "color": "#FF8000",
+      "area": 0.0433
+     },
+     {
+      "name": "legs",
+      "color": "#704000",
+      "area": 0.0507
+     },
+     {
+      "name": "tail",
+      "color": "#003080",
+      "area": 0.0154
+     },
+     {
+      "name": "breastplate",
+      "color": "#00A000",
+      "area": 0.0539
+     }
+    ]
+   }
+  },
+  {
+   "id": "priority",
+   "title": "3 priority",
+   "kind": "list",
+   "images": [],
+   "notes": [
+    "keep-if-present: eye, gun_nose, scope"
+   ],
+   "data": {
+    "items": [
+     "eye",
+     "gun_nose",
+     "scope",
+     "head",
+     "body",
+     "side_wing",
+     "vestigial_wing",
+     "legs",
+     "tail",
+     "breastplate"
+    ]
+   }
+  },
+  {
+   "id": "model",
+   "title": "4 model raw (A)",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/A/model_raw.png"
+    }
+   ],
+   "notes": [
+    "Redraw this character as a finished NES-style pixel-art game"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_snapped",
+   "title": "5 snapped",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/A/snapped.png",
+     "caption": "31x27",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "grid [31, 27] pitch 31.99"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_16",
+   "title": "5 16",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/A/rung_16.png",
+     "caption": "16x14",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "28 ambiguous cells"
+   ],
+   "data": {}
+  },
+  {
+   "id": "final",
+   "title": "6 final",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/A/final_16.png",
+     "caption": "16x14",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "16: 28 ambiguous -> priority default (B/B)",
+    "final 16x14, colours 5",
+    "spend so far $0.37"
+   ],
+   "data": {}
+  }
+ ]
+}

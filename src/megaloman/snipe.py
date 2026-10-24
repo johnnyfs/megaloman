@@ -72,6 +72,8 @@ is a gun. Reimagine it to fit a single square tile:
 - The legs are folded up like a frog's: hinged up into the body, the folded legs tucked against the back and lower
   sides of the body, with the feet just under the body. No long stick legs, no gap under the body.
 - A big bright eye on the head, a tiny stubby tail; optionally a small chunky scope on top of the head.
+- A small VESTIGIAL WING: a little stubby wing nub sticking up and back toward the upper right of the body (out of
+  the round silhouette, like a tiny fin), so the outline still says "bird".
 
 {guidance}
 
@@ -161,7 +163,7 @@ def remove_white(im: Image.Image, tol=24) -> Image.Image:
     return Image.fromarray(a.astype(np.uint8), "RGBA")
 
 
-def square_crop(im: Image.Image, side=1024, margin=0.06) -> Image.Image:
+def square_crop(im: Image.Image, side=1024, margin=0.06) -> Image.Image:  # margin=0: tight-trim rule
     """Crop to the alpha bbox, centre it on a square transparent canvas with `margin` on the long side."""
     a = np.array(im)[..., 3] > 0
     ys, xs = np.nonzero(a)

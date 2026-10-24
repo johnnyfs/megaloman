@@ -1,0 +1,209 @@
+{
+ "format": "megaloman.pipeline/1",
+ "title": "Snipe bot, route B (boxy 32 then clean)",
+ "run_dir": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B",
+ "verdict": "not there: the model drew ~100 px detailed art over a 32 grid (ignores size); my snap locked to its overlay grid, so the 16 is green/orange mush, eye 1 px.",
+ "cost_usd": 0.3742,
+ "stages": [
+  {
+   "id": "concept",
+   "title": "1 concept (tight trim)",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/concept.png"
+    }
+   ],
+   "notes": [
+    "bbox [np.float64(1.0), np.float64(0.813)] of square"
+   ],
+   "data": {}
+  },
+  {
+   "id": "regions",
+   "title": "2 regions",
+   "kind": "legend",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/overlay.png"
+    }
+   ],
+   "notes": [
+    "eye check ok"
+   ],
+   "data": {
+    "items": [
+     {
+      "name": "eye",
+      "color": "#FFE600",
+      "area": 0.0408
+     },
+     {
+      "name": "gun_nose",
+      "color": "#0050FF",
+      "area": 0.0685
+     },
+     {
+      "name": "scope",
+      "color": "#A000FF",
+      "area": 0.0551
+     },
+     {
+      "name": "head",
+      "color": "#00C8C8",
+      "area": 0.2197
+     },
+     {
+      "name": "body",
+      "color": "#FF0000",
+      "area": 0.2981
+     },
+     {
+      "name": "side_wing",
+      "color": "#FF80C0",
+      "area": 0.1543
+     },
+     {
+      "name": "vestigial_wing",
+      "color": "#FF8000",
+      "area": 0.0433
+     },
+     {
+      "name": "legs",
+      "color": "#704000",
+      "area": 0.0507
+     },
+     {
+      "name": "tail",
+      "color": "#003080",
+      "area": 0.0154
+     },
+     {
+      "name": "breastplate",
+      "color": "#00A000",
+      "area": 0.0539
+     }
+    ]
+   }
+  },
+  {
+   "id": "priority",
+   "title": "3 priority",
+   "kind": "list",
+   "images": [],
+   "notes": [
+    "keep-if-present: eye, gun_nose, scope"
+   ],
+   "data": {
+    "items": [
+     "eye",
+     "gun_nose",
+     "scope",
+     "head",
+     "body",
+     "side_wing",
+     "vestigial_wing",
+     "legs",
+     "tail",
+     "breastplate"
+    ]
+   }
+  },
+  {
+   "id": "model",
+   "title": "4 model raw (B)",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/model_raw.png"
+    }
+   ],
+   "notes": [
+    "Redraw this character as BOXY NES-style pixel art of exactly"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_snapped",
+   "title": "5 snapped",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/snapped.png",
+     "caption": "32x26",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "grid [32, 26] pitch 31.96"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_24",
+   "title": "5 24",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/rung_24.png",
+     "caption": "24x20",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "41 ambiguous cells"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_20",
+   "title": "5 20",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/rung_20.png",
+     "caption": "20x16",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "41 ambiguous cells"
+   ],
+   "data": {}
+  },
+  {
+   "id": "rung_16",
+   "title": "5 16",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/rung_16.png",
+     "caption": "16x13",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "25 ambiguous cells"
+   ],
+   "data": {}
+  },
+  {
+   "id": "final",
+   "title": "6 final",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/boxy/B/final_16.png",
+     "caption": "16x13",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "16: 25 ambiguous -> priority default (B/B)",
+    "final 16x13, colours 5",
+    "spend so far $0.37"
+   ],
+   "data": {}
+  }
+ ]
+}

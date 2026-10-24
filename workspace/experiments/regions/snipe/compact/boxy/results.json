@@ -1,0 +1,209 @@
+{
+ "parts_priority": [
+  "eye",
+  "gun_nose",
+  "scope",
+  "head",
+  "body",
+  "side_wing",
+  "vestigial_wing",
+  "legs",
+  "tail",
+  "breastplate"
+ ],
+ "concept": {
+  "call": "218009cab1651d6c6202ef220677e5485de197d3baa5013b16213b79aeb33073",
+  "bbox_frac": [
+   1.0,
+   0.813
+  ]
+ },
+ "paint": [
+  {
+   "seed": 1,
+   "call": "be8613068a523592582ca84c437383690411fdf74bf61b1a0f974952808c40de",
+   "eye_check": {
+    "ok": true,
+    "pieces": 1,
+    "area_frac": 0.0408,
+    "head_share_of_ring": 0.968
+   }
+  }
+ ],
+ "region_area": {
+  "eye": 0.0408,
+  "gun_nose": 0.0685,
+  "scope": 0.0551,
+  "head": 0.2197,
+  "body": 0.2981,
+  "side_wing": 0.1543,
+  "vestigial_wing": 0.0433,
+  "legs": 0.0507,
+  "tail": 0.0154,
+  "breastplate": 0.0539
+ },
+ "B_errors": [
+  "route_B: no image ()",
+  "route_B: no image ()"
+ ],
+ "B": {
+  "call": "e77b533c29fff1ef1b457211846a7771110426b646463f68f01f5406d1c1c197",
+  "snap": {
+   "pitch": 31.96,
+   "grid": [
+    32,
+    32
+   ],
+   "size": [
+    32,
+    26
+   ],
+   "kept": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     184,
+     248,
+     24
+    ],
+    [
+     0,
+     120,
+     0
+    ],
+    [
+     228,
+     92,
+     16
+    ],
+    [
+     124,
+     124,
+     124
+    ]
+   ]
+  },
+  "rungs": {
+   "24": {
+    "ambiguous": 41
+   },
+   "20": {
+    "ambiguous": 41
+   },
+   "16": {
+    "ambiguous": 25
+   },
+   "expert": {
+    "pick": "A",
+    "orders": [
+     {
+      "pick": "B",
+      "why": "B\u2019s bright eye, clearly projecting gun nose, distinct top scope, and rounder body silhouette read more immediately as the intended robot bird at 16x16.",
+      "call": "1269308e677b895b09de4b4729866e0a2e25298a0c79c3a1e5974a1272abec4b"
+     },
+     {
+      "pick": "B",
+      "why": "B reads better because its eye is more distinct, the short gun-beak is clearer, the scope separates better from the round head, and the overall bird silhouette is cleaner.",
+      "call": "f5fe21a0efa09f4c2c935e92b3096970801ed7b1a17cd1b42ee97c27c730c245"
+     }
+    ],
+    "rule": "alt only if both orders agree (position bias)"
+   }
+  },
+  "final_size": [
+   16,
+   13
+  ],
+  "notes": [
+   "grid [32, 26] pitch 31.96",
+   "16: 25 ambiguous -> priority default (B/B)",
+   "final 16x13, colours 5",
+   "spend so far $0.37"
+  ]
+ },
+ "A": {
+  "call": "9f3686bb4b55d7c9daa81cbb006e3d2e686de3226195655cb3664bd8eca83731",
+  "snap": {
+   "pitch": 31.99,
+   "grid": [
+    31,
+    32
+   ],
+   "size": [
+    31,
+    27
+   ],
+   "kept": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     184,
+     248,
+     24
+    ],
+    [
+     0,
+     88,
+     0
+    ],
+    [
+     248,
+     120,
+     88
+    ],
+    [
+     120,
+     120,
+     120
+    ]
+   ]
+  },
+  "rungs": {
+   "16": {
+    "ambiguous": 28
+   },
+   "expert": {
+    "pick": "A",
+    "orders": [
+     {
+      "pick": "B",
+      "why": "B has a more compact bird silhouette, a clearer eye and gun-beak profile, and a scope that reads more distinctly from the head.",
+      "call": "3ec11b2127ccfc0e56c667a6de90a6ef5aa3deec13466d9bfc4e9bc9c5fc3292"
+     },
+     {
+      "pick": "B",
+      "why": "B has a clearer eye, a more distinct snub-gun beak and scope, and a rounder, more readable bird silhouette at 16x16.",
+      "call": "7ed5cfeebc0b731bba34a82d6c8147c42ae920df5d122b2f8c3971402b956cef"
+     }
+    ],
+    "rule": "alt only if both orders agree (position bias)"
+   }
+  },
+  "final_size": [
+   16,
+   14
+  ],
+  "notes": [
+   "grid [31, 27] pitch 31.99",
+   "16: 28 ambiguous -> priority default (B/B)",
+   "final 16x14, colours 5",
+   "spend so far $0.37"
+  ]
+ },
+ "cost": {
+  "by_step": {
+   "concept": 0.0376,
+   "paint": 0.0787,
+   "route_B": 0.0842,
+   "expert_judge": 0.0809,
+   "route_A": 0.0928
+  },
+  "total": 0.3742
+ }
+}
