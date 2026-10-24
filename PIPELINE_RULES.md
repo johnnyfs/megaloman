@@ -196,6 +196,23 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   grow the head into it and reshape the head/ring line to match. Result: less boxy,
   more character.
 
+- **finding** (Johnny's blind picks on E1, 2026-10-23). No pick was v4; none was the
+  critic's top pick except where noted.
+  - **24: a** = a random survivor (24-c047: fins +0.1 larger, fins win contested cells
+    from the head, no fin pay). Reason: "the fins look most like fins".
+  - **20: a** = **ring-as-edge alone** (v4 + ring_edge). It narrowly beat d (random:
+    ring_edge + bigger fins + thin fin depth + curl 1; "jaunty, but the wide fins are
+    slightly too out there") and f (random; "real personality", but the fins are too
+    small and the tentacles aren't separated from the face). The extra colour on the
+    tentacles gives them an arch.
+  - **16: f** = **Johnny's own hand edit (16b)**, beating a (the critic's top 1): pushing
+    the darker colour onto the front tentacles gave more volume.
+  - Johnny: "honestly almost any of these would be fine in a game."
+  - **Takeaways:** ring-as-edge wins at 20 and 16 (trial → candidate rule); fins should
+    stay slightly larger and win against the head at 24, but not too wide at 20. The
+    critic was no better than random (it picked a only at 16, and lost to the human
+    edit). Keep the tentacles separated from the face.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
