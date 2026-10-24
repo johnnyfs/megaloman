@@ -72,3 +72,4 @@
 {"ts": "2026-10-22T02:39:58+00:00", "author": "coding-agent", "cmd": "experiment", "name": "compiler/v4_squids", "outputs": ["experiments/compiler/v4_squids"]}
 {"ts": "2026-10-22T02:41:00+00:00", "author": "coding-agent", "cmd": "experiment", "name": "compiler/v5_dots", "outputs": ["experiments/compiler/v5_dots"]}
 {"ts": "2026-10-22T02:41:45+00:00", "author": "coding-agent", "cmd": "experiment", "name": "compiler/v6_outer_thin", "outputs": ["experiments/compiler/v6_outer_thin"]}
+{"ts": "2026-10-24T02:53:44+00:00", "author": "coding-agent", "cmd": "experiment", "name": "regions/m1", "path": "paint", "best": "gpt-s1", "iou": {"nb2-s1": 0.0, "nb2-s2": 0.0, "gpt-s1": 0.9634, "segment": 0.9426}, "passed": ["gpt-s1", "segment"], "cost": 0.0, "outputs": ["experiments/regions/m1"]}

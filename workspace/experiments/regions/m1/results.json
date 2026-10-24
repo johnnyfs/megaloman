@@ -1,0 +1,1529 @@
+{
+ "created": "2026-10-24T02:42:20+00:00",
+ "code": {
+  "commit": "2ddb36c78604843996c40f7938f4efed95321230",
+  "dirty": true
+ },
+ "tag": "m1",
+ "concept": "shared/sources/squid_concept_gpt_front.png",
+ "concept_size": [
+  677,
+  677
+ ],
+ "silhouette_px": 257010,
+ "shadow_px": 11781,
+ "legend": {
+  "model": "openai/gpt-5.6-sol",
+  "parts": [
+   {
+    "name": "mantle_shell",
+    "role": "body",
+    "priority": 3,
+    "color": "#D9002B",
+    "min_px": 8,
+    "where": "The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline."
+   },
+   {
+    "name": "side_fins",
+    "role": "limb",
+    "priority": 4,
+    "color": "#00A83B",
+    "min_px": 3,
+    "where": "The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right."
+   },
+   {
+    "name": "face_frame",
+    "role": "feature",
+    "priority": 6,
+    "color": "#FF7A00",
+    "min_px": 3,
+    "where": "The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets."
+   },
+   {
+    "name": "visor",
+    "role": "feature",
+    "priority": 8,
+    "color": "#240099",
+    "min_px": 5,
+    "where": "The single dark rounded rectangular window centered inside the face frame."
+   },
+   {
+    "name": "eyes",
+    "role": "feature",
+    "priority": 10,
+    "color": "#66FFFF",
+    "min_px": 2,
+    "where": "The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor."
+   },
+   {
+    "name": "side_pods",
+    "role": "detail",
+    "priority": 5,
+    "color": "#0057D9",
+    "min_px": 2,
+    "where": "The two metallic housings attached immediately outside the face frame, one on each side of the head."
+   },
+   {
+    "name": "tentacles",
+    "role": "limb",
+    "priority": 4,
+    "color": "#CC00B8",
+    "min_px": 4,
+    "where": "All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages."
+   },
+   {
+    "name": "tentacle_joints",
+    "role": "detail",
+    "priority": 7,
+    "color": "#638F00",
+    "min_px": 1,
+    "where": "The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments."
+   },
+   {
+    "name": "suction_cups",
+    "role": "feature",
+    "priority": 8,
+    "color": "#CCFF66",
+    "min_px": 1,
+    "where": "All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles."
+   },
+   {
+    "name": "central_nozzle",
+    "role": "feature",
+    "priority": 9,
+    "color": "#7600FF",
+    "min_px": 2,
+    "where": "The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face."
+   }
+  ],
+  "color_fixes": [
+   {
+    "part": "eyes",
+    "from": "#D6C800",
+    "to": "#66FFFF"
+   },
+   {
+    "part": "suction_cups",
+    "from": "#00B8B0",
+    "to": "#CCFF66"
+   }
+  ],
+  "call": "1b8e4b7498806540f101b4110de4a0c406b3eb5eb0709a1a3f13c76cf465ca26",
+  "cost": 0.049292,
+  "cached": true
+ },
+ "candidates": [
+  {
+   "id": "nb2-s1",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 1,
+   "path": "paint",
+   "call": "63c315c89a33f588835e6cf8d3f7aa0a4d3762370d749c9f179ba78cecfb756b",
+   "cost": 0.0,
+   "cached": false,
+   "error": "google/gemini-nano-banana-2.1 HTTP 429: b'{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrati",
+   "retries": 3,
+   "model_text": null,
+   "align": {
+    "pass": false,
+    "iou": 0.0
+   }
+  },
+  {
+   "id": "nb2-s2",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 2,
+   "path": "paint",
+   "call": "90503a0ed2344251e6e450f0465b6eafc854914625d0bf3f680a5a145a5947f6",
+   "cost": 0.0,
+   "cached": false,
+   "error": "google/gemini-nano-banana-2.1 HTTP 429: b'{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrati",
+   "retries": 3,
+   "model_text": null,
+   "align": {
+    "pass": false,
+    "iou": 0.0
+   }
+  },
+  {
+   "id": "gpt-s1",
+   "model": "openai/gpt-5.4-image-2",
+   "seed": 1,
+   "path": "paint",
+   "call": "b00978b52b7a8eabe58e01ac487fc6d74ab70df3f254c31684cd0eb4585dcb62",
+   "cost": 0.2443,
+   "cached": true,
+   "error": null,
+   "retries": 0,
+   "model_text": "",
+   "painted_size": [
+    1024,
+    1024
+   ],
+   "iou_raw": 0.8298,
+   "transform": {
+    "sx": 1.0357,
+    "sy": 1.0502,
+    "tx": -12.1,
+    "ty": 2.9
+   },
+   "iou_registered": 0.9636,
+   "holes_filled_px": 0,
+   "align": {
+    "iou": 0.9634,
+    "iou_ok": true,
+    "parts_present": {
+     "mantle_shell": true,
+     "side_fins": true,
+     "face_frame": true,
+     "visor": true,
+     "eyes": true,
+     "side_pods": true,
+     "tentacles": true,
+     "tentacle_joints": true,
+     "suction_cups": true,
+     "central_nozzle": true
+    },
+    "all_present": true,
+    "part_areas": {
+     "mantle_shell": 55804,
+     "side_fins": 21518,
+     "face_frame": 19182,
+     "visor": 20775,
+     "eyes": 3852,
+     "side_pods": 10385,
+     "tentacles": 83840,
+     "tentacle_joints": 15150,
+     "suction_cups": 22145,
+     "central_nozzle": 2666
+    },
+    "outside_silhouette_px": 3925,
+    "missed_silhouette_px": 5618,
+    "pass": true
+   },
+   "files": {
+    "painted": "experiments/regions/m1/gpt-s1/painted.png",
+    "regions": "experiments/regions/m1/gpt-s1/regions.png",
+    "overlay": "experiments/regions/m1/gpt-s1/overlay.png"
+   }
+  },
+  {
+   "id": "segment",
+   "model": "openai/gpt-5.6-sol",
+   "seed": 0,
+   "path": "segment",
+   "segments": 56,
+   "call": "9372c67bb1225b8965358855141dd9435ea8f63fc648e41e665064c53a4f8ad2",
+   "cost": 0.0711,
+   "cached": true,
+   "assign": {
+    "1": "side_pods",
+    "2": "side_pods",
+    "3": "tentacle_joints",
+    "4": "tentacle_joints",
+    "5": "tentacle_joints",
+    "6": "mantle_shell",
+    "7": "mantle_shell",
+    "8": "visor",
+    "9": "tentacle_joints",
+    "10": "tentacle_joints",
+    "11": "face_frame",
+    "12": "tentacles",
+    "13": "tentacles",
+    "14": "mantle_shell",
+    "15": "suction_cups",
+    "16": "suction_cups",
+    "17": "tentacles",
+    "18": "tentacles",
+    "19": "eyes",
+    "20": "eyes",
+    "21": "central_nozzle",
+    "22": "eyes",
+    "23": "eyes",
+    "24": "tentacles",
+    "25": "tentacles",
+    "26": "side_fins",
+    "27": "side_fins",
+    "28": "suction_cups",
+    "29": "suction_cups",
+    "30": "tentacles",
+    "31": "suction_cups",
+    "32": "suction_cups",
+    "33": "mantle_shell",
+    "34": "mantle_shell",
+    "35": "side_fins",
+    "36": "mantle_shell",
+    "37": "side_fins",
+    "38": "mantle_shell",
+    "39": "mantle_shell",
+    "40": "mantle_shell",
+    "41": "mantle_shell",
+    "42": "tentacles",
+    "43": "tentacles",
+    "44": "tentacles",
+    "45": "tentacles",
+    "46": "face_frame",
+    "47": "tentacles",
+    "48": "tentacle_joints",
+    "49": "tentacles",
+    "50": "mantle_shell",
+    "51": "side_fins",
+    "52": "side_fins",
+    "53": "tentacles",
+    "54": "tentacles",
+    "55": "tentacles",
+    "56": "tentacles"
+   },
+   "note": "built from the concept alpha, so IoU is ~1 by construction; parts present is the real test",
+   "unassigned_px": 14763,
+   "align": {
+    "iou": 0.9426,
+    "iou_ok": true,
+    "parts_present": {
+     "mantle_shell": true,
+     "side_fins": true,
+     "face_frame": true,
+     "visor": true,
+     "eyes": true,
+     "side_pods": true,
+     "tentacles": true,
+     "tentacle_joints": true,
+     "suction_cups": true,
+     "central_nozzle": true
+    },
+    "all_present": true,
+    "part_areas": {
+     "mantle_shell": 70332,
+     "side_fins": 17149,
+     "face_frame": 9217,
+     "visor": 17594,
+     "eyes": 6674,
+     "side_pods": 4792,
+     "tentacles": 61994,
+     "tentacle_joints": 31929,
+     "suction_cups": 21050,
+     "central_nozzle": 1516
+    },
+    "outside_silhouette_px": 0,
+    "missed_silhouette_px": 14763,
+    "pass": true
+   },
+   "files": {
+    "painted": "experiments/regions/m1/segment/painted.png",
+    "regions": "experiments/regions/m1/segment/regions.png",
+    "overlay": "experiments/regions/m1/segment/overlay.png"
+   }
+  }
+ ],
+ "status": {},
+ "path": "paint",
+ "http_errors": [
+  {
+   "ts": "2026-10-23T19:42:21",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:21 GMT",
+    "X-Generation-Id": "gen-1792809740-4g5b7xoX7YrPrX7OPO0r",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:21",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:21 GMT",
+    "X-Generation-Id": "gen-1792809740-9LN2ZN9kM275tNAShWsQ",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:26",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:26 GMT",
+    "X-Generation-Id": "gen-1792809746-KF3wub3n2u7u5jtZ4uk9",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:26",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:26 GMT",
+    "X-Generation-Id": "gen-1792809746-p4PeJ9HeVLbhlU9SPpsZ",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:37",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:37 GMT",
+    "X-Generation-Id": "gen-1792809756-op9RKTqUiAQxsLYxhekC",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:37",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:37 GMT",
+    "X-Generation-Id": "gen-1792809757-Qd034dtZlFiUoczjVbdV",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:57",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:57 GMT",
+    "X-Generation-Id": "gen-1792809777-jyJDIj2iPkfW41sz91NN",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:42:58",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:42:58 GMT",
+    "X-Generation-Id": "gen-1792809777-eNGYNKethsIWI73kHdrX",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:43:38",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:43:38 GMT",
+    "X-Generation-Id": "gen-1792809817-5t0hA5Umv3uRuOQKiqxD",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:43:38",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:43:38 GMT",
+    "X-Generation-Id": "gen-1792809818-FxfDYVphsGRzIZcpJG8I",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:39",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:39 GMT",
+    "X-Generation-Id": "gen-1792809878-zsWPWnLBbyBQtsWB7MlB",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:39",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:39 GMT",
+    "X-Generation-Id": "gen-1792809878-vf0fSCbaqLiMpflJfgBs",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:49",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:49 GMT",
+    "X-Generation-Id": "gen-1792809889-XushP4dMkeE9un9isvcl",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:49",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:49 GMT",
+    "X-Generation-Id": "gen-1792809889-Wcz8pwuYPuJkcDKCJRgM",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:55",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:55 GMT",
+    "X-Generation-Id": "gen-1792809895-r7de34NIRvOm9nRJMbyJ",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:44:55",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:44:55 GMT",
+    "X-Generation-Id": "gen-1792809894-Sr8ZJozRAWjd3cmK8rCd",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:45:05",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:45:05 GMT",
+    "X-Generation-Id": "gen-1792809905-fQJI3QlqMyQeZxwDnTKk",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:45:06",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:45:06 GMT",
+    "X-Generation-Id": "gen-1792809905-JA0HjHV9WaAYAbVudEHn",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:45:26",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:45:26 GMT",
+    "X-Generation-Id": "gen-1792809926-qKsQiMfBYIoGyUje75lH",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:45:27",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:45:26 GMT",
+    "X-Generation-Id": "gen-1792809926-jrCZrvQo2UUClKxCdcca",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:46:06",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:46:06 GMT",
+    "X-Generation-Id": "gen-1792809966-jZzHms2FY1uMnbeNIx78",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:46:07",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:46:07 GMT",
+    "X-Generation-Id": "gen-1792809967-VVE0F5KIEf5lC9EVaYAa",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:07",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:07 GMT",
+    "X-Generation-Id": "gen-1792810027-Um326F7f8nGtXploC3Xt",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:08",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:08 GMT",
+    "X-Generation-Id": "gen-1792810027-KZ9IjbyOGnqe3siSXWvk",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:37",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:37 GMT",
+    "X-Generation-Id": "gen-1792810057-l8agU3lp3G2vaK8KCywg",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:38",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:38 GMT",
+    "X-Generation-Id": "gen-1792810058-LFuWvDpbdvrElEi3VPI0",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:43",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:43 GMT",
+    "X-Generation-Id": "gen-1792810062-aA4x2kGwy5AIz4LPyq4P",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:44",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:44 GMT",
+    "X-Generation-Id": "gen-1792810063-KhXgp87DnEIx76QoeUaT",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:53",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:53 GMT",
+    "X-Generation-Id": "gen-1792810073-8tIGRXMNWalcvxQJXYpP",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:47:54",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:47:54 GMT",
+    "X-Generation-Id": "gen-1792810074-Apq2JQ2seZUEVrV6NIxU",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:48:14",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:48:14 GMT",
+    "X-Generation-Id": "gen-1792810094-2wB8ZmBqOCoxnXn4A8Zn",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:48:15",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:48:15 GMT",
+    "X-Generation-Id": "gen-1792810094-97W28hYsH26rM8Yh8Fj3",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:48:54",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:48:54 GMT",
+    "X-Generation-Id": "gen-1792810134-QETJBBbBjVlapbkNO6y8",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:48:55",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:48:55 GMT",
+    "X-Generation-Id": "gen-1792810135-7nfquGejv3HOuUG5nMT3",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:49:55",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:49:55 GMT",
+    "X-Generation-Id": "gen-1792810195-Mmlz90tOIZC84iB0pE2C",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:49:56",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:49:56 GMT",
+    "X-Generation-Id": "gen-1792810196-m67psLkD9L4rBj6ELz9j",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:26",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:26 GMT",
+    "X-Generation-Id": "gen-1792810285-pdyD0mgEZarQ3TafAPzs",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:26",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 0,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:26 GMT",
+    "X-Generation-Id": "gen-1792810286-xq2cB2NEqApuRDWcvoG1",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:31",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:31 GMT",
+    "X-Generation-Id": "gen-1792810291-xw8IIMWY0xdNQB4z6YcB",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:32",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 1,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:32 GMT",
+    "X-Generation-Id": "gen-1792810292-P9JZk3rpjxM30XmUlOTs",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:42",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:42 GMT",
+    "X-Generation-Id": "gen-1792810301-IJMd9k8jgZVuTG7VH9Wy",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:51:43",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 2,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:51:43 GMT",
+    "X-Generation-Id": "gen-1792810302-7PkY1xZRyelUrqgfEWZq",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:52:02",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:52:02 GMT",
+    "X-Generation-Id": "gen-1792810322-2qhHR0Rt0EccsxDV0bhH",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:52:03",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 3,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:52:03 GMT",
+    "X-Generation-Id": "gen-1792810323-AEAN5LgJ3nlayGRTsqiz",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:52:43",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:52:43 GMT",
+    "X-Generation-Id": "gen-1792810362-6IOEBktcCmw9vqBQlrxx",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:52:44",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 4,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:52:44 GMT",
+    "X-Generation-Id": "gen-1792810363-bGkbZzxpW6mISBilDwdW",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:53:43",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:53:43 GMT",
+    "X-Generation-Id": "gen-1792810423-6pcMq4BUUIupPpb2476o",
+    "X-Content-Type-Options": "nosniff"
+   }
+  },
+  {
+   "ts": "2026-10-23T19:53:44",
+   "model": "google/gemini-nano-banana-2.1",
+   "attempt": 5,
+   "code": 429,
+   "body": {
+    "error": {
+     "message": "Provider returned error",
+     "code": 429,
+     "metadata": {
+      "raw": "google/gemini-nano-banana-2.1 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "provider_error_code": "429",
+      "limit_source": "upstream_provider_shared_pool",
+      "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing"
+     }
+    }
+   },
+   "headers": {
+    "Date": "Sat, 24 Oct 2026 02:53:44 GMT",
+    "X-Generation-Id": "gen-1792810424-XsiZNHANYEsxxJelGzDH",
+    "X-Content-Type-Options": "nosniff"
+   }
+  }
+ ],
+ "best": "gpt-s1",
+ "cost": {
+  "spent": 0.0,
+  "calls": 0,
+  "cached_calls": 3,
+  "budget": 2.6
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are judging tiny pixel-art region maps of one game enemy: a front view of a cartoon robotic squid: a red domed mantle with side fins, a pale face frame around a dark visor with two glowing eyes, side pods, and four tentacles with joints and suction cups.\nEach flat colour is one named part:\n- #D9002B mantle_shell: The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline.\n- #00A83B side_fins: The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right.\n- #FF7A00 face_frame: The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets.\n- #240099 visor: The single dark rounded rectangular window centered inside the face frame.\n- #66FFFF eyes: The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor.\n- #0057D9 side_pods: The two metallic housings attached immediately outside the face frame, one on each side of the head.\n- #CC00B8 tentacles: All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages.\n- #638F00 tentacle_joints: The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments.\n- #CCFF66 suction_cups: All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles.\n- #7600FF central_nozzle: The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face.\nThe first image is the concept art. Next are three candidate region maps of the same 64x64 grid,\nshown enlarged with nearest-neighbour, labelled A, B, C. Which candidate best reads as the squid,\nwith clean, recognisable parts (and a sensible left/right balance)? Reply with JSON only:\n{\"choice\": \"A\"|\"B\"|\"C\", \"reason\": \"<one short sentence>\"}"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "b60f73aebf46ec6a8173f5d414b2319576f55f9a73d78e0935a726433bfa38f2"
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "aebcd4d9ca1b1dc5fdaf8e83e417866769af969090f6789a42d8d2169694a6c9"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792810216-3aF192Nfla1ly5cr9v85",
+  "object": "chat.completion",
+  "created": 1792810216,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"choice\":\"C\",\"reason\":\"C has the clearest paired eyes, balanced side structures, and cleanly separated tentacle parts.\"}",
+     "refusal": null,
+     "reasoning": null,
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq3Bzu9xctXeZK3PEEu4uYDsbBY5jv_hDXbDxMMqfvLA8kyRNEMIB6O0V7VeMibJ69GEbGH6AG5kgkEHBYPCAINMz_KhtszRbxcOQj4Di8YKqL0nR7XVX8K-qLdwPpcNBPjvTXrD3_GtIeNUadOeiRZ0amfDl8G2aRsQNC9B9C7SbtolbeJA2Rf1s2R7hYbi1l1vEshj3uuHNwXUZHsRq8Gx1olh23tb0oLpgeNhiT2N5OUTEwzm4Cr0EFBTDmhJid3iU3pr1ea1vyMiYc73g0ErQL7-vJtEo5XEsVGl8mFTtt0LZ_zZF1XVhjwW0wLnk_tRUI2EGQyQjPPlB-ow3_naig-IiWkcFV7wBBoRRRp4gnYIwjjyD_0AC_mVldP7-1jmMUjzqib7rtr7HVJIzrFnSYTTHca_11DGgLj-UvLyd1HYeHAK72AzgssmPu0oslNrLkwnuOJoTOTWS2HxsmVJ--RlXXxLvfkzguUAatnD97jB0N6lFwxAZfU59U7iOY9GauqmvxZboWiL1-UXfWu1uKEiOqcR2YgtL9KhqyAfPIwRummjCX_J1ybSpxj66WKzOtpMDhDIS-g2nP-lU7zcvUTLLU3xwD0s4Fg9vjyxSbjSd9_C5GdC_Bm-q2XgkETmCHDnGL6yn4j_QSLDwt90-bQQSMjXVRMfCnBDPxwuo9sQvBUOnQTikRzIP8mDC-iBhH0wKLdLhyP-JlRPumjq1ceuiecsGfssgWFs2RKcOnX-Y-M_G00FgOmnF49tj98WW5LJ-7gH4b5Rj3p0Hx3OGb8g8gwjcOuiNs_Exoe8dFrS9iYFSHwqskgVkk3q_65ztFI6R86iEBbl6Kh-40LP69Fk3aQv0HWe6gfV8SZZ0RhLFZ1Z6qpuPR0q_-tb2-9j4uJ8BXqnK_5_rnpuY_miFzYkm5-oVZ1MTtmcgsj35h_uV1Pc65Di1XG9DkXU21flmuqw9F08VfPvq0tWMSvfyrwWsqEZqsrCkBEI1GQQSlDUw1yw6wMulrFHk_xOQKnvfuxS0mS2Tx0XqhGgZofwwn7GgKmENwrunG1WFtRcyQF9e_89kRxRuyfj4FsFJ-qHIE8mRWUlsgdtKvECDAKbNOmTwi8Hn4UlaeJXVfTR134lE4gtUCtTWBFPanuUADTu7AdENTwGFlFJ_tboZL2_PRWJa6UQO-6N61UiHHCTt-SuUTD2dHpclklS6jeMp0XmBHbRuHMopmYerO7VoMB8lobJMlPwMWT39pgNtUO43f8oXBQa1_trO8ZDm3-mrU46MLMa3TkprINlCLYzTECEMIPZ0uNuQKdbejb-d9YWrY-GdiNTRWteGSIQBQ-Gg40sdNm1DIHAGUZb0LPjcnKsp8-i-kC8Eeuz8k_3ZXGDOA2za-nAOgu1yO_DXpEQEmWws2lWH_53MYcKj8YdbxOxfcKKTwFwG85230BATu_vFwgmOigesJpDnjMQ3z2-4XHJL2d3vjZMiMi3Sm61I8y630vHms0tDAX8_nTYn8Bg-HJF4CwtKV_Ona9NvH_FIyNvBjobZ2lEnDX5Tv1eD9Wvq4PXGRrCR7-RrFCIlQErJamTj7bI_lr5LZw9tSnU5T1x8sl-Fr6tQPL1X018DWQhlQKnAQ7oJtuVSV5VSfIn7hb3XHxT5PxGXlv3irDzT04NP42BV0tDe1V1EP7UyzAtFzDun1uOU8L4c34GuciHSZ5N3BpD4yI0NOyRuv1ziHvpbQQiETTozEvgc3T2ejVkW8V2HpCohqCV7Jey8BruZqmg07Ue1LJxh0JytOgGJ1JyBAVkpKsIDbhRHy93t-djlwVriEmPobLSCeurbVuQJs307v5Tjs7DYxK-TgcuUeQV4pBoM_36Xy38oDrVjFm41jmwRrC6PhQmEJZjQpgx-32aGmRB_46UmDVNGAH4lv1QoCxrHbLlblvTLPbLBdP8RW8OI7NIybMy-JPl_ulmE2E6THBdYmElhFIH0ba0yQxOEsypuRnc1mS6e3psyftgA3vc2JI8yEhKtihyqTGumWZpToCZp6EP9gPFZ0CplK194O1yVritK73FB4BuICWD0HdBRai1dhHKygdLTfUoauYMLJwEtrUHaPjDO1fXDgqqMwAEm69i4pfb3dzZ54vtSywzehHFxb8BALN4tf-t9QdJUdX1HEuM1hG3_A4_UXDfbv3VunZLyIlrjnDOyVLT7GYxHnN_oFxpZJTq6bVtLawRoiO_6qkUf4qf9jMkXpwDP_6yrzEZhJGs7rMUb0g2APW6Lybqg2h2GsuFHye-1jp-RG5eueYJXinyEszOUGDFAB9jzO3O-nFLm_1UbggMwW84wZPjvZWV_dR7i5dfA0bLFYfNJcIYljq0r7_bSJZdfv-fBEJoNTGh2MnjxGsaJ_RC4qVa90s5inkb0kFyb7NNeRuhWHWtujxT1KNEv6QTO9rXXejdaG6sf0rLIOoFNO29g0UD3NZ6dhiAr7PLrLKUZnnQLlReXx0htistz43brpBunYFizBe6UyQ_Np5z31gpx_krOno1k1Kd2tWUog9-r4C4r5DLZxIiVWmG0WI-EF9_ppvintrDM4ccD5g3U1ae4AMSDB6NSl8rAoTmtAB5ahIRS3CpF9SLnLEjSqpW1ELS5xZ_M1NPGy1ApcKpsBh-hW3WRg85KRpF2S4lW8bqlGq1tVg6eHiakz2oY6VaubToYocmVnivlVsAsb_qVKvzjeKlIdIQAZUEgEgLRGRBx2H79WFIWOQID9F5Ny1ja7A_Jz2MTbc8Ih0qkW80tKOFJz6IaN_VLWFWfPWVJ0_HISjAviqYe1RS9laI-q4AE1YKIi1K81SJUnU8NBPWucIbQaRHD_WoJFW8mLUyeYY2QyHZzheHJfdWjvrDX4U9EyUTqywRdTOTejxvqVdg0LO083XcFt508SkQHjwXeG0rlJQMv3MXs4xWWjZtyIbSQUmgOc1ppj8l-_jOOBacRvOQOiXsYD917SFS-c3PmLFAAKRgoBLDADcRRqVtDiT5StfzHcN_9ijBm9LLiYTLbEsMgZiiSr-6wo9eCX7TzntcuiG4KWJjWQT8NxCaI2N8uV5-5jSzQvXOVgqNWchiDmvaFzJUydaI_OaXIERX3YmmbxB7nsidBvpBw-yup4vWhlJsBUzkhdM4aQJbNVG-u8-hcSPtYKKcnO2F56iB57ud7qZ6pzd_8e7n7PzqWO84oGIsgMEPso3z2UfPzbDQwInaIb7PBGMPmnbEPXSH5JUnXe7yAtyt2Edi7j0cuVjUy7_uTEVkPahXZV77iMDHya5h17KiqiLTayEUBVVYU-zgSMhj9t-SLHxTWESu69K-yj6lxGQOa5peFUG849FLffiLQv99FXEr4H7whb825SC6qDFRmWGGBZ-_027WWEM8BZsGPSQeZ96dgnmWFnFZTqQehIKq904BwyKTapr_-0nWY2eRgutiQsZ52D8NejZyOgIasupt0HQVyay4Aaxdz-1ODHILs0l7tIY9W8Q6WpQnPJmpWx0PX-V6nxFra76THZ9VM5pnpq-zZdGmLpclxdf0uUgwZw-W5At9wkHrncTSd9dnGgAoFac-EkSPdfqpgIL564-2MLmbbqjrGYlfew8a94yX0eJ5CTV928Bp4xW-bkb5m6Guj0MkFhI3ytpS7PmHMBm9dkl6F7nSb6XXOgawjvtAfhpYClGpQ7oXW0yegZKcKI9QUtv9hVf6eCISx3jXBFUPm2iq2nked_t-PlT9Ph9t4wfULa8dBBvqA0OULuLHDkA9k5zU_iMs3uSGL3xATggAdgfOy-9GENKPZRMz33ATvTILbVDNq3i_L5KsF03axQ5Bmjq0nmkhP7cnJZRNxShbXvHYud1muVpdDgKBFZG_uAW_MBHxZy3acYoSiNGNwsV__WgtYa1m-5g_ZLVoWADf3zAWFG80A0FKdoyzEjj6Vo6m-uD7Rg877ymBzUf6IgRgY8TQNWyeiBCZkv2Qdcc4nBIdRI4m66YiPaaFQXH__eAvHay9_DNxXybsrRu-lUJF0k0kPmp9Y8Cm7P0sRJmnPsNuAF7yrPdbcZ1oNNu0nagqupHJEaF3aJ04eOOavcNMaDgHrhEGnMMqRp9CN7T2B3aUByl3Ce-tqd4HHXcngA2h-Eg6eQ2JU_2KjwG1UDRR_6ueOjrwl3c0NDBE7ZyvZUTK6Pk5ZFTFxvAYCSATWoSLUCFMh25fxEDEguImCHUALRaAF0PcZyamU7cRNTfUYsaI9RhI3-svyoOIMvXQMB4JExWQ6wjwoYellND3CGgbl-EQNKVJ-3o4H0X35p5IORxrnec_xtxIfi5NDJtdS_w2r_0sIZ1pUdRrDo9-PedEtRzXeLGIHSsgith93KUfzYKrV1qjcOynnYScpqNuxlHytEm09gMESPmAtNq824cC5PA4FatWMbMukzsKgd2D5R7ztDjMvaNiJ32bb3uC7UuMNXybjUTkrx0aYqq3bS5DjGrA60GvN5Dj0IhDKU-_N3DA1hRXM3IHRjLFskGTh4xOUSqDtarGUlAYPteAZSdAh9TlXB55PJ8_TUxIF02PfuJpCUDqaSCRHWhYOG3gVAzDACjh8oLQvIq-8iCXV-v07p8qzH2ZS7el-j37mFTY7LaIFJVFsTCmKSPBsVs2J2_Z0JFNZxBQFLSMlvpCoJYtzaUw3fYFu3wC6VL6t6bQ304ULYL7dK0XRFgWaRsKlzcBsmh5l8ewt6pSowjmwBipapZVpX6OzW802RQmUw6oRsk5qb3B5Hr3swme_izJjqmfbeVg8jv5230zQmVvSlVvdG7eiChzuq5NlBqTBFYCdkcHF7xTFCdnB6FJzv8BqYhhWyuS0h2yAHdmnzWrU9nZDMtkLkOvN_GXIgmpO5ntLZMwasWMdGvwc3bGPBOBYzOCN6GcvlxpRR35gAQw3ur_M2CPUM1_W7KlzC-l7uEZsoRMbDEQf4qEY-XWoPrxYT3nSf3q6puuzm5ulBVd9MoDMr03kt8vDVinkzIv94hMwIR6TXBuv77LQ8lNh67jkBtCGJ0RYtVLzdW0LwBTFvKLEWBLnwFJZtEG2vAJGunDyWVNDUz_TX6H0mnCsyQxb6uM9gArROMUT0iL2jxSSLQ-k1Vcy-WGGh5DsBBDZhddmt_otmw7BmfNju85OVXrvdZfjGmMm3oKTUw52KORHLgj0ohSOkSgCnbYYT-znqb1TBv0j_RqbPsa2Jww==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_083175a283fda30f016adc1ce98cb087d191e800c2a54e8b2d",
+       "index": 0
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 823,
+   "completion_tokens": 306,
+   "total_tokens": 1129,
+   "cost": 0.009412,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009412,
+    "upstream_inference_prompt_cost": 0.003292,
+    "upstream_inference_completions_cost": 0.00612
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 269,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.009412,
+ "secs": 5.7
+}

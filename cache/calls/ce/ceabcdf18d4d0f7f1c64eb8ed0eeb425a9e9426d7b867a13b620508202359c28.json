@@ -1,0 +1,98 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are judging tiny pixel-art region maps of one game enemy: a front view of a cartoon robotic squid: a red domed mantle with side fins, a pale face frame around a dark visor with two glowing eyes, side pods, and four tentacles with joints and suction cups.\nEach flat colour is one named part:\n- #D9002B mantle_shell: The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline.\n- #00A83B side_fins: The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right.\n- #FF7A00 face_frame: The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets.\n- #240099 visor: The single dark rounded rectangular window centered inside the face frame.\n- #66FFFF eyes: The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor.\n- #0057D9 side_pods: The two metallic housings attached immediately outside the face frame, one on each side of the head.\n- #CC00B8 tentacles: All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages.\n- #638F00 tentacle_joints: The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments.\n- #CCFF66 suction_cups: All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles.\n- #7600FF central_nozzle: The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face.\nThe first image is the concept art. Next are three candidate region maps of the same 20x20 grid,\nshown enlarged with nearest-neighbour, labelled A, B, C. Which candidate best reads as the squid,\nwith clean, recognisable parts (and a sensible left/right balance)? Reply with JSON only:\n{\"choice\": \"A\"|\"B\"|\"C\", \"reason\": \"<one short sentence>\"}"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "b60f73aebf46ec6a8173f5d414b2319576f55f9a73d78e0935a726433bfa38f2"
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "70a791dbfdce3e8192565f54d591f795c3cbadc73abcbf3b4c8a219eed6b1ca9"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792810313-jpXnFpYVLfpOG7qlVLWY",
+  "object": "chat.completion",
+  "created": 1792810313,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"choice\":\"C\",\"reason\":\"C has the clearest paired eyes, enclosed visor, balanced fins, pods, and four readable tentacles.\"}",
+     "refusal": null,
+     "reasoning": "**Evaluating image candidates**\n\nI need to analyze an image and identify how the colors differ from their labeled names. I'm looking for the best recognizable features and aiming for a good balance. Candidate A has an asymmetric top with a red dome, orange face frame, and blue pods, but only one visible cyan eye\u2014probably because of the visor. Candidate B may not have visible eyes, while Candidate C clearly shows two cyan eyes. I'll map the pixels and analyze them further for clarity.**Evaluating candidates for symmetry**\n\nI notice two cyan blocks with a purple center that I need to evaluate for their left and right recognizability. Candidate B seems symmetrical with a red top, but the fins could be asymmetric. The face visor appears malformed with a cyan eye. I see a broad cyan area alongside an orange frame. Candidate C has a fully orange face frame surrounding a dark visor, along with separate cyan eyes. I need to weigh the design variations among A, B, and C to decide which is the best semantic fit.**Identifying the best candidate for eyes**\n\nI see purple between x648-672, indicating that Candidate C has two eyes. Candidate A may only have one cyan eye because the left one is dark. Meanwhile, Candidate B likely features a single large cyan rectangle instead of a pair. It seems that Candidate C is the best choice overall, though there could be slight asymmetry with the tentacle masses that makes it recognizable. Now, I just need to form a concise sentence in JSON format.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Evaluating image candidates**\n\nI need to analyze an image and identify how the colors differ from their labeled names. I'm looking for the best recognizable features and aiming for a good balance. Candidate A has an asymmetric top with a red dome, orange face frame, and blue pods, but only one visible cyan eye\u2014probably because of the visor. Candidate B may not have visible eyes, while Candidate C clearly shows two cyan eyes. I'll map the pixels and analyze them further for clarity.**Evaluating candidates for symmetry**\n\nI notice two cyan blocks with a purple center that I need to evaluate for their left and right recognizability. Candidate B seems symmetrical with a red top, but the fins could be asymmetric. The face visor appears malformed with a cyan eye. I see a broad cyan area alongside an orange frame. Candidate C has a fully orange face frame surrounding a dark visor, along with separate cyan eyes. I need to weigh the design variations among A, B, and C to decide which is the best semantic fit.**Identifying the best candidate for eyes**\n\nI see purple between x648-672, indicating that Candidate C has two eyes. Candidate A may only have one cyan eye because the left one is dark. Meanwhile, Candidate B likely features a single large cyan rectangle instead of a pair. It seems that Candidate C is the best choice overall, though there could be slight asymmetry with the tentacle masses that makes it recognizable. Now, I just need to form a concise sentence in JSON format.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq3B1TMa4VaugLNvlKAJxeiRHc-ZCRdjCABU1A0_0vAZWtIjwHk4LVjaZ2vpPRF_Pu2FQn0Lelvdph5JjDpEmaH76HddB8jb_7WHhjWYTpLQmb7ubHiAboEAw7c8UHmkl8CjRU0wm9eJnQvAXMpNNo1E3Shbxb3-g5sDZUR_PXnsKCLXJjbWGx8pHy3yqcDz5c7QYBGyGP1bCgfmSw6pW1Rcqy9LfoYYpgawNSSi8MmghMYtL61xcES8tGF2NFGfIEgCtMWX_GEJhmSAW3_29z5yrlNd4KrL5ZC2aL4QQjaTkyZTEkA4SrEQ0tKUI_YZzrHousPs4irNfLtA-5wh2YYElePbfLcbv9BfSsmpMyAKe_rLqJyEZ4TBXBRXfjyTsF8Cph3lZItgv6sXrXJR1k7Rv-ddrTqmmCZQh4gJWGO8VRGkV2g8cDTlTeGTIGFBail5vf9crY6UQquYB3PDFRntHPNbdI0Q3z0-u05OB0P0rvSb4wYOde7zL3swJKTbn_K7z9h5ok1ko3woRPgdqHcCzP_eg0vw4iTIXFCC6kpYB8X4p_8ps1buIhQV_n5xOmuO49IJkJRghmLGZecRLrvNtS1xnzDRiLCD3qTKiehbnYbvQqRoWz5_LV-QEdvPK8VvohpyuYqUcBL9x5fKXrCkCekS9ED4E2L27bKIxWfzUg1FYlhD_SB58a8w0xqNqGJRnymFPtBzRBqtXeXTwqrbv0jWI67qIe7Pys1NPkY3Feh40Wh8T0YViIqGasxMV8ficXskTYEDWRBvxLTO4M6zjwquTgs9K9SdxXOb2Nh-qY5amceM2Olzh5mQjgTZ9CbgXDuvsKIXcs7ev6JBl4Evtks4zhDOFp4W4IHbkN317jGXRr6AwiHV7PblcTNGEcBJVFSO3pTPFIbq7bh1kMIW7sW9s9vWjM9k5n4tO9NjPoh_pIHcG8VrctSKn2eKVQ7WPcEwFqNbKnvRhkS18E79kDirwSb4YTh-Rcu-U0z3s5ROSKDvYHISvji1snTL6WoV2sH3aQ8EDqZ7ltyjQOoL6Fhp9d-8Z85SuLBTiKt9Bu7VPWOqP2mwt5_2hpCLnt357vRkWt-ElqHx_f-ywRDIFKtBUjbSJmjZNWBxvw3NOmFs5RF1wf9-4-WwXHtivfyxExUv6fHF5aQSTQe-WhwlCR3XZzJ31npqguW-6Ci4YkhjBBYMURwAwYpppKjp0wl7yG7SR5jUvefIeTghPNRo_LGId0b-8HoDy7tgtWmqpME99oEsYmMP3x2G8GWys_dSeT4pWApvUllP6B4I1f0kxs4pr8_H-TQEr1OacVHtWKJAPtBxex6tfIqnBmLWv8RQQOTeP-acwmqA7vXi_1pd1p3YQny5aNPToVbKbla-f-bYBXESG-7ZfZHVp087mxWmQUz9B5X9d_0oJWe_EEYUetCSmRT9_4PszVfg1T9M3LE8VYHLfjJbEzeuJ-hv3UjvjHtNF8kMs17uqMGwDl9DxAbDbcIE7vUHOxMJ5KEAnWnTpFayUQ8rc0j1JoEyDJzD8uF9wtnE_10umd-B_77D3iECM-_EDbMk2YIYv3VkXA-9Ho1-hv7pAbuz2m3tFvD8JaeaZASKYJ7hDsdQZ6vlu5byaEteW-XPUh3_EfXys7UGKOuLMXBDC2qy5h18etnkuunNH1UTGqhQNVNr7qOl4IRR2jvK4aScHNTDY8nLcOd6ZjIzhCgGsL0g7MzFUtNK9OFDDhLQch2_8HBDP6nB4CgBBVeX765rktJ8op6NIFOMHi1HTRcVfdvLBDQqtRuIzIRtoNRYyNpAZXSGFPzMrzIypkxvgv0RNhhcI8GfZjWOSvhY3b8hh4iILRXvl2fV_3G5spK94yhf7UC5W5KfboR5Tc93RIgMoEWeN3dh1agTaJncTGmHkdAZr_ZXo436GU_mMHdP7bVbMt7qvq7Pc5LvxJcTF1rCJBTlMNSYZFmaN_66nnKQ4hEoQJWPD1mgnWwPOZCRdNJFx3kI0r81Q4ShUHL1yIB-vuvAbEUxmEGph88_9rNawEXHOKt77TYOYRENTYujWYMWVETEDKwpBXOnN6Re63y6si4N9n1ZhpivxiwSOVat3RfbZhjZvYr_fBBb3bnlTzP2UfboiQcaQuU639e6Iq3BdGV6x9KPaUcL8KXDQhlULhL1foZpem_HsQLoWbkW3qyGNl1-YakN9Ub3cxHBTaSQpOe0TSvW1gofhfnbQBVPsCB5ERkBaZduBYGmzVC4jYlLGAZerVny_cVpFutr0i1PfCLLR7Habkrwh6cdiwv14G7x5ydJ3K-yRrvdcjQ5XXEGNP--7mJSoFmIrCLDLv6dORzoQaEltCST44uF-LsVqK4CbO_2hbn7r4w0c3g4si7uNLr8SR4DQRl21rpZJuZMOuQDPoVt1vWh37bx0jYn3qOlTG9GanOEKGJatocLIuuhgLLePg4qffi6VzAcNpprTrhYHNJJAurMo529lAf1bYyumvDKF8WMduRseRellvAHv-anNp0T314ITnyjPZ7oGSClVD-IPUDB_B0IgOGoVaTkd-8UGsYfCkksrtpEOQgcN9r6CAawceXHxOvorhN63lS9rOBuTY83E17ECU98KwR8EnLQ4WRCihfcw2_Cr6ZPdE5OEg_F1sg_lTrAk5hvAo2lW09MP7pqqH9hABvmUceqzHaLKEaffBUQ2fsb6_AC7620-qpUl0X098tIDTXHItrqezTxNtjyRU3ChInLyz6DtJckohUevzMFK6uAsgkE8fOKLdkzLb-FqTIqBpz2024fVdmenmaY8YVhubEerk637qYPkjas1P09wla_x7oMN540pRnVDbR8KJgt-bXzFccVpG7KduyfOR_mRHApAErN7sxlmiYqPufXCvT9jZBSJaRVWmGXsfVZQzVZbAuS6-pyMyqGfPSgN9ErQYG4JSDWGj5I8XxkV_jM6GTQSuMzf3y_ku2RY4jb-QS3f95l5sQ00ZaCdGrCw0_IAH9zQtwlij2Jt2zCK5nfBIHFE6lEry0aB7-WDxesXXp-l1c3xmTmg6qgIQa8A3X47aFCmyom75dPLSPYso5mQEFD-QLWGcE2mc3J3ubOOAt9kVtMacdrflEZxK9Rq2-0dApUigYk9xg7kb3uWOAsQwdTxGtiAfOlK55H0kN1aWMxM4oqXUbx1F65UCNzH_3xwnIcmrg2JwTIEC46TTXg8z1vrY2BiV_yvKbSEv3jU2MhLSXgNRLSg7_KUtObZXCQM3e-OdOz69N2TzvR_2xXMPN3_B8nj2nKvmLYsrHned3KwQjq8Dn6GT6Uhk8g-u9lUs-IbjGmXW37LZzeaWPtaGMr8HMcPuvoNxEiDKlX_sFXVq4R3_p8EAdZ-CX0TuKO7Ll7y1Fvlp74UQs_AEytQgwk7nvwt0vPkp8a70ZIE0-YhDGBy9VnTme-Gy0YxpDxWPBQqhh5EwgkcM7iGz--n4luuHIX9wwbUTq_0rGywUGrLv_WAS0lmWI79gPBGAavffDdEAX_E_A7tgbiPrPFtkbTIqBkZiBGu6-5u-o0QyD1Hu7-rqgbUxifko7jYGZBZpkBc6Q6mUHa2PWXbOM_6YhhrQGfhon1P6zEoUYZYiYyUwa5DO5I_5kgSIwGIos8ir9vjRBkASvZCrstU6SK9bdKh-wcFLFnfC6NuY9p1moru0QvEeVgK0vY0Bd9wAQl1fTIY5A5of7QJI-jS2LtF7hYa37QPk9ZjoXKieuBCTwVzPMmyzZK1GLb-ye6y1ujrD-oGHTtHcIcxG6mwbRlTZ4nJTG4XWlF2_K5Zw2XW69ZIyeH-Fpa-JA92HzrSEPkMal9pfyeO3YMqDUhq2U1-30Fw-oFJ365_s2Zu7WouNSeYbfJVQhWlQCg8QnBM9NAIiP0_a6CXOUEdorq6hXL8HxF6nkoyhS9zgSYVsictnopq3K53dztNlrC2WKHquuoU_lPtE7wqpUCYS47LmUVgKd3WF0oP2vhhyDg0Z3AhHkhaXDlOMG0eUD9r_5MJwjmk1yf38zFOJuLZw5YJBbe5AyHH86VUj0iE6BdIAnP_4Y8Ryz5CqAkVIxUcj9iXlieyMhuVAVhHSReFMwZfvtGaOPj6Ojpq98r61-rBspM7khq7hdITDQ6guvD7RV1GIzpomhvrke7tnsX83d8sK4aXhQ8rqpqEMtr3iF5Dz5Byo7N3IZGFIQtPdwELvlrlPvIvsG43QaCkoU3aUwN0W1GI0aiLGFtsZBn1D8JfFSHFTs3hSpf0XlKh3NwKq45pdMlmwC_oUBJLdeMbguKgWhW4Tax9V0BvqiJ7H_S_peYtIjMIkf6UKmKjo3w_M9sYTW7wDzyD3WGa_7ksCOpd_VX18JbKDki0ZgfyGHgd5KWrfLzJwFA-303Zo5BOtQ2sbEiTS0oN_VIbfgTbLxi7rDXVBW-2v3UfAE-WpVjJYKc6Qz_pIO2DTWGpgiyspsFSX2zZ9HIGVhJXuK9gsAJu6w61wKhcMlJqhG7ZpSptwE6uhrD9knYwJrmx_9ynjjNhFkkce1aeWXWqbNXcCrE7h5R8kkKm4FzCOdoM5cYiwRy_7pWGGWTvrUEtGzbMNtZi7OEaejoWPecpjAdae7VVATPDKrG7glRSI3-686HeG2dEgBc2w-IML-viyGY3r4L_i8FyKQqVVtnYLOE3W3hiIBPGNwX3RoClu8Qv_xBMJxvqKpS-DrjG85n39FNNh0OExELgPuGgkGhuxfoNI-l1yZvZ56tEm2IcQJlBt8QkRh9g9RueRJdQEQMrdzgyNBiYdYYNS5Ae4FiDXi4Ed98tBQTPp-KZOANkqUkUP1GNwnXZBDBKEo0LSTZHdK36PDtkScu4l7HhLERNuIBHsqd8GyxSjmfT8baDPSbXhJ9w6GqR8X9tRoORdJRH01_qiTkP0f7sjqUw-iaAMFplUP9bUPCift-ztLfFd6kN1XZpN17lfUlVH8gkUaJppuDOv94CfByvQv0mM8wYFqHXQhxmrYSnjAc97lCEQqMXT45KcUmYY_zDwQesflAD3VcoI2abu71LuhMV3nz1uGBEMnRn6BhvxHUoZhowMSbxndOPCGqmKmtIBEeq4f5ojqRN7XCUdGqFR4WkZ4R2gs4-GlAV2Le3NXZoal8pBdnGU8RacjFgU2aRiqWMaC0DNJDYB3YSg5loGsYBOJax9URnEXVzf8mdXwd61k0iUO3lmNMKdx4en1MZcj-TKWZK3zBUXycRXOjaJ_7cF284BO-1h9kjpF4jyofXTKeR0SUSJz5pP2N___ZLtiWM95QeAvgRXPGw2iGbyxXc9MWDNUvvzxsbyeDAZq812b7JXeRykdHC5CvSTOhX7EsJ6Zske21gaU7u_DYBsEMYD0rr6fnmLFyeVshf0Rt16_XOHK0dnMWkLf8yTpvC5dNnBizZw5BSEpgxI6qXkwrzkvqNG7hvalU-fUeoTEL2N7AyUvzEVRu6Hcv2_Xxne7oizhoSHe-nsvN2dUu_97a_Kr5TqHk20KQ0sffduVlbdqx0c4e9j35x8eL7kH30g8FchsUq8rNn4iIGQUcAbcN1F4pZEVzKNvjA5HgbIOq8v21d9gjxc6QYgLikbFpwh2rQ8-SCiVuZAmshtQzILrjyPckaFhu9d156hlkUeOvZtqEZY-_NqFu7Am7PCKEL1kuc6tS9bKQcL5kQb7Rj0_5ztkuSf1CUGiNdjEqqb_PhOaXliWRbgoBGFeiINxwXFZBa3GLKyxgHmcyaFQCjbQqHWc9e4TVELEzqTT1c2r-ptOlSRLQMvOl8uu7FMhpv46aWTB_HSkai3tCk4ci7ed6Fj3dwUTKEyRkfbZbUquHEhmVYekNkZ7yr8oQjY733jNS4aBUxakcsEJUoZnXw479PpXKEQPfKidVXkvCe8XoXYcGNJn3hl3Q75vBnplVYccNTRCrtMgAiTqLMj-UeSNViIuv4qRwoXndmdR_4a_02seQLaXuwEVkGazeM-vzdgucGkg5wNQA833U4p1BJGFLk5ewpuMgg1c6uKo2arnqGwpXsF6si4gqimffsOB7Iklv33AUJ20lZGR7gZmY2DjR2XHEl4GhalY46ZdFD_zWWxYBJYiTvcVrJP3t0uRtO1Pk_O_n6YcGJt80dkMc7x2lHKu5rul3AIgdywJ9OHdEHtMff9hsh7KqwcYOIezBu4b-_H9vk1iKU3yyZkPIcUbGGMhZ94KlK-fACxZP92ErCrOH3UDrZ_nXQfP3ABNMypTT3DkzyDzR_NICpZ3oG9rwh-kCPuVMQfxxo9lYH_a4s9sx_Mt1cDf13VoE60xNjc8SYqAo2hTuDW0D5KixQ22AztB8Xxs1hFu5BNt1oGRnGmWszoAjJ9QlZYzuZO9ts9dtH-seFufO8gcaDuZmjjzzFvWlSeX9lXIzDFAIlcX3vTRWp5_qb_uemzcR0cNGcPWiOn_DZvaHzRV-0vnuoongLSG-yAF2lq3Ho5BSxAP7j9qat1xhwmFX0hiKkfpOGqUKUwIe9zc5VmNwpeLJk-7b_v5SoRjr-kCmRiVN1TTgV7VUYTIpOyLCkynpclz3giwtU54-MKZYHQ2f7PJnKtfxCa1gCYrt933Ok-_BVKqxIsKGr7pQQMjqG28q41Bdmtg5qLXCV8X_j6mfEwkWKUyx4qja6geK3TyQ3darZfCeTIv6GjoLpVcH25XlybCI5OJVHhiDnIIrj2hNP5S8-p1UCZJritb4mB-9zSYMp82VpZnm8zhsVdJp8VPYFJ-6sVoKWx7-AkJ-PY_B6hksVvf3gV5uagXVEVxztp9HWiNKbrdnzOehFE1zoW50o7et_hE-GuaTtVoIhxNA6dMfO4cuitZNSNZOW39VtC4L7ssGRzs1iq81k6t7ZC9XW7Mim8g6yfrSQ6iQL2l2qaAfrfBQ9PyaZT35ENGQYj_qVK1wcZCQ9YXVvgGCfmOGymtrAaOtSLZ0sHUoqdFsu_F93dz6xFHbvFuQr8Z717oSn1rNbiINM8jGpFYz7cnNP95Gr7BoeqqrAkzhxJdmuP3ovCvRhvgFhLP_OfouDNqc-785Ac2xZ8_-p85KGaDVxHxi79Klyt56PufbPdCuyeeVVqyonBr1SPBgZLyLW8_TI29vNppDVkGlNaWcy07M36rhIzzzbqW-7PUAWGKKmPl6vaYOHYadVRXKn8fMv3Tcm7UJxAr5U_DHyGsXaRQ_BFeRxzeDg93y767bd1fVYzyXZOS6ad5DZk6wAgLWWGH3qaGcgkpfWpqjJdnIaSL7AM6nssGRc3-qezGoFUbIsOkypiw9fQ5yyIZ5yBfK8EMDHeHMeNi8sHhXT-n0mRGmx3lFQXJcu8fGH2hjM-afoCfaJQxFwMIjUdgjwJq_4j1Md96jYfvKDVBBRu-MRhgIbTcaCDws5BWbFA-hcoTSrYprv2FD18mjM2IDRuZQkt6W_nj5LRarF4VMsJrvTHF41Fy1sSc4p1Ytj09te4_GifTX5L2h4eRbBzY_7m7C0xY6GJkl4l9r0OsovN3b-56XPpL_tPtIG6PiR9muE_YvOxbYBPGhbZYEPc7IO2XjAu3Ueu6R_oxIkAAz_FdMvurv_U61yIeiSPXXZDabgjmoERx_ehGZxnHG4ILlDi4aUVoyvZWxyLidRWQfxxorFn4w==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_034afc300428a076016adc1d4a283c87d1bac17071879258c1",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 823,
+   "completion_tokens": 521,
+   "total_tokens": 1344,
+   "cost": 0.013712,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.013712,
+    "upstream_inference_prompt_cost": 0.003292,
+    "upstream_inference_completions_cost": 0.01042
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 482,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.013712,
+ "secs": 10.9
+}

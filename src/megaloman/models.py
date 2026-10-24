@@ -27,6 +27,8 @@ def _record_http_error(model, attempt, e, raw):
             if k.lower() in ('retry-after', 'date') or 'ratelimit' in k.lower() or k.lower().startswith('x-')}
     rec = {'ts': time.strftime('%Y-%m-%dT%H:%M:%S'), 'model': model, 'attempt': attempt, 'code': e.code,
            'body': parsed if parsed is not None else raw.decode('utf-8', 'replace'), 'headers': hdrs}
+    if isinstance(parsed, dict):
+        parsed.pop('user_id', None)   # account identifier: not useful for diagnosis, keep it out of records
     HTTP_ERRORS.append(rec)
     for fn in list(ERROR_LISTENERS):
         fn(rec)

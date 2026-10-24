@@ -1,0 +1,92 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are judging tiny pixel-art region maps of one game enemy: a front view of a cartoon robotic squid: a red domed mantle with side fins, a pale face frame around a dark visor with two glowing eyes, side pods, and four tentacles with joints and suction cups.\nEach flat colour is one named part:\n- #D9002B mantle_shell: The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline.\n- #00A83B side_fins: The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right.\n- #FF7A00 face_frame: The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets.\n- #240099 visor: The single dark rounded rectangular window centered inside the face frame.\n- #66FFFF eyes: The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor.\n- #0057D9 side_pods: The two metallic housings attached immediately outside the face frame, one on each side of the head.\n- #CC00B8 tentacles: All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages.\n- #638F00 tentacle_joints: The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments.\n- #CCFF66 suction_cups: All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles.\n- #7600FF central_nozzle: The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face.\nThe first image is the concept art. Next are three candidate region maps of the same 24x24 grid,\nshown enlarged with nearest-neighbour, labelled A, B, C. Which candidate best reads as the squid,\nwith clean, recognisable parts (and a sensible left/right balance)? Reply with JSON only:\n{\"choice\": \"A\"|\"B\"|\"C\", \"reason\": \"<one short sentence>\"}"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "b60f73aebf46ec6a8173f5d414b2319576f55f9a73d78e0935a726433bfa38f2"
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "6ac55188aa47a31530d4ba73d42e87e00e93f83a036b6973fc6248adf430cc07"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792810237-r6Yb65hl0zaflc1y9DWv",
+  "object": "chat.completion",
+  "created": 1792810237,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"choice\":\"B\",\"reason\":\"It has the clearest paired eyes, balanced fins and pods, and four cleanly separated articulated tentacles.\"}",
+     "refusal": null,
+     "reasoning": null,
+     "reasoning_details": [
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq3B0CjgfVhFJJg2GHqcwWQ6QXPSdYCtuM7cWqcEB81VYgGTsRdosKR0zXDO7I4vOc4hGmzzwC8AwdxevnBJWJrDh4jOAvGWKclRkY462cYs9fpPAlvFT2lkUAmsqlHt-TlsfsmDhBlk0aIIzew3e60H3Mfcvio0rB3l3kVlhfyzoGnWBa1EaugVmF0WsPPY2PL2mMwpX_n3TZ4Vp-hZrBPJRkyubhVyizl8Gfr2PgD8KwSdhf0_OgUZQURMf1_Yd7zhVaetI2WphmFn6kH4spsvcaEqUepXTPvmmsa1UHIdH2xDYyVcsFVYnAvl_6o5ZpD7O_Chzg7CrktVv-psEdeiUwVdS_OmVkwGKgbhZOKRlGtC8hTS-EpUA-K5hcVF_o0MXEt4wTKwXP9uukHSJGfVowW4l9bGNEnMADA-YuuaKdwh7OZnzj9hqRy6NnVg2nwC6jctaHYMUMwIS8LjWRXVHQS-M2qauUnRyNTlm_BXF1rtlYQW74YWumhHyV7ddf5PwGscwYjxkVKx18Pzkh65h7YA-FCET8HYDmUQ-XdrvUgQ93wut3553CGRn0ffQwhkZAxk9I7Dg9JHqHogz6rBBiUn7ItFIf0IACzBtAG1JCq2xQWNN9FNHhYsQY_DxES98oqW0DKqMbVPiEaGdlcIel6weuAEwUbU4MgbSyZYtCZ-KbhZMYXDUPDiWQx5C1P7sb6Ehq3BfJQoBTlmHu539zienO2XVnyoehl3TI1ktUnjGF2Y0SEAmRtZI0qOAleIEtgAstmuaSRgKqfD-NTSJqxLWzcPNYSVi-VEyM-lSmHcfu7yVj-BCSjQMYhTJBht-hagJiKx0BtXOQev5iD1T33pextIf4nKGqNfct6N7SRTv1vY98jW_sropwHibtGNV_qJegrCGSdQJFEtMPAoT-dhfptgywdwjqpj8oBqIfZBX8GlAeGsu1rN3nI76xnBs3gfD-6ZSvekNG1iZzDV3ukPWSgQUrOXJiVVvlh-FW-aU2NghpbwBPf-diF3R-YdvDUbwfeD8AqLyvgdfp_og8pJfjthHQZxZb9Up84hxsOcFrmOqY2zkkSu6imFjvUi2z57cuVyCidil0Hq_JnwV1PsQ5_WDvl9VGMTj14yUhknJoj0-mPR5YPG1ARaDiv7XQIFJHRXKpCJ5QmF1HwolqT5hMqcZ2EbqR9PusbLCGY6s3MuXkteKDk4ArZNV0AaVM9djuSV8o2snhsieVqNihqdXJwTx1LIlOTJpv5ALsO9cb4XRmgYEOdMMRMy-BsQO_2OBT9jnI2Q6oevl0V_9w6s6Cvu_nyr0HeMt4YeVW3lY9OUOkK-qoWnLVuRzu1hHB-hm6eNEr7CnOc97UPFihx6zioNwzU2gVMCo-r5-Lbm1foBekRTFR4Ac1hawal_-DcVorZ4OBmKaSD-dxRO8EsvD0PeWQ6itwqbU6mV_veTExD2bBoyl92yF9gCblnhrcJZW4iG-XKmO1J-s19OceLvPQjiiMNppoJytBoZH_g_R8TRlOHfJ-VrQfdXQc-ZvnW0NaPD1wmRTNXJcYx-MfSlWqdvB0eL9vh28c5SZTsA4drp7umBiN_Geu8Po0eJ9Y-Z0jssDBB6jceDcKKS-SAugcMUvxFEseZuM4-NXFvTROB4kVraQ1SfhHGybva1_3RFy6DuLbVJ43fft26m0DRqs_N8JDmHH9NO6YQhBGztAGQ2lCzabsNPSf2udHByOvbzi6IlFXZnsOlhgOrySJYGTPfdZ6Yt6pyf4f9b2DJQMnS--jPmXyA33bZ0q55r00X_ltTQQTapRwi0lpZGzIAEv25vMh78JfCU3uJBfkaZbJHCKLRbh7BMg5iQyae6QlUWP3t49ISfsCJN6jwRjtLxGO0wVuRss4wqfl92OdSePyGzwHph0p00qTBg4joyngKh_Fm2CXnx-WQcZpn2sFOjd5UCBaNkx2KehwPORPeF2CTFhfrEKcFcadb6zKTdnMvnnN5lggV-7BkKImTTD-8me97WFbkiclBcRDj7eLtwLHgo2smV7Y-znZRtFD6kPQjilEXtPhKoB9II70BEvNxi-Vc8dnrozuOqT43HmL2nQwdcTsc7MCWtaytyCumYpvGVbE_NPZKsn-HKVwe_iQsm0yXtWOLUKuzAvr_sOZNFUOjaIL2KMBcpg4T9otxsIV69YFgAvmQxsri-IXx1K_UI6wES8tU5LINysuNGvHdHIc3z-RNMOcCX3X3M2QPBIS6YUDajLfo1tqsWO4a5DWLBOoHhznzFDxwKmje7OoT3jWgMl3fBYY7f2evUsdtUIlTcTqCOVHLatLR9CO_ySboQjGLaJPEgV7oHx4RQ8uBMVGC851xyTOjsFPXJcrOipwKtfWYHrBaGnULNYe4bn6r268BdbYjuRfjhL74TRztgwZ51uxtS99l6fYtaDREjFvdh6dm7ZcHXvAUeqGhLzA70jPOmdKdfmXkTeATnl2WvSlk36wnqvcluODumqI_Bsd5XsM5dp_uy1gh46BC2YR_IitE5S5wV46tha_-uJNNnKpdUmNsJUGlMXgj4n3REmz78Mt2H0XAsBmRlxaKvas-fN_MCfRZ3dO9ual8sP0seEnWsP_e3hww-5xa3ZKF1ou_eYREs-kACBUoGzMAbnJYywJBxT4DQ7niODASSC4KJgG8h90qN030sG782eZyzcj5kanM0N0cW-1PvPIvJEV28yCJfVnyOE6Yfr4mSiMH7lUQp8CjNGpezJBa8RZKQKcpQyf6tcxi5dY6MsS8kLETCYKzlcmgaAi6Mgawo7b4qw7T_M1x1m0H-_7S2M4m-Ro5eS73di0Fgwiq0MqXP9Ld6f4K8wzB2vJ1x1bMvz1a7xLCKyTlO5Re3xn6kQGR2VybPEzOKknFUx-o-WISnrmQ0zES_s2TkmWYkEVJRa3a0E4lvcsaCSS6FlW5PVpT5D26TmBhGa8js2uWPKPP-qHvx7e_5NolPRqNd3aQg6hlie7X32gKFbcQ3Jw5nnlEui_fkxHfz9x_OATRIeuc9AEbzaG7vtE12X00CM7i_ebnKrhAFvql4NQwPDEuGAKWpu6zINRvRgKyg3gltVkSXWloQ7WfM3t_M-Rf0urHaUrehsTGx9yS27je2cNFINQNEMv0dxZMkuQGvZ145r6Ad4GQFZZi6dj27t9I-yXBDHRozy8_XFmrHNvWaJ3nkHFw1zyZv9FrkJ4Xd0x4tYBwp9xeneseQVJMOL_AjAksYcWXxXvT2mGvn7RjGWPldFgKWVthLAgU9myyvlUkpaAKCdGVgwChYw0Tkr3fvBrQao48VQMms_MktBPjiSduBWiH30QlX0qrJhYbxU_Iqg-cMOcNkAmQV3R5rH_G013QAgRh72t7T1W5rxTjyUyLBDY1tJ0ivnzw_2ChDPds961rYVYmjcL7OAMTs5sdI-Du2lkAtWOLQ1k3FGaITXHnMzqu3aYycOF1L9CUxk9fnw9Vg0LhgOqrDu21Os01YVOgv01I324yBoTltxlM6bkraE7IM4nIBQ6iaH_7CG1HwKNJIUWSpUMtL3Ph6m8puooqFF0Kmmv3nWYfixsygqRno9XsgrUotY9wxGF8X2SWfySj5VtO-MAl3s_v1HBYiOWl5tjGzB0Z1bRt5jo0PLwVBeVM5jiacQVAfrubG2a7QNUeeY9Qh6rWlmSXFSZLL0zxYvG1ZTWFsdo79S4LET047qpRDIndp0yJh-dLn8TyD2m6arFWv5XplniwTp6i6y5ddMvspl0dPKjKYq3FNIOSN_h8ZgnhHSmhTUL_O9jgaCRnUdQNlazpnxfIlDAPZfC3h6lxgIa7OWdqG0ZHnQgsUEcdRilK-5N5NnZzNpJS5Hlo2jZRJ_at_PdJaxCeIqwidMs63zkrmRwrOhF90sL70CFgZ6CCHepv5heJdquKoQojn-Al_So1wgzdOJmPwcEFOgYE32vdUbmIxeZj3YaPShrrpdUsZXqMZpW7W4aX9uLmzfwLnifx9bB5-ayJu1D7tDGy6ILyQLewLwQHhoXko1IkPzRomP4cqnWqv9no6sioBim12Lln3lUn0dBVxwE3tbNmrzmHmlp_-iHBEyFZjn22Rm8J8R3jg6AcMA59NiHWISO7IGgO4Q5YrSZw-BL0M_fC5PPkr601Yd1zHoy-qCyZWjnBT7mmbvmjC3_e46JFI4UDf1kxuFeNCuHWL3qaOSK25Y6GgL6OtzIqMAF9dygZ-9b.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_06406c644aaae7bb016adc1cfedf8487d19169ed2a747e4465",
+       "index": 0
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 823,
+   "completion_tokens": 238,
+   "total_tokens": 1061,
+   "cost": 0.008052,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008052,
+    "upstream_inference_prompt_cost": 0.003292,
+    "upstream_inference_completions_cost": 0.00476
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 199,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.008052,
+ "secs": 5.4
+}

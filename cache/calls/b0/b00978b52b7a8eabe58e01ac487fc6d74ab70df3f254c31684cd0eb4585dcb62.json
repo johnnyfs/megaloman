@@ -1,0 +1,81 @@
+{
+ "request": {
+  "model": "openai/gpt-5.4-image-2",
+  "modalities": [
+   "image",
+   "text"
+  ],
+  "seed": 1,
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Repaint this image as a flat COLOUR-CODED REGION MAP for a segmentation mask.\n\nKeep the exact same creature, pose, size, position and framing: every part must stay exactly where it is, pixel for\npixel. Change only the colours: fill each part completely with its one flat colour from this table:\n\n- #D9002B  mantle_shell: The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline.\n- #00A83B  side_fins: The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right.\n- #FF7A00  face_frame: The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets.\n- #240099  visor: The single dark rounded rectangular window centered inside the face frame.\n- #66FFFF  eyes: The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor.\n- #0057D9  side_pods: The two metallic housings attached immediately outside the face frame, one on each side of the head.\n- #CC00B8  tentacles: All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages.\n- #638F00  tentacle_joints: The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments.\n- #CCFF66  suction_cups: All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles.\n- #7600FF  central_nozzle: The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face.\n\nRules:\n- Each part is ONE solid flat colour, exactly the hex value given. No shading, no gradients, no highlights, no texture.\n- No outlines, no black lines, no borders between parts: colour regions touch directly.\n- Background (everything that is not the creature, including any ground shadow): pure white #FFFFFF.\n- No text, no labels, no legend, nothing added.\n- Do not move, resize, redraw or restyle anything; only recolour.\n- Pale spots, stripes, highlights and markings are paint on the part they sit on: give them that part's colour.\n  Nothing inside the creature's outline may stay white."
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "1b7028c2fb0f098858a0964c8ba53b074e65d671acb03c82118446f751081926"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792808449-ZhWnfacHT0E86bnQhfyG",
+  "object": "chat.completion",
+  "created": 1792808449,
+  "model": "openai/gpt-5.4-image-2",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": null,
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3194,
+   "completion_tokens": 7556,
+   "total_tokens": 10750,
+   "cost": 0.244252,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.244252,
+    "upstream_inference_prompt_cost": 0.025552,
+    "upstream_inference_completions_cost": 0.2187
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 7024,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [
+  "ba3445235989dc732dc8cd6943e325cb843d14dc0ef444bf8a18c00fcb6747d3"
+ ],
+ "cost": 0.244252,
+ "secs": 91.0
+}

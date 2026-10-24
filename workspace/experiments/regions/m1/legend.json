@@ -1,0 +1,100 @@
+{
+ "model": "openai/gpt-5.6-sol",
+ "parts": [
+  {
+   "name": "mantle_shell",
+   "role": "body",
+   "priority": 3,
+   "color": "#D9002B",
+   "min_px": 8,
+   "where": "The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline."
+  },
+  {
+   "name": "side_fins",
+   "role": "limb",
+   "priority": 4,
+   "color": "#00A83B",
+   "min_px": 3,
+   "where": "The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right."
+  },
+  {
+   "name": "face_frame",
+   "role": "feature",
+   "priority": 6,
+   "color": "#FF7A00",
+   "min_px": 3,
+   "where": "The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets."
+  },
+  {
+   "name": "visor",
+   "role": "feature",
+   "priority": 8,
+   "color": "#240099",
+   "min_px": 5,
+   "where": "The single dark rounded rectangular window centered inside the face frame."
+  },
+  {
+   "name": "eyes",
+   "role": "feature",
+   "priority": 10,
+   "color": "#66FFFF",
+   "min_px": 2,
+   "where": "The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor."
+  },
+  {
+   "name": "side_pods",
+   "role": "detail",
+   "priority": 5,
+   "color": "#0057D9",
+   "min_px": 2,
+   "where": "The two metallic housings attached immediately outside the face frame, one on each side of the head."
+  },
+  {
+   "name": "tentacles",
+   "role": "limb",
+   "priority": 4,
+   "color": "#CC00B8",
+   "min_px": 4,
+   "where": "All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages."
+  },
+  {
+   "name": "tentacle_joints",
+   "role": "detail",
+   "priority": 7,
+   "color": "#638F00",
+   "min_px": 1,
+   "where": "The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments."
+  },
+  {
+   "name": "suction_cups",
+   "role": "feature",
+   "priority": 8,
+   "color": "#CCFF66",
+   "min_px": 1,
+   "where": "All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles."
+  },
+  {
+   "name": "central_nozzle",
+   "role": "feature",
+   "priority": 9,
+   "color": "#7600FF",
+   "min_px": 2,
+   "where": "The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face."
+  }
+ ],
+ "color_fixes": [
+  {
+   "part": "eyes",
+   "from": "#D6C800",
+   "to": "#66FFFF"
+  },
+  {
+   "part": "suction_cups",
+   "from": "#00B8B0",
+   "to": "#CCFF66"
+  }
+ ],
+ "call": "1b8e4b7498806540f101b4110de4a0c406b3eb5eb0709a1a3f13c76cf465ca26",
+ "cost": 0.049292,
+ "cached": true
+}
