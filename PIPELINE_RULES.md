@@ -82,6 +82,18 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **trial**: at most one darker shade per part, where the concept's 3-D form justifies
   it and it doesn't muddy small sizes.
 
+- **finding** (render v1): draw the outline *around* a label map computed at N-2, not
+  inset into the rung, or it eats 1–2 px limbs.
+- **finding** (render v1): below 32 px, drop the line between part pairs whose colours
+  already contrast strongly (Lab dE ≥ 30); that line costs a whole row.
+- **finding** (render v1): the NES tile rule (≤ 3 colours per 8×8) forces the palette
+  down to black, salmon and cream at 20 and 16 px; minor colours (nozzle cyan, pod grey)
+  get dropped.
+- **finding** (render v1): 32 px reads well. 16 px doesn't read as a squid: the tentacles
+  blur into one skirt and the eyes are 1×1. That's the region map's fault, not the
+  renderer's. It needs the reshape step: a face template, 3–4 distinct tentacle strokes,
+  and a head kept big.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
