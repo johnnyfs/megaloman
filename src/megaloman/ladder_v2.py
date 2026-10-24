@@ -222,6 +222,11 @@ def v3_specs(legend) -> tuple[list[dict], dict]:
 def prepare(src_raw: np.ndarray, legend: dict, spec=None, sizes=(64, 32, 24, 20, 16)):
     """Symmetric source (half chosen by summed health), instances, significance specs. -> context dict."""
     n = len(legend["parts"])
+    if spec is not None and not spec["axes"].get("vertical", {}).get("verified"):
+        # the spec says there is no mirror axis; ladders v2-v4 mirror unconditionally, so refuse instead of silently
+        # mirroring an asymmetric design (snipe dry run). The generic ladder (pipeline_gen.prepare) honours it.
+        raise ValueError(f"symmetry spec type {spec.get('type')!r} has no verified vertical axis: "
+                         "ladder_v2/v3/v4 always mirror; use pipeline_gen")
     cands, sym = symmetric_source(src_raw, legend, spec)
     sst0 = {k: L.source_stats(v, n) for k, v in cands.items()}
     pr = np.array([p["priority"] for p in legend["parts"]], float)

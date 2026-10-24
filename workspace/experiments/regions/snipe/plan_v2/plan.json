@@ -1,0 +1,709 @@
+{
+ "pruned_parts": [
+  "tail_feather_front"
+ ],
+ "plan": {
+  "palette": {
+   "black": {
+    "nes": "0F",
+    "hex": "000000"
+   },
+   "dark": {
+    "nes": "0B",
+    "hex": "005800"
+   },
+   "mid": {
+    "nes": "1B",
+    "hex": "00A844"
+   },
+   "light": {
+    "nes": "38",
+    "hex": "F8D878"
+   }
+  },
+  "palette_reason": "Deep and bright marsh greens unify the robot while warm gold is reserved exclusively for the highly visible eye.",
+  "assign": {
+   "body": {
+    "group": "mid",
+    "hex": "00A844",
+    "why": "Bright green makes the rounded torso a clear primary mass."
+   },
+   "head": {
+    "group": "mid",
+    "hex": "00A844",
+    "why": "Matches the torso as the same painted robot shell."
+   },
+   "eye_housing": {
+    "group": "black",
+    "hex": "000000",
+    "why": "A black socket strongly frames and isolates the eye."
+   },
+   "eye": {
+    "group": "light",
+    "hex": "F8D878",
+    "why": "Exclusive gold accent gives maximum eye contrast."
+   },
+   "cannon_beak": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Dark green reads as gun metal against the brighter head."
+   },
+   "scope": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Keeps the accessory mechanical without competing with the eye."
+   },
+   "neck": {
+    "group": "black",
+    "hex": "000000",
+    "why": "A shadowed connector cleanly separates head and torso."
+   },
+   "wing": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Contrasts with the mid-green torso and preserves the layered side mass."
+   },
+   "tail_feather_back": {
+    "group": "black",
+    "hex": "000000",
+    "why": "The rear feather is reduced to a shadow silhouette behind the wing."
+   },
+   "leg_front": {
+    "group": "dark",
+    "hex": "005800",
+    "why": "Dark green preserves the nearer wading leg and foot as one readable limb."
+   },
+   "leg_back": {
+    "group": "black",
+    "hex": "000000",
+    "why": "The farther leg remains a recessed shadow behind the front leg."
+   }
+  },
+  "priority": [
+   {
+    "rank": 1,
+    "part": "eye",
+    "why": "Must survive as a filled gold pixel block."
+   },
+   {
+    "rank": 2,
+    "part": "cannon_beak",
+    "why": "The long rifle silhouette carries the snipe-sniper concept."
+   },
+   {
+    "rank": 3,
+    "part": "eye_housing",
+    "why": "Preserves the dark frame that makes the eye readable."
+   },
+   {
+    "rank": 4,
+    "part": "scope",
+    "why": "Its top-mounted silhouette reinforces the sniper identity."
+   },
+   {
+    "rank": 5,
+    "part": "head",
+    "why": "Maintains the rounded robotic head around the eye."
+   },
+   {
+    "rank": 6,
+    "part": "neck",
+    "why": "Keeps head and torso visually separated."
+   },
+   {
+    "rank": 7,
+    "part": "leg_front",
+    "why": "The nearer long leg and foot establish a marsh-wading bird."
+   },
+   {
+    "rank": 8,
+    "part": "wing",
+    "why": "Retains the major near-side limb and pointed rear contour."
+   },
+   {
+    "rank": 9,
+    "part": "body",
+    "why": "Provides the large rounded torso mass but can yield edge pixels."
+   },
+   {
+    "rank": 10,
+    "part": "tail_feather_back",
+    "why": "Hidden rear feathers are secondary silhouette detail."
+   },
+   {
+    "rank": 11,
+    "part": "leg_back",
+    "why": "The obscured far leg may lose contested pixels first."
+   }
+  ],
+  "eyes": [
+   "eye"
+  ],
+  "eye_surround": "eye_housing",
+  "summary": "At 16 px, preserve the isolated gold eye in its black socket, the extremely long dark rifle-beak, top scope, round green body, and at least one long wading leg with a foot.",
+  "repairs": []
+ },
+ "plan_raw": {
+  "palette": {
+   "dark": "0B",
+   "mid": "1B",
+   "light": "38"
+  },
+  "palette_reason": "Deep and bright marsh greens unify the robot while warm gold is reserved exclusively for the highly visible eye.",
+  "assign": {
+   "body": {
+    "group": "mid",
+    "why": "Bright green makes the rounded torso a clear primary mass."
+   },
+   "head": {
+    "group": "mid",
+    "why": "Matches the torso as the same painted robot shell."
+   },
+   "eye_housing": {
+    "group": "black",
+    "why": "A black socket strongly frames and isolates the eye."
+   },
+   "eye": {
+    "group": "light",
+    "why": "Exclusive gold accent gives maximum eye contrast."
+   },
+   "cannon_beak": {
+    "group": "dark",
+    "why": "Dark green reads as gun metal against the brighter head."
+   },
+   "scope": {
+    "group": "dark",
+    "why": "Keeps the accessory mechanical without competing with the eye."
+   },
+   "neck": {
+    "group": "black",
+    "why": "A shadowed connector cleanly separates head and torso."
+   },
+   "wing": {
+    "group": "dark",
+    "why": "Contrasts with the mid-green torso and preserves the layered side mass."
+   },
+   "tail_feather_back": {
+    "group": "black",
+    "why": "The rear feather is reduced to a shadow silhouette behind the wing."
+   },
+   "leg_front": {
+    "group": "dark",
+    "why": "Dark green preserves the nearer wading leg and foot as one readable limb."
+   },
+   "leg_back": {
+    "group": "black",
+    "why": "The farther leg remains a recessed shadow behind the front leg."
+   }
+  },
+  "priority": [
+   {
+    "part": "eye",
+    "why": "Must survive as a filled gold pixel block."
+   },
+   {
+    "part": "cannon_beak",
+    "why": "The long rifle silhouette carries the snipe-sniper concept."
+   },
+   {
+    "part": "eye_housing",
+    "why": "Preserves the dark frame that makes the eye readable."
+   },
+   {
+    "part": "scope",
+    "why": "Its top-mounted silhouette reinforces the sniper identity."
+   },
+   {
+    "part": "head",
+    "why": "Maintains the rounded robotic head around the eye."
+   },
+   {
+    "part": "neck",
+    "why": "Keeps head and torso visually separated."
+   },
+   {
+    "part": "leg_front",
+    "why": "The nearer long leg and foot establish a marsh-wading bird."
+   },
+   {
+    "part": "wing",
+    "why": "Retains the major near-side limb and pointed rear contour."
+   },
+   {
+    "part": "body",
+    "why": "Provides the large rounded torso mass but can yield edge pixels."
+   },
+   {
+    "part": "tail_feather_back",
+    "why": "Hidden rear feathers are secondary silhouette detail."
+   },
+   {
+    "part": "leg_back",
+    "why": "The obscured far leg may lose contested pixels first."
+   }
+  ],
+  "eyes": [
+   "eye"
+  ],
+  "eye_surround": "eye_housing",
+  "summary": "At 16 px, preserve the isolated gold eye in its black socket, the extremely long dark rifle-beak, top scope, round green body, and at least one long wading leg with a foot."
+ },
+ "significance": [
+  {
+   "name": "body",
+   "significance": 0.32,
+   "character": "round bird torso",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The torso supplies the snipe's round mass but is already large enough and should surrender pixels to identifying features.",
+   "overrides": null
+  },
+  {
+   "name": "head",
+   "significance": 0.38,
+   "character": "rounded mechanical head",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:neck",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The head frames the eye and weapon but remains readable as a small rounded mass without enlargement.",
+   "overrides": null
+  },
+  {
+   "name": "eye_housing",
+   "significance": 0.75,
+   "character": "mechanical target-like eye socket",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "head",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The socket strengthens the machine and sniper reading, but enlarging it would crowd the eye and distort the head.",
+   "overrides": null
+  },
+  {
+   "name": "eye",
+   "significance": 0.94,
+   "character": "single alert aiming eye",
+   "essential_shape": "pair_of_rects",
+   "mode": "floor",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "eye_housing",
+   "min_footprint": {
+    "64": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "32": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "24": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "20": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "16": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    }
+   },
+   "reason": "The eye must retain a distinct 1-by-2-pixel mark at every size but must never be enlarged beyond proportional size.",
+   "overrides": {
+    "from": {
+     "mode": "floor",
+     "max_exaggeration": 1.0,
+     "essential_shape": "rect"
+    },
+    "why": "user: eyes are fine at proportional size; never enlarge, only floor at two separate >= 1x2 rects"
+   }
+  },
+  {
+   "name": "cannon_beak",
+   "significance": 1.0,
+   "character": "long snipe bill shaped as a rifle barrel",
+   "essential_shape": "stroke",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.8,
+   "anchor": "attach:head",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 6,
+     "h": 2,
+     "area": 7
+    },
+    "20": {
+     "w": 6,
+     "h": 2,
+     "area": 7
+    },
+    "16": {
+     "w": 6,
+     "h": 2,
+     "area": 7
+    }
+   },
+   "reason": "This is the primary snipe-sniper cue, so it must project far left and preserve a visibly broader muzzle at 16 pixels.",
+   "overrides": null
+  },
+  {
+   "name": "scope",
+   "significance": 0.86,
+   "character": "rifle sight on the head",
+   "essential_shape": "rect",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.5,
+   "anchor": "attach:head",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    },
+    "20": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    },
+    "16": {
+     "w": 3,
+     "h": 1,
+     "area": 3
+    }
+   },
+   "reason": "A short horizontal block above the head is a compact secondary cue that the beak is a firearm rather than an ordinary bill.",
+   "overrides": null
+  },
+  {
+   "name": "neck",
+   "significance": 0.22,
+   "character": "mechanical connector between head and torso",
+   "essential_shape": "stroke",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The neck clarifies construction at larger sizes but may compress or disappear without harming the core silhouette.",
+   "overrides": null
+  },
+  {
+   "name": "wing",
+   "significance": 0.3,
+   "character": "layered avian side mass",
+   "essential_shape": "blob",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The wing supports the bird reading but is a broad low-priority region that can yield pixels to the weapon and eye.",
+   "overrides": null
+  },
+  {
+   "name": "tail_feather_back",
+   "significance": 0.27,
+   "character": "pointed bird tail",
+   "essential_shape": "triangle",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:wing",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The tail helps the avian silhouette but is not important enough to compete with the long beak at the smallest size.",
+   "overrides": null
+  },
+  {
+   "name": "leg_front",
+   "significance": 0.72,
+   "character": "long thin wading leg and foot",
+   "essential_shape": "stroke",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "Its proportional length already conveys a wader, while uniform enlargement would thicken it and worsen merging with the other leg.",
+   "overrides": null
+  },
+  {
+   "name": "leg_back",
+   "significance": 0.62,
+   "character": "second wading leg and offset foot",
+   "essential_shape": "stroke",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:body",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The rear leg supports the wading-bird stance, but enlargement cannot preserve its separation from the nearer leg and would increase collisions.",
+   "overrides": null
+  }
+ ],
+ "significance_summary": "At 16 pixels the creature is recognised by an exaggerated long rifle-beak with a broad muzzle, a visible top scope, a floored single eye, a round body, and long proportional wading legs.",
+ "cost": {
+  "by_step": {
+   "paint_probe": 0.038,
+   "plan": 0.0411,
+   "significance": 0.1112
+  },
+  "total": 0.1902
+ }
+}

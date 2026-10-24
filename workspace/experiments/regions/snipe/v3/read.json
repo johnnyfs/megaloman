@@ -1,0 +1,38 @@
+{
+ "64": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": true,
+  "legs": true,
+  "verdict": "Everything reads clearly."
+ },
+ "32": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "The bird and weapon survive, but the eye is gone."
+ },
+ "24": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "Readable silhouette, faceless head."
+ },
+ "20": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "It reads as a bird with a long blocky beak, not a sniper."
+ },
+ "16": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "Barely a bird; the sniper concept is lost."
+ },
+ "call": "b07f635658af53d2d04d961e77234a7c8dec1a4a312beb766b88510dd09e8877"
+}

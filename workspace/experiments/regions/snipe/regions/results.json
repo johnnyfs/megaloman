@@ -1,0 +1,468 @@
+{
+ "legend": {
+  "version": "gen1",
+  "model": "openai/gpt-5.6-sol",
+  "parts": [
+   {
+    "name": "body",
+    "role": "body",
+    "priority": 2,
+    "color": "#E6194B",
+    "min_px": 4,
+    "material": "painted_armour_green",
+    "depth": "front",
+    "occluded_by": [
+     "wing"
+    ],
+    "where": "The large rounded torso occupies the central lower half of the character from the chest to the dark belly."
+   },
+   {
+    "name": "head",
+    "role": "body",
+    "priority": 4,
+    "color": "#3CB44B",
+    "min_px": 4,
+    "material": "painted_armour_green",
+    "depth": "front",
+    "occluded_by": [
+     "eye_housing"
+    ],
+    "where": "The rounded mechanical head sits above the torso and surrounds the eye at the upper centre-right."
+   },
+   {
+    "name": "eye_housing",
+    "role": "feature",
+    "priority": 8,
+    "color": "#911EB4",
+    "min_px": 3,
+    "material": "metal_dark",
+    "depth": "front",
+    "occluded_by": [
+     "eye"
+    ],
+    "where": "The thick circular socket is inset into the visible left-facing side of the head around the eye."
+   },
+   {
+    "name": "eye",
+    "role": "feature",
+    "priority": 10,
+    "color": "#FFD000",
+    "min_px": 2,
+    "material": "glass_gold",
+    "depth": "front",
+    "occluded_by": [],
+    "where": "The single round cream-and-gold eye fills the centre of the circular eye housing."
+   },
+   {
+    "name": "cannon_beak",
+    "role": "feature",
+    "priority": 7,
+    "color": "#0057D9",
+    "min_px": 1,
+    "material": "gun_metal_green",
+    "depth": "front",
+    "occluded_by": [
+     "head"
+    ],
+    "where": "The long tapered cannon projects horizontally left from the head and includes its dark perforated muzzle."
+   },
+   {
+    "name": "scope",
+    "role": "feature",
+    "priority": 8,
+    "color": "#66FFFF",
+    "min_px": 2,
+    "material": "optical_metal",
+    "depth": "front",
+    "occluded_by": [],
+    "where": "The compact cylindrical scope and its mount sit horizontally on top of the head."
+   },
+   {
+    "name": "neck",
+    "role": "feature",
+    "priority": 5,
+    "color": "#FF66FF",
+    "min_px": 2,
+    "material": "metal_dark",
+    "depth": "front",
+    "occluded_by": [
+     "head",
+     "body"
+    ],
+    "where": "The short ribbed neck connects the underside of the head to the top of the torso."
+   },
+   {
+    "name": "wing",
+    "role": "limb",
+    "priority": 5,
+    "color": "#663300",
+    "min_px": 3,
+    "material": "painted_armour_green",
+    "depth": "front",
+    "occluded_by": [],
+    "where": "The single visible near-side wing covers the right side of the torso, including its round shoulder joint and layered pointed plates."
+   },
+   {
+    "name": "tail_feather_front",
+    "role": "feature",
+    "priority": 4,
+    "color": "#000066",
+    "min_px": 2,
+    "material": "armour_bronze",
+    "depth": "front",
+    "occluded_by": [
+     "wing"
+    ],
+    "where": "The foremost lower bronze tail blade projects rightward from beneath the rear edge of the wing."
+   },
+   {
+    "name": "tail_feather_back",
+    "role": "feature",
+    "priority": 3,
+    "color": "#CC9966",
+    "min_px": 1,
+    "material": "painted_armour_green",
+    "depth": "back",
+    "occluded_by": [
+     "wing",
+     "tail_feather_front"
+    ],
+    "where": "The partially hidden upper and middle tail blades fan upward and right behind the wing and foremost tail blade."
+   },
+   {
+    "name": "leg_front",
+    "role": "limb",
+    "priority": 6,
+    "color": "#00FF99",
+    "min_px": 2,
+    "material": "metal_dark",
+    "depth": "front",
+    "occluded_by": [
+     "body"
+    ],
+    "where": "The nearer leg descends through the image-right knee and shin to the image-right multi-toed foot, including all its joints and toe pieces."
+   },
+   {
+    "name": "leg_back",
+    "role": "limb",
+    "priority": 5,
+    "color": "#00FF00",
+    "min_px": 1,
+    "material": "metal_dark",
+    "depth": "back",
+    "occluded_by": [
+     "body",
+     "leg_front"
+    ],
+    "where": "The farther leg is partly hidden behind the nearer leg and descends to the image-left multi-toed foot."
+   }
+  ],
+  "color_fixes": [
+   {
+    "part": "scope",
+    "from": "#FF6F00",
+    "to": "#66FFFF"
+   },
+   {
+    "part": "neck",
+    "from": "#00B8D4",
+    "to": "#FF66FF"
+   },
+   {
+    "part": "wing",
+    "from": "#F000B8",
+    "to": "#663300"
+   },
+   {
+    "part": "tail_feather_front",
+    "from": "#A63D00",
+    "to": "#000066"
+   },
+   {
+    "part": "tail_feather_back",
+    "from": "#76C900",
+    "to": "#CC9966"
+   },
+   {
+    "part": "leg_front",
+    "from": "#1B00B8",
+    "to": "#00FF99"
+   },
+   {
+    "part": "leg_back",
+    "from": "#8A005D",
+    "to": "#00FF00"
+   }
+  ],
+  "call": "edc24ff5f235baf2f28f19407e98943a5f0074b5d15b6a13a3e982f5e9410841",
+  "cost": 0.082507,
+  "cached": true,
+  "prompt": "You are preparing concept art for pixel-art reduction. Split this character into its PARTS: the regions a\npixel artist keeps distinct when drawing it as a tiny 16-32 px sprite. At that size REGIONS matter far more than\ncolouring: each part becomes one solid colour, and the boundaries between parts are what carry the sprite.\n\nReturn JSON only: {\"parts\": [ {\"name\", \"role\", \"priority\", \"color\", \"min_px\", \"material\", \"depth\", \"occluded_by\",\n\"where\"} ... ]}\n\nRules for choosing parts:\n1. OCCLUSION MAKES A SUBCLASS. When one instance of a repeated part hides another instance of the same kind (a leg\n   behind a leg, a wing behind a wing, an arm behind an arm), the hidden instances are their OWN part, named\n   <part>_back with depth \"back\". Do this for every kind of part that has hidden instances. Visible front instances\n   have depth \"front\". depth \"back\" is ONLY for hidden instances of a repeated kind (there must also be front\n   instances of that kind). A part that is merely behind a DIFFERENT part (a tail behind a body, a neck behind a\n   head) keeps depth \"front\" and lists what covers it in occluded_by.\n   Decide who is in front from the outlines: at an overlap, the part whose outline runs unbroken across the overlap\n   is in front; the part whose outline disappears under it is behind.\n2. If front instances of the same kind touch or overlap each other, split them into separate parts so every\n   touching pair has a different region colour. Give them the same \"material\" so they are drawn in the same final\n   colour.\n3. NO pattern-only parts: spots, stripes, panel lines, rivets, vents, two-tone colouring, highlights and decals are\n   paint on the part they sit on, not parts.\n4. Small mechanical connectors, collars, bolts and joints are not separate parts: fold them into the part they\n   belong to. Distinct character features (a weapon, a horn, a scope, a beak) stay their own parts. Small lights,\n   glows and lenses belong to the part they sit on, EXCEPT the eyes.\n5. Eyes, a visor or eye housing, and other face features stay their own parts. 6 to 14 parts in total.\n6. Every visible pixel of the character belongs to exactly one part (no background part; ignore any ground shadow).\n\nFields:\n- name: short snake_case.\n- role: body | feature | limb | detail.\n- priority: integer 1-10; higher wins a contested pixel when shrinking (small important features high, big masses\n  low; a front part higher than the back part it covers).\n- color: \"#RRGGBB\" flat REGION-MAP colour: highly saturated, far apart from every other part's colour, far from\n  white and light grey (the background is white). Do NOT use the part's real colour.\n- min_px: smallest size in pixels this part must keep at a 32 px sprite height to stay readable.\n- material: the part's real-world surface (e.g. \"armour_green\", \"metal_dark\", \"glass\", \"gun_metal\"); parts sharing\n  a material are drawn in the same final colour.\n- depth: \"front\" or \"back\".\n- occluded_by: list of part names that cover parts of this one ([] if none).\n- where: one precise sentence locating the part in this image, enough to paint it (say which instances: near/far,\n  left/right, how many)."
+ },
+ "layer_order": [
+  "tail_feather_back",
+  "leg_back",
+  "cannon_beak",
+  "scope",
+  "neck",
+  "head",
+  "eye_housing",
+  "eye",
+  "tail_feather_front",
+  "leg_front",
+  "body",
+  "wing"
+ ],
+ "shadow_px": 0,
+ "candidates": [
+  {
+   "id": "nb-s1",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 1,
+   "call": "5533f8761997a3daba2e2aee61de51c64dee87c58687d4c3fdefbb33e08868cb",
+   "error": "no image returned",
+   "align": {
+    "pass": false,
+    "iou": 0.0
+   },
+   "finish": "PROHIBITED_CONTENT",
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0,
+    "byok": false,
+    "total": 0.0
+   }
+  },
+  {
+   "id": "nb-s2",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 2,
+   "call": "1f66564f47e7b747d66369bd0f0949bea9d93a0d839382f1fb1254b50709b475",
+   "error": "no image returned",
+   "align": {
+    "pass": false,
+    "iou": 0.0
+   },
+   "finish": "PROHIBITED_CONTENT",
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0,
+    "byok": false,
+    "total": 0.0
+   }
+  },
+  {
+   "id": "gpt-s1",
+   "model": "openai/gpt-5.4-image-2",
+   "seed": 1,
+   "call": "36553f16a1d3d499f55c315f54bbde227fb38b393e89b09741664d311bf2949f",
+   "error": null,
+   "iou_raw": 0.8288,
+   "transform": {
+    "sx": 0.9967,
+    "sy": 0.9961,
+    "tx": 0.2,
+    "ty": 12.4
+   },
+   "iou_registered": 0.9624,
+   "holes_filled_px": 3334,
+   "align": {
+    "iou": 0.9812,
+    "iou_ok": true,
+    "parts_present": {
+     "body": true,
+     "head": true,
+     "eye_housing": true,
+     "eye": true,
+     "cannon_beak": true,
+     "scope": true,
+     "neck": true,
+     "wing": true,
+     "tail_feather_front": false,
+     "tail_feather_back": true,
+     "leg_front": true,
+     "leg_back": true
+    },
+    "all_present": false,
+    "part_areas": {
+     "body": 37413,
+     "head": 18016,
+     "eye_housing": 2756,
+     "eye": 1677,
+     "cannon_beak": 17492,
+     "scope": 8051,
+     "neck": 4046,
+     "wing": 41334,
+     "tail_feather_front": 0,
+     "tail_feather_back": 11098,
+     "leg_front": 22381,
+     "leg_back": 10681
+    },
+    "outside_silhouette_px": 1068,
+    "missed_silhouette_px": 2268,
+    "pass": false
+   },
+   "islands_folded": [
+    {
+     "part": "body",
+     "px": 2390,
+     "to": "wing"
+    }
+   ],
+   "occlusion": {
+    "body": {
+     "area": 34805,
+     "instances": 1,
+     "instance_areas": [
+      34805
+     ],
+     "touches": {
+      "neck": 0.168,
+      "wing": 0.672,
+      "leg_front": 0.101,
+      "leg_back": 0.059
+     }
+    },
+    "head": {
+     "area": 18215,
+     "instances": 1,
+     "instance_areas": [
+      18215
+     ],
+     "touches": {
+      "eye_housing": 0.481,
+      "cannon_beak": 0.149,
+      "scope": 0.127,
+      "neck": 0.243
+     }
+    },
+    "eye_housing": {
+     "area": 2756,
+     "instances": 1,
+     "instance_areas": [
+      2756
+     ],
+     "touches": {
+      "head": 0.578,
+      "eye": 0.371,
+      "cannon_beak": 0.051
+     }
+    },
+    "eye": {
+     "area": 1677,
+     "instances": 1,
+     "instance_areas": [
+      1677
+     ],
+     "touches": {
+      "eye_housing": 1.0
+     }
+    },
+    "cannon_beak": {
+     "area": 17628,
+     "instances": 1,
+     "instance_areas": [
+      17628
+     ],
+     "touches": {
+      "head": 0.765,
+      "eye_housing": 0.235
+     }
+    },
+    "scope": {
+     "area": 8108,
+     "instances": 1,
+     "instance_areas": [
+      8108
+     ],
+     "touches": {
+      "head": 1.0
+     }
+    },
+    "neck": {
+     "area": 4027,
+     "instances": 1,
+     "instance_areas": [
+      4027
+     ],
+     "touches": {
+      "body": 0.528,
+      "head": 0.472
+     }
+    },
+    "wing": {
+     "area": 43740,
+     "instances": 1,
+     "instance_areas": [
+      43740
+     ],
+     "touches": {
+      "body": 0.727,
+      "tail_feather_back": 0.142,
+      "leg_front": 0.132
+     }
+    },
+    "tail_feather_front": {
+     "area": 0,
+     "instances": 0,
+     "instance_areas": [],
+     "touches": {}
+    },
+    "tail_feather_back": {
+     "area": 11011,
+     "instances": 1,
+     "instance_areas": [
+      11011
+     ],
+     "touches": {
+      "wing": 1.0
+     }
+    },
+    "leg_front": {
+     "area": 22648,
+     "instances": 1,
+     "instance_areas": [
+      22648
+     ],
+     "touches": {
+      "body": 0.131,
+      "wing": 0.158,
+      "leg_back": 0.712
+     }
+    },
+    "leg_back": {
+     "area": 10606,
+     "instances": 1,
+     "instance_areas": [
+      10606
+     ],
+     "touches": {
+      "body": 0.095,
+      "leg_front": 0.905
+     }
+    }
+   },
+   "finish": "completed",
+   "cost": {
+    "openrouter": 0.256149,
+    "upstream": 0.0,
+    "byok": false,
+    "total": 0.256149
+   }
+  }
+ ],
+ "best": "gpt-s1",
+ "cost": {
+  "by_step": {
+   "paint_probe": 0.038,
+   "plan": 0.0411,
+   "significance": 0.1112,
+   "concept": 0.3453,
+   "concept_judge": 0.0159,
+   "symmetry": 0.0001,
+   "legend": 0.0825,
+   "paint": 0.2561
+  },
+  "total": 0.8902
+ }
+}

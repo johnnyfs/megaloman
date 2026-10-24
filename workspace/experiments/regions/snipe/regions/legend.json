@@ -1,0 +1,200 @@
+{
+ "version": "gen1",
+ "model": "openai/gpt-5.6-sol",
+ "parts": [
+  {
+   "name": "body",
+   "role": "body",
+   "priority": 2,
+   "color": "#E6194B",
+   "min_px": 4,
+   "material": "painted_armour_green",
+   "depth": "front",
+   "occluded_by": [
+    "wing"
+   ],
+   "where": "The large rounded torso occupies the central lower half of the character from the chest to the dark belly."
+  },
+  {
+   "name": "head",
+   "role": "body",
+   "priority": 4,
+   "color": "#3CB44B",
+   "min_px": 4,
+   "material": "painted_armour_green",
+   "depth": "front",
+   "occluded_by": [
+    "eye_housing"
+   ],
+   "where": "The rounded mechanical head sits above the torso and surrounds the eye at the upper centre-right."
+  },
+  {
+   "name": "eye_housing",
+   "role": "feature",
+   "priority": 8,
+   "color": "#911EB4",
+   "min_px": 3,
+   "material": "metal_dark",
+   "depth": "front",
+   "occluded_by": [
+    "eye"
+   ],
+   "where": "The thick circular socket is inset into the visible left-facing side of the head around the eye."
+  },
+  {
+   "name": "eye",
+   "role": "feature",
+   "priority": 10,
+   "color": "#FFD000",
+   "min_px": 2,
+   "material": "glass_gold",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The single round cream-and-gold eye fills the centre of the circular eye housing."
+  },
+  {
+   "name": "cannon_beak",
+   "role": "feature",
+   "priority": 7,
+   "color": "#0057D9",
+   "min_px": 1,
+   "material": "gun_metal_green",
+   "depth": "front",
+   "occluded_by": [
+    "head"
+   ],
+   "where": "The long tapered cannon projects horizontally left from the head and includes its dark perforated muzzle."
+  },
+  {
+   "name": "scope",
+   "role": "feature",
+   "priority": 8,
+   "color": "#66FFFF",
+   "min_px": 2,
+   "material": "optical_metal",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The compact cylindrical scope and its mount sit horizontally on top of the head."
+  },
+  {
+   "name": "neck",
+   "role": "feature",
+   "priority": 5,
+   "color": "#FF66FF",
+   "min_px": 2,
+   "material": "metal_dark",
+   "depth": "front",
+   "occluded_by": [
+    "head",
+    "body"
+   ],
+   "where": "The short ribbed neck connects the underside of the head to the top of the torso."
+  },
+  {
+   "name": "wing",
+   "role": "limb",
+   "priority": 5,
+   "color": "#663300",
+   "min_px": 3,
+   "material": "painted_armour_green",
+   "depth": "front",
+   "occluded_by": [],
+   "where": "The single visible near-side wing covers the right side of the torso, including its round shoulder joint and layered pointed plates."
+  },
+  {
+   "name": "tail_feather_front",
+   "role": "feature",
+   "priority": 4,
+   "color": "#000066",
+   "min_px": 2,
+   "material": "armour_bronze",
+   "depth": "front",
+   "occluded_by": [
+    "wing"
+   ],
+   "where": "The foremost lower bronze tail blade projects rightward from beneath the rear edge of the wing."
+  },
+  {
+   "name": "tail_feather_back",
+   "role": "feature",
+   "priority": 3,
+   "color": "#CC9966",
+   "min_px": 1,
+   "material": "painted_armour_green",
+   "depth": "back",
+   "occluded_by": [
+    "wing",
+    "tail_feather_front"
+   ],
+   "where": "The partially hidden upper and middle tail blades fan upward and right behind the wing and foremost tail blade."
+  },
+  {
+   "name": "leg_front",
+   "role": "limb",
+   "priority": 6,
+   "color": "#00FF99",
+   "min_px": 2,
+   "material": "metal_dark",
+   "depth": "front",
+   "occluded_by": [
+    "body"
+   ],
+   "where": "The nearer leg descends through the image-right knee and shin to the image-right multi-toed foot, including all its joints and toe pieces."
+  },
+  {
+   "name": "leg_back",
+   "role": "limb",
+   "priority": 5,
+   "color": "#00FF00",
+   "min_px": 1,
+   "material": "metal_dark",
+   "depth": "back",
+   "occluded_by": [
+    "body",
+    "leg_front"
+   ],
+   "where": "The farther leg is partly hidden behind the nearer leg and descends to the image-left multi-toed foot."
+  }
+ ],
+ "color_fixes": [
+  {
+   "part": "scope",
+   "from": "#FF6F00",
+   "to": "#66FFFF"
+  },
+  {
+   "part": "neck",
+   "from": "#00B8D4",
+   "to": "#FF66FF"
+  },
+  {
+   "part": "wing",
+   "from": "#F000B8",
+   "to": "#663300"
+  },
+  {
+   "part": "tail_feather_front",
+   "from": "#A63D00",
+   "to": "#000066"
+  },
+  {
+   "part": "tail_feather_back",
+   "from": "#76C900",
+   "to": "#CC9966"
+  },
+  {
+   "part": "leg_front",
+   "from": "#1B00B8",
+   "to": "#00FF99"
+  },
+  {
+   "part": "leg_back",
+   "from": "#8A005D",
+   "to": "#00FF00"
+  }
+ ],
+ "call": "edc24ff5f235baf2f28f19407e98943a5f0074b5d15b6a13a3e982f5e9410841",
+ "cost": 0.082507,
+ "cached": true,
+ "prompt": "You are preparing concept art for pixel-art reduction. Split this character into its PARTS: the regions a\npixel artist keeps distinct when drawing it as a tiny 16-32 px sprite. At that size REGIONS matter far more than\ncolouring: each part becomes one solid colour, and the boundaries between parts are what carry the sprite.\n\nReturn JSON only: {\"parts\": [ {\"name\", \"role\", \"priority\", \"color\", \"min_px\", \"material\", \"depth\", \"occluded_by\",\n\"where\"} ... ]}\n\nRules for choosing parts:\n1. OCCLUSION MAKES A SUBCLASS. When one instance of a repeated part hides another instance of the same kind (a leg\n   behind a leg, a wing behind a wing, an arm behind an arm), the hidden instances are their OWN part, named\n   <part>_back with depth \"back\". Do this for every kind of part that has hidden instances. Visible front instances\n   have depth \"front\". depth \"back\" is ONLY for hidden instances of a repeated kind (there must also be front\n   instances of that kind). A part that is merely behind a DIFFERENT part (a tail behind a body, a neck behind a\n   head) keeps depth \"front\" and lists what covers it in occluded_by.\n   Decide who is in front from the outlines: at an overlap, the part whose outline runs unbroken across the overlap\n   is in front; the part whose outline disappears under it is behind.\n2. If front instances of the same kind touch or overlap each other, split them into separate parts so every\n   touching pair has a different region colour. Give them the same \"material\" so they are drawn in the same final\n   colour.\n3. NO pattern-only parts: spots, stripes, panel lines, rivets, vents, two-tone colouring, highlights and decals are\n   paint on the part they sit on, not parts.\n4. Small mechanical connectors, collars, bolts and joints are not separate parts: fold them into the part they\n   belong to. Distinct character features (a weapon, a horn, a scope, a beak) stay their own parts. Small lights,\n   glows and lenses belong to the part they sit on, EXCEPT the eyes.\n5. Eyes, a visor or eye housing, and other face features stay their own parts. 6 to 14 parts in total.\n6. Every visible pixel of the character belongs to exactly one part (no background part; ignore any ground shadow).\n\nFields:\n- name: short snake_case.\n- role: body | feature | limb | detail.\n- priority: integer 1-10; higher wins a contested pixel when shrinking (small important features high, big masses\n  low; a front part higher than the back part it covers).\n- color: \"#RRGGBB\" flat REGION-MAP colour: highly saturated, far apart from every other part's colour, far from\n  white and light grey (the background is white). Do NOT use the part's real colour.\n- min_px: smallest size in pixels this part must keep at a 32 px sprite height to stay readable.\n- material: the part's real-world surface (e.g. \"armour_green\", \"metal_dark\", \"glass\", \"gun_metal\"); parts sharing\n  a material are drawn in the same final colour.\n- depth: \"front\" or \"back\".\n- occluded_by: list of part names that cover parts of this one ([] if none).\n- where: one precise sentence locating the part in this image, enough to paint it (say which instances: near/far,\n  left/right, how many)."
+}

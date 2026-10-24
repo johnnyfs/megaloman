@@ -1,0 +1,106 @@
+{
+ "version": "s1",
+ "concept": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/chosen.png",
+ "size": [
+  1024,
+  1024
+ ],
+ "verify_threshold": 0.9,
+ "type": "none",
+ "order": null,
+ "axes": {
+  "vertical": {
+   "axis_px": 644.5,
+   "axis_frac": 0.6294,
+   "score": 0.347,
+   "verified": false
+  },
+  "horizontal": {
+   "axis_px": 505.0,
+   "axis_frac": 0.4932,
+   "score": 0.3624,
+   "verified": false
+  }
+ },
+ "rotation": {
+  "best_order": 2,
+  "by_order": {
+   "2": {
+    "centre_px": [
+     637.5,
+     410.7
+    ],
+    "score": 0.4307
+   },
+   "3": {
+    "centre_px": [
+     741.5,
+     518.7
+    ],
+    "score": 0.3471
+   },
+   "4": {
+    "centre_px": [
+     641.5,
+     526.7
+    ],
+    "score": 0.3421
+   },
+   "5": {
+    "centre_px": [
+     693.5,
+     454.7
+    ],
+    "score": 0.308
+   },
+   "6": {
+    "centre_px": [
+     681.5,
+     454.7
+    ],
+    "score": 0.2995
+   },
+   "7": {
+    "centre_px": [
+     617.5,
+     470.7
+    ],
+    "score": 0.3066
+   },
+   "8": {
+    "centre_px": [
+     621.5,
+     482.7
+    ],
+    "score": 0.3135
+   }
+  },
+  "enforced": false,
+  "note": "radial/rotational is recorded only; ladder v2 enforces mirror axes"
+ },
+ "model": {
+  "type": "none",
+  "order": null,
+  "probabilities": {
+   "none": 0.97,
+   "vertical": 0.02,
+   "horizontal": 0.01,
+   "both": 0,
+   "radial": 0
+  },
+  "confidence": 0.96,
+  "classifier": "typesafe/jev-1.14",
+  "secs": 0.563,
+  "per_part": {},
+  "call": "7a59f6d87a27048ff5855bf932c75e5806b440ed895b336ad212332b9ad04dba",
+  "cost": 0.000134736,
+  "cached": true
+ },
+ "disagreements": [],
+ "per_part": {},
+ "cost": {
+  "spent": 0.0,
+  "calls": 0,
+  "cached": 1
+ }
+}

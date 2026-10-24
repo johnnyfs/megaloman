@@ -1,0 +1,141 @@
+{
+ "facing": "left",
+ "prompt": "Concept art for a video game enemy: a whimsical robot enemy in the style of the NES Mega Man games\n(a classic Mega Man robot-master / small enemy design: chunky, friendly, toy-like, rounded armour plates, bold simple\nshapes, big expressive eyes).\n\nThe character: SNIPE BOT, a robot for a marsh level. It is a robot snipe (the wading marsh bird with a very long,\nstraight beak, a round plump body, short tail and thin legs) that is also a SNIPER: its long straight beak is\nclearly a rifle barrel (a sniper rifle muzzle at the tip, a barrel with a muzzle brake, maybe a small scope on top of\nthe head), so the bird's silhouette and the gun read at the same time.\n\nComposition and rendering rules:\n- ONE single character only, full body, strict SIDE VIEW (profile) facing LEFT: the beak/barrel points to the left\n  edge of the image, horizontal.\n- Shaded 3-D form: soft volumetric shading and highlights on every part (not flat cartoon colours), clean dark\n  outlines.\n- Marsh-themed colours: reed and moss greens, mud browns, a little rusty orange or cattail tan; the eye a bright\n  contrasting colour.\n- Plain pure white background, no ground, no shadow on the ground, no scenery, no text, no labels, no border.\n- The whole character fits in the frame with margin on every side.",
+ "candidates": [
+  {
+   "id": "nb-s1",
+   "letter": "A",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 1,
+   "call": "8d9110e661f9a383a487f70cd14a7f20fc3e5454e8b4c9d1999fce204f1e75ae",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0377445,
+    "byok": true,
+    "total": 0.0377445
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s1_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s1.png",
+   "raw_size": [
+    1376,
+    768
+   ],
+   "bbox_frac": [
+    0.88,
+    0.555
+   ]
+  },
+  {
+   "id": "nb-s2",
+   "letter": "B",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 2,
+   "call": "20c262d5ffd9f541f460f2f101f2edafd908ef82b80276d92ab94cf2540e40d9",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.037902,
+    "byok": true,
+    "total": 0.037902
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s2_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s2.png",
+   "raw_size": [
+    1376,
+    768
+   ],
+   "bbox_frac": [
+    0.88,
+    0.533
+   ]
+  },
+  {
+   "id": "gpt-s1",
+   "letter": "C",
+   "model": "openai/gpt-5.4-image-2",
+   "seed": 1,
+   "call": "33da629b7362f39529df2e6e18499eeb3f584d61ed2b550c23573f94c033c1ab",
+   "error": null,
+   "cost": {
+    "openrouter": 0.23238,
+    "upstream": 0.0,
+    "byok": false,
+    "total": 0.23238
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/gpt-s1_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/gpt-s1.png",
+   "raw_size": [
+    1024,
+    1024
+   ],
+   "bbox_frac": [
+    0.88,
+    0.759
+   ]
+  },
+  {
+   "id": "nb-s3",
+   "letter": "D",
+   "model": "google/gemini-nano-banana-2.1",
+   "seed": 3,
+   "call": "351012977961cc627dc8779aef28d4d411ed8d8efd5d686862cad9d9480f6ade",
+   "error": null,
+   "cost": {
+    "openrouter": 0.0,
+    "upstream": 0.0372345,
+    "byok": true,
+    "total": 0.0372345
+   },
+   "text": "",
+   "raw": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s3_raw.png",
+   "square": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/concept/nb-s3.png",
+   "raw_size": [
+    1376,
+    768
+   ],
+   "bbox_frac": [
+    0.88,
+    0.5
+   ]
+  }
+ ],
+ "judge": {
+  "ranking": [
+   "C",
+   "D",
+   "A",
+   "B"
+  ],
+  "scores": {
+   "A": 7,
+   "B": 6,
+   "C": 9,
+   "D": 8
+  },
+  "reasons": {
+   "A": "Strong eye and gun-beak silhouette, but the squat three-quarter body, overlapping legs, and extra plating weaken its snipe identity at sprite scale.",
+   "B": "The character is appealing and birdlike, but the separate rifle hardware, layered wing, tail, and three-quarter pose create too much small-scale clutter.",
+   "C": "The long rifle-beak, tall wading legs, single eye, clean side profile, and unmistakable marsh-bird silhouette best communicate the full concept.",
+   "D": "Its compact shape, bright single eye, separated feet, and bold barrel will reduce cleanly, though it reads more as a generic round bird than a snipe."
+  },
+  "best_for_sprite": "D",
+  "call": "62b0ca2ce65be8e69738bed0e7fcf878e8ca64317560e1f3678ec329cc79a0b4",
+  "cached": true
+ },
+ "chosen": "gpt-s1",
+ "chosen_by": "the judge's overall #1 (9/10: long rifle-beak, wading legs, single eye, clean profile); its sprite pick D (nb-s3) is the most compact, but its 2:1 aspect (barrel sets the width) fills only 0.50 of the square's height vs C's 0.76, i.e. ~4 rows fewer at 16 px; the NB candidates are also three-quarter-ish round birds ('generic round bird' per the judge), C is the recognisable snipe",
+ "cost": {
+  "by_step": {
+   "paint_probe": 0.038,
+   "plan": 0.0411,
+   "significance": 0.1112,
+   "concept": 0.3453,
+   "concept_judge": 0.0159
+  },
+  "total": 0.5514
+ }
+}

@@ -317,3 +317,87 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   - **Awaiting Johnny's blind pick** (`ab-blind`; key in `e1/blind/key.json`): A, critic top 2, 2 random survivors,
     plus the ring-as-edge trial alone at 20 and Johnny's 16b at 16. His picks decide critic vs random and judge vs
     Johnny.
+
+- **finding (snipe dry run)** (2026-10-23, `snipe.py`, `pipeline_gen.py`, `workspace/experiments/regions/snipe/`): the
+  whole pipeline on a new, asymmetric enemy. Brief: "a snipe bot for a marsh level, a bird robot that is also a
+  sniper, so its beak is recognisably a gun; facing horizontally (not symmetric)". Facing **left**. $0.98 of the $3
+  cap, BYOK included (OpenRouter's own `usage.cost` would say $0.83; the $0.15 gap is Nano Banana billed by Google,
+  read from `cost_details.upstream_inference_cost`): concept 4 images $0.35 + judge $0.02, legend $0.08, paint
+  $0.26 (GPT), plan ×2 $0.08, significance $0.11, filter probes $0.04, read $0.05, Jev $0.0001.
+  - **Concept**: 3 Nano Banana + 1 gpt-5.4-image-2, white background removed by a border flood fill, cropped to a
+    centred 1024 square. gpt-5.6-sol ranked C (GPT, 9/10) first but picked D (NB, 8/10, "compact") for the sprite.
+    I took C. A long horizontal gun sets the width, so D fills only 0.50 of the square's height vs C's 0.76 (about
+    4 rows fewer at 16 px), and the NB birds are round three-quarter birds. **Gap: the canvas is always N×N**
+    (`ladder_v2.square`, M = N − 2). A horizontal enemy with a long gun wants a wide footprint (24×16, 32×16).
+  - **Symmetry**: Jev says none (p = 0.97). Measured: vertical 0.347, horizontal 0.362, so type none and no
+    disagreement. **The mirroring code did not honour the spec.** `ladder_v2.symmetric_source` falls back to
+    axis 0.5 and mirrors anyway. The v2–v4 rungs always run `mirror_inst`. `render_v4.render` always mirrors the
+    final pixels. `render_v4.run` calls `tile_reduce(symmetric=True)`. `ladder_v2.instances` pairs instances by a
+    flip, and e1 mirrors too. Fixes: `ladder_v2.prepare` now refuses a spec with no verified vertical axis, and
+    `render_v4.render(keep="none")` skips the mirror. `pipeline_gen.prepare` mirrors only on a verified axis,
+    otherwise pair = identity and `tile_reduce` runs with `symmetric=False`. Squid v4 still reproduces pixel for
+    pixel at all 5 sizes.
+  - **Legend** (generic prompt: squid examples swapped for legs, wings and tails, with no cup or undercarriage
+    rules): 12 parts, including the occlusion subclasses `leg_back` and `tail_feather_back` (depth back). The feet
+    were folded into the legs. 7 colour fixes.
+  - **Region paint: Nano Banana refused this concept.** Both v2-prompt paints and a one-line "repaint this toy robot
+    bird as a flat colour map" probe came back `PROHIBITED_CONTENT`, and neutralising weapon words in the prompt
+    didn't help. The same probe on NB's own candidate D passed, so the filter reacts to the image (a realistic
+    rifle-beak, or GPT-made art), not the words. Blocked calls cost $0. Fallback: gpt-5.4-image-2 (the M1 painter).
+    IoU went 0.829 raw → 0.962 registered (sy 0.996, ty 12 px) → 0.981 after fill and clip. It left out
+    `tail_feather_front` (pruned from the legend), and a 2390 px body island was folded into the wing. So
+    "NB paints best, no registration" holds only when NB accepts the image: keep registration in the generic path.
+  - **Squid-specific code found** (left in place; generic replacements live in `pipeline_gen`):
+    - Part names in `ladder_v3.PALETTE/ASSIGN/PRIORITY` (Johnny's executive calls).
+    - The squid tables and structures: `face_geometry`/`face_template` (ring > visor > two eyes on the axis),
+      `arm_groups`/`cup_floor`/`separate_arms`/`curl_tips`, `nozzle_floor`, `fin_pay`, `size_yield`
+      (cap/cap_side_lobes).
+    - Render and naming: `render_v4.ring_as_edge` (face_housing, then fins, then cap), `render_v3.PROTECTED`, the
+      `materials` cup and fin heuristics, `render.GRID_CH`, `separation_check`'s cup exemption, `eye_check`'s
+      hard-coded 'e'.
+    - Significance: `ladder_v2.v3_specs` (reuses the squid's blessed significance JSON via `V3_NAMES`),
+      `ladder_sig.OVERRIDES` keyed by the name "eyes", and the significance prompt's art-director notes (fins).
+    - Prompts: `regions_v2` legend examples (tentacles, cups, undercarriage, nozzle) and the paint prompt's
+      suction-cup line.
+    - Constants: the `CONCEPT`/`OUT` paths, and the e1 knobs (all squid parts).
+    - `regions.concept_masks`' lavender-shadow heuristic is squid-tuned but harmless here (0 px).
+  - **New generic step, the plan** (gpt-5.6-sol, replaces the hand tables): palette first (black + 3 NES colours,
+    part → group), priority (eyes forced first), eye parts and eye surround. v1 picked 0B / 1B / 38 and gave the
+    scope the eye's gold. At ≤ 32 the gold scope sits 1–2 px above the gold eye, and they read as one gold blob. v2
+    adds the rule "the eye is the only part of its colour near it". The scope became dark green and gold is the
+    eye's alone.
+  - **Significance** (generic prompt, the brief's notes in place of the fin notes): the beak is a stroke,
+    exaggerated ×1.8, and the scope a rect ×1.5. Everything else is none, including the legs (significance
+    0.72 / 0.62). **The beak can't be exaggerated**: its muzzle touches the crop's left margin, so the frame caps
+    k at 1.05–1.1. "Exaggerate into the background" has no background left for a long horizontal part. What it
+    needs is the opposite (shorten the beak, grow the rest), which isn't a tool yet.
+  - **Thin strokes break up in box coverage**: the 1 px barrel came out dashed at 16, and the muzzle-brake slots
+    (see-through in the concept) cut it at 32. v3 adds a **stroke floor**: a part whose essential shape is "stroke"
+    and that has more pieces than in the source is redrawn as a 1 px principal-axis line over background and
+    lower-priority parts. It fixed the barrel at 32 / 20 / 16. This is the squid's M2 finding ("limbs need stroke
+    primitives"), done generically.
+  - **Eyes**: the squid face template doesn't apply (one eye, in profile). The generic floor is one filled
+    rectangle per eye piece at its scaled centroid, 2×3 down to 24, slits 1×3 / 1×2 at 20 / 16. v2 adds a 1 px moat
+    of the plan's eye surround (the black eye housing, playing the squid's visor). At 20 and 16 the moat erased the
+    1-row scope. v3 nudges the eye 1 px, but only when staying would erase a character part (predicting which pixels
+    the renderer's lines will take). A first nudge that always minimised a cost slid the eye off the head onto the
+    neck. All eye checks pass: filled rectangle with a dark margin.
+  - **Rules that ran unchanged and generically**: line sacrifice by depth (`behind_fn`: occluded_by, then depth,
+    then layer order), separation lines at every size (`separation_check` ok at every size), background-only
+    exaggeration, the speck rule, the NES tile rule (0 px changed at every size: 3 colours placed by region, as on
+    the squid), and the outline, orphans, holes and colours gates.
+  - **N/A here**: face ring as edge (the surround is black, not a coloured ring), the fin depth line (`fin` off: the
+    heuristic is squid-shaped), cup rules. Like instances: `leg_front` / `leg_back` are separate parts (back = black
+    shadow), and the line rule keeps them apart. At 16 the back leg is 1–2 black px.
+  - **Result, v3** (honest read; gpt-5.6-sol's per-size read in `v3/read.json`):
+    - 64: good. Bird, rifle-beak with muzzle, eye in its socket, scope, legs, tail.
+    - 32: works. Bird and gun read; the eye is a gold 2×3 in a black box, more a lit window than an eye (the model
+      says "eye gone").
+    - 24 / 20: a long barrel, a black head block with a gold slot, a dark-green wing mass, one leg and a foot.
+      "Faceless head". The mid-green body is lost under the wing.
+    - 16: a barrel, a scope cap, a gold slit, a body blob and a leg. A thing with a gun; barely a bird.
+    - Below 32 the sprite is mostly dark green plus black: low value contrast. 3 colours at 20 / 16.
+    - The model's read is noisy: it calls v3's continuous barrel "not a gun" at 20 / 16, but v1's dashed one a gun.
+  - **Biggest open problems for a new enemy**: a non-square canvas; de-exaggeration (shrink a dominant part); a
+    palette check at the target size (area share per colour, so the mid colour doesn't vanish under one part);
+    and a profile face template (eye, socket and beak root) for side views.

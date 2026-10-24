@@ -189,10 +189,10 @@ def render(ext, base_of, mats, legend, N, keep="left", opts=None):
     enclosed = ndimage.binary_fill_holes(out[..., 3] > 0) & (out[..., 3] == 0)
     out[enclosed] = (*BLACK, 255)
     ink |= enclosed
-    for arr in (out, lab, ink, depth):              # exact symmetry of the final pixels
+    for arr in ((out, lab, ink, depth) if keep in ("left", "right") else ()):   # exact symmetry of the final
         half = arr[:, :W // 2].copy() if keep == "left" else arr[:, W - W // 2:][:, ::-1].copy()
         arr[:, :W // 2] = half
-        arr[:, W - W // 2:] = half[:, ::-1]
+        arr[:, W - W // 2:] = half[:, ::-1]           # pixels; keep="none" (no verified axis) leaves them as is
     grid_ch = ".abcdefghijklmnopqrstuvwxyz"
     info = {"size": N, "specks_to_line": specks, "ink_px": int(ink.sum()), "fin_depth_px": int(depth.sum()), "black_fill_px": int((blk & ~ink).sum()),
             "clumps": R1.clumps(ink, blk | depth), "line_side": sides, "ring_edge": ring_log,

@@ -1,0 +1,38 @@
+{
+ "64": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": true,
+  "legs": true,
+  "verdict": "The bird, rifle beak, eye, and legs all read clearly."
+ },
+ "32": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "The bird and rifle silhouette work, but the eye is gone."
+ },
+ "24": {
+  "bird": true,
+  "gun_beak": false,
+  "eye": false,
+  "legs": true,
+  "verdict": "It reads as a crude long-beaked bird, not a sniper."
+ },
+ "20": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "The bird and gun survive, but the face is blank and the legs are crude."
+ },
+ "16": {
+  "bird": true,
+  "gun_beak": true,
+  "eye": false,
+  "legs": true,
+  "verdict": "The silhouette barely works; the eye and most leg detail are gone."
+ },
+ "call": "f855358b8356b09dd892d4b799ee5063f3e4c4a53c5b867a9a37062172835a38"
+}
