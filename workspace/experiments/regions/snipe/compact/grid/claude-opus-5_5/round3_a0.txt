@@ -1,0 +1,30 @@
+```json
+{
+"palette": {
+"K": "#000000",
+"G": "#58a028",
+"O": "#c87830",
+"C": "#40e8f8",
+"D": "#7c7448"
+},
+"grid": [
+"....KKKKKK......",
+"....KCDDDK...KK.",
+"....KKKKKKK.KDDK",
+"...KGGGGGGKKDDK.",
+"..KGGKKKKGGKDKOK",
+".KGGKCCCCKGKOOOK",
+"KKKGKCCCCKGGKOOK",
+"KDDDKCCKCKGGKOOK",
+"KDDDKCCCCKGKOOOK",
+"KKKGGKKKKGKOOOOK",
+".KGGGGGGGKOOOOOK",
+".KKKKKKKKOOKKKKK",
+".KGOOOOOKKDDDDDK",
+"..KGOOOOKDDKDDK.",
+"...KKOOOOKKKKK..",
+"..KDDDKKKDDDK..."
+],
+"notes": "I made the gun-nose 3 px wide so it reads chunkier and made the wing khaki so it stands apart from the orange body. I also added a small green breastplate hint and a clear tucked leg with feet. The big eye, the separate scope and the dark head/body split line are unchanged."
+}
+```

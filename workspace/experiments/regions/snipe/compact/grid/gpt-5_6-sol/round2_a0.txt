@@ -1,0 +1,30 @@
+```json
+{
+  "palette": {
+    "K": "#101820",
+    "A": "#28B8B0",
+    "B": "#D94A28",
+    "G": "#8DAF45",
+    "Y": "#FFE83B"
+  },
+  "grid": [
+    "....KKKKKK......",
+    "...KGGGGGGGK....",
+    "...KGGKKGGGK....",
+    "....KKKKKKKK....",
+    "...KAAAAAAAKGGGK",
+    "..KAAAAAAAAKGGGK",
+    "KKKKKAKKKAKBBBK.",
+    "KKGGKKYYYKKBBBK.",
+    "KKGGKKYKYKKBBBK.",
+    "KKKKKKYYYKKBBBK.",
+    "..KAAAKKKAKKKKKK",
+    "..KKKKKKKKGGGKGK",
+    ".KBBBBBBBKGGGKK.",
+    ".KBBBBBBBBKKKKK.",
+    "..KKGGKKGGGKK...",
+    "...KGGKKGGGK...."
+  ],
+  "notes": "I enlarged and clarified the bright eye, rebuilt the gun-nose as a thick barrel with a dark muzzle, and gave the scope a cleaner outlined block. A continuous dark seam now separates the teal head from the red body, while compact wings, tail, and tucked feet preserve the concept’s silhouette."
+}
+```

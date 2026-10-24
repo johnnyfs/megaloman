@@ -1,0 +1,49 @@
+{
+ "anthropic/claude-opus-5.5": {
+  "log": [
+   {
+    "round": 1,
+    "errors": [],
+    "cost": 0.0847,
+    "notes": "The round body is compressed into a 16x16 ball. The big cyan eye is ringed in black on the green head, and the head is split from the orange body by a black line. The chunky 3-px olive gun-nose and the separate scope block are kept, while the wing nub, tail and breastplate are reduced to tiny hints with tucked feet below."
+   },
+   {
+    "round": 2,
+    "errors": [],
+    "cost": 0.0495,
+    "notes": "I rounded the silhouette into a ball, with the green head in the upper left and a diagonal black line splitting it from the orange body. The eye now has a thinner ring, so its cyan reads bigger. I also removed the stray pixel and kept the chunky gun-nose, the separate scope, the wing nub and the tucked legs."
+   },
+   {
+    "round": 3,
+    "errors": [],
+    "cost": 0.0442,
+    "notes": "I made the gun-nose 3 px wide so it reads chunkier and made the wing khaki so it stands apart from the orange body. I also added a small green breastplate hint and a clear tucked leg with feet. The big eye, the separate scope and the dark head/body split line are unchanged."
+   }
+  ],
+  "final": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/final_16.png"
+ },
+ "openai/gpt-5.6-sol": {
+  "log": [
+   {
+    "round": 1,
+    "errors": [],
+    "cost": 0.1232,
+    "notes": "The eye and chunky gun-nose dominate, while a heavy seam clearly separates the teal head from the red body. The breastplate was omitted and the vestigial wing and tail reduced to compact silhouette cues."
+   },
+   {
+    "round": 2,
+    "errors": [],
+    "cost": 0.1376,
+    "notes": "I enlarged and clarified the bright eye, rebuilt the gun-nose as a thick barrel with a dark muzzle, and gave the scope a cleaner outlined block. A continuous dark seam now separates the teal head from the red body, while compact wings, tail, and tucked feet preserve the concept\u2019s silhouette."
+   },
+   {
+    "round": 3,
+    "errors": [],
+    "cost": 0.0987,
+    "notes": "I enlarged the eye into the dominant focal mass and rebuilt the gun-nose as a clearly hollow, three-pixel-thick barrel. The scope, head, body, wings, tucked feet, and tiny tail now form cleaner outlined shapes, with a strong dark seam separating the teal head from the red body."
+   }
+  ],
+  "final": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/final_16.png"
+ },
+ "cost_usd": 0.3595
+}

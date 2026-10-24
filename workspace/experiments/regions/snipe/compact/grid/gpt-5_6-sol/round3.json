@@ -1,0 +1,28 @@
+{
+ "palette": {
+  "K": "#101820",
+  "A": "#20B8B0",
+  "B": "#D94A28",
+  "G": "#8DAF45",
+  "Y": "#FFE83B"
+ },
+ "grid": [
+  ".....KKKKKK.....",
+  "....KGGGGGGK....",
+  "....KGKKGGGK....",
+  "...KKKKKKKKKK...",
+  "...KAAAAAAAKGGGK",
+  "..KAAAAAAAAKGGGK",
+  "KAAKKKYYYYKAKGGK",
+  "KKAAKKYYKYKAKGGK",
+  "KAAKKKYYYYKAKBBK",
+  "...KKKKKKKKBBBBK",
+  "..KBBBBBBKKGGGK.",
+  "..KBBBBBKGGGGGKK",
+  "..KBBBBBKKGGGKK.",
+  "...KBBBGGBBBBKK.",
+  "...KKGGGKKGGGKK.",
+  "....KGGGKGGGK..."
+ ],
+ "notes": "I enlarged the eye into the dominant focal mass and rebuilt the gun-nose as a clearly hollow, three-pixel-thick barrel. The scope, head, body, wings, tucked feet, and tiny tail now form cleaner outlined shapes, with a strong dark seam separating the teal head from the red body."
+}

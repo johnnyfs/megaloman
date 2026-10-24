@@ -1,0 +1,209 @@
+{
+ "format": "megaloman.pipeline/1",
+ "title": "Snipe grid: LLM places pixels (no image gen)",
+ "run_dir": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid",
+ "verdict": "Opus 5.5 best: clean deliberate square ball, big eye, scope on top, head/body line; but crude, eye too big, gun-nose and wing muddy. gpt-5.6-sol copied region-map colours.",
+ "cost_usd": 0.3595,
+ "stages": [
+  {
+   "id": "concept",
+   "title": "1 concept",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/concept.png",
+     "caption": "compact, vestigial wing"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "regions",
+   "title": "2 regions + priority",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/regions_legend.png"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "refs",
+   "title": "3 style refs",
+   "kind": "image",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/style_refs.png",
+     "caption": "Telly (Mega Man 2), Met, walking, Pipi (bird)",
+     "pixel": true
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "guidance",
+   "title": "4 guidance",
+   "kind": "list",
+   "images": [],
+   "notes": [],
+   "data": {
+    "items": [
+     "Fill the square: the silhouette is compact and occupies most of the 16x16 in both width and height.",
+     "Preserve the silhouette and the big shapes and lines of the concept; it must read from its outline alone.",
+     "Head and body are clearly separated by a different colour AND a dark line between them.",
+     "The eye is big, bright and unmistakable: the top priority.",
+     "The snub gun-nose is short and chunky (2+ px thick), not a 1-px dash.",
+     "The scope on top is distinct: its own little block, separated from the head by outline.",
+     "Legs folded/tucked under the body; feet just under it. Tail stubby.",
+     "Breastplate is just a hint (a few pixels or a shade), never a big panel.",
+     "Few large colour masses: one body colour, one accent, a bright eye; no fine patterns, no noise.",
+     "Strong dark outline and value contrast between masses (NES style: <= 4-5 colours incl. outline)."
+    ]
+   }
+  },
+  {
+   "id": "claude-opus-5_5_r1",
+   "title": "claude-opus-5_5 round 1",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/round1_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "The round body is compressed into a 16x16 ball. The big cyan eye is ringed in black on the green head, and the head is split from the orange body by a black line. The chunky 3-px olive gun-nose and the separate scope blo",
+    "$0.085"
+   ],
+   "data": {}
+  },
+  {
+   "id": "claude-opus-5_5_r2",
+   "title": "claude-opus-5_5 round 2",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/round2_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "I rounded the silhouette into a ball, with the green head in the upper left and a diagonal black line splitting it from the orange body. The eye now has a thinner ring, so its cyan reads bigger. I also removed the stray ",
+    "$0.049"
+   ],
+   "data": {}
+  },
+  {
+   "id": "claude-opus-5_5_r3",
+   "title": "claude-opus-5_5 round 3",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/round3_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "I made the gun-nose 3 px wide so it reads chunkier and made the wing khaki so it stands apart from the orange body. I also added a small green breastplate hint and a clear tucked leg with feet. The big eye, the separate ",
+    "$0.044"
+   ],
+   "data": {}
+  },
+  {
+   "id": "claude-opus-5_5_final",
+   "title": "claude-opus-5_5 final",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/final_16.png",
+     "caption": "1x",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/claude-opus-5_5/final_8x.png",
+     "caption": "8x",
+     "pixel": true
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "gpt-5_6-sol_r1",
+   "title": "gpt-5_6-sol round 1",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/round1_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "The eye and chunky gun-nose dominate, while a heavy seam clearly separates the teal head from the red body. The breastplate was omitted and the vestigial wing and tail reduced to compact silhouette cues.",
+    "$0.123"
+   ],
+   "data": {}
+  },
+  {
+   "id": "gpt-5_6-sol_r2",
+   "title": "gpt-5_6-sol round 2",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/round2_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "I enlarged and clarified the bright eye, rebuilt the gun-nose as a thick barrel with a dark muzzle, and gave the scope a cleaner outlined block. A continuous dark seam now separates the teal head from the red body, while",
+    "$0.138"
+   ],
+   "data": {}
+  },
+  {
+   "id": "gpt-5_6-sol_r3",
+   "title": "gpt-5_6-sol round 3",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/round3_8x.png",
+     "caption": "8x (5 colours)",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "I enlarged the eye into the dominant focal mass and rebuilt the gun-nose as a clearly hollow, three-pixel-thick barrel. The scope, head, body, wings, tucked feet, and tiny tail now form cleaner outlined shapes, with a st",
+    "$0.099"
+   ],
+   "data": {}
+  },
+  {
+   "id": "gpt-5_6-sol_final",
+   "title": "gpt-5_6-sol final",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/final_16.png",
+     "caption": "1x",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/grid/gpt-5_6-sol/final_8x.png",
+     "caption": "8x",
+     "pixel": true
+    }
+   ],
+   "notes": [],
+   "data": {}
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+```json
+{"palette": {"K": "#000000", "G": "#58a028", "O": "#c87830", "C": "#40e8f8", "D": "#7c7448"},
+ "grid": [
+  "....KKKKKK......",
+  "....KCDDGDK..KK.",
+  "....KKKKKKK.KDDK",
+  "..KGGGGGGGGKKDK.",
+  ".KGGKKKKKKGKOKK.",
+  "KKKGKCCCCKGKOOK.",
+  "KDDGKCCCCKGKOOOK",
+  "KDDGKCCKCKGKOOOK",
+  "KDDGKCCCCKGKOOOK",
+  "KKKGKKKKKKGKOOOK",
+  ".KGGGGGGGKOOOOKD",
+  "..KKKKKKKOOKKKK.",
+  ".KOOOOOOOKGGGGK.",
+  ".KGOOOOOOKGKGGK.",
+  "..KKOOOOOKKKKK..",
+  "..KDDK.KDDDK...."
+ ],
+ "notes": "The round body is compressed into a 16x16 ball. The big cyan eye is ringed in black on the green head, and the head is split from the orange body by a black line. The chunky 3-px olive gun-nose and the separate scope block are kept, while the wing nub, tail and breastplate are reduced to tiny hints with tucked feet below."}
+```

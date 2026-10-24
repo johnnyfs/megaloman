@@ -1,0 +1,30 @@
+```json
+{
+"palette": {
+"K": "#000000",
+"G": "#58a028",
+"O": "#c87830",
+"C": "#40e8f8",
+"D": "#7c7448"
+},
+"grid": [
+".....KKKKK......",
+".....KCDDDK..KK.",
+"....KKKKKKK.KDDK",
+"...KKGGGGGKKKDK.",
+"..KGGKKKKGGKOOK.",
+".KGGKCCCCKGKOOOK",
+"KKKGKCCCCKGGKOOK",
+"KDDKKCCKCKGGKOOK",
+"KDDKKCCCCKGKOOOK",
+"KKKGGKKKKGKOOOOK",
+".KGGGGGGGKOOOOOK",
+".KKKKKKKKOOKKKK.",
+".KOOOOOOOOKDDDDK",
+"..KOOOOOOOKDKDDK",
+"...KKOOOOKKKKKK.",
+"...KDDK.KDDDK..."
+],
+"notes": "I rounded the silhouette into a ball, with the green head in the upper left and a diagonal black line splitting it from the orange body. The eye now has a thinner ring, so its cyan reads bigger. I also removed the stray pixel and kept the chunky gun-nose, the separate scope, the wing nub and the tucked legs."
+}
+```

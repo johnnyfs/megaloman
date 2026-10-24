@@ -1,0 +1,28 @@
+{
+ "palette": {
+  "K": "#101820",
+  "A": "#28B8B0",
+  "B": "#D94A28",
+  "G": "#8DAF45",
+  "Y": "#FFE83B"
+ },
+ "grid": [
+  ".....KKKKK......",
+  "...KKGGGGGKK....",
+  "....KKKKKKK.....",
+  "...KKAAAAAKKGK..",
+  "...KAAAAAAAKGGK.",
+  "..KAAKKKKKKKAAAK",
+  "KGGKAKYYYYYKAAAK",
+  "KGGGGKYYKYYKAAAK",
+  "KGGKAKYYYYYKABBK",
+  "..KKKKKKKKKKKBBK",
+  ".KBBBKKKKKKBBKK.",
+  ".KBBKGGGGGKBBKGK",
+  "..KBKGGKKGGGKBBK",
+  "..KBBKGGGGKBBBK.",
+  "...KGGKKKGGGK...",
+  "....KGGKKGGK...."
+ ],
+ "notes": "The eye and chunky gun-nose dominate, while a heavy seam clearly separates the teal head from the red body. The breastplate was omitted and the vestigial wing and tail reduced to compact silhouette cues."
+}
