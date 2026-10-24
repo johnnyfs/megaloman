@@ -65,7 +65,7 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   64 px, bad at 32, and looks amateur at 16, where every pixel counts and the sprite must
   read as an icon, not just a likeness. So when the concept is symmetric, every rung must
   mirror **exactly**, pixel for pixel (v2b), not merely stay within a tolerance.
-- **trial** (v3, Johnny): **preserve significance.** As shapes shrink they lose
+- **rule** (v3 blessed 2026-10-23 by Johnny, overriding the judge's "too wing-like"): **preserve significance.** As shapes shrink they lose
   significance; character-carrying parts (e.g. the jaunty side fins) are kept larger
   than their proportional size, with a minimum footprint and an essential shape.
 - **rule** (Johnny): eyes are a *floor*, not an exaggeration. They never shrink below
