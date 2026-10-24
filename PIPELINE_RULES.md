@@ -14,6 +14,11 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **rule** (2026-10-23): target size is a parameter. Sweep 32 / 24 / 20 / 16 px; 16×16 is
   the goal.
 
+- **rule** (Johnny): **assess symmetry at the concept stage.** A vision model classifies
+  the concept's symmetry (none / vertical axis / horizontal axis / radial / per part),
+  and a deterministic mirror check verifies it. The result feeds the ladder's symmetry
+  preservation, so that step stays deterministic.
+
 ## Regions
 
 - **finding** (M1): `gpt-5.4-image-2` paints clean, distinct flat-colour part maps, but
@@ -34,7 +39,7 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **finding** (M2): down to 64 px the ladder is effectively lossless; shape holds to
   32 px; the 32 → 16 step is where character is lost (tentacles merge, the face
   squeezes).
-- **trial** (v2, Johnny): **preserve symmetry.** If the source is symmetric (e.g. across
+- **rule** (v2 blessed 2026-10-23, Johnny): **preserve symmetry.** If the source is symmetric (e.g. across
   a vertical axis), check left vs right at each rung. When it breaks, build two
   candidates (left half mirrored, right half mirrored) and let a judge pick.
 - **trial** (v3, Johnny): **preserve significance.** As shapes shrink they lose
