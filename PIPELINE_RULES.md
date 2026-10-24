@@ -178,3 +178,32 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
   Versions are compared side by side in the cockpit with a version switcher. Johnny
   **blesses** a winner, and blessed versions are then combined and re-checked together.
+
+- **finding (v3)** (2026-10-23, `ladder_v3.py`, `render_v3.py`, `workspace/experiments/regions/v3/`): the six
+  distilled rules applied to v2's region map. No new paint and $0 spent (no model calls).
+  - **Palette, decided first** (`v3/palette.json`), one NES hue ramp plus black: **0F** black for the outline, visor
+    moat, undercarriage and back arms; **16** `F83800` for the head (the darkest); **26** `F87858` for the fins,
+    nozzle, cups and side pods; **36** `F0D0B0` for the face ring, the arms and the eyes. Pods joined the accents
+    so the cream face ring stays a clean ring. With 3 colours placed by region, the tile rule is nearly free: it
+    changes 8 px at 24 and none at the other sizes.
+  - **Priority** (highest first): eyes > visor > face ring > nozzle > head > fins > inner arms > outer arms >
+    cups > pods > undercarriage > back arms. It replaces the legend's model-chosen priorities in the shrink.
+  - **Eyes**: a face template, applied last. Two filled boxes with a ≥ 1 px black moat on every side and a
+    face-colour ring: 3×6 at 64, 2×3 at 32 and 24, 2×2 at 20 and 16, gap ≥ 2 (even, for exact symmetry). The
+    ring's top and bottom rows are kept only at ≥ 24. Below that a ring row costs two rows (the ring plus a line
+    to the cream arms), which starved the arms at 16. There the moat meets the dark head and the black
+    undercarriage directly. A check on the final pixels (two filled boxes, black all round) passes at every size.
+  - **Arms**: each front arm plus its cups is one arm group. Where two groups touch, a 1 px gap is cut from the
+    arm behind. At 64 and 32 the gap widens to a notch at the tips. Each arm keeps a cup pixel at its tip (the
+    curl hint). The renderer's no-clump clean-up must never refill those gaps. It did in the first run, and with
+    the exact mirror the two inner arms joined back into a skirt at 16. Enclosed background between arms is
+    filled black (shadow), so the holes check passes everywhere.
+  - **Line sacrifice by depth**: the ink goes on the region behind (legend `occluded_by`, then depth, then the
+    v2 layer order): fins give to the head, the head to the face ring, arms to their cups. Template and floored
+    parts (eyes, visor, face ring, nozzle) never give a pixel.
+  - **Read**: the eyes now read like Telly's and Met's (cream boxes in black) at 24, 20 and 16, the clearest of
+    the three versions. 32 matches v1's face. 16 shows four separate arms with coral tips, not v2's skirt. The
+    costs: below 32 the fins are coral shoulders, not jaunty wings. A variant that keeps the head/fin line at
+    every size (`v3/alt_finline/`) makes them striped and noisy at 16. The 32 px arms are busy with cuts. The
+    face at 20 and 16 is a big box (visor 8×4 of 14), more Telly than squid. The head red (16) is more saturated
+    than the concept's coral. Awaiting Johnny.

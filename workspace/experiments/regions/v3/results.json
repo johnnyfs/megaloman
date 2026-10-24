@@ -1,0 +1,2010 @@
+{
+ "opts": {},
+ "inputs": {
+  "regions": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v2/regions/labels.npy",
+  "legend": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v2/regions/legend.json",
+  "spec": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/symmetry/spec.json"
+ },
+ "palette": {
+  "palette": {
+   "black": {
+    "nes": "0F",
+    "hex": "000000"
+   },
+   "dark": {
+    "nes": "16",
+    "hex": "F83800"
+   },
+   "mid": {
+    "nes": "26",
+    "hex": "F87858"
+   },
+   "light": {
+    "nes": "36",
+    "hex": "F0D0B0"
+   }
+  },
+  "assign": {
+   "cap": {
+    "group": "dark",
+    "hex": "F83800",
+    "why": "the head is the darker colour"
+   },
+   "cap_side_lobes": {
+    "group": "mid",
+    "hex": "F87858",
+    "why": "fins share with nozzle and cups; differ from the head so the jaunty fins read without a line"
+   },
+   "nozzle": {
+    "group": "mid",
+    "hex": "F87858",
+    "why": "fins + nozzle + cups share one colour"
+   },
+   "suction_cups_front": {
+    "group": "mid",
+    "hex": "F87858",
+    "why": "fins + nozzle + cups share one colour; the cups mark each arm's curled tip"
+   },
+   "side_pods": {
+    "group": "mid",
+    "hex": "F87858",
+    "why": "mechanical accent like the nozzle; keeps the cream face ring a clean ring and the pods distinct ear pieces"
+   },
+   "face_housing": {
+    "group": "light",
+    "hex": "F0D0B0",
+    "why": "face ring + tentacles share one colour"
+   },
+   "tentacles_front_outer": {
+    "group": "light",
+    "hex": "F0D0B0",
+    "why": "face ring + tentacles share one colour"
+   },
+   "tentacles_front_inner": {
+    "group": "light",
+    "hex": "F0D0B0",
+    "why": "face ring + tentacles share one colour"
+   },
+   "eyes": {
+    "group": "light",
+    "hex": "F0D0B0",
+    "why": "the concept's pale glowing eyes; stay distinct by the black moat, not by colour"
+   },
+   "visor": {
+    "group": "black",
+    "hex": "000000",
+    "why": "the moat around the eyes (concept: dark glass)"
+   },
+   "undercarriage": {
+    "group": "black",
+    "hex": "000000",
+    "why": "dark mechanical base (concept median L 17)"
+   },
+   "tentacles_back": {
+    "group": "black",
+    "hex": "000000",
+    "why": "occluded instances render black (depth)"
+   }
+  },
+  "groups": {
+   "black": [
+    "visor",
+    "undercarriage",
+    "tentacles_back"
+   ],
+   "dark": [
+    "cap"
+   ],
+   "mid": [
+    "cap_side_lobes",
+    "nozzle",
+    "suction_cups_front",
+    "side_pods"
+   ],
+   "light": [
+    "face_housing",
+    "tentacles_front_outer",
+    "tentacles_front_inner",
+    "eyes"
+   ]
+  },
+  "priority": [
+   {
+    "rank": 1,
+    "part": "eyes",
+    "why": "the face is the character: eyes first"
+   },
+   {
+    "rank": 2,
+    "part": "visor",
+    "why": "the moat that keeps the eyes distinct"
+   },
+   {
+    "rank": 3,
+    "part": "face_housing",
+    "why": "the ring that frames the moat"
+   },
+   {
+    "rank": 4,
+    "part": "nozzle",
+    "why": "floored character feature on the axis"
+   },
+   {
+    "rank": 5,
+    "part": "cap",
+    "why": "the head silhouette"
+   },
+   {
+    "rank": 6,
+    "part": "cap_side_lobes",
+    "why": "the jaunty fins (also protected by significance growth into the background)"
+   },
+   {
+    "rank": 7,
+    "part": "tentacles_front_inner",
+    "why": "front arms; inner arms are in front of the outer ones"
+   },
+   {
+    "rank": 8,
+    "part": "tentacles_front_outer",
+    "why": "front arms, behind the inner ones"
+   },
+   {
+    "rank": 9,
+    "part": "suction_cups_front",
+    "why": "accents on the arms; floored per arm at the tip instead"
+   },
+   {
+    "rank": 10,
+    "part": "side_pods",
+    "why": "minor mechanical detail"
+   },
+   {
+    "rank": 11,
+    "part": "undercarriage",
+    "why": "black base: fills what is left"
+   },
+   {
+    "rank": 12,
+    "part": "tentacles_back",
+    "why": "hidden arms: black depth, lowest"
+   }
+  ],
+  "eye_floor": {
+   "64": [
+    2,
+    3
+   ],
+   "32": [
+    2,
+    3
+   ],
+   "24": [
+    2,
+    3
+   ],
+   "20": [
+    2,
+    2
+   ],
+   "16": [
+    2,
+    2
+   ]
+  },
+  "moat": 1,
+  "ring": 1,
+  "ring_tb_min": 24,
+  "eye_gap_min": 2,
+  "notch_w": {
+   "64": 3,
+   "32": 2,
+   "24": 1,
+   "20": 1,
+   "16": 1
+  },
+  "cup_floor": {
+   "64": 3,
+   "32": 2,
+   "24": 1,
+   "20": 1,
+   "16": 1
+  },
+  "behind": {
+   "cap|cap_side_lobes": "cap_side_lobes",
+   "cap|face_housing": "cap",
+   "cap|visor": "cap",
+   "cap|eyes": "cap",
+   "cap|side_pods": "cap",
+   "cap|undercarriage": "cap",
+   "cap|tentacles_front_outer": "cap",
+   "cap|tentacles_front_inner": "cap",
+   "cap|suction_cups_front": "cap",
+   "cap|tentacles_back": "tentacles_back",
+   "cap|nozzle": "cap",
+   "cap_side_lobes|face_housing": "cap_side_lobes",
+   "cap_side_lobes|visor": "cap_side_lobes",
+   "cap_side_lobes|eyes": "cap_side_lobes",
+   "cap_side_lobes|side_pods": "cap_side_lobes",
+   "cap_side_lobes|undercarriage": "cap_side_lobes",
+   "cap_side_lobes|tentacles_front_outer": "cap_side_lobes",
+   "cap_side_lobes|tentacles_front_inner": "cap_side_lobes",
+   "cap_side_lobes|suction_cups_front": "cap_side_lobes",
+   "cap_side_lobes|tentacles_back": "tentacles_back",
+   "cap_side_lobes|nozzle": "cap_side_lobes",
+   "face_housing|visor": "visor",
+   "face_housing|eyes": "eyes",
+   "face_housing|side_pods": "side_pods",
+   "face_housing|undercarriage": "undercarriage",
+   "face_housing|tentacles_front_outer": "face_housing",
+   "face_housing|tentacles_front_inner": "face_housing",
+   "face_housing|suction_cups_front": "face_housing",
+   "face_housing|tentacles_back": "tentacles_back",
+   "face_housing|nozzle": "face_housing",
+   "visor|eyes": "visor",
+   "visor|side_pods": "visor",
+   "visor|undercarriage": "visor",
+   "visor|tentacles_front_outer": "visor",
+   "visor|tentacles_front_inner": "visor",
+   "visor|suction_cups_front": "visor",
+   "visor|tentacles_back": "tentacles_back",
+   "visor|nozzle": "visor",
+   "eyes|side_pods": "eyes",
+   "eyes|undercarriage": "eyes",
+   "eyes|tentacles_front_outer": "eyes",
+   "eyes|tentacles_front_inner": "eyes",
+   "eyes|suction_cups_front": "eyes",
+   "eyes|tentacles_back": "tentacles_back",
+   "eyes|nozzle": "eyes",
+   "side_pods|undercarriage": "side_pods",
+   "side_pods|tentacles_front_outer": "side_pods",
+   "side_pods|tentacles_front_inner": "side_pods",
+   "side_pods|suction_cups_front": "side_pods",
+   "side_pods|tentacles_back": "tentacles_back",
+   "side_pods|nozzle": "side_pods",
+   "undercarriage|tentacles_front_outer": "undercarriage",
+   "undercarriage|tentacles_front_inner": "undercarriage",
+   "undercarriage|suction_cups_front": "undercarriage",
+   "undercarriage|tentacles_back": "tentacles_back",
+   "undercarriage|nozzle": "undercarriage",
+   "tentacles_front_outer|tentacles_front_inner": "tentacles_front_outer",
+   "tentacles_front_outer|suction_cups_front": "tentacles_front_outer",
+   "tentacles_front_outer|tentacles_back": "tentacles_back",
+   "tentacles_front_outer|nozzle": "tentacles_front_outer",
+   "tentacles_front_inner|suction_cups_front": "tentacles_front_inner",
+   "tentacles_front_inner|tentacles_back": "tentacles_back",
+   "tentacles_front_inner|nozzle": "tentacles_front_inner",
+   "suction_cups_front|tentacles_back": "tentacles_back",
+   "suction_cups_front|nozzle": "suction_cups_front",
+   "tentacles_back|nozzle": "tentacles_back"
+  }
+ },
+ "materials": [
+  {
+   "name": "cap",
+   "role": "body",
+   "depth": "front",
+   "group": "dark",
+   "mode": "solid",
+   "colour": "F83800",
+   "nes": "16",
+   "priority": 8,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "cap_side_lobes",
+   "role": "body",
+   "depth": "front",
+   "group": "mid",
+   "mode": "solid",
+   "colour": "F87858",
+   "nes": "26",
+   "priority": 7,
+   "cup": false,
+   "fin": true,
+   "protected": false
+  },
+  {
+   "name": "face_housing",
+   "role": "body",
+   "depth": "front",
+   "group": "light",
+   "mode": "solid",
+   "colour": "F0D0B0",
+   "nes": "36",
+   "priority": 10,
+   "cup": false,
+   "fin": false,
+   "protected": true
+  },
+  {
+   "name": "visor",
+   "role": "feature",
+   "depth": "front",
+   "group": "black",
+   "mode": "black",
+   "colour": "000000",
+   "nes": "0F",
+   "priority": 11,
+   "cup": false,
+   "fin": false,
+   "protected": true
+  },
+  {
+   "name": "eyes",
+   "role": "feature",
+   "depth": "front",
+   "group": "light",
+   "mode": "solid",
+   "colour": "F0D0B0",
+   "nes": "36",
+   "priority": 12,
+   "cup": false,
+   "fin": false,
+   "protected": true
+  },
+  {
+   "name": "side_pods",
+   "role": "feature",
+   "depth": "front",
+   "group": "mid",
+   "mode": "solid",
+   "colour": "F87858",
+   "nes": "26",
+   "priority": 3,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "undercarriage",
+   "role": "body",
+   "depth": "front",
+   "group": "black",
+   "mode": "black",
+   "colour": "000000",
+   "nes": "0F",
+   "priority": 2,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "tentacles_front_outer",
+   "role": "limb",
+   "depth": "front",
+   "group": "light",
+   "mode": "solid",
+   "colour": "F0D0B0",
+   "nes": "36",
+   "priority": 5,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "tentacles_front_inner",
+   "role": "limb",
+   "depth": "front",
+   "group": "light",
+   "mode": "solid",
+   "colour": "F0D0B0",
+   "nes": "36",
+   "priority": 6,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "suction_cups_front",
+   "role": "detail",
+   "depth": "front",
+   "group": "mid",
+   "mode": "solid",
+   "colour": "F87858",
+   "nes": "26",
+   "priority": 4,
+   "cup": true,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "tentacles_back",
+   "role": "limb",
+   "depth": "back",
+   "group": "black",
+   "mode": "black",
+   "colour": "000000",
+   "nes": "0F",
+   "priority": 1,
+   "cup": false,
+   "fin": false,
+   "protected": false
+  },
+  {
+   "name": "nozzle",
+   "role": "feature",
+   "depth": "front",
+   "group": "mid",
+   "mode": "solid",
+   "colour": "F87858",
+   "nes": "26",
+   "priority": 9,
+   "cup": false,
+   "fin": false,
+   "protected": true
+  }
+ ],
+ "renders": {
+  "64": {
+   "size": 64,
+   "ink_px": 444,
+   "fin_depth_px": 8,
+   "black_fill_px": 356,
+   "clumps": 134,
+   "line_side": {
+    "cap_side_lobes|cap": 34,
+    "cap|face_housing": 34,
+    "cap|side_pods": 6,
+    "side_pods|face_housing": 12,
+    "tentacles_front_inner|face_housing": 6,
+    "tentacles_front_outer|suction_cups_front": 50,
+    "tentacles_front_inner|suction_cups_front": 54
+   },
+   "grid": [
+    "..............................####..............................",
+    ".............................#aaaa#.............................",
+    "............................#aaaaaa#............................",
+    "...........................#aaaaaaaa#...........................",
+    "..........................#aaaaaaaaaa#..........................",
+    ".........................#aaaaaaaaaaaa#.........................",
+    "........................#aaaaaaaaaaaaaa#........................",
+    ".......................#aaaaaaaaaaaaaaaa#.......................",
+    "......................##aaaaaaaaaaaaaaaa##......................",
+    "....................##b#aaaaaaaaaaaaaaaa#b##....................",
+    "...................#bb#aaaaaaaaaaaaaaaaaa#bb#...................",
+    ".................##bb#aaaaaaaaaaaaaaaaaaaa#bb##.................",
+    "................#bbbb#aaaaaaaaaaaaaaaaaaaa#bbbb#................",
+    "...............#bbbb#aaaaaaaaaaaaaaaaaaaaaa#bbbb#...............",
+    "..............#bbbb#aaaaaaaaaaaaaaaaaaaaaaaa#bbbb#..............",
+    ".............#bbbbb#aaaaaaaaaaaaaaaaaaaaaaaa#bbbbb#.............",
+    "............#bbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbb#............",
+    "...........#bbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbb#...........",
+    "..........#bbbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbbb#..........",
+    ".........#bbbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbbb#.........",
+    ".........#bbbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbbb#.........",
+    ".........#bbbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbbb#.........",
+    ".........#bbbbb#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa#bbbbb#.........",
+    ".........#bbbbb#aaaaa######################aaaaa#bbbbb#.........",
+    "..........##bbb#aaaa#cccccccccccccccccccccc#aaaa#bbb##..........",
+    "..........#####aaaa#cddddddddddddddddddddddc#aaaa#####..........",
+    "............###aaaa#cddddddddddddddddddddddc#aaaa###............",
+    "..............##aa##cddddddddddddddddddddddc##aa##..............",
+    ".............#ff##cccddddeeeddddddddeeeddddccc##ff#.............",
+    "............#fff#ccccddddeeeddddddddeeeddddcccc#fff#............",
+    "...........#ffff#ccccddddeeeddddddddeeeddddcccc#ffff#...........",
+    "...........#ffff#ccccddddeeeddddddddeeeddddcccc#ffff#...........",
+    "...........#ffff#ccccddddeeeddddddddeeeddddcccc#ffff#...........",
+    "...........#fffff#cccddddeeeddddddddeeeddddccc#fffff#...........",
+    "............#ffff#cccddddddddddddddddddddddccc#ffff#............",
+    "............#fffff#ccddddddddddddddddddddddcc#fffff#............",
+    ".............#fffffgcddddddddddddddddddddddcgfffff#.............",
+    "..........#####fffgggccccccccccccccccccccccgggfff#####..........",
+    "........##hhh#####hhgggg###gggggggggg###gggghh#####hhh##........",
+    "......##hhhhhhhhhhhhhggiiiiigllllllgiiiiigghhhhhhhhhhhhh##......",
+    ".....#hhhhhhhhhhhhhhhggiiiiigllllllgiiiiigghhhhhhhhhhhhhhh#.....",
+    "....#hhhhhhhhhhhhhhhhgiiiiiigllllllgiiiiiighhhhhhhhhhhhhhhh#....",
+    "....#hhhhhhhhhhhhhhhgiiiiiikkllllllkkiiiiiighhhhhhhhhhhhhhh#....",
+    "...#j#hhhhhhhhhh###giiiiiiikkllllllkkiiiiiiig###hhhhhhhhhh#j#...",
+    "...#jj#hhhhhhhh###iiiiiiiiikkllllllkkiiiiiiiii###hhhhhhhh#jj#...",
+    "..#jjjj#hhhhhhhh##iiiiiiiikkkllllllkkkiiiiiiii##hhhhhhhh#jjjj#..",
+    "..#jjjj#hhhh#####iiiiiiiiikkkllllllkkkiiiiiiiii#####hhhh#jjjj#..",
+    "..#jjj#hhhh#j###iiiiiiiiiikkk######kkkiiiiiiiiii###j#hhhh#jjj#..",
+    "..#jjj#hhhh#j###iiiiiiiiiikkk......kkkiiiiiiiiii###j#hhhh#jjj#..",
+    "...#####hhh#j##iiiiiiiiiiikkk......kkkiiiiiiiiiii##j#hhh#####...",
+    "....#jjj#hh#j##iiiiiiiiiiikkkk#..#kkkkiiiiiiiiiii##j#hh#jjj#....",
+    "...#jjjjj#hh#.#iiiiiiiiii#jjkk....kkjj#iiiiiiiiii#.#hh#jjjjj#...",
+    "....#jjjj#hh#.#ii####iiii#jjkk....kkjj#iiii####ii#.#hh#jjjj#....",
+    "....#jjjj#hh#.#i#jjjj#iiii#jkk....kkj#iiii#jjjj#i#.#hh#jjjj#....",
+    ".....#jjj#hh#..#jjjjj#iiii#jkk....kkj#iiii#jjjjj#..#hh#jjj#.....",
+    "......###hhh#..#jjjjjj#iiiikkk....kkkiiii#jjjjjj#..#hhh###......",
+    ".........###..##jjjjjj#iiiikkk#..#kkkiiii#jjjjjj##..###.........",
+    "................#jjjj#iiiiikk......kkiiiii#jjjj#................",
+    "...............#i#jjj###iii#........#iii###jjj#i#...............",
+    "................#i##jjjj#ii#........#ii#jjjj##i#................",
+    ".................##jjjjj#ii#........#ii#jjjjj##.................",
+    "..................#jjjjj###..........###jjjjj#..................",
+    "...................#####................#####...................",
+    "................................................................"
+   ],
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "eyes": {
+    "components": 2,
+    "eyes": [
+     {
+      "box": [
+       3,
+       6
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     },
+     {
+      "box": [
+       3,
+       6
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     }
+    ],
+    "ok": true
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F83800",
+    "F87858"
+   ],
+   "mirror_exact": true
+  },
+  "32": {
+   "size": 32,
+   "ink_px": 208,
+   "fin_depth_px": 4,
+   "black_fill_px": 72,
+   "clumps": 76,
+   "line_side": {
+    "cap_side_lobes|cap": 20,
+    "cap|face_housing": 16,
+    "cap_side_lobes|side_pods": 4,
+    "cap|side_pods": 2,
+    "side_pods|face_housing": 6,
+    "side_pods|tentacles_front_outer": 4,
+    "face_housing|nozzle": 2,
+    "tentacles_front_inner|face_housing": 4,
+    "tentacles_front_outer|suction_cups_front": 26,
+    "tentacles_front_inner|suction_cups_front": 20
+   },
+   "grid": [
+    "...............##...............",
+    ".............##aa##.............",
+    "............#aaaaaa#............",
+    "..........#.#aaaaaa#.#..........",
+    ".........#b#aaaaaaaa#b#.........",
+    "........#bb#aaaaaaaa#bb#........",
+    "......##bb#aaaaaaaaaa#bb##......",
+    ".....#bbb#aaaaaaaaaaaa#bbb#.....",
+    "....#bbbb#aaaaaaaaaaaa#bbbb#....",
+    "....#bbb#aaaaaaaaaaaaaa#bbb#....",
+    "...#bbbb#aaaaaaaaaaaaaa#bbbb#...",
+    "..#bbbb#aa############aa#bbbb#..",
+    "..#bbbb#a#cccccccccccc#a#bbbb#..",
+    "...#bbb##cddddddddddddc##bbb#...",
+    "...##b#f#cddeeddddeeddc#f#b##...",
+    "....##ff#cddeeddddeeddc#ff##....",
+    ".....#ff#cddeeddddeeddc#ff#.....",
+    "......#f#cddddddddddddc#f#......",
+    "....######ccccc##ccccc######....",
+    "...#hhhhhhgg##gllg##gghhhhhh#...",
+    "..#hhhhhh##iiigllgiii##hhhhhh#..",
+    "..##hhhh##iiiikllkiiii##hhhh##..",
+    ".#jj#hhh#iiiik#ll#kiiii#hhh#jj#.",
+    ".#jj#h##iiiiik####kiiiii##h#jj#.",
+    "..####j#iiiiikk..kkiiiii#j####..",
+    "..#jj###i#ii#jk..kj#ii#i###jj#..",
+    "..#jj#h##j#ii#k..k#ii#j##h#jj#..",
+    "...##h##jjj#iik..kii#jjj##h##...",
+    ".....#..#jj#ii#..#ii#jj#..#.....",
+    ".........#jj##....##jj#.........",
+    ".........#jj#......#jj#.........",
+    "..........##........##.........."
+   ],
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     0,
+     5
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,5) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "eyes": {
+    "components": 2,
+    "eyes": [
+     {
+      "box": [
+       2,
+       3
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     },
+     {
+      "box": [
+       2,
+       3
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     }
+    ],
+    "ok": true
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F83800",
+    "F87858"
+   ],
+   "mirror_exact": true
+  },
+  "24": {
+   "size": 24,
+   "ink_px": 94,
+   "fin_depth_px": 4,
+   "black_fill_px": 36,
+   "clumps": 14,
+   "line_side": {
+    "cap_side_lobes|side_pods": 2,
+    "tentacles_front_outer|face_housing": 2,
+    "tentacles_front_inner|face_housing": 6
+   },
+   "grid": [
+    "...........##...........",
+    ".........##aa##.........",
+    "........#baaaab#........",
+    "......##baaaaaab##......",
+    ".....#bbbaaaaaabbb#.....",
+    "....#bbbaaaaaaaabbb#....",
+    "...#bbbaaaaaaaaaabbb#...",
+    "..#bbbbaaaaaaaaaabbbb#..",
+    "..#bbbaaccccccccaabbb#..",
+    ".#bbbbacddddddddcabbbb#.",
+    "..#bb#acdeeddeedca#bb#..",
+    "..###ffcdeeddeedcff###..",
+    "...##ffcdeeddeedcff##...",
+    "....##fcddddddddcf##....",
+    "..##hhh#cccccccc#hhh##..",
+    ".#hhhhh####ll####hhhhh#.",
+    ".#jhhh#iiikllkiii#hhhj#.",
+    ".#jhh##iiikllkiii##hhj#.",
+    ".#jhh#iiiikllkiiii#hhj#.",
+    ".#jjh#iiiij##jiiii#hjj#.",
+    "..##h#jjiik..kiijj#h##..",
+    "....#.#jii#..#iij#.#....",
+    ".......#ji#..#ij#.......",
+    "........##....##........"
+   ],
+   "tile": {
+    "changed_px": 8,
+    "damage_dE": 293.2,
+    "offset": [
+     0,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "eyes": {
+    "components": 2,
+    "eyes": [
+     {
+      "box": [
+       2,
+       3
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     },
+     {
+      "box": [
+       2,
+       3
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     }
+    ],
+    "ok": true
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F83800",
+    "F87858"
+   ],
+   "mirror_exact": true
+  },
+  "20": {
+   "size": 20,
+   "ink_px": 78,
+   "fin_depth_px": 2,
+   "black_fill_px": 28,
+   "clumps": 16,
+   "line_side": {
+    "cap_side_lobes|side_pods": 2,
+    "tentacles_front_outer|face_housing": 2
+   },
+   "grid": [
+    ".........##.........",
+    ".......##aa##.......",
+    "......#baaaab#......",
+    ".....#baaaaaab#.....",
+    "...##bbaaaaaabb##...",
+    "..#bbbaaaaaaaabbb#..",
+    "..#bbbaaaaaaaabbb#..",
+    ".#bbbaaaaaaaaaabbb#.",
+    ".#bb#cddddddddc#bb#.",
+    "..##fcdeeddeedcf##..",
+    "..##fcdeeddeedcf##..",
+    "...#fcddddddddcf#...",
+    "..#hh##iillii##hh#..",
+    ".#hhh#iiilliii#hhh#.",
+    ".#hh##iik##kii##hh#.",
+    ".#jh#iiik##kiii#hj#.",
+    ".#jh#ijii##iiji#hj#.",
+    "..###ijii##iiji###..",
+    ".....#jj#..#jj#.....",
+    "......##....##......"
+   ],
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     2,
+     0
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (0,0) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "eyes": {
+    "components": 2,
+    "eyes": [
+     {
+      "box": [
+       2,
+       2
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     },
+     {
+      "box": [
+       2,
+       2
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     }
+    ],
+    "ok": true
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F83800",
+    "F87858"
+   ],
+   "mirror_exact": true
+  },
+  "16": {
+   "size": 16,
+   "ink_px": 50,
+   "fin_depth_px": 0,
+   "black_fill_px": 26,
+   "clumps": 12,
+   "line_side": {
+    "tentacles_front_outer|face_housing": 2
+   },
+   "grid": [
+    ".......##.......",
+    "......#aa#......",
+    "....##aaaa##....",
+    "...#bbaaaabb#...",
+    "..#bbaaaaaabb#..",
+    ".#bbaaaaaaaabb#.",
+    ".#bcddddddddcb#.",
+    "..#cdeeddeedc#..",
+    "..#cdeeddeedc#..",
+    "..#cddddddddc#..",
+    ".#h##iillii##h#.",
+    "#jh#iiilliii#hj#",
+    ".#j#iiikkiii#j#.",
+    "..##jii##iij##..",
+    "....#ji##ij#....",
+    ".....##..##....."
+   ],
+   "tile": {
+    "changed_px": 0,
+    "damage_dE": 0.0,
+    "offset": [
+     4,
+     1
+    ]
+   },
+   "checks": {
+    "tile_colors": {
+     "pass": true,
+     "detail": "max 3 colours/tile at offset (4,1) (max 3)",
+     "gate": true
+    },
+    "orphans": {
+     "pass": true,
+     "detail": "0 orphan pixels",
+     "gate": true
+    },
+    "holes": {
+     "pass": true,
+     "detail": "0 enclosed transparent pixels",
+     "gate": true
+    },
+    "outline": {
+     "pass": true,
+     "detail": "100% of silhouette edge is dark (min 75%)",
+     "gate": true
+    },
+    "colors": {
+     "pass": true,
+     "detail": "4 opaque colours (max 4)",
+     "gate": true
+    }
+   },
+   "eyes": {
+    "components": 2,
+    "eyes": [
+     {
+      "box": [
+       2,
+       2
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     },
+     {
+      "box": [
+       2,
+       2
+      ],
+      "filled": true,
+      "black_margin": true,
+      "colour": "F0D0B0"
+     }
+    ],
+    "ok": true
+   },
+   "colours": [
+    "000000",
+    "F0D0B0",
+    "F83800",
+    "F87858"
+   ],
+   "mirror_exact": true
+  }
+ },
+ "ladder": {
+  "symmetry": {
+   "axis_px": 339.5,
+   "axis_frac": 0.5015,
+   "mirror_iou": 0.9821,
+   "recentre": "shift -1;",
+   "size": [
+    677,
+    677
+   ],
+   "exact": {
+    "left": 1.0,
+    "right": 1.0
+   },
+   "keep": "right",
+   "half_scores": {
+    "left": 75,
+    "right": 78
+   },
+   "chosen_by": "summed ladder health over rungs (deterministic)"
+  },
+  "guidance": {
+   "source": "workspace/experiments/regions/ladder/v3_significance/significance.json",
+   "blessed": "ladder v3 (Johnny, 2026-10-23)",
+   "name_map": {
+    "cap": "mantle_shell",
+    "cap_side_lobes": "side_fins",
+    "face_housing": "face_frame",
+    "visor": "visor",
+    "eyes": "eyes",
+    "side_pods": "side_pods",
+    "undercarriage": "tentacle_joints",
+    "tentacles_front_outer": "tentacles",
+    "tentacles_front_inner": "tentacles",
+    "suction_cups_front": "suction_cups",
+    "tentacles_back": "tentacles",
+    "nozzle": "central_nozzle"
+   }
+  },
+  "face_source": {
+   "eye_w": 0.04874446085672083,
+   "eye_h": 0.09748892171344166,
+   "gap": 0.1344165435745938,
+   "moat_x": 0.060561299852289516,
+   "moat_y": 0.04431314623338257,
+   "cy": 0.4859675036927622
+  },
+  "arm_ids": [
+   8,
+   9,
+   13,
+   14
+  ],
+  "instances": {
+   "1": {
+    "base": 1,
+    "pair": 1
+   },
+   "2": {
+    "base": 2,
+    "pair": 2
+   },
+   "3": {
+    "base": 3,
+    "pair": 3
+   },
+   "4": {
+    "base": 4,
+    "pair": 4
+   },
+   "5": {
+    "base": 5,
+    "pair": 5
+   },
+   "6": {
+    "base": 6,
+    "pair": 6
+   },
+   "7": {
+    "base": 7,
+    "pair": 7
+   },
+   "8": {
+    "base": 8,
+    "pair": 13
+   },
+   "9": {
+    "base": 9,
+    "pair": 14
+   },
+   "10": {
+    "base": 10,
+    "pair": 10
+   },
+   "11": {
+    "base": 11,
+    "pair": 15
+   },
+   "12": {
+    "base": 12,
+    "pair": 12
+   },
+   "13": {
+    "base": 8,
+    "pair": 8
+   },
+   "14": {
+    "base": 9,
+    "pair": 9
+   },
+   "15": {
+    "base": 11,
+    "pair": 11
+   }
+  },
+  "rungs": {
+   "64": {
+    "M": 62,
+    "k": {
+     "cap_side_lobes": {
+      "k": 1.0,
+      "k_schedule": 1.0,
+      "chosen_by": "schedule",
+      "trials": 1
+     }
+    },
+    "log": {
+     "cup_floor": {
+      "8": {
+       "had": 40
+      },
+      "9": {
+       "had": 48
+      },
+      "13": {
+       "had": 40
+      },
+      "14": {
+       "had": 48
+      }
+     },
+     "nozzle": {
+      "box": [
+       38,
+       8,
+       6
+      ]
+     },
+     "face": {
+      "eye": [
+       3,
+       6
+      ],
+      "gap": 8,
+      "moat": [
+       4,
+       3
+      ],
+      "visor": [
+       22,
+       12
+      ],
+      "visor_top": 24,
+      "ring": 1,
+      "ring_top_bottom": 1
+     },
+     "separate": {
+      "cut_px": 12,
+      "notch_px": 8,
+      "contacts": {
+       "8>9": 2,
+       "13>14": 2
+      }
+     }
+    },
+    "exact_fraction": 1.0,
+    "health_score": 20,
+    "health": [
+     {
+      "part": "cap",
+      "status": "green",
+      "area": 512,
+      "components": 1,
+      "reasons": []
+     },
+     {
+      "part": "cap_side_lobes",
+      "status": "green",
+      "area": 172,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "face_housing",
+      "status": "amber",
+      "area": 106,
+      "components": 1,
+      "reasons": [
+       "iou 0.35"
+      ]
+     },
+     {
+      "part": "visor",
+      "status": "green",
+      "area": 228,
+      "components": 1,
+      "reasons": []
+     },
+     {
+      "part": "eyes",
+      "status": "green",
+      "area": 36,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "side_pods",
+      "status": "green",
+      "area": 84,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "undercarriage",
+      "status": "amber",
+      "area": 46,
+      "components": 3,
+      "reasons": [
+       "split 1->3",
+       "area x0.51",
+       "iou 0.56",
+       "1px thin"
+      ]
+     },
+     {
+      "part": "tentacles_front_outer",
+      "status": "green",
+      "area": 286,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "tentacles_front_inner",
+      "status": "green",
+      "area": 348,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "suction_cups_front",
+      "status": "red",
+      "area": 176,
+      "components": 10,
+      "reasons": [
+       "merged 12->10"
+      ]
+     },
+     {
+      "part": "tentacles_back",
+      "status": "green",
+      "area": 82,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "nozzle",
+      "status": "green",
+      "area": 48,
+      "components": 1,
+      "reasons": []
+     }
+    ]
+   },
+   "32": {
+    "M": 30,
+    "k": {
+     "cap_side_lobes": {
+      "k": 1.4,
+      "k_schedule": 1.4,
+      "chosen_by": "schedule",
+      "trials": 9
+     }
+    },
+    "log": {
+     "cup_floor": {
+      "8": {
+       "had": 9
+      },
+      "9": {
+       "had": 11
+      },
+      "13": {
+       "had": 9
+      },
+      "14": {
+       "had": 11
+      }
+     },
+     "nozzle": {
+      "box": [
+       18,
+       4,
+       2
+      ]
+     },
+     "face": {
+      "eye": [
+       2,
+       3
+      ],
+      "gap": 4,
+      "moat": [
+       2,
+       1
+      ],
+      "visor": [
+       12,
+       5
+      ],
+      "visor_top": 12,
+      "ring": 1,
+      "ring_top_bottom": 1
+     },
+     "separate": {
+      "cut_px": 8,
+      "notch_px": 8,
+      "contacts": {
+       "8>9": 4,
+       "13>14": 4
+      }
+     }
+    },
+    "exact_fraction": 1.0,
+    "health_score": 15,
+    "health": [
+     {
+      "part": "cap",
+      "status": "green",
+      "area": 116,
+      "components": 1,
+      "reasons": []
+     },
+     {
+      "part": "cap_side_lobes",
+      "status": "amber",
+      "area": 84,
+      "components": 2,
+      "reasons": [
+       "area x2.00",
+       "iou 0.48"
+      ]
+     },
+     {
+      "part": "face_housing",
+      "status": "amber",
+      "area": 34,
+      "components": 1,
+      "reasons": [
+       "iou 0.24",
+       "1px thin"
+      ]
+     },
+     {
+      "part": "visor",
+      "status": "amber",
+      "area": 48,
+      "components": 1,
+      "reasons": [
+       "iou 0.56"
+      ]
+     },
+     {
+      "part": "eyes",
+      "status": "amber",
+      "area": 12,
+      "components": 2,
+      "reasons": [
+       "area x1.80",
+       "iou 0.50"
+      ]
+     },
+     {
+      "part": "side_pods",
+      "status": "amber",
+      "area": 22,
+      "components": 2,
+      "reasons": [
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "undercarriage",
+      "status": "amber",
+      "area": 8,
+      "components": 4,
+      "reasons": [
+       "split 1->4",
+       "area x0.38",
+       "iou 0.36",
+       "1px thin",
+       "lost adj side_pods"
+      ]
+     },
+     {
+      "part": "tentacles_front_outer",
+      "status": "green",
+      "area": 70,
+      "components": 2,
+      "reasons": []
+     },
+     {
+      "part": "tentacles_front_inner",
+      "status": "amber",
+      "area": 84,
+      "components": 4,
+      "reasons": [
+       "split 2->4",
+       "1px thin"
+      ]
+     },
+     {
+      "part": "suction_cups_front",
+      "status": "amber",
+      "area": 40,
+      "components": 10,
+      "reasons": [
+       "split 8->10"
+      ]
+     },
+     {
+      "part": "tentacles_back",
+      "status": "amber",
+      "area": 16,
+      "components": 2,
+      "reasons": [
+       "1px thin"
+      ]
+     },
+     {
+      "part": "nozzle",
+      "status": "green",
+      "area": 8,
+      "components": 1,
+      "reasons": []
+     }
+    ]
+   },
+   "24": {
+    "M": 22,
+    "k": {
+     "cap_side_lobes": {
+      "k": 1.5,
+      "k_schedule": 1.566,
+      "chosen_by": "frame margin: best",
+      "trials": 12
+     }
+    },
+    "log": {
+     "cup_floor": {
+      "8": {
+       "had": 5
+      },
+      "9": {
+       "had": 5
+      },
+      "13": {
+       "had": 5
+      },
+      "14": {
+       "had": 5
+      }
+     },
+     "nozzle": {
+      "box": [
+       14,
+       3,
+       2
+      ]
+     },
+     "face": {
+      "eye": [
+       2,
+       3
+      ],
+      "gap": 2,
+      "moat": [
+       1,
+       1
+      ],
+      "visor": [
+       8,
+       5
+      ],
+      "visor_top": 8,
+      "ring": 1,
+      "ring_top_bottom": 1
+     },
+     "separate": {
+      "cut_px": 4,
+      "notch_px": 0,
+      "contacts": {
+       "8>9": 3,
+       "13>14": 3
+      }
+     }
+    },
+    "exact_fraction": 1.0,
+    "health_score": 11,
+    "health": [
+     {
+      "part": "cap",
+      "status": "green",
+      "area": 54,
+      "components": 1,
+      "reasons": []
+     },
+     {
+      "part": "cap_side_lobes",
+      "status": "amber",
+      "area": 50,
+      "components": 2,
+      "reasons": [
+       "area x2.21",
+       "iou 0.42"
+      ]
+     },
+     {
+      "part": "face_housing",
+      "status": "amber",
+      "area": 26,
+      "components": 1,
+      "reasons": [
+       "area x1.64",
+       "iou 0.11",
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "visor",
+      "status": "amber",
+      "area": 28,
+      "components": 1,
+      "reasons": [
+       "iou 0.26"
+      ]
+     },
+     {
+      "part": "eyes",
+      "status": "amber",
+      "area": 12,
+      "components": 2,
+      "reasons": [
+       "area x3.35",
+       "iou 0.17"
+      ]
+     },
+     {
+      "part": "side_pods",
+      "status": "amber",
+      "area": 10,
+      "components": 2,
+      "reasons": [
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "undercarriage",
+      "status": "red",
+      "area": 0,
+      "components": 0,
+      "reasons": [
+       "vanished"
+      ]
+     },
+     {
+      "part": "tentacles_front_outer",
+      "status": "amber",
+      "area": 36,
+      "components": 2,
+      "reasons": [
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "tentacles_front_inner",
+      "status": "amber",
+      "area": 44,
+      "components": 2,
+      "reasons": [
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "suction_cups_front",
+      "status": "red",
+      "area": 20,
+      "components": 6,
+      "reasons": [
+       "merged 8->6"
+      ]
+     },
+     {
+      "part": "tentacles_back",
+      "status": "amber",
+      "area": 8,
+      "components": 4,
+      "reasons": [
+       "split 2->4",
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "nozzle",
+      "status": "amber",
+      "area": 6,
+      "components": 1,
+      "reasons": [
+       "lost adj undercarriage"
+      ]
+     }
+    ]
+   },
+   "20": {
+    "M": 18,
+    "k": {
+     "cap_side_lobes": {
+      "k": 1.5,
+      "k_schedule": 1.671,
+      "chosen_by": "frame margin: best",
+      "trials": 12
+     }
+    },
+    "log": {
+     "cup_floor": {
+      "8": {
+       "had": 2
+      },
+      "9": {
+       "had": 4
+      },
+      "13": {
+       "had": 2
+      },
+      "14": {
+       "had": 4
+      }
+     },
+     "nozzle": {
+      "box": [
+       11,
+       2,
+       2
+      ]
+     },
+     "face": {
+      "eye": [
+       2,
+       2
+      ],
+      "gap": 2,
+      "moat": [
+       1,
+       1
+      ],
+      "visor": [
+       8,
+       4
+      ],
+      "visor_top": 7,
+      "ring": 1,
+      "ring_top_bottom": 0
+     },
+     "separate": {
+      "cut_px": 4,
+      "notch_px": 0,
+      "contacts": {
+       "8>9": 3,
+       "13>14": 3
+      }
+     }
+    },
+    "exact_fraction": 1.0,
+    "health_score": 10,
+    "health": [
+     {
+      "part": "cap",
+      "status": "amber",
+      "area": 44,
+      "components": 1,
+      "reasons": [
+       "lost adj side_pods"
+      ]
+     },
+     {
+      "part": "cap_side_lobes",
+      "status": "amber",
+      "area": 32,
+      "components": 2,
+      "reasons": [
+       "area x2.11",
+       "iou 0.38",
+       "1px thin"
+      ]
+     },
+     {
+      "part": "face_housing",
+      "status": "red",
+      "area": 8,
+      "components": 2,
+      "reasons": [
+       "area 8 < min_px^2 9",
+       "split 1->2",
+       "iou 0.00",
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "visor",
+      "status": "amber",
+      "area": 24,
+      "components": 1,
+      "reasons": [
+       "area x1.80",
+       "iou 0.27"
+      ]
+     },
+     {
+      "part": "eyes",
+      "status": "amber",
+      "area": 8,
+      "components": 2,
+      "reasons": [
+       "area x3.34",
+       "iou 0.25"
+      ]
+     },
+     {
+      "part": "side_pods",
+      "status": "amber",
+      "area": 4,
+      "components": 2,
+      "reasons": [
+       "area x0.54",
+       "iou 0.40",
+       "lost adj cap,undercarriage"
+      ]
+     },
+     {
+      "part": "undercarriage",
+      "status": "red",
+      "area": 0,
+      "components": 0,
+      "reasons": [
+       "vanished"
+      ]
+     },
+     {
+      "part": "tentacles_front_outer",
+      "status": "amber",
+      "area": 20,
+      "components": 2,
+      "reasons": [
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "tentacles_front_inner",
+      "status": "amber",
+      "area": 32,
+      "components": 2,
+      "reasons": [
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "suction_cups_front",
+      "status": "amber",
+      "area": 12,
+      "components": 4,
+      "reasons": [
+       "split 2->4",
+       "lost adj tentacles_back"
+      ]
+     },
+     {
+      "part": "tentacles_back",
+      "status": "amber",
+      "area": 4,
+      "components": 2,
+      "reasons": [
+       "area x0.55",
+       "1px thin",
+       "lost adj nozzle,suction_cups_front,undercarriage"
+      ]
+     },
+     {
+      "part": "nozzle",
+      "status": "amber",
+      "area": 4,
+      "components": 1,
+      "reasons": [
+       "lost adj tentacles_back,undercarriage"
+      ]
+     }
+    ]
+   },
+   "16": {
+    "M": 14,
+    "k": {
+     "cap_side_lobes": {
+      "k": 1.4,
+      "k_schedule": 1.8,
+      "chosen_by": "frame margin: best",
+      "trials": 10
+     }
+    },
+    "log": {
+     "cup_floor": {
+      "8": {
+       "had": 2
+      },
+      "9": {
+       "had": 2
+      },
+      "13": {
+       "had": 2
+      },
+      "14": {
+       "had": 2
+      }
+     },
+     "nozzle": {
+      "box": [
+       9,
+       2,
+       2
+      ]
+     },
+     "face": {
+      "eye": [
+       2,
+       2
+      ],
+      "gap": 2,
+      "moat": [
+       1,
+       1
+      ],
+      "visor": [
+       8,
+       4
+      ],
+      "visor_top": 5,
+      "ring": 1,
+      "ring_top_bottom": 0
+     },
+     "separate": {
+      "cut_px": 6,
+      "notch_px": 0,
+      "contacts": {
+       "8>9": 4,
+       "13>14": 4
+      }
+     }
+    },
+    "exact_fraction": 1.0,
+    "health_score": 7,
+    "health": [
+     {
+      "part": "cap",
+      "status": "amber",
+      "area": 24,
+      "components": 1,
+      "reasons": [
+       "lost adj face_housing,side_pods"
+      ]
+     },
+     {
+      "part": "cap_side_lobes",
+      "status": "amber",
+      "area": 14,
+      "components": 2,
+      "reasons": [
+       "iou 0.38",
+       "1px thin"
+      ]
+     },
+     {
+      "part": "face_housing",
+      "status": "red",
+      "area": 8,
+      "components": 2,
+      "reasons": [
+       "area 8 < min_px^2 9",
+       "split 1->2",
+       "iou 0.00",
+       "1px thin",
+       "lost adj cap,side_pods,undercarriage"
+      ]
+     },
+     {
+      "part": "visor",
+      "status": "amber",
+      "area": 24,
+      "components": 1,
+      "reasons": [
+       "area x2.97",
+       "iou 0.14"
+      ]
+     },
+     {
+      "part": "eyes",
+      "status": "amber",
+      "area": 8,
+      "components": 2,
+      "reasons": [
+       "area x5.52",
+       "iou 0.00"
+      ]
+     },
+     {
+      "part": "side_pods",
+      "status": "red",
+      "area": 0,
+      "components": 0,
+      "reasons": [
+       "vanished"
+      ]
+     },
+     {
+      "part": "undercarriage",
+      "status": "red",
+      "area": 0,
+      "components": 0,
+      "reasons": [
+       "vanished"
+      ]
+     },
+     {
+      "part": "tentacles_front_outer",
+      "status": "red",
+      "area": 6,
+      "components": 2,
+      "reasons": [
+       "area 6 < min_px^2 9",
+       "area x0.42",
+       "iou 0.43",
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "tentacles_front_inner",
+      "status": "amber",
+      "area": 22,
+      "components": 2,
+      "reasons": [
+       "1px thin",
+       "lost adj undercarriage"
+      ]
+     },
+     {
+      "part": "suction_cups_front",
+      "status": "amber",
+      "area": 8,
+      "components": 4,
+      "reasons": [
+       "lost adj tentacles_back"
+      ]
+     },
+     {
+      "part": "tentacles_back",
+      "status": "red",
+      "area": 2,
+      "components": 1,
+      "reasons": [
+       "area 2 < min_px^2 4",
+       "merged 2->1",
+       "area x0.45",
+       "1px thin",
+       "lost adj suction_cups_front,undercarriage"
+      ]
+     },
+     {
+      "part": "nozzle",
+      "status": "amber",
+      "area": 4,
+      "components": 1,
+      "reasons": [
+       "area x2.43",
+       "iou 0.00",
+       "lost adj undercarriage"
+      ]
+     }
+    ]
+   }
+  }
+ }
+}
