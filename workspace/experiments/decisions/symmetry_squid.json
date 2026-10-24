@@ -1,0 +1,277 @@
+{
+ "jev": {
+  "type": "vertical",
+  "model": {
+   "type": "vertical",
+   "order": null,
+   "probabilities": {
+    "none": 0,
+    "vertical": 0.94,
+    "horizontal": 0,
+    "both": 0.02,
+    "radial": 0.04
+   },
+   "confidence": 0.92,
+   "classifier": "typesafe/jev-1.14",
+   "secs": 0.464,
+   "per_part": {
+    "mantle_shell": {
+     "symmetric": true,
+     "p": 0.88
+    },
+    "side_fins": {
+     "symmetric": true,
+     "p": 0.93
+    },
+    "face_frame": {
+     "symmetric": true,
+     "p": 0.91
+    },
+    "visor": {
+     "symmetric": true,
+     "p": 0.94
+    },
+    "eyes": {
+     "symmetric": true,
+     "p": 0.96
+    },
+    "side_pods": {
+     "symmetric": true,
+     "p": 0.94
+    },
+    "tentacles": {
+     "symmetric": true,
+     "p": 0.89
+    },
+    "tentacle_joints": {
+     "symmetric": true,
+     "p": 0.81
+    },
+    "suction_cups": {
+     "symmetric": true,
+     "p": 0.79
+    },
+    "central_nozzle": {
+     "symmetric": true,
+     "p": 0.63
+    }
+   },
+   "call": "70efc99128b387abf879ee0810e8ba3ded75ee96761a77cec5227d597d6f6421",
+   "cost": 0.0001071,
+   "cached": false
+  },
+  "disagreements": [
+   {
+    "what": "part side_fins",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part eyes",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part suction_cups",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   }
+  ],
+  "per_part_sym": {
+   "mantle_shell": true,
+   "side_fins": false,
+   "face_frame": true,
+   "visor": true,
+   "eyes": false,
+   "side_pods": true,
+   "tentacles": true,
+   "tentacle_joints": true,
+   "suction_cups": false,
+   "central_nozzle": true
+  }
+ },
+ "luna": {
+  "type": "vertical",
+  "model": {
+   "type": "vertical",
+   "order": null,
+   "probabilities": {
+    "none": 0,
+    "vertical": 1,
+    "horizontal": 0,
+    "both": 0,
+    "radial": 0
+   },
+   "confidence": 1,
+   "classifier": "openai/gpt-6-luna-decisions",
+   "secs": 1.35,
+   "per_part": {
+    "mantle_shell": {
+     "symmetric": true,
+     "p": 0.95
+    },
+    "side_fins": {
+     "symmetric": true,
+     "p": 0.95
+    },
+    "face_frame": {
+     "symmetric": true,
+     "p": 0.95
+    },
+    "visor": {
+     "symmetric": true,
+     "p": 0.99
+    },
+    "eyes": {
+     "symmetric": true,
+     "p": 0.96
+    },
+    "side_pods": {
+     "symmetric": true,
+     "p": 0.95
+    },
+    "tentacles": {
+     "symmetric": true,
+     "p": 0.95
+    },
+    "tentacle_joints": {
+     "symmetric": true,
+     "p": 0.94
+    },
+    "suction_cups": {
+     "symmetric": true,
+     "p": 0.93
+    },
+    "central_nozzle": {
+     "symmetric": true,
+     "p": 0.95
+    }
+   },
+   "call": "0351ada494b881edf73d4e9f6a1100ed583d379ee173c3b11864bb52564b11ec",
+   "cost": 0.0002721,
+   "cached": false
+  },
+  "disagreements": [
+   {
+    "what": "part side_fins",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part eyes",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part suction_cups",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   }
+  ],
+  "per_part_sym": {
+   "mantle_shell": true,
+   "side_fins": false,
+   "face_frame": true,
+   "visor": true,
+   "eyes": false,
+   "side_pods": true,
+   "tentacles": true,
+   "tentacle_joints": true,
+   "suction_cups": false,
+   "central_nozzle": true
+  }
+ },
+ "chat": {
+  "type": "vertical",
+  "model": {
+   "type": "vertical",
+   "order": null,
+   "axis_hint": "vertical centreline through the mantle tip, visor, and central nozzle",
+   "confidence": 0.98,
+   "per_part": {
+    "mantle_shell": {
+     "symmetric": true,
+     "note": "Outline and pale markings form mirrored left-right pairs."
+    },
+    "side_fins": {
+     "symmetric": true,
+     "note": "The left and right fins are mirror counterparts."
+    },
+    "face_frame": {
+     "symmetric": true,
+     "note": "Rounded frame and rivet layout are bilaterally mirrored."
+    },
+    "visor": {
+     "symmetric": true,
+     "note": "Centered rounded window is vertically symmetric."
+    },
+    "eyes": {
+     "symmetric": true,
+     "note": "The two eyes are placed as a mirrored pair."
+    },
+    "side_pods": {
+     "symmetric": true,
+     "note": "Metal housings mirror each other across the centreline."
+    },
+    "tentacles": {
+     "symmetric": true,
+     "note": "The large arms and smaller rear appendages form mirrored left-right sets."
+    },
+    "tentacle_joints": {
+     "symmetric": true,
+     "note": "Collars, pivots, and connectors repeat in mirrored pairs."
+    },
+    "suction_cups": {
+     "symmetric": true,
+     "note": "Openings are distributed in corresponding mirrored positions."
+    },
+    "central_nozzle": {
+     "symmetric": true,
+     "note": "It is centered and itself bilaterally symmetric."
+    }
+   },
+   "reason": "The entire creature is designed around a clear left-right mirror axis, with only minor rendering variations.",
+   "call": "9bc7735f913b3ec6260f9b616286f914a8c83b091399aa3168002f319f9fe347",
+   "cost": 0.023072,
+   "cached": true
+  },
+  "disagreements": [
+   {
+    "what": "part side_fins",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part eyes",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   },
+   {
+    "what": "part suction_cups",
+    "model": true,
+    "measured": false,
+    "resolution": "measurement wins"
+   }
+  ],
+  "per_part_sym": {
+   "mantle_shell": true,
+   "side_fins": false,
+   "face_frame": true,
+   "visor": true,
+   "eyes": false,
+   "side_pods": true,
+   "tentacles": true,
+   "tentacle_joints": true,
+   "suction_cups": false,
+   "central_nozzle": true
+  }
+ }
+}

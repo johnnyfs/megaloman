@@ -1,0 +1,2587 @@
+{
+ "version": "d1",
+ "repeats": 3,
+ "n_items": 29,
+ "summary": {
+  "openai/gpt-5.6-sol": {
+   "acc_known": 0.95,
+   "n_known": 20,
+   "acc_known_per_run": 0.917,
+   "acc_by_group": {
+    "synthetic": "12/12",
+    "rubric": "7/8"
+   },
+   "agree_existing_judge": "3/4",
+   "unstable_items": 9,
+   "stable_frac": 0.69,
+   "latency_median_s": 3.6,
+   "cost_total": 0.51381,
+   "cost_per_call": 0.007136,
+   "errors": 0
+  },
+  "typesafe/jev-1.14": {
+   "acc_known": 0.85,
+   "n_known": 20,
+   "acc_known_per_run": 0.867,
+   "acc_by_group": {
+    "synthetic": "10/12",
+    "rubric": "7/8"
+   },
+   "agree_existing_judge": "1/4",
+   "unstable_items": 1,
+   "stable_frac": 0.966,
+   "latency_median_s": 0.28,
+   "cost_total": 0.00481,
+   "cost_per_call": 5.5e-05,
+   "errors": 0
+  },
+  "openai/gpt-6-luna-decisions": {
+   "acc_known": 0.85,
+   "n_known": 20,
+   "acc_known_per_run": 0.85,
+   "acc_by_group": {
+    "synthetic": "11/12",
+    "rubric": "6/8"
+   },
+   "agree_existing_judge": "2/4",
+   "unstable_items": 0,
+   "stable_frac": 1,
+   "latency_median_s": 0.31,
+   "cost_total": 0.00442,
+   "cost_per_call": 5.1e-05,
+   "errors": 0
+  }
+ },
+ "pairwise_agreement": {
+  "openai/gpt-5.6-sol ~ typesafe/jev-1.14": "20/29",
+  "openai/gpt-5.6-sol ~ openai/gpt-6-luna-decisions": "22/29",
+  "openai/gpt-6-luna-decisions ~ typesafe/jev-1.14": "23/29"
+ },
+ "ledger": {
+  "spent": 0.002,
+  "calls": 1,
+  "cached": 245
+ },
+ "items": [
+  {
+   "id": "syn_render32_noise",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "A",
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.1,
+      "cost": 0.001956,
+      "cached": false
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.5,
+      "cost": 0.002016,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.0,
+      "cost": 0.001996,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.99,
+      "secs": 0.306,
+      "cost": 4.2546e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.99,
+      "secs": 0.245,
+      "cost": 4.2588e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.99,
+      "secs": 0.221,
+      "cost": 4.2672e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.304,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.386,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.239,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render32_merged",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 5.9,
+      "cost": 0.005916,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.4,
+      "cost": 0.003296,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.9,
+      "cost": 0.004356,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.55,
+      "secs": 0.267,
+      "cost": 4.242e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.58,
+      "secs": 0.271,
+      "cost": 4.2462e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.5,
+      "secs": 0.269,
+      "cost": 4.2546e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 0.76,
+      "secs": 0.243,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.76,
+      "secs": 0.241,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.76,
+      "secs": 0.274,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render32_copiedhalf",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "A",
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.4,
+      "cost": 0.002656,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.5,
+      "cost": 0.002616,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.7,
+      "cost": 0.002656,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.98,
+      "secs": 0.454,
+      "cost": 4.2588e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.98,
+      "secs": 0.22,
+      "cost": 4.2672e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.98,
+      "secs": 0.207,
+      "cost": 4.263e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.289,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.329,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.236,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render24_noise",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.0,
+      "cost": 0.002636,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.2,
+      "cost": 0.002556,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 4.1,
+      "cost": 0.002636,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.279,
+      "cost": 4.2504e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.253,
+      "cost": 4.2546e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.204,
+      "cost": 4.2672e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.283,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.261,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.381,
+      "cost": 4.07e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render24_merged",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "A",
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.4,
+      "cost": 0.003696,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.8,
+      "cost": 0.003996,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.2,
+      "cost": 0.003336,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.68,
+      "secs": 0.297,
+      "cost": 4.2588e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.75,
+      "secs": 0.274,
+      "cost": 4.263e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.7,
+      "secs": 0.287,
+      "cost": 4.2588e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.325,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.344,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.29,
+      "cost": 4.07e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render24_copiedhalf",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "A",
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.5,
+      "cost": 0.002856,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.0,
+      "cost": 0.002876,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 2.7,
+      "cost": 0.002776,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.95,
+      "secs": 0.346,
+      "cost": 4.2336e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.95,
+      "secs": 0.244,
+      "cost": 4.2378e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.96,
+      "secs": 0.242,
+      "cost": 4.2504e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.35,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.258,
+      "cost": 4.07e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 1,
+      "secs": 0.274,
+      "cost": 4.07e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render64_noise",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 1.9,
+      "cost": 0.001896,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 1.7,
+      "cost": 0.001896,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.1,
+      "cost": 0.001996,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.262,
+      "cost": 4.2378e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.222,
+      "cost": 4.2504e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.212,
+      "cost": 4.2672e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.257,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.269,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.423,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render64_merged",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.9,
+      "cost": 0.004156,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 4.2,
+      "cost": 0.004236,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 4.5,
+      "cost": 0.002816,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.62,
+      "secs": 0.272,
+      "cost": 4.2546e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.63,
+      "secs": 0.205,
+      "cost": 4.2336e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.59,
+      "secs": 0.363,
+      "cost": 4.263e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.73,
+      "secs": 1.543,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.73,
+      "secs": 0.298,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.73,
+      "secs": 0.246,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_render64_copiedhalf",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.2,
+      "cost": 0.003416,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.8,
+      "cost": 0.003056,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.7,
+      "cost": 0.002916,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.98,
+      "secs": 0.469,
+      "cost": 4.2756e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.271,
+      "cost": 4.2756e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.99,
+      "secs": 0.326,
+      "cost": 4.2378e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 1.635,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.245,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.282,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_v3map32_noise",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.5,
+      "cost": 0.002596,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.4,
+      "cost": 0.002476,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.6,
+      "cost": 0.002496,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.209,
+      "cost": 4.2546e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.272,
+      "cost": 4.2672e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.203,
+      "cost": 4.2504e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.26,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.277,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.264,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_v3map32_merged",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "A",
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.5,
+      "cost": 0.004296,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 4.3,
+      "cost": 0.004276,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 7.0,
+      "cost": 0.008276,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.55,
+      "secs": 0.559,
+      "cost": 4.2588e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.58,
+      "secs": 0.294,
+      "cost": 4.263e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.6,
+      "secs": 0.202,
+      "cost": 4.2546e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.69,
+      "secs": 0.266,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.69,
+      "secs": 0.27,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.69,
+      "secs": 0.233,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "syn_v3map32_copiedhalf",
+   "group": "synthetic",
+   "kind": "choice",
+   "question": "Two candidate pixel-art sprites of the same game enemy (a cartoon robotic squid) are shown as A and B. Which is the better, cleaner sprite: coherent shapes, distinct parts, sensible left-right balance, no stray pixels?",
+   "options": {
+    "A": "Sprite A is better",
+    "B": "Sprite B is better"
+   },
+   "known": "B",
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.5,
+      "cost": 0.002976,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 2.6,
+      "cost": 0.002736,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 3.1,
+      "cost": 0.002956,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.84,
+      "secs": 0.238,
+      "cost": 4.2336e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.89,
+      "secs": 0.228,
+      "cost": 4.263e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.84,
+      "secs": 0.294,
+      "cost": 4.2462e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.259,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.247,
+      "cost": 3.65e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 1,
+      "secs": 0.31,
+      "cost": 3.65e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_sym_64_original",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "This is a pixel-art region map (each flat colour is one part). Is it EXACTLY left-right mirror symmetric, pixel for pixel?",
+   "known": false,
+   "majority": {
+    "openai/gpt-5.6-sol": true,
+    "typesafe/jev-1.14": false,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": true,
+      "p": null,
+      "secs": 16.3,
+      "cost": 0.018224,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 35.6,
+      "cost": 0.041884,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 22.9,
+      "cost": 0.026284,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": false,
+      "p": 0.25,
+      "secs": 0.318,
+      "cost": 2.667e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.26,
+      "secs": 0.228,
+      "cost": 2.6838e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.3,
+      "secs": 0.198,
+      "cost": 2.6796e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.371,
+      "cost": 2.86e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.235,
+      "cost": 2.86e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.221,
+      "cost": 2.86e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_sym_64_left",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "This is a pixel-art region map (each flat colour is one part). Is it EXACTLY left-right mirror symmetric, pixel for pixel?",
+   "known": true,
+   "majority": {
+    "openai/gpt-5.6-sol": true,
+    "typesafe/jev-1.14": false,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": true,
+      "p": null,
+      "secs": 20.6,
+      "cost": 0.021944,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 25.4,
+      "cost": 0.031164,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 20.7,
+      "cost": 0.025984,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": false,
+      "p": 0.48,
+      "secs": 0.433,
+      "cost": 2.6754e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.48,
+      "secs": 0.224,
+      "cost": 2.688e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.41,
+      "secs": 0.194,
+      "cost": 2.6712e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.287,
+      "cost": 2.86e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.24,
+      "cost": 2.86e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.357,
+      "cost": 2.86e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_sym_24_original",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "This is a pixel-art region map (each flat colour is one part). Is it EXACTLY left-right mirror symmetric, pixel for pixel?",
+   "known": false,
+   "majority": {
+    "openai/gpt-5.6-sol": false,
+    "typesafe/jev-1.14": false,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": false,
+      "p": null,
+      "secs": 9.8,
+      "cost": 0.009744,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 11.2,
+      "cost": 0.014924,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 20.1,
+      "cost": 0.027304,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": false,
+      "p": 0.07,
+      "secs": 0.211,
+      "cost": 2.6796e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.08,
+      "secs": 0.362,
+      "cost": 2.6754e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.09,
+      "secs": 0.217,
+      "cost": 2.6628e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.227,
+      "cost": 3.07e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.249,
+      "cost": 3.07e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.506,
+      "cost": 3.07e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_sym_24_left",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "This is a pixel-art region map (each flat colour is one part). Is it EXACTLY left-right mirror symmetric, pixel for pixel?",
+   "known": true,
+   "majority": {
+    "openai/gpt-5.6-sol": true,
+    "typesafe/jev-1.14": true,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": true,
+      "p": null,
+      "secs": 24.7,
+      "cost": 0.033384,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 15.2,
+      "cost": 0.022104,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 10.9,
+      "cost": 0.011804,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": true,
+      "p": 0.58,
+      "secs": 0.212,
+      "cost": 2.6796e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.62,
+      "secs": 0.191,
+      "cost": 2.6754e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.6,
+      "secs": 0.196,
+      "cost": 2.688e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.242,
+      "cost": 3.07e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.263,
+      "cost": 3.07e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0,
+      "secs": 0.28,
+      "cost": 3.07e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_noise_render32_0",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "Does this pixel-art sprite contain stray, scattered noise pixels that do not belong to any shape?",
+   "known": false,
+   "majority": {
+    "openai/gpt-5.6-sol": false,
+    "typesafe/jev-1.14": false,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": false,
+      "p": null,
+      "secs": 3.6,
+      "cost": 0.004348,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 3.9,
+      "cost": 0.002328,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 3.9,
+      "cost": 0.003328,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": false,
+      "p": 0.18,
+      "secs": 0.203,
+      "cost": 2.6376e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.18,
+      "secs": 0.201,
+      "cost": 2.646e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.18,
+      "secs": 0.292,
+      "cost": 2.6376e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.287,
+      "cost": 2.77e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.262,
+      "cost": 2.77e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.565,
+      "cost": 2.77e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_noise_render32_1",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "Does this pixel-art sprite contain stray, scattered noise pixels that do not belong to any shape?",
+   "known": true,
+   "majority": {
+    "openai/gpt-5.6-sol": true,
+    "typesafe/jev-1.14": true,
+    "openai/gpt-6-luna-decisions": true
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": true,
+      "p": null,
+      "secs": 4.1,
+      "cost": 0.003488,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 3.3,
+      "cost": 0.002808,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 3.5,
+      "cost": 0.002828,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": true,
+      "p": 0.91,
+      "secs": 0.232,
+      "cost": 2.6334e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.91,
+      "secs": 0.284,
+      "cost": 2.6292e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.9,
+      "secs": 0.202,
+      "cost": 2.6292e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": true,
+      "p": 0.88,
+      "secs": 0.353,
+      "cost": 2.77e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.88,
+      "secs": 0.35,
+      "cost": 2.77e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.88,
+      "secs": 0.292,
+      "cost": 2.77e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_noise_render24_0",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "Does this pixel-art sprite contain stray, scattered noise pixels that do not belong to any shape?",
+   "known": false,
+   "majority": {
+    "openai/gpt-5.6-sol": false,
+    "typesafe/jev-1.14": false,
+    "openai/gpt-6-luna-decisions": false
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": false,
+      "p": null,
+      "secs": 2.3,
+      "cost": 0.002128,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 3.2,
+      "cost": 0.002228,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": null,
+      "secs": 3.3,
+      "cost": 0.002488,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": false,
+      "p": 0.17,
+      "secs": 0.224,
+      "cost": 2.6166e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.15,
+      "secs": 0.285,
+      "cost": 2.6334e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.15,
+      "secs": 0.207,
+      "cost": 2.6376e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.284,
+      "cost": 2.98e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.256,
+      "cost": 2.98e-05,
+      "cached": true
+     },
+     {
+      "answer": false,
+      "p": 0.05,
+      "secs": 0.418,
+      "cost": 2.98e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "rub_noise_render24_1",
+   "group": "rubric",
+   "kind": "noul",
+   "question": "Does this pixel-art sprite contain stray, scattered noise pixels that do not belong to any shape?",
+   "known": true,
+   "majority": {
+    "openai/gpt-5.6-sol": true,
+    "typesafe/jev-1.14": true,
+    "openai/gpt-6-luna-decisions": true
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": true,
+      "p": null,
+      "secs": 3.3,
+      "cost": 0.002628,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 3.5,
+      "cost": 0.003288,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": null,
+      "secs": 3.4,
+      "cost": 0.003068,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": true,
+      "p": 0.94,
+      "secs": 0.265,
+      "cost": 2.625e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.95,
+      "secs": 0.205,
+      "cost": 2.6334e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.93,
+      "secs": 0.204,
+      "cost": 2.6334e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": true,
+      "p": 0.95,
+      "secs": 0.251,
+      "cost": 2.98e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.95,
+      "secs": 0.225,
+      "cost": 2.98e-05,
+      "cached": true
+     },
+     {
+      "answer": true,
+      "p": 0.95,
+      "secs": 0.252,
+      "cost": 2.98e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "v2_64",
+   "group": "ladder_v2",
+   "kind": "choice",
+   "question": "The first image is concept art of a robotic squid enemy. The second shows three candidate 64x64 pixel region maps labelled A, B, C left to right. Which candidate reads best as this creature: clear paired eyes, balanced fins and pods, distinct tentacles?",
+   "options": {
+    "A": "Candidate A",
+    "B": "Candidate B",
+    "C": "Candidate C"
+   },
+   "reference": "C",
+   "cached_gpt": [
+    "C",
+    "C",
+    "B"
+   ],
+   "majority": {
+    "openai/gpt-5.6-sol": "C",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "C",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "C",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.46,
+      "secs": 0.47,
+      "cost": 9.807e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.53,
+      "secs": 0.58,
+      "cost": 9.7944e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.51,
+      "secs": 0.701,
+      "cost": 9.8028e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 0.6,
+      "secs": 0.649,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.6,
+      "secs": 0.449,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.6,
+      "secs": 0.515,
+      "cost": 9.05e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "v2_24",
+   "group": "ladder_v2",
+   "kind": "choice",
+   "question": "The first image is concept art of a robotic squid enemy. The second shows three candidate 24x24 pixel region maps labelled A, B, C left to right. Which candidate reads best as this creature: clear paired eyes, balanced fins and pods, distinct tentacles?",
+   "options": {
+    "A": "Candidate A",
+    "B": "Candidate B",
+    "C": "Candidate C"
+   },
+   "reference": "B",
+   "cached_gpt": [
+    "B",
+    "B",
+    "B"
+   ],
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.73,
+      "secs": 0.488,
+      "cost": 9.7986e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.75,
+      "secs": 0.601,
+      "cost": 9.807e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.78,
+      "secs": 0.668,
+      "cost": 9.8028e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 0.72,
+      "secs": 0.625,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.72,
+      "secs": 0.53,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.72,
+      "secs": 0.561,
+      "cost": 9.05e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "v2_20",
+   "group": "ladder_v2",
+   "kind": "choice",
+   "question": "The first image is concept art of a robotic squid enemy. The second shows three candidate 20x20 pixel region maps labelled A, B, C left to right. Which candidate reads best as this creature: clear paired eyes, balanced fins and pods, distinct tentacles?",
+   "options": {
+    "A": "Candidate A",
+    "B": "Candidate B",
+    "C": "Candidate C"
+   },
+   "reference": "C",
+   "cached_gpt": [
+    "B",
+    null,
+    "C",
+    "C"
+   ],
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "B"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": null,
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "C",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.64,
+      "secs": 0.61,
+      "cost": 9.8196e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.58,
+      "secs": 0.8,
+      "cost": 9.8112e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.63,
+      "secs": 0.808,
+      "cost": 9.8112e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "B",
+      "p": 0.48,
+      "secs": 0.732,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.48,
+      "secs": 0.809,
+      "cost": 9.05e-05,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.48,
+      "secs": 0.741,
+      "cost": 9.05e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "v3_vs_v1_32",
+   "group": "ladder_v3",
+   "kind": "choice",
+   "question": "The first image is concept art of a robotic squid enemy. The second shows two candidate 32x32 pixel region maps, A (left) and B (right). Which keeps the squid's CHARACTER better: the shapes and proportions that make it recognisable and appealing?",
+   "options": {
+    "A": "Candidate A",
+    "B": "Candidate B"
+   },
+   "reference": null,
+   "cached_gpt": [
+    "A",
+    "B",
+    "A"
+   ],
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.66,
+      "secs": 0.666,
+      "cost": 0.000101304,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.64,
+      "secs": 0.641,
+      "cost": 0.000101178,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.62,
+      "secs": 0.587,
+      "cost": 0.00010101,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.54,
+      "secs": 0.715,
+      "cost": 9.23e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.54,
+      "secs": 0.645,
+      "cost": 9.23e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.54,
+      "secs": 1.033,
+      "cost": 9.23e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "v3_vs_v1_16",
+   "group": "ladder_v3",
+   "kind": "choice",
+   "question": "The first image is concept art of a robotic squid enemy. The second shows two candidate 16x16 pixel region maps, A (left) and B (right). Which keeps the squid's CHARACTER better: the shapes and proportions that make it recognisable and appealing?",
+   "options": {
+    "A": "Candidate A",
+    "B": "Candidate B"
+   },
+   "reference": "A",
+   "cached_gpt": [
+    "A",
+    "A",
+    "A"
+   ],
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "B",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": null,
+      "cost": 0.0,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "B",
+      "p": 0.7,
+      "secs": 0.625,
+      "cost": 0.000101304,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.74,
+      "secs": 0.658,
+      "cost": 0.000101346,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": 0.75,
+      "secs": 0.701,
+      "cost": 0.000101346,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.53,
+      "secs": 0.679,
+      "cost": 9.23e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.53,
+      "secs": 0.995,
+      "cost": 9.23e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.53,
+      "secs": 1.046,
+      "cost": 9.23e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "render_32_alllines",
+   "group": "render",
+   "kind": "choice",
+   "question": "Concept art of a robotic squid enemy, then two 32x32 pixel-art renders A and B. Which render reads better as this creature at game size?",
+   "options": {
+    "A": "Render A",
+    "B": "Render B"
+   },
+   "reference": null,
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 5.3,
+      "cost": 0.005564,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.8,
+      "cost": 0.005184,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 4.4,
+      "cost": 0.005744,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.82,
+      "secs": 0.965,
+      "cost": 9.6096e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.8,
+      "secs": 0.781,
+      "cost": 9.5928e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.81,
+      "secs": 0.539,
+      "cost": 9.6054e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.96,
+      "secs": 0.574,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.96,
+      "secs": 0.455,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.96,
+      "secs": 0.515,
+      "cost": 8.32e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "render_32_inset",
+   "group": "render",
+   "kind": "choice",
+   "question": "Concept art of a robotic squid enemy, then two 32x32 pixel-art renders A and B. Which render reads better as this creature at game size?",
+   "options": {
+    "A": "Render A",
+    "B": "Render B"
+   },
+   "reference": null,
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 7.4,
+      "cost": 0.005784,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 4.2,
+      "cost": 0.005284,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 5.0,
+      "cost": 0.006384,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.76,
+      "secs": 0.517,
+      "cost": 9.5886e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.73,
+      "secs": 0.533,
+      "cost": 9.618e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.72,
+      "secs": 0.654,
+      "cost": 9.5886e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.91,
+      "secs": 0.482,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.91,
+      "secs": 0.469,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.91,
+      "secs": 0.582,
+      "cost": 8.32e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "render_16_alllines",
+   "group": "render",
+   "kind": "choice",
+   "question": "Concept art of a robotic squid enemy, then two 16x16 pixel-art renders A and B. Which render reads better as this creature at game size?",
+   "options": {
+    "A": "Render A",
+    "B": "Render B"
+   },
+   "reference": null,
+   "majority": {
+    "openai/gpt-5.6-sol": "B",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 6.7,
+      "cost": 0.008944,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 7.8,
+      "cost": 0.008764,
+      "cached": true
+     },
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 5.8,
+      "cost": 0.009964,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.56,
+      "secs": 0.557,
+      "cost": 9.5886e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.57,
+      "secs": 0.768,
+      "cost": 9.5718e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.55,
+      "secs": 0.507,
+      "cost": 9.597e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.442,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.639,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.87,
+      "secs": 0.503,
+      "cost": 8.32e-05,
+      "cached": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "render_16_inset",
+   "group": "render",
+   "kind": "choice",
+   "question": "Concept art of a robotic squid enemy, then two 16x16 pixel-art renders A and B. Which render reads better as this creature at game size?",
+   "options": {
+    "A": "Render A",
+    "B": "Render B"
+   },
+   "reference": null,
+   "majority": {
+    "openai/gpt-5.6-sol": "A",
+    "typesafe/jev-1.14": "A",
+    "openai/gpt-6-luna-decisions": "A"
+   },
+   "runs": {
+    "openai/gpt-5.6-sol": [
+     {
+      "answer": "B",
+      "p": null,
+      "secs": 4.2,
+      "cost": 0.007204,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 3.2,
+      "cost": 0.005264,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": null,
+      "secs": 4.7,
+      "cost": 0.005724,
+      "cached": true
+     }
+    ],
+    "typesafe/jev-1.14": [
+     {
+      "answer": "A",
+      "p": 0.66,
+      "secs": 0.671,
+      "cost": 9.5676e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.65,
+      "secs": 0.454,
+      "cost": 9.6012e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.66,
+      "secs": 0.565,
+      "cost": 9.618e-05,
+      "cached": true
+     }
+    ],
+    "openai/gpt-6-luna-decisions": [
+     {
+      "answer": "A",
+      "p": 0.95,
+      "secs": 0.441,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.95,
+      "secs": 0.566,
+      "cost": 8.32e-05,
+      "cached": true
+     },
+     {
+      "answer": "A",
+      "p": 0.95,
+      "secs": 0.471,
+      "cost": 8.32e-05,
+      "cached": true
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -26,6 +26,18 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   input tokens. A test sprite came back "vertical symmetry" at p=0.98. Candidate for the
   symmetry classifier and a cheap pairwise judge; validate against the current judge
   first. Alternative: `openai/gpt-6-luna-decisions`.
+- **finding** (2026-10-23, bake-off d1, `workspace/experiments/decisions/`): 29 items × 3
+  repeats. Accuracy on known answers (12 synthetic pairs, 8 yes/no rubric checks):
+  gpt-5.6-sol 95%, Jev 85%, Luna 85%. Jev and Luna cost ~$0.00005 a call (~140× cheaper)
+  and take 0.3 s (vs 3.6 s), and they are nearly deterministic (0–1 of 29 items unstable,
+  vs 10 for gpt). Both decision models catch noise and a broken (copied) half reliably
+  (p ≥ 0.84). Jev is weak on merged parts (p ≈ 0.55). Luna answered "not symmetric" at
+  p = 0 on exactly mirrored maps. On ladder preference items both disagree with gpt
+  (1–2 of 4 agree), and both show **position bias**: Luna always picks A, Jev mostly
+  picks B. **Use:** Jev is now the classifier behind `symmetry.assess_symmetry`
+  (`classifier="jev"`; the deterministic verification still wins). On the squid all
+  three models say vertical. Decision models are good for cheap defect screens. Keep
+  gpt-5.6-sol for preference and character judging.
 
 ## Regions
 
