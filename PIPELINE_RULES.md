@@ -94,6 +94,28 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
   renderer's. It needs the reshape step: a face template, 3–4 distinct tentacle strokes,
   and a head kept big.
 
+### Johnny's critique of render v1 (2026-10-23): regions over coloration
+
+- **rule:** at small sizes **regions matter far more than coloration**. Drop the
+  concept's patterning (polka dots, stripes, two-tone limbs). Each region is one solid
+  colour; distinctness between regions is what carries the sprite (Met and Telly keep
+  every feature with very few pixels).
+- **rule:** **occlusion makes a subclass.** When one instance of a part hides another
+  (a tentacle behind a tentacle), the hidden one is a background subclass, rendered
+  darker or as black/shading. Merging them into one shape kills the curve of the front
+  tentacle. This must be captured at the regions stage (legend plus paint), not
+  patched at render.
+- **rule:** suction cups are their own solid colour, edged, and distinct from the
+  tentacles. Tentacles are another solid colour.
+- **rule:** tentacles need clear, solid separating lines as they shrink, and more of the
+  line budget goes to shading and separation.
+- **rule:** depth lines go where the physical gap is: e.g. a thicker line under the side
+  fins (bottom), where fin and head separate most.
+- **rule:** exaggeration (e.g. the fins' jauntiness) takes pixels from the empty
+  background, never from the head or body.
+- **finding:** 64 px almost works. 32 lacks region distinction. 16 is "a little triangle
+  man".
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
