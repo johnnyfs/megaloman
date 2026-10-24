@@ -43,7 +43,7 @@ def render(ext, base_of, mats, legend, N, keep="left", opts=None):
     template part (eyes, visor, ring, nozzle). Templates are exact; v3's clean-up could grow a 1 px bump on the ring
     at 16 (it had no ring row there in v3, so it never showed)."""
     o = {"contrast_below": 32, "cup_edge_min": 32, "fin_depth": 2, "clean": True, "always_line": set(),
-         "speck_below": 0}
+         "speck_below": 0, "ring_edge": False}
     o.update(opts or {})
     base_of = np.array(base_of)
     behind = L4.behind_fn(legend)
@@ -163,6 +163,7 @@ def render(ext, base_of, mats, legend, N, keep="left", opts=None):
                        for dy, dx in FOUR):
                 ink[y, x] = True
                 specks += 1
+    ring_log = ring_as_edge(lab, ink, blk, base_of, mats, leaks, inb) if o["ring_edge"] else None
     base = base_of[lab]
     # depth line under the fins, taken from the background (v2 rule 5)
     depth = np.zeros((H, W), bool)
@@ -194,9 +195,65 @@ def render(ext, base_of, mats, legend, N, keep="left", opts=None):
         arr[:, W - W // 2:] = half[:, ::-1]
     grid_ch = ".abcdefghijklmnopqrstuvwxyz"
     info = {"size": N, "specks_to_line": specks, "ink_px": int(ink.sum()), "fin_depth_px": int(depth.sum()), "black_fill_px": int((blk & ~ink).sum()),
-            "clumps": R1.clumps(ink, blk | depth), "line_side": sides,
+            "clumps": R1.clumps(ink, blk | depth), "line_side": sides, "ring_edge": ring_log,
             "grid": ["".join("#" if ink[y, x] or depth[y, x] else grid_ch[base_of[lab[y, x]]] for x in range(W)) for y in range(H)]}
     return Image.fromarray(out, "RGBA"), info
+
+
+def ring_as_edge(lab, ink, blk, base_of, mats, leaks, inb, reach=1) -> dict:
+    """Trial (Johnny's 16b hand edit, PIPELINE_RULES): the face ring is treated as an EDGE made of colour, so the
+    thin-line rule applies to it: its corner pixels (a ring pixel at a corner of the ring's bounding box with a ring
+    neighbour both across and down: the 1 px L that makes 3 pixels touch) are clipped to line. The space that opens near those corners is filled by the neighbours, fins first,
+    then the head: an ink pixel within `reach` of a corner that is part of a clump (> 2 dark 8-neighbours), touches
+    the part (4-neighbour), and can take its label without opening an unlined contact or the outline, joins it,
+    most-clumped first. Edits lab / ink in place. Template parts (eyes, visor, ring) never grow."""
+    ring_id = next(i + 1 for i, d in enumerate(mats) if d["name"] == "face_housing")
+    H, W = lab.shape
+    ring = (base_of[lab] == ring_id) & ~ink
+    if not ring.any():
+        return {"clipped": [], "filled": []}
+    ys, xs = np.nonzero(ring)
+    corners = [(ys.min(), xs.min()), (ys.min(), xs.max()), (ys.max(), xs.min()), (ys.max(), xs.max())]
+    clipped = []
+    for y, x in corners:
+        hv = [any(inb(y + dy, x + dx) and ring[y + dy, x + dx] for dy, dx in d) for d in (((0, 1), (0, -1)),
+                                                                                      ((1, 0), (-1, 0)))]
+        if ring[y, x] and all(hv):
+            ink[y, x] = True
+            clipped.append([int(y), int(x)])
+    near = np.zeros((H, W), bool)
+    for y, x in clipped:
+        near[max(0, y - reach):y + reach + 1, max(0, x - reach):x + reach + 1] = True
+    filled = []
+    for part in [i + 1 for i, d in enumerate(mats) if d["fin"]] + \
+                [i + 1 for i, d in enumerate(mats) if d["name"] == "cap"]:
+        while True:
+            dark = ink | blk
+            best = None
+            for y, x in zip(*np.nonzero(ink & near & ~blk)):
+                own = [lab[y + dy, x + dx] for dy, dx in FOUR if inb(y + dy, x + dx) and not ink[y + dy, x + dx]
+                       and lab[y + dy, x + dx] > 0 and base_of[lab[y + dy, x + dx]] == part]
+                if not own:
+                    continue
+                c = sum(1 for dy, dx in EIGHT if inb(y + dy, x + dx) and dark[y + dy, x + dx])
+                if c <= 2:
+                    continue
+                was = lab[y, x]
+                lab[y, x] = own[0]
+                ink[y, x] = False
+                ok = not leaks(y, x) and not any(
+                    inb(y + dy, x + dx) and lab[y + dy, x + dx] == 0 and not ink[y + dy, x + dx] for dy, dx in FOUR)
+                lab[y, x] = was
+                ink[y, x] = True
+                if ok and (best is None or c > best[0]):
+                    best = (c, y, x, own[0])
+            if best is None:
+                break
+            _, y, x, v = best
+            lab[y, x] = v
+            ink[y, x] = False
+            filled.append([int(y), int(x), mats[base_of[v] - 1]["name"]])
+    return {"clipped": clipped, "filled": filled}
 
 
 def run(sizes=SIZES, opts=None, out=None) -> dict:

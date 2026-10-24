@@ -1,0 +1,147 @@
+{
+ "note": "letter -> candidate for the ab-blind panel; do not show on screen",
+ "key": {
+  "24": {
+   "a": {
+    "roles": [
+     "random survivor 2 (control)"
+    ],
+    "sources": [
+     "24-c047"
+    ]
+   },
+   "b": {
+    "roles": [
+     "B1 critic top 2"
+    ],
+    "sources": [
+     "24-c054"
+    ]
+   },
+   "c": {
+    "roles": [
+     "B1 critic top 1"
+    ],
+    "sources": [
+     "24-c018"
+    ]
+   },
+   "d": {
+    "roles": [
+     "random survivor 1 (control)"
+    ],
+    "sources": [
+     "24-c033"
+    ]
+   },
+   "e": {
+    "roles": [
+     "A (v4 control)"
+    ],
+    "sources": [
+     "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v4/render/render_24.png"
+    ]
+   }
+  },
+  "20": {
+   "a": {
+    "roles": [
+     "ring-as-edge trial alone (v4 + ring_edge)"
+    ],
+    "sources": [
+     "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/e1/candidates/20/20-c009.png"
+    ]
+   },
+   "b": {
+    "roles": [
+     "B1 critic top 1"
+    ],
+    "sources": [
+     "20-c455"
+    ]
+   },
+   "c": {
+    "roles": [
+     "B1 critic top 2"
+    ],
+    "sources": [
+     "20-c356"
+    ]
+   },
+   "d": {
+    "roles": [
+     "random survivor 1 (control)"
+    ],
+    "sources": [
+     "20-c465"
+    ]
+   },
+   "e": {
+    "roles": [
+     "A (v4 control)"
+    ],
+    "sources": [
+     "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v4/render/render_20.png"
+    ]
+   },
+   "f": {
+    "roles": [
+     "random survivor 2 (control)"
+    ],
+    "sources": [
+     "20-c492"
+    ]
+   }
+  },
+  "16": {
+   "a": {
+    "roles": [
+     "B1 critic top 1"
+    ],
+    "sources": [
+     "16-c067"
+    ]
+   },
+   "b": {
+    "roles": [
+     "random survivor 2 (control)"
+    ],
+    "sources": [
+     "16-c110"
+    ]
+   },
+   "c": {
+    "roles": [
+     "A (v4 control)"
+    ],
+    "sources": [
+     "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v4/render/render_16.png"
+    ]
+   },
+   "d": {
+    "roles": [
+     "random survivor 1 (control)"
+    ],
+    "sources": [
+     "16-c033"
+    ]
+   },
+   "e": {
+    "roles": [
+     "B1 critic top 2"
+    ],
+    "sources": [
+     "16-c120"
+    ]
+   },
+   "f": {
+    "roles": [
+     "Johnny's hand edit 16b (reference)"
+    ],
+    "sources": [
+     "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/v4/render/render_16b.png"
+    ]
+   }
+  }
+ }
+}

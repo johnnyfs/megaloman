@@ -1,6 +1,6 @@
 # Model in the loop: A/B plan for the region → render stages
 
-**Status:** speculative plan, 2026-10-23. Nothing here is implemented or run. Baseline: **v4**
+**Status:** plan, 2026-10-23. E1 has run (`e1.py`; see the "finding (E1)" in PIPELINE_RULES.md); the rest is not implemented. Baseline: **v4**
 (`ladder_v4.py`, `render_v4.py`, `workspace/experiments/regions/v4/`).
 
 **Goal (Johnny):** a repeatable process that reliably gives a really good 24 or 20 px sprite,

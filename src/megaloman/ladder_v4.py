@@ -54,6 +54,14 @@ CURL_RUN = {20: 2, 16: 1}        # cup pixels running up the arm above the tip r
 FIN_PAY_BELOW = 32               # fins re-grow the pixels they give to lines, from the background, below this size
                                  # (at >= 32 v3 already drew the fin line and the significance shrink left room)
 
+# E1 knobs (MODEL_IN_LOOP_PLAN). The defaults are v4 exactly; `rung(ctx, N, params)` overrides them per call.
+#  fin_dk     added to the fins' chosen exaggeration k (may pass the frame margin; the hard gate decides)
+#  eye_slit   (w, h) of the eye slit at this size (<= SLIT_MAX only); None = EYE_SLIT[N]
+#  curl_run   cup pixels running up the inner arm above its tip row (<= CURL_MAX); None = CURL_RUN[N]
+#  fin_pay    re-grow the fins' line pixels from the background (below FIN_PAY_BELOW)
+#  size_yield which part keeps a contested cell between head and fins: "head" (v4 priority) or "fins"
+DEFAULT_PARAMS = {"fin_dk": 0.0, "eye_slit": None, "curl_run": None, "fin_pay": True, "size_yield": "head"}
+
 
 def legend_v4(legend_v2: dict) -> dict:
     leg = L3.legend_v3(legend_v2)
@@ -81,7 +89,8 @@ def prepare(src_raw, legend_v2, spec, sizes=(64, 32, 24, 20, 16)) -> dict:
 
 # ------------------------------------------------------------------ rung
 
-def rung(ctx, N: int) -> dict:
+def rung(ctx, N: int, params: dict | None = None) -> dict:
+    prm = {**DEFAULT_PARAMS, **(params or {})}
     leg, src, specs, P = ctx["legend"], ctx["src"], ctx["specs"], ctx["P"]
     M = N - 2
     ks, klog = {}, {}
@@ -89,37 +98,43 @@ def rung(ctx, N: int) -> dict:
                     key=lambda i: -specs[i]["significance"]):
         klog[specs[i]["name"]] = LV.choose_k(src, leg, specs, P, i, M, N, ks)
         ks[i] = klog[specs[i]["name"]]["k"]
+        if prm["fin_dk"] and specs[i]["name"] == "cap_side_lobes":
+            ks[i] = round(max(1.0, ks[i] + prm["fin_dk"]), 3)
+            klog[specs[i]["name"]] = {**klog[specs[i]["name"]], "k": ks[i], "fin_dk": prm["fin_dk"]}
     mod = LV.build_bg_only(src, specs, P, ks) if ks else src
     ext_src = LV.extend(mod, ctx["inst"], ctx["base_of"])
     base_of = np.array(ctx["base_of"])
-    pr = np.array([leg["parts"][b - 1]["priority"] for b in ctx["base_of"][1:]], float)
+    pri = {p["name"]: p["priority"] for p in leg["parts"]}
+    if prm["size_yield"] == "fins":            # the fins keep contested cells at the head's expense (addendum)
+        pri["cap"], pri["cap_side_lobes"] = pri["cap_side_lobes"], pri["cap"]
+    pr = np.array([pri[leg["parts"][b - 1]["name"]] for b in ctx["base_of"][1:]], float)
     ext = L.assign(L.coverage(ext_src, len(base_of) - 1, M), pr)
     log = {}
     behind = behind_fn(leg)
     groups = L3.arm_groups(ext, base_of, ctx, M)
     log["cup_floor"] = L3.cup_floor(ext, groups, ctx, N, M)
-    log["face"] = face_template(ext, ctx, N, M)
+    log["face"] = face_template(ext, ctx, N, M, prm["eye_slit"])
     log["nozzle"] = nozzle_floor(ext, ctx, N, M, log["face"])
     groups = L3.arm_groups(ext, base_of, ctx, M)
     log["separate"] = L3.separate_arms(ext, groups, base_of, behind, ctx, N, M)
-    log["curl"] = curl_tips(ext, base_of, ctx, N, M)
-    log["fin_pay"] = fin_pay(ext, base_of, behind, ctx, N, M) if N < FIN_PAY_BELOW else {}
+    log["curl"] = curl_tips(ext, base_of, ctx, N, M, prm["curl_run"])
+    log["fin_pay"] = fin_pay(ext, base_of, behind, ctx, N, M) if N < FIN_PAY_BELOW and prm["fin_pay"] else {}
     ext = LV.mirror_inst(ext, ctx["sym"]["keep"], ctx["pair"])
     base = base_of[ext]
     exact = SY.exact_fraction(base, base.shape[1])
     h = L.health(base, src, leg, ctx["sst"])
     return {"N": N, "M": M, "ext": ext, "base": base, "k": klog, "log": log, "exact_fraction": exact,
-            "health": h, "health_score": SY.health_score(h)}
+            "health": h, "health_score": SY.health_score(h), "params": prm}
 
 
-def face_template(ext, ctx, N, M) -> dict:
+def face_template(ext, ctx, N, M, eye_slit=None) -> dict:
     """Ring (face colour, top + sides at every size, bottom at >= RING_BOTTOM_MIN) > black moat > two filled eye
     rectangles; vertical slits at <= SLIT_MAX. The block hangs from the concept's ring-top row. At slit sizes, face
     pixels the shrink left outside the new (narrower) block go to the nearest non-face part, so the ring stays 1 px
     and nothing is left as a hole."""
     f, idx = ctx["face"], ctx["idx"]
     if N <= SLIT_MAX:
-        ew, eh = EYE_SLIT[N]
+        ew, eh = eye_slit or EYE_SLIT[N]
         mx = my = SLIT_MOAT
     else:
         fw, fh = L3.EYE_FLOOR.get(N, (2, 2))
@@ -178,7 +193,7 @@ def nozzle_floor(ext, ctx, N, M, face) -> dict:
     return {"box": [int(y0), h, w]}
 
 
-def curl_tips(ext, base_of, ctx, N, M) -> dict:
+def curl_tips(ext, base_of, ctx, N, M, run=None) -> dict:
     """The 20 px curl, carried down. At 20 (v3, praised) each inner front arm reads as curled because its cups form a
     hook inside the arm: a run of cup pixels one column in from the arm's OUTER edge (arm colour on both sides of it)
     that ends in a tip row that is all cup. Here that hook is drawn explicitly at <= CURL_MAX: the arm's own cup
@@ -188,7 +203,7 @@ def curl_tips(ext, base_of, ctx, N, M) -> dict:
         return {}
     idx = ctx["idx"]
     cup, inner = idx["suction_cups_front"], idx["tentacles_front_inner"]
-    run = CURL_RUN.get(N, 1)
+    run = CURL_RUN.get(N, 1) if run is None else run
     groups = L3.arm_groups(ext, base_of, ctx, M)
     out = {}
     W = ext.shape[1]

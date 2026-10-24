@@ -267,3 +267,36 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
     the arms have 4 rows (v3: 5) and the head 4 (v3: 5), and the outer arms are 1 px with a cup tip. Below 32 the
     pods are 1 px coral slivers between lines at 20 and 24, and absent at 16 (as in v3). Under each fin there is a
     black block (the 2 px depth line plus the outline) that looks heavy at 16. Awaiting Johnny.
+
+- **finding (E1, model in the loop)** (2026-10-23, `e1.py`, `workspace/experiments/regions/e1/`, MODEL_IN_LOOP_PLAN
+  section 4 + addendum): v4 (A) vs B1 `v4-critic` (knob sweep → hard gate → decision-model critic) vs B2 `v4-nbrefine`
+  (Nano Banana refine → snap → repair → gate), at 24 / 20 / 16. $1.00 of the $3 cap (Jev $0.07, Luna $0.12,
+  gpt-5.6-sol $0.54, Nano Banana $0.26 billed upstream by Google; OpenRouter reports $0 for BYOK).
+  - **Knobs** (defaults reproduce v4 pixel for pixel): fin `k` offset, fin depth 1/2, fin pay on/off, eye slit (20:
+    1×3/1×2/2×2, 16: 1×2/2×2), curl run 0/1/2, and the addendum knobs: **ring as edge** per size (the trial rule:
+    clip the ring's L corners, fins then head fill the freed space; at 16 with everything else v4 it reproduces
+    Johnny's `render_16b.png` exactly), **size yield** head/fins (who keeps contested head|fin cells), and **cup line
+    at 24** (the one boundary still free to sacrifice; unlined at 20/16 is blessed). At 24 ring-as-edge is a no-op
+    (the ring's corners are already rounded there). No combination broke a blessed check: 64 / 552 / 204 distinct
+    gated grids at 24 / 20 / 16.
+  - **Flagger** (21 synthetic defects with known locations): yes/no hit rate Jev 57 %, Luna 76 %, both 52 %. Both
+    catch a removed eye, a lost line and a black block; neither sees 8 % noise; Jev misses merged arms (p ≈ 0.46, as
+    in d1). **Boxes are useless** (Jev only, since Luna refuses box questions): mean IoU 0.03, 52 % even touch the
+    defect. On clean v4 they false-flag a lot (Jev 7/24, Luna 14/24: "lost line" at every size, "asymmetric" at 20
+    on an exact mirror). The one true flag is the heavy black under the fins at 16. Use: yes/no triggers at best,
+    localised deterministically.
+  - **Critic** (5 yes/no per sprite, Jev + Luna, no pairwise): it ranks v4 low (#51/64, #375/552, #183/204), and
+    **both sentinels fail**: the Johnny-rejected v3 `alt_finline` 16 and v4 `alt_cupline` 16 score above v4. So per the
+    plan the run cannot overrule v4: keep v4. Its consistent knob leanings: fin depth 1 everywhere (the heavy block),
+    ring as edge at 20 and 16 (implied switch rung 20), no cup line at 24 (agrees with the blessed rule), 1×2 slits at
+    16, but 2×2 boxes at 20 (against Johnny's slit rule). Johnny's 16b ranks #52/204, above v4.
+  - **Judge** (gpt-5.6-sol vs v4, both orders × 2): critic top 2: 1 win, 4 ties, 1 loss; random survivors: 2 wins,
+    3 ties, 1 loss. **The critic is no better than random** in the judge's eye. At 24 every fin-depth-1 variant beats v4
+    ("fewer muddy black clumps"). Johnny's 16b vs v4: tie, leaning 16b (3 votes to 1).
+  - **Nano Banana at working size: not viable.** Given the 24/20/16 sprite at ~512 px (no grid) and told to keep the
+    grid, it redrew a detailed squid at about 2–3× the resolution (spots, shading, new colours). The cells are flat
+    (purity 0.85–0.89), but at the wrong scale, so the snap back is mush. 0/6 passed the gate (the eyes broke in all
+    6). Its raw drawings are good pixel art at ~48–64 px, which supports I3 (image models at ≥ 64 only).
+  - **Awaiting Johnny's blind pick** (`ab-blind`; key in `e1/blind/key.json`): A, critic top 2, 2 random survivors,
+    plus the ring-as-edge trial alone at 20 and Johnny's 16b at 16. His picks decide critic vs random and judge vs
+    Johnny.
