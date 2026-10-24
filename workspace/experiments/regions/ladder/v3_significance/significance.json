@@ -1,0 +1,1472 @@
+{
+ "version": "v3",
+ "prompt": "workspace/experiments/regions/ladder/v3_significance/prompts/significance.md",
+ "judge_prompt": "workspace/experiments/regions/ladder/v3_significance/prompts/judge_pairwise.md",
+ "params": {
+  "model": "openai/gpt-5.6-sol",
+  "schedule_from": 64,
+  "k_step": 0.05,
+  "judge_samples_per_order": 3,
+  "budget": 1.4
+ },
+ "guidance": {
+  "model": "openai/gpt-5.6-sol",
+  "call": "737f06ca6b5f69b6ef953d9814037bdee465adf935f3cda890a302a19a2dee9f",
+  "cost": 0.096672,
+  "cached": true,
+  "summary": "At 16 px the creature is recognised by its pointed mantle with oversized jaunty side fins, a framed dark visor containing two separated eye bars, and a many-limbed squid silhouette.",
+  "raw": {
+   "parts": [
+    {
+     "name": "mantle_shell",
+     "significance": 0.35,
+     "character": "pointed squid-like head dome",
+     "essential_shape": "triangle",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "The mantle establishes the broad head silhouette but is large enough to surrender edge pixels to more characteristic parts."
+    },
+    {
+     "name": "side_fins",
+     "significance": 0.94,
+     "character": "jaunty wing-like head silhouette",
+     "essential_shape": "triangle",
+     "mode": "exaggerate",
+     "max_exaggeration": 1.8,
+     "anchor": "attach:mantle_shell",
+     "may_claim_background": true,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 7,
+       "h": 5,
+       "area": 18
+      },
+      "24": {
+       "w": 6,
+       "h": 4,
+       "area": 12
+      },
+      "20": {
+       "w": 5,
+       "h": 4,
+       "area": 10
+      },
+      "16": {
+       "w": 4,
+       "h": 3,
+       "area": 6
+      }
+     },
+     "reason": "Each fin must grow outward from its mantle attachment so its pointed, jaunty projection remains visible from 32 px downward."
+    },
+    {
+     "name": "face_frame",
+     "significance": 0.8,
+     "character": "soft mechanical mask around the face",
+     "essential_shape": "ellipse",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": "mantle_shell",
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "Its proportional border normally remains legible, while enlarging it would crowd the visor and eyes."
+    },
+    {
+     "name": "visor",
+     "significance": 0.88,
+     "character": "single dark robotic face window",
+     "essential_shape": "rect",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": "face_frame",
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "The visor is already a broad central shape and should scale proportionally rather than consume its surrounding frame."
+    },
+    {
+     "name": "eyes",
+     "significance": 1.0,
+     "character": "two separate glowing eye bars",
+     "essential_shape": "pair_of_rects",
+     "mode": "floor",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": "visor",
+     "min_footprint": {
+      "64": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "32": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "24": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "20": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "16": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      }
+     },
+     "reason": "The eyes must retain two distinct 1-by-2 rectangles with at least one visor pixel between them, but must never be enlarged beyond that floor."
+    },
+    {
+     "name": "side_pods",
+     "significance": 0.48,
+     "character": "paired mechanical cheek housings",
+     "essential_shape": "blob",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "attach:face_frame",
+     "may_claim_background": true,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "The pods add mechanical context but may simplify or yield pixels without harming the primary squid-face read."
+    },
+    {
+     "name": "tentacles",
+     "significance": 0.84,
+     "character": "multiple curling cephalopod limbs",
+     "essential_shape": "stroke",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "attach:tentacle_joints",
+     "may_claim_background": true,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "The limb mass is essential, but enlargement cannot repair merged arms or missing gaps and would only increase crowding."
+    },
+    {
+     "name": "tentacle_joints",
+     "significance": 0.52,
+     "character": "articulated mechanical limb connections",
+     "essential_shape": "ellipse",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "The joints support the robotic theme, but forcing every small connector to survive would fragment the tiny limb silhouettes."
+    },
+    {
+     "name": "suction_cups",
+     "significance": 0.74,
+     "character": "recognisable sucker-tipped tentacles",
+     "essential_shape": "ellipse",
+     "mode": "none",
+     "max_exaggeration": 1.0,
+     "anchor": "centroid",
+     "may_claim_background": false,
+     "container": "tentacles",
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "20": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "16": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      }
+     },
+     "reason": "Surviving cups strongly reinforce the squid identity, but enlarging the numerous cups would overwhelm and merge the tentacles."
+    },
+    {
+     "name": "central_nozzle",
+     "significance": 0.68,
+     "character": "central glowing jet accent",
+     "essential_shape": "rect",
+     "mode": "floor",
+     "max_exaggeration": 1.0,
+     "anchor": "attach:face_frame",
+     "may_claim_background": true,
+     "container": null,
+     "min_footprint": {
+      "64": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "32": {
+       "w": 0,
+       "h": 0,
+       "area": 0
+      },
+      "24": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "20": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      },
+      "16": {
+       "w": 1,
+       "h": 2,
+       "area": 2
+      }
+     },
+     "reason": "A tiny centered vertical mark preserves the powered mechanical underside without competing with the eyes or widening the silhouette."
+    }
+   ],
+   "summary": "At 16 px the creature is recognised by its pointed mantle with oversized jaunty side fins, a framed dark visor containing two separated eye bars, and a many-limbed squid silhouette."
+  }
+ },
+ "parts": [
+  {
+   "name": "mantle_shell",
+   "significance": 0.35,
+   "character": "pointed squid-like head dome",
+   "essential_shape": "triangle",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The mantle establishes the broad head silhouette but is large enough to surrender edge pixels to more characteristic parts.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 54942,
+     "centroid": [
+      162.6,
+      343.0
+     ],
+     "anchor": [
+      162.6,
+      343.0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "side_fins",
+   "significance": 0.94,
+   "character": "jaunty wing-like head silhouette",
+   "essential_shape": "triangle",
+   "mode": "exaggerate",
+   "max_exaggeration": 1.8,
+   "anchor": "attach:mantle_shell",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 7,
+     "h": 5,
+     "area": 18
+    },
+    "24": {
+     "w": 6,
+     "h": 4,
+     "area": 12
+    },
+    "20": {
+     "w": 5,
+     "h": 4,
+     "area": 10
+    },
+    "16": {
+     "w": 4,
+     "h": 3,
+     "area": 6
+    }
+   },
+   "reason": "Each fin must grow outward from its mantle attachment so its pointed, jaunty projection remains visible from 32 px downward.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 11254,
+     "centroid": [
+      182.9,
+      166.2
+     ],
+     "anchor": [
+      181.6,
+      201.7
+     ]
+    },
+    {
+     "area": 10264,
+     "centroid": [
+      183.5,
+      516.6
+     ],
+     "anchor": [
+      182.4,
+      483.8
+     ]
+    }
+   ]
+  },
+  {
+   "name": "face_frame",
+   "significance": 0.8,
+   "character": "soft mechanical mask around the face",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "mantle_shell",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "Its proportional border normally remains legible, while enlarging it would crowd the visor and eyes.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 19182,
+     "centroid": [
+      318.8,
+      341.9
+     ],
+     "anchor": [
+      318.8,
+      341.9
+     ]
+    }
+   ]
+  },
+  {
+   "name": "visor",
+   "significance": 0.88,
+   "character": "single dark robotic face window",
+   "essential_shape": "rect",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "face_frame",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The visor is already a broad central shape and should scale proportionally rather than consume its surrounding frame.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 20775,
+     "centroid": [
+      319.7,
+      339.3
+     ],
+     "anchor": [
+      319.7,
+      339.3
+     ]
+    }
+   ]
+  },
+  {
+   "name": "eyes",
+   "significance": 1.0,
+   "character": "two separate glowing eye bars",
+   "essential_shape": "pair_of_rects",
+   "mode": "floor",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "visor",
+   "min_footprint": {
+    "64": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "32": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "24": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "20": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "16": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    }
+   },
+   "reason": "The eyes must retain two distinct 1-by-2 rectangles with at least one visor pixel between them, but must never be enlarged beyond that floor.",
+   "overrides": {
+    "from": {
+     "mode": "floor",
+     "max_exaggeration": 1.0,
+     "essential_shape": "pair_of_rects"
+    },
+    "why": "user: eyes are fine at proportional size; never enlarge, only floor at two separate >= 1x2 rects"
+   },
+   "pieces": [
+    {
+     "area": 1937,
+     "centroid": [
+      328.5,
+      271.4
+     ],
+     "anchor": [
+      328.5,
+      271.4
+     ]
+    },
+    {
+     "area": 1915,
+     "centroid": [
+      328.9,
+      402.1
+     ],
+     "anchor": [
+      328.9,
+      402.1
+     ]
+    }
+   ]
+  },
+  {
+   "name": "side_pods",
+   "significance": 0.48,
+   "character": "paired mechanical cheek housings",
+   "essential_shape": "blob",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:face_frame",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The pods add mechanical context but may simplify or yield pixels without harming the primary squid-face read.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 5219,
+     "centroid": [
+      347.2,
+      153.5
+     ],
+     "anchor": [
+      340.1,
+      176.0
+     ]
+    },
+    {
+     "area": 5166,
+     "centroid": [
+      346.9,
+      526.5
+     ],
+     "anchor": [
+      339.9,
+      504.3
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tentacles",
+   "significance": 0.84,
+   "character": "multiple curling cephalopod limbs",
+   "essential_shape": "stroke",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:tentacle_joints",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The limb mass is essential, but enlargement cannot repair merged arms or missing gaps and would only increase crowding.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 18444,
+     "centroid": [
+      478.2,
+      112.3
+     ],
+     "anchor": [
+      436.5,
+      188.0
+     ]
+    },
+    {
+     "area": 17885,
+     "centroid": [
+      477.0,
+      564.0
+     ],
+     "anchor": [
+      436.2,
+      490.9
+     ]
+    },
+    {
+     "area": 24328,
+     "centroid": [
+      536.2,
+      249.2
+     ],
+     "anchor": [
+      450.5,
+      270.1
+     ]
+    },
+    {
+     "area": 23183,
+     "centroid": [
+      540.5,
+      430.9
+     ],
+     "anchor": [
+      456.9,
+      424.9
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tentacle_joints",
+   "significance": 0.52,
+   "character": "articulated mechanical limb connections",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "The joints support the robotic theme, but forcing every small connector to survive would fragment the tiny limb silhouettes.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 9188,
+     "centroid": [
+      415.0,
+      341.1
+     ],
+     "anchor": [
+      415.0,
+      341.1
+     ]
+    },
+    {
+     "area": 1431,
+     "centroid": [
+      443.9,
+      171.1
+     ],
+     "anchor": [
+      443.9,
+      171.1
+     ]
+    },
+    {
+     "area": 1391,
+     "centroid": [
+      443.9,
+      507.4
+     ],
+     "anchor": [
+      443.9,
+      507.4
+     ]
+    },
+    {
+     "area": 1578,
+     "centroid": [
+      479.5,
+      237.6
+     ],
+     "anchor": [
+      479.5,
+      237.6
+     ]
+    },
+    {
+     "area": 1562,
+     "centroid": [
+      479.6,
+      439.3
+     ],
+     "anchor": [
+      479.6,
+      439.3
+     ]
+    }
+   ]
+  },
+  {
+   "name": "suction_cups",
+   "significance": 0.74,
+   "character": "recognisable sucker-tipped tentacles",
+   "essential_shape": "ellipse",
+   "mode": "none",
+   "max_exaggeration": 1.0,
+   "anchor": "centroid",
+   "may_claim_background": false,
+   "container": "tentacles",
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "20": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "16": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    }
+   },
+   "reason": "Surviving cups strongly reinforce the squid identity, but enlarging the numerous cups would overwhelm and merge the tentacles.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 2615,
+     "centroid": [
+      498.7,
+      635.5
+     ],
+     "anchor": [
+      498.7,
+      635.5
+     ]
+    },
+    {
+     "area": 2262,
+     "centroid": [
+      498.8,
+      39.7
+     ],
+     "anchor": [
+      498.8,
+      39.7
+     ]
+    },
+    {
+     "area": 518,
+     "centroid": [
+      528.2,
+      124.8
+     ],
+     "anchor": [
+      528.2,
+      124.8
+     ]
+    },
+    {
+     "area": 511,
+     "centroid": [
+      527.8,
+      553.3
+     ],
+     "anchor": [
+      527.8,
+      553.3
+     ]
+    },
+    {
+     "area": 1973,
+     "centroid": [
+      562.4,
+      62.0
+     ],
+     "anchor": [
+      562.4,
+      62.0
+     ]
+    },
+    {
+     "area": 2150,
+     "centroid": [
+      562.1,
+      613.0
+     ],
+     "anchor": [
+      562.1,
+      613.0
+     ]
+    },
+    {
+     "area": 562,
+     "centroid": [
+      570.4,
+      282.8
+     ],
+     "anchor": [
+      570.4,
+      282.8
+     ]
+    },
+    {
+     "area": 552,
+     "centroid": [
+      570.2,
+      393.1
+     ],
+     "anchor": [
+      570.2,
+      393.1
+     ]
+    },
+    {
+     "area": 3323,
+     "centroid": [
+      598.1,
+      483.1
+     ],
+     "anchor": [
+      598.1,
+      483.1
+     ]
+    },
+    {
+     "area": 3212,
+     "centroid": [
+      599.0,
+      193.9
+     ],
+     "anchor": [
+      599.0,
+      193.9
+     ]
+    },
+    {
+     "area": 1831,
+     "centroid": [
+      649.1,
+      226.6
+     ],
+     "anchor": [
+      649.1,
+      226.6
+     ]
+    },
+    {
+     "area": 1916,
+     "centroid": [
+      648.8,
+      450.4
+     ],
+     "anchor": [
+      648.8,
+      450.4
+     ]
+    }
+   ]
+  },
+  {
+   "name": "central_nozzle",
+   "significance": 0.68,
+   "character": "central glowing jet accent",
+   "essential_shape": "rect",
+   "mode": "floor",
+   "max_exaggeration": 1.0,
+   "anchor": "attach:face_frame",
+   "may_claim_background": true,
+   "container": null,
+   "min_footprint": {
+    "64": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "32": {
+     "w": 0,
+     "h": 0,
+     "area": 0
+    },
+    "24": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "20": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    },
+    "16": {
+     "w": 1,
+     "h": 2,
+     "area": 2
+    }
+   },
+   "reason": "A tiny centered vertical mark preserves the powered mechanical underside without competing with the eyes or widening the silhouette.",
+   "overrides": null,
+   "pieces": [
+    {
+     "area": 2666,
+     "centroid": [
+      470.0,
+      338.0
+     ],
+     "anchor": [
+      470.0,
+      338.0
+     ]
+    }
+   ]
+  }
+ ],
+ "rungs": {
+  "512": {
+   "k": {
+    "side_fins": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "first_blocked": null,
+     "trials": 1
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 0,
+   "adjacency_lost_vs_v1": []
+  },
+  "256": {
+   "k": {
+    "side_fins": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "first_blocked": null,
+     "trials": 1
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 0,
+   "adjacency_lost_vs_v1": []
+  },
+  "128": {
+   "k": {
+    "side_fins": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "first_blocked": null,
+     "trials": 1
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 0,
+   "adjacency_lost_vs_v1": []
+  },
+  "64": {
+   "k": {
+    "side_fins": {
+     "k": 1.0,
+     "k_schedule": 1.0,
+     "chosen_by": "schedule",
+     "first_blocked": null,
+     "trials": 1
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 0,
+   "adjacency_lost_vs_v1": []
+  },
+  "32": {
+   "k": {
+    "side_fins": {
+     "k": 1.4,
+     "k_schedule": 1.4,
+     "chosen_by": "schedule",
+     "first_blocked": null,
+     "trials": 9
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 49,
+   "adjacency_lost_vs_v1": []
+  },
+  "24": {
+   "k": {
+    "side_fins": {
+     "k": 1.55,
+     "k_schedule": 1.566,
+     "chosen_by": "frame margin: best admissible",
+     "first_blocked": {
+      "k": 1.6,
+      "clipped_by_frame": true
+     },
+     "trials": 13
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 40,
+   "adjacency_lost_vs_v1": []
+  },
+  "20": {
+   "k": {
+    "side_fins": {
+     "k": 1.5,
+     "k_schedule": 1.671,
+     "chosen_by": "frame margin: best admissible",
+     "first_blocked": {
+      "k": 1.55,
+      "clipped_by_frame": true
+     },
+     "trials": 12
+    }
+   },
+   "floors": {
+    "eyes": [
+     "piece 0: 2x1 -> 1x2 template"
+    ]
+   },
+   "changed_px_vs_v1": 30,
+   "adjacency_lost_vs_v1": []
+  },
+  "16": {
+   "k": {
+    "side_fins": {
+     "k": 1.5,
+     "k_schedule": 1.8,
+     "chosen_by": "frame margin: best admissible",
+     "first_blocked": {
+      "k": 1.55,
+      "clipped_by_frame": true
+     },
+     "trials": 12
+    }
+   },
+   "floors": {},
+   "changed_px_vs_v1": 16,
+   "adjacency_lost_vs_v1": []
+  }
+ },
+ "judge": {
+  "32": {
+   "samples": [
+    {
+     "order": "v1/v3",
+     "sample": 0,
+     "winner": "v1",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A preserves the dominant pointed mantle, restrained side fins, and fuller curling tentacle silhouette that define the robotic squid.",
+     "cost": 0.013088,
+     "cached": false,
+     "panel_blob": "821e34241bb21342a28537983244ca2f1fb930909c2a9c7e6196fa10fea5ccb8"
+    },
+    {
+     "order": "v1/v3",
+     "sample": 1,
+     "winner": "v3",
+     "letter": "B",
+     "confidence": 4,
+     "reason": "B preserves the broad pointed mantle and prominent side fins, giving the head the distinctive top-heavy squid silhouette.",
+     "cost": 0.024648,
+     "cached": false,
+     "panel_blob": "821e34241bb21342a28537983244ca2f1fb930909c2a9c7e6196fa10fea5ccb8"
+    },
+    {
+     "order": "v1/v3",
+     "sample": 2,
+     "winner": "v1",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A preserves the dominant pointed mantle and compact side-fin proportions, keeping the face and tentacle silhouette closer to the character.",
+     "cost": 0.014928,
+     "cached": false,
+     "panel_blob": "821e34241bb21342a28537983244ca2f1fb930909c2a9c7e6196fa10fea5ccb8"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 0,
+     "winner": "v3",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A better preserves the oversized pointed mantle and fuller four-tentacle silhouette that define the squid\u2019s character.",
+     "cost": 0.017988,
+     "cached": false,
+     "panel_blob": "d331392ec1d785cd7f5317192624bd289984bf000bc87b8ae86887b2d10f3a6c"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 1,
+     "winner": "v1",
+     "letter": "B",
+     "confidence": 4,
+     "reason": "B better preserves the dominant pointed mantle, compact side fins, prominent side pods, and four distinct curling tentacles.",
+     "cost": 0.014908,
+     "cached": false,
+     "panel_blob": "d331392ec1d785cd7f5317192624bd289984bf000bc87b8ae86887b2d10f3a6c"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 2,
+     "winner": "v3",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A\u2019s broader pointed mantle and side fins better balance the four curling tentacles and preserve the creature\u2019s distinctive squid silhouette.",
+     "cost": 0.021748,
+     "cached": false,
+     "panel_blob": "d331392ec1d785cd7f5317192624bd289984bf000bc87b8ae86887b2d10f3a6c"
+    }
+   ],
+   "votes": {
+    "v1": 3,
+    "v3": 3
+   },
+   "n": 6,
+   "v3_win_rate": 0.5,
+   "cost": 0.10731
+  },
+  "16": {
+   "samples": [
+    {
+     "order": "v1/v3",
+     "sample": 0,
+     "winner": "v1",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A preserves the dominant broad pointed mantle and fuller curling tentacles, while B overemphasizes the side fins.",
+     "cost": 0.007968,
+     "cached": false,
+     "panel_blob": "458bae2226bbc7efad977b94f944c2e5adf7ba59bb2264f1ada41e03abaf57ce"
+    },
+    {
+     "order": "v1/v3",
+     "sample": 1,
+     "winner": "v1",
+     "letter": "A",
+     "confidence": 5,
+     "reason": "A preserves the dominant pointed mantle and keeps the side fins secondary, while B\u2019s oversized fins make the silhouette too wing-like.",
+     "cost": 0.010588,
+     "cached": false,
+     "panel_blob": "458bae2226bbc7efad977b94f944c2e5adf7ba59bb2264f1ada41e03abaf57ce"
+    },
+    {
+     "order": "v1/v3",
+     "sample": 2,
+     "winner": "v1",
+     "letter": "A",
+     "confidence": 5,
+     "reason": "A preserves the dominant broad pointed mantle and fuller curling tentacles, while B's oversized side fins weaken the squid's characteristic proportions.",
+     "cost": 0.020588,
+     "cached": false,
+     "panel_blob": "458bae2226bbc7efad977b94f944c2e5adf7ba59bb2264f1ada41e03abaf57ce"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 0,
+     "winner": "v3",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A preserves the broad dominant mantle, wide visor, and fuller curling tentacles that define the squid\u2019s character.",
+     "cost": 0.012128,
+     "cached": false,
+     "panel_blob": "afff7d386faa24326db702d01ae3964cd11333c4465ea14e9ea3a5667f7cd08a"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 1,
+     "winner": "v1",
+     "letter": "B",
+     "confidence": 4,
+     "reason": "B preserves the fuller pointed mantle and substantial side pods while keeping the iconic visor-and-eyes silhouette clear.",
+     "cost": 0.019368,
+     "cached": false,
+     "panel_blob": "afff7d386faa24326db702d01ae3964cd11333c4465ea14e9ea3a5667f7cd08a"
+    },
+    {
+     "order": "v3/v1",
+     "sample": 2,
+     "winner": "v3",
+     "letter": "A",
+     "confidence": 4,
+     "reason": "A preserves the broad pointed mantle, wide visor, and fuller curling tentacles that define the squid\u2019s character.",
+     "cost": 0.014888,
+     "cached": false,
+     "panel_blob": "afff7d386faa24326db702d01ae3964cd11333c4465ea14e9ea3a5667f7cd08a"
+    }
+   ],
+   "votes": {
+    "v1": 4,
+    "v3": 2
+   },
+   "n": 6,
+   "v3_win_rate": 0.333,
+   "cost": 0.08553
+  }
+ },
+ "cost": {
+  "spent": 0.19284,
+  "calls": 12,
+  "cached": 1
+ }
+}

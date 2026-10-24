@@ -1,0 +1,105 @@
+{
+ "request": {
+  "model": "openai/gpt-5.6-sol",
+  "response_format": {
+   "type": "json_object"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "You are judging two tiny pixel-art region maps of one game enemy: a front view of a cartoon robotic squid\n(a red pointed mantle with two triangular side fins, a pale face frame around a dark visor with two glowing eyes,\nside pods, four tentacles with joints and suction cups, a small glowing nozzle).\nEach flat colour is one named part:\n- #D9002B mantle_shell (body): The large central triangular dome forming the creature's upper head, including its pale oval markings and outer outline.\n- #00A83B side_fins (limb): The two broad triangular wing-like flaps projecting behind the mantle on the upper left and upper right.\n- #FF7A00 face_frame (feature): The pale rounded frame across the lower mantle that completely surrounds the dark visor, including its small rivets.\n- #240099 visor (feature): The single dark rounded rectangular window centered inside the face frame.\n- #66FFFF eyes (feature): The pair of vertical glowing oval eyes set separately inside the left and right halves of the visor.\n- #0057D9 side_pods (detail): The two metallic housings attached immediately outside the face frame, one on each side of the head.\n- #CC00B8 tentacles (limb): All curling appendage masses below and beside the head, including the four large pale-and-pink arms and the smaller darker rear appendages.\n- #638F00 tentacle_joints (detail): The exposed collars, pivots, dark connectors, and mechanical bases separating the tentacles from the head and from their articulated segments.\n- #CCFF66 suction_cups (feature): All dark-ringed circular openings on the bulbous ends and inner sides of the tentacles.\n- #7600FF central_nozzle (feature): The small glowing cylindrical jet or nozzle hanging at the exact center beneath the face.\n\nThe first image is the concept art. The second shows two candidate region maps of the same 32x32 grid,\nenlarged with nearest-neighbour, labelled A (left) and B (right). They differ only in how some parts were shrunk.\n\nQuestion: which candidate keeps the squid's CHARACTER better: the shapes and proportions that make this\nparticular creature recognisable and appealing (not which one is more literally accurate in area)?\nReply with JSON only:\n{\"winner\": \"A\" | \"B\" | \"tie\", \"confidence\": 1-5, \"reason\": \"<one short sentence naming the deciding parts>\"}\n"
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "b60f73aebf46ec6a8173f5d414b2319576f55f9a73d78e0935a726433bfa38f2"
+      }
+     },
+     {
+      "type": "image_url",
+      "image_url": {
+       "blob": "d331392ec1d785cd7f5317192624bd289984bf000bc87b8ae86887b2d10f3a6c"
+      }
+     }
+    ]
+   }
+  ],
+  "usage": {
+   "include": true
+  }
+ },
+ "response": {
+  "id": "gen-1792810591-dd9SX2DPxPw1wu1ploCF",
+  "object": "chat.completion",
+  "created": 1792810591,
+  "model": "openai/gpt-5.6-sol",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "{\"winner\":\"A\",\"confidence\":4,\"reason\":\"A better preserves the oversized pointed mantle and fuller four-tentacle silhouette that define the squid\u2019s character.\"}",
+     "refusal": null,
+     "reasoning": "**Considering design choices**\n\nI think the question might be about choosing a candidate for an intentional shrink, focusing on which region can maintain its character. Maybe option B could shrink the mantle and joints? I need to decide on that. I noticed that the side pods in the screenshot show option A's blue pods as skinnier and more concept-like compared to option B, which has much larger blue pods. The concept side pods look substantial, but not overly so.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Considering design choices**\n\nI think the question might be about choosing a candidate for an intentional shrink, focusing on which region can maintain its character. Maybe option B could shrink the mantle and joints? I need to decide on that. I noticed that the side pods in the screenshot show option A's blue pods as skinnier and more concept-like compared to option B, which has much larger blue pods. The concept side pods look substantial, but not overly so.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq3B5toXx5x4q49HfiG0TB0fwYWS0aDnLXgYTBJ1qQH0sXiohG9gi0e9L8gZ-N9nNF3l45BHm11nVkiNL-7mnHPxTVerFbQNA6B9xNOqBDwOqbADH0hdBN2ycHalJ24309drbymOkBXENMOziomIGzT0Sy_9BHNRBLzEnEqOSOfJFk1QAdayGg8-r27bn7DJ4XFJJcpOhkpTYxJM5X90VUkDFToSpCz5ElPQa8d746_cuulZRbbDR9RvH2ViKYA-gf6G-7ap0zFxdaKaPErTdWMvctk2cWk6KVs4WjCQ7885J0c64b8FjdsKx-BFMr-e2ZqN9RXmPfdNJWwg-0LsUqiFFP1JG1KvKhp9vEovjNUnaujMT90xXoOnUqNIHKRe2z4PNkwqgmV8sGsTMQ2grdowWTgPm7JIJ-khlCgBEqDxocJSjIQf3_K1gSr6X90KvTiGic04MWvCK07d65Q9fjK7flC4VCXFdqMpwHMY2E4UjEIHsYVbNQYec_wkSpvq-x_m_s4c0Jo1gw7TYLX1_ocIgvc1o9o3z-hlRDJTWv5lwPAO9HuxmyfIOCytFCjOp9dtvRQTWVvOY-Vzj8UdJbQVmf6TzHuhgBwI1xecxHdmzPcoY7yHl7gbbJdx-Q9kVhTRn25oF-GYWQPBYljW0Lp-bNdH1b4ftKkJpyJbjrOnPSaSmDcaj3YqMs-hbeKtHBPrZep9Sy8G6fBkJZ-Rd9wtLYqmRI-Nvd8TZ0nIIgTch8p8L3H-lCLtVBm6GvO0qnKF2-QkNPb7NA-4O5yAxvjx7ZFEwDAuNH0yqNqc3VZ_lF7LsD0P72YZBbjeQfrTaFBmsjJwOm6i7NuPT8M-7mJI-c6abQvZVIRANg-e-_VqN31v6CYSPMDr2gI_FIF2-0AFsrx8GaQ_th1mxHseVABOkr00RF6PxyUp8kvzK08BzZscLf1eGguwA2i1avcwDZplU4O_Yn4j72pcx_oSkkw-nhG7J8gbkqSh8O1MNsoEhQ2fXCAs06UgXv04kKqzRQOwNxmE1Oev_sQw3sXzLaSAsXO0wTVJ18qW76iLZeazB9h9VHC_P_-HV2oRmGNDIQEbTWaaeFJMljOIwxO9QFsfkTzza96zPZcvByCGNx7RRYMFHHYGi9lc3jjWC5CXsxWXrAJhXTB2QqC948VUECHTP99nTBjYsOCxJCjeGSn14c-gQ2iK18ZB5rptLTJExizYRlQ3exeULFzH_pk61n09qRcKc7d7lDUIDnUR-pk1FsPSqQR08rNPFGcaF6yKl2syiwtQfELc4MpIkIqg8JOgAyVVSm-gX6wQaZg4RDYEqBS-7kFKGgAHDx0-Yrajq59xv_qmjUPZUGhRZg0RaC4HXh06VZQenW6CaNV6Nbtde0yND0VQoXjxeh211Klv5uRiSPCfIq4SRrKzJHo4h7_aYvw22rcobDQYeFyxHqFMUiyni1LB7kL8kDDud7-OqpIEBir5thCl9FFLDSa98VoyHu7H2pm-9Y2N9xUygP9hgY3BMHztV0f8jmSIRlswOgsfLiv5JGpTl8SWxUT0ciCK8H9Iutwl7HPUUI9NYa2fsltoyOkIjgKEOAyViQOuKakXGx6wgmqcFP7aE_6tD_9xsEwcJ2zmPzl3ZsmIiYWuCnd0IJ1DSg0NRbMjiEg7AOwuz9UlkwcW96e-fJdHX7KE2y0aUhg9TKCRyjtq9pBY84uSEjgSTwCzR4T2m5r2x8xVsx-VI4CjhgC_aRE7G4VkpBOzN0ytilMaKqJY-pEZznm5HRs1rEW_WD9nWgY9_Rq57awCwXu27lsGuG5r60GpiFC_Lf347SpZU3l9PDkwvTnrMUpHyojCCcCsBS39PyZXNyBsY4t2rkLi9iQ2NbIwBH7IKr1_3LvDkRP3U9ZCkYE6Um9Y-AQdayFRKrn29MsY_r161JFURiKZdr1K4LWX4osvpKK93SPnzrv1rJVD02_AavxAFjjt6f9PTrBb3klrrUogsRtnrsyVuHJcCTJacV0IDQxyeLul4v3dGzmfik5R7BOU04jsGWC3QmQGumxCgBsX5Bzuv2_9OPydlXBQMOJFMxiize7N655HaRLrKMqbQAgq6VpoZNQa3cPP0sH8HMR5kZaTDf_Utmw0D0BS-1rDumyB4_ANxFDzWJaG5ZzkTsvQ38znMErwrjHQBtcOIR1RdFW6WmpT3uI6tKUmSDnpmW4VYIMrYCXYtGpbVMsfHSYZzF883bHWTu56mk3AV083OHrTPzlv8_vJ6AJuAgoMxSvJDPP6DgpOkIC0vSwEDow1-8bhxRN7Wv5Kl_scRL6hjhvxQm89yvo4KtJPyt58dkoCgRi5bgQ-H78k67drMWzdA7ZBZFfxwvh0PfxxT0-f3Ww7JhVax5sTnmrBlia2kXwNVc0CkwWyEgFpbAt_JSwkm4DswFsbnz7geJqlTmbdS72SKyjr6pC5gMR8Jv1jKabX-10qkBkWyV0TNrsbEWXIXw-qKI8pAra9bHU7FgAnX6cpbTq4mm3AsI-btqCAP8QGBpNQXYLo2xYIJOWz0rAA5K7X8auBmYebMjrl3uzYQZqU49tpEXbinnKm4DVvwV0_GjrUYsqGDWvxiQZ_OkpBVYrxV_xVZtwnOlhX_rDv5LtKMKB80GGUQDQBr2JD6pIfYWqSefTQq7Deol5y8Oa1Rw-YPFFEwrorqI-HgUIE3-4i2ovCpYucv3jCXkTo9IZa-zZ3WEs0f9I5SEuBQ3wZjEsIur9pyo_N16fJCMmSUS36fhzmw_-7t03U_VrAsngz7hRQKj9JG2rfbY5VXEIVLHDHoipvjvQTl8EQDhDKSLzHWhQwivR7OVCAFIcFBJyXoBvU4nfCCEnTrbk7hCyPdd5zR_e3mFIWYN5PA0HyP4Hc55-AcNhcKR03FKNXBXv54i4RBlQ84LAlVVec_E2kAcjyiCdE-BIzIPGWMC71ED3s1SH7zx75TlXGxnsuFaOxOUq-wMuOlog0g2jJg9EycoOB6QAC9jRt40fM9D8lkdO6ITbjzqIg25VzQBWvYcjmduA84OO7xBOmDecAnQzA1CBkkgKL8MruIQbpsqIy4x-_Y-O6hLnl73qeNjevcB4bWBbZltnTxt6EA1TCpLhNBn1Tdk6uqEuBOUcBxS1fdfXbp7W0UdfkExiyr_em_I2tcT_3oRYWeMW5xOqNMoi4AJxuu_uwFc_HS09Ek4LfQ7hn9dBtFfq39TAeMoh6w_nuZRv1sxprxdcDRgJtiVhTJJz3IoG9xaAd5NE36VZMfCLxLyJq-qrFZ-Z4Yto8XbENxKLO1Gvs764T00DsI05Ynx5mpqnM9y4cf68soVmlsGPNzPtXPJ0HuSfGpUY0vhu33u0KYgFu85BxEfJy9EXHjs9RbH_6_oYLOOstSdZarms9B2kVZg_qgDtebfEdCSMeb2CXxhWVAS7botTJ20fNWwRbUBDRrDmmVU3bT-6CSqW5ev94YSyDhe1joB0RAHAmPAgIMERLrabjNhLLss-Ya8dsXlPSenQmU27ralNYDKdiweOVDZ4620EHPb3Zc2QpOv59U6dnmeLgD_mKI4n-3IwTYOEDYy0fyQnRj7wO-YIs0mnDKiMW_u7n74i2-GSbNqmA061pOtItxgq7R1omyXuUIuMXRrGyJ70tzKYW1aj1CT-_YCld7kNby9XBqT2QDJbKf3Cy3pGntpCYzvGzUlvpI9FIECUb_xkpRzxmV2o1zybqBqukUOfCA9tvSa6VKUzy75341Om0EDHHVR7vLhLFpoC9_2FazG2mx66tK502Q3ejjaZT_XcKoRz5VgyXfmIwJs_eMKl8F8DwXihIEmKsgUpVKTIRb0Qn4GC1PNLYAQe493RwT6mdFsgkkduKmPUjnsWcmK-vM09hvUxVGxjSCUfiYcBF-wch-JEKb5F8xgS32pN3M1U54hM7GwiYuiPkSvR08nzyocQ14gsY0ucKggrLnlmVZFPRgGDT2k3gf1cq5tgZJFTe0xjXMiE5QUhMFVol7IhezglWCFmIGbm6rcuxlNUErocbl1MrE56uJE3AFInWieTetqkroyH2k4z3-N6_LPZGf1RBlzQCMRHdccD1UXyFL5VU5cKMnrcpzfr-1UT-eMLFBzK4oNLbbMs_9pkDzod1fx3kfzlbZWKTE6m5GGHitJxUzL_nDSyWw6HB8EE3TvTfpH3U-uz-BF3QoFDaUoKM1hSw12qoAFBoRwqvzJJXVd7rvdqb0QXSS1_aOi8a4HwtYxjiE9aM-sDv7X_q6tGWWAogU8bYMI6MKInYPKWFIwoOR-czl6Ab1ARqQ3rQ1cpiR9-Sco2DPLxlFdXbrunby_7Zl27d4hLUg1GKWn_GmA2TH47Rektu3lm2Q965-qL26khrKJM4QhTZn2U4URqTvT2M10-XYPOV6i5KqItv97E9xwj6QexZsSQGSgmQgxPLndKg1FUKqyQSKeb2sNi-OmAJjoi75QE4115LezaQxwiKQluymmL3H8prK2Jrw2QQPe_U82GYeEwqmhjQXLJFcstk24WbmlrIyYRNHRNWUOFRGzP2skbnU7NbosRKLSgiB3TnTIU2ew2BMd-B7NLIQAR_uucm5s88CQlQg5vwtGHBTgBBSJlrYD5mXt_RmDyjMp755m8l4R_GBd-R6xRv7N2Q6jLIzAZv6X9D-BOPNjUI0FiTD7EwuWS1ew7lOelTUJqax7-d2pvpHmqEfAW1KG5kROAxtBulow38Vsj5QPovE3d13BE4QhdjPogmYYTN0QjRgkCb11LtLN7bx7K_8uOZ70jSqGTiWwxdQJNYDvq81C6rucQq-UE2GkVHyasu2E35DNNKqX1mOjc-ENn1o-ZVrJO09nAvGkALjy-wpLXdEnxx35_4kkmFlIhSIozd8LWh9iBRk8OBsy41_4etty6z1yEt7c-fX3EUDkU7xa9tbyHfyHwcOef-VeqAi0kcOsZ_KOpU8p7gBrKOsHC3uoS5l1HiqFOvGN40sc0nW0hed_ubcyUSjUbORWSyLGyaQtVB9w0oMYmjtfcKRiPARYJS4Rdeazx8ODDZCeNUofbwR-rPsdkRwWeATEuzT98zH3VBH0VWCOH01CRaC1ovT8hp5r_fj1WrUp0GLGAmPnAaYJgfgowYG8z2sTxbdR326iJ58mm9daXaa_nfutyWG_Wg0aqjZw0e_6C6kqSqBvQ1cNGYe7cBtp-yLQ_AjnwVvfXD3LaAyxPkR_AfltyE3oP4E-FQ4fWuIm66XUrvYIePWbWpHAcwd-CVHKuBr5xyDxaFcleWCXv7drLhCPHWE576HF0UCmR87oziMl6dDCHykve0tYfHr6nbz8Z7Oc2sqQ6ud0XsbZw1x1POFk8OaBnJP-mu4NPON0b-iV8CZNDSZQYhsAlbdO1sfcF6ws5NcFfMAA00mAiJPyXuHGf2LhaffTpexsdrdo6fW0zWtDrzfvsIwt-IrJcbP_HvvFHCZQ9uEwPQYvxZPYkFxcGGp7SEEDZ0NJP0Z0GTcxL5lkK1vNijkxzQ9xDZ3bp3jGDwjbTKtho68w0tTTwR8tPknW-G-KJnq9XUhOb66K4BMGv0OWlLHO1dvbUP5KKzYfyTzBGnW4c_oiXZDJmj8p3Iw87qhehrD22L7G-9KiXHrEm3EBGR5fD-SaF8rhRWCX-1xtdWIB8mSw3cwObcWv_1zToyObC200Z6AWkbu-MT2kzVzrQ7GUHPRHNzKiQzKv33JBaiGQEqLnO_iTs-8_V82d1DKvMVSvAEA9z6R9k_PBzN5IrDyUPmFHyE-4RD4vSDyIXKK3jjGkAgQVfwLos2GRd4fHb5X0xGjkFDUqQUDiJS9Gvu_Vz35NCN_w7_1e1tn3KfkQY6vjZyx-2ldF0pqt3e2Fn3rhWs09VZp1Ua__ew20YqYRdU90U-PeJUvgyTztWfoNjeSa_RvVaFWoQYfoZBbSu4aETQSLdNlUq1N7NEotDQ09IszuaYi_pa24Wws90WeqrXAMOvQG6zbkX0hbJ9PgDkI0oz3ONnuvEUwpFwgze3Rz12orAxZoH8NKT77YIKv5f0tl29RfQqnZX6lMPYYJQv-3VIf90nJoqlGJdeUaIFI0ua7H_EQebM4soSDntYFZaEox60aaWrzJEvZnOg-iP88-o5jluB8u9D5ll6cD-I0aqrf29or5L452fmC9FnNqFMw5UD79CyrimJiJa6iKLCFJexrJndpZgpTV0TZ4Q89B0EAyg_-WZ46rDRLIUXuMPRd9eBGOl98Br9pltD9qj2rwzQfnOyCp4Z34uZG45vFfIvZ9GMjjy3q4pt5fyRE_92-MIPZWR2bu3c3rSjXgepv_AQ9LURqIOeaLqMeW2qudnQtkgs1Iw7vAXwKefNJz4PmbVYHlOwAnKXZNgcaY4FF3JaMtdmXlK5aZdCHtIzzEx0ZcnAyovfusDlhTCbGfMH0xLxk_Q3Msk9kIkbyvnw_bxdwbza2fIxKyVSp0FCCOWntLm8Ut8PtLxXzXQ6K1kJ1nGPQUw4e0fyq7tviJ_FeWla_BlLpHCznADNjcXKssPe5QotYXRk1u7_8AFN8EYvHd1_7fjm-jDwFWXoAMwH22Z4fm_Ea5yfjhfsEG-yFUBKJZYFOreL40da-RVx0ZJwEDB4i6B-pkg3WzeMeZEcI3lf0lIaY64fVvlviSy8_ZGwI2lYSrjXWJzwvHKsMOmBp0WHkfrl_hxWAXhbt9nezYKLjv_4Tmsm_FBsM3r077XHkor2MGheUyhpruojCeI4ndj7nKUEqrTstjr1Grta--EHeWZQBsHtpPsJ3RUfZw03spnXK1Ia4hyst-BYmYDAxE34-QxsdFa9YlxFIQOl3aTiFMPgIzoNlPnHXdFD-MedkMQ4RsGFV25ETyaVnEEY8txDNTzRQNQLLNTpCP1JhfTvkHYjff1a1VZtqUydpKVXpqClzfh6-4eN6WtWv_xz28LbA1_mGDTxzUvBQuglwJdO67EpxsT5EXTpvtkvPrN1L0P91Yb_c0DGjQxmDHmaS-nmqQ2h6Bkg6GCt_Q37QqBN__nzyRWfTO236tkN7kVg7tlGTk45JeggnajwYlNR8kxQDP2hmE8R6yN3kbzZ7urxYWxS3HgUXtFvZdIeL8sK718dyTNipeQnCj1NZHkjbABlXS1EEVe69HGQmDn3igi9r7eCh_f7vEvirkqHiG9gYWdSZ-YZAgPgLKiW5D295ZAJ9j8o3fm-lUxpxUdIqRkW--_GdDoknHL1bEiKSsJrRDtj-tVDu0vIs2aHCY2umLMvGaFOimxMS0H5vfWmQsJWofeAo0Sy85JFyTYsJE3Bo-fWK7NtZ16fboHLF4ZtzVz54NgzrtoglK6UoggxjWNvRnFmROPDxvhGruZbPFEWcuRngoQ06yH9KlnprAOB6fclcs9JAf3S9vGhrK_VxTky_qkBcGU9kDGRu1eNcX8epO8CSBC130DjC6fDd0Ci1X2XR5SKPiAeAKpUA1f5ukpLP_u_236eObRW4yOjGWxCb_Y7CN-EexA6ZiHbDA0n0iPmVSIzBhA6TNc0FwqAHv1ukm9faGWLdho11clZcm_KD5jswR36RXGwH12RvNnf8BuHQ8KwuIunjx2dgpmaKpl7YR9QSZB6fNCJcK4apGYOAgCXyJRnwLzXNbZE_AiV-NPIkEf8_oL5gf6NBZps9mY3qa4dNMHCK4GIH2aFGqPZyTvplX41uUknEut3CPi2fLgUwKj2aP2m5S01JYmOA6hVRmJfwyE5glqEgQPwykjpHftPzl7sauBhwrvPkNdKusd5dZky2w0HrZPXi5vmRRLrZuqtfLujJS85HYbHq__Mnz9zDgiNbu1ZmFiNBK6LIixzBigYzB1mBTHDfVU8GGPEeXGK0PKrwcwgeRoCFfNQadfsLSrE1CCyz7ZvlKuzSAGksPDjU558vcjE3rx7gK7d95ti6wajtgnVOWZUWJa3WHUkE_eWGPFCljKliBJSaFMlSO4fkUJZsyeiAN6p3UGgGmX7Z1s6LzevVCxZorX_yH4e9UawO32IcSXoq8zoL4EiDHfNV02CxP5JoJS8M7Hr1wzAPcXwIaU6x22laDdjNv3gB7zkSUmGxYGXDHaS1WBGX2jFA4hg0bq7DLnV55kO0yEadrBv5wWfxCqljro78W0_ZAxMbA2lLtRg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_07f4978aa2731075016adc1e63615087d1b06b73b1baa529e8",
+       "index": 1
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq3B5uUYccK8bkZ0naPQmxLHlf7PPr-oN8eplP8qFHqoRiO4uFoEufUvSXpZ7aku7l9T2bvWk4GLPLxGOHvEx1uCN1kTQRHIrkQt6USMXOtamh3k79HPftfGnI0ISw1tKWZ8akyIY1peB-xpJ5RBn7h2k5Cm2p4l9_VXjUBKxt94gnFBeyJFOIwhK_C7Twe9MDRZ9vy3Z7S_tIK0-K_Clggha882uJCwGF1SEwp9LApqDMMHXrc6S_wNUJMX-stCd4Z54Ducge2F5bXVrgr0y0Z5y43WmJSz9mJ7IzrIZFI0S6KsTAJslzS7amMj5qHlGXXWaI4_SuPDBF8ZQ9is0NRtFVAKmIPk2mvcjDTZ8RAxDofyNUIEjqE6Hf3M6ACjLiunJGDbejs5KRhn3ZMvi45rW59WEEUj41Q9JtmoO4rscuEDGs3rc5aJMlxi9LoPnrASlCSSpCV7XZNfpBjQMOJg_gofwNBFHmTRCXhQPAsBLKq7Pnb5lcDEyxdIFcUcujE16OY39tn1I-IDyC0dkWFVHKCIvhK-v_8bHoZzz9WrykrDKr2KNf-N1KzLiA7YafK4vXFE6I5jZVbsh20I9_5x2jplX0v5dQReXWYV0Vd5pe0G6OEp3e-SiAL9xT8d7pgr3LE1wWwvrKaZ5svvJqmgVq6g0tBhsuLuqgbaORUOP3GE1iyoQ-WWp7TVDjH4uKqMu9JpFyW_QqDodkTRde8X0VElmTquj8J0QiWw5mjuBTF79SJNO_qm4iLpRKjTplPpXguDinJign3QQzWY7aoN6uCJitTDzAzdJ2qxVTDvWJZdVjk7czswdgtQ-O91HpFTQ-PTgXxgXdcxrZfP98aKq45OrAus5sicLqMsvYwoOH19j5QXWaeytwWbBBge8zoKbo9NFVV7dPdC1bgkYe7JFVJ_t2UyKc-H5bbG9si0Bx7-08FCuIH6VXizrNFoj6IDVJ21cHJjnQEJwrrPHoUTwRHnT20i3lPZojIdPa_hgjYB1TPyxWOERTLd2eI8lCfzGQXfTz1S3qpHzcBIErtrT_OncRW05hyECASRGBwcwCGuztQH60MibO2EDaXXW2d7mSHFhMmatJe5ywPJ7h1xLQaNgWeoYVos_r2xOcLxN5lFryJ7vaUokLe-5IrVA1VVu55zywJXkD5Cq412wif1zdlKUp4gSiU-9To91tfinWkos6tDVT3-aDTFd0SMljMepAxZK76WxvqkBGM4jbWRSQ5530qbhYes0Vv2pAXaf8XqPt0mZYHRzaXTSJBd-AeVzhvr0dlTxJuErl7wKjrUU3dOoHByulL6NNmWhpfPcyMGFuF1Y21EKwAGCjjwNvFLDVfWc8RT6n9nsSnkDMNXskf-rYAyYess9V0dZMfXOJMPt53eljPWeti3iTlSEVpZb0uptUdveW90rYkqjTIFaEeGHYNpKezlSSOVH38tHoQtDEjkRgipTZw-phcRb3nxTmj5UIixqbts9UURQ7K3M5UVrNgbIuXwGe3bdclLlIhueJ9mlz1SfyKb7TZ_3rU36SJnZDbUOJHNz5E_jMQTYLIB4YeBKO-QrkI-geCI9OOf8IAexbUIZAJzd6eafGF2Ai0yDUruxXZ3Sk_Tgjd-5IzIUEIiL-oxuEku8qgM7aO32F1Y8s2-S83qgazbbiae1gfD6f7smYnafLCXRqLdPl2OQPzc18k1LJNZue2yYEhwi7ZTU7ZiI5vhOCdwH6Tpt47lLUb01Jr_k3NHCMWQ9HSZ8Tr5mPYul9KIEwIthKtrDa-eljHti4FQJtsp5f6qfJh7EpVFCl74QZDMeK-EUpmkBVbsHJvOKuvR5tvYjhltOscY6LsZcfyie32SjGUCl9YFwAUzemXPNTAbMoEkDws9y6lUYabAfR1RNqL6of_VNEuRCbeZ7qEi-96XE9nOuLWnxNoa_wpyG-W8mn-Ss-ZNQX1BaXS_VhjEblGjSoeiPFJxsscWcPEi54QCCSO8bfybYyPQCkxf-FXJFSZd67jwt6Gy3j40E7xzUiutNNAPWYS_uV6YWWY_9aLqOUEx7dcHm53_U9qPlO41Rrw9OcUXjoA7yVhXqKTi0jFD5A07H7SFRs8lDRXXTN5lcrvtnXZA7r_keXU9EFsseubpZDNhXWFxJQEMjX9yJcMOYH6MLeMTLKqIWGqC-u_K7S63IvbaiiL8KN-7NV_1k3MtehQ0__3EncSOkSIo-JP5K1CGr1jXjKfwZSxwHBBfQzbZQpsPYQwZAIyq_ObEvoImiWWc41MFL-HM4S8FbJBEGVZaHIy9iIZ7-LBWZTDl_B6yd1UStjvCj0VoBM_fHVY-F5T3KBKbi9U2X2v-ZoJ1EHLYqNf7jJWFPA8MRAk9DVdQyGaBtK09K0sSfir8Auj9T4vwwurCbafsbeV48y2s9D5sEP9lMoSTSyz7eze08NH9qbLfvPhaJ_bFEJ9j1H4nd565Jf3EHrSWW21tecMfUFcGKVunWQ1RE-DYeeRAhnvhCqgtMUTFJL5yJI7CM52mBeXiQCrwkjKsNZrJT6cqrqdNls3s0UAEgcgC22C5UfAjZQ7_jrC5Z3qJFbcYQNt-BuzU4Xg6PsiAil7EOGeyatoGeGFwpJ6DWTAMz7MrluHQLTgooSuFuG7uqGtZ_qZ9eh27U4ommt72m4CmRkRDtOy9pur3Hl3rdKqN8GfvMz1164U56mw919WutTfIt1hEUzKMPQnjAzHLvZ7m79UFB7A12ZO40_QH1CT0C0vHHWw8W92jXljNLqv3lW9TPD7oSZJTsb7dTfe7CqVJOSyCBnIglGW3KvwLd3GXjJNISJFAfo0akfQgiWqz8iPVhQZF7fpvfbt34rlm1CdWndb5kjuyLCfxk1pGh8QmmGiPNlM6LqVOrAjw3A-7bTlo-EBPEIKdKWWsoAdHDHOWtZUr-jTFcQ9OuO2Q-ZvxlWm5Da00rFtfsrHu3dxp2tk3BR0IyTSCk7N_-w4IoYc7K9-QbZPddfunnAn8YcbwkWn8C2tng7E0Tv46nJ5Js7u5WKvTtxRQvZwjP1lQtLG1XHwMpkLziXTBpe93UWUR63fpsVafbOeyfWY8fHtRLe13zwHUM89HruulZ-WCDgNbWEwpRmmtsdAF8Nqy0JswRdiNom7jaNTSF_MyybWzM_VUvi6gDrUMpvQ7RzMicU2ENWQI5uLVQ2gl4ZdefoCkmSynfhYl4cdtgmmPg4gBtBGPc-W88DBxKrwwjW6Y2Dh0UmkNnKSI_jBPHp0qr_8QOohzzDqJQhBqPBe2kGMdlBLzV3qQ3Nh-IaM7IgtBYppPhHP49fSwK_wAqh4ZEHDk9_oj1bAQd7AUhMARSukA7rSU3gYNF9kwqKPghlRmwrQuBoEj005xVMgwZG3lS2AACY8EWNoE9Njw-sjhWHc2iMwKZUNujaU4mxN1t3m0qsRDvevRa1irXpcPMqmTcGetVVZov1E8-49nF2jJQmzMeUSVLK-enX3fPvcyhn2vT0m0JJypwo3V3UHZx1sweTwIPsH7Jkfg6X6-j7zrt2iwqURuz4-AaVdVNNHaLJ8u9utHmiRXW_j-31M0qVPSH5msTnvuzyB9h_RJFfQ16fmzuHPsPVZlcj0NghPk8Ld_HQvH5U4LJDMmA=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LjYtc29sLTIwMjYwNzA5fG9wZW5haSJ9",
+       "format": "openai-responses-v1",
+       "id": "rs_07f4978aa2731075016adc1e6d30ac87d185f1436f9d9d2f48",
+       "index": 2
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 927,
+   "completion_tokens": 714,
+   "total_tokens": 1641,
+   "cost": 0.017988,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.017988,
+    "upstream_inference_prompt_cost": 0.003708,
+    "upstream_inference_completions_cost": 0.01428
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 672,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ },
+ "image_blobs": [],
+ "cost": 0.017988,
+ "secs": 14.8
+}
