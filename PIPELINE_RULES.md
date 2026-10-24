@@ -183,6 +183,10 @@ tested in a version), or **finding** (measured, not yet a rule). Add a date and 
 6. **Line sacrifice by depth.** Where two regions meet, the separating line comes out of
    the region that's underneath or behind.
 
+- **trial** (Johnny, 2026-10-23): clip the corner pixels of boxy shapes (e.g. the face or
+  visor surround) the way a pixel artist would, so boxes read as rounded instead of
+  blocky.
+
 ## Process
 
 - **rule** (Johnny): each alternative to a step is a **version** (ladder v1 / v2 / v3…).
