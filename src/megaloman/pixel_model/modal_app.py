@@ -13,7 +13,7 @@ import tempfile
 from .config import Config, load_config
 
 MOUNT = "/pixel"
-PINNED_DEPENDENCIES = ("torch==2.10.0", "safetensors==0.6.2", "packaging==25.0",
+PINNED_DEPENDENCIES = ("torch==2.12.1", "safetensors==0.6.2", "packaging==25.0",
                        "numpy==2.5.4", "pillow==13.0.0", "pyyaml==6.0.3")
 
 
@@ -106,7 +106,9 @@ def upload_snapshot(cfg):
     # unless the complete identical snapshot was already present.
     try:
         entries = volume.listdir(remote)
-    except FileNotFoundError:
+    except Exception as error:  # SDK raises FileNotFoundError or a gRPC NOT_FOUND
+        if not isinstance(error, FileNotFoundError) and "NOT_FOUND" not in repr(error):
+            raise
         entries = []
     if any(PurePosixPath(e.path).name == "manifest.json" for e in entries):
         print(f"Snapshot already present: {remote}")

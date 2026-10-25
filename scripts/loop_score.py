@@ -37,6 +37,7 @@ def main():
     p.add_argument("--device", default="cuda")
     p.add_argument("--count", type=int, default=64)
     p.add_argument("--seed", type=int, default=SEED)
+    p.add_argument("--manifest", help="relocated snapshot (remote runs)")
     p.add_argument("--no-nll", action="store_true", help="skip conditional NLL (sampler-only change)")
     for name in ("steps", "temperature", "ranking_temperature", "remask", "remask_until", "guidance"):
         p.add_argument("--" + name.replace("_", "-"), type=float)
@@ -46,6 +47,8 @@ def main():
         value = getattr(a, name)
         if value is not None:
             setattr(cfg.sample, name, int(value) if name == "steps" else value)
+    if a.manifest:
+        cfg.dataset.manifest = a.manifest
     dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
     out = Path(a.output)
     out.mkdir(parents=True, exist_ok=True)
