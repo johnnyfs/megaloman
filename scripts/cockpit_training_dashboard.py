@@ -4,6 +4,8 @@ Polls RUN_DIR/metrics.jsonl, samples/ and result.json; re-sends three panels via
 POST /api/panel: loss chart + status, latest samples, collapsible history.
 
 usage: python scripts/cockpit_training_dashboard.py RUN_DIR [--tab training] [--every 10]
+       [--prefix train] [--label ""]   (prefix: panel ids; label: title prefix, e.g. "Run 2 ·")
+Run-2 metrics (val_balanced_nll, val_summary foreground metrics, priors) are shown when present.
 """
 import argparse
 import html
@@ -32,6 +34,9 @@ def img(path, step, px):
 def chart(rows, width=1400, height=330):
     train = [(r["step"], r["loss"]) for r in rows]
     val = [(r["step"], r["val_loss"]) for r in rows if "val_loss" in r]
+    bal = [(r["step"], r["val_balanced_nll"]) for r in rows if r.get("val_balanced_nll") is not None]
+    prior = next((r["val_summary"]["priors"]["position_frequency"]["nll"] for r in reversed(rows)
+                  if "val_summary" in r), None)
     if not train:
         return '<div class="muted" style="font-size:28px">waiting for the first step…</div>'
     # Smooth train loss (EMA) so the trend reads from across the room.
@@ -40,7 +45,7 @@ def chart(rows, width=1400, height=330):
         ema = v if ema is None else .95 * ema + .05 * v
         sm.append((s, ema))
     xs = max(s for s, _ in train)
-    vals = [v for _, v in sm] + [v for _, v in val]
+    vals = [v for _, v in sm] + [v for _, v in val] + [v for _, v in bal] + ([prior] if prior else [])
     lo, hi = min(vals), max(vals)
     hi, lo = hi + (hi - lo) * .05 + 1e-6, max(0, lo - (hi - lo) * .05)
     L, R, T, B = 80, 20, 16, 44
@@ -60,10 +65,19 @@ def chart(rows, width=1400, height=330):
     if val:
         out.append(f'<polyline points="{pts(val)}" fill="none" stroke="#f0a04b" stroke-width="4"/>')
         out += [f'<circle cx="{X(s):.1f}" cy="{Y(v):.1f}" r="5" fill="#f0a04b"/>' for s, v in val]
+    if bal:
+        out.append(f'<polyline points="{pts(bal)}" fill="none" stroke="#4fc38a" stroke-width="4"/>')
+        out += [f'<circle cx="{X(s):.1f}" cy="{Y(v):.1f}" r="5" fill="#4fc38a"/>' for s, v in bal]
+    if prior:
+        out.append(f'<line x1="{L}" x2="{width-R}" y1="{Y(prior):.1f}" y2="{Y(prior):.1f}" stroke="#f0a04b" '
+                   f'stroke-dasharray="10 8" stroke-opacity=".7" stroke-width="2"/>')
     out.append("</svg>")
     legend = ('<div style="font-size:24px;display:flex;gap:28px;margin-top:4px">'
               '<span><b style="color:#5b8def">━</b> train loss (masked NLL, smoothed)</span>'
-              '<span><b style="color:#f0a04b">━</b> val loss</span><span class="muted">x: optimizer step</span></div>')
+              '<span><b style="color:#f0a04b">━</b> val NLL</span>'
+              + ('<span><b style="color:#4fc38a">━</b> val balanced NLL (selects best)</span>'
+                 '<span><b style="color:#f0a04b">┅</b> position prior NLL</span>' if bal else '')
+              + '<span class="muted">x: optimizer step</span></div>')
     return "".join(out) + legend
 
 
@@ -94,6 +108,9 @@ def main():
     ap.add_argument("--tab", default="training")
     ap.add_argument("--every", type=float, default=10)
     ap.add_argument("--stop-note", default="")
+    ap.add_argument("--prefix", default="train")
+    ap.add_argument("--label", default="")
+    ap.add_argument("--collapsed", action="store_true", help="send every panel folded (e.g. an old run)")
     a = ap.parse_args()
     run = Path(a.run).resolve()
     name = run.name
@@ -116,9 +133,10 @@ def main():
             last = key
             step = rows[-1]["step"] if rows else 0
             epoch = rows[-1]["effective_dataset_passes"] if rows else 0
-            best = [r for r in rows if "val_loss" in r]
-            bv = min(best, key=lambda r: r["val_loss"]) if best else None
-            stop = (f'stop: val plateau {t.get("patience")} evals × {t.get("eval_every")} steps '
+            metric = t.get("select_metric", "val_loss")
+            best = [r for r in rows if r.get(metric) is not None]
+            bv = min(best, key=lambda r: r[metric]) if best else None
+            stop = (f'stop: {metric.replace("_", " ")} plateau {t.get("patience")} evals × {t.get("eval_every")} steps '
                     f'(Δ&lt;{t.get("min_delta")}) or {t.get("max_steps")} steps'
                     f' · samples every {t.get("sample_every")} steps (~2 min), val every {t.get("eval_every")}')
             if result:
@@ -129,18 +147,33 @@ def main():
                 per = sum(r["seconds"] for r in recent) / max(1, len(recent))
                 left = (t.get("max_steps", 0) - step) * per * 1.15
                 state = f'<b class="warn">training</b> · ETA ≤ {left / 60:.0f} min (step cap)'
-            best_txt = f'best val {bv["val_loss"]:.3f} @ {bv["step"]}' if bv else "best val —"
+            best_txt = (f'best {metric.replace("val_", "val ").replace("_", " ")} {bv[metric]:.3f} @ {bv["step"]}'
+                        if bv else "best val —")
+            fg = ""
+            last_val = next((r for r in reversed(rows) if "val_summary" in r), None)
+            if last_val:
+                vs = last_val["val_summary"]
+                f, pr = vs["model_full_mask"], vs["priors"]
+                n = lambda v: "—" if v is None else f"{v:.2f}"
+                pc = lambda v: "—" if v is None else f"{v * 100:.0f}%"
+                fg = (f'<div style="font-size:22px;margin-bottom:4px">val @ {last_val["step"]} · '
+                      f'<b>full mask</b>: fg acc {pc(f["foreground_accuracy"])}, fg IoU {n(f["reconstruction_foreground_iou"])}, '
+                      f'fg recall {pc(f["foreground_recall"])}, fg NLL {n(f["foreground_nll"])} '
+                      f'<span class="muted">(prior {n(pr["position_frequency"]["foreground_nll"])})</span> · '
+                      f'<b>all masks</b>: NLL {n(vs["model"]["masked_conditional_nll"])} vs priors '
+                      f'pos {n(pr["position_frequency"]["nll"])} / size {n(pr["bucket_frequency"]["nll"])} / '
+                      f'global {n(pr["global_frequency"]["nll"])}, fg acc {pc(vs["model"]["foreground_accuracy"])}</div>')
             status = (f'<div style="font-size:26px;display:flex;gap:26px;flex-wrap:wrap;margin-bottom:6px">'
                       f'<span><b>{html.escape(name)}</b></span><span>step {step}/{t.get("max_steps", "?")}</span>'
                       f'<span>epoch {epoch:.1f}</span><span>{best_txt}</span><span>{state}</span></div>'
-                      f'<div class="muted" style="font-size:20px">{stop}</div>')
-            post("/api/panel", {"id": "train-loss", "tab": a.tab, "title": "Loss", "size": "full",
+                      f'{fg}<div class="muted" style="font-size:20px">{stop}</div>')
+            post("/api/panel", {"id": f"{a.prefix}-loss", "tab": a.tab, "title": f"{a.label}Loss", "size": "full", "collapsed": a.collapsed,
                                 "html": status + chart(rows)})
             if sets:
                 s = max(sets)
                 ep = next((r["effective_dataset_passes"] for r in rows if r["step"] == s), 0)
-                post("/api/panel", {"id": "train-samples", "tab": a.tab, "size": "full",
-                    "title": f"Samples · step {s} · epoch {ep:.1f} · 4 fixed seeds per size",
+                post("/api/panel", {"id": f"{a.prefix}-samples", "tab": a.tab, "size": "full",
+                    "collapsed": a.collapsed, "title": f"{a.label}Samples · step {s} · epoch {ep:.1f} · 4 fixed seeds per size",
                     "html": row_html(sets[s], s, 150)})
                 hist = []
                 for st in sorted(sets, reverse=True):
@@ -149,8 +182,8 @@ def main():
                                 f'border-bottom:1px solid #333"><div style="width:150px;font-size:22px">'
                                 f'step {st}<br><span class="muted">ep {ep:.1f}</span></div>'
                                 f'{row_html(sets[st], st, 56, 6)}</div>')
-                post("/api/panel", {"id": "train-history", "tab": a.tab, "size": "full",
-                    "title": f"History · {len(sets)} checkpoints (newest on top)", "collapsed": True,
+                post("/api/panel", {"id": f"{a.prefix}-history", "tab": a.tab, "size": "full",
+                    "title": f"{a.label}History · {len(sets)} checkpoints (newest on top)", "collapsed": True,
                     "html": f'<div style="max-height:600px;overflow:auto">{"".join(hist)}</div>'})
         if result:
             return
