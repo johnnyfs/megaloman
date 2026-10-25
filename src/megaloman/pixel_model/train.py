@@ -106,6 +106,7 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
     checkpoint = checkpoint_path(resume) if resume else None
     last_saved = step if resume else -1
     reason = "max_steps"
+    best_val, best_step, stale = math.inf, None, 0
     optimizer.zero_grad(set_to_none=True)
     try:
         while step < t.max_steps:
@@ -161,6 +162,14 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                 from .evaluate import conditional_report
                 row["validation"] = conditional_report(model, dataset, split="val", ratios=(.5, .75, 1.0),
                                                          seed=t.seed + 100)
+                # Scalar val loss: model masked NLL averaged over every size/kind/ratio row.
+                nlls = [r["model"]["metrics"]["masked_conditional_nll"] for r in row["validation"]["rows"]]
+                row["val_loss"] = sum(nlls) / len(nlls)
+                if row["val_loss"] < best_val - t.min_delta:
+                    best_val, best_step, stale = row["val_loss"], step, 0
+                else:
+                    stale += 1
+                row["best_val_loss"], row["best_val_step"] = best_val, best_step
             if t.sample_every and step % t.sample_every == 0:
                 from .sample import sample
                 from .render import export_samples
@@ -176,6 +185,9 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                     scaler=scaler, stream=stream, mask_generator=mask_generator, step=step,
                     cfg=cfg, dataset=dataset, runtime=runtime, durable_commit=durable_commit)
                 last_saved = step
+            if t.patience and stale >= t.patience:
+                reason = "plateau"
+                break
     except KeyboardInterrupt:
         # Never serialize partial gradients/RNG as a completed update.
         raise KeyboardInterrupt(f"resume the latest completed checkpoint: {checkpoint}") from None
@@ -189,7 +201,8 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                 scaler=scaler, stream=stream, mask_generator=mask_generator, step=step,
                 cfg=cfg, dataset=dataset, runtime=runtime, durable_commit=durable_commit)
     result = {"step": step, "reason": reason, "elapsed_seconds": time.monotonic() - start,
-              "checkpoint": str(checkpoint), "device": runtime["device"], "synthetic": dataset.raw.get("synthetic", False)}
+              "checkpoint": str(checkpoint),
+              "best_val_loss": best_val if best_step is not None else None, "best_val_step": best_step, "device": runtime["device"], "synthetic": dataset.raw.get("synthetic", False)}
     atomic_json(run / "result.json", result)
     if durable_commit:
         durable_commit()

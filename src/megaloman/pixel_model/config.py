@@ -49,6 +49,9 @@ class TrainConfig:
     sample_every: int = 100
     checkpoint_every: int = 100
     max_seconds: float = 1800
+    # Early stop: halt after this many evaluations without val-loss improvement (0 = off).
+    patience: int = 0
+    min_delta: float = 0.0
     run_dir: str = "workspace/pixel_model/runs/sprite16"
 
 
@@ -121,6 +124,8 @@ class Config:
             raise ValueError("unsupported device or precision")
         if any(n < 0 for n in (t.eval_every, t.sample_every, t.checkpoint_every)) or t.max_seconds <= 0:
             raise ValueError("cadences must be nonnegative and time budget positive")
+        if t.patience < 0 or t.min_delta < 0 or (t.patience and not t.eval_every):
+            raise ValueError("patience needs eval_every; patience and min_delta must be nonnegative")
         if s.steps < 1 or s.temperature < 0 or s.ranking_temperature < 0 or not 0 <= s.top_k <= 4:
             raise ValueError("invalid sampler settings")
         if self.modal.timeout < t.max_seconds + 60:

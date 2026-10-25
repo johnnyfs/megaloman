@@ -5,3 +5,4 @@ __pycache__/
 fusion-man/
 cache/blobs/
 workspace/pixel_model/
+.venv-cuda/

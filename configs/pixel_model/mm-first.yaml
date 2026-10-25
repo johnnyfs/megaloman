@@ -1,0 +1,27 @@
+# First real run: single-frame prior on approved Mega Man robot-masters + enemies
+# (sprites-4tone, deduped incl. mirrors, split by animation). Model per the v1 review:
+# 6 pre-LN blocks, width 192, 6 heads, MLP 4, dropout .1; effective batch 32.
+dataset:
+  manifest: /home/johnnyfs/Projects/megaloman-ptv0/workspace/pixel_model/datasets/mm-rm-enemies-v1/manifest.json
+  resolutions: [16, 24, 32, 64]
+model:
+  d_model: 192
+  layers: 6
+  heads: 6
+  mlp_ratio: 4
+  dropout: 0.1
+train:
+  batch_size: 8
+  grad_accum_steps: 4
+  max_steps: 3000
+  warmup_steps: 100
+  lr: 0.0003
+  eval_every: 100
+  sample_every: 200
+  checkpoint_every: 500
+  patience: 8
+  min_delta: 0.005
+  max_seconds: 14400
+  run_dir: /home/johnnyfs/Projects/megaloman-ptv0/workspace/pixel_model/runs/mm-first
+modal:
+  timeout: 14500
