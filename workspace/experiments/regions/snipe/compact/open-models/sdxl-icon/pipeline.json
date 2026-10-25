@@ -1,0 +1,142 @@
+{
+ "format": "megaloman.pipeline/1",
+ "title": "Snipe/squid via SDXL + Pixel Icon LoRA (img2img)",
+ "run_dir": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon",
+ "verdict": null,
+ "cost_usd": 0.15,
+ "stages": [
+  {
+   "id": "inputs",
+   "title": "1 inputs (pre-pixelated)",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/input_pp64.png",
+     "caption": "snipe pp64",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/input_pp32.png",
+     "caption": "snipe pp32",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/input_pp16.png",
+     "caption": "snipe pp16",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/input_pp64.png",
+     "caption": "squid pp64",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/input_pp32.png",
+     "caption": "squid pp32",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/input_pp16.png",
+     "caption": "squid pp16",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+   ],
+   "data": {}
+  },
+  {
+   "id": "raw64",
+   "title": "2 raw best seed, 64",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/raw_64_s4.png",
+     "caption": "snipe s4 clean 1.00"
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/raw_64_s4.png",
+     "caption": "squid s4 clean 1.00"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "raw32",
+   "title": "2 raw best seed, 32",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/raw_32_s1.png",
+     "caption": "snipe s1 clean 1.00"
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/raw_32_s1.png",
+     "caption": "squid s1 clean 1.00"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "raw16",
+   "title": "2 raw best seed, 16",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/raw_16_s4.png",
+     "caption": "snipe s4 clean 1.00"
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/raw_16_s1.png",
+     "caption": "squid s1 clean 1.00"
+    }
+   ],
+   "notes": [],
+   "data": {}
+  },
+  {
+   "id": "snap",
+   "title": "3 snapped + palette-locked",
+   "kind": "images",
+   "images": [
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/snap_64_x.png",
+     "caption": "snipe 64",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/snap_32_x.png",
+     "caption": "snipe 32",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/snipe/snap_16_x.png",
+     "caption": "snipe 16",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/snap_64_x.png",
+     "caption": "squid 64",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/snap_32_x.png",
+     "caption": "squid 32",
+     "pixel": true
+    },
+    {
+     "path": "/home/johnnyfs/Projects/megaloman/workspace/experiments/regions/snipe/compact/open-models/sdxl-icon/squid/snap_16_x.png",
+     "caption": "squid 16",
+     "pixel": true
+    }
+   ],
+   "notes": [
+    "L4; known-grid dominant-colour snap; concept palette"
+   ],
+   "data": {}
+  }
+ ]
+}

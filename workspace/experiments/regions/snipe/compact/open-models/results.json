@@ -1,0 +1,77 @@
+{
+ "runs": [
+  {
+   "concept": "snipe",
+   "n": 64,
+   "scores": [
+    0.9971227645874023,
+    0.9978618621826172,
+    0.9975805282592773,
+    0.9980449676513672
+   ],
+   "best_seed": 4,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  },
+  {
+   "concept": "snipe",
+   "n": 32,
+   "scores": [
+    0.9983367919921875,
+    0.9975547790527344,
+    0.9977493286132812,
+    0.998046875
+   ],
+   "best_seed": 1,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  },
+  {
+   "concept": "snipe",
+   "n": 16,
+   "scores": [
+    0.988861083984375,
+    0.996490478515625,
+    0.9950103759765625,
+    0.9965667724609375
+   ],
+   "best_seed": 4,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  },
+  {
+   "concept": "squid",
+   "n": 64,
+   "scores": [
+    0.9992895126342773,
+    0.9992761611938477,
+    0.9993486404418945,
+    0.9994287490844727
+   ],
+   "best_seed": 4,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  },
+  {
+   "concept": "squid",
+   "n": 32,
+   "scores": [
+    0.9999961853027344,
+    0.9999580383300781,
+    0.9999160766601562,
+    0.9999542236328125
+   ],
+   "best_seed": 1,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  },
+  {
+   "concept": "squid",
+   "n": 16,
+   "scores": [
+    0.9997406005859375,
+    0.998291015625,
+    0.9956512451171875,
+    0.998382568359375
+   ],
+   "best_seed": 1,
+   "refs": "pre-pixelated concept (palette-locked) as img2img init; LoRA 0.7; strength 0.4/0.55/0.6 at 64/32/16"
+  }
+ ],
+ "note": "timings lost (driver stopped); cost estimated"
+}
