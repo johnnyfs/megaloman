@@ -1,0 +1,20 @@
+# Interface exercise only. Each additional native cohort needs separate approval/evaluation.
+dataset:
+  manifest: workspace/pixel_model/datasets/tiny-mixed/manifest.json
+  resolutions: [16, 24, 32]
+model:
+  d_model: 32
+  layers: 2
+  heads: 4
+  mlp_ratio: 2
+  dropout: 0.0
+train:
+  batch_size: 1
+  grad_accum_steps: 1
+  max_steps: 8
+  warmup_steps: 1
+  eval_every: 4
+  sample_every: 4
+  checkpoint_every: 4
+  max_seconds: 120
+  run_dir: workspace/pixel_model/runs/mixed

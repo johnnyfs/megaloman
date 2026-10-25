@@ -10,6 +10,20 @@ dependencies = [
     "scipy>=1.18.1",
 ]
 
+[project.optional-dependencies]
+pixel = ["torch==2.10.0", "safetensors==0.6.2", "packaging==25.0"]
+pixel-modal = ["modal==1.2.4"]
+
+# Keep the default local scaffold lightweight and usable without a CUDA driver.
+# For CUDA wheels: uv sync --extra pixel --no-sources
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
 [project.scripts]
 ml = "megaloman.cli:main"
 

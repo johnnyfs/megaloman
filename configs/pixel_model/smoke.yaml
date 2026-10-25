@@ -1,0 +1,24 @@
+dataset:
+  manifest: workspace/pixel_model/datasets/tiny/manifest.json
+  resolutions: [16]
+model:
+  d_model: 32
+  layers: 2
+  heads: 4
+  mlp_ratio: 2
+  dropout: 0.0
+train:
+  device: cpu
+  precision: fp32
+  cpu_threads: 2
+  batch_size: 2
+  grad_accum_steps: 1
+  max_steps: 8
+  warmup_steps: 1
+  eval_every: 4
+  sample_every: 4
+  checkpoint_every: 4
+  max_seconds: 120
+  run_dir: workspace/pixel_model/runs/smoke
+sample:
+  steps: 4

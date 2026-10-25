@@ -5,6 +5,8 @@ import argparse
 def main():
     ap = argparse.ArgumentParser(prog='ml')
     sub = ap.add_subparsers(dest='cmd', required=True)
+    from .pixel_model import cli as pixel_cli
+    pixel_cli.register(sub)
 
     b = sub.add_parser('benchmarks', help='judge every benchmark of a kind; write results + calibration summary')
     b.add_argument('--game', default='megaman'); b.add_argument('--class', dest='cls', default='small_enemy')
@@ -46,7 +48,9 @@ def main():
     st.add_argument('--game', default='megaman')
 
     a = ap.parse_args()
-    if a.cmd == 'benchmarks':
+    if a.cmd == 'pixel':
+        pixel_cli.run(a)
+    elif a.cmd == 'benchmarks':
         from . import benchmarks
         benchmarks.run(a.game, a.cls, a.asset_type, a.eval, a.samples, a.budget, a.only)
     elif a.cmd == 'run':

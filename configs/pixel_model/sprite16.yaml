@@ -1,0 +1,17 @@
+# A future approved-data pilot; do not mistake this for a trained model.
+dataset:
+  manifest: workspace/pixel_model/datasets/approved16/manifest.json
+  resolutions: [16]
+model:
+  d_model: 192
+  layers: 6
+  heads: 6
+  mlp_ratio: 4
+  dropout: 0.1
+train:
+  batch_size: 8
+  grad_accum_steps: 4
+  max_steps: 2000
+  warmup_steps: 100
+  max_seconds: 1800
+  run_dir: workspace/pixel_model/runs/sprite16
