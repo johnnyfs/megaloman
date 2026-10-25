@@ -38,11 +38,11 @@ def main():
     p.add_argument("--count", type=int, default=64)
     p.add_argument("--seed", type=int, default=SEED)
     p.add_argument("--no-nll", action="store_true", help="skip conditional NLL (sampler-only change)")
-    for name in ("steps", "temperature", "ranking_temperature", "remask", "remask_until"):
+    for name in ("steps", "temperature", "ranking_temperature", "remask", "remask_until", "guidance"):
         p.add_argument("--" + name.replace("_", "-"), type=float)
     a = p.parse_args()
     model, cfg, meta = load_model(a.checkpoint, a.device)
-    for name in ("steps", "temperature", "ranking_temperature", "remask", "remask_until"):
+    for name in ("steps", "temperature", "ranking_temperature", "remask", "remask_until", "guidance"):
         value = getattr(a, name)
         if value is not None:
             setattr(cfg.sample, name, int(value) if name == "steps" else value)
@@ -57,7 +57,13 @@ def main():
         report["val_summary"] = summary
     sizes, grid_rows = {}, []
     for size in cfg.dataset.resolutions:
-        grids = torch.cat([sample(model, size=size, seed=a.seed + i, cfg=cfg.sample).cpu() for i in range(a.count)])
+        labels = [None] * a.count
+        if getattr(model, "vocab", None):  # game/category of a seeded random train frame; identity null
+            pool = [dataset.labels(i) for i in dataset.indices("train", size)]
+            pick = torch.randint(len(pool), (a.count,), generator=torch.Generator().manual_seed(a.seed + size))
+            labels = [model.encode_labels([pool[j]], drop=("identity",)) for j in pick.tolist()]
+        grids = torch.cat([sample(model, size=size, seed=a.seed + i, cfg=cfg.sample, labels=labels[i]).cpu()
+                           for i in range(a.count)])
         train = torch.stack([dataset.grids[i] for i in dataset.indices("train", size)])
         val = torch.stack([dataset.grids[i] for i in dataset.indices("val", size)])
         hs, ht = histogram(grids), histogram(train)

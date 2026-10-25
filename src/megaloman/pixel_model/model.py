@@ -81,8 +81,24 @@ class PixelTransformer(nn.Module):
         self.stem = ConvResidual(cfg.d_model, cfg.conv_stem) if cfg.conv_stem else None
         self.decoder = ConvResidual(cfg.d_model, cfg.conv_decoder) if cfg.conv_decoder else None
         self.rel_bias = RelativeBias(cfg.heads) if cfg.rel_bias else None
+        self.vocab = {}
+        if cfg.conditioning:
+            from .data import FACTORS
+            self.vocab = {f: getattr(cfg, {"category": "cond_categories", "identity": "cond_identities"}.get(f, f"cond_{f}s"))
+                          for f in FACTORS}
+            self.label_embeddings = nn.ModuleList([nn.Embedding(len(v) + 1, cfg.d_model) for v in self.vocab.values()])
+            for e in self.label_embeddings:
+                nn.init.normal_(e.weight, std=.02)
 
-    def forward(self, pixels, *, height=None, width=None, object_ids=None, valid_mask=None):
+    def encode_labels(self, labels, *, drop=()):
+        """list of label dicts -> LongTensor[B,factors]; unknown or dropped factors -> 0 (null)."""
+        rows = []
+        for item in labels:
+            rows.append([0 if (f in drop or item is None or item.get(f) not in v) else v.index(item[f]) + 1
+                         for f, v in self.vocab.items()])
+        return torch.tensor(rows, dtype=torch.long, device=self.head.weight.device)
+
+    def forward(self, pixels, *, height=None, width=None, object_ids=None, valid_mask=None, labels=None):
         if pixels.ndim != 3 or pixels.dtype != torch.long:
             raise ValueError("pixels must be LongTensor[B,H,W]")
         b, h, w = pixels.shape
@@ -101,7 +117,10 @@ class PixelTransformer(nn.Module):
             valid = valid & valid_mask
         pixels = pixels.masked_fill(~valid, PAD)
         metadata = pixels.new_tensor([[math.log(h), math.log(w)]], dtype=self.embedding.weight.dtype)
-        prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1).unsqueeze(1)
+        prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1)
+        if labels is not None and self.vocab:
+            prefix = prefix + sum(e(labels[:, j]) for j, e in enumerate(self.label_embeddings))
+        prefix = prefix.unsqueeze(1)
         tokens = self.embedding(pixels.flatten(1)) + self.pixel_type
         if self.stem is not None:  # inputs are already corrupted (MASK), so no hidden pixel can leak
             tokens = self.stem(tokens, h, w, valid)

@@ -8,7 +8,7 @@ from .palette import MASK
 
 
 @torch.inference_mode()
-def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False):
+def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False, labels=None):
     cfg = cfg or SampleConfig()
     if size not in model.resolutions or count < 1:
         raise ValueError("unsupported resolution or invalid count")
@@ -44,7 +44,13 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
         for t in range(1, cfg.steps + 1):
             if not remaining.any():
                 break
-            logits = model(pixels).float()
+            if labels is None:
+                logits = model(pixels).float()
+            else:
+                logits = model(pixels, labels=labels).float()
+                if cfg.guidance:
+                    uncond = model(pixels, labels=torch.zeros_like(labels)).float()
+                    logits = uncond + (1 + cfg.guidance) * (logits - uncond)
             if not torch.isfinite(logits).all():
                 raise FloatingPointError("nonfinite sampling logits")
             filtered = logits / cfg.temperature if cfg.temperature > 0 else logits

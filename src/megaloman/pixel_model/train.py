@@ -64,6 +64,11 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
         torch.cuda.manual_seed_all(t.seed)
         torch.cuda.reset_peak_memory_stats()
     dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
+    if cfg.model.conditioning and not cfg.model.cond_games:
+        train_labels = [dataset.labels(i) for i in dataset.indices("train")]
+        for factor, name in (("game", "cond_games"), ("category", "cond_categories"), ("view", "cond_views"),
+                             ("identity", "cond_identities")):
+            setattr(cfg.model, name, sorted({l[factor] for l in train_labels if l[factor]}))
     model = PixelTransformer(cfg.model, cfg.dataset.resolutions).to(runtime["device"])
     optimizer = torch.optim.AdamW(model.parameters(), lr=t.lr, weight_decay=t.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda s: lr_multiplier(s, t))
@@ -133,7 +138,12 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                 targets = stream.next().to(runtime["device"])
                 mask, mask_kinds = make_mask(targets != PAD, cfg.masking, generator=mask_generator, return_info=True)
                 with autocast_context(runtime):
-                    logits = model(corrupt(targets, mask))
+                    labels = None
+                    if cfg.model.conditioning:
+                        labels = model.encode_labels([dataset.labels(i) for i in stream.last_indices])
+                        keep = torch.rand(labels.shape, generator=mask_generator).to(labels.device) >= cfg.model.cond_dropout
+                        labels = labels * keep
+                    logits = model(corrupt(targets, mask), labels=labels)
                     ce = masked_loss(logits.float(), targets, mask)
                     loss = balanced_loss(logits.float(), targets, mask) if cfg.dataset.loss == "fg_bg_balanced" else ce
                 if not torch.isfinite(loss):

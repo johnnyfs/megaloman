@@ -36,3 +36,15 @@ def test_remask_sampler_completes():
     model = _model(conv_stem=1)
     out = sample(model, size=16, count=2, seed=1, cfg=SampleConfig(steps=8, remask=.1, ranking_temperature=1.0))
     assert out.shape == (2, 16, 16) and int(out.max()) < 4
+
+
+def test_conditioning_and_guidance_sample():
+    from megaloman.pixel_model.config import ModelConfig
+    torch.manual_seed(0)
+    cfg = ModelConfig(d_model=32, layers=1, heads=2, conditioning=True, cond_games=["a", "b"],
+                      cond_categories=["enemy"], cond_views=["side"], cond_identities=["x"])
+    model = PixelTransformer(cfg, (16,)).eval()
+    labels = model.encode_labels([{"game": "b", "category": "enemy", "view": "side", "identity": "zz"}])
+    assert labels.tolist() == [[2, 1, 1, 0]]
+    out = sample(model, size=16, seed=1, labels=labels, cfg=SampleConfig(steps=4, guidance=1.0))
+    assert out.shape == (1, 16, 16)

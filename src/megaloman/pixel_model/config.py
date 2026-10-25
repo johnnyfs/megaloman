@@ -40,7 +40,16 @@ class ModelConfig:
     num_colors: int = 4
     conv_stem: int = 0      # residual stride-1 3x3 conv layers on (already masked) pixel embeddings
     conv_decoder: int = 0   # residual stride-1 3x3 conv layers on features before the logits head
-    rel_bias: bool = False  # learned per-head 2D relative-offset attention bias, added to RoPE
+    rel_bias: bool = False
+    # Label conditioning (factorised, summed into the prefix token). Vocabularies are filled
+    # from the snapshot's train records at train start when `conditioning` is true; index 0
+    # of every factor is null/unknown, used for classifier-free-guidance dropout.
+    conditioning: bool = False
+    cond_dropout: float = 0.15
+    cond_games: list[str] = field(default_factory=list)
+    cond_categories: list[str] = field(default_factory=list)
+    cond_views: list[str] = field(default_factory=list)
+    cond_identities: list[str] = field(default_factory=list)  # learned per-head 2D relative-offset attention bias, added to RoPE
 
 
 @dataclass
@@ -88,6 +97,7 @@ class SampleConfig:
     # commits with the lowest commit-time confidence, while t <= remask_until * steps.
     remask: float = 0.0
     remask_until: float = 0.75
+    guidance: float = 0.0  # classifier-free guidance weight w: uncond + (1+w)(cond-uncond)
 
 
 @dataclass

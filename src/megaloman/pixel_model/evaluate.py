@@ -118,7 +118,10 @@ def conditional_report(model, dataset, *, split="val", ratios=MASK_RATIOS, seed=
                         target = dataset.grids[i]
                         mask = make_mask(torch.ones_like(target, dtype=torch.bool)[None], ratio=ratio,
                                          contiguous=kind == "contiguous", generator=generator)[0]
-                        logits = model(corrupt(target[None].to(device), mask[None].to(device)))[0].cpu()
+                        labels = None
+                        if getattr(model, "vocab", None):  # val identities are unseen: identity stays null
+                            labels = model.encode_labels([dataset.labels(i)], drop=("identity",))
+                        logits = model(corrupt(target[None].to(device), mask[None].to(device)), labels=labels)[0].cpu()
                         neighbor = visible_nearest_neighbor(baselines["grids"], target, mask)
                         # Retrieval has no likelihood; report a declared .01-smoothed categorical surrogate.
                         neighbor_logits = ((F.one_hot(neighbor, 4).float() + .01) / 1.04).log()

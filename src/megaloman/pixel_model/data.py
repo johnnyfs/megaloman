@@ -15,6 +15,25 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+FACTORS = ("game", "category", "view", "identity")
+VIEW_WORDS = (("overhead-down", ("walk-down", "-down", "front")), ("overhead-up", ("walk-up", "-up", "back")))
+
+
+def record_labels(row):
+    """Shared label vocabulary: manifest `labels` if present, else derived from path/fields.
+
+    category is singular across games (player, robot-master, enemy, boss, npc); view is
+    side unless the animation names an overhead facing; identity is the canonical character.
+    """
+    if "labels" in row:
+        return {k: row["labels"].get(k) for k in FACTORS}
+    category = {"robot-masters": "robot-master", "enemies": "enemy", "bosses": "boss", "npcs": "npc",
+                "player": "player"}.get(row.get("category"), row.get("category"))
+    animation = row["animation"].split("/")[-1].lower()
+    view = next((v for v, words in VIEW_WORDS if any(w in animation for w in words)), "side")
+    return {"game": row.get("game"), "category": category, "view": view, "identity": row["identity"]}
+
+
 class ApprovedDataset:
     """Eager tiny/native grids; immutable path-independent snapshot fingerprint.
 
@@ -68,6 +87,9 @@ class ApprovedDataset:
         self.split_hash = hashlib.sha256(canonical_json(
             [(r["id"], r["identity"], r["split"]) for r in self.records]).encode()).hexdigest()
         self.encoding_hash = hashlib.sha256(canonical_json(ENCODING).encode()).hexdigest()
+
+    def labels(self, i):
+        return record_labels(self.records[i])
 
     def indices(self, split, size=None):
         return [i for i, r in enumerate(self.records)
@@ -141,6 +163,7 @@ class BalancedBatchStream:
         for _ in range(self.batch_size):
             animations = groups[self._choice(list(groups))]
             indices.append(self._choice(animations[self._choice(list(animations))]))
+        self.last_indices = indices
         self.position += self.batch_size
         for i in indices:
             self.exposure[self.dataset.records[i]["identity"]] += 1
