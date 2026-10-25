@@ -14,6 +14,7 @@ class Block(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.heads, self.dropout = cfg.heads, cfg.dropout
+        self.attention_dropout = cfg.dropout if cfg.attention_dropout is None else cfg.attention_dropout
         self.norm1, self.norm2 = nn.LayerNorm(cfg.d_model), nn.LayerNorm(cfg.d_model)
         self.qkv = nn.Linear(cfg.d_model, 3 * cfg.d_model)
         self.proj = nn.Linear(cfg.d_model, cfg.d_model)
@@ -25,7 +26,7 @@ class Block(nn.Module):
         q, k, v = self.qkv(self.norm1(x)).reshape(b, n, 3, self.heads, d // self.heads).permute(2, 0, 3, 1, 4).unbind(0)
         q, k = apply_axial_rope(q, coordinates), apply_axial_rope(k, coordinates)
         h = F.scaled_dot_product_attention(q, k, v, attn_mask=attention_mask,
-                                          dropout_p=self.dropout if self.training else 0.0, is_causal=False)
+                                          dropout_p=self.attention_dropout if self.training else 0.0, is_causal=False)
         x = x + F.dropout(self.proj(h.transpose(1, 2).reshape(b, n, d)), self.dropout, self.training)
         return x + F.dropout(self.mlp(self.norm2(x)), self.dropout, self.training)
 

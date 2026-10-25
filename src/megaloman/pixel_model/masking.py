@@ -68,3 +68,22 @@ def masked_loss(logits, targets, mask, valid_mask=None):
     safe_targets = targets.masked_fill(~selected, -100)
     ce = F.cross_entropy(logits.movedim(-1, 1), safe_targets, reduction="none", ignore_index=-100)
     return (ce.flatten(1).sum(1) / counts).mean()
+
+
+def balanced_loss(logits, targets, mask):
+    """Per example .5 x mean masked foreground CE + .5 x mean masked background CE.
+
+    With only one group masked, that group's mean is the example loss. PAD is excluded.
+    """
+    selected = mask & (targets != PAD)
+    if torch.any(selected.flatten(1).sum(1) == 0):
+        raise ValueError("each example needs at least one masked valid target")
+    ce = F.cross_entropy(logits.movedim(-1, 1), targets.masked_fill(~selected, -100),
+                         reduction="none", ignore_index=-100).flatten(1)
+    fg = (selected & (targets != 0)).flatten(1).float()
+    bg = (selected & (targets == 0)).flatten(1).float()
+    nf, nb = fg.sum(1), bg.sum(1)
+    mf = (ce * fg).sum(1) / nf.clamp_min(1)
+    mb = (ce * bg).sum(1) / nb.clamp_min(1)
+    per = torch.where((nf > 0) & (nb > 0), .5 * mf + .5 * mb, torch.where(nf > 0, mf, mb))
+    return per.mean()

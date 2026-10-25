@@ -97,7 +97,7 @@ def run(args):
                 if manifest.name != "manifest.json":
                     raise ValueError("fixture expects a manifest.json filename")
                 create_fixture(manifest.parent, cfg.dataset.resolutions)
-            ds = ApprovedDataset(manifest, cfg.dataset.resolutions)
+            ds = ApprovedDataset(manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
             report = ds.summary()
             (manifest.parent / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
             contact_sheet(ds.grids, manifest.parent / "sheet.png")
@@ -120,7 +120,7 @@ def run(args):
         from .evaluate import evaluate
         if args.manifest:
             cfg.dataset.manifest = args.manifest
-        if ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions).fingerprint != meta["dataset_sha256"]:
+        if ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes).fingerprint != meta["dataset_sha256"]:
             raise ValueError("evaluation snapshot differs from the checkpoint dataset")
         evaluate(model, cfg, output=args.output, split=args.split, count=args.count,
                  seed=args.seed, near_threshold=args.near_threshold)

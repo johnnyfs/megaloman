@@ -22,7 +22,7 @@ class ApprovedDataset:
     External preparation supplies those decisions and the exact PNG byte hashes.
     """
 
-    def __init__(self, manifest, resolutions=(16,)):
+    def __init__(self, manifest, resolutions=(16,), skip_other_sizes=False):
         self.path = Path(manifest).resolve()
         raw = json.loads(self.path.read_text())
         if raw.get("schema_version") != 1 or raw.get("encoding") != ENCODING:
@@ -32,6 +32,7 @@ class ApprovedDataset:
         self.raw = raw
         self.records, self.grids = [], []
         groups, duplicates, ids = {}, {}, set()
+        self.skipped = Counter()
         for row in raw["records"]:
             required = {"id", "path", "sha256", "identity", "animation", "split", "size"}
             if not required <= row.keys() or row["split"] not in ("train", "val", "test"):
@@ -39,6 +40,9 @@ class ApprovedDataset:
             if not row["identity"] or not row["animation"] or row["id"] in ids:
                 raise ValueError("record IDs must be unique and identity/animation nonempty")
             ids.add(row["id"])
+            if row["size"] not in resolutions and skip_other_sizes:
+                self.skipped[row["size"]] += 1
+                continue
             if row["size"] not in resolutions:
                 raise ValueError(f"manifest resolution {row['size']} is not configured")
             rel = Path(row["path"])
@@ -59,7 +63,8 @@ class ApprovedDataset:
             for split in ("train", "val", "test"):
                 if not self.indices(split, size):
                     raise ValueError(f"no {split} examples at {size}; external prep must supply all splits")
-        self.fingerprint = hashlib.sha256(canonical_json(raw).encode()).hexdigest()
+        self.fingerprint = hashlib.sha256(canonical_json(
+            raw if not self.skipped else {"manifest": raw, "resolutions": sorted(resolutions)}).encode()).hexdigest()
         self.split_hash = hashlib.sha256(canonical_json(
             [(r["id"], r["identity"], r["split"]) for r in self.records]).encode()).hexdigest()
         self.encoding_hash = hashlib.sha256(canonical_json(ENCODING).encode()).hexdigest()
@@ -73,6 +78,7 @@ class ApprovedDataset:
                 "encoding_sha256": self.encoding_hash, "approval_id": self.raw["approval_id"],
                 "synthetic": self.raw.get("synthetic", False), "frames": len(self.records),
                 "counts": dict(Counter(f"{r['split']}/{r['size']}" for r in self.records)),
+                "skipped_other_sizes": {str(k): v for k, v in sorted(self.skipped.items())},
                 "families": {s: len({r['identity'] for r in self.records if r['split'] == s})
                              for s in ("train", "val", "test")},
                 "class_counts": torch.bincount(torch.cat([g.flatten() for g in self.grids]), minlength=4).tolist()}
@@ -82,11 +88,12 @@ class BalancedBatchStream:
     """Size bucket, uniform identity, uniform animation, uniform frame, with replacement.
 
     The dedicated generator is checkpointed, so no loader workers/prefetch state leak.
-    Resolutions have equal probability; no padding or cross-size batches are needed.
+    Bucket weights: uniform, or sqrt(train frames) per size. Optional training-only
+    horizontal shift of up to `hshift` px (zero fill, no wrap, foreground kept in bounds).
     """
 
-    def __init__(self, dataset, batch_size, seed):
-        self.dataset, self.batch_size = dataset, batch_size
+    def __init__(self, dataset, batch_size, seed, *, bucket_sampling="uniform", hshift=0):
+        self.dataset, self.batch_size, self.hshift = dataset, batch_size, hshift
         self.generator = torch.Generator().manual_seed(seed)
         self.buckets = {}
         for size in sorted({r["size"] for r in dataset.records}):
@@ -95,26 +102,55 @@ class BalancedBatchStream:
                 r = dataset.records[i]
                 groups[r["identity"]][r["animation"]].append(i)
             self.buckets[size] = groups
+        sizes = list(self.buckets)
+        counts = [len(dataset.indices("train", size)) for size in sizes]
+        raw = [1.0] * len(sizes) if bucket_sampling == "uniform" else [c ** .5 for c in counts]
+        self.policy = {"bucket_sampling": bucket_sampling, "hshift": hshift,
+                       "weights": {str(z): w / sum(raw) for z, w in zip(sizes, raw)},
+                       "train_counts": {str(z): c for z, c in zip(sizes, counts)}}
+        self.weights = torch.tensor(raw, dtype=torch.float64)
         self.position = 0
+        self.exposure = Counter()
 
     def _choice(self, seq):
         return seq[torch.randint(len(seq), (), generator=self.generator).item()]
 
+    def _shift(self, grid):
+        if not self.hshift:
+            return grid
+        d = torch.randint(-self.hshift, self.hshift + 1, (), generator=self.generator).item()
+        cols = (grid != 0).any(0).nonzero().flatten()
+        if not d or not len(cols) or cols.min() + d < 0 or cols.max() + d >= grid.shape[1]:
+            return grid
+        out = torch.zeros_like(grid)
+        if d > 0:
+            out[:, d:] = grid[:, :-d]
+        else:
+            out[:, :d] = grid[:, -d:]
+        return out
+
     def next(self):
-        groups = self.buckets[self._choice(list(self.buckets))]
+        size = list(self.buckets)[torch.multinomial(self.weights, 1, generator=self.generator).item()]
+        groups = self.buckets[size]
         indices = []
         for _ in range(self.batch_size):
             animations = groups[self._choice(list(groups))]
             indices.append(self._choice(animations[self._choice(list(animations))]))
         self.position += self.batch_size
-        return torch.stack([self.dataset.grids[i] for i in indices])
+        for i in indices:
+            self.exposure[self.dataset.records[i]["identity"]] += 1
+        return torch.stack([self._shift(self.dataset.grids[i]) for i in indices])
 
     def state_dict(self):
-        return {"generator": self.generator.get_state(), "position": self.position}
+        return {"generator": self.generator.get_state(), "position": self.position,
+                "policy": json.dumps(self.policy, sort_keys=True), "exposure": json.dumps(dict(self.exposure))}
 
     def load_state_dict(self, state):
+        if "policy" in state and json.loads(state["policy"]) != self.policy:
+            raise ValueError("resume bucket policy/counts mismatch")
         self.generator.set_state(state["generator"])
         self.position = state["position"]
+        self.exposure = Counter(json.loads(state.get("exposure", "{}")))
 
 
 def create_fixture(root, resolutions=(16,)):

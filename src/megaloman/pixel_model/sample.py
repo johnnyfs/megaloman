@@ -61,7 +61,10 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
             confidence = probabilities.gather(-1, candidates.unsqueeze(-1)).squeeze(-1).clamp_min(1e-20).log()
             if cfg.ranking_temperature:
                 u = torch.rand(shape, device=device, generator=ranking_rng).clamp(1e-7, 1 - 1e-7)
-                confidence += cfg.ranking_temperature * (-(-u.log()).log())
+                amplitude = cfg.ranking_temperature
+                if cfg.ranking_schedule == "linear":
+                    amplitude *= 1 - (t - 1) / cfg.steps  # full noise first, ~0 by the last step
+                confidence += amplitude * (-(-u.log()).log())
             for b in range(count):
                 m0 = initial_counts[b].item()
                 target = m0 if t == cfg.steps else m0 - math.floor(m0 * math.cos(math.pi * t / (2 * cfg.steps)))

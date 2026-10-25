@@ -80,7 +80,7 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual([line["step"] for line in lines], [1, 2, 3, 4])
             self.assertTrue(all(np.isfinite(row["loss"]) for row in lines))
             report = evaluate(restored, cfg, output=Path(directory) / "evaluation", count=2)
-            self.assertEqual(len(report["conditional"]["rows"]), 10)
+            self.assertEqual(len(report["conditional"]["rows"]), 9)  # contiguous 100% counted once
             self.assertTrue((Path(directory) / "evaluation/16/blind-sheet.png").exists())
             self.assertTrue((Path(directory) / "evaluation/16/human-ratings.csv").exists())
             png = read_indexed(Path(directory) / "evaluation/16/samples/0000.png", 16)

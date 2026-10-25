@@ -32,6 +32,7 @@ def categorical_metrics(logits, target, mask):
     union = ((reconstructed != 0) | (target != 0)).sum().item()
     metrics = {"masked_conditional_nll": ce.mean().item(), "masked_accuracy": (true == pred).float().mean().item(),
                "foreground_nll": ce[fg].mean().item() if fg.any() else None,
+               "background_nll": ce[~fg].mean().item() if (~fg).any() else None,
                "foreground_accuracy": (true[fg] == pred[fg]).float().mean().item() if fg.any() else None,
                "foreground_precision": _divide(tp, predicted_fg.sum().item()),
                "foreground_recall": _divide(tp, fg.sum().item()),
@@ -43,14 +44,25 @@ def categorical_metrics(logits, target, mask):
     return metrics
 
 
-def fit_baselines(dataset, size, smoothing=1.0):
+def global_prior(dataset, smoothing=1.0):
+    """One 4-class distribution over every training pixel at every configured size."""
+    counts = torch.bincount(torch.cat([dataset.grids[i].flatten() for i in dataset.indices("train")]), minlength=4)
+    counts = counts.double() + smoothing
+    return (counts / counts.sum()).float()
+
+
+def fit_baselines(dataset, size, smoothing=1.0, global_frequency=None):
+    """Training-only priors: true global, per-size bucket, and per-(size, y, x) position."""
     grids = torch.stack([dataset.grids[i] for i in dataset.indices("train", size)])
     one_hot = F.one_hot(grids, num_classes=4).float()
     position = (one_hot.sum(0) + smoothing)
     position = position / position.sum(-1, keepdim=True)
-    global_frequency = one_hot.sum((0, 1, 2)) + smoothing
-    global_frequency /= global_frequency.sum()
-    return {"grids": grids, "global": global_frequency.log().expand(size, size, 4), "position": position.log()}
+    bucket = one_hot.sum((0, 1, 2)) + smoothing
+    bucket /= bucket.sum()
+    if global_frequency is None:
+        global_frequency = global_prior(dataset, smoothing)
+    return {"grids": grids, "global": global_frequency.log().expand(size, size, 4),
+            "bucket": bucket.log().expand(size, size, 4), "position": position.log()}
 
 
 def visible_nearest_neighbor(training, target, mask):
@@ -92,12 +104,16 @@ def conditional_report(model, dataset, *, split="val", ratios=MASK_RATIOS, seed=
     device = next(model.parameters()).device
     results = []
     try:
+        prior = global_prior(dataset)
         for size in model.resolutions:
-            baselines = fit_baselines(dataset, size)
+            baselines = fit_baselines(dataset, size, global_frequency=prior)
             for kind in (("random", "contiguous") if include_contiguous else ("random",)):
                 for ratio in ratios:
+                    if kind == "contiguous" and ratio == 1:
+                        continue  # identical to the random full mask; count it once
                     generator = torch.Generator().manual_seed(seed + size + int(ratio * 10000))
-                    rows = {key: [] for key in ("model", "global_frequency", "position_frequency", "visible_nearest_neighbor")}
+                    rows = {key: [] for key in ("model", "global_frequency", "bucket_frequency", "position_frequency",
+                                                    "visible_nearest_neighbor")}
                     for i in dataset.indices(split, size):
                         target = dataset.grids[i]
                         mask = make_mask(torch.ones_like(target, dtype=torch.bool)[None], ratio=ratio,
@@ -107,6 +123,7 @@ def conditional_report(model, dataset, *, split="val", ratios=MASK_RATIOS, seed=
                         # Retrieval has no likelihood; report a declared .01-smoothed categorical surrogate.
                         neighbor_logits = ((F.one_hot(neighbor, 4).float() + .01) / 1.04).log()
                         for key, values in (("model", logits), ("global_frequency", baselines["global"]),
+                                            ("bucket_frequency", baselines["bucket"]),
                                             ("position_frequency", baselines["position"]),
                                             ("visible_nearest_neighbor", neighbor_logits)):
                             rows[key].append((dataset.records[i]["identity"], categorical_metrics(values, target, mask)))
@@ -121,7 +138,36 @@ def conditional_report(model, dataset, *, split="val", ratios=MASK_RATIOS, seed=
             "notes": ["Metrics average frames within identities, then identities equally.",
                       "Bootstrap intervals are descriptive; tiny fixture cohorts cannot support generalization claims.",
                       "Visible-neighbor NLL is a .01-smoothed surrogate, not retrieval likelihood.",
-                      "100%-mask accuracy is not unconditional sample quality."]}
+                      "100%-mask accuracy is not unconditional sample quality.",
+                      "global_frequency is one prior over all sizes; bucket_frequency is per size.",
+                      "Contiguous 100% equals random 100% and is reported once."]}
+
+
+SUMMARY_KEYS = ("masked_conditional_nll", "foreground_nll", "background_nll", "foreground_accuracy",
+                "foreground_precision", "foreground_recall", "reconstruction_foreground_iou", "masked_accuracy")
+
+
+def summarize(report):
+    """Equal-weight means over rows: overall, full mask only, and per ratio, for model and priors."""
+    def mean(rows, who, key):
+        values = [r[who]["metrics"][key] for r in rows if r[who]["metrics"][key] is not None]
+        return sum(values) / len(values) if values else None
+    rows = report["rows"]
+    full = [r for r in rows if r["mask_ratio"] == 1]
+    out = {"model": {k: mean(rows, "model", k) for k in SUMMARY_KEYS},
+           "model_full_mask": {k: mean(full, "model", k) for k in SUMMARY_KEYS},
+           "priors": {who: {"nll": mean(rows, who, "masked_conditional_nll"),
+                            "full_mask_nll": mean(full, who, "masked_conditional_nll"),
+                            "foreground_nll": mean(rows, who, "foreground_nll")}
+                      for who in ("global_frequency", "bucket_frequency", "position_frequency")},
+           "by_ratio": {str(q): {k: mean([r for r in rows if r["mask_ratio"] == q], "model", k)
+                                 for k in ("masked_conditional_nll", "foreground_nll", "foreground_accuracy",
+                                           "reconstruction_foreground_iou")}
+                        for q in sorted({r["mask_ratio"] for r in rows})}}
+    m = out["model"]
+    out["balanced_nll"] = (.5 * m["foreground_nll"] + .5 * m["background_nll"]
+                           if m["foreground_nll"] is not None and m["background_nll"] is not None else None)
+    return out
 
 
 def foreground_distance(a, b):
@@ -173,10 +219,11 @@ def write_human_hooks(samples, controls, output, seed):
 def evaluate(model, cfg, *, output, split="val", count=64, seed=1729, near_threshold=.10):
     if count < 1 or not 0 <= near_threshold <= 1:
         raise ValueError("sample count must be positive and near-copy threshold in [0,1]")
-    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions)
+    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    report = {"dataset": dataset.summary(), "conditional": conditional_report(model, dataset, split=split, seed=seed),
+    conditional = conditional_report(model, dataset, split=split, seed=seed)
+    report = {"dataset": dataset.summary(), "conditional": conditional, "summary": summarize(conditional),
               "generation_seed": seed, "generation": {}, "artistic_gate": "unassessed: human ratings required",
               "baseline_gate": "provisional >=5% lower position-baseline NLL at random 50% and 75% masks",
               "quality_claim": "scaffold/fixture results establish execution only"}

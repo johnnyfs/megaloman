@@ -68,7 +68,7 @@ def create_app(cfg):
         remote_cfg.dataset.manifest = f"{MOUNT}/datasets/{snapshot_id}/manifest.json"
         remote_cfg.train.run_dir = f"{MOUNT}/runs/{run_id}"
         remote_cfg.train.device = "cuda"
-        dataset = ApprovedDataset(remote_cfg.dataset.manifest, remote_cfg.dataset.resolutions)
+        dataset = ApprovedDataset(remote_cfg.dataset.manifest, remote_cfg.dataset.resolutions, remote_cfg.dataset.skip_other_sizes)
         if dataset.fingerprint != snapshot_id:
             raise ValueError("uploaded snapshot fingerprint mismatch")
         run_path = Path(remote_cfg.train.run_dir)
@@ -98,7 +98,7 @@ def create_app(cfg):
 def upload_snapshot(cfg):
     import modal
     from .data import ApprovedDataset
-    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions)
+    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
     remote = f"/datasets/{dataset.fingerprint}"
     volume = modal.Volume.from_name(cfg.modal.volume, create_if_missing=True)
     # This command is the only place that uploads data. Train never reuploads it.
@@ -165,7 +165,7 @@ def dispatch(args):
         raise ValueError("remote sample requires --checkpoint relative to the volume")
     from .checkpoint import provenance
     from .data import ApprovedDataset
-    snapshot = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions).fingerprint if args.operation == "train" else None
+    snapshot = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes).fingerprint if args.operation == "train" else None
     app, remote_train, remote_sample = create_app(cfg)
     import modal
     with modal.enable_output(), app.run():

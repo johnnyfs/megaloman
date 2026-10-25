@@ -19,7 +19,7 @@ def overfit_checks(cfg, *, steps, output):
     cfg.validate()
     runtime = resolve_runtime(cfg.train)
     torch.set_num_threads(cfg.train.cpu_threads)
-    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions)
+    dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     results = {}

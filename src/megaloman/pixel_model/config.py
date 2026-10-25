@@ -8,11 +8,24 @@ from typing import get_args, get_origin
 
 import yaml
 
+# Square canvas sizes: every multiple of 8 from 16 to 64 (56/64 are thin; stage them in last).
+ALLOWED_SIZES = tuple(range(16, 65, 8))
+LOSSES = ("ce", "fg_bg_balanced")
+BUCKET_SAMPLING = ("uniform", "sqrt_count")
+SELECT_METRICS = ("val_loss", "val_balanced_nll")
 
 @dataclass
 class DatasetConfig:
     manifest: str = "workspace/pixel_model/datasets/tiny/manifest.json"
     resolutions: list[int] = field(default_factory=lambda: [16])
+    # Records at sizes outside `resolutions` are skipped instead of rejected (staged runs).
+    skip_other_sizes: bool = False
+    # ce: plain masked CE. fg_bg_balanced: .5 fg CE + .5 bg CE per example (plain CE still logged).
+    loss: str = "ce"
+    # uniform: every size bucket equally likely; sqrt_count: weight ~ sqrt(train frames).
+    bucket_sampling: str = "uniform"
+    # Training-only horizontal shift of up to this many pixels, only when the foreground stays in bounds.
+    hshift: int = 0
 
 
 @dataclass
@@ -21,7 +34,8 @@ class ModelConfig:
     layers: int = 6
     heads: int = 6
     mlp_ratio: int = 4
-    dropout: float = 0.1
+    dropout: float = 0.1  # residual + MLP
+    attention_dropout: float | None = None  # None: same as dropout (run-1 behaviour)
     num_colors: int = 4
 
 
@@ -52,6 +66,8 @@ class TrainConfig:
     # Early stop: halt after this many evaluations without val-loss improvement (0 = off).
     patience: int = 0
     min_delta: float = 0.0
+    # Validation scalar that drives early stopping and the saved best/ weights.
+    select_metric: str = "val_loss"
     run_dir: str = "workspace/pixel_model/runs/sprite16"
 
 
@@ -60,6 +76,8 @@ class SampleConfig:
     steps: int = 16
     temperature: float = 1.0
     ranking_temperature: float = 0.0
+    # constant, or linear: amplitude decays from ranking_temperature to ~0 over the steps.
+    ranking_schedule: str = "constant"
     top_k: int = 0
 
 
@@ -105,10 +123,16 @@ class Config:
             raise ValueError("v0 requires transparent + 3 colors (num_colors=4)")
         if m.heads < 1 or m.d_model < 1 or m.d_model % m.heads or (m.d_model // m.heads) % 4:
             raise ValueError("d_model / heads must be a positive multiple of 4 for axial RoPE")
-        if min(m.layers, m.mlp_ratio) < 1 or not 0 <= m.dropout < 1:
+        if min(m.layers, m.mlp_ratio) < 1 or not 0 <= m.dropout < 1 or not (
+                m.attention_dropout is None or 0 <= m.attention_dropout < 1):
             raise ValueError("invalid model depth, MLP ratio, or dropout")
-        if not self.dataset.resolutions or any(n not in (16, 24, 32, 64) for n in self.dataset.resolutions):
-            raise ValueError("resolutions must be a nonempty subset of 16, 24, 32, 64; 64 is experimental")
+        d = self.dataset
+        if not d.resolutions or any(n not in ALLOWED_SIZES for n in d.resolutions):
+            raise ValueError(f"resolutions must be a nonempty subset of {ALLOWED_SIZES}")
+        if d.loss not in LOSSES or d.bucket_sampling not in BUCKET_SAMPLING or not 0 <= d.hshift <= 4:
+            raise ValueError(f"dataset.loss in {LOSSES}, bucket_sampling in {BUCKET_SAMPLING}, hshift in 0..4")
+        if t.select_metric not in SELECT_METRICS or s.ranking_schedule not in ("constant", "linear"):
+            raise ValueError(f"train.select_metric in {SELECT_METRICS}; sample.ranking_schedule constant|linear")
         if len(set(self.dataset.resolutions)) != len(self.dataset.resolutions):
             raise ValueError("duplicate resolutions")
         for p in (self.masking.full_probability, self.masking.contiguous_probability):

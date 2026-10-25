@@ -4,6 +4,7 @@ import time
 
 import torch
 
+from .config import ALLOWED_SIZES
 from .masking import corrupt, masked_loss
 from .model import PixelTransformer
 from .train import autocast_context, resolve_runtime
@@ -21,15 +22,17 @@ def doctor(cfg, *, benchmark=False, sizes=(16,)):
         smi_report = str(exc)
     report = {"runtime": runtime, "cuda_available": torch.cuda.is_available(), "torch_cuda_version": torch.version.cuda,
               "bf16_supported": torch.cuda.is_bf16_supported() if torch.cuda.is_available() else False,
-              "nvidia_smi": smi_report, "benchmarks": [], "attention": "SDPA; see profiler operator names per benchmark"}
+              "nvidia_smi": smi_report, "benchmarks": [], "attention": "SDPA; see profiler operator names per benchmark",
+              "dropout": {"residual_mlp": cfg.model.dropout, "attention": cfg.model.attention_dropout
+                          if cfg.model.attention_dropout is not None else cfg.model.dropout}}
     if cuda:
         free, total = torch.cuda.mem_get_info()
         report["vram"] = {"free_bytes": free, "total_bytes": total}
     if not benchmark:
         return report
     for size in sizes:
-        if size not in (16, 24, 32, 64):
-            raise ValueError("benchmark sizes must be 16,24,32,64; 64 is experimental")
+        if size not in ALLOWED_SIZES:
+            raise ValueError(f"benchmark sizes must be in {ALLOWED_SIZES}")
         model = optimizer = None
         try:
             if cuda:

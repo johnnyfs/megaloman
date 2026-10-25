@@ -89,8 +89,37 @@ def _decode(value, tensors):
     return [_decode(v, tensors) for v in value["list"]]
 
 
+def _metadata(step, cfg, dataset, runtime):
+    return {"schema_version": 1, "step": step, "config": cfg.to_dict(), "encoding": ENCODING,
+            "dataset_sha256": dataset.fingerprint, "split_sha256": dataset.split_hash,
+            "encoding_sha256": dataset.encoding_hash, "runtime": runtime, "provenance": provenance()}
+
+
+def save_best(run_dir, *, model, step, score, metric, cfg, dataset, runtime):
+    """Weights-only bundle at RUN/best (loadable with load_model), replaced on each improvement."""
+    run = Path(run_dir)
+    temp = run / f".best-{uuid.uuid4().hex}"
+    temp.mkdir(parents=True)
+    try:
+        save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(temp / "model.safetensors"))
+        atomic_json(temp / "metadata.json", {**_metadata(step, cfg, dataset, runtime),
+                                             "best": {"metric": metric, "score": score, "step": step}})
+        old = run / "best"
+        if old.exists():
+            stale = run / f".best-old-{uuid.uuid4().hex}"
+            old.rename(stale)
+            temp.rename(old)
+            shutil.rmtree(stale)
+        else:
+            temp.rename(old)
+    finally:
+        if temp.exists():
+            shutil.rmtree(temp)
+    return run / "best"
+
+
 def save_checkpoint(run_dir, *, model, optimizer, scheduler, scaler, stream, mask_generator,
-                    step, cfg, dataset, runtime, durable_commit=None):
+                    step, cfg, dataset, runtime, durable_commit=None, early_stop=None):
     root = Path(run_dir) / "checkpoints"
     root.mkdir(parents=True, exist_ok=True)
     final = root / f"step-{step:08d}"
@@ -103,13 +132,11 @@ def save_checkpoint(run_dir, *, model, optimizer, scheduler, scaler, stream, mas
         tensors = {}
         tree = _encode({"optimizer": optimizer.state_dict(), "scheduler": scheduler.state_dict(),
                         "scaler": scaler.state_dict(), "stream": stream.state_dict(),
-                        "mask_generator": mask_generator.get_state(), "rng": rng_state()}, tensors)
+                        "mask_generator": mask_generator.get_state(), "rng": rng_state(),
+                        "early_stop": early_stop}, tensors)
         save_file(tensors, str(temp / "state.safetensors"))
         atomic_json(temp / "state.json", tree)
-        meta = {"schema_version": 1, "step": step, "config": cfg.to_dict(), "encoding": ENCODING,
-                "dataset_sha256": dataset.fingerprint, "split_sha256": dataset.split_hash,
-                "encoding_sha256": dataset.encoding_hash, "runtime": runtime, "provenance": provenance()}
-        atomic_json(temp / "metadata.json", meta)
+        atomic_json(temp / "metadata.json", _metadata(step, cfg, dataset, runtime))
         temp.rename(final)
         if durable_commit:
             durable_commit()  # Complete bundle first, then the small latest pointer.
@@ -173,4 +200,4 @@ def restore_training(path, *, cfg, dataset, runtime, model, optimizer, scheduler
     stream.load_state_dict(state["stream"])
     mask_generator.set_state(state["mask_generator"])
     restore_rng(state["rng"])
-    return meta["step"]
+    return meta["step"], state.get("early_stop")
