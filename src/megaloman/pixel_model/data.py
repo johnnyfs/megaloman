@@ -92,8 +92,8 @@ class BalancedBatchStream:
     horizontal shift of up to `hshift` px (zero fill, no wrap, foreground kept in bounds).
     """
 
-    def __init__(self, dataset, batch_size, seed, *, bucket_sampling="uniform", hshift=0):
-        self.dataset, self.batch_size, self.hshift = dataset, batch_size, hshift
+    def __init__(self, dataset, batch_size, seed, *, bucket_sampling="uniform", hshift=0, hflip=False):
+        self.dataset, self.batch_size, self.hshift, self.hflip = dataset, batch_size, hshift, hflip
         self.generator = torch.Generator().manual_seed(seed)
         self.buckets = {}
         for size in sorted({r["size"] for r in dataset.records}):
@@ -116,6 +116,11 @@ class BalancedBatchStream:
         return seq[torch.randint(len(seq), (), generator=self.generator).item()]
 
     def _shift(self, grid):
+        if self.hflip and torch.rand((), generator=self.generator).item() < .5:
+            grid = grid.flip(-1)
+        return self._hshift(grid)
+
+    def _hshift(self, grid):
         if not self.hshift:
             return grid
         d = torch.randint(-self.hshift, self.hshift + 1, (), generator=self.generator).item()

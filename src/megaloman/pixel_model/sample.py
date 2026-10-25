@@ -32,6 +32,8 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
         remaining = editable.to(device).clone()
         pixels[remaining] = MASK
     initial_counts = remaining.flatten(1).sum(1)
+    editable_cells = remaining.clone()
+    committed_confidence = torch.zeros(shape, device=device)
     # Independent, explicitly seeded categorical and Gumbel generators.
     categorical_rng = torch.Generator(device=device).manual_seed(seed)
     ranking_rng = torch.Generator(device=device).manual_seed(seed + 1)
@@ -59,6 +61,8 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
                                                generator=categorical_rng).reshape(shape)
             # Confidence is probability of the sampled class, not max-class probability.
             confidence = probabilities.gather(-1, candidates.unsqueeze(-1)).squeeze(-1).clamp_min(1e-20).log()
+            raw_confidence = confidence.clone()
+            revise = cfg.remask > 0 and t <= cfg.remask_until * cfg.steps and t < cfg.steps
             if cfg.ranking_temperature:
                 u = torch.rand(shape, device=device, generator=ranking_rng).clamp(1e-7, 1 - 1e-7)
                 amplitude = cfg.ranking_temperature
@@ -73,8 +77,16 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
                 indices = remaining[b].flatten().nonzero().flatten()
                 ranks = torch.argsort(confidence[b].flatten()[indices], descending=True, stable=True)
                 chosen = indices[ranks[:needed]]  # row-major tie breaking
+                old = (editable_cells[b] & ~remaining[b]).flatten().nonzero().flatten()
                 pixels[b].view(-1)[chosen] = candidates[b].flatten()[chosen]
                 remaining[b].view(-1)[chosen] = False
+                committed_confidence[b].view(-1)[chosen] = raw_confidence[b].flatten()[chosen]
+                if revise and len(old):
+                    k = math.floor(cfg.remask * len(old))
+                    if k:
+                        low = old[torch.argsort(committed_confidence[b].flatten()[old], stable=True)[:k]]
+                        pixels[b].view(-1)[low] = MASK
+                        remaining[b].view(-1)[low] = True
             if return_trace:
                 trace.append(pixels.cpu().clone())
     finally:

@@ -26,6 +26,7 @@ class DatasetConfig:
     bucket_sampling: str = "uniform"
     # Training-only horizontal shift of up to this many pixels, only when the foreground stays in bounds.
     hshift: int = 0
+    hflip: bool = False  # training-only random horizontal mirror (p=.5)
 
 
 @dataclass
@@ -37,6 +38,9 @@ class ModelConfig:
     dropout: float = 0.1  # residual + MLP
     attention_dropout: float | None = None  # None: same as dropout (run-1 behaviour)
     num_colors: int = 4
+    conv_stem: int = 0      # residual stride-1 3x3 conv layers on (already masked) pixel embeddings
+    conv_decoder: int = 0   # residual stride-1 3x3 conv layers on features before the logits head
+    rel_bias: bool = False  # learned per-head 2D relative-offset attention bias, added to RoPE
 
 
 @dataclass
@@ -69,6 +73,7 @@ class TrainConfig:
     # Validation scalar that drives early stopping and the saved best/ weights.
     select_metric: str = "val_loss"
     run_dir: str = "workspace/pixel_model/runs/sprite16"
+    ema: float = 0.0  # >0: evaluate, select and save best with EMA weights of this decay
 
 
 @dataclass
@@ -79,6 +84,10 @@ class SampleConfig:
     # constant, or linear: amplitude decays from ranking_temperature to ~0 over the steps.
     ranking_schedule: str = "constant"
     top_k: int = 0
+    # Revisable decoding: after each step's commits, re-mask this fraction of earlier
+    # commits with the lowest commit-time confidence, while t <= remask_until * steps.
+    remask: float = 0.0
+    remask_until: float = 0.75
 
 
 @dataclass

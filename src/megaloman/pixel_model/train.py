@@ -69,8 +69,14 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda s: lr_multiplier(s, t))
     scaler = torch.amp.GradScaler("cuda", enabled=runtime["precision"] == "fp16")
     stream = BalancedBatchStream(dataset, t.batch_size, t.seed + 1,
-                                 bucket_sampling=cfg.dataset.bucket_sampling, hshift=cfg.dataset.hshift)
+                                 bucket_sampling=cfg.dataset.bucket_sampling, hshift=cfg.dataset.hshift, hflip=cfg.dataset.hflip)
     mask_generator = torch.Generator().manual_seed(t.seed + 2)
+    ema_model = None
+    if t.ema:
+        import copy
+        ema_model = copy.deepcopy(model).eval()
+        for p in ema_model.parameters():
+            p.requires_grad_(False)
     step, early = 0, None
     if resume:
         step, early = restore_training(resume, cfg=cfg, dataset=dataset, runtime=runtime, model=model,
@@ -153,6 +159,11 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
             scaler.step(optimizer); scaler.update(); scheduler.step()
             optimizer.zero_grad(set_to_none=True)
             step += 1
+            if ema_model is not None:
+                with torch.no_grad():
+                    decay = min(t.ema, (1 + step) / (10 + step))
+                    for e, p in zip(ema_model.parameters(), model.parameters()):
+                        e.lerp_(p, 1 - decay)
             if runtime["device"] == "cuda":
                 torch.cuda.synchronize()
             duration = time.monotonic() - tick
@@ -174,7 +185,8 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                 for values in [[r[key] for r in diagnostics if r[key] is not None]]}
             if t.eval_every and step % t.eval_every == 0:
                 from .evaluate import MASK_RATIOS, conditional_report, summarize
-                row["validation"] = conditional_report(model, dataset, split="val", ratios=MASK_RATIOS,
+                eval_model = ema_model if ema_model is not None else model
+                row["validation"] = conditional_report(eval_model, dataset, split="val", ratios=MASK_RATIOS,
                                                          seed=t.seed + 100)
                 summary = row["val_summary"] = summarize(row["validation"])
                 # Scalar val loss: plain model masked NLL averaged over every size/kind/ratio row.
@@ -183,7 +195,7 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                 score = row[t.select_metric]
                 if score < best_val - t.min_delta:
                     best_val, best_step, stale = score, step, 0
-                    save_best(run, model=model, step=step, score=score, metric=t.select_metric,
+                    save_best(run, model=eval_model, step=step, score=score, metric=t.select_metric,
                               cfg=cfg, dataset=dataset, runtime=runtime)
                 else:
                     stale += 1

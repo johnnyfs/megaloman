@@ -10,6 +10,41 @@ from .palette import MASK, PAD
 from .rope2d import apply_axial_rope, pixel_coordinates
 
 
+class ConvResidual(nn.Module):
+    """Stride-1 3x3 residual convs on [B,HW,D] token features; invalid cells zeroed first."""
+
+    def __init__(self, d, layers):
+        super().__init__()
+        self.norm = nn.LayerNorm(d)
+        convs = []
+        for i in range(layers):
+            convs += [nn.Conv2d(d, d, 3, padding=1)] + ([nn.GELU()] if i < layers - 1 else [])
+        self.convs = nn.Sequential(*convs)
+        nn.init.zeros_(convs[-1].weight); nn.init.zeros_(convs[-1].bias)
+
+    def forward(self, x, h, w, valid):
+        b, n, d = x.shape
+        y = (self.norm(x) * valid.flatten(1)[..., None]).transpose(1, 2).reshape(b, d, h, w)
+        return x + self.convs(y).reshape(b, d, n).transpose(1, 2)
+
+
+class RelativeBias(nn.Module):
+    """Per-head learned bias over 2D offsets (shared by all layers); prefix rows/cols get 0."""
+
+    def __init__(self, heads, max_size=64):
+        super().__init__()
+        self.max_size = max_size
+        self.table = nn.Parameter(torch.zeros(heads, 2 * max_size - 1, 2 * max_size - 1))
+
+    def forward(self, h, w, device):
+        y, x = torch.meshgrid(torch.arange(h, device=device), torch.arange(w, device=device), indexing="ij")
+        y, x = y.flatten(), x.flatten()
+        dy = y[:, None] - y[None, :] + self.max_size - 1
+        dx = x[:, None] - x[None, :] + self.max_size - 1
+        bias = self.table[:, dy, dx]
+        return F.pad(bias, (1, 0, 1, 0))
+
+
 class Block(nn.Module):
     def __init__(self, cfg):
         super().__init__()
@@ -43,6 +78,9 @@ class PixelTransformer(nn.Module):
         self.resolution_mlp = nn.Sequential(nn.Linear(2, cfg.d_model), nn.GELU(), nn.Linear(cfg.d_model, cfg.d_model))
         self.blocks = nn.ModuleList([Block(cfg) for _ in range(cfg.layers)])
         self.norm, self.head = nn.LayerNorm(cfg.d_model), nn.Linear(cfg.d_model, cfg.num_colors)
+        self.stem = ConvResidual(cfg.d_model, cfg.conv_stem) if cfg.conv_stem else None
+        self.decoder = ConvResidual(cfg.d_model, cfg.conv_decoder) if cfg.conv_decoder else None
+        self.rel_bias = RelativeBias(cfg.heads) if cfg.rel_bias else None
 
     def forward(self, pixels, *, height=None, width=None, object_ids=None, valid_mask=None):
         if pixels.ndim != 3 or pixels.dtype != torch.long:
@@ -64,12 +102,20 @@ class PixelTransformer(nn.Module):
         pixels = pixels.masked_fill(~valid, PAD)
         metadata = pixels.new_tensor([[math.log(h), math.log(w)]], dtype=self.embedding.weight.dtype)
         prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1).unsqueeze(1)
-        x = torch.cat((prefix, self.embedding(pixels.flatten(1)) + self.pixel_type), 1)
+        tokens = self.embedding(pixels.flatten(1)) + self.pixel_type
+        if self.stem is not None:  # inputs are already corrupted (MASK), so no hidden pixel can leak
+            tokens = self.stem(tokens, h, w, valid)
+        x = torch.cat((prefix, tokens), 1)
         # SDPA bool True means allowed. All queries can see valid keys + prefix;
         # PAD queries are discarded by the objective and never serve as keys.
         keys = torch.cat((torch.ones(b, 1, dtype=torch.bool, device=pixels.device), valid.flatten(1)), 1)
         attention_mask = keys[:, None, None, :]
+        if self.rel_bias is not None:
+            attention_mask = self.rel_bias(h, w, pixels.device)[None].masked_fill(~attention_mask, -torch.inf)
         coords = pixel_coordinates(h, w, device=pixels.device, num_colors=self.cfg.num_colors)
         for block in self.blocks:
             x = block(x, coords, attention_mask)
-        return self.head(self.norm(x[:, 1:])).reshape(b, h, w, self.cfg.num_colors)
+        features = x[:, 1:]
+        if self.decoder is not None:
+            features = self.decoder(features, h, w, valid)
+        return self.head(self.norm(features)).reshape(b, h, w, self.cfg.num_colors)
