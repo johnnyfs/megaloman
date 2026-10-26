@@ -60,10 +60,14 @@ def main():
         import shutil
         shutil.rmtree(c.train.run_dir, ignore_errors=True)  # a relaunch replaces an aborted attempt
         train(c)
-        subprocess.run(["python", "/root/loop_score.py", f"{c.train.run_dir}/best", f"{c.train.run_dir}/score",
+        target = f"{c.train.run_dir}/best"
+        if c.train.patience == 0:  # final-weights protocol: score the last checkpoint
+            from megaloman.pixel_model.checkpoint import checkpoint_path
+            target = str(checkpoint_path(f"{c.train.run_dir}/checkpoints/latest.json"))
+            shutil.copytree(target, f"{c.train.run_dir}/final")
+        subprocess.run(["python", "/root/loop_score.py", target, f"{c.train.run_dir}/score",
                         "--manifest", c.dataset.manifest, *score_args], check=True)
-        import shutil
-        shutil.rmtree(f"{c.train.run_dir}/checkpoints", ignore_errors=True)  # keep best only
+        shutil.rmtree(f"{c.train.run_dir}/checkpoints", ignore_errors=True)  # keep best (+ final) only
         volume.commit()
         return _t.time() - start
 

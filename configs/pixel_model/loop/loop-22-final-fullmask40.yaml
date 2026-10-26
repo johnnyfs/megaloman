@@ -1,0 +1,52 @@
+dataset:
+  manifest: /home/johnnyfs/Projects/megaloman-ptv0/workspace/pixel_model/datasets/mm-rm-enemies-v2/manifest.json
+  resolutions:
+  - 16
+  - 24
+  - 32
+  skip_other_sizes: true
+  loss: ce
+  bucket_sampling: sqrt_count
+  hshift: 1
+model:
+  d_model: 192
+  layers: 6
+  heads: 6
+  mlp_ratio: 4
+  dropout: 0.1
+  attention_dropout: 0.0
+  num_colors: 4
+masking:
+  full_probability: 0.4
+  contiguous_probability: 0.2
+train:
+  seed: 1729
+  batch_size: 8
+  grad_accum_steps: 4
+  max_steps: 3000
+  warmup_steps: 100
+  lr: 0.0003
+  min_lr: 1.0e-05
+  weight_decay: 0.05
+  grad_clip_norm: 1.0
+  precision: bf16
+  device: cuda
+  eval_every: 100
+  sample_every: 200
+  checkpoint_every: 500
+  patience: 0
+  min_delta: 0.001
+  select_metric: val_balanced_nll
+  max_seconds: 3600
+  run_dir: /home/johnnyfs/Projects/megaloman-ptv0/workspace/pixel_model/runs/loop-22-final-fullmask40
+sample:
+  steps: 32
+  temperature: 1.0
+  ranking_temperature: 10
+  ranking_schedule: linear
+  top_k: 0
+modal:
+  gpu: L4
+  timeout: 3700
+  estimated_hourly_usd: 0.7992
+  max_estimated_usd: 2.0

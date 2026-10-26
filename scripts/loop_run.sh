@@ -7,4 +7,6 @@ name=$1; shift
 run=$HOME/Projects/megaloman-ptv0/workspace/pixel_model/runs/$name
 export PYTHONPATH=src
 .venv-cuda/bin/python -m megaloman.cli pixel train -c configs/pixel_model/loop/$name.yaml > /tmp/claude-1000/loop-$name.log 2>&1
-.venv-cuda/bin/python scripts/loop_score.py $run/best $run/score "$@"
+target=$run/best
+grep -q "patience: 0" configs/pixel_model/loop/$name.yaml && target=$run/checkpoints/latest.json  # final-weights protocol
+.venv-cuda/bin/python scripts/loop_score.py $target $run/score "$@"
