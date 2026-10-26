@@ -8,7 +8,9 @@ from .palette import MASK
 
 
 @torch.inference_mode()
-def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False, labels=None, allowed=None):
+def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False, labels=None, allowed=None,
+           late_model=None, handoff=0.25):
+    """late_model: once >= handoff of the editable cells are committed, predict with it instead."""
     """allowed: optional BoolTensor[count,size,size,4]; masked cells only sample allowed classes
     (e.g. forbid TRANSPARENT inside a silhouette for shape-conditioned infill)."""
     cfg = cfg or SampleConfig()
@@ -50,8 +52,11 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
         for t in range(1, cfg.steps + 1):
             if not remaining.any():
                 break
+            active = model
+            if late_model is not None and (initial_counts - remaining.flatten(1).sum(1)).min().item() >= handoff * initial_counts.min().item():
+                active = late_model
             if labels is None:
-                logits = model(pixels).float()
+                logits = active(pixels).float()
             else:
                 logits = model(pixels, labels=labels).float()
                 if cfg.guidance:
