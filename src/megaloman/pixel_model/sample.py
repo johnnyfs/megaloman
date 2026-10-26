@@ -8,7 +8,9 @@ from .palette import MASK
 
 
 @torch.inference_mode()
-def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False, labels=None):
+def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=None, return_trace=False, labels=None, allowed=None):
+    """allowed: optional BoolTensor[count,size,size,4]; masked cells only sample allowed classes
+    (e.g. forbid TRANSPARENT inside a silhouette for shape-conditioned infill)."""
     cfg = cfg or SampleConfig()
     if size not in model.resolutions or count < 1:
         raise ValueError("unsupported resolution or invalid count")
@@ -31,6 +33,10 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
         pixels = initial.to(device).clone()
         remaining = editable.to(device).clone()
         pixels[remaining] = MASK
+    if allowed is not None:
+        if allowed.shape != (*shape, 4) or allowed.dtype != torch.bool or not allowed.any(-1).all():
+            raise ValueError("allowed must be BoolTensor[count,size,size,4] with a class per cell")
+        allowed = allowed.to(device)
     initial_counts = remaining.flatten(1).sum(1)
     editable_cells = remaining.clone()
     committed_confidence = torch.zeros(shape, device=device)
@@ -54,6 +60,8 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
             if not torch.isfinite(logits).all():
                 raise FloatingPointError("nonfinite sampling logits")
             filtered = logits / cfg.temperature if cfg.temperature > 0 else logits
+            if allowed is not None:
+                filtered = filtered.masked_fill(~allowed, -torch.inf)
             if cfg.top_k:
                 # Stable class-ID tie ordering; select exactly k classes.
                 order = torch.argsort(filtered, dim=-1, descending=True, stable=True)
@@ -100,3 +108,22 @@ def sample(model, *, size, count=1, seed=42, cfg=None, initial=None, editable=No
     if remaining.any() or torch.any(pixels >= 4):
         raise RuntimeError("sampler failed to complete")
     return (pixels, trace) if return_trace else pixels
+
+
+def infill(model, canvas, known_mask, *, seed=42, cfg=None, keep_foreground=False):
+    """Fill the unknown cells of one canvas (LongTensor[size,size]); known cells stay fixed.
+
+    keep_foreground: unknown cells may not become TRANSPARENT (silhouette-conditioned infill).
+    """
+    from .palette import TRANSPARENT
+    canvas = torch.as_tensor(canvas, dtype=torch.long)
+    editable = ~torch.as_tensor(known_mask, dtype=torch.bool)
+    allowed = None
+    if keep_foreground:
+        allowed = torch.ones((*canvas.shape, 4), dtype=torch.bool)
+        allowed[..., TRANSPARENT] = False
+        allowed[~editable] = True
+        allowed = allowed[None]
+    initial = canvas.clamp(0, 3)[None]
+    return sample(model, size=canvas.shape[-1], count=1, seed=seed, cfg=cfg,
+                  initial=initial, editable=editable[None], allowed=allowed)[0]
