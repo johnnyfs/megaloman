@@ -34,13 +34,13 @@ train:
   eval_every: 100
   sample_every: 200
   checkpoint_every: 500
-  patience: 10
+  patience: 0
   min_delta: 0.001
   select_metric: val_balanced_nll
   max_seconds: 3600
   run_dir: /home/johnnyfs/Projects/megaloman-ptv0/workspace/pixel_model/runs/base
 sample:
-  steps: 32
+  steps: 64
   temperature: 1.0
   ranking_temperature: 10
   ranking_schedule: linear
