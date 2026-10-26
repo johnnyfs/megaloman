@@ -56,6 +56,9 @@ class ModelConfig:
 class MaskConfig:
     full_probability: float = 0.2
     contiguous_probability: float = 0.2  # conditional on not fully masked
+    # silhouette mask: hide every foreground pixel except INK on the silhouette border
+    # (conditional on not fully masked), so outline-given tone infill is in-distribution.
+    silhouette_probability: float = 0.0
 
 
 @dataclass

@@ -8,7 +8,14 @@ from .config import MaskConfig
 from .palette import MASK, PAD
 
 
-def make_mask(valid, cfg=None, *, generator=None, ratio=None, contiguous=False, return_info=False):
+def _silhouette_hidden(grid):
+    fg = grid != 0
+    pad = torch.nn.functional.pad(fg, (1, 1, 1, 1), value=False)
+    edge = fg & (~pad[:-2, 1:-1] | ~pad[2:, 1:-1] | ~pad[1:-1, :-2] | ~pad[1:-1, 2:])
+    return fg & ~(edge & (grid == 1))
+
+
+def make_mask(valid, cfg=None, *, generator=None, ratio=None, contiguous=False, return_info=False, targets=None):
     """Seedable CPU masks, copied to input device. Each example masks >=1 cell.
 
     Non-full fractions use cos(pi*u/2), u~Uniform(0,1). Contiguous masks
@@ -35,6 +42,13 @@ def make_mask(valid, cfg=None, *, generator=None, ratio=None, contiguous=False, 
             full = torch.rand((), generator=generator).item() < cfg.full_probability
             fraction = 1.0 if full else math.cos(math.pi * torch.rand((), generator=generator).item() / 2)
             hole = not full and torch.rand((), generator=generator).item() < cfg.contiguous_probability
+            if not full and targets is not None and cfg.silhouette_probability and \
+                    torch.rand((), generator=generator).item() < cfg.silhouette_probability:
+                silhouette = _silhouette_hidden(targets[b].cpu()) & valid_cpu[b]
+                if silhouette.any():
+                    out[b] = silhouette
+                    kinds.append("silhouette")
+                    continue
         else:
             fraction = ratio
         kinds.append("full" if fraction == 1 else "contiguous" if hole else "random")

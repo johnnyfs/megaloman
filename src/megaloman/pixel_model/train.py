@@ -72,7 +72,6 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
     model = PixelTransformer(cfg.model, cfg.dataset.resolutions).to(runtime["device"])
     if t.init_from and not resume:
         from safetensors.torch import load_file
-        from .checkpoint import checkpoint_path
         model.load_state_dict(load_file(str(checkpoint_path(t.init_from) / "model.safetensors")))
     optimizer = torch.optim.AdamW(model.parameters(), lr=t.lr, weight_decay=t.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda s: lr_multiplier(s, t))
@@ -140,7 +139,8 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
             predicted_counts = torch.zeros(4, dtype=torch.long)
             for _ in range(t.grad_accum_steps):
                 targets = stream.next().to(runtime["device"])
-                mask, mask_kinds = make_mask(targets != PAD, cfg.masking, generator=mask_generator, return_info=True)
+                mask, mask_kinds = make_mask(targets != PAD, cfg.masking, generator=mask_generator, return_info=True,
+                                             targets=targets if cfg.masking.silhouette_probability else None)
                 with autocast_context(runtime):
                     labels = None
                     if cfg.model.conditioning:
@@ -189,7 +189,7 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                    "effective_dataset_passes": stream.position / len(dataset.indices("train")),
                    "peak_allocated_bytes": torch.cuda.max_memory_allocated() if runtime["device"] == "cuda" else 0,
                    "peak_reserved_bytes": torch.cuda.max_memory_reserved() if runtime["device"] == "cuda" else 0}
-            row["mask_kinds"] = {kind: kinds.count(kind) / len(kinds) for kind in ("full", "random", "contiguous")}
+            row["mask_kinds"] = {kind: kinds.count(kind) / len(kinds) for kind in ("full", "random", "contiguous", "silhouette")}
             row["loss_by_mask_ratio"] = {band: sum(values) / len(values) for band, values in ratio_losses.items()}
             row["foreground_by_mask_ratio"] = {band: {"nll": sum(v[0] for v in values) / len(values),
                                                       "accuracy": sum(v[1] for v in values) / len(values)}
