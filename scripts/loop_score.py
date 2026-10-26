@@ -50,7 +50,7 @@ def main():
             setattr(cfg.sample, name, int(value) if name == "steps" else value)
     if a.manifest:
         cfg.dataset.manifest = a.manifest
-    elif not Path(cfg.dataset.manifest).exists():  # a Modal run scored locally
+    else:  # always score against the fixed v2 snapshot (same val; train reference = v2 train)
         cfg.dataset.manifest = str(LOCAL_MANIFEST)
     dataset = ApprovedDataset(cfg.dataset.manifest, cfg.dataset.resolutions, cfg.dataset.skip_other_sizes)
     out = Path(a.output)

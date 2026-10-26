@@ -82,6 +82,7 @@ class TrainConfig:
     # Validation scalar that drives early stopping and the saved best/ weights.
     select_metric: str = "val_loss"
     run_dir: str = "workspace/pixel_model/runs/sprite16"
+    init_from: str = ""  # fine-tune: start from this checkpoint's weights (fresh optimizer/schedule)
     ema: float = 0.0  # >0: evaluate, select and save best with EMA weights of this decay
 
 

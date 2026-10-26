@@ -70,6 +70,10 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                              ("identity", "cond_identities")):
             setattr(cfg.model, name, sorted({l[factor] for l in train_labels if l[factor]}))
     model = PixelTransformer(cfg.model, cfg.dataset.resolutions).to(runtime["device"])
+    if t.init_from and not resume:
+        from safetensors.torch import load_file
+        from .checkpoint import checkpoint_path
+        model.load_state_dict(load_file(str(checkpoint_path(t.init_from) / "model.safetensors")))
     optimizer = torch.optim.AdamW(model.parameters(), lr=t.lr, weight_decay=t.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda s: lr_multiplier(s, t))
     scaler = torch.amp.GradScaler("cuda", enabled=runtime["precision"] == "fp16")
