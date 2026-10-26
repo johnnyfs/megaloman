@@ -116,6 +116,8 @@ class PixelTransformer(nn.Module):
                 raise ValueError("valid_mask must be BoolTensor[B,H,W]")
             valid = valid & valid_mask
         pixels = pixels.masked_fill(~valid, PAD)
+        if self.cfg.causal:
+            return self._forward_causal(pixels, valid, labels)
         metadata = pixels.new_tensor([[math.log(h), math.log(w)]], dtype=self.embedding.weight.dtype)
         prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1)
         if labels is not None and self.vocab:
@@ -138,3 +140,27 @@ class PixelTransformer(nn.Module):
         if self.decoder is not None:
             features = self.decoder(features, h, w, valid)
         return self.head(self.norm(features)).reshape(b, h, w, self.cfg.num_colors)
+
+    def _forward_causal(self, pixels, valid, labels):
+        """Teacher-forced next-pixel logits: output at (y,x) sees only earlier pixels in the order.
+
+        Sequence = [size prefix, p_0 .. p_{N-1}] (order: raster, or bottom row first); slot j
+        (prefix at 0) predicts p_j, so p_{N-1} is never an input. Pixels keep their own RoPE coords.
+        """
+        if self.cfg.ar_order == "bottom":
+            pixels, valid = pixels.flip(1), valid.flip(1)
+        b, h, w = pixels.shape
+        metadata = pixels.new_tensor([[math.log(h), math.log(w)]], dtype=self.embedding.weight.dtype)
+        prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1)
+        if labels is not None and self.vocab:
+            prefix = prefix + sum(e(labels[:, j]) for j, e in enumerate(self.label_embeddings))
+        x = torch.cat((prefix.unsqueeze(1), self.embedding(pixels.flatten(1)) + self.pixel_type), 1)
+        n = h * w + 1
+        causal = torch.ones(n, n, dtype=torch.bool, device=pixels.device).tril()
+        keys = torch.cat((torch.ones(b, 1, dtype=torch.bool, device=pixels.device), valid.flatten(1)), 1)
+        attention_mask = causal[None, None] & keys[:, None, None, :]
+        coords = pixel_coordinates(h, w, device=pixels.device, num_colors=self.cfg.num_colors)
+        for block in self.blocks:
+            x = block(x, coords, attention_mask)
+        logits = self.head(self.norm(x[:, :-1])).reshape(b, h, w, self.cfg.num_colors)
+        return logits.flip(1) if self.cfg.ar_order == "bottom" else logits

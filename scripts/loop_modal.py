@@ -41,6 +41,7 @@ def main():
     volume = modal.Volume.from_name(cfg.modal.volume, create_if_missing=True)
     image = (modal.Image.from_registry("debian:bookworm-slim", add_python="3.12")
              .pip_install(*PINNED_DEPENDENCIES).add_local_file("scripts/loop_score.py", "/root/loop_score.py")
+             .add_local_file("scripts/ar_score.py", "/root/ar_score.py")
              .add_local_python_source("megaloman"))
     app = modal.App(f"pixel-loop-{name}")
 
@@ -61,11 +62,11 @@ def main():
         shutil.rmtree(c.train.run_dir, ignore_errors=True)  # a relaunch replaces an aborted attempt
         train(c)
         target = f"{c.train.run_dir}/best"
-        if c.train.patience == 0:  # final-weights protocol: score the last checkpoint
+        if c.train.patience == 0 or c.model.causal:  # final-weights protocol: score the last checkpoint
             from megaloman.pixel_model.checkpoint import checkpoint_path
             target = str(checkpoint_path(f"{c.train.run_dir}/checkpoints/latest.json"))
             shutil.copytree(target, f"{c.train.run_dir}/final")
-        subprocess.run(["python", "/root/loop_score.py", target, f"{c.train.run_dir}/score",
+        subprocess.run(["python", "/root/ar_score.py" if c.model.causal else "/root/loop_score.py", target, f"{c.train.run_dir}/score",
                         "--manifest", c.dataset.manifest, *score_args], check=True)
         shutil.rmtree(f"{c.train.run_dir}/checkpoints", ignore_errors=True)  # keep best (+ final) only
         volume.commit()

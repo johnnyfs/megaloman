@@ -139,15 +139,18 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
             predicted_counts = torch.zeros(4, dtype=torch.long)
             for _ in range(t.grad_accum_steps):
                 targets = stream.next().to(runtime["device"])
-                mask, mask_kinds = make_mask(targets != PAD, cfg.masking, generator=mask_generator, return_info=True,
-                                             targets=targets if cfg.masking.silhouette_probability else None)
+                if cfg.model.causal:  # teacher forcing: every valid pixel is a target
+                    mask, mask_kinds = targets != PAD, ["full"] * len(targets)
+                else:
+                    mask, mask_kinds = make_mask(targets != PAD, cfg.masking, generator=mask_generator, return_info=True,
+                                                 targets=targets if cfg.masking.silhouette_probability else None)
                 with autocast_context(runtime):
                     labels = None
                     if cfg.model.conditioning:
                         labels = model.encode_labels([dataset.labels(i) for i in stream.last_indices])
                         keep = torch.rand(labels.shape, generator=mask_generator).to(labels.device) >= cfg.model.cond_dropout
                         labels = labels * keep
-                    logits = model(corrupt(targets, mask), labels=labels)
+                    logits = model(targets if cfg.model.causal else corrupt(targets, mask), labels=labels)
                     ce = masked_loss(logits.float(), targets, mask)
                     loss = balanced_loss(logits.float(), targets, mask) if cfg.dataset.loss == "fg_bg_balanced" else ce
                 if not torch.isfinite(loss):
@@ -198,14 +201,22 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
             row["masked_metrics"] = {key: sum(values) / len(values) if values else None for key in diagnostics[0]
                 for values in [[r[key] for r in diagnostics if r[key] is not None]]}
             if t.eval_every and step % t.eval_every == 0:
-                from .evaluate import MASK_RATIOS, conditional_report, summarize
                 eval_model = ema_model if ema_model is not None else model
-                row["validation"] = conditional_report(eval_model, dataset, split="val", ratios=MASK_RATIOS,
-                                                         seed=t.seed + 100)
-                summary = row["val_summary"] = summarize(row["validation"])
-                # Scalar val loss: plain model masked NLL averaged over every size/kind/ratio row.
-                row["val_loss"] = summary["model"]["masked_conditional_nll"]
-                row["val_balanced_nll"] = summary["balanced_nll"]
+                if cfg.model.causal:  # exact AR NLL/pixel on val, equal-weight mean over sizes
+                    from .ar_sample import ar_nll
+                    by_size = {str(size): ar_nll(eval_model, torch.stack([dataset.grids[i] for i in dataset.indices("val", size)]),
+                                                 batch=16).mean().item() for size in cfg.dataset.resolutions}
+                    row["val_ar_nll_by_size"] = by_size
+                    row["val_loss"] = row["val_balanced_nll"] = sum(by_size.values()) / len(by_size)
+                    eval_model.train()
+                else:
+                    from .evaluate import MASK_RATIOS, conditional_report, summarize
+                    row["validation"] = conditional_report(eval_model, dataset, split="val", ratios=MASK_RATIOS,
+                                                             seed=t.seed + 100)
+                    summary = row["val_summary"] = summarize(row["validation"])
+                    # Scalar val loss: plain model masked NLL averaged over every size/kind/ratio row.
+                    row["val_loss"] = summary["model"]["masked_conditional_nll"]
+                    row["val_balanced_nll"] = summary["balanced_nll"]
                 score = row[t.select_metric]
                 if score < best_val - t.min_delta:
                     best_val, best_step, stale = score, step, 0
@@ -215,7 +226,7 @@ def train(cfg, *, resume=None, stop_after=None, durable_commit=None):
                     stale += 1
                 row["best_val_loss"], row["best_val_step"] = best_val, best_step
                 row["select_metric"], row["stale_evals"] = t.select_metric, stale
-            if t.sample_every and step % t.sample_every == 0:
+            if t.sample_every and step % t.sample_every == 0 and not cfg.model.causal:
                 from .sample import sample
                 from .render import export_samples
                 for size in cfg.dataset.resolutions:
