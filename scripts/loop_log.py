@@ -26,6 +26,9 @@ def main():
         f"<td>{fmt(r.get('nll50'))}</td><td>{fmt(r.get('score'))}</td>"
         f"<td class='{cls.get(r['verdict'].split()[0], '')}'>{fmt(r['verdict'])}</td></tr>" for r in data["rows"])
     best = data["best"]
+    spend = RESULTS.parent / "modal-spend.jsonl"
+    usd = sum(json.loads(l)["usd"] for l in spend.read_text().splitlines() if l.strip()) if spend.exists() else 0
+    data["note"] = f"Modal spent: ${usd:.2f} / $20 (L4 time estimate ×1.15)" + (" · " + data["extra"] if data.get("extra") else "")
     src = "/api/file?path=" + urllib.parse.quote(best["grid"]) + f"&v={int(time.time())}"
     body = (f"<table class='table' style='font-size:18px'><tr><th>#</th><th>change</th><th>val bal NLL</th>"
             f"<th>50% NLL</th><th>sample score</th><th></th></tr>{rows}</table>"
