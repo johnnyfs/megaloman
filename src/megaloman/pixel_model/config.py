@@ -41,6 +41,7 @@ class ModelConfig:
     conv_stem: int = 0      # residual stride-1 3x3 conv layers on (already masked) pixel embeddings
     conv_decoder: int = 0   # residual stride-1 3x3 conv layers on features before the logits head
     rel_bias: bool = False
+    noise_conditioning: bool = False  # denoising model: corruption level t in [0,1] summed into the prefix
     # Label conditioning (factorised, summed into the prefix token). Vocabularies are filled
     # from the snapshot's train records at train start when `conditioning` is true; index 0
     # of every factor is null/unknown, used for classifier-free-guidance dropout.

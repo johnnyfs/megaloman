@@ -81,6 +81,8 @@ class PixelTransformer(nn.Module):
         self.stem = ConvResidual(cfg.d_model, cfg.conv_stem) if cfg.conv_stem else None
         self.decoder = ConvResidual(cfg.d_model, cfg.conv_decoder) if cfg.conv_decoder else None
         self.rel_bias = RelativeBias(cfg.heads) if cfg.rel_bias else None
+        self.noise_mlp = (nn.Sequential(nn.Linear(16, cfg.d_model), nn.GELU(), nn.Linear(cfg.d_model, cfg.d_model))
+                          if cfg.noise_conditioning else None)
         self.vocab = {}
         if cfg.conditioning:
             from .data import FACTORS
@@ -98,7 +100,7 @@ class PixelTransformer(nn.Module):
                          for f, v in self.vocab.items()])
         return torch.tensor(rows, dtype=torch.long, device=self.head.weight.device)
 
-    def forward(self, pixels, *, height=None, width=None, object_ids=None, valid_mask=None, labels=None):
+    def forward(self, pixels, *, height=None, width=None, object_ids=None, valid_mask=None, labels=None, noise_level=None):
         if pixels.ndim != 3 or pixels.dtype != torch.long:
             raise ValueError("pixels must be LongTensor[B,H,W]")
         b, h, w = pixels.shape
@@ -120,6 +122,12 @@ class PixelTransformer(nn.Module):
         prefix = (self.resolution_mlp(metadata) + self.resolution_type).expand(b, -1)
         if labels is not None and self.vocab:
             prefix = prefix + sum(e(labels[:, j]) for j, e in enumerate(self.label_embeddings))
+        if self.noise_mlp is not None:
+            t = torch.zeros(b, device=pixels.device) if noise_level is None else torch.as_tensor(
+                noise_level, dtype=torch.float32, device=pixels.device).expand(b)
+            freqs = torch.arange(8, device=pixels.device, dtype=torch.float32)
+            angles = t.float()[:, None] * math.pi * (2 ** freqs)[None] / 2
+            prefix = prefix + self.noise_mlp(torch.cat((angles.sin(), angles.cos()), -1).to(prefix.dtype))
         prefix = prefix.unsqueeze(1)
         tokens = self.embedding(pixels.flatten(1)) + self.pixel_type
         if self.stem is not None:  # inputs are already corrupted (MASK), so no hidden pixel can leak
