@@ -10,8 +10,13 @@ dependencies = [
     "scipy>=1.18.1",
 ]
 
+[project.optional-dependencies]
+# nespix text route (SDXL-Turbo imagination + CLIP judge). CPU wheels: --index-url https://download.pytorch.org/whl/cpu
+nespix = ["torch>=2.4", "diffusers>=0.30", "transformers>=4.44", "accelerate>=0.33", "safetensors>=0.4"]
+
 [project.scripts]
 ml = "megaloman.cli:main"
+nespix = "megaloman.nespix.cli:main"
 
 [build-system]
 requires = ["hatchling"]
