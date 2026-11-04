@@ -1,0 +1,232 @@
+{
+ "text": "a red heart",
+ "concept": {
+  "seed_index": 3,
+  "clip_txt": 0.2874,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 8.623
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.008927484432775976,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.708,
+    "img": 0.7185,
+    "txt": 0.2995,
+    "fid": 0.2807,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.5,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.008927484432775976,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.476,
+    "img": 0.8411,
+    "txt": 0.3639,
+    "fid": 0.1886,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.5,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.008927484432775976,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.49,
+    "img": 0.8576,
+    "txt": 0.3574,
+    "fid": 0.1614,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.019,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.008136163385847868,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    30
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 24.64,
+    "img": 0.8215,
+    "txt": 0.3592,
+    "fid": 0.1553,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.043,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.008927484432775976,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    62
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 24.939,
+    "img": 0.826,
+    "txt": 0.3663,
+    "fid": 0.1507,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.008136163385847868,
+   "mirror_iou": 0.925,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    124
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 26.182,
+    "img": 0.8832,
+    "txt": 0.3486,
+    "fid": 0.1358,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.041,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

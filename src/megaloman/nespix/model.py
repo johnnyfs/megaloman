@@ -25,7 +25,7 @@ AXES = dict(
     smooth=(0.3, 0.8),        # shading detail vs. flat regions
     fg_th=(0.42, 0.55),       # fat vs. tight silhouette
 )
-W_IMG, W_TXT, W_STRUCT = 25.0, 15.0, 1.0       # judge weights (CLIP cosines differ by ~0.01-0.05)
+W_IMG, W_TXT, W_STRUCT, W_FID = 25.0, 15.0, 1.0, 8.0   # judge weights (CLIP cosines differ by ~0.01-0.05)
 
 
 def variants(axes=AXES):
@@ -59,10 +59,24 @@ def pixelate(image, size, text=None, base: Params = None, axes=AXES, judge=True,
     return judge_sprites(c, list(_variants(c, size, base.__dict__, axes)), text, top)
 
 
+def fidelity(c, sp, cview=None):
+    """Mean OKLab distance between the sprite and the concept box-downsampled to the same grid (on white)."""
+    from .palette import oklab
+    n = sp.grid.shape[0]
+    ys, xs = np.where(sp.grid >= 0)
+    box = (xs.min(), ys.min(), xs.max() + 1, ys.max() + 1)
+    a = np.asarray(S.on_white(sp.rgba().crop(box), size=64), float)
+    cv = cview if cview is not None else concept_view(c)
+    b = np.asarray(cv.resize((max(1, box[2] - box[0]), max(1, box[3] - box[1])), Image.BOX).resize((64, 64), Image.NEAREST), float)
+    return float(np.sqrt(((oklab(a) - oklab(b)) ** 2).sum(-1)).mean())
+
+
 def judge_sprites(c, sprites, text=None, top=1, txt_emb=None):
     st = [S.structure(sp) for sp in sprites]
+    cv = concept_view(c)
+    fid = [fidelity(c, sp, cv) for sp in sprites]
     views = [S.on_white(sp.rgba()) for sp in sprites]
-    e = S.embed_images([concept_view(c)] + views)
+    e = S.embed_images([cv] + views)
     if e is not None:
         img_sim = e[1:] @ e[0]
         if text and txt_emb is None:
@@ -70,9 +84,9 @@ def judge_sprites(c, sprites, text=None, top=1, txt_emb=None):
         txt_sim = (e[1:] @ txt_emb[0]) if txt_emb is not None else np.zeros(len(sprites))
     else:
         img_sim = txt_sim = np.zeros(len(sprites))
-    for sp, (s, terms), a, b in zip(sprites, st, img_sim, txt_sim):
-        sp.meta['judge'] = dict(total=round(float(W_IMG * a + W_TXT * b + W_STRUCT * s), 3),
-                                img=round(float(a), 4), txt=round(float(b), 4), struct=terms)
+    for sp, (s, terms), a, b, f in zip(sprites, st, img_sim, txt_sim, fid):
+        sp.meta['judge'] = dict(total=round(float(W_IMG * a + W_TXT * b + W_STRUCT * s - W_FID * f), 3),
+                                img=round(float(a), 4), txt=round(float(b), 4), fid=round(f, 4), struct=terms)
     ranked = sorted(sprites, key=lambda sp: -sp.meta['judge']['total'])
     return ranked[0] if top == 1 else ranked[:top]
 
@@ -183,6 +197,8 @@ def sheet(res, cell=192, bg=(64, 72, 96)):
         s = sp[n]
         k = max(1, cell // n)
         im = s.preview(scale=k, bg=bg)
+        if im.width != cell:                       # fill the cell (larger sprites are shown reduced)
+            im = im.resize((cell, cell), Image.NEAREST if im.width < cell else Image.BOX)
         t = Image.new('RGB', (cell, cell), bg)
         t.paste(im, ((cell - im.width) // 2, (cell - im.height) // 2))
         tiles.append(t)

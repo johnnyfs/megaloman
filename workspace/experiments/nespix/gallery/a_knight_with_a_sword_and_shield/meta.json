@@ -1,0 +1,234 @@
+{
+ "text": "a knight with a sword and shield",
+ "concept": {
+  "seed_index": 4,
+  "clip_txt": 0.322,
+  "struct": {
+   "cropped": -0.006,
+   "coverage": -0.0
+  },
+  "total": 9.653
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.013893470869034297,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    5
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 17.044,
+    "img": 0.6247,
+    "txt": 0.2894,
+    "fid": 0.345,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.156
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.013893470869034297,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    11
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 20.23,
+    "img": 0.7055,
+    "txt": 0.3407,
+    "fid": 0.3147,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "20"
+   ],
+   "palette_err": 0.011761379918464694,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    17
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.059,
+    "img": 0.8024,
+    "txt": 0.364,
+    "fid": 0.3012,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.051,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "20"
+   ],
+   "palette_err": 0.011761379918464694,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    24
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.465,
+    "img": 0.7825,
+    "txt": 0.3652,
+    "fid": 0.3069,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.119,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "20"
+   ],
+   "palette_err": 0.011761379918464694,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    49
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.915,
+    "img": 0.8227,
+    "txt": 0.3737,
+    "fid": 0.2788,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.029,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "20"
+   ],
+   "palette_err": 0.011761379918464694,
+   "mirror_iou": 0.475,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    100
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 24.914,
+    "img": 0.8615,
+    "txt": 0.3668,
+    "fid": 0.2621,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.031,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

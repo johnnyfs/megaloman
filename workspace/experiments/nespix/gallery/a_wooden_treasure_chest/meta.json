@@ -1,0 +1,232 @@
+{
+ "text": "a wooden treasure chest",
+ "concept": {
+  "seed_index": 3,
+  "clip_txt": 0.3303,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 9.908
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.010571208977038957,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.046,
+    "img": 0.7235,
+    "txt": 0.2652,
+    "fid": 0.3415,
+    "struct": {
+     "fill": -0.188,
+     "parts": -0.0,
+     "noise": -0.1,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.010571208977038957,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    13
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 19.8,
+    "img": 0.7188,
+    "txt": 0.2602,
+    "fid": 0.2592,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "18",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.008834799686195181,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    20
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 19.228,
+    "img": 0.6956,
+    "txt": 0.2476,
+    "fid": 0.2345,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.010571208977038957,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    28
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 19.739,
+    "img": 0.7054,
+    "txt": 0.2803,
+    "fid": 0.2593,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.025,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.010571208977038957,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    57
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.919,
+    "img": 0.8069,
+    "txt": 0.3911,
+    "fid": 0.263,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.016,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "18",
+    "27",
+    "38"
+   ],
+   "palette_err": 0.008834799686195181,
+   "mirror_iou": 0.791,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    116
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 27.329,
+    "img": 0.9255,
+    "txt": 0.4022,
+    "fid": 0.2268,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.028,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

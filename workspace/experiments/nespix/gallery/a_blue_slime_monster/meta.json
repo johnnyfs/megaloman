@@ -1,0 +1,232 @@
+{
+ "text": "a blue slime monster",
+ "concept": {
+  "seed_index": 4,
+  "clip_txt": 0.3394,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 10.181
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.009022746614131234,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    5,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.318,
+    "img": 0.6915,
+    "txt": 0.3039,
+    "fid": 0.3071,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.071
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.009022746614131234,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    12,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 22.993,
+    "img": 0.7793,
+    "txt": 0.3568,
+    "fid": 0.23,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.009022746614131234,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    19,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.907,
+    "img": 0.8281,
+    "txt": 0.3838,
+    "fid": 0.1924,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.013,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.009022746614131234,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    26,
+    30
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.347,
+    "img": 0.8432,
+    "txt": 0.3818,
+    "fid": 0.1814,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.008,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "18",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.007817314124672875,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    53,
+    62
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 26.043,
+    "img": 0.8605,
+    "txt": 0.3957,
+    "fid": 0.1727,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.023,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "18",
+    "21",
+    "28"
+   ],
+   "palette_err": 0.007817314124672875,
+   "mirror_iou": 0.847,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    109,
+    126
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 26.61,
+    "img": 0.8815,
+    "txt": 0.3939,
+    "fid": 0.1624,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.037,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

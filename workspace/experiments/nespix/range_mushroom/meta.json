@@ -1,0 +1,442 @@
+{
+ "text": "a red mushroom with white spots",
+ "concept": null,
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    5
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 18.505,
+    "img": 0.6653,
+    "txt": 0.3164,
+    "fid": 0.3159,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.3,
+     "colours": -0.0,
+     "ink": -0.047
+    }
+   }
+  },
+  "12": {
+   "size": 12,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    10,
+    8
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.852,
+    "img": 0.7451,
+    "txt": 0.3647,
+    "fid": 0.2808,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.007856414466563632,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    11
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.576,
+    "img": 0.7574,
+    "txt": 0.3883,
+    "fid": 0.2643,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.07,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "20": {
+   "size": 20,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    18,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.696,
+    "img": 0.7566,
+    "txt": 0.3839,
+    "fid": 0.2446,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.021,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    18
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.741,
+    "img": 0.7966,
+    "txt": 0.3973,
+    "fid": 0.2648,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.014,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    24
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.875,
+    "img": 0.7894,
+    "txt": 0.395,
+    "fid": 0.2206,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.022,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "48": {
+   "size": 48,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.007856414466563632,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    46,
+    37
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.513,
+    "img": 0.812,
+    "txt": 0.403,
+    "fid": 0.2282,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.007,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    50
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.197,
+    "img": 0.8365,
+    "txt": 0.4063,
+    "fid": 0.2245,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.014,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "96": {
+   "size": 96,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    94,
+    75
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 25.832,
+    "img": 0.8581,
+    "txt": 0.4051,
+    "fid": 0.2099,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.016,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    101
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.73,
+    "img": 0.8512,
+    "txt": 0.4061,
+    "fid": 0.2027,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.02,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "192": {
+   "size": 192,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.007856414466563632,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    190,
+    152
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 27.587,
+    "img": 0.9398,
+    "txt": 0.3805,
+    "fid": 0.1934,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.067,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "256": {
+   "size": 256,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.007856414466563632,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    254,
+    204
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 27.847,
+    "img": 0.9459,
+    "txt": 0.3871,
+    "fid": 0.1919,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.072,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,234 @@
+{
+ "text": "a robot squid enemy",
+ "concept": {
+  "seed_index": 5,
+  "clip_txt": 0.3168,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 9.503
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "37"
+   ],
+   "palette_err": 0.010253581258968237,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.163,
+    "img": 0.715,
+    "txt": 0.2913,
+    "fid": 0.306,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.13,
+     "colours": -0.5,
+     "ink": -0.005
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "37"
+   ],
+   "palette_err": 0.010253581258968237,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    13
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 20.545,
+    "img": 0.7226,
+    "txt": 0.2929,
+    "fid": 0.2358,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.027,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "37"
+   ],
+   "palette_err": 0.010253581258968237,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    21
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 21.851,
+    "img": 0.748,
+    "txt": 0.3256,
+    "fid": 0.214,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.022,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "10",
+    "28",
+    "37"
+   ],
+   "palette_err": 0.010253581258968237,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    28
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.254,
+    "img": 0.7595,
+    "txt": 0.3373,
+    "fid": 0.2162,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.065,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "28",
+    "36"
+   ],
+   "palette_err": 0.011857558903877994,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    58
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.716,
+    "img": 0.823,
+    "txt": 0.3295,
+    "fid": 0.221,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.035,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "28",
+    "36"
+   ],
+   "palette_err": 0.011857558903877994,
+   "mirror_iou": 0.754,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    118
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 24.611,
+    "img": 0.8348,
+    "txt": 0.3578,
+    "fid": 0.1999,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.026,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

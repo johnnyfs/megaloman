@@ -6,3 +6,5 @@ Repeatable, declarative pipelines for NES Mega Man-style game assets. See `PLAN.
 - `workspace/`: definitions, benchmarks, pipeline versions, runs, feedback: the full data trail (layout in `src/megaloman/layout.py`)
 - `cache/`: content-addressed blobs and raw model-call transcripts (keyed from the JSON in workspace/)
 - External reference: `fusion-man/` is a clone of johnnyfs/fusion-man (not tracked here; benchmark rips come from its `main` at 65624f5)
+
+- `NESPIX.md`: **nespix**, a text/image → NES pixel-art model (8–256 px, 4 colours). `nespix --help`

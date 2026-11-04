@@ -49,5 +49,15 @@ def dist2(a, b, wl=1.0):
     return (d ** 2).sum(-1)
 
 
+# Codes that name the same (or a visually identical) colour as a canonical entry above.
+ALIAS = {'30': '20', '2D': '00', '0D': '0F', '1D': '0F', '0E': '0F', '1E': '0F', '2E': '0F', '3E': '0F',
+         '1F': '0F', '2F': '0F', '3F': '0F'}
+
+
+def canon(code):
+    code = code.upper()
+    return ALIAS.get(code, code)
+
+
 def code_index(code):
-    return CODES.index(code)
+    return CODES.index(canon(code))

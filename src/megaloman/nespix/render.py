@@ -23,7 +23,7 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
 
-from .palette import BLACK, CODES, NES, NES_LAB, NES_RGB, code_index, dist2, hex_rgb, oklab
+from .palette import BLACK, CODES, canon, NES, NES_LAB, NES_RGB, code_index, dist2, hex_rgb, oklab
 
 
 @dataclass
@@ -40,7 +40,7 @@ class Params:
     ink_weight: float = 1.0         # >1 keeps more interior black (lines) ; <1 less
     wl: float = 1.4                 # lightness weight in colour distances (pixel art reads by value)
     min_sep: float = 0.10           # minimum OKLab distance between chosen palette colours
-    min_from_black: float = 0.45    # sprite fills must stand clear of the black ink (black does the shadows)
+    min_from_black: float = 0.40    # sprite fills must stand clear of the black ink (black does the shadows)
     err_cap: float = 0.15           # truncated colour error: gradients/noise don't dominate palette choice
     smooth: float = 0.6             # hi-res mode filter radius, in target cells (flattens shading speckle)
     chroma: float = 1.5             # chroma boost before palette fit (NES colours are saturated; concepts are muddy)
@@ -49,6 +49,7 @@ class Params:
     ink_l: float = 0.22             # black 'stands for' every deep shadow: it matches as if its lightness were this
     flat: float = 0.55              # parts (regions between the concept's ink lines) whose pixels mostly agree
                                     # (>= this share near the median) become one solid colour; 0 = off
+    part_pow: float = 0.8           # palette weight of a part = area**part_pow (1 = plain pixel count)
     saliency: float = 0.5           # extra palette weight for pixels whose colour stands out from the mean
     majority: int = 2               # passes of 3x3 majority smoothing on fill colours at target res
     palette: tuple = ()             # force NES codes (e.g. ('0F','16','27')); empty = search
@@ -283,7 +284,10 @@ class Concept:
     def parts(self):
         """Connected regions of the foreground between the concept's dark ink lines."""
         if 'parts' not in self._cache:
-            ink = self.lab0[..., 0] < 0.30
+            L = self.lab0[..., 0]
+            k = max(5, int(round(max(L.shape) / 80)) | 1)
+            line = ndi.grey_closing(L, size=(k, k)) - L > 0.12        # thin structure darker than around it
+            ink = (L < 0.30) | line
             lbl, n = ndi.label(self.fg & ~ink)
             self._cache['parts'] = (lbl, n)
         return self._cache['parts']
@@ -310,21 +314,24 @@ class Concept:
                 asg = ((px[:, None] - c) ** 2).sum(-1).argmin(1)
                 c = np.stack([np.median(px[asg == j], 0) if (asg == j).any() else c[j] for j in (0, 1)])
             minor = min((asg == 0).sum(), (asg == 1).sum())
+            # pixels far from their cluster (eye whites, highlights, small markings) keep their own colour
             if np.sqrt(((c[0] - c[1]) ** 2).sum()) > 2 * tau and minor >= max(minarea, 0.03 * len(idx)):
-                O[idx] = c[asg]
+                near = np.sqrt(((px - c[asg]) ** 2).sum(-1)) < 1.5 * tau
+                O[idx] = np.where(near[:, None], c[asg], px)
                 continue
             med = np.median(px, 0)
             near = np.sqrt(((px - med) ** 2).sum(-1)) < tau
             if near.mean() >= share:
-                O[idx] = med
+                far = np.sqrt(((px - med) ** 2).sum(-1)) >= 1.5 * tau
+                O[idx] = np.where(far[:, None], px, med)
         return out
 
     def palette(self, p: 'Params'):
         k = ('pal', p.colors, tuple(p.palette), p.chroma, p.wl, p.min_sep, p.min_from_black, p.err_cap,
-             p.saliency, p.ink_l, p.flat)
+             p.saliency, p.ink_l, p.flat, p.part_pow)
         if k not in self._cache:
             if p.palette:
-                codes = list(p.palette)
+                codes = [canon(x) for x in p.palette]
                 if not self.tile and BLACK not in codes:
                     codes = [BLACK] + codes[:p.colors - 1]
                 self._cache[k] = (codes, None)
@@ -336,6 +343,13 @@ class Concept:
                 px = lab.reshape(-1, 3)[idx]
                 sal = np.sqrt(((px - np.median(px, 0)) ** 2).sum(-1))
                 wts = 1 + p.saliency * sal / max(1e-6, sal.mean())
+                # each part (region between ink lines) weighs area**part_pow in total, so a big body does
+                # not crowd out the second region's colour (belly, wood, visor)
+                lbl, n = self.parts()
+                if n and p.part_pow < 1:
+                    areas = np.bincount(lbl.ravel(), minlength=n + 1).astype(float)
+                    a = areas[lbl.ravel()[idx]]
+                    wts = wts * np.where(a > 0, np.maximum(a, 1) ** (p.part_pow - 1), 1.0 / max(1, areas[1:].max()) ** (1 - p.part_pow))
                 self._cache[k] = choose_palette(px, p.colors - 1, p, wts)
         return self._cache[k]
 

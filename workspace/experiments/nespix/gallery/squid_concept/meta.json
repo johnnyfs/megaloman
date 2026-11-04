@@ -1,0 +1,222 @@
+{
+ "text": "a robot squid",
+ "concept": null,
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.178,
+    "img": 0.6841,
+    "txt": 0.2974,
+    "fid": 0.2981,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    14,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.36,
+    "img": 0.7646,
+    "txt": 0.3508,
+    "fid": 0.2446,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.061,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    22,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.42,
+    "img": 0.8061,
+    "txt": 0.3375,
+    "fid": 0.212,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.099,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    30,
+    30
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.933,
+    "img": 0.8088,
+    "txt": 0.3481,
+    "fid": 0.1802,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.067,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    62,
+    60
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.866,
+    "img": 0.8255,
+    "txt": 0.3671,
+    "fid": 0.1546,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.043,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "26",
+    "36"
+   ],
+   "palette_err": 0.013519538489188607,
+   "mirror_iou": 0.972,
+   "symmetric": true,
+   "concept_outline_px": 4,
+   "inner": [
+    126,
+    122
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.1,
+    "img": 0.8387,
+    "txt": 0.3516,
+    "fid": 0.1389,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.029,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

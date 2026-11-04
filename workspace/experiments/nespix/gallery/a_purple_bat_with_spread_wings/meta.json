@@ -1,0 +1,231 @@
+{
+ "text": "a purple bat with spread wings",
+ "concept": {
+  "seed_index": 4,
+  "clip_txt": 0.3402,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 10.205
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "23",
+    "20"
+   ],
+   "palette_err": 0.012920080969912791,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    5,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 18.559,
+    "img": 0.6685,
+    "txt": 0.3346,
+    "fid": 0.3251,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.5,
+     "ink": -0.073
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "23",
+    "20"
+   ],
+   "palette_err": 0.012920080969912791,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    12,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 20.929,
+    "img": 0.7275,
+    "txt": 0.3529,
+    "fid": 0.2565,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.5,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "23",
+    "20"
+   ],
+   "palette_err": 0.012920080969912791,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    19,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 22.921,
+    "img": 0.7759,
+    "txt": 0.3689,
+    "fid": 0.2493,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.014,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "23",
+    "20"
+   ],
+   "palette_err": 0.012920080969912791,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    27,
+    30
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.782,
+    "img": 0.7994,
+    "txt": 0.3885,
+    "fid": 0.2539,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "23",
+    "20"
+   ],
+   "palette_err": 0.012920080969912791,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    55,
+    62
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.81,
+    "img": 0.8116,
+    "txt": 0.4249,
+    "fid": 0.2296,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.018,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "23",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.012394896002053705,
+   "mirror_iou": 0.852,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    111,
+    126
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 26.394,
+    "img": 0.8732,
+    "txt": 0.416,
+    "fid": 0.2084,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.01,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

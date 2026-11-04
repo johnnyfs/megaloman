@@ -10,8 +10,8 @@ import numpy as np
 
 MODEL = os.environ.get('NESPIX_T2I', 'stabilityai/sdxl-turbo')
 
-STYLE = ('{desc}, cute cartoon mascot character, full body, centered, isolated on a plain white background, '
-         'flat colors, thick black outline, simple bold shapes, sticker style vector illustration')
+STYLE = ('{desc}, single cute cartoon video game sprite design, full body, centered, isolated on plain white '
+         'background, flat colors, thick black outline, simple bold shapes, vector illustration')
 
 NEG = 'text, watermark, frame, border, scenery, background pattern, multiple objects, cropped, blurry, photo, gradient'
 

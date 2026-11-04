@@ -1,0 +1,230 @@
+{
+ "text": "a yellow star",
+ "concept": {
+  "seed_index": 5,
+  "clip_txt": 0.3389,
+  "struct": {
+   "cropped": -0.064,
+   "coverage": -0.0
+  },
+  "total": 10.102
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    5
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.174,
+    "img": 0.7929,
+    "txt": 0.3334,
+    "fid": 0.3053,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.167,
+     "colours": -0.0,
+     "ink": -0.041
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    13
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.433,
+    "img": 0.8091,
+    "txt": 0.3298,
+    "fid": 0.2177,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    20
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 24.931,
+    "img": 0.8561,
+    "txt": 0.3586,
+    "fid": 0.2314,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    27
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 25.396,
+    "img": 0.8493,
+    "txt": 0.3843,
+    "fid": 0.183,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.136,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    56
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.744,
+    "img": 0.8663,
+    "txt": 0.3714,
+    "fid": 0.1843,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.01,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "28",
+    "29"
+   ],
+   "palette_err": 0.01373072845670186,
+   "mirror_iou": 0.863,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    115
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 25.983,
+    "img": 0.88,
+    "txt": 0.357,
+    "fid": 0.1671,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.034,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

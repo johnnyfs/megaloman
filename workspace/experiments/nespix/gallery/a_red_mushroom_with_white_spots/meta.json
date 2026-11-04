@@ -1,0 +1,231 @@
+{
+ "text": "a red mushroom with white spots",
+ "concept": {
+  "seed_index": 1,
+  "clip_txt": 0.3399,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 10.198
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    5
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 18.505,
+    "img": 0.6653,
+    "txt": 0.3164,
+    "fid": 0.3159,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.3,
+     "colours": -0.0,
+     "ink": -0.047
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "16",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.007856414466563632,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    11
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 22.576,
+    "img": 0.7574,
+    "txt": 0.3883,
+    "fid": 0.2643,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.07,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    18
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.741,
+    "img": 0.7966,
+    "txt": 0.3973,
+    "fid": 0.2648,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.014,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    24
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.875,
+    "img": 0.7894,
+    "txt": 0.395,
+    "fid": 0.2206,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.022,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    50
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.197,
+    "img": 0.8365,
+    "txt": 0.4063,
+    "fid": 0.2245,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.014,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "16",
+    "20"
+   ],
+   "palette_err": 0.010877330126695886,
+   "mirror_iou": 0.846,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    101
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.73,
+    "img": 0.8512,
+    "txt": 0.4061,
+    "fid": 0.2027,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.02,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

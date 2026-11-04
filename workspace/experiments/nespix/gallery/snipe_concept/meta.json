@@ -1,0 +1,222 @@
+{
+ "text": "a round robot with a rifle",
+ "concept": null,
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    5,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 19.139,
+    "img": 0.6816,
+    "txt": 0.3085,
+    "fid": 0.2567,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.474,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    11,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 20.611,
+    "img": 0.7125,
+    "txt": 0.3085,
+    "fid": 0.2286,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    18,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.419,
+    "img": 0.719,
+    "txt": 0.3347,
+    "fid": 0.1908,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.051,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    24,
+    30
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.576,
+    "img": 0.7198,
+    "txt": 0.3387,
+    "fid": 0.1855,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.015,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    50,
+    62
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.167,
+    "img": 0.7052,
+    "txt": 0.3352,
+    "fid": 0.1841,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.018,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "0B",
+    "18"
+   ],
+   "palette_err": 0.015774903382301825,
+   "mirror_iou": 0.684,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    103,
+    126
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.281,
+    "img": 0.7885,
+    "txt": 0.3412,
+    "fid": 0.1917,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.015,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

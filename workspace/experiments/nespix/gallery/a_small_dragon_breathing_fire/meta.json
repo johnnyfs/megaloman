@@ -1,0 +1,235 @@
+{
+ "text": "a small dragon breathing fire",
+ "concept": {
+  "seed_index": 1,
+  "clip_txt": 0.3059,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 9.178
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "18",
+    "28"
+   ],
+   "palette_err": 0.015173646389509882,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 18.433,
+    "img": 0.6564,
+    "txt": 0.2944,
+    "fid": 0.2693,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.24,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "18",
+    "26",
+    "28"
+   ],
+   "palette_err": 0.01376101292268724,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    14
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 20.686,
+    "img": 0.7291,
+    "txt": 0.3002,
+    "fid": 0.2389,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.134,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "18",
+    "26",
+    "28"
+   ],
+   "palette_err": 0.01376101292268724,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    22
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 21.375,
+    "img": 0.7464,
+    "txt": 0.3024,
+    "fid": 0.2115,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.13,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "18",
+    "26",
+    "28"
+   ],
+   "palette_err": 0.01376101292268724,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    30
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.798,
+    "img": 0.7461,
+    "txt": 0.3058,
+    "fid": 0.172,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.065,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "18",
+    "26",
+    "28"
+   ],
+   "palette_err": 0.01376101292268724,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    62
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 24.208,
+    "img": 0.8178,
+    "txt": 0.3488,
+    "fid": 0.1754,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.066,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "18",
+    "26",
+    "28"
+   ],
+   "palette_err": 0.01376101292268724,
+   "mirror_iou": 0.514,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    125,
+    126
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 25.676,
+    "img": 0.8613,
+    "txt": 0.3541,
+    "fid": 0.1404,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.045,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

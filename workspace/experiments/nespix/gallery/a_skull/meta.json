@@ -1,0 +1,231 @@
+{
+ "text": "a skull",
+ "concept": {
+  "seed_index": 3,
+  "clip_txt": 0.2906,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 8.717
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.0068916152581395395,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    4
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 19.588,
+    "img": 0.7483,
+    "txt": 0.2897,
+    "fid": 0.3987,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.276
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.0068916152581395395,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    10
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.769,
+    "img": 0.7534,
+    "txt": 0.359,
+    "fid": 0.3063,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.0068916152581395395,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    16
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.039,
+    "img": 0.7719,
+    "txt": 0.3914,
+    "fid": 0.2596,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.054,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.0068916152581395395,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.609,
+    "img": 0.805,
+    "txt": 0.3871,
+    "fid": 0.2859,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.036,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "00",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.006150693466548248,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    44
+   ],
+   "variant": {
+    "colors": 4,
+    "sharpen": 1.1,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.504,
+    "img": 0.7983,
+    "txt": 0.3858,
+    "fid": 0.2768,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.026,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "10",
+    "20"
+   ],
+   "palette_err": 0.0068916152581395395,
+   "mirror_iou": 0.988,
+   "symmetric": true,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    88
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.765,
+    "img": 0.8134,
+    "txt": 0.3767,
+    "fid": 0.2716,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.046,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}

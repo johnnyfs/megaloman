@@ -1,0 +1,230 @@
+{
+ "text": "a green frog",
+ "concept": {
+  "seed_index": 0,
+  "clip_txt": 0.3062,
+  "struct": {
+   "cropped": -0.0,
+   "coverage": -0.0
+  },
+  "total": 9.186
+ },
+ "sprites": {
+  "8": {
+   "size": 8,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    6,
+    6
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 21.784,
+    "img": 0.7575,
+    "txt": 0.3472,
+    "fid": 0.2953,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "16": {
+   "size": 16,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    14,
+    14
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 22.877,
+    "img": 0.7752,
+    "txt": 0.3527,
+    "fid": 0.2244,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.0,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "24": {
+   "size": 24,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    22,
+    22
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.55
+   },
+   "judge": {
+    "total": 23.846,
+    "img": 0.7963,
+    "txt": 0.3569,
+    "fid": 0.1745,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.019,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "32": {
+   "size": 32,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    30,
+    30
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 1.1,
+    "ink_open": 0.35,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 23.852,
+    "img": 0.7915,
+    "txt": 0.3602,
+    "fid": 0.1662,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.01,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "64": {
+   "size": 64,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    62,
+    61
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.3,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 25.554,
+    "img": 0.8503,
+    "txt": 0.3828,
+    "fid": 0.1785,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.017,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  },
+  "128": {
+   "size": 128,
+   "codes": [
+    "0F",
+    "1A",
+    "2A"
+   ],
+   "palette_err": 0.013430612056844413,
+   "mirror_iou": 0.659,
+   "symmetric": false,
+   "concept_outline_px": 0,
+   "inner": [
+    126,
+    125
+   ],
+   "variant": {
+    "colors": 3,
+    "sharpen": 0.4,
+    "ink_open": 0.0,
+    "smooth": 0.8,
+    "fg_th": 0.42
+   },
+   "judge": {
+    "total": 27.296,
+    "img": 0.9166,
+    "txt": 0.3748,
+    "fid": 0.1509,
+    "struct": {
+     "fill": -0.0,
+     "parts": -0.0,
+     "noise": -0.034,
+     "colours": -0.0,
+     "ink": -0.0
+    }
+   }
+  }
+ }
+}
